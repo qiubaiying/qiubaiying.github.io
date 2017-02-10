@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="每个胜利背后都有许多尝试">
+    <meta name="keywords"  content="BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone">
+    <meta name="theme-color" content="#000000">
+    
+    <title>定时器 你真的会使用吗？ - 柏荧的博客 | BY Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/2016/12/13/%E5%AE%9A%E6%97%B6%E5%99%A8%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E4%BD%BF%E7%94%A8%E5%90%97/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BY Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/post-bg-ios9-web.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/post-bg-ios9-web.jpg')
+    }
+
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#iOS" title="iOS">iOS</a>
+                        
+                        <a class="tag" href="/tags/#定时器" title="定时器">定时器</a>
+                        
+                    </div>
+                    <h1>定时器 你真的会使用吗？</h1>
+                    
+                    
+                    <h2 class="subheading">iOS定时器详解</h2>
+                    
+                    <span class="meta">Posted by BY on December 13, 2016</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<blockquote>
+  <p>定时器的使用是软件开发基础技能，用于延时执行或重复执行某些方法。我相信大部分人接触iOS的定时器都是从
+<code class="highlighter-rouge">[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(action:) userInfo:nil repeats:YES]</code>这段代码开始的吧。</p>
+</blockquote>
+
+<blockquote>
+  <p>但是关于iOS定时器，你真的会用吗？</p>
+</blockquote>
+
+<h1 id="ios定时器">iOS定时器</h1>
+
+<p>首先来介绍iOS中的定时器</p>
+
+<p>iOS中的定时器大致分为这几类：</p>
+
+<ul>
+  <li><strong>NSTimer</strong></li>
+  <li><strong>CADisplayLink</strong></li>
+  <li><strong>GCD定时器</strong></li>
+</ul>
+
+<h3 id="nstimer">NSTimer</h3>
+
+<h4 id="使用方法">使用方法</h4>
+<p><strong>NSTime</strong>定时器是我们比较常使用的定时器，比较常使用的方法有两种：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>+ (NSTimer *)timerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(nullable id)userInfo repeats:(BOOL)yesOrNo;
+
++ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(nullable id)userInfo repeats:(BOOL)yesOrNo;
+</code></pre>
+</div>
+<p>这两种方法都是创建一个定时器，区别是用<code class="highlighter-rouge">timerWithTimeInterval:</code>方法创建的定时器需要手动加入RunLoop中。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// 创建NSTimer对象
+NSTimer *timer = [NSTimer timerWithTimeInterval:3 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
+// 加入RunLoop中
+[[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+</code></pre>
+</div>
+
+<p>需要<strong>注意</strong>的是： <code class="highlighter-rouge">UIScrollView</code> 滑动时执行的是 <code class="highlighter-rouge">UITrackingRunLoopMode</code>，<code class="highlighter-rouge">NSDefaultRunLoopMode</code>被挂起，会导致定时器失效，等恢复为<strong>滑动结束</strong>时才恢复定时器。其原因可以查看我这篇<a href="http://www.jianshu.com/p/c4f552ceda63">《Objective-C RunLoop 详解》</a>中的 “RunLoop 的 Mode“章节，有详细的介绍。</p>
+
+<p>举个例子：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>- (void)startTimer{
+    NSTimer *UIScrollView = [NSTimer timerWithTimeInterval:0.5 target:self selector:@selector(action:) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+}
+
+- (void)action:(NSTimer *)sender {
+    static int i = 0;
+    NSLog(@"NSTimer: %d",i);
+    i++;
+}
+</code></pre>
+</div>
+
+<p>将<code class="highlighter-rouge">timer</code>添加到<strong>NSDefaultRunLoopMode</strong>中，没0.5秒打印一次，然后滑动<code class="highlighter-rouge">UIScrollView</code>.</p>
+
+<p>打印台输出：</p>
+
+<p><img src="http://ww1.sinaimg.cn/large/006tNc79gw1farbzzwcevj30ci04ljtm.jpg" alt="" /></p>
+
+<p>可以看出在滑动<code class="highlighter-rouge">UIScrollView</code>时，定时器被暂停了。</p>
+
+<p>所以如果需要定时器在 <code class="highlighter-rouge">UIScrollView</code> 拖动时也不影响的话，有两种解决方法</p>
+
+<ol>
+  <li>
+    <p><strong>timer</strong>分别添加到 <code class="highlighter-rouge">UITrackingRunLoopMode</code> 和 <code class="highlighter-rouge">NSDefaultRunLoopMode</code>中</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>[[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+[[NSRunLoop mainRunLoop] addTimer:timer forMode: UITrackingRunLoopMode]; 
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>直接将<strong>timer</strong>添加到<code class="highlighter-rouge">NSRunLoopCommonModes</code> 中：</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>[[NSRunLoop mainRunLoop] addTimer:timer forMode: NSRunLoopCommonModes]; 
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<p>但并不是都<strong>timer</strong>所有的需要在滑动<code class="highlighter-rouge">UIScrollView</code>时继续执行，比如使用<strong>NSTimer</strong>完成的帧动画，滑动<code class="highlighter-rouge">UIScrollView</code>时就可以停止帧动画，保证滑动的流程性。</p>
+
+<p>若没有特殊要求的话，一般使用第二种方法创建完<strong>timer</strong>，会自动添加到<code class="highlighter-rouge">NSDefaultRunLoopMode</code>中去执行，也是平时最常用的方法。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(action:) userInfo:nil repeats:YES];
+</code></pre>
+</div>
+<p>参数：</p>
+
+<p><code class="highlighter-rouge">TimeInterval</code>：延时时间</p>
+
+<p><code class="highlighter-rouge">target</code>:目标对象，一般就是<code class="highlighter-rouge">self</code>本身</p>
+
+<p><code class="highlighter-rouge">selector</code>:执行方法</p>
+
+<p><code class="highlighter-rouge">userInfo</code>:传入信息</p>
+
+<p><code class="highlighter-rouge">repeats</code>:是否重复执行</p>
+
+<p>以上创建的定时器，若<code class="highlighter-rouge">repeats</code>参数设为<code class="highlighter-rouge">NO</code>，执行一次后就会被释放掉;</p>
+
+<p>若<code class="highlighter-rouge">repeats</code>参数设为<code class="highlighter-rouge">YES</code>重复执行时，必须手动关闭，否则定时器不会释放(停止）。</p>
+
+<p>释放方法：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// 停止定时器
+[timer invalidate];
+</code></pre>
+</div>
+
+<p>实际开发中，我们会将<code class="highlighter-rouge">NSTimer</code>对象设置为属性，这样方便释放。</p>
+
+<p><strong>iOS10.0</strong> 推出了两个新的API，与上面的方法相比，<code class="highlighter-rouge">selector</code>换成Block回调以、减少传入的参数(那几个参数真是鸡肋)。不过开发中一般需要适配低版本，还是尽量使用上面的方法吧。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>+ (NSTimer *)timerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats block:(void (^)(NSTimer *timer))block API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.0), tvos(10.0));
+
++ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats block:(void (^)(NSTimer *timer))block API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.0), tvos(10.0));
+</code></pre>
+</div>
+
+<h4 id="特点">特点</h4>
+
+<ul>
+  <li>
+    <p><strong>必须加入Runloop</strong></p>
+
+    <p>上面不管使用哪种方法，实际最后都会加入RunLoop中执行，区别就在于是否手动加入而已。</p>
+  </li>
+  <li>
+    <p><strong>存在延迟</strong></p>
+
+    <p>不管是一次性的还是周期性的timer的实际触发事件的时间，都会与所加入的RunLoop和RunLoop Mode有关，如果此RunLoop正在执行一个连续性的运算，timer就会被延时出发。重复性的timer遇到这种情况，如果延迟超过了一个周期，则会在延时结束后立刻执行，并按照之前指定的周期继续执行，这个延迟时间大概为50-100毫秒.</p>
+
+    <p>所以NSTimer不是绝对准确的,而且中间耗时或阻塞错过下一个点,那么下一个点就pass过去了.</p>
+  </li>
+  <li>
+    <p><strong>UIScrollView滑动会暂停计时</strong></p>
+
+    <p>添加到<code class="highlighter-rouge">NSDefaultRunLoopMode</code>的 <code class="highlighter-rouge">timer</code> 在 <code class="highlighter-rouge">UIScrollView</code>滑动时会暂停，若不想被<code class="highlighter-rouge">UIScrollView</code>滑动影响，需要将 <code class="highlighter-rouge">timer</code> 添加再到 <code class="highlighter-rouge">UITrackingRunLoopMode</code> 或 直接添加到<code class="highlighter-rouge">NSRunLoopCommonModes</code> 中</p>
+  </li>
+</ul>
+
+<h2 id="cadisplaylink">CADisplayLink</h2>
+
+<p>CADisplayLink官方介绍：</p>
+<blockquote>
+  <p>A CADisplayLink object is a timer object that allows your application to synchronize its drawing to the refresh rate of the display</p>
+</blockquote>
+
+<p><strong>CADisplayLink</strong>对象是一个和屏幕刷新率同步的定时器对象。每当屏幕显示内容刷新结束的时候，runloop就会向CADisplayLink指定的<code class="highlighter-rouge">target</code>发送一次指定的<code class="highlighter-rouge">selector</code>消息， CADisplayLink类对应的 <code class="highlighter-rouge">selector</code> 就会被调用一次。</p>
+
+<p>从原理上可以看出，CADisplayLink适合做界面的不停重绘，比如视频播放的时候需要不停地获取下一帧用于界面渲染，或者做动画。</p>
+<h4 id="使用方法-1">使用方法</h4>
+
+<p>创建：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">CADisplayLink</span> <span class="o">*</span><span class="n">displayLink</span><span class="p">;</span>
+
+<span class="n">self</span><span class="p">.</span><span class="n">displayLink</span> <span class="o">=</span> <span class="p">[</span><span class="n">CADisplayLink</span> <span class="nf">displayLinkWithTarget</span><span class="p">:</span><span class="n">self</span> <span class="nf">selector</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">handleDisplayLink</span><span class="o">:</span><span class="p">)];</span>  
+
+<span class="c1">// 每隔1帧调用一次
+</span><span class="n">self</span><span class="p">.</span><span class="n">displayLink</span><span class="p">.</span><span class="n">frameInterval</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>  
+
+<span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">displayLink</span> <span class="nf">addToRunLoop</span><span class="p">:[</span><span class="n">NSRunLoop</span> <span class="nf">currentRunLoop</span><span class="p">]</span> <span class="nf">forMode</span><span class="p">:</span><span class="n">NSDefaultRunLoopMode</span><span class="p">];</span>
+</code></pre>
+</div>
+<p>释放方法：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[self.displayLink invalidate];  
+
+self.displayLink = nil;
+</code></pre>
+</div>
+<p>当把<strong>CADisplayLink</strong>对象添加到runloop中后，<code class="highlighter-rouge">selector</code>就能被周期性调用，类似于重复的NSTimer被启动了；执行<code class="highlighter-rouge">invalidate</code>操作时，CADisplayLink对象就会从runloop中移除，<code class="highlighter-rouge">selector</code>调用也随即停止，类似于NSTimer的<code class="highlighter-rouge">invalidate</code>方法。</p>
+
+<p><strong>CADisplayLink</strong>中有两个重要的属性：</p>
+
+<ul>
+  <li>
+    <p><strong>frameInterval</strong></p>
+
+    <p>NSInteger类型的值，用来设置间隔多少帧调用一次<code class="highlighter-rouge">selector</code>方法，默认值是1，即每帧都调用一次。</p>
+  </li>
+  <li>
+    <p><strong>duration</strong></p>
+
+    <p><code class="highlighter-rouge">CFTimeInterval</code>值为<code class="highlighter-rouge">readOnly</code>，表示两次屏幕刷新之间的时间间隔。需要注意的是，该属性在<code class="highlighter-rouge">targe</code>t的<code class="highlighter-rouge">selector</code>被首次调用以后才会被赋值。<code class="highlighter-rouge">selector</code>的调用间隔时间计算方式是：<strong>调用间隔时间 = duration × frameInterval</strong>。</p>
+  </li>
+</ul>
+
+<h4 id="特点-1">特点</h4>
+
+<ul>
+  <li>
+    <p><strong>刷新频率固定</strong></p>
+
+    <p>正常情况iOS设备的屏幕刷新频率是固定<strong>60Hz</strong>,如果CPU过于繁忙，无法保证屏幕60次/秒的刷新率，就会导致跳过若干次调用回调方法的机会，跳过次数取决CPU的忙碌程度。</p>
+  </li>
+  <li>
+    <p><strong>屏幕刷新时调用</strong></p>
+
+    <p>CADisplayLink在正常情况下会在每次刷新结束都被调用，精确度相当高。但如果调用的方法比较耗时，超过了屏幕刷新周期，就会导致跳过若干次回调调用机会</p>
+  </li>
+  <li>
+    <p><strong>适合做界面渲染</strong></p>
+
+    <p>CADisplayLink可以确保系统渲染每一帧的时候我们的方法都被调用，从而保证了动画的流畅性。</p>
+  </li>
+</ul>
+
+<h2 id="gcd定时器">GCD定时器</h2>
+<p><strong>GCD定时器</strong>和NSTimer是不一样的，NSTimer受RunLoop影响，但是GCD的定时器不受影响，因为通过源码可知RunLoop也是基于GCD的实现的，所以GCD定时器有非常高的精度。关于GCD的使用可一看看<a href="http://www.cnblogs.com/pure/archive/2013/03/31/2977420.html">这篇博客</a>。</p>
+
+<h4 id="使用方法-2">使用方法</h4>
+<p>创建GCD定时器定时器的方法稍微比较复杂，看下面的代码：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// 定时时间
+int interval = 1;
+
+// 创建全局队列
+dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+
+// 创建定时器
+dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+
+// 设置定时器 interval * NSEC_PER_SEC  定时间隔几秒
+dispatch_source_set_timer(timer, dispatch_walltime(NULL, 0), interval * NSEC_PER_SEC, 0);
+
+dispatch_source_set_event_handler(timer, ^{
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+
+        // 需要执行的代码
+    });
+});
+
+// 开启定时器
+dispatch_resume(timer);
+
+// 关闭定时器
+dispatch_source_cancel(timer);
+</code></pre>
+</div>
+
+<h4 id="单次的延时调用">单次的延时调用</h4>
+<p>NSObject中的<code class="highlighter-rouge">performSelector:withObject:afterDelay:</code>以及 <code class="highlighter-rouge">performSelector:withObject:afterDelay:inModes:</code> 这两个方法在调用的时候会设置当前 runloop 中 <code class="highlighter-rouge">timer</code> ，前者设置的 <code class="highlighter-rouge">timer</code> 在 <code class="highlighter-rouge">NSDefaultRunLoopMode</code> 运行，后者则可以指定 <strong>NSRunLoop</strong> 的 <code class="highlighter-rouge">mode</code> 来执行。我们上面介绍过 runloop 中 <code class="highlighter-rouge">timer</code> 在 <code class="highlighter-rouge">UITrackingRunLoopMode</code> 被挂起，就导致了代码就会一直等待 <code class="highlighter-rouge">timer</code> 的调度,解决办法在上面也有说明。</p>
+
+<p>不过我们可以用另一套方案来解决这个问题，就是使用GCD中的 <code class="highlighter-rouge">dispatch_after</code> 来实现单次的延时调用：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self someMethod];
+    });
+</code></pre>
+</div>
+
+<h4 id="循环调用">循环调用</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code>// 创建GCD定时器
+dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+
+dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+
+dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), 1.0 * NSEC_PER_SEC, 0); //每秒执行
+
+// 事件回调
+dispatch_source_set_event_handler(_timer, ^{
+        
+    dispatch_async(dispatch_get_main_queue(), ^{
+        // 在主线程中实现需要的功能
+        
+	}
+}
+    
+});
+
+// 开启定时器
+dispatch_resume(_timer);
+
+// 挂起定时器（dispatch_suspend 之后的 Timer，是不能被释放的！会引起崩溃）
+dispatch_suspend(_timer);
+
+// 关闭定时器
+dispatch_source_cancel(_timer);
+    
+</code></pre>
+</div>
+
+<p>上面代码中要注意的是：</p>
+
+<ol>
+  <li><code class="highlighter-rouge">dispatch_source_set_event_handler()</code>中的任务实在子线程中执行的，若需要回到主线程，要调用<code class="highlighter-rouge">dispatch_async(dispatch_get_main_queue(), ^{}</code>.
+    <ul>
+      <li><code class="highlighter-rouge">dispatch_source_set_timer</code> 中第二个参数，当我们使用 <code class="highlighter-rouge">dispatch_time</code> 或者 <code class="highlighter-rouge">DISPATCH_TIME_NOW</code> 时，系统会使用默认时钟来进行计时。然而当系统休眠的时候，默认时钟是不走的，也就会导致计时器停止。使用 <code class="highlighter-rouge">dispatch_walltime </code> 可以让计时器按照真实时间间隔进行计时.</li>
+      <li>第三个参数， ` 1.0 * NSEC_PER_SEC` 为每秒执行一次，对应的还有毫秒，分秒，纳秒可以选择.</li>
+    </ul>
+  </li>
+</ol>
+
+<ul>
+  <li><code class="highlighter-rouge">dispatch_source_set_event_handler</code> 这个函数在执行完之后，block 会立马执行一遍，后面隔一定时间间隔再执行一次。而 <code class="highlighter-rouge">NSTimer</code> 第一次执行是到计时器触发之后。这也是和 <code class="highlighter-rouge">NSTimer</code> 之间的一个显著区别。</li>
+  <li>挂起（暂停）定时器, <code class="highlighter-rouge">dispatch_suspend</code> 之后的 <code class="highlighter-rouge">Timer</code>，不能被释放的,会引起崩溃.</li>
+  <li>创建的<code class="highlighter-rouge">timer</code>一定要有<code class="highlighter-rouge">dispatch_suspend(_timer)</code>或<code class="highlighter-rouge">dispatch_source_cancel(_timer)</code>这两句话来指定出口，否则定时器将不执行，若我们想无限循环可将 <code class="highlighter-rouge">dispatch_source_cancel(_timer)</code> 写在一句永不执行的<code class="highlighter-rouge">if</code>判断语句中。</li>
+</ul>
+
+<h2 id="使用场景">使用场景</h2>
+<p>介绍完iOS中的各种定时器，接下来我们来说说这几种定时器在开发中的几种用法。
+###短信重发倒计时</p>
+
+<p>短信倒计时使我们登录注册常用的功能，一般设置为60s，实现方法如下：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// 计时时间
+</span><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">assign</span><span class="p">)</span> <span class="kt">int</span> <span class="n">timeout</span><span class="p">;</span>
+
+<span class="cm">/** 开启倒计时 */</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">startCountdown</span> <span class="p">{</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">_timeout</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="n">_timeout</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span>
+    
+    <span class="c1">// GCD定时器
+</span>    <span class="n">dispatch_queue_t</span> <span class="n">queue</span> <span class="o">=</span> <span class="n">dispatch_get_global_queue</span><span class="p">(</span><span class="n">DISPATCH_QUEUE_PRIORITY_DEFAULT</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    
+    <span class="n">dispatch_source_t</span> <span class="n">_timer</span> <span class="o">=</span> <span class="n">dispatch_source_create</span><span class="p">(</span><span class="n">DISPATCH_SOURCE_TYPE_TIMER</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">queue</span><span class="p">);</span>
+    
+    <span class="n">dispatch_source_set_timer</span><span class="p">(</span><span class="n">_timer</span><span class="p">,</span> <span class="n">dispatch_walltime</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span> <span class="o">*</span> <span class="n">NSEC_PER_SEC</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">//每秒执行
+</span>    
+    <span class="n">dispatch_source_set_event_handler</span><span class="p">(</span><span class="n">_timer</span><span class="p">,</span> <span class="o">^</span><span class="p">{</span>
+        
+        <span class="k">if</span><span class="p">(</span><span class="n">_timeout</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="p">){</span><span class="c1">// 倒计时结束
+</span>            
+            <span class="c1">// 关闭定时器
+</span>            <span class="n">dispatch_source_cancel</span><span class="p">(</span><span class="n">_timer</span><span class="p">);</span>
+            
+            <span class="n">dispatch_async</span><span class="p">(</span><span class="n">dispatch_get_main_queue</span><span class="p">(),</span> <span class="o">^</span><span class="p">{</span>
+                
+                <span class="c1">//设置界面的按钮显示 根据自己需求设置
+</span>                <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">sendMsgBtn</span> <span class="nf">setTitle</span><span class="p">:</span><span class="s">@"发送"</span> <span class="nf">forState</span><span class="p">:</span><span class="n">UIControlStateNormal</span><span class="p">];</span>
+                
+                <span class="n">self</span><span class="p">.</span><span class="n">sendMsgBtn</span><span class="p">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="nb">YES</span><span class="p">;</span>
+                
+            <span class="p">});</span>
+            
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="c1">// 倒计时中
+</span>            
+            <span class="c1">// 显示倒计时结果
+</span>            
+            <span class="n">NSString</span> <span class="o">*</span><span class="n">strTime</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSString</span> <span class="nf">stringWithFormat</span><span class="p">:</span><span class="s">@"重发(%.2d)"</span><span class="p">,</span> <span class="n">_timeout</span><span class="p">];</span>
+            
+            <span class="n">dispatch_async</span><span class="p">(</span><span class="n">dispatch_get_main_queue</span><span class="p">(),</span> <span class="o">^</span><span class="p">{</span>
+                
+                <span class="c1">//设置界面的按钮显示 根据自己需求设置
+</span>                
+                <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">sendMsgBtn</span> <span class="nf">setTitle</span><span class="p">:[</span><span class="n">NSString</span> <span class="nf">stringWithFormat</span><span class="p">:</span><span class="s">@"%@"</span><span class="p">,</span><span class="n">strTime</span><span class="p">]</span> <span class="nf">forState</span><span class="p">:</span><span class="n">UIControlStateNormal</span><span class="p">];</span>
+                
+                <span class="n">self</span><span class="p">.</span><span class="n">sendMsgBtn</span><span class="p">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="nb">NO</span><span class="p">;</span>
+                
+            <span class="p">});</span>
+            
+            <span class="n">_timeout</span><span class="o">--</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+    
+    <span class="c1">// 开启定时器
+</span>    <span class="n">dispatch_resume</span><span class="p">(</span><span class="n">_timer</span><span class="p">);</span>
+    
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>在上面代码中，我们设置了一个60s循环倒计时，当我们向服务器获取短信验证码成功时 调用该方法开始倒计时。每秒刷新按钮的倒计时数，倒计时结束时再将按钮 <code class="highlighter-rouge">Title</code> 恢复为“发送”.</p>
+
+<p>有一点需要注意的是，按钮的样式要设置为 <strong>UIButtonTypeCustom</strong>,否则会出现刷新 <code class="highlighter-rouge">Title</code> 时闪烁.</p>
+
+<p>我们可以把这个方法封装一下，方便调用，否则在控制器中写这么一大段代码确实也不优雅。</p>
+
+<p>效果如下：</p>
+
+<p><img src="http://ww3.sinaimg.cn/large/006tNc79jw1faspxkoemhj30ci0m8mxy.jpg" alt="" /></p>
+
+<p><a href="https://github.com/qiubaiying/BYTimer">代码的gitHub链接</a></p>
+
+<h3 id="每个几分钟向服务器发送数据">每个几分钟向服务器发送数据</h3>
+
+<p>在有定位服务的APP中，我们需要每个一段时间将定位数据发送到服务器，比如每5s定位一次每隔5分钟将再统一将数据发送服务器，这样会处理比较省电。
+一般程序进入后台时，定时器会停止，但是在定位APP中，需要持续进行定位，APP在后台时依旧可以运行，所以在后台定时器也是可以运行的。</p>
+
+<p>注：关于iOS后台常驻,可以查看<a href="http://waitingyuan.blog.163.com/blog/static/2155781652014111133150534/">这篇博客</a></p>
+
+<p>在使用GCD定时的时候发现GCD定时器也可以在后代运行，创建方法同上面的短信倒计时.</p>
+
+<p>这里我们使用<strong>NSTimer</strong>来创建一个每个5分钟执行一次的定时器.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">#import &lt;Foundation/Foundation.h&gt;
+</span>
+<span class="k">typedef</span> <span class="kt">void</span><span class="p">(</span><span class="o">^</span><span class="n">TimerBlock</span><span class="p">)();</span>
+
+<span class="k">@interface</span> <span class="nc">BYTimer</span> <span class="p">:</span> <span class="nc">NSObject</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">startTimerWithBlock</span><span class="p">:(</span><span class="n">TimerBlock</span><span class="p">)</span><span class="nv">timerBlock</span><span class="p">;</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">stopTimer</span><span class="p">;</span>
+
+<span class="k">@end</span>
+
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">#import "BYTimer.h"
+</span>
+<span class="k">@interface</span> <span class="nc">BYTimer</span> <span class="p">()</span>
+
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSTimer</span> <span class="o">*</span><span class="n">timer</span><span class="p">;</span>
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">TimerBlock</span> <span class="n">timerBlock</span><span class="p">;</span>
+
+<span class="k">@end</span>
+
+<span class="k">@implementation</span> <span class="nc">BYTimer</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">startTimerWithBlock</span><span class="p">:(</span><span class="n">TimerBlock</span><span class="p">)</span><span class="nv">timerBlock</span> <span class="p">{</span>
+
+	 <span class="n">self</span><span class="p">.</span><span class="n">timer</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSTimer</span> <span class="nf">timerWithTimeInterval</span><span class="p">:</span><span class="mi">300</span> <span class="nf">target</span><span class="p">:</span><span class="n">self</span> <span class="n">selector</span><span class="o">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">_timerAction</span><span class="p">)</span> <span class="n">userInfo</span><span class="o">:</span><span class="nb">nil</span> <span class="n">repeats</span><span class="o">:</span><span class="nb">YES</span><span class="p">];</span>
+	 
+    <span class="p">[[</span><span class="n">NSRunLoop</span> <span class="nf">mainRunLoop</span><span class="p">]</span> <span class="nf">addTimer</span><span class="p">:</span><span class="n">self</span><span class="p">.</span><span class="n">timer</span> <span class="nf">forMode</span><span class="p">:</span><span class="n">NSRunLoopCommonModes</span><span class="p">];</span>
+    <span class="n">_timerBlock</span> <span class="o">=</span> <span class="n">timerBlock</span><span class="p">;</span>
+    
+<span class="p">}</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">_timerAction</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">timerBlock</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">timerBlock</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">stopTimer</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">timer</span> <span class="nf">invalidate</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+
+</code></pre>
+</div>
+
+<p>该接口的实现很简单，就是<strong>NSTimer</strong>创建了一个300s执行一次的定时器，但是要注意定时器需要加入<code class="highlighter-rouge">NSRunLoopCommonModes</code>中。</p>
+
+<p>最后，要使定时器在后台能运行，app就需要在<a href="http://waitingyuan.blog.163.com/blog/static/2155781652014111133150534/">后台常驻</a>。</p>
+
+
+
+                <hr style="visibility: hidden;">
+
+                
+                <!-- 多说 Share start -->
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="/2016/12/13/定时器你真的会使用吗？"
+                    data-title="定时器 你真的会使用吗？"
+                    data-url="http://localhost:4000/2016/12/13/%E5%AE%9A%E6%97%B6%E5%99%A8%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E4%BD%BF%E7%94%A8%E5%90%97/"
+                    data-images="http://localhost:4000/img/post-bg-ios9-web.jpg"
+                    data-content="
+  定时器的使用是软件开发基础技能，用于延时执行或重复执行某些方法。我相信大部分人接触iOS的定时器都是从
+[NSTimer scheduledTime... | 柏荧的博客 | BY Blog " >
+                    <div class="ds-share-inline">
+                      <style> 
+                        .ds-share-icons-16 {display:none;} 
+                      </style>
+                      <ul class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/02/04/Hello-2017/" data-toggle="tooltip" data-placement="top" title="Hello 2017">
+                        Next<br>
+                        <span>Hello 2017</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="/2016/12/13/定时器你真的会使用吗？"
+                        data-title="定时器 你真的会使用吗？"
+                        data-url="http://localhost:4000/2016/12/13/%E5%AE%9A%E6%97%B6%E5%99%A8%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E4%BD%BF%E7%94%A8%E5%90%97/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="http://www.jianshu.com/u/e71990ada2fd">简书·BY</a></li>
+                    
+                        <li><a href="https://apple.com">Apple</a></li>
+                    
+                        <li><a href="https://developer.apple.com/">Apple Developer</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'qiubaiying';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/qiubaiying">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/qiubaiying">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/baiying.qiu.7">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/qiubaiying">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; BY Blog 2017
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+<!-- Service Worker -->
+
+<script type="text/javascript">
+    if(navigator.serviceWorker){
+        // For security reasons, a service worker can only control the pages that are in the same directory level or below it. That's why we put sw.js at ROOT level.
+        navigator.serviceWorker
+            .register('/sw.js')
+            .then((registration) => {console.log('Service Worker Registered. ', registration)})
+            .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
+    }
+</script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async('/js/jquery.tagcloud.js',function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-90855596-1';
+    var _gaDomain = 'auto';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'b50bf2b12b5338a1845e33832976fd68';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

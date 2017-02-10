@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="每个胜利背后都有许多尝试">
+    <meta name="keywords"  content="BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone">
+    <meta name="theme-color" content="#000000">
+    
+    <title>About - 柏荧的博客 | BY Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/about/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BY Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg-o.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>About</h1>
+                    <!--<hr class="small">-->
+                    <span class="subheading">Hey, this is BY Qiu.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+        
+
+<!-- USE SIDEBAR -->
+    <!-- PostList Container -->
+    		<div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                postlist-container
+            ">
+    			<!-- Language Selector -->
+<select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+    <option value="0" selected> 中文 Chinese </option>
+    <option value="1"> 英文 English </option>
+</select>
+
+<!-- Chinese Version -->
+<div class="zh post-container">
+
+    <!--copied from markdown -->
+    <blockquote><p>冰冻三尺 非一日之寒，<br>
+    积土成山 非斯须之作</p></blockquote>
+
+    <p>Hey，我是<strong>邱柏荧(BY)</strong>，一只iOS程序猿，现在就职于厦门多一点智能物流信息有限公司。</p>
+
+    <p>这是我的利用 <a href="https://pages.github.com/">GitHub Pages</a> 与 <a href="http://jekyll.com.cn/">Jekyll</a> 搭建的 个人博客。我在GitHub主页<a href="https://github.com/qiubaiying">👉GitHub·BY</a> 与 简书主页<a href="https://http://www.jianshu.com/u/e71990ada2fd">👉BY</a>。</p>
+
+    <p>工作、学习之余，我特别喜欢运动，跑步、健身和自由搏击都是我特别喜欢的运动。</p>
+    
+    <h5>Talks</h5>
+
+    <ul>
+    <li><a href="https://github.com">GitHub</a></li>
+    <li><a href="http://jekyll.com.cn/">jekyll</a></li>
+    <li><a href="https://pages.github.com/">GitHub Pages</a></li>
+    <li><a href="https://qiubaiying.github.io">BY</a></li>    </ul>
+</div>
+
+<!-- English Version -->
+<div class="en post-container">
+    <blockquote><p>Yet another iOS Developer. <br>
+    Yet another Life-long Student.</p></blockquote>
+
+    <p>Hi, I am <strong>Baiying Qiu(邱柏荧)</strong>，you can call me <strong>BY</strong>. I'm an iOS Developer.I now working in Xiamen Supermo Intelligent Logistics Technology Co., Ltd.</p>
+
+    <p>This is my personal blog, through making Github Pages and Jekyll.My GitHub  👉 <a href="http://github.com/qiubaiying">Github·BY</a>.</p>
+    
+    <p>I am a sports enthusiast, I like fitness, running and tae kwon do, sports is my full of vitality.</p>
+
+    <h5>Talks</h5>
+
+    <ul>
+    <li><a href="https://github.com">GitHub</a></li>
+    <li><a href="http://jekyll.com.cn/">jekyll</a></li>
+    <li><a href="https://pages.github.com/">GitHub Pages</a></li>
+    <li><a href="https://qiubaiying.github.io">BY</a></li>
+    </ul>
+</div>
+
+<!-- Handle Language Change -->
+<script type="text/javascript">
+    // get nodes
+    var $zh = document.querySelector(".zh");
+    var $en = document.querySelector(".en");
+    var $select = document.querySelector("select");
+
+    // bind hashchange event
+    window.addEventListener('hashchange', _render);
+
+    // handle render
+    function _render(){
+        var _hash = window.location.hash;
+        // en
+        if(_hash == "#en"){
+            $select.selectedIndex = 1;
+            $en.style.display = "block";
+            $zh.style.display = "none";
+        // zh by default
+        }else{
+            // not trigger onChange, otherwise cause a loop call.
+            $select.selectedIndex = 0;
+            $zh.style.display = "block";
+            $en.style.display = "none";
+        }
+    }
+
+    // handle select change
+    function onLanChange(index){
+        if(index == 0){
+            window.location.hash = "#zh"
+        }else{
+            window.location.hash = "#en"
+        }
+    }
+
+    // init
+    _render();
+</script>
+
+
+
+
+<!-- 多说评论框 start -->
+<div class="comment">
+    <!-- This id is used for indexing my loss comments forcedly -->
+    <div class="ds-thread"
+    
+        data-thread-id="0ee040117ec56f17aa7e2523d1eae19b"
+    
+
+    data-title="About"
+    data-url="http://localhost:4000/about/"></div>
+</div>
+<!-- 多说评论框 end -->
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User hacking by Hux
+    var _user = 'qiubaiying';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+    		</div>
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Short About -->
+                <section class="visible-md visible-lg">
+                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
+                    <div class="short-about">
+                        
+                            <img src="img/avatar-by.JPG" />
+                        
+                        
+                            <p>It takes a great man <br> to be a good instener</p>
+                        
+                        <!-- SNS Link -->
+                        <ul class="list-inline">
+                            
+                            
+                            
+                            <li>
+                                <a target="_blank" href="https://www.zhihu.com/people/qiubaiying">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa  fa-stack-1x fa-inverse">知</i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+                            
+                            <li>
+                                <a target="_blank" href="http://weibo.com/qiubaiying">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+                            
+                            <li>
+                                <a target="_blank" href="https://www.facebook.com/baiying.qiu.7">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+                            
+                            <li>
+                                <a target="_blank" href="https://github.com/qiubaiying">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+                </section>
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="http://www.jianshu.com/u/e71990ada2fd">简书·BY</a></li>
+                    
+                        <li><a href="https://apple.com">Apple</a></li>
+                    
+                        <li><a href="https://developer.apple.com/">Apple Developer</a></li>
+                    
+                </ul>
+                
+    		</div>
+        
+	</div>
+</div>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/qiubaiying">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/qiubaiying">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/baiying.qiu.7">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/qiubaiying">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; BY Blog 2017
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+<!-- Service Worker -->
+
+<script type="text/javascript">
+    if(navigator.serviceWorker){
+        // For security reasons, a service worker can only control the pages that are in the same directory level or below it. That's why we put sw.js at ROOT level.
+        navigator.serviceWorker
+            .register('/sw.js')
+            .then((registration) => {console.log('Service Worker Registered. ', registration)})
+            .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
+    }
+</script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async('/js/jquery.tagcloud.js',function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-90855596-1';
+    var _gaDomain = 'auto';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'b50bf2b12b5338a1845e33832976fd68';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

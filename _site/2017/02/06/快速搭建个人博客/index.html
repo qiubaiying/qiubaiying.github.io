@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="每个胜利背后都有许多尝试">
+    <meta name="keywords"  content="BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone">
+    <meta name="theme-color" content="#000000">
+    
+    <title>快速搭建个人博客 - 柏荧的博客 | BY Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/2017/02/06/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BY Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/post-bg-re-vs-ng2.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/post-bg-re-vs-ng2.jpg')
+    }
+
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#Blog" title="Blog">Blog</a>
+                        
+                    </div>
+                    <h1>快速搭建个人博客</h1>
+                    
+                    
+                    <h2 class="subheading">手把手教你在半小时内搭建自己的个人博客(如果不踩坑的话🙈🙊🙉)</h2>
+                    
+                    <span class="meta">Posted by BY on February 6, 2017</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<blockquote>
+  <p>正所谓前人栽树，后人乘凉。</p>
+
+  <p>感谢<a href="https://github.com/huxpro">Huxpro</a>提供的博客模板</p>
+
+  <p><a href="http://qiubaiying.top">我的的博客</a></p>
+</blockquote>
+
+<h1 id="前言">前言</h1>
+<p>从 Jekyll 到 GitHub Pages 中间踩了许多坑，终于把我的个人博客<a href="http://qiubaiying.top">BY Blog</a>搭建出来了。。。</p>
+
+<p>废话不多说了，开始进入正文。</p>
+
+<h1 id="快速开始">快速开始</h1>
+
+<h3 id="从注册一个github账号开始">从注册一个Github账号开始</h3>
+
+<p>我采用的搭建博客的方式是使用 <a href="https://pages.github.com/">GitHub Pages</a> + <a href="http://jekyll.com.cn/">jekyll</a> 的方式。</p>
+
+<p>要使用 GitHub Pages，首先你要注册一个<a href="https://github.com/">Github</a>账号</p>
+
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fch0a9kz7aj31kw0z7npd.jpg" alt="" /></p>
+
+<h3 id="拉取我的博客模板">拉取我的博客模板</h3>
+
+<p>注册完成后搜索 <code class="highlighter-rouge">qiubaiying.github.io</code> 进入<a href="https://github.com/qiubaiying/qiubaiying.github.io">我的仓库</a></p>
+
+<p><img src="https://ww3.sinaimg.cn/large/006tNbRwgy1fcgqjugzkpj30yy0p1mzc.jpg" alt="" /></p>
+
+<p>点击右上角的 <strong>Fork</strong> 将我的仓库拉倒你的账号下</p>
+
+<p>稍等一下，点击刷新，你会看到<strong>Fork</strong>了成功的页面</p>
+
+<p><img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fch1i297pjj31kw0z7thk.jpg" alt="" /></p>
+
+<h3 id="修改仓库名">修改仓库名</h3>
+
+<p>点击<strong>settings</strong>进入设置</p>
+
+<p><img src="https://ww3.sinaimg.cn/large/006tNbRwgy1fcgqms2auij30yy0p1tau.jpg" alt="" /></p>
+
+<p id="Rename"></p>
+<p>修改仓库名为 <code class="highlighter-rouge">你的Github账号名.github.io</code>，然后 Rename</p>
+
+<p><img src="https://ww4.sinaimg.cn/large/006tNbRwgy1fcgqfwtk1rj30yy0p1wg6.jpg" alt="" /></p>
+
+<p>这时你在在浏览器中输入 <code class="highlighter-rouge">你的Github账号名.github.io</code> 例如:<code class="highlighter-rouge">baiyingqiu.github.io</code></p>
+
+<p>你将会看到如下界面</p>
+
+<p><img src="https://ww2.sinaimg.cn/large/006tNbRwgy1fcgquoqasqj30we0n8q4n.jpg" alt="" /></p>
+
+<p>说明已经成功一半了😀。。。当然，还需要修改博客的配置才能变成你的博客。</p>
+
+<p>若是出现</p>
+
+<p><img src="https://ww3.sinaimg.cn/large/006tNbRwgy1fcgqz6dyxmj30we0n83yy.jpg" alt="" /></p>
+
+<p>则需要 <a href="#Rename">检查一下你的仓库名是否正确</a></p>
+
+<h3 id="整个网站结构">整个网站结构</h3>
+
+<p>修改Blog前我们来看看Jekyll 网站的基础结构，当然我们的网站比这个复杂。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>├── _config.yml
+├── _drafts
+|   ├── begin-with-the-crazy-ideas.textile
+|   └── on-simplicity-in-technology.markdown
+├── _includes
+|   ├── footer.html
+|   └── header.html
+├── _layouts
+|   ├── default.html
+|   └── post.html
+├── _posts
+|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile
+|   └── 2009-04-26-barcamp-boston-4-roundup.textile
+├── _data
+|   └── members.yml
+├── _site
+├── img
+└── index.html
+</code></pre>
+</div>
+
+<p>很复杂看不懂是不是，不要紧，你只要记住其中几个OK了</p>
+
+<ul>
+  <li><code class="highlighter-rouge">_config.yml</code> 全局配置文件</li>
+  <li><code class="highlighter-rouge">_posts</code>	放置博客文章的文件夹</li>
+  <li><code class="highlighter-rouge">img</code>	存放图片的文件夹</li>
+</ul>
+
+<p>其他的想继续深究可以<a href="http://jekyll.com.cn/docs/structure/">看这里</a></p>
+
+<h3 id="修改博客配置">修改博客配置</h3>
+
+<p>来到你的仓库，找到<code class="highlighter-rouge">_config.yml</code>文件,这是网站的全局配置文件。</p>
+
+<p><img src="https://ww1.sinaimg.cn/large/006tNbRwgy1fcgrcxz8nqj30v90ulwh7.jpg" alt="" /></p>
+
+<p>点击修改</p>
+
+<p><img src="https://ww3.sinaimg.cn/large/006tNbRwgy1fcgrjzc232j30uz0nijt6.jpg" alt="" /></p>
+
+<p>然后编辑<code class="highlighter-rouge">_config.yml</code>的内容</p>
+
+<p><img src="https://ww2.sinaimg.cn/large/006tNbRwgy1fcgrnp4ihqj30uy0okwg9.jpg" alt="" /></p>
+
+<p>接下来我们来详细说说以下配置文件的内容：</p>
+
+<h4 id="基础设置">基础设置</h4>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># Site settings
+title: You Blog    				  	#你博客的标题
+SEOTitle: 你的博客 | You Blog    	 #显示在浏览器上搜索的时候显示的标题
+header-img: img/post-bg-rwd.jpg  	#显示在首页的背景图片
+email: You@gmail.com	
+description: "You Blog"  			 #网站介绍
+keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone" #关键词
+url: "https://qiubaiying.github.io"          # 这个就是填写你的博客地址
+baseurl: ""      # 这个我们不用填写
+
+</code></pre>
+</div>
+<h4 id="侧边栏">侧边栏</h4>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># Sidebar settings
+sidebar: true                           # 是否开启侧边栏.
+sidebar-about-description: "说点装逼的话。。。"
+sidebar-avatar: img/avatar-by.JPG      # 你的个人头像 这里你可以改成我在img文件夹中的两张备用照片 img/avatar-m 或 avatar-g
+</code></pre>
+</div>
+
+<h4 id="社交账号">社交账号</h4>
+<p>若想链接其他社交平台</p>
+
+<p><img src="https://ww3.sinaimg.cn/large/006tNbRwgy1fcgsm4plpdj307i03nt8i.jpg" alt="" /></p>
+
+<p>在下面你的社交账号的用户名就可以了，若没有可不用填</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># SNS settings
+RSS: false
+weibo_username:     qiubaiying
+zhihu_username:     qiubaiying
+github_username:    qiubaiying
+facebook_username:  baiying.qiu.7
+</code></pre>
+</div>
+
+<h4 id="评论">评论</h4>
+
+<p>集成了多说社会化评论，到多说注册账号，然后将<code class="highlighter-rouge">duoshuo_username</code>换成你的账号即可。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># Duoshuo settings
+duoshuo_username: YouName   # 换成你的多说账号
+# Share component is depend on Comment so we can NOT use share only.
+duoshuo_share: true                     # set to false if you want to use Comment without Sharing
+</code></pre>
+</div>
+
+<h4 id="网站统计">网站统计</h4>
+
+<p>集成了 <a href="http://tongji.baidu.com/web/welcome/login">Baidu Analytics</a> 和 <a href="http://www.google.cn/analytics/">Google Analytics</a>，到各个网站注册拿到track_id替换下面的就可以了</p>
+
+<p>这是我的 Google Analytics</p>
+
+<p><img src="https://ww1.sinaimg.cn/large/006tNc79gy1fcgtqc5wf0j310i0nbt9j.jpg" alt="" /></p>
+
+<p><strong>不要使用我的track_id</strong>😂。。。</p>
+
+<p>若不想启用统计，直接删除或注释掉就可以了</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># Analytics settings
+# Baidu Analytics
+ba_track_id: 83e259f69b37d02a4633a2b7d960139c
+
+# Google Analytics
+ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
+ga_domain: auto
+</code></pre>
+</div>
+
+<h4 id="好友">好友</h4>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>friends: [
+    {
+        title: "简书·BY",
+        href: "http://www.jianshu.com/u/e71990ada2fd"
+    },{
+        title: "Apple",
+        href: "https://apple.com"
+    },{
+        title: "Apple Developer",
+        href: "https://developer.apple.com/"
+    }
+]
+</code></pre>
+</div>
+
+<h4 id="保存">保存</h4>
+<p>讲网页拉倒底部，点击 <code class="highlighter-rouge">Commit changes</code> 提交保存</p>
+
+<p><img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fch1mpktilj31kw0z7n34.jpg" alt="" /></p>
+
+<p>再次进入你的主页，</p>
+
+<p><img src="https://ww2.sinaimg.cn/large/006tNc79gy1fcgtqheu38j30uy0kc3zs.jpg" alt="" /></p>
+
+<p>恭喜你，你的个人博客搭建完成了😀。</p>
+
+<h1 id="写文章">写文章</h1>
+
+<p>利用 Github网站 ，我们可以不用学习<a href="https://git-scm.com/">git</a>，就可以轻松管理自己的博客</p>
+
+<p>对于轻车熟路的程序猿来说，使用git管理会更加方便。。。</p>
+
+<h2 id="创建">创建</h2>
+<p>文章统一放在网站根目录下的 <code class="highlighter-rouge">_posts</code> 的文件夹中。</p>
+
+<p><img src="https://ww3.sinaimg.cn/large/006tNc79gy1fchoc1tz03j30vi0k978h.jpg" alt="" /></p>
+
+<p>创建一个文件</p>
+
+<p><img src="https://ww2.sinaimg.cn/large/006tNc79gy1fchoduzebyj30vn0eg0v7.jpg" alt="" /></p>
+
+<p>在下面写文章，和标题，还能实时预览，最后提交保存就能看到自己的新文章了。</p>
+
+<p><img src="https://ww2.sinaimg.cn/large/006y8lVagy1fcgweml8hjj30vd0m775r.jpg" alt="" /></p>
+
+<h2 id="格式">格式</h2>
+<p>每一篇文章文件命名采用的是<code class="highlighter-rouge">2017-02-04-Hello-2017.md</code>时间+标题的形式，空格用<code class="highlighter-rouge">-</code>替换连接。</p>
+
+<p>文件的格式是 <code class="highlighter-rouge">.md</code> 的 <a href="http://sspai.com/25137/"><strong>MarkDown</strong></a> 文件。</p>
+
+<p>我们的博客文章格式采用是 <strong>MarkDown</strong>+ <strong>YAML</strong> 的方式。</p>
+
+<p><a href="http://www.ruanyifeng.com/blog/2016/07/yaml.html?f=tt"><strong>YAML</strong></a> 就是我们配置 <code class="highlighter-rouge">_config</code>文件用的语言。</p>
+
+<p><a href="http://sspai.com/25137/"><strong>MarkDown</strong></a> 是一种轻量级的「标记语言」，很简单。<a href="http://sspai.com/25137">花半个小时看一下</a>就能熟练使用了</p>
+
+<p>大概就是这么一个结构。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>---
+layout:     post   				    # 使用的布局（不需要改）
+title:      My First Post 				# 标题 
+subtitle:   Hello World, Hello Blog #副标题
+date:       2017-02-06 				# 时间
+author:     BY 						# 作者
+header-img: img/post-bg-2015.jpg 	#这篇文章标题背景图片
+catalog: true 						# 是否归档
+tags:								#标签
+    - 生活
+---
+
+## Hey
+&gt;这是我的第一篇博客。
+
+进入你的博客主页，新的文章将会出现在你的主页上.
+</code></pre>
+</div>
+
+<p>按格式创建文章后，提交保存。进入你的博客主页，新的文章将会出现在你的主页上.</p>
+
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fch26elve4j31kw13qhdt.jpg" alt="" /></p>
+
+<p>到这里，恭喜你！</p>
+
+<p>你已经成功搭建了自己的个人博客以及学会在博客上撰写文字的技能了（是不是有点小兴奋🙈）。</p>
+
+<h1 id="自定义域名">自定义域名</h1>
+
+<p>搭建好博客之后 你可能不想直接使用 <a href="http://baiyingqiu.github.io">baiyingqiu.github.io</a> 这么长的博客域名吧, 想换成想 <a href="http://qiubaiying.top">qiubaiying.top</a> 这样简短的域名。那我们开始吧！</p>
+
+<h2 id="购买域名">购买域名</h2>
+<p>首先，你必须购买一个自己的域名。</p>
+
+<p>我是在<a href="https://wanwang.aliyun.com/domain/?spm=5176.8006371.1007.dnetcndomain.q1ys4x">阿里云</a>购买的域名</p>
+
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fci89zv06yj31kw11p1kx.jpg" alt="" /></p>
+
+<p>用<strong>阿里云</strong> app也可以注册域名，域名的价格根据后缀的不同和域名的长度而分，比如我这个 <code class="highlighter-rouge">qiubaiying.top</code> 的域名第一年才只要4元~</p>
+
+<p>域名尽量选择短一点比较好记住，注意，不能选择中文域名，比如 <code class="highlighter-rouge">张三.top</code> ,GitHub Pages <strong>无法处理中文域名</strong>，会导致你的域名在你的主页上使用。</p>
+
+<p>注册的步骤就不在介绍了</p>
+
+<h2 id="解析域名">解析域名</h2>
+
+<p>注册好域名后，需要将域名解析到你的博客上</p>
+
+<p>管理控制台 → 域名与网站（万网） → 域名</p>
+
+<p><img src="https://ww1.sinaimg.cn/large/006tKfTcgy1fci8phk5z9j30nk0q0goy.jpg" alt="" /></p>
+
+<p>选择你注册好的域名，点击解析</p>
+
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fci8sg27bfj31kw0s0qdt.jpg" alt="" /></p>
+
+<p>添加解析</p>
+
+<p>分别添加两个<code class="highlighter-rouge">A</code> 记录类型,</p>
+
+<p>一个主机记录为 <code class="highlighter-rouge">www</code>,代表可以解析 <code class="highlighter-rouge">www.qiubaiying.top</code>的域名</p>
+
+<p>另一个为 <code class="highlighter-rouge">@</code>, 代表 <code class="highlighter-rouge">qiubaiying.top</code></p>
+
+<p>记录值就是我们博客的IP地址，是 GitHub Pagas 在美国的服务器的地址 <code class="highlighter-rouge">151.101.100.133</code></p>
+
+<p><img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fci8x9412oj31kw0o4n5o.jpg" alt="" /></p>
+
+<p>可以通过 <a href="http://ip.chinaz.com/">这个网站</a>  或者直接在终端输入<code class="highlighter-rouge">ping 你的地址</code>，查看博客的IP</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ping qiubaiying.github.io
+</code></pre>
+</div>
+
+<p>细心地你会发现所有人的博客都解析到 <code class="highlighter-rouge">151.101.100.133</code> 这个IP。</p>
+
+<p>然后 GitHub Pages 再通过 CNAME记录 跳转到你的主页上。</p>
+
+<h2 id="修改cname">修改CNAME</h2>
+
+<p>最后一步，只需要修改 我们github仓库下的 <strong>CNAME</strong> 文件。</p>
+
+<p>选择 <strong>CNAME</strong> 文件</p>
+
+<p><img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fci9q9ne6qj31kw0uuajm.jpg" alt="" /></p>
+
+<p>使用的注册的域名进行替换,然后提交保存</p>
+
+<p><img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fci9rzk0naj316s0n841s.jpg" alt="" /></p>
+
+<p>这时，输入你自己的域名，就可以解析到你的主页了。</p>
+
+<p>大功告成！</p>
+
+<h1 id="进阶">进阶</h1>
+
+<p>若你对博客模板进行修改，你就要看看 Jekyll 的<a href="http://jekyll.com.cn">开发文档</a>,是中文文档哦，对英语不好的朋友简直是福利啊（比如说我😀）。</p>
+
+<p>还要学习 <strong>Git</strong> 和 <strong>GitHub</strong> 的工作机制了及使用。</p>
+
+<p>你可以先看看这个<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/">git教程</a>，对git有个初步的了解后，那么相信你就能将自己图片传到GitHub仓库上，或者可以说掌握了 <strong>使用git管理自己的GitHub仓库</strong> 的技能呢。</p>
+
+<p>相信很很多人看蒙了呢，这部分教程后面再补上。那就先这样吧。</p>
+
+<p>对于轻车熟路的程序猿来说，呵~</p>
+
+
+                <hr style="visibility: hidden;">
+
+                
+                <!-- 多说 Share start -->
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="/2017/02/06/快速搭建个人博客"
+                    data-title="快速搭建个人博客"
+                    data-url="http://localhost:4000/2017/02/06/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"
+                    data-images="http://localhost:4000/img/post-bg-re-vs-ng2.jpg"
+                    data-content="
+  正所谓前人栽树，后人乘凉。
+
+  感谢Huxpro提供的博客模板
+
+  我的的博客
+
+
+前言
+从 Jekyll 到 GitHub Pages 中间踩... | 柏荧的博客 | BY Blog " >
+                    <div class="ds-share-inline">
+                      <style> 
+                        .ds-share-icons-16 {display:none;} 
+                      </style>
+                      <ul class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/02/04/Hello-2017/" data-toggle="tooltip" data-placement="top" title="Hello 2017">
+                        Previous<br>
+                        <span>Hello 2017</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/02/06/Mac%E5%BF%AB%E9%80%9F%E8%B0%83%E5%87%BA%E7%BB%88%E7%AB%AF/" data-toggle="tooltip" data-placement="top" title="Mac 快速调出终端">
+                        Next<br>
+                        <span>Mac 快速调出终端</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="/2017/02/06/快速搭建个人博客"
+                        data-title="快速搭建个人博客"
+                        data-url="http://localhost:4000/2017/02/06/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="http://www.jianshu.com/u/e71990ada2fd">简书·BY</a></li>
+                    
+                        <li><a href="https://apple.com">Apple</a></li>
+                    
+                        <li><a href="https://developer.apple.com/">Apple Developer</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'qiubaiying';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/qiubaiying">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/qiubaiying">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/baiying.qiu.7">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/qiubaiying">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; BY Blog 2017
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+<!-- Service Worker -->
+
+<script type="text/javascript">
+    if(navigator.serviceWorker){
+        // For security reasons, a service worker can only control the pages that are in the same directory level or below it. That's why we put sw.js at ROOT level.
+        navigator.serviceWorker
+            .register('/sw.js')
+            .then((registration) => {console.log('Service Worker Registered. ', registration)})
+            .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
+    }
+</script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async('/js/jquery.tagcloud.js',function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-90855596-1';
+    var _gaDomain = 'auto';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'b50bf2b12b5338a1845e33832976fd68';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
