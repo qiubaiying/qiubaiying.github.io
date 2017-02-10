@@ -3,7 +3,7 @@
 这个README我直接拿[Hux](https://github.com/Huxpro/huxpro.github.io)的来修改了。😅
 ### [我的博客在这里 &rarr;](http://qiubaiying.github.io)
 
-![](https://qiubaiying.github.io/img/readme-home.png)
+![](https://raw.githubusercontent.com/qiubaiying/qiubaiying.github.io/master/img/readme-home.png)
 
 
 ## 使用
@@ -78,7 +78,7 @@ tags:
 #### 侧边栏
 
 看右边:
-![](http://qiubaiying.top/img/readme-side.png)
+![](https://raw.githubusercontent.com/qiubaiying/qiubaiying.github.io/master/img/readme-side.png)
 
 设置是在 `_config.yml`文件里面的`Sidebar settings`那块。
 
