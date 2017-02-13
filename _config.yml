@@ -17,7 +17,7 @@ sidebar-avatar: img/blog_auther_img.jpeg      # use absolute URL, seeing it's us
 
 
 # SNS settings
-RSS: true
+RSS: false
 #weibo_username:
 #zhihu_username:
 github_username:    Nicozheng
@@ -50,7 +50,7 @@ gems: [jekyll-paginate]
 # document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
+input: GFM                            # use Github Flavored Markdown !important
 
 
 
@@ -58,7 +58,7 @@ kramdown:
 #disqus_username: _your_disqus_short_name_
 
 # Duoshuo settings
-duoshuo_username: 48576015
+duoshuo_username: Nico
 # Share component is depend on Comment so we can NOT use share only.
 duoshuo_share: true                     # set to false if you want to use Comment without Sharing
 
