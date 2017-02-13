@@ -12,6 +12,16 @@
 
     {% include footer.html %}
 
+    function addBlankTargetForLinks () {
+  $('a[href^="http"]').each(function(){
+      $(this).attr('target', '_blank');
+  });
+}
+
+$(document).bind('DOMNodeInserted', function(event) {
+  addBlankTargetForLinks();
+});
+
 
 <!-- Image to hack wechat -->
 <img src="/img/icon_wechat.png" width="0" height="0" />
