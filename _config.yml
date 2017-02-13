@@ -1,29 +1,29 @@
 # Site settings
-title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
-header-img: img/post-bg-rwd.jpg
-email: qiubaiying@gmail.com
+title: A Data Safari
+SEOTitle: by Nico
+header-img: img/blog_title_img.png
+email: nico921113@gmail.com
 description: "每个胜利背后都有许多尝试"
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "https://qiubaiying.github.io"          # your host, for absolute URL
+keyword: "Data Science, Data Minning, Graph Theory, Online Community"
+url: "https://nicozheng.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "It takes a great man <br> to be a good instener"
-sidebar-avatar: img/avatar-by.JPG      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "A Rational Idealist"
+sidebar-avatar: img/blog_auther_img.jpeg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
-RSS: false
-weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-#jianshu_username:   qiubaiying
-#twitter_username:   qiubaiying
+RSS: true
+#weibo_username:
+#zhihu_username:
+github_username:    Nicozheng
+#facebook_username:
+jianshu_username:   Nico_Zheng
+twitter_username:   nicozheng1
 
 
 
@@ -58,7 +58,7 @@ kramdown:
 #disqus_username: _your_disqus_short_name_
 
 # Duoshuo settings
-duoshuo_username: qiubaiying
+duoshuo_username: 48576015
 # Share component is depend on Comment so we can NOT use share only.
 duoshuo_share: true                     # set to false if you want to use Comment without Sharing
 
@@ -67,10 +67,10 @@ duoshuo_share: true                     # set to false if you want to use Commen
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: b50bf2b12b5338a1845e33832976fd68
+# ba_track_id: b50bf2b12b5338a1845e33832976fd68
 
 # Google Analytics
-ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
+ga_track_id: 'UA-91840336-1'            # Format: UA-xxxxxx-xx
 ga_domain: auto
 
 
@@ -90,15 +90,15 @@ service-worker: true
 
 
 # Friends
-friends: [
-    {
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
-    },{
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
-    }
-]
+# friends: [
+#     {
+#         title: "简书·BY",
+#         href: "http://www.jianshu.com/u/e71990ada2fd"
+#     },{
+#         title: "Apple",
+#         href: "https://apple.com"
+#     },{
+#         title: "Apple Developer",
+#         href: "https://developer.apple.com/"
+#     }
+# ]
