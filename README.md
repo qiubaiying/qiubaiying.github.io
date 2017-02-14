@@ -111,6 +111,19 @@ featured-condition-size: 1     # A tag will be featured if the size of it is mor
  
 内部有一个条件模板 `{% if tag[1].size > {{site.featured-condition-size}} %}` 是用来做筛选过滤的.
 
+#### Social-media Account
+
+在下面输入的社交账号，没有的不会显示在侧边框中（新加入了[简书](https:/www.jianshu.com)链接）
+
+	# SNS settings
+	RSS: false
+	weibo_username:     username
+	zhihu_username:     username
+	github_username:    username
+	facebook_username:  username
+	jianshu_username: 	jianshu_id
+
+![](https://ww3.sinaimg.cn/large/006tNbRwgy1fcgsm4plpdj307i03nt8i.jpg)
 
 #### Friends
 
