@@ -12,8 +12,13 @@ baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 <<<<<<< HEAD
+<<<<<<< HEAD
 sidebar-about-description: "今天的你与昨日有什么不同"
 sidebar-avatar: img/14850490.jpeg      # use absolute URL, seeing it's used in both `/` and `/about/`
+=======
+sidebar-about-description: "Goals determine what you going to be!"
+sidebar-avatar: img/avatar-by.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+>>>>>>> qiubaiying/master
 =======
 sidebar-about-description: "Goals determine what you going to be!"
 sidebar-avatar: img/avatar-by.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
@@ -24,6 +29,7 @@ sidebar-avatar: img/avatar-by.jpg      # use absolute URL, seeing it's used in b
 # SNS settings
 RSS: false
 <<<<<<< HEAD
+<<<<<<< HEAD
 #weibo_username:     
 #zhihu_username:     
 #github_username:    
@@ -31,6 +37,8 @@ RSS: false
 #jianshu_username:   
 #twitter_username:   
 =======
+=======
+>>>>>>> qiubaiying/master
 # weibo_username:     qiubaiying
 zhihu_username:     qiubaiying
 github_username:    qiubaiying
@@ -106,9 +114,12 @@ service-worker: true
 friends: [
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         title: "简书·KingLionsFrank",
         href: "http://www.jianshu.com/u/d35e7ed50e98"
 =======
+=======
+>>>>>>> qiubaiying/master
         title: "WY",
         href: "http://zhengwuyang.com"
     },{
