@@ -1,29 +1,51 @@
 # Site settings
-title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
-header-img: img/post-bg-rwd.jpg
-email: qiubaiying@gmail.com
-description: "每个胜利背后都有许多尝试"
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "https://qiubaiying.github.io"          # your host, for absolute URL
+title: Frank
+SEOTitle: Frank的博客 | Kinglions
+header-img: img/14850490.jpeg
+email: 2413913298@qq.com
+description: "今天的你与昨日有什么不同"
+keyword: "Frank, Frank Blog, Kinglions, Frank的博客,  Kinglions Blog, Swift, iOS, Apple, iPhone"
+url: "https://Kinglions.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
+<<<<<<< HEAD
+<<<<<<< HEAD
+sidebar-about-description: "今天的你与昨日有什么不同"
+sidebar-avatar: img/14850490.jpeg      # use absolute URL, seeing it's used in both `/` and `/about/`
+=======
 sidebar-about-description: "Goals determine what you going to be!"
 sidebar-avatar: img/avatar-by.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+>>>>>>> qiubaiying/master
+=======
+sidebar-about-description: "Goals determine what you going to be!"
+sidebar-avatar: img/avatar-by.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+>>>>>>> qiubaiying/master
 
 
 
 # SNS settings
 RSS: false
+<<<<<<< HEAD
+<<<<<<< HEAD
+#weibo_username:     
+#zhihu_username:     
+#github_username:    
+#facebook_username: 
+#jianshu_username:   
+#twitter_username:   
+=======
+=======
+>>>>>>> qiubaiying/master
 # weibo_username:     qiubaiying
 zhihu_username:     qiubaiying
 github_username:    qiubaiying
 facebook_username:  baiying.qiu.7
 jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
+>>>>>>> qiubaiying/master
 
 
 
@@ -58,7 +80,7 @@ kramdown:
 #disqus_username: _your_disqus_short_name_
 
 # Duoshuo settings
-duoshuo_username: qiubaiying
+duoshuo_username: Kinglions
 # Share component is depend on Comment so we can NOT use share only.
 duoshuo_share: true                     # set to false if you want to use Comment without Sharing
 
@@ -67,11 +89,10 @@ duoshuo_share: true                     # set to false if you want to use Commen
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: b50bf2b12b5338a1845e33832976fd68
-
+#ba_track_id: b50bf2b12b5338a1845e33832976fd68 #谷歌统计 Google Analytics
 # Google Analytics
-ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: auto
+#ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
+#ga_domain: auto
 
 
 
@@ -92,11 +113,19 @@ service-worker: true
 # Friends
 friends: [
     {
+<<<<<<< HEAD
+<<<<<<< HEAD
+        title: "简书·KingLionsFrank",
+        href: "http://www.jianshu.com/u/d35e7ed50e98"
+=======
+=======
+>>>>>>> qiubaiying/master
         title: "WY",
         href: "http://zhengwuyang.com"
     },{
         title: "简书·BY",
         href: "http://www.jianshu.com/u/e71990ada2fd"
+>>>>>>> qiubaiying/master
     },{
         title: "Apple",
         href: "https://apple.com"
