@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      CocoaPods私有仓库的创建
-subtitle:   手把手教你创建 CocoaPods 公有仓库
+subtitle:   继续带你创建 CocoaPods 私有有仓库
 date:       2017-03-10
 author:     BY
 header-img: img/post-bg-iWatch.jpg
