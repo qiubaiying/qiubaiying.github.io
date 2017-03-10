@@ -1,4 +1,4 @@
-# BY Blog 模板
+# BY Blog
 
 这个README我直接拿[Hux](https://github.com/Huxpro/huxpro.github.io)的来修改了。😅
 ### [我的博客在这里 &rarr;](http://qiubaiying.github.io)
