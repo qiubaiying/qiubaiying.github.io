@@ -1,1009 +1,966 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>BY Blog</title>
-    <description>每个胜利背后都有许多尝试</description>
+    <title>A Data Safari</title>
+    <description>by Nico</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 10 Feb 2017 16:27:45 +0800</pubDate>
-    <lastBuildDate>Fri, 10 Feb 2017 16:27:45 +0800</lastBuildDate>
-    <generator>Jekyll v3.3.1</generator>
+    <pubDate>Mon, 13 Mar 2017 09:24:40 -0400</pubDate>
+    <lastBuildDate>Mon, 13 Mar 2017 09:24:40 -0400</lastBuildDate>
+    <generator>Jekyll v3.4.2</generator>
     
       <item>
-        <title>Mac 快速调出终端</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;在Mac下快速调出终端的方法是：为终端添加一个快捷键打开方式&lt;/p&gt;
-&lt;/blockquote&gt;
+        <title>wordpress大搬家</title>
+        <description>&lt;h3 id=&quot;博客搬家&quot;&gt;博客搬家&lt;/h3&gt;
 
-&lt;h2 id=&quot;为终端添加一个快捷键打开方式&quot;&gt;为终端添加一个快捷键打开方式&lt;/h2&gt;
+&lt;p&gt;首先庆祝博客大搬家成功！撒花！&lt;/p&gt;
 
-&lt;p&gt;打开Mac下自带的软件 &lt;strong&gt;Automator&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;早就想脱离wordpress换一个“时髦”一点的前端框架，最近春假终于有时间好好折腾，于是顺利摆脱wordpress搭上github+jekyll顺风车，在此记录一下。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://ww2.sinaimg.cn/large/006tKfTcgy1fckb184f74j319v0q01kx.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;jekyll是Tom Preston-Werner在2008年开发的静态网页生成器，最大的优点有两个：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;不需要管理数据库&lt;/li&gt;
+  &lt;li&gt;完美支持markdown语法&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;新建文稿&lt;/p&gt;
+&lt;p&gt;最近（好像也不是最近），GitHub推出了Pages的服务，允许用户依托github云设立自己的博客(一个博客站点就是一个github repository，管理方法和传统的repo一模一样)，jekyll就是Github Pages默认的网页引擎，所以当然是无条件转投jekyll啦！&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://ww1.sinaimg.cn/large/006tKfTcgy1fckb6zzo28j30mo0fvgn7.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;填坑&quot;&gt;填坑&lt;/h3&gt;
 
-&lt;p&gt;创建一个服务&lt;/p&gt;
+&lt;p&gt;其实并没有特别多的坑好填，直接fork了&lt;a href=&quot;https://github.com/Huxpro/huxpro.github.io&quot;&gt;Hux&lt;/a&gt;博客的repository，然后按照&lt;a href=&quot;https://github.com/Huxpro/huxpro.github.io/blob/master/README.zh.md&quot;&gt;教程&lt;/a&gt;改改参数，把wordpress的旧帖子改成markdown格式放到_post文件夹下面，又优化了一下atom snippets让我更方便的写post，然后基本就搭好了。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://ww1.sinaimg.cn/large/006tKfTcgy1fckb93qmy5j30g00fh0vq.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;装本地jekyll的时候报了个permission deny的错，这里稍微记录一下：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://ww2.sinaimg.cn/large/006tKfTcgy1fckbfe8o0zj30t10lb0wv.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;因为jekyll是ruby写的，所以安装jekyll的第一步就是更新一下mac自带的gem&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://ww1.sinaimg.cn/large/006tKfTcgy1fckbff4e7pj30t10lbwis.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;修改框内的脚本&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;on run {input, parameters}
-	tell application &quot;Terminal&quot;
-		reopen
-		activate
-	end tell
-end run
-
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# check version&lt;/span&gt;
+gem -v
+&lt;span class=&quot;c&quot;&gt;# update&lt;/span&gt;
+sudo gem update --system
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;运行：&lt;code class=&quot;highlighter-rouge&quot;&gt;command + R&lt;/code&gt;，如果没有问题，则会打开终端&lt;/p&gt;
+&lt;p&gt;然后用gem安装jekyll&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo gem install jekyll
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;然而即使用了sudo，也遇到了问题
+&lt;code&gt;ERROR: While executing gem ... (Errno::EPERM) Operation not permitted - /usr/bin/sass&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://ww2.sinaimg.cn/large/006tKfTcgy1fckaqdd2m1j30t10lb42a.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww3.sinaimg.cn/large/006tKfTcgy1fckaq4nn9hj30iy0daaan.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;保存：&lt;code class=&quot;highlighter-rouge&quot;&gt;Command + S&lt;/code&gt;，将其命名为&lt;code class=&quot;highlighter-rouge&quot;&gt;打开终端&lt;/code&gt;或你想要的名字&lt;/p&gt;
-
-&lt;p&gt;设置快捷键&lt;/p&gt;
-
-&lt;p&gt;在 &lt;strong&gt;系统偏好设置&lt;/strong&gt; -&amp;gt; &lt;strong&gt;键盘设置&lt;/strong&gt; -&amp;gt; &lt;strong&gt;快捷键&lt;/strong&gt; -&amp;gt; &lt;strong&gt;服务&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;选择我们创建好的 ‘&lt;strong&gt;打开终端&lt;/strong&gt;‘，设置你想要的快捷键，比我我设置了&lt;code class=&quot;highlighter-rouge&quot;&gt;⌘+空格&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww4.sinaimg.cn/large/006tKfTcgy1fckbvaixhnj30kw0ihq67.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;到此，设置完成。&lt;/p&gt;
-
-&lt;p&gt;聪明的你也许会发现，这个技巧能为所有的程序设置快捷启动。&lt;/p&gt;
-
-&lt;p&gt;将脚本中的 &lt;code class=&quot;highlighter-rouge&quot;&gt;Terminal&lt;/code&gt; 替换成 其他程序就可以&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;on run {input, parameters}
-    tell application &quot;Terminal&quot;
-        reopen
-        activate
-    end tell
-end run
+&lt;p&gt;这是由于系统不让jekyll安装它依赖的sass包到/usr/bin/系统目录下，这种情况其实只要稍微改一下参数：&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# install jekyll to /usr/local/bin&lt;/span&gt;
+sudo gem install -n /usr/local/bin jekyll
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;p&gt;就可以安装jekyll到 /usr/local/bin 的目录下了，但是安装完后shell默认不识别jekyll，这时候就要稍微修改一下 ~/.bash_profile 文件&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vi ~/.bash_profile
 
-&lt;h2 id=&quot;黑技能&quot;&gt;黑技能&lt;/h2&gt;
+&lt;span class=&quot;c&quot;&gt;# add this line in the bash file&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/usr/local/bin/jekyll&quot;&lt;/span&gt;
 
-&lt;p&gt;既然学了 &lt;code class=&quot;highlighter-rouge&quot;&gt;Automator&lt;/code&gt; ，那就在附上一个黑技能吧。为你的代码排序。在 &lt;strong&gt;Xcode8&lt;/strong&gt;以前，有个插件能为代码快速排序，不过时过境迁~ 对于没用的插件而且又有患有强迫症的的小伙伴，只能手动排序了（😂）.&lt;/p&gt;
+&lt;span class=&quot;c&quot;&gt;# save file then&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.bash_profile
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;jekyll安装完成，cd到博客的文件夹，然后输入&lt;code&gt;jekyll server&lt;/code&gt;，就可以在&lt;code&gt;http://127.0.0.1:4000/&lt;/code&gt;见到自己的博客预览了！&lt;/p&gt;
 
-&lt;p&gt;首先还是创建一个服务&lt;/p&gt;
+&lt;p&gt;然后调调格式，git push，一切搞定！&lt;/p&gt;
 
-&lt;p&gt;创建一个&lt;code class=&quot;highlighter-rouge&quot;&gt;Shell&lt;/code&gt;脚本，&lt;/p&gt;
+&lt;p&gt;另外推荐一个mac端一键批量修改图片格式和加滤镜的好用软件&lt;a href=&quot;http://www.fotor.com/mac/index.html&quot;&gt;Fotor Photo Editor&lt;/a&gt;。&lt;del&gt;本来已经在写python+skimage的改图片脚本了，无奈实在不知道靠谱的图像调暗卷积核，转而搜一下有没有免费又好用的软件，然后就发现了fotor新大陆！&lt;/del&gt;&lt;/p&gt;
 
-&lt;p&gt;勾选:&lt;code class=&quot;highlighter-rouge&quot;&gt;用输出内容替换所选文本&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;下一步&quot;&gt;下一步&lt;/h3&gt;
 
-&lt;p&gt;输入：&lt;code class=&quot;highlighter-rouge&quot;&gt;sort|uniq&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;现在是无脑改jekyll参数，下一步准备稍微学习一下jekyll的语法。&lt;/p&gt;
 
-&lt;p&gt;保存： 存为&lt;code class=&quot;highlighter-rouge&quot;&gt;Sort &amp;amp; Uniq&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;感谢&quot;&gt;感谢&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://ww4.sinaimg.cn/large/006tKfTcgy1fckd40rgwmj30rt0ildiy.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;选中你的代代码&lt;/strong&gt; -&amp;gt; &lt;strong&gt;鼠标右键&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Servies&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Sort&amp;amp;Uniq&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww2.sinaimg.cn/large/006tKfTcgy1fckd6tx1dzj30h90b7mzm.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;排序后的代码：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww3.sinaimg.cn/large/006tKfTcgy1fckd6lak55j309j05y3yo.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
+&lt;p&gt;在此致谢原作者&lt;a href=&quot;https://huangxuan.me/&quot;&gt;Hux&lt;/a&gt;的漂亮模板！&lt;/p&gt;
 </description>
-        <pubDate>Mon, 06 Feb 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/02/06/Mac%E5%BF%AB%E9%80%9F%E8%B0%83%E5%87%BA%E7%BB%88%E7%AB%AF/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/02/06/Mac%E5%BF%AB%E9%80%9F%E8%B0%83%E5%87%BA%E7%BB%88%E7%AB%AF/</guid>
+        <pubDate>Mon, 13 Mar 2017 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/2017/03/13/wordpress%E5%A4%A7%E6%90%AC%E5%AE%B6/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/03/13/wordpress%E5%A4%A7%E6%90%AC%E5%AE%B6/</guid>
+        
+        <category>blog</category>
+        
+        <category>front end</category>
+        
+        <category>github</category>
+        
+        <category>jekyll</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>从py源码导入函数</title>
+        <description>&lt;p&gt;由于笔者最近做上了助教，然后就面对要改上百份python作业的困境。&lt;/p&gt;
+
+&lt;p&gt;然后就研究了一下怎么从py文件中直接导入函数的方法。&lt;/p&gt;
+
+&lt;p&gt;废话不多说，现在我的目标是要从一个文件夹 mydir 中导入 test.py 文件里的 myfunction 函数：&lt;/p&gt;
+
+&lt;p&gt;文件夹结构是这样的：&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;➜ Downloads tree mydir
+    mydir
+        └── test.py
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;test文件里的函数长这样：&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;myfunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'this is a test file'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;要用到python里的 imp 包的 imp.load_source() 函数：&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;imp&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# import from each script&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;import_function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dirname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;function_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;imp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load_source&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dirname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;getattr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;function_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&amp;gt;&amp;gt;&amp;gt; successfully parse file &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;function&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&amp;gt;&amp;gt;&amp;gt; file &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s import error'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;测试一下：&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;import_function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;mydir&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;myfunction&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 'this is a test file'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;大功告成！&lt;/p&gt;
+</description>
+        <pubDate>Fri, 10 Feb 2017 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2017/02/10/%E4%BB%8Epy%E6%BA%90%E7%A0%81%E5%AF%BC%E5%85%A5%E5%87%BD%E6%95%B0/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/02/10/%E4%BB%8Epy%E6%BA%90%E7%A0%81%E5%AF%BC%E5%85%A5%E5%87%BD%E6%95%B0/</guid>
+        
+        <category>python</category>
+        
+        <category>imp</category>
+        
+        <category>module</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>python中的*args和**kwargs</title>
+        <description>&lt;h2 id=&quot;什么是args和kwargs&quot;&gt;什么是*args和**kwargs&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;*args: positional arguments;&lt;/li&gt;
+  &lt;li&gt;**kwargs: keyword arguments.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;default&quot;&gt;default&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test_defargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;one&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;two&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Required argument: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;one&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Optional argument: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;two&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;test_defargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# result:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Required argument: 1&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Optional argument: 2&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;test_defargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# result:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Required argument: 1&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Optional argument: 3&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;positional-arguments&quot;&gt;positional arguments&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;*args&lt;/code&gt;就是positional arguments；
+positional arguments 必须位于 keyword arguments之前&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;one&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Required argument: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;one&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Optional argument: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# result:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Required argument: 1&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Optional argument: 2&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Optional argument: 3&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;keyword-arguments&quot;&gt;keyword arguments&lt;/h3&gt;
+
+&lt;p&gt;对应的 &lt;code&gt;**kwargs&lt;/code&gt; 就是 keyword arguments.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;one&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Required argument: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;one&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Optional argument: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Optional &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s argument: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# result:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Required argument: 1&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Optional argument: 2&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Optional argument: 3&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Optional k2 argument: 7&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Optional k1 argument: 5&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;区别和混用&quot;&gt;区别和混用&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test_args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;third&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fourth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fifth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'First argument: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Second argument: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Third argument: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;third&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Fourth argument: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fourth&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Fifth argument: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fifth&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Use *args&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;test_args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# results:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# First argument: 1&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Second argument: 2&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Third argument: 3&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Fourth argument: 4&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Fifth argument: 5&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Use **kwargs&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;kwargs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;'first'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;'second'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;'third'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;'fourth'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;'fifth'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;test_args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# results:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# First argument: 1&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Second argument: 2&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Third argument: 3&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Fourth argument: 4&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Fifth argument: 5&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sat, 31 Dec 2016 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2016/12/31/python%E4%B8%AD%E7%9A%84-args%E5%92%8C-kwargs/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/31/python%E4%B8%AD%E7%9A%84-args%E5%92%8C-kwargs/</guid>
+        
+        <category>python</category>
+        
+        <category>module</category>
+        
+        <category>arguments</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>2017年的年度目标</title>
+        <description>&lt;p&gt;最近越来越觉得可视化和前端技术对数据工作者来说有多么重要，长篇大论的essay或者花哨的PPT都不如一张设计精巧的图来的有说服力。&lt;/p&gt;
+
+&lt;p&gt;于是打算训练自己成为一个全栈开发者，隐隐的觉得我又入了一个大坑 …orz…&lt;/p&gt;
+
+&lt;p&gt;也到年末，顺便列一下2017年的年度目标：&lt;/p&gt;
+
+&lt;h4 id=&quot;target-in-a-year&quot;&gt;target in a year!&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;每1周读完一篇论文；&lt;/li&gt;
+  &lt;li&gt;每2周读完一本书；&lt;/li&gt;
+  &lt;li&gt;每周写代码时间不少于20 hours;&lt;/li&gt;
+  &lt;li&gt;学习前端技术；&lt;/li&gt;
+  &lt;li&gt;建一个slack robot帮我处理日常事务；&lt;/li&gt;
+  &lt;li&gt;学习一下深度学习；&lt;/li&gt;
+  &lt;li&gt;解决3个&lt;strong&gt;有挑战性&lt;/strong&gt;的项目；&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 20 Dec 2016 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2016/12/20/2017%E5%B9%B4%E7%9A%84%E5%B9%B4%E5%BA%A6%E7%9B%AE%E6%A0%87/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/20/2017%E5%B9%B4%E7%9A%84%E5%B9%B4%E5%BA%A6%E7%9B%AE%E6%A0%87/</guid>
+        
+        <category>life</category>
+        
+        <category>plan</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>mac在jupyter notebook里显示中文的方法</title>
+        <description>&lt;p&gt;笔者今天折腾在jupyter notebook里显示中文的问题折腾了3个小时以上。。。&lt;/p&gt;
+
+&lt;p&gt;所以虽然好久没有更新博客了，这次一定要把方法记录下来！&lt;/p&gt;
+
+&lt;p&gt;一共三步：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;下载一个微软雅黑的中文字体包，要ttf格式，双击安装&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;下载地址：http://www.pc6.com/mac/116742.html&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;清空matplot字体缓存目录&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rm ~/.matplotlib/fontList.cache
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;打开jupyter notebook，如果已经打开了就restart一遍，载入matplot，用plt.rc自定义字体&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://nicozheng.files.wordpress.com/2016/11/screen-shot-2016-11-11-at-4-46-03-am.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后就好了 &amp;gt;&lt;em&gt;__&lt;/em&gt;&amp;lt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://nicozheng.files.wordpress.com/2016/11/screen-shot-2016-11-11-at-4-47-16-am.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;如果还不行，到finder里面shift+command+g， 输入缓存文件的目录&lt;/p&gt;
+
+&lt;p&gt;~/.matplotlib/fontList.cache&lt;/p&gt;
+
+&lt;p&gt;然后用记事本打开 fontList.cache 文件看一下里面有没有雅黑的字体，比如我的：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://nicozheng.files.wordpress.com/2016/11/screen-shot-2016-11-11-at-4-50-03-am.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;没有就肯定是哪里出了问题， 自己google吧。。。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 Nov 2016 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2016/11/11/mac%E5%9C%A8jupyter-notebook%E9%87%8C%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/11/mac%E5%9C%A8jupyter-notebook%E9%87%8C%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+        
+        <category>jupyter</category>
         
         <category>mac</category>
         
-        <category>效率</category>
+        <category>python</category>
+        
+        <category>chinese</category>
         
         
       </item>
     
       <item>
-        <title>快速搭建个人博客</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;正所谓前人栽树，后人乘凉。&lt;/p&gt;
+        <title>mac窗口实用快捷键</title>
+        <description>&lt;p&gt;从windows切换到mac已经2个月啦~,虽然之前也用一台小air,但没怎么需要多任务处理开多个窗口,键盘快捷键也就没那么重要了,但是现在经常开多个chrome窗口查询,多个terminal调试,所以有必要学一下mac下的键盘快捷键。&lt;/p&gt;
 
-  &lt;p&gt;感谢&lt;a href=&quot;https://github.com/huxpro&quot;&gt;Huxpro&lt;/a&gt;提供的博客模板&lt;/p&gt;
+&lt;p&gt;整理几个实用的：
+Mac 的应用程序、窗口关系结构是很清晰的,严格遵循「先程序、后窗口」的规则。&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://qiubaiying.top&quot;&gt;我的的博客&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;类目&lt;/th&gt;
+      &lt;th&gt;快捷键&lt;/th&gt;
+      &lt;th&gt;命令&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;系统&lt;/td&gt;
+      &lt;td&gt;cmd+option+esc&lt;/td&gt;
+      &lt;td&gt;强制退出程序&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;系统&lt;/td&gt;
+      &lt;td&gt;control+shift+excit&lt;/td&gt;
+      &lt;td&gt;关闭显示器&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;系统&lt;/td&gt;
+      &lt;td&gt;cmd+option+excit&lt;/td&gt;
+      &lt;td&gt;睡眠&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;系统&lt;/td&gt;
+      &lt;td&gt;cmd+control+excit&lt;/td&gt;
+      &lt;td&gt;关闭所有程序并重新启动&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;系统&lt;/td&gt;
+      &lt;td&gt;cmd+option+control+excit&lt;/td&gt;
+      &lt;td&gt;关机&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;窗口&lt;/td&gt;
+      &lt;td&gt;cmd+m&lt;/td&gt;
+      &lt;td&gt;最小化窗口到dock&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;窗口&lt;/td&gt;
+      &lt;td&gt;cmd+h&lt;/td&gt;
+      &lt;td&gt;隐藏窗口&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;窗口&lt;/td&gt;
+      &lt;td&gt;cmd+tab&lt;/td&gt;
+      &lt;td&gt;切换主程序&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;窗口&lt;/td&gt;
+      &lt;td&gt;cmd+`&lt;/td&gt;
+      &lt;td&gt;切换程序内的窗口&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;窗口&lt;/td&gt;
+      &lt;td&gt;cmd+q&lt;/td&gt;
+      &lt;td&gt;退出程序&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;窗口&lt;/td&gt;
+      &lt;td&gt;cmd+w&lt;/td&gt;
+      &lt;td&gt;关闭窗口&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;文件夹&lt;/td&gt;
+      &lt;td&gt;cmd+n&lt;/td&gt;
+      &lt;td&gt;新建&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;文件夹&lt;/td&gt;
+      &lt;td&gt;cmd+shift+n&lt;/td&gt;
+      &lt;td&gt;新建文件夹&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;文件夹&lt;/td&gt;
+      &lt;td&gt;cmd+o&lt;/td&gt;
+      &lt;td&gt;打开文件&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;文件夹&lt;/td&gt;
+      &lt;td&gt;cmd+s&lt;/td&gt;
+      &lt;td&gt;保存文件&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;文件夹&lt;/td&gt;
+      &lt;td&gt;cmd+shift+s&lt;/td&gt;
+      &lt;td&gt;另存为&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;文件夹&lt;/td&gt;
+      &lt;td&gt;option+cmd+c&lt;/td&gt;
+      &lt;td&gt;复制当前文件夹/文件绝对路径&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;文件夹&lt;/td&gt;
+      &lt;td&gt;cmd+i&lt;/td&gt;
+      &lt;td&gt;显示简介&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;finder&lt;/td&gt;
+      &lt;td&gt;cmd+shift+g&lt;/td&gt;
+      &lt;td&gt;前往文件夹&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;finder&lt;/td&gt;
+      &lt;td&gt;cmd+option+t&lt;/td&gt;
+      &lt;td&gt;隐藏/显示工具栏&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;finder&lt;/td&gt;
+      &lt;td&gt;cmd+1/2/3/4&lt;/td&gt;
+      &lt;td&gt;切换不同的显示方式&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;finder&lt;/td&gt;
+      &lt;td&gt;cmd+[/]&lt;/td&gt;
+      &lt;td&gt;相当于浏览器里的前进和返回&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;finder&lt;/td&gt;
+      &lt;td&gt;cmd+上箭头/下箭头&lt;/td&gt;
+      &lt;td&gt;打开该文件/文件夹的上层文件夹&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;finder&lt;/td&gt;
+      &lt;td&gt;cmd+option+上箭头/下箭头&lt;/td&gt;
+      &lt;td&gt;在新窗口打开该文件/文件夹的上层文件夹&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
-&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
-&lt;p&gt;从 Jekyll 到 GitHub Pages 中间踩了许多坑，终于把我的个人博客&lt;a href=&quot;http://qiubaiying.top&quot;&gt;BY Blog&lt;/a&gt;搭建出来了。。。&lt;/p&gt;
+&lt;p&gt;参考文章： http://www.macx.cn/thread-2072866-1-1.html&lt;/p&gt;
+</description>
+        <pubDate>Sat, 08 Oct 2016 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/2016/10/08/mac%E7%AA%97%E5%8F%A3%E5%AE%9E%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/10/08/mac%E7%AA%97%E5%8F%A3%E5%AE%9E%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+        
+        <category>mac</category>
+        
+        <category>short cut</category>
+        
+        <category>efficiency</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>jupyter notebook导出pdf的解决方法</title>
+        <description>&lt;h2 id=&quot;为什么会有这个问题&quot;&gt;为什么会有这个问题&lt;/h2&gt;
 
-&lt;p&gt;废话不多说了，开始进入正文。&lt;/p&gt;
+&lt;p&gt;由于这两天开始上课了，笔者忙于用jupyter notebook写各种作业，（这里推荐一下jupyter乃写作业真！神！器！也），
+它很好的支持markdown语法&lt;/p&gt;
 
-&lt;h1 id=&quot;快速开始&quot;&gt;快速开始&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;https://nicozheng.files.wordpress.com/2016/09/e5b18fe5b995e5bfabe785a7-2016-09-16-e4b88ae58d881-49-22.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;从注册一个github账号开始&quot;&gt;从注册一个Github账号开始&lt;/h3&gt;
+&lt;p&gt;它能很好的处理图片&lt;/p&gt;
 
-&lt;p&gt;我采用的搭建博客的方式是使用 &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt; + &lt;a href=&quot;http://jekyll.com.cn/&quot;&gt;jekyll&lt;/a&gt; 的方式。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://nicozheng.files.wordpress.com/2016/09/e5b18fe5b995e5bfabe785a7-2016-09-16-e4b88ae58d881-49-41.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;要使用 GitHub Pages，首先你要注册一个&lt;a href=&quot;https://github.com/&quot;&gt;Github&lt;/a&gt;账号&lt;/p&gt;
+&lt;p&gt;能很好的处理公式&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://ww4.sinaimg.cn/large/006tKfTcgy1fch0a9kz7aj31kw0z7npd.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://nicozheng.files.wordpress.com/2016/09/e5b18fe5b995e5bfabe785a7-2016-09-16-e4b88ae58d881-50-17.png?w=2720&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;拉取我的博客模板&quot;&gt;拉取我的博客模板&lt;/h3&gt;
+&lt;p&gt;还能直接展示代码和运行结果&lt;/p&gt;
 
-&lt;p&gt;注册完成后搜索 &lt;code class=&quot;highlighter-rouge&quot;&gt;qiubaiying.github.io&lt;/code&gt; 进入&lt;a href=&quot;https://github.com/qiubaiying/qiubaiying.github.io&quot;&gt;我的仓库&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://nicozheng.files.wordpress.com/2016/09/e5b18fe5b995e5bfabe785a7-2016-09-16-e4b88ae58d881-50-49.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://ww3.sinaimg.cn/large/006tNbRwgy1fcgqjugzkpj30yy0p1mzc.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;综上，笔者就用jupyter写完了作业，然而学校的交作业系统只支持doc或者pdf上传，然后jupyter导出pdf花式报错，所以就花了几个小时研究了一下这个问题。。。（虽然chrome的打印功能可以很方便的转化网页成pdf，但是所有的代码都变成黑白的了，强迫症患者表示不能忍。。。）&lt;/p&gt;
 
-&lt;p&gt;点击右上角的 &lt;strong&gt;Fork&lt;/strong&gt; 将我的仓库拉倒你的账号下&lt;/p&gt;
+&lt;h2 id=&quot;如何解决这个问题&quot;&gt;如何解决这个问题&lt;/h2&gt;
+&lt;p&gt;先来看一下jupyter的报错：&lt;/p&gt;
 
-&lt;p&gt;稍等一下，点击刷新，你会看到&lt;strong&gt;Fork&lt;/strong&gt;了成功的页面&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://nicozheng.files.wordpress.com/2016/09/e5b18fe5b995e5bfabe785a7-2016-09-16-e4b88ae58d881-51-38.png?w=2720&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://ww3.sinaimg.cn/large/006tKfTcgy1fch1i297pjj31kw0z7thk.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;然后笔者就到了mac上最流行的latex环境maxtex官网，然而发现这个完整的安装包竟然要2.8G？？？？只是为了让代码有颜色而已，还不打算给我的电脑装那么大的包，所以我就用了pdfkit+wkhtmltopdf+自定义脚本来完成这个工作了。&lt;/p&gt;
 
-&lt;h3 id=&quot;修改仓库名&quot;&gt;修改仓库名&lt;/h3&gt;
+&lt;p&gt;基本思路是先把jupyter notebook文件转换成支持很好的html，然后用pdfkit把html转成pdf，会在同目录下生产对应的pdf。&lt;/p&gt;
 
-&lt;p&gt;点击&lt;strong&gt;settings&lt;/strong&gt;进入设置&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;安装pdfkit
+pdfkit github: https://github.com/pdfkit/pdfkit.git&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://ww3.sinaimg.cn/large/006tNbRwgy1fcgqms2auij30yy0p1tau.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p id=&quot;Rename&quot;&gt;&lt;/p&gt;
-&lt;p&gt;修改仓库名为 &lt;code class=&quot;highlighter-rouge&quot;&gt;你的Github账号名.github.io&lt;/code&gt;，然后 Rename&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww4.sinaimg.cn/large/006tNbRwgy1fcgqfwtk1rj30yy0p1wg6.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这时你在在浏览器中输入 &lt;code class=&quot;highlighter-rouge&quot;&gt;你的Github账号名.github.io&lt;/code&gt; 例如:&lt;code class=&quot;highlighter-rouge&quot;&gt;baiyingqiu.github.io&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;你将会看到如下界面&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww2.sinaimg.cn/large/006tNbRwgy1fcgquoqasqj30we0n8q4n.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;说明已经成功一半了😀。。。当然，还需要修改博客的配置才能变成你的博客。&lt;/p&gt;
-
-&lt;p&gt;若是出现&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww3.sinaimg.cn/large/006tNbRwgy1fcgqz6dyxmj30we0n83yy.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;则需要 &lt;a href=&quot;#Rename&quot;&gt;检查一下你的仓库名是否正确&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;整个网站结构&quot;&gt;整个网站结构&lt;/h3&gt;
-
-&lt;p&gt;修改Blog前我们来看看Jekyll 网站的基础结构，当然我们的网站比这个复杂。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├── _config.yml
-├── _drafts
-|   ├── begin-with-the-crazy-ideas.textile
-|   └── on-simplicity-in-technology.markdown
-├── _includes
-|   ├── footer.html
-|   └── header.html
-├── _layouts
-|   ├── default.html
-|   └── post.html
-├── _posts
-|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile
-|   └── 2009-04-26-barcamp-boston-4-roundup.textile
-├── _data
-|   └── members.yml
-├── _site
-├── img
-└── index.html
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip install pdfkit
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;很复杂看不懂是不是，不要紧，你只要记住其中几个OK了&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;安装wkhtmltopdf-binary
+去官网下载一个24M的wkhtmltopdf安装程序：http://wkhtmltopdf.org/&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;写一个python脚本&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 全局配置文件&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt;	放置博客文章的文件夹&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;img&lt;/code&gt;	存放图片的文件夹&lt;/li&gt;
-&lt;/ul&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;subprocess&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pdfkit&lt;/span&gt;
 
-&lt;p&gt;其他的想继续深究可以&lt;a href=&quot;http://jekyll.com.cn/docs/structure/&quot;&gt;看这里&lt;/a&gt;&lt;/p&gt;
+&lt;span class=&quot;n&quot;&gt;inputfile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot; &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;h3 id=&quot;修改博客配置&quot;&gt;修改博客配置&lt;/h3&gt;
-
-&lt;p&gt;来到你的仓库，找到&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;文件,这是网站的全局配置文件。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww1.sinaimg.cn/large/006tNbRwgy1fcgrcxz8nqj30v90ulwh7.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;点击修改&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww3.sinaimg.cn/large/006tNbRwgy1fcgrjzc232j30uz0nijt6.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;然后编辑&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;的内容&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww2.sinaimg.cn/large/006tNbRwgy1fcgrnp4ihqj30uy0okwg9.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;接下来我们来详细说说以下配置文件的内容：&lt;/p&gt;
-
-&lt;h4 id=&quot;基础设置&quot;&gt;基础设置&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Site settings
-title: You Blog    				  	#你博客的标题
-SEOTitle: 你的博客 | You Blog    	 #显示在浏览器上搜索的时候显示的标题
-header-img: img/post-bg-rwd.jpg  	#显示在首页的背景图片
-email: You@gmail.com	
-description: &quot;You Blog&quot;  			 #网站介绍
-keyword: &quot;BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone&quot; #关键词
-url: &quot;https://qiubaiying.github.io&quot;          # 这个就是填写你的博客地址
-baseurl: &quot;&quot;      # 这个我们不用填写
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;h4 id=&quot;侧边栏&quot;&gt;侧边栏&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Sidebar settings
-sidebar: true                           # 是否开启侧边栏.
-sidebar-about-description: &quot;说点装逼的话。。。&quot;
-sidebar-avatar: img/avatar-by.JPG      # 你的个人头像 这里你可以改成我在img文件夹中的两张备用照片 img/avatar-m 或 avatar-g
+&lt;span class=&quot;n&quot;&gt;temp_html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inputfile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputfile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rfind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'.'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'.html'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;command&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ipython nbconvert --to html '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inputfile&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'============success==========='&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;output_file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inputfile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inputfile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rfind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'.'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'.pdf'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;pdfkit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;from_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;temp_html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;output_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;subprocess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'rm '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;temp_html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h4 id=&quot;社交账号&quot;&gt;社交账号&lt;/h4&gt;
-&lt;p&gt;若想链接其他社交平台&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;使用方法
+然后每次要转换文件都到terminal中输入以下命令：&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://ww3.sinaimg.cn/large/006tNbRwgy1fcgsm4plpdj307i03nt8i.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;在下面你的社交账号的用户名就可以了，若没有可不用填&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# SNS settings
-RSS: false
-weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python script.py yourfile.ipynb
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-
-&lt;h4 id=&quot;评论&quot;&gt;评论&lt;/h4&gt;
-
-&lt;p&gt;集成了多说社会化评论，到多说注册账号，然后将&lt;code class=&quot;highlighter-rouge&quot;&gt;duoshuo_username&lt;/code&gt;换成你的账号即可。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Duoshuo settings
-duoshuo_username: YouName   # 换成你的多说账号
-# Share component is depend on Comment so we can NOT use share only.
-duoshuo_share: true                     # set to false if you want to use Comment without Sharing
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;网站统计&quot;&gt;网站统计&lt;/h4&gt;
-
-&lt;p&gt;集成了 &lt;a href=&quot;http://tongji.baidu.com/web/welcome/login&quot;&gt;Baidu Analytics&lt;/a&gt; 和 &lt;a href=&quot;http://www.google.cn/analytics/&quot;&gt;Google Analytics&lt;/a&gt;，到各个网站注册拿到track_id替换下面的就可以了&lt;/p&gt;
-
-&lt;p&gt;这是我的 Google Analytics&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww1.sinaimg.cn/large/006tNc79gy1fcgtqc5wf0j310i0nbt9j.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;不要使用我的track_id&lt;/strong&gt;😂。。。&lt;/p&gt;
-
-&lt;p&gt;若不想启用统计，直接删除或注释掉就可以了&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Analytics settings
-# Baidu Analytics
-ba_track_id: 83e259f69b37d02a4633a2b7d960139c
-
-# Google Analytics
-ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: auto
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;好友&quot;&gt;好友&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;friends: [
-    {
-        title: &quot;简书·BY&quot;,
-        href: &quot;http://www.jianshu.com/u/e71990ada2fd&quot;
-    },{
-        title: &quot;Apple&quot;,
-        href: &quot;https://apple.com&quot;
-    },{
-        title: &quot;Apple Developer&quot;,
-        href: &quot;https://developer.apple.com/&quot;
-    }
-]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;保存&quot;&gt;保存&lt;/h4&gt;
-&lt;p&gt;讲网页拉倒底部，点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Commit changes&lt;/code&gt; 提交保存&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww2.sinaimg.cn/large/006tKfTcgy1fch1mpktilj31kw0z7n34.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;再次进入你的主页，&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww2.sinaimg.cn/large/006tNc79gy1fcgtqheu38j30uy0kc3zs.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;恭喜你，你的个人博客搭建完成了😀。&lt;/p&gt;
-
-&lt;h1 id=&quot;写文章&quot;&gt;写文章&lt;/h1&gt;
-
-&lt;p&gt;利用 Github网站 ，我们可以不用学习&lt;a href=&quot;https://git-scm.com/&quot;&gt;git&lt;/a&gt;，就可以轻松管理自己的博客&lt;/p&gt;
-
-&lt;p&gt;对于轻车熟路的程序猿来说，使用git管理会更加方便。。。&lt;/p&gt;
-
-&lt;h2 id=&quot;创建&quot;&gt;创建&lt;/h2&gt;
-&lt;p&gt;文章统一放在网站根目录下的 &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; 的文件夹中。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww3.sinaimg.cn/large/006tNc79gy1fchoc1tz03j30vi0k978h.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;创建一个文件&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww2.sinaimg.cn/large/006tNc79gy1fchoduzebyj30vn0eg0v7.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;在下面写文章，和标题，还能实时预览，最后提交保存就能看到自己的新文章了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww2.sinaimg.cn/large/006y8lVagy1fcgweml8hjj30vd0m775r.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;格式&quot;&gt;格式&lt;/h2&gt;
-&lt;p&gt;每一篇文章文件命名采用的是&lt;code class=&quot;highlighter-rouge&quot;&gt;2017-02-04-Hello-2017.md&lt;/code&gt;时间+标题的形式，空格用&lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt;替换连接。&lt;/p&gt;
-
-&lt;p&gt;文件的格式是 &lt;code class=&quot;highlighter-rouge&quot;&gt;.md&lt;/code&gt; 的 &lt;a href=&quot;http://sspai.com/25137/&quot;&gt;&lt;strong&gt;MarkDown&lt;/strong&gt;&lt;/a&gt; 文件。&lt;/p&gt;
-
-&lt;p&gt;我们的博客文章格式采用是 &lt;strong&gt;MarkDown&lt;/strong&gt;+ &lt;strong&gt;YAML&lt;/strong&gt; 的方式。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/2016/07/yaml.html?f=tt&quot;&gt;&lt;strong&gt;YAML&lt;/strong&gt;&lt;/a&gt; 就是我们配置 &lt;code class=&quot;highlighter-rouge&quot;&gt;_config&lt;/code&gt;文件用的语言。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://sspai.com/25137/&quot;&gt;&lt;strong&gt;MarkDown&lt;/strong&gt;&lt;/a&gt; 是一种轻量级的「标记语言」，很简单。&lt;a href=&quot;http://sspai.com/25137&quot;&gt;花半个小时看一下&lt;/a&gt;就能熟练使用了&lt;/p&gt;
-
-&lt;p&gt;大概就是这么一个结构。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
-layout:     post   				    # 使用的布局（不需要改）
-title:      My First Post 				# 标题 
-subtitle:   Hello World, Hello Blog #副标题
-date:       2017-02-06 				# 时间
-author:     BY 						# 作者
-header-img: img/post-bg-2015.jpg 	#这篇文章标题背景图片
-catalog: true 						# 是否归档
-tags:								#标签
-    - 生活
----
-
-## Hey
-&amp;gt;这是我的第一篇博客。
-
-进入你的博客主页，新的文章将会出现在你的主页上.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;按格式创建文章后，提交保存。进入你的博客主页，新的文章将会出现在你的主页上.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww4.sinaimg.cn/large/006tKfTcgy1fch26elve4j31kw13qhdt.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;到这里，恭喜你！&lt;/p&gt;
-
-&lt;p&gt;你已经成功搭建了自己的个人博客以及学会在博客上撰写文字的技能了（是不是有点小兴奋🙈）。&lt;/p&gt;
-
-&lt;h1 id=&quot;自定义域名&quot;&gt;自定义域名&lt;/h1&gt;
-
-&lt;p&gt;搭建好博客之后 你可能不想直接使用 &lt;a href=&quot;http://baiyingqiu.github.io&quot;&gt;baiyingqiu.github.io&lt;/a&gt; 这么长的博客域名吧, 想换成想 &lt;a href=&quot;http://qiubaiying.top&quot;&gt;qiubaiying.top&lt;/a&gt; 这样简短的域名。那我们开始吧！&lt;/p&gt;
-
-&lt;h2 id=&quot;购买域名&quot;&gt;购买域名&lt;/h2&gt;
-&lt;p&gt;首先，你必须购买一个自己的域名。&lt;/p&gt;
-
-&lt;p&gt;我是在&lt;a href=&quot;https://wanwang.aliyun.com/domain/?spm=5176.8006371.1007.dnetcndomain.q1ys4x&quot;&gt;阿里云&lt;/a&gt;购买的域名&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww4.sinaimg.cn/large/006tKfTcgy1fci89zv06yj31kw11p1kx.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;用&lt;strong&gt;阿里云&lt;/strong&gt; app也可以注册域名，域名的价格根据后缀的不同和域名的长度而分，比如我这个 &lt;code class=&quot;highlighter-rouge&quot;&gt;qiubaiying.top&lt;/code&gt; 的域名第一年才只要4元~&lt;/p&gt;
-
-&lt;p&gt;域名尽量选择短一点比较好记住，注意，不能选择中文域名，比如 &lt;code class=&quot;highlighter-rouge&quot;&gt;张三.top&lt;/code&gt; ,GitHub Pages &lt;strong&gt;无法处理中文域名&lt;/strong&gt;，会导致你的域名在你的主页上使用。&lt;/p&gt;
-
-&lt;p&gt;注册的步骤就不在介绍了&lt;/p&gt;
-
-&lt;h2 id=&quot;解析域名&quot;&gt;解析域名&lt;/h2&gt;
-
-&lt;p&gt;注册好域名后，需要将域名解析到你的博客上&lt;/p&gt;
-
-&lt;p&gt;管理控制台 → 域名与网站（万网） → 域名&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww1.sinaimg.cn/large/006tKfTcgy1fci8phk5z9j30nk0q0goy.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;选择你注册好的域名，点击解析&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww4.sinaimg.cn/large/006tKfTcgy1fci8sg27bfj31kw0s0qdt.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;添加解析&lt;/p&gt;
-
-&lt;p&gt;分别添加两个&lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt; 记录类型,&lt;/p&gt;
-
-&lt;p&gt;一个主机记录为 &lt;code class=&quot;highlighter-rouge&quot;&gt;www&lt;/code&gt;,代表可以解析 &lt;code class=&quot;highlighter-rouge&quot;&gt;www.qiubaiying.top&lt;/code&gt;的域名&lt;/p&gt;
-
-&lt;p&gt;另一个为 &lt;code class=&quot;highlighter-rouge&quot;&gt;@&lt;/code&gt;, 代表 &lt;code class=&quot;highlighter-rouge&quot;&gt;qiubaiying.top&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;记录值就是我们博客的IP地址，是 GitHub Pagas 在美国的服务器的地址 &lt;code class=&quot;highlighter-rouge&quot;&gt;151.101.100.133&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww3.sinaimg.cn/large/006tKfTcgy1fci8x9412oj31kw0o4n5o.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;可以通过 &lt;a href=&quot;http://ip.chinaz.com/&quot;&gt;这个网站&lt;/a&gt;  或者直接在终端输入&lt;code class=&quot;highlighter-rouge&quot;&gt;ping 你的地址&lt;/code&gt;，查看博客的IP&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ping qiubaiying.github.io
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;细心地你会发现所有人的博客都解析到 &lt;code class=&quot;highlighter-rouge&quot;&gt;151.101.100.133&lt;/code&gt; 这个IP。&lt;/p&gt;
-
-&lt;p&gt;然后 GitHub Pages 再通过 CNAME记录 跳转到你的主页上。&lt;/p&gt;
-
-&lt;h2 id=&quot;修改cname&quot;&gt;修改CNAME&lt;/h2&gt;
-
-&lt;p&gt;最后一步，只需要修改 我们github仓库下的 &lt;strong&gt;CNAME&lt;/strong&gt; 文件。&lt;/p&gt;
-
-&lt;p&gt;选择 &lt;strong&gt;CNAME&lt;/strong&gt; 文件&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww2.sinaimg.cn/large/006tKfTcgy1fci9q9ne6qj31kw0uuajm.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;使用的注册的域名进行替换,然后提交保存&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ww2.sinaimg.cn/large/006tKfTcgy1fci9rzk0naj316s0n841s.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这时，输入你自己的域名，就可以解析到你的主页了。&lt;/p&gt;
 
 &lt;p&gt;大功告成！&lt;/p&gt;
-
-&lt;h1 id=&quot;进阶&quot;&gt;进阶&lt;/h1&gt;
-
-&lt;p&gt;若你对博客模板进行修改，你就要看看 Jekyll 的&lt;a href=&quot;http://jekyll.com.cn&quot;&gt;开发文档&lt;/a&gt;,是中文文档哦，对英语不好的朋友简直是福利啊（比如说我😀）。&lt;/p&gt;
-
-&lt;p&gt;还要学习 &lt;strong&gt;Git&lt;/strong&gt; 和 &lt;strong&gt;GitHub&lt;/strong&gt; 的工作机制了及使用。&lt;/p&gt;
-
-&lt;p&gt;你可以先看看这个&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/&quot;&gt;git教程&lt;/a&gt;，对git有个初步的了解后，那么相信你就能将自己图片传到GitHub仓库上，或者可以说掌握了 &lt;strong&gt;使用git管理自己的GitHub仓库&lt;/strong&gt; 的技能呢。&lt;/p&gt;
-
-&lt;p&gt;相信很很多人看蒙了呢，这部分教程后面再补上。那就先这样吧。&lt;/p&gt;
-
-&lt;p&gt;对于轻车熟路的程序猿来说，呵~&lt;/p&gt;
 </description>
-        <pubDate>Mon, 06 Feb 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/02/06/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/02/06/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+        <pubDate>Fri, 16 Sep 2016 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/2016/09/16/jupyter-notebook%E5%AF%BC%E5%87%BApdf%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/09/16/jupyter-notebook%E5%AF%BC%E5%87%BApdf%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
         
-        <category>Blog</category>
+        <category>jupyter</category>
+        
+        <category>mac</category>
+        
+        <category>latex</category>
+        
+        <category>pdf</category>
         
         
       </item>
     
       <item>
-        <title>Hello 2017</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;“🙉🙉🙉 ”&lt;/p&gt;
-&lt;/blockquote&gt;
+        <title>数据库基础的复习笔记</title>
+        <description>&lt;p&gt;最近有时间就复习了一下被我遗忘在角落的数据库语法。&lt;/p&gt;
 
-&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;brief--summary&quot;&gt;BRIEF &amp;amp; SUMMARY&lt;/h2&gt;
 
-&lt;p&gt;BY 的 Blog 就这么开通了。&lt;/p&gt;
-
-&lt;p&gt;本来打算在年前完成 Blog 的搭建，不曾料想踩了很多坑。。。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;#build&quot;&gt;跳过废话，直接看技术实现 &lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;2017 年，BY Blog 总算是搭建好了。&lt;/p&gt;
-
-&lt;p&gt;最开始写博客是在&lt;a href=&quot;www.jianshu.com&quot;&gt;简书&lt;/a&gt;这个平台上，简书确实不错，支持markdown在线编辑。&lt;/p&gt;
-
-&lt;p&gt;在一次偶然间，听到我的好基友 &lt;strong&gt;阳阳&lt;/strong&gt; 想搭建个人主页，觉得作为一个程序员，是应该倒腾倒腾自己的Blog，于是乎就开始了撸起袖子干了。&lt;/p&gt;
-
-&lt;p id=&quot;build&quot;&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;正文&quot;&gt;正文&lt;/h2&gt;
-
-&lt;p&gt;接下来说说搭建这个博客的技术细节。&lt;/p&gt;
-
-&lt;p&gt;正好之前就有关注过 &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt; + &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; 快速 Building Blog 的技术方案，非常轻松时尚。&lt;/p&gt;
-
-&lt;p&gt;其优点非常明显：&lt;/p&gt;
-
+&lt;h3 id=&quot;one-sentence-brief&quot;&gt;one sentence brief&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Markdown&lt;/strong&gt; 带来的优雅写作体验&lt;/li&gt;
-  &lt;li&gt;非常熟悉的 Git workflow ，&lt;strong&gt;Git Commit 即 Blog Post&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;利用 GitHub Pages 的域名和免费无限空间，不用自己折腾主机
-    &lt;ul&gt;
-      &lt;li&gt;如果需要自定义域名，也只需要简单改改 DNS 加个 CNAME 就好了&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Jekyll 的自定制非常容易，基本就是个模版引擎&lt;/li&gt;
+  &lt;li&gt;这门课介绍了sql的基本语法和python中调用sql的方法，采用的数据库是postgreSQL，非常实用，总的来说比较简单。&lt;/li&gt;
+  &lt;li&gt;老师做了一个简单的网页，通过网页上发帖链接数据库并保存到数据库中，很有意思。&lt;/li&gt;
+  &lt;li&gt;数据库语法和python还是很不一样（在数据库里标点很重要），不同的数据库语法也有细微的差别（比如大小写）。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;
+&lt;h3 id=&quot;course-webpage&quot;&gt;course webpage&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;udaicity &lt;a href=&quot;https://cn.udacity.com/course/intro-to-relational-databases--ud197&quot;&gt;intro to relational database&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;主题我直接 Downlosd 了 &lt;a href=&quot;https://huangxuan.me/&quot;&gt;Hux的博客主题&lt;/a&gt; 的进行修改，简单粗暴，不过遇到了很多坑😂，好在都填完了。。。&lt;/p&gt;
+&lt;h3 id=&quot;content&quot;&gt;content&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;sql语法&lt;/li&gt;
+  &lt;li&gt;postgreSQL在shell中的命令&lt;/li&gt;
+  &lt;li&gt;python和sql的互动&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;本地调试环境需要 &lt;code class=&quot;highlighter-rouge&quot;&gt;gem install jekyll&lt;/code&gt;，结果 rubygem 的源居然被墙了，&lt;del&gt;后来手动改成了我大淘宝的镜像源才成功&lt;/del&gt;，淘宝的源已经&lt;a href=&quot;https://gems.ruby-china.org/&quot;&gt;停止维护&lt;/a&gt;，换成了OSChina的源 &lt;code class=&quot;highlighter-rouge&quot;&gt;https://gems.ruby-china.org/&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&quot;details&quot;&gt;DETAILS&lt;/h2&gt;
+&lt;h3 id=&quot;sql语法&quot;&gt;sql语法&lt;/h3&gt;
+&lt;h4 id=&quot;select-查询&quot;&gt;select 查询&lt;/h4&gt;
 
-&lt;h2 id=&quot;后记&quot;&gt;后记&lt;/h2&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;column1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;column2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;column3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;things&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;staff&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;S&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;things&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;thing&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;having&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;最后，感谢 Hux 提供的的 &lt;a href=&quot;https://github.com/Huxpro/huxpro.github.io&quot;&gt;Blog 主题&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;insert-插入数据&quot;&gt;insert 插入数据&lt;/h4&gt;
 
-&lt;p&gt;如果你恰好逛到了这里，希望你也能喜欢这个博客主题，感兴趣的话可以自己动手搭建一个。&lt;/p&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;insert&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;into&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;values&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'nico'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;—— BY 后记于 2017.2&lt;/p&gt;
+&lt;h4 id=&quot;alter-更新-表格column相关数据&quot;&gt;alter 更新 表格／column相关数据&lt;/h4&gt;
 
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;新增&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;column&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;：&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;alter&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tablename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;columnname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;datatype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;更改&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;column&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;名字：&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;alter&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tablename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;rename&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;oldcolumnname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newcolumnname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;更新&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;column&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;结构：&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;alter&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tablename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newdatatype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;删除&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;column&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;alter&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;talbename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;drop&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;column&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;columnname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;更新表名字：&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;alter&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;oldtablename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;rename&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newtablename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;join-合并&quot;&gt;join 合并&lt;/h4&gt;
+
+&lt;p&gt;join 分 inner join; left join; right join，一般默认的是inner join，即两个表中都要有的元素才会被保留；&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;join&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;join&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;##&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;比较清晰的三个表&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;的表达；&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;join&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A_B&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;join&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;C&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A_B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column4&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;update-更新-表格里面的数据&quot;&gt;update 更新 表格里面的数据&lt;/h4&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;update&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;column&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;restriction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;eg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;update&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;POST&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'cheese'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;like&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'%spam%'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;在&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;sql&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;语法中表示模糊识别。&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;delete-删除&quot;&gt;delete 删除&lt;/h4&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;restriction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;eg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;POST&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;like&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'%spam%'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;create-创建表&quot;&gt;create 创建表&lt;/h4&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TABLENAME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;column1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;constraints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;column2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;constraints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;column3&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;constraints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;column4&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;constraints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;....&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;drop-删除表database&quot;&gt;drop 删除表/database&lt;/h4&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;drop&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;table&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;database&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;设置主键&quot;&gt;设置主键&lt;/h4&gt;
+&lt;p&gt;单主键&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TABLENAME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;column1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;column2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;serial&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;primary&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;column3&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;column4&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;....&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;多主键&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TABLENAME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;column1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;column2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;serial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;column3&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;column4&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;....&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;primary&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h4 id=&quot;reference的用法&quot;&gt;reference的用法&lt;/h4&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;column1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;integer&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;references&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;original&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;column2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;实用reference以后，tableB 的 column1 只有可能出现 A.column3 中存在的值，如果试图输入其他值会报错&lt;/p&gt;
+
+&lt;h4 id=&quot;比较复杂的应用例子&quot;&gt;比较复杂的应用例子&lt;/h4&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;building&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;room&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;residences&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;residences&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;building&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;building&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;room&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;room&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;building&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;room&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sku&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;join&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sales&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sku&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sales&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sku&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sku&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;postgresql在shell中的命令&quot;&gt;postgreSQL在shell中的命令&lt;/h3&gt;
+&lt;p&gt;文档见同目录下的《Tournament Results: Getting Started》&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;psql: shell中打开psql数据库；&lt;/li&gt;
+  &lt;li&gt;\c [somedatabasename]: 链接数据库;&lt;/li&gt;
+  &lt;li&gt;\conninfo: 列出当前数据库和连接的信息;&lt;/li&gt;
+  &lt;li&gt;\i [somecode.sql]: 执行sql文件；&lt;/li&gt;
+  &lt;li&gt;\q: 退出数据库；&lt;/li&gt;
+  &lt;li&gt;\d [sometablename]: 对table中的列做描述；&lt;/li&gt;
+  &lt;li&gt;\l: 列出所有数据库；&lt;/li&gt;
+  &lt;li&gt;\dt: 罗列当前数据库中的所有表;&lt;/li&gt;
+  &lt;li&gt;\?: 帮助命令；&lt;/li&gt;
+  &lt;li&gt;\h [drop]： 查询某个sql语法的作用，显示drop的帮助文档；&lt;/li&gt;
+  &lt;li&gt;\e: 打开文本编辑器；&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;其他psql用户管理方面可查看文章：http://www.ruanyifeng.com/blog/2013/12/getting_started_with_postgresql.html&lt;/em&gt;
+&lt;em&gt;psql官方文档：https://www.postgresql.org/docs/&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;python和sql的互动&quot;&gt;python和sql的互动&lt;/h3&gt;
+&lt;p&gt;链接psql数据库用到psycopg2包&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;psycopg2&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;psy&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;链接sqlite数据库的包是sqlite3:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sqlite3&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;前面两个包的写法是一样的：&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;DB&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;psy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dbname=forum&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;## 链接数据库,sqlite3的话改成 sqlite3.connect&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cursor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;## 创建执行链接保存到c&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'select content,time from posts order by time desc;'&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;## some sql语句&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;## 执行sql语句&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;DB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;commit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;## commit 如果insert了什么数据的话&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fetchall&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;## 调取输出结果&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;DB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;## 和数据库断开链接&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;related-project--code&quot;&gt;RELATED PROJECT &amp;amp; CODE&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;project github link: https://github.com/Nicozheng/fullstack-nanodegree-vm.git&lt;/li&gt;
+  &lt;li&gt;report link: None&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;inspirations&quot;&gt;INSPIRATIONS&lt;/h2&gt;
+&lt;p&gt;sql可以用来处理一些常规的规整数据，查询数据的速度比较快，维护起来也比较简单；可以用来做动态网页，储存一些简单的用户数据。&lt;/p&gt;
 </description>
-        <pubDate>Sat, 04 Feb 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/02/04/Hello-2017/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/02/04/Hello-2017/</guid>
+        <pubDate>Sat, 10 Sep 2016 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/2016/09/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80%E7%9A%84%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/09/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80%E7%9A%84%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
         
-        <category>生活</category>
+        <category>database</category>
+        
+        <category>sql</category>
+        
+        <category>postgreSQL</category>
+        
+        <category>python</category>
         
         
       </item>
     
       <item>
-        <title>定时器 你真的会使用吗？</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;定时器的使用是软件开发基础技能，用于延时执行或重复执行某些方法。我相信大部分人接触iOS的定时器都是从
-&lt;code class=&quot;highlighter-rouge&quot;&gt;[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(action:) userInfo:nil repeats:YES]&lt;/code&gt;这段代码开始的吧。&lt;/p&gt;
+        <title>docker虚拟机和环境管理</title>
+        <description>&lt;h2 id=&quot;virtualbox&quot;&gt;virtualBox&lt;/h2&gt;
+&lt;h3 id=&quot;什么是virtualbox&quot;&gt;什么是virtualBox&lt;/h3&gt;
+&lt;p&gt;mac下的开源虚拟机，功能和主流的vm没有什么差别，主要看中的是开源免费而且占用空间小。和vagrant一起使用可以很方便的创建linux开发环境，也可以载入windows镜像使用windows虚拟机；&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;virtualBox安装：https://www.virtualbox.org/&lt;/li&gt;
+  &lt;li&gt;virtualBox官方文档：https://www.virtualbox.org/manual/UserManual.html&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;什么是docker&quot;&gt;什么是docker&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Docker是一个开源的引擎，可以轻松的为任何应用创建一个轻量级的、可移植的、自给自足的容器。开发者在笔记本上编译测试通过的容器可以批量地在生产环境中部署，包括VMs（虚拟机）、bare metal、OpenStack 集群和其他的基础应用平台。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;其实没太懂，应该是一个类似vagrant里不同box的较小的封装程序，里面自带平台和系统来自给自足的供程序运行? 再研究下～ mark&lt;/p&gt;
+
+&lt;p&gt;一个docker web开发的实例： https://github.com/kasperisager/php-dockerized.git&lt;/p&gt;
+
+&lt;h3 id=&quot;docker和虚拟机有什么不同&quot;&gt;docker和虚拟机有什么不同&lt;/h3&gt;
+&lt;p&gt;vagrant开发者何docker开发者的论战：http://www.cnblogs.com/vikings-blog/p/3973265.html&lt;/p&gt;
+&lt;h2 id=&quot;vagrant&quot;&gt;vagrant&lt;/h2&gt;
+
+&lt;h3 id=&quot;什么是vagrant&quot;&gt;什么是vagrant&lt;/h3&gt;
+&lt;p&gt;引用别人的话：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;vagrant实际上一套虚拟机管理工具，基于Ruby开发，底层支持VirtualBox、VMware甚至AWS、docker等作为虚拟化系统。我们可以通过 Vagrant 封装一个 Linux 的开发环境，分发给团队成员。成员可以在自己喜欢的桌面系统（Mac/Windows/Linux）上开发程序，代码却能统一在封装好的环境里运行，“代码在我机子上运行没有问题”这种说辞将成为历史。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;但是关于iOS定时器，你真的会用吗？&lt;/p&gt;
+  &lt;p&gt;vagrant 的主要意义是让所有开发人员都使用和线上服务器一样的环境，本质上和你新建一个虚拟机，然后发给所有的同事是一样的，vagrant 只是简单地帮你自动化这个过程，比如 vagrant 可以通过一个配置文件来生成一个虚拟机，在本地和虚拟机之间共享文件，把一个虚拟机分享给别人等等。一般情况下我们是用 Command-Line 来控制 vagrant 的，通过 Command-Line 控制的好处就是可以自动化、脚本化。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h1 id=&quot;ios定时器&quot;&gt;iOS定时器&lt;/h1&gt;
-
-&lt;p&gt;首先来介绍iOS中的定时器&lt;/p&gt;
-
-&lt;p&gt;iOS中的定时器大致分为这几类：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;NSTimer&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;CADisplayLink&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;GCD定时器&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;nstimer&quot;&gt;NSTimer&lt;/h3&gt;
-
-&lt;h4 id=&quot;使用方法&quot;&gt;使用方法&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;NSTime&lt;/strong&gt;定时器是我们比较常使用的定时器，比较常使用的方法有两种：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;+ (NSTimer *)timerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(nullable id)userInfo repeats:(BOOL)yesOrNo;
-
-+ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(nullable id)userInfo repeats:(BOOL)yesOrNo;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;这两种方法都是创建一个定时器，区别是用&lt;code class=&quot;highlighter-rouge&quot;&gt;timerWithTimeInterval:&lt;/code&gt;方法创建的定时器需要手动加入RunLoop中。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 创建NSTimer对象
-NSTimer *timer = [NSTimer timerWithTimeInterval:3 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
-// 加入RunLoop中
-[[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;需要&lt;strong&gt;注意&lt;/strong&gt;的是： &lt;code class=&quot;highlighter-rouge&quot;&gt;UIScrollView&lt;/code&gt; 滑动时执行的是 &lt;code class=&quot;highlighter-rouge&quot;&gt;UITrackingRunLoopMode&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;NSDefaultRunLoopMode&lt;/code&gt;被挂起，会导致定时器失效，等恢复为&lt;strong&gt;滑动结束&lt;/strong&gt;时才恢复定时器。其原因可以查看我这篇&lt;a href=&quot;http://www.jianshu.com/p/c4f552ceda63&quot;&gt;《Objective-C RunLoop 详解》&lt;/a&gt;中的 “RunLoop 的 Mode“章节，有详细的介绍。&lt;/p&gt;
-
-&lt;p&gt;举个例子：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- (void)startTimer{
-    NSTimer *UIScrollView = [NSTimer timerWithTimeInterval:0.5 target:self selector:@selector(action:) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
-}
-
-- (void)action:(NSTimer *)sender {
-    static int i = 0;
-    NSLog(@&quot;NSTimer: %d&quot;,i);
-    i++;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;将&lt;code class=&quot;highlighter-rouge&quot;&gt;timer&lt;/code&gt;添加到&lt;strong&gt;NSDefaultRunLoopMode&lt;/strong&gt;中，没0.5秒打印一次，然后滑动&lt;code class=&quot;highlighter-rouge&quot;&gt;UIScrollView&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;打印台输出：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/006tNc79gw1farbzzwcevj30ci04ljtm.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;可以看出在滑动&lt;code class=&quot;highlighter-rouge&quot;&gt;UIScrollView&lt;/code&gt;时，定时器被暂停了。&lt;/p&gt;
-
-&lt;p&gt;所以如果需要定时器在 &lt;code class=&quot;highlighter-rouge&quot;&gt;UIScrollView&lt;/code&gt; 拖动时也不影响的话，有两种解决方法&lt;/p&gt;
-
+&lt;p&gt;总结一下vagrant的好处其实是解决了&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;timer&lt;/strong&gt;分别添加到 &lt;code class=&quot;highlighter-rouge&quot;&gt;UITrackingRunLoopMode&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;NSDefaultRunLoopMode&lt;/code&gt;中&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
-[[NSRunLoop mainRunLoop] addTimer:timer forMode: UITrackingRunLoopMode]; 
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;直接将&lt;strong&gt;timer&lt;/strong&gt;添加到&lt;code class=&quot;highlighter-rouge&quot;&gt;NSRunLoopCommonModes&lt;/code&gt; 中：&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[[NSRunLoop mainRunLoop] addTimer:timer forMode: NSRunLoopCommonModes]; 
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
+  &lt;li&gt;团队多个程序员之间共享程序的时候由于自己计算机的编译环境不一样而导致的程序错误，就是说在团队协作的时候作用最大，
+然后也有其他优点，比如：&lt;/li&gt;
+  &lt;li&gt;支持命令行创建虚拟机，可以脚本化&lt;/li&gt;
+  &lt;li&gt;支持修改vagrantFile来调整参数，操作简单&lt;/li&gt;
+  &lt;li&gt;有很多开源的box可以下载，box里面集成安装了很多开发环境&lt;/li&gt;
+  &lt;li&gt;对有洁癖和强迫症的开发人员可以高效管理自己的不同虚拟机&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;但并不是都&lt;strong&gt;timer&lt;/strong&gt;所有的需要在滑动&lt;code class=&quot;highlighter-rouge&quot;&gt;UIScrollView&lt;/code&gt;时继续执行，比如使用&lt;strong&gt;NSTimer&lt;/strong&gt;完成的帧动画，滑动&lt;code class=&quot;highlighter-rouge&quot;&gt;UIScrollView&lt;/code&gt;时就可以停止帧动画，保证滑动的流程性。&lt;/p&gt;
+&lt;p&gt;作为一个伪开发＋数据分析师，我觉得这货应该主要还是给我用来学习web development, 高效管理自己的linux的开发环境有用。&lt;/p&gt;
 
-&lt;p&gt;若没有特殊要求的话，一般使用第二种方法创建完&lt;strong&gt;timer&lt;/strong&gt;，会自动添加到&lt;code class=&quot;highlighter-rouge&quot;&gt;NSDefaultRunLoopMode&lt;/code&gt;中去执行，也是平时最常用的方法。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(action:) userInfo:nil repeats:YES];
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;参数：&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;TimeInterval&lt;/code&gt;：延时时间&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;target&lt;/code&gt;:目标对象，一般就是&lt;code class=&quot;highlighter-rouge&quot;&gt;self&lt;/code&gt;本身&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;selector&lt;/code&gt;:执行方法&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;userInfo&lt;/code&gt;:传入信息&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;repeats&lt;/code&gt;:是否重复执行&lt;/p&gt;
-
-&lt;p&gt;以上创建的定时器，若&lt;code class=&quot;highlighter-rouge&quot;&gt;repeats&lt;/code&gt;参数设为&lt;code class=&quot;highlighter-rouge&quot;&gt;NO&lt;/code&gt;，执行一次后就会被释放掉;&lt;/p&gt;
-
-&lt;p&gt;若&lt;code class=&quot;highlighter-rouge&quot;&gt;repeats&lt;/code&gt;参数设为&lt;code class=&quot;highlighter-rouge&quot;&gt;YES&lt;/code&gt;重复执行时，必须手动关闭，否则定时器不会释放(停止）。&lt;/p&gt;
-
-&lt;p&gt;释放方法：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 停止定时器
-[timer invalidate];
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;实际开发中，我们会将&lt;code class=&quot;highlighter-rouge&quot;&gt;NSTimer&lt;/code&gt;对象设置为属性，这样方便释放。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;iOS10.0&lt;/strong&gt; 推出了两个新的API，与上面的方法相比，&lt;code class=&quot;highlighter-rouge&quot;&gt;selector&lt;/code&gt;换成Block回调以、减少传入的参数(那几个参数真是鸡肋)。不过开发中一般需要适配低版本，还是尽量使用上面的方法吧。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;+ (NSTimer *)timerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats block:(void (^)(NSTimer *timer))block API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.0), tvos(10.0));
-
-+ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats block:(void (^)(NSTimer *timer))block API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.0), tvos(10.0));
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;特点&quot;&gt;特点&lt;/h4&gt;
-
+&lt;h3 id=&quot;安装和文档&quot;&gt;安装和文档&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;必须加入Runloop&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;上面不管使用哪种方法，实际最后都会加入RunLoop中执行，区别就在于是否手动加入而已。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;存在延迟&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;不管是一次性的还是周期性的timer的实际触发事件的时间，都会与所加入的RunLoop和RunLoop Mode有关，如果此RunLoop正在执行一个连续性的运算，timer就会被延时出发。重复性的timer遇到这种情况，如果延迟超过了一个周期，则会在延时结束后立刻执行，并按照之前指定的周期继续执行，这个延迟时间大概为50-100毫秒.&lt;/p&gt;
-
-    &lt;p&gt;所以NSTimer不是绝对准确的,而且中间耗时或阻塞错过下一个点,那么下一个点就pass过去了.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;UIScrollView滑动会暂停计时&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;添加到&lt;code class=&quot;highlighter-rouge&quot;&gt;NSDefaultRunLoopMode&lt;/code&gt;的 &lt;code class=&quot;highlighter-rouge&quot;&gt;timer&lt;/code&gt; 在 &lt;code class=&quot;highlighter-rouge&quot;&gt;UIScrollView&lt;/code&gt;滑动时会暂停，若不想被&lt;code class=&quot;highlighter-rouge&quot;&gt;UIScrollView&lt;/code&gt;滑动影响，需要将 &lt;code class=&quot;highlighter-rouge&quot;&gt;timer&lt;/code&gt; 添加再到 &lt;code class=&quot;highlighter-rouge&quot;&gt;UITrackingRunLoopMode&lt;/code&gt; 或 直接添加到&lt;code class=&quot;highlighter-rouge&quot;&gt;NSRunLoopCommonModes&lt;/code&gt; 中&lt;/p&gt;
+  &lt;li&gt;vagrant安装：https://www.vagrantup.com/downloads.html&lt;/li&gt;
+  &lt;li&gt;vagrant文档：http://tangbaoping.github.io/vagrant_doc_zh/v2/
+    &lt;h3 id=&quot;初始化&quot;&gt;初始化&lt;/h3&gt;
+    &lt;ol&gt;
+      &lt;li&gt;创建一个vagrant文件夹&lt;/li&gt;
+    &lt;/ol&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;cadisplaylink&quot;&gt;CADisplayLink&lt;/h2&gt;
-
-&lt;p&gt;CADisplayLink官方介绍：&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;A CADisplayLink object is a timer object that allows your application to synchronize its drawing to the refresh rate of the display&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;CADisplayLink&lt;/strong&gt;对象是一个和屏幕刷新率同步的定时器对象。每当屏幕显示内容刷新结束的时候，runloop就会向CADisplayLink指定的&lt;code class=&quot;highlighter-rouge&quot;&gt;target&lt;/code&gt;发送一次指定的&lt;code class=&quot;highlighter-rouge&quot;&gt;selector&lt;/code&gt;消息， CADisplayLink类对应的 &lt;code class=&quot;highlighter-rouge&quot;&gt;selector&lt;/code&gt; 就会被调用一次。&lt;/p&gt;
-
-&lt;p&gt;从原理上可以看出，CADisplayLink适合做界面的不停重绘，比如视频播放的时候需要不停地获取下一帧用于界面渲染，或者做动画。&lt;/p&gt;
-&lt;h4 id=&quot;使用方法-1&quot;&gt;使用方法&lt;/h4&gt;
-
-&lt;p&gt;创建：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CADisplayLink&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;displayLink&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;displayLink&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CADisplayLink&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;displayLinkWithTarget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;handleDisplayLink&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)];&lt;/span&gt;  
-
-&lt;span class=&quot;c1&quot;&gt;// 每隔1帧调用一次
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;displayLink&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;frameInterval&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
-
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;displayLink&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addToRunLoop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSRunLoop&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;currentRunLoop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;forMode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSDefaultRunLoopMode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mkdir vagrant_folder
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;vagrant_folder
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;释放方法：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[self.displayLink invalidate];  
-
-self.displayLink = nil;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;当把&lt;strong&gt;CADisplayLink&lt;/strong&gt;对象添加到runloop中后，&lt;code class=&quot;highlighter-rouge&quot;&gt;selector&lt;/code&gt;就能被周期性调用，类似于重复的NSTimer被启动了；执行&lt;code class=&quot;highlighter-rouge&quot;&gt;invalidate&lt;/code&gt;操作时，CADisplayLink对象就会从runloop中移除，&lt;code class=&quot;highlighter-rouge&quot;&gt;selector&lt;/code&gt;调用也随即停止，类似于NSTimer的&lt;code class=&quot;highlighter-rouge&quot;&gt;invalidate&lt;/code&gt;方法。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;CADisplayLink&lt;/strong&gt;中有两个重要的属性：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;frameInterval&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;NSInteger类型的值，用来设置间隔多少帧调用一次&lt;code class=&quot;highlighter-rouge&quot;&gt;selector&lt;/code&gt;方法，默认值是1，即每帧都调用一次。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;duration&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CFTimeInterval&lt;/code&gt;值为&lt;code class=&quot;highlighter-rouge&quot;&gt;readOnly&lt;/code&gt;，表示两次屏幕刷新之间的时间间隔。需要注意的是，该属性在&lt;code class=&quot;highlighter-rouge&quot;&gt;targe&lt;/code&gt;t的&lt;code class=&quot;highlighter-rouge&quot;&gt;selector&lt;/code&gt;被首次调用以后才会被赋值。&lt;code class=&quot;highlighter-rouge&quot;&gt;selector&lt;/code&gt;的调用间隔时间计算方式是：&lt;strong&gt;调用间隔时间 = duration × frameInterval&lt;/strong&gt;。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;特点-1&quot;&gt;特点&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;刷新频率固定&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;正常情况iOS设备的屏幕刷新频率是固定&lt;strong&gt;60Hz&lt;/strong&gt;,如果CPU过于繁忙，无法保证屏幕60次/秒的刷新率，就会导致跳过若干次调用回调方法的机会，跳过次数取决CPU的忙碌程度。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;屏幕刷新时调用&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;CADisplayLink在正常情况下会在每次刷新结束都被调用，精确度相当高。但如果调用的方法比较耗时，超过了屏幕刷新周期，就会导致跳过若干次回调调用机会&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;适合做界面渲染&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;CADisplayLink可以确保系统渲染每一帧的时候我们的方法都被调用，从而保证了动画的流畅性。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;gcd定时器&quot;&gt;GCD定时器&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;GCD定时器&lt;/strong&gt;和NSTimer是不一样的，NSTimer受RunLoop影响，但是GCD的定时器不受影响，因为通过源码可知RunLoop也是基于GCD的实现的，所以GCD定时器有非常高的精度。关于GCD的使用可一看看&lt;a href=&quot;http://www.cnblogs.com/pure/archive/2013/03/31/2977420.html&quot;&gt;这篇博客&lt;/a&gt;。&lt;/p&gt;
-
-&lt;h4 id=&quot;使用方法-2&quot;&gt;使用方法&lt;/h4&gt;
-&lt;p&gt;创建GCD定时器定时器的方法稍微比较复杂，看下面的代码：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 定时时间
-int interval = 1;
-
-// 创建全局队列
-dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-
-// 创建定时器
-dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-
-// 设置定时器 interval * NSEC_PER_SEC  定时间隔几秒
-dispatch_source_set_timer(timer, dispatch_walltime(NULL, 0), interval * NSEC_PER_SEC, 0);
-
-dispatch_source_set_event_handler(timer, ^{
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-
-        // 需要执行的代码
-    });
-});
-
-// 开启定时器
-dispatch_resume(timer);
-
-// 关闭定时器
-dispatch_source_cancel(timer);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;单次的延时调用&quot;&gt;单次的延时调用&lt;/h4&gt;
-&lt;p&gt;NSObject中的&lt;code class=&quot;highlighter-rouge&quot;&gt;performSelector:withObject:afterDelay:&lt;/code&gt;以及 &lt;code class=&quot;highlighter-rouge&quot;&gt;performSelector:withObject:afterDelay:inModes:&lt;/code&gt; 这两个方法在调用的时候会设置当前 runloop 中 &lt;code class=&quot;highlighter-rouge&quot;&gt;timer&lt;/code&gt; ，前者设置的 &lt;code class=&quot;highlighter-rouge&quot;&gt;timer&lt;/code&gt; 在 &lt;code class=&quot;highlighter-rouge&quot;&gt;NSDefaultRunLoopMode&lt;/code&gt; 运行，后者则可以指定 &lt;strong&gt;NSRunLoop&lt;/strong&gt; 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;mode&lt;/code&gt; 来执行。我们上面介绍过 runloop 中 &lt;code class=&quot;highlighter-rouge&quot;&gt;timer&lt;/code&gt; 在 &lt;code class=&quot;highlighter-rouge&quot;&gt;UITrackingRunLoopMode&lt;/code&gt; 被挂起，就导致了代码就会一直等待 &lt;code class=&quot;highlighter-rouge&quot;&gt;timer&lt;/code&gt; 的调度,解决办法在上面也有说明。&lt;/p&gt;
-
-&lt;p&gt;不过我们可以用另一套方案来解决这个问题，就是使用GCD中的 &lt;code class=&quot;highlighter-rouge&quot;&gt;dispatch_after&lt;/code&gt; 来实现单次的延时调用：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;double delayInSeconds = 2.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [self someMethod];
-    });
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;循环调用&quot;&gt;循环调用&lt;/h4&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 创建GCD定时器
-dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-
-dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-
-dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), 1.0 * NSEC_PER_SEC, 0); //每秒执行
-
-// 事件回调
-dispatch_source_set_event_handler(_timer, ^{
-        
-    dispatch_async(dispatch_get_main_queue(), ^{
-        // 在主线程中实现需要的功能
-        
-	}
-}
-    
-});
-
-// 开启定时器
-dispatch_resume(_timer);
-
-// 挂起定时器（dispatch_suspend 之后的 Timer，是不能被释放的！会引起崩溃）
-dispatch_suspend(_timer);
-
-// 关闭定时器
-dispatch_source_cancel(_timer);
-    
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;上面代码中要注意的是：&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dispatch_source_set_event_handler()&lt;/code&gt;中的任务实在子线程中执行的，若需要回到主线程，要调用&lt;code class=&quot;highlighter-rouge&quot;&gt;dispatch_async(dispatch_get_main_queue(), ^{}&lt;/code&gt;.
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dispatch_source_set_timer&lt;/code&gt; 中第二个参数，当我们使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;dispatch_time&lt;/code&gt; 或者 &lt;code class=&quot;highlighter-rouge&quot;&gt;DISPATCH_TIME_NOW&lt;/code&gt; 时，系统会使用默认时钟来进行计时。然而当系统休眠的时候，默认时钟是不走的，也就会导致计时器停止。使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;dispatch_walltime &lt;/code&gt; 可以让计时器按照真实时间间隔进行计时.&lt;/li&gt;
-      &lt;li&gt;第三个参数， ` 1.0 * NSEC_PER_SEC` 为每秒执行一次，对应的还有毫秒，分秒，纳秒可以选择.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;vagrant init 初始化并自动创建一个Vagrantfile配置文件&lt;/li&gt;
 &lt;/ol&gt;
 
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vagrant init
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;创建一个虚拟机&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vagrant box add hashicorp/precise64 &lt;span class=&quot;c&quot;&gt;## 名为hashicorp/precise64的linux box被下载安装了&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;启动虚拟机&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vagrant up
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;链接虚拟机&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vagrant ssh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;然后就进入linux环境了。。。。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;之后每次打开只要cd到对应的vagrant_folder文件夹然后vagrant up，再 vagrant ssh就可以了&lt;/p&gt;
+
+&lt;h3 id=&quot;常用命令&quot;&gt;常用命令&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dispatch_source_set_event_handler&lt;/code&gt; 这个函数在执行完之后，block 会立马执行一遍，后面隔一定时间间隔再执行一次。而 &lt;code class=&quot;highlighter-rouge&quot;&gt;NSTimer&lt;/code&gt; 第一次执行是到计时器触发之后。这也是和 &lt;code class=&quot;highlighter-rouge&quot;&gt;NSTimer&lt;/code&gt; 之间的一个显著区别。&lt;/li&gt;
-  &lt;li&gt;挂起（暂停）定时器, &lt;code class=&quot;highlighter-rouge&quot;&gt;dispatch_suspend&lt;/code&gt; 之后的 &lt;code class=&quot;highlighter-rouge&quot;&gt;Timer&lt;/code&gt;，不能被释放的,会引起崩溃.&lt;/li&gt;
-  &lt;li&gt;创建的&lt;code class=&quot;highlighter-rouge&quot;&gt;timer&lt;/code&gt;一定要有&lt;code class=&quot;highlighter-rouge&quot;&gt;dispatch_suspend(_timer)&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;dispatch_source_cancel(_timer)&lt;/code&gt;这两句话来指定出口，否则定时器将不执行，若我们想无限循环可将 &lt;code class=&quot;highlighter-rouge&quot;&gt;dispatch_source_cancel(_timer)&lt;/code&gt; 写在一句永不执行的&lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt;判断语句中。&lt;/li&gt;
+  &lt;li&gt;vagrant box list: 查看当前安装的虚拟机&lt;/li&gt;
+  &lt;li&gt;vagrant suspend：休眠当前的虚拟机&lt;/li&gt;
+  &lt;li&gt;vagrant halt: 关机&lt;/li&gt;
+  &lt;li&gt;vagrant destroy：删掉虚拟机&lt;/li&gt;
+  &lt;li&gt;vagrant reload: 从Vagrantfile中重启虚拟机（不知道什么应用场景）&lt;/li&gt;
+  &lt;li&gt;vagrant global-status 输出所有虚拟机当前运行的状态
+    &lt;h3 id=&quot;参考文件和高阶应用&quot;&gt;参考文件和高阶应用&lt;/h3&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Vagrant搭建虚拟化开发环境: http://www.jianshu.com/p/3c3f35436c05&lt;/li&gt;
+  &lt;li&gt;在 Mac/win7 下上使用 Vagrant 打造本地开发环境： https://segmentfault.com/a/1190000002645737&lt;/li&gt;
+  &lt;li&gt;如何制作一个vagrant的basebox: http://blog.csdn.net/samxx8/article/details/38943395&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h2 id=&quot;使用场景&quot;&gt;使用场景&lt;/h2&gt;
-&lt;p&gt;介绍完iOS中的各种定时器，接下来我们来说说这几种定时器在开发中的几种用法。
-###短信重发倒计时&lt;/p&gt;
-
-&lt;p&gt;短信倒计时使我们登录注册常用的功能，一般设置为60s，实现方法如下：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 计时时间
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;assign&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;cm&quot;&gt;/** 开启倒计时 */&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;startCountdown&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_timeout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    
-    &lt;span class=&quot;n&quot;&gt;_timeout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    
-    &lt;span class=&quot;c1&quot;&gt;// GCD定时器
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;dispatch_queue_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dispatch_get_global_queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DISPATCH_QUEUE_PRIORITY_DEFAULT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    
-    &lt;span class=&quot;n&quot;&gt;dispatch_source_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_timer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dispatch_source_create&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DISPATCH_SOURCE_TYPE_TIMER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    
-    &lt;span class=&quot;n&quot;&gt;dispatch_source_set_timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dispatch_walltime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSEC_PER_SEC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//每秒执行
-&lt;/span&gt;    
-    &lt;span class=&quot;n&quot;&gt;dispatch_source_set_event_handler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_timeout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// 倒计时结束
-&lt;/span&gt;            
-            &lt;span class=&quot;c1&quot;&gt;// 关闭定时器
-&lt;/span&gt;            &lt;span class=&quot;n&quot;&gt;dispatch_source_cancel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-            
-            &lt;span class=&quot;n&quot;&gt;dispatch_async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dispatch_get_main_queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                
-                &lt;span class=&quot;c1&quot;&gt;//设置界面的按钮显示 根据自己需求设置
-&lt;/span&gt;                &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sendMsgBtn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;发送&quot;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;forState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlStateNormal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-                
-                &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sendMsgBtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;enabled&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                
-            &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-            
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// 倒计时中
-&lt;/span&gt;            
-            &lt;span class=&quot;c1&quot;&gt;// 显示倒计时结果
-&lt;/span&gt;            
-            &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stringWithFormat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;重发(%.2d)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_timeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-            
-            &lt;span class=&quot;n&quot;&gt;dispatch_async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dispatch_get_main_queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                
-                &lt;span class=&quot;c1&quot;&gt;//设置界面的按钮显示 根据自己需求设置
-&lt;/span&gt;                
-                &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sendMsgBtn&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stringWithFormat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;%@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;forState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIControlStateNormal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-                
-                &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sendMsgBtn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;enabled&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                
-            &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-            
-            &lt;span class=&quot;n&quot;&gt;_timeout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-    
-    &lt;span class=&quot;c1&quot;&gt;// 开启定时器
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;dispatch_resume&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;在上面代码中，我们设置了一个60s循环倒计时，当我们向服务器获取短信验证码成功时 调用该方法开始倒计时。每秒刷新按钮的倒计时数，倒计时结束时再将按钮 &lt;code class=&quot;highlighter-rouge&quot;&gt;Title&lt;/code&gt; 恢复为“发送”.&lt;/p&gt;
-
-&lt;p&gt;有一点需要注意的是，按钮的样式要设置为 &lt;strong&gt;UIButtonTypeCustom&lt;/strong&gt;,否则会出现刷新 &lt;code class=&quot;highlighter-rouge&quot;&gt;Title&lt;/code&gt; 时闪烁.&lt;/p&gt;
-
-&lt;p&gt;我们可以把这个方法封装一下，方便调用，否则在控制器中写这么一大段代码确实也不优雅。&lt;/p&gt;
-
-&lt;p&gt;效果如下：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/006tNc79jw1faspxkoemhj30ci0m8mxy.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/qiubaiying/BYTimer&quot;&gt;代码的gitHub链接&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;每个几分钟向服务器发送数据&quot;&gt;每个几分钟向服务器发送数据&lt;/h3&gt;
-
-&lt;p&gt;在有定位服务的APP中，我们需要每个一段时间将定位数据发送到服务器，比如每5s定位一次每隔5分钟将再统一将数据发送服务器，这样会处理比较省电。
-一般程序进入后台时，定时器会停止，但是在定位APP中，需要持续进行定位，APP在后台时依旧可以运行，所以在后台定时器也是可以运行的。&lt;/p&gt;
-
-&lt;p&gt;注：关于iOS后台常驻,可以查看&lt;a href=&quot;http://waitingyuan.blog.163.com/blog/static/2155781652014111133150534/&quot;&gt;这篇博客&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;在使用GCD定时的时候发现GCD定时器也可以在后代运行，创建方法同上面的短信倒计时.&lt;/p&gt;
-
-&lt;p&gt;这里我们使用&lt;strong&gt;NSTimer&lt;/strong&gt;来创建一个每个5分钟执行一次的定时器.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#import &amp;lt;Foundation/Foundation.h&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TimerBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)();&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;BYTimer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NSObject&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;startTimerWithBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TimerBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;timerBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stopTimer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#import &quot;BYTimer.h&quot;
-&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;BYTimer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSTimer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TimerBlock&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timerBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;BYTimer&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;startTimerWithBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TimerBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;timerBlock&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-	 &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSTimer&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;timerWithTimeInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_timerAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;repeats&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-	 
-    &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSRunLoop&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;mainRunLoop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addTimer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timer&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;forMode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSRunLoopCommonModes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;_timerBlock&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timerBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_timerAction&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timerBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timerBlock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stopTimer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timer&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;invalidate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;该接口的实现很简单，就是&lt;strong&gt;NSTimer&lt;/strong&gt;创建了一个300s执行一次的定时器，但是要注意定时器需要加入&lt;code class=&quot;highlighter-rouge&quot;&gt;NSRunLoopCommonModes&lt;/code&gt;中。&lt;/p&gt;
-
-&lt;p&gt;最后，要使定时器在后台能运行，app就需要在&lt;a href=&quot;http://waitingyuan.blog.163.com/blog/static/2155781652014111133150534/&quot;&gt;后台常驻&lt;/a&gt;。&lt;/p&gt;
-
 </description>
-        <pubDate>Tue, 13 Dec 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/12/13/%E5%AE%9A%E6%97%B6%E5%99%A8%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E4%BD%BF%E7%94%A8%E5%90%97/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/12/13/%E5%AE%9A%E6%97%B6%E5%99%A8%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E4%BD%BF%E7%94%A8%E5%90%97/</guid>
+        <pubDate>Tue, 30 Aug 2016 00:00:00 -0400</pubDate>
+        <link>http://localhost:4000/2016/08/30/docker%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%92%8C%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/08/30/docker%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%92%8C%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86/</guid>
         
-        <category>iOS</category>
+        <category>docker</category>
         
-        <category>定时器</category>
+        <category>virtualBox</category>
+        
+        <category>linux</category>
         
         
       </item>

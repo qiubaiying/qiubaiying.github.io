@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="每个胜利背后都有许多尝试">
-    <meta name="keywords"  content="BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone">
+    <meta name="description" content="by Nico">
+    <meta name="keywords"  content="Data Science, Data Minning, Graph Theory, Online Community, Deep Learning, Machine Learning">
     <meta name="theme-color" content="#000000">
     
-    <title>柏荧的博客 | BY Blog</title>
+    <title>A Data Safari</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -69,7 +69,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">BY Blog</a>
+            <a class="navbar-brand" href="/">A Data Safari</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -81,11 +81,15 @@
                     </li>
                     
                     <li>
-                        <a href="/about/">About</a>
+                        <a href="/about/">about me</a>
                     </li>
                     
                     <li>
-                        <a href="/tags/">Tags</a>
+                        <a href="/research/">research</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags/">tags</a>
                     </li>
                     
                 </ul>
@@ -150,14 +154,14 @@
 
 
     <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/post-bg-rwd.jpg')">
+<header class="intro-header" style="background-image: url('/img/home_bg_kids.png')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
                 <div class="site-heading">
-                    <h1>BY Blog</h1>
+                    <h1>A Data Safari</h1>
                     <!--<hr class="small">-->
-                    <span class="subheading">身体和灵魂，一个也不能落下！</span>
+                    <span class="subheading">blog about Data Sciene, python, read and life.</span>
                 </div>
             </div>
         </div>
@@ -180,151 +184,287 @@
             ">
     			
 <div class="post-preview">
-    <a href="/2017/02/06/Mac%E5%BF%AB%E9%80%9F%E8%B0%83%E5%87%BA%E7%BB%88%E7%AB%AF/">
+    <a href="/2017/03/13/wordpress%E5%A4%A7%E6%90%AC%E5%AE%B6/">
         <h2 class="post-title">
-            Mac 快速调出终端
+            wordpress大搬家
         </h2>
         
         <h3 class="post-subtitle">
-            在Mac下为终端设置快捷键
+            move my blog to github
         </h3>
         
         <div class="post-content-preview">
-            
-  在Mac下快速调出终端的方法是：为终端添加一个快捷键打开方式
+            博客搬家
+
+首先庆祝博客大搬家成功！撒花！
+
+早就想脱离wordpress换一个“时髦”一点的前端框架，最近春假终于有时间好好折腾，于是顺利摆脱wordpress搭上github+jekyll顺风车，在此记录一下。
+
+jekyll是Tom Preston-Werner在2008年开发的静态网页生成器，最大的优点有两个：
+
+  不需要管理数据库
+  完美支持markdown语法
 
 
-为终端添加一个快捷键打开方式
-
-打开Mac下自带的软件 Automator
-
-
-
-新建文稿
-
-
-
-创建一个服务
-
-
-
-
-
-
-
-修改框内的脚本
-
-on run {input, parameters}
-	tell application "Terminal"
-		reopen
-		activate
-	end tell
-end...
+最近（好像...
         </div>
     </a>
     <p class="post-meta">
-        Posted by BY on February 6, 2017
+        Posted by Nico on March 13, 2017
     </p>
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/2017/02/06/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+    <a href="/2017/02/10/%E4%BB%8Epy%E6%BA%90%E7%A0%81%E5%AF%BC%E5%85%A5%E5%87%BD%E6%95%B0/">
         <h2 class="post-title">
-            快速搭建个人博客
+            从py源码导入函数
         </h2>
         
         <h3 class="post-subtitle">
-            手把手教你在半小时内搭建自己的个人博客(如果不踩坑的话🙈🙊🙉)
+            How to import python function from source py  file
         </h3>
         
         <div class="post-content-preview">
-            
-  正所谓前人栽树，后人乘凉。
+            由于笔者最近做上了助教，然后就面对要改上百份python作业的困境。
 
-  感谢Huxpro提供的博客模板
+然后就研究了一下怎么从py文件中直接导入函数的方法。
 
-  我的的博客
+废话不多说，现在我的目标是要从一个文件夹 mydir 中导入 test.py 文件里的 myfunction 函数：
+
+文件夹结构是这样的：
+
+➜ Downloads tree mydir
+    mydir
+        └── test.py
 
 
-前言
-从 Jekyll 到 GitHub Pages 中间踩了许多坑，终于把我的个人博客BY Blog搭建出来了。。。
 
-废话不多说了，开始进入正文。
-
-快速开始
-
-从注册一个Github账号开始
-
-我采用的搭建博客的方式是使用 GitHub Pages + jekyll 的方式。
-
-要使用 Git...
+test文...
         </div>
     </a>
     <p class="post-meta">
-        Posted by BY on February 6, 2017
+        Posted by Nico on February 10, 2017
     </p>
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/2017/02/04/Hello-2017/">
+    <a href="/2016/12/31/python%E4%B8%AD%E7%9A%84-args%E5%92%8C-kwargs/">
         <h2 class="post-title">
-            Hello 2017
+            python中的*args和**kwargs
         </h2>
         
         <h3 class="post-subtitle">
-            "Hello World, Hello Blog"
+            what is *args and **kwargs?
         </h3>
         
         <div class="post-content-preview">
-            
-  “🙉🙉🙉 ”
+            什么是*args和**kwargs
 
 
-前言
+  *args: positional arguments;
+  **kwargs: keyword arguments.
 
-BY 的 Blog 就这么开通了。
 
-本来打算在年前完成 Blog 的搭建，不曾料想踩了很多坑。。。
+default
 
-跳过废话，直接看技术实现 
-
-2017 年，BY Blog 总算是搭建好了。
-
-最开始写博客是在简书这个平台上，简书确实不错，支持markdown在线编辑。
-
-在一次偶然间，听到我的好基友 阳阳 想搭建个人主页，觉得作为一个程序员，是应该倒腾倒腾自己的Blo...
+def test_defargs(one, two = 2):
+    print 'Required argument: ', one
+    print 'Optional argument: ', tw...
         </div>
     </a>
     <p class="post-meta">
-        Posted by BY on February 4, 2017
+        Posted by Nico on December 31, 2016
     </p>
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/2016/12/13/%E5%AE%9A%E6%97%B6%E5%99%A8%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E4%BD%BF%E7%94%A8%E5%90%97/">
+    <a href="/2016/12/20/2017%E5%B9%B4%E7%9A%84%E5%B9%B4%E5%BA%A6%E7%9B%AE%E6%A0%87/">
         <h2 class="post-title">
-            定时器 你真的会使用吗？
+            2017年的年度目标
         </h2>
         
         <h3 class="post-subtitle">
-            iOS定时器详解
+            Target In A Year
         </h3>
         
         <div class="post-content-preview">
-            
-  定时器的使用是软件开发基础技能，用于延时执行或重复执行某些方法。我相信大部分人接触iOS的定时器都是从
-[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(action:) userInfo:nil repeats:YES]这段代码开始的吧。
+            最近越来越觉得可视化和前端技术对数据工作者来说有多么重要，长篇大论的essay或者花哨的PPT都不如一张设计精巧的图来的有说服力。
 
+于是打算训练自己成为一个全栈开发者，隐隐的觉得我又入了一个大坑 …orz…
 
+也到年末，顺便列一下2017年的年度目标：
 
-  但是关于iOS定时器，你真的会用吗？...
+target in a year!
+
+  每1周读完一篇论文；
+  每2周读完一本书；
+  每周写代码时间不少于20 hours;
+  ...
         </div>
     </a>
     <p class="post-meta">
-        Posted by BY on December 13, 2016
+        Posted by Nico on December 20, 2016
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2016/11/11/mac%E5%9C%A8jupyter-notebook%E9%87%8C%E6%98%BE%E7%A4%BA%E4%B8%AD%E6%96%87%E7%9A%84%E6%96%B9%E6%B3%95/">
+        <h2 class="post-title">
+            mac在jupyter notebook里显示中文的方法
+        </h2>
+        
+        <h3 class="post-subtitle">
+            show chinese in mac jupyter notebook
+        </h3>
+        
+        <div class="post-content-preview">
+            笔者今天折腾在jupyter notebook里显示中文的问题折腾了3个小时以上。。。
+
+所以虽然好久没有更新博客了，这次一定要把方法记录下来！
+
+一共三步：
+
+
+  下载一个微软雅黑的中文字体包，要ttf格式，双击安装
+
+
+下载地址：http://www.pc6.com/mac/116742.html
+
+
+  清空matplot字体缓存目录
+
+
+rm ~/.matplotlib/fontL...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Nico on November 11, 2016
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2016/10/08/mac%E7%AA%97%E5%8F%A3%E5%AE%9E%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+        <h2 class="post-title">
+            mac窗口实用快捷键
+        </h2>
+        
+        <h3 class="post-subtitle">
+            short cut of OS X
+        </h3>
+        
+        <div class="post-content-preview">
+            从windows切换到mac已经2个月啦~,虽然之前也用一台小air,但没怎么需要多任务处理开多个窗口,键盘快捷键也就没那么重要了,但是现在经常开多个chrome窗口查询,多个terminal调试,所以有必要学一下mac下的键盘快捷键。
+
+整理几个实用的：
+Mac 的应用程序、窗口关系结构是很清晰的,严格遵循「先程序、后窗口」的规则。
+
+
+  
+    
+      类目
+      快捷键...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Nico on October 8, 2016
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2016/09/16/jupyter-notebook%E5%AF%BC%E5%87%BApdf%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+        <h2 class="post-title">
+            jupyter notebook导出pdf的解决方法
+        </h2>
+        
+        <h3 class="post-subtitle">
+            不装2.8G的latex就能完美导出pdf
+        </h3>
+        
+        <div class="post-content-preview">
+            为什么会有这个问题
+
+由于这两天开始上课了，笔者忙于用jupyter notebook写各种作业，（这里推荐一下jupyter乃写作业真！神！器！也），
+它很好的支持markdown语法
+
+
+
+它能很好的处理图片
+
+
+
+能很好的处理公式
+
+
+
+还能直接展示代码和运行结果
+
+
+
+综上，笔者就用jupyter写完了作业，然而学校的交作业系统只支持doc或者pdf上传，然后jupyter导出pdf...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Nico on September 16, 2016
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2016/09/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80%E7%9A%84%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+        <h2 class="post-title">
+            数据库基础的复习笔记
+        </h2>
+        
+        <h3 class="post-subtitle">
+            Study Memo of Basic Database
+        </h3>
+        
+        <div class="post-content-preview">
+            最近有时间就复习了一下被我遗忘在角落的数据库语法。
+
+BRIEF &amp; SUMMARY
+
+one sentence brief
+
+  这门课介绍了sql的基本语法和python中调用sql的方法，采用的数据库是postgreSQL，非常实用，总的来说比较简单。
+  老师做了一个简单的网页，通过网页上发帖链接数据库并保存到数据库中，很有意思。
+  数据库语法和python还是很不一样（在...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Nico on September 10, 2016
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2016/08/30/docker%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%92%8C%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86/">
+        <h2 class="post-title">
+            docker虚拟机和环境管理
+        </h2>
+        
+        <h3 class="post-subtitle">
+            docker and virtualBox
+        </h3>
+        
+        <div class="post-content-preview">
+            virtualBox
+什么是virtualBox
+mac下的开源虚拟机，功能和主流的vm没有什么差别，主要看中的是开源免费而且占用空间小。和vagrant一起使用可以很方便的创建linux开发环境，也可以载入windows镜像使用windows虚拟机；
+
+
+  virtualBox安装：https://www.virtualbox.org/
+  virtualBox官方文档：https://...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Nico on August 30, 2016
     </p>
 </div>
 <hr>
@@ -361,6 +501,56 @@ BY 的 Blog 就这么开通了。
                         
                             
                         
+                            
+                                <a href="/tags/#python" title="python" rel="4">
+                                    python
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#jupyter" title="jupyter" rel="2">
+                                    jupyter
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#mac" title="mac" rel="3">
+                                    mac
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#module" title="module" rel="2">
+                                    module
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
                     </div>
                 </section>
                 
@@ -370,48 +560,31 @@ BY 的 Blog 就这么开通了。
                     <hr><h5><a href="/about/">ABOUT ME</a></h5>
                     <div class="short-about">
                         
-                            <img src="img/avatar-by.JPG" />
+                            <img src="img/blog_auther_img.jpg" />
                         
                         
-                            <p>It takes a great man <br> to be a good instener</p>
+                            <p>Hi! I'm Nico! 
+A data science student lived in New York.</p>
                         
                         <!-- SNS Link -->
                         <ul class="list-inline">
                             
                             
-                            
                             <li>
-                                <a target="_blank" href="https://www.zhihu.com/people/qiubaiying">
+                                <a href="https://twitter.com/nicozheng1">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa  fa-stack-1x fa-inverse">知</i>
+                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
                             </li>
                             
                             
-                            <li>
-                                <a target="_blank" href="http://weibo.com/qiubaiying">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
+                            
                             
                             
                             <li>
-                                <a target="_blank" href="https://www.facebook.com/baiying.qiu.7">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            
-                            
-                            <li>
-                                <a target="_blank" href="https://github.com/qiubaiying">
+                                <a target="_blank" href="https://github.com/Nicozheng">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -424,18 +597,6 @@ BY 的 Blog 就这么开通了。
                     </div>
                 </section>
                 <!-- Friends Blog -->
-                
-                <hr>
-                <h5>FRIENDS</h5>
-                <ul class="list-inline">
-                    
-                        <li><a href="http://www.jianshu.com/u/e71990ada2fd">简书·BY</a></li>
-                    
-                        <li><a href="https://apple.com">Apple</a></li>
-                    
-                        <li><a href="https://developer.apple.com/">Apple Developer</a></li>
-                    
-                </ul>
                 
     		</div>
         
@@ -451,43 +612,25 @@ BY 的 Blog 就这么开通了。
                 <ul class="list-inline text-center">
                     
                     
+                    <li>
+                        <a href="https://twitter.com/nicozheng1">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
 
                     <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
                     
-                    <li>
-                        <a target="_blank" href="https://www.zhihu.com/people/qiubaiying">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa  fa-stack-1x fa-inverse">知</i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li>
-                        <a target="_blank" href="http://weibo.com/qiubaiying">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
                     
 
 
                     
-                    <li>
-                        <a target="_blank" href="https://www.facebook.com/baiying.qiu.7">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
                     
                     <li>
-                        <a target="_blank" href="https://github.com/qiubaiying">
+                        <a target="_blank" href="https://github.com/Nicozheng">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -498,7 +641,7 @@ BY 的 Blog 就这么开通了。
                     
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; BY Blog 2017
+                    Copyright &copy; A Data Safari 2017
                     <br>
                     Theme by <a href="http://huangxuan.me">Hux</a> |
                     <iframe
@@ -594,7 +737,7 @@ BY 的 Blog 就这么开通了。
 
 <script>
     // dynamic User by Hux
-    var _gaId = 'UA-90855596-1';
+    var _gaId = 'UA-91840336-1';
     var _gaDomain = 'auto';
 
     // Originial
@@ -611,20 +754,6 @@ BY 的 Blog 就这么开通了。
 
 <!-- Baidu Tongji -->
 
-<script>
-    // dynamic User by Hux
-    var _baId = 'b50bf2b12b5338a1845e33832976fd68';
-
-    // Originial
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?" + _baId;
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-
 
 
 
@@ -635,7 +764,7 @@ BY 的 Blog 就这么开通了。
 
 
 <!-- Image to hack wechat -->
-<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- <img src="/img/icon_wechat.png" width="0" height="0" /> -->
 <!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>

@@ -1,19 +1,18 @@
 # Site settings
 title: A Data Safari
 SEOTitle: A Data Safari
-header-img: img/blog_title_img.jpg
-email: nico921113@gmail.com
+header-img: img/home_bg_kids.png
+email: nico921113 {at} gmail.com
 description: "by Nico"
-keyword: "Data Science, Data Minning, Graph Theory, Online Community"
+keyword: "Data Science, Data Minning, Graph Theory, Online Community, Deep Learning, Machine Learning"
 url: "https://nicozheng.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "A Rational Idealist"
-sidebar-avatar: img/blog_auther_img.jpeg      # use ab〔方案選單〕solute URL, seeing it's used in both `/` and `/about/`
-
+sidebar-about-description: "Hi! I'm Nico! A data science student lived in New York."
+sidebar-avatar: img/blog_auther_img.jpg      # use ab〔方案選單〕solute URL, seeing it's used in both `/` and `/about/`
 
 
 # SNS settings
@@ -74,13 +73,9 @@ ga_track_id: 'UA-91840336-1'            # Format: UA-xxxxxx-xx
 ga_domain: auto
 
 
-
-
-
 # Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
 featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
-
 
 
 # Progressive Web Apps
