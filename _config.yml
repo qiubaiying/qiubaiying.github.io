@@ -1,9 +1,9 @@
 # Site settings
 title: A Data Safari
-SEOTitle: by Nico
-header-img: img/blog_title_img.png
+SEOTitle: A Data Safari
+header-img: img/blog_title_img.jpg
 email: nico921113@gmail.com
-description: "每个胜利背后都有许多尝试"
+description: "by Nico"
 keyword: "Data Science, Data Minning, Graph Theory, Online Community"
 url: "https://nicozheng.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
@@ -12,7 +12,7 @@ baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "A Rational Idealist"
-sidebar-avatar: img/blog_auther_img.jpeg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: img/blog_auther_img.jpeg      # use ab〔方案選單〕solute URL, seeing it's used in both `/` and `/about/`
 
 
 
