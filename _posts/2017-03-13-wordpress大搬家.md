@@ -23,7 +23,7 @@ jekyll是Tom Preston-Werner在2008年开发的静态网页生成器，最大的�
 1. 不需要管理数据库
 2. 完美支持markdown语法
 
-最近（好像也不是最近），GitHub推出了Pages的服务，允许用户依托github云设立自己的博客(一个博客站点就是一个github repository，管理方法和传统的repo一模一样)，jekyll就是Github Pages默认的网页引擎，所以当然是无条件转投jekyll啦！
+最近~~好像也不是最近~~，GitHub推出了Pages的服务，允许用户依托github云设立自己的博客(一个博客站点就是一个github repository，管理方法和传统的repo一模一样)，jekyll就是Github Pages默认的网页引擎，所以当然是无条件转投jekyll啦！
 
 ### 填坑
 
