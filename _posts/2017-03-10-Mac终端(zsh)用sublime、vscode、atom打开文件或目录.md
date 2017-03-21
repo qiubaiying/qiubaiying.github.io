@@ -45,6 +45,7 @@ zsh 使用 [oh_my_zsh](http://ohmyz.sh/) 配置
 	/bin/sh
 	/bin/tcsh
 	/bin/zsh
+	
 #### 安装 oh my zsh
 
 	git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
