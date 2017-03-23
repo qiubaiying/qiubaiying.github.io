@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      AsyncDisplayKit 2.0 教程：入门「译」
-subtitle:   AsyncDisplayKit 2.0 Tutorial: Getting Started
+title:      AsyncDisplayKit 2.0 教程:入门「译」
+subtitle:   AsyncDisplayKit Tutorial:Getting Started
 date:       2017-03-23
 author:     BY
 header-img: img/post-bg-iWatch.jpg
@@ -13,9 +13,7 @@ tags:
     - 开源库
 ---
 
-
 > AsyncDisplayKit 2.0 Tutorial: Getting Started
-
 
 # 前言
 
