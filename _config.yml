@@ -1,13 +1,13 @@
 # Site settings
-title: BYY Blog
+title: WXF Blog
 SEOTitle: 王晓菲的博客
 header-img: img/post-bg-desk.jpg
 email: qiubaiying@gmail.com
 description: "每个胜利背后都有许多尝试"
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+keyword: "吃货, XF Blog, 晓菲的博客, wangxiaofei, 王晓菲, iOS, Apple, iPhone"
+url: "http://wxfhome.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/wxfhome/wxfhome.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
