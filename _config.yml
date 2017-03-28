@@ -12,7 +12,7 @@ github_repo: "https://github.com/wxfhome/wxfhome.github.io.git" # you code repos
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "能吃能睡的小哪吒"
-sidebar-avatar: img/avatar-by.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: img/me.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
