@@ -1,7 +1,7 @@
 {
-  "name": "Hux Blog",
-  "short_name": "Hux Blog",
-  "description": "About an engineer & designer who loves web.",
+  "name": "WXF Blog",
+  "short_name": "WXF Blog",
+  "description": "一只能吃能睡的小哪吒",
   "icons": [{
     "src": "icons/128.png",
     "sizes": "128x128",
