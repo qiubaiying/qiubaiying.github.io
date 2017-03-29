@@ -75,27 +75,38 @@ header-img: "img/home-bg-o.jpg"
     _render();
 </script>
 
+<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+<script>
+var cloudTieConfig = {
+  url: document.location.href, 
+  sourceId: "",
+  productKey: "63de467e261b44a991834e6e5d0b199f",
+  target: "cloud-tie-wrapper"
+};
+var yunManualLoad = true;
+Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+</script>
 
-
-{% if site.duoshuo_username %}
+<!-- {% if site.duoshuo_username %} -->
 <!-- 多说评论框 start -->
-<div class="comment">
+<!-- <div class="comment">
     <!-- This id is used for indexing my loss comments forcedly -->
-    <div class="ds-thread"
+<!--     <div class="ds-thread"
     {% if site.duoshuo_username == "qiubaiying" %}
         data-thread-id="0ee040117ec56f17aa7e2523d1eae19b"
     {% else %}
     <!-- U can just use this key generated to index comments at page about -->
-        data-thread-key="{{site.duoshuo_username}}/about"
+<!--         data-thread-key="{{site.duoshuo_username}}/about"
     {% endif %}
 
     data-title="{{page.title}}"
     data-url="{{site.url}}/about/"></div>
-</div>
+</div> --> --> -->
 <!-- 多说评论框 end -->
 
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     // dynamic User hacking by Hux
     var _user = '{{site.duoshuo_username}}';
 
@@ -109,18 +120,18 @@ header-img: "img/home-bg-o.jpg"
         (document.getElementsByTagName('head')[0]
          || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
-</script>
+</script> -->
 <!-- 多说公共JS代码 end -->
-{% endif %}
+<!-- {% endif %} -->
 
 
 {% if site.disqus_username %}
 <!-- disqus 评论框 start -->
-<div class="comment">
+<!-- <div class="comment">
     <div id="disqus_thread" class="disqus-thread">
 
     </div>
-</div>
+</div> -->
 <!-- disqus 评论框 end -->
 
 <!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
