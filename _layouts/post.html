@@ -133,8 +133,8 @@ layout: default
             </div>  
 
     <!-- Side Catalog Container -->
-        {% if page.catalog %}
-            <div class="
+<!--         {% if page.catalog %} -->
+<!--             <div class="
                 col-lg-2 col-lg-offset-0
                 visible-lg-block
                 sidebar-container
@@ -146,21 +146,21 @@ layout: default
                     </h5>
                     <ul class="catalog-body"></ul>
                 </div>
-            </div>
-        {% endif %}
+            </div> -->
+<!--         {% endif %} -->
 
     <!-- Sidebar Container -->
-            <div class="
+<!--             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 sidebar-container">
 
                 <!-- Featured Tags -->
-                {% if site.featured-tags %}
+<!--                 {% if site.featured-tags %}
                 <section>
                     <hr class="hidden-sm hidden-xs">
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-                    <div class="tags">
+<!--                     <h5><a href="/tags/">FEATURED TAGS</a></h5> -->
+<!--                     <div class="tags">
         				{% for tag in site.tags %}
                             {% if tag[1].size > {{site.featured-condition-size}} %}
                 				<a href="/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
@@ -168,12 +168,12 @@ layout: default
                                 </a>
                             {% endif %}
         				{% endfor %}
-        			</div>
-                </section>
-                {% endif %}
+        			</div> -->
+<!--                 </section> -->
+<!--                 {% endif %} --> 
 
                 <!-- Friends Blog -->
-                {% if site.friends %}
+<!--                 {% if site.friends %}
                 <hr>
                 <h5>FRIENDS</h5>
                 <ul class="list-inline">
@@ -181,8 +181,8 @@ layout: default
                         <li><a href="{{friend.href}}">{{friend.title}}</a></li>
                     {% endfor %}
                 </ul>
-                {% endif %}
-            </div>
+                {% endif %} -->
+<!--             </div> --> 
         </div>
     </div>
 </article>
