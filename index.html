@@ -19,7 +19,7 @@ description: "快乐其实没什么大不了.You and me."
         </div>
     </a>
     <p class="post-meta">
-        Posted by666 {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
     </p>
 </div>
 <hr>
