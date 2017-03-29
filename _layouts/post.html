@@ -61,7 +61,20 @@ layout: default
 				{{ content }}
 
                 <hr style="visibility: hidden;">
-
+		    <!-- 网易云跟帖公共JS代码 start (一个网页只需插入一次) -->
+<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+<script>
+var cloudTieConfig = {
+  url: document.location.href, 
+  sourceId: "",
+  productKey: "63de467e261b44a991834e6e5d0b199f",
+  target: "cloud-tie-wrapper"
+};
+var yunManualLoad = true;
+Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+</script>
+<!-- 网易云跟帖公共JS代码 end -->
                 {% if site.duoshuo_share && site.duoshuo_username %}
                 <!-- 多说 Share start -->
 <!--                 <div class="ds-share"
