@@ -1,10 +1,10 @@
 # Site settings
 title: BY Blog
-SEOTitle: 朱强的博客 | BY Blog
+SEOTitle: 就这样的博客 | BY Blog
 header-img: img/post-bg-desk.jpg
 email: 707580808@qq.com
 description: "每个胜利背后都有许多尝试"
-keyword: "BY, BY Blog, 朱强的博客, 朱强"
+keyword: "BY, BY Blog, 就这样的博客, 就这样"
 url: "http://707580808.githup.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/707580808/707580808.github.io.git" # you code repository
