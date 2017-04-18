@@ -225,7 +225,7 @@ Objective-C。免费App排行榜前100大多数都没有使用Swift（至少6个
 ```
 让我们整理一下：
 
-1. ASDK 中的 `ASCellNode` 等价于 `ASCellNode` 或者 `UICollectionViewCell`。要注意的是这个方法返回的是一个 `ASCellNodeBlock`，`ASTableNode` 维持着内部所有的 Cell，每个 indexPath 对应一个 block，并且随时准备进行初始化。
+1. ASDK 中的 `ASCellNode` 等价于 `UITableViewCell` 或者 `UICollectionViewCell`。要注意的是这个方法返回的是一个 `ASCellNodeBlock`，`ASTableNode` 维持着内部所有的 Cell，每个 indexPath 对应一个 block，并且随时准备进行初始化。
 2. 你的首要任务是通过数据模型构建cell。这是非常重要的一步，要注意！你获取数据后在 下面的 block 处理。不要在 block 里引用`indexPath`,以防止 block 运行前的数据变动。
 3. 然后返回一个 block，其返回值必须为 `ASCellNode`。
 4. 没有必要担心Cell的复用以及初始化一个Cell的方法。您可能会注意到您现在返回了`CardNode`，而不是`CardCell`。
