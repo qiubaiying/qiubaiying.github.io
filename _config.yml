@@ -3,7 +3,7 @@ title: Keith Lee
 SEOTitle: 李良的博客 | Keith Lee
 header-img: img/post-bg-desk.jpg
 email: keithdeveloper1314@gmail.com
-description: "每个胜利背后都有许多尝试"
+description: 成功更多的是辛酸和泪水"
 keyword: "Blog, 李良的博客, Keith Lee, 李良, iOS, Apple, iPhone"
 url: "http://liliang1314.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
@@ -11,7 +11,7 @@ github_repo: "https://github.com/liliang1314/liliang1314.github.io.git" # you co
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
+sidebar-about-description: "This is why we work"
 sidebar-avatar: img/avatar-by.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -60,7 +60,7 @@ kramdown:
 # Duoshuo settings
 duoshuo_username: qiubaiying
 # Share component is depend on Comment so we can NOT use share only.
-duoshuo_share: true                     # set to false if you want to use Comment without Sharing
+duoshuo_share: false                     # set to false if you want to use Comment without Sharing
 
 
 
@@ -92,9 +92,6 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
-    },{
         title: "简书·Keith",
         href: "http://www.jianshu.com/u/f8be5bc533bd"
     },{
