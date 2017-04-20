@@ -1,13 +1,13 @@
 # Site settings
 title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
+SEOTitle: JackSteven's Blog
 header-img: img/post-bg-desk.jpg
 email: qiubaiying@gmail.com
 description: "每个胜利背后都有许多尝试"
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+keyword: "BY, BY Blog, JackSteven's Blog, JackSteven, Swift, iOS, Apple, iPhone"
+url: "http://jacksteven.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/jacksteven/jacksteven.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
