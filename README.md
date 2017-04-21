@@ -170,25 +170,33 @@ iframe在不同的设备中，将会自动的调整大小。保留内边距是�
 
 #### Comment
 
-博客不仅支持多说[Duoshuo](http://duoshuo.com)评论系统，也支持[Disqus](http://disqus.com)评论系统。
+博客 <del> 不仅支持多说[Duoshuo](http://duoshuo.com)评论系统</del> ，也支持[Disqus](http://disqus.com)评论系统。
+
+>多说即将关闭: 多说将于2017年6月1日正式关停服务, 所以还是用 Disqus 把！
 
 `Disqus`优点是：国际比较流行，界面也很大气、简介，如果有人评论，还能实时通知，直接回复通知的邮件就行了；缺点是：评论必须要去注册一个disqus账号，分享一般只有Facebook和Twitter，另外在墙内加载速度略慢了一点。想要知道长啥样，可以看以前的版本点[这里](http://brucezhaor.github.io/about.html) 最下面就可以看到。
 
+<del> 
 `多说` 优点是：支持国内各主流社交软件(微博，微信，豆瓣，QQ空间 ...)一键分享按钮功能，另外登陆比较方便，管理界面也是纯中文的，相对于disqus全英文的要容易操作一些；缺点是：就是界面丑了一点。
 当然你是可以自定义界面的css的，详情请看多说开发者文档 <http://dev.duoshuo.com/docs/5003ecd94cab3e7250000008>。
+ </del>
 
-**首先**，你需要去注册一个账号，不管是disqus还是多说的。**不要直接使用我的啊！**
+
+
+
+**首先**，你需要去注册一个Disqus帐号。**不要直接使用我的啊！**
 
 **其次**，你只需要在下面的yaml头文件中设置一下就可以了。
 
+<del>
+
 ```
-duoshuo_username: _你的用户名_
-# 或者
-disqus_username: _你的用户名_
+disqus_username: shrotName
 ```
 
+<del>
 **最后**多说是支持分享的，如果你不想分享，请这样设置：`duoshuo_share: false`。你可以同时使用两个评论系统，不过个人感觉怪怪的。
-
+</del>
 #### Analytics
 
 网站分析，现在支持百度统计和Google Analytics。需要去官方网站注册一下，然后将返回的code贴在下面：
@@ -236,7 +244,7 @@ JavaScript 的压缩混淆、Less 的编译、Apache 2.0 许可通告的添加�
 1. `gem update jekyll` # 更新jekyll
 2. `gem update github-pages` #更新依赖的包
 
-使用`bundle exec jekyll server`的同学在更新jekyll后，需要输入`bundle update`来更新依赖的包.
+使用`bundle exec jekyll server`的同学在更新 jekyll 后，需要输入`bundle update`来更新依赖的包.
 
 参考文档：[using jekyll with pages](https://help.github.com/articles/using-jekyll-with-pages/) & [Upgrading from 2.x to 3.x](http://jekyllrb.com/docs/upgrading/2-to-3/)
 
