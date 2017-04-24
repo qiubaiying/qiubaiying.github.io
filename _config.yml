@@ -7,7 +7,7 @@ description: "数尽荒芜过后,必定会有新生..."
 keyword: "BY, BY Blog, 董洋的博客, d66y88, 董洋, iOS, Apple, iPhone"
 url: "http://d66y88.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/d66y88/d66y88.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -18,12 +18,12 @@ sidebar-avatar: img/avatar-by.jpg      # use absolute URL, seeing it's used in b
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
-#twitter_username:   qiubaiying
+# weibo_username:     d66y88
+zhihu_username:     d66y88
+github_username:    DyForever
+facebook_username:  null
+jianshu_username:   null
+#twitter_username:   null
 
 
 
@@ -93,10 +93,10 @@ service-worker: true
 friends: [
     {
         title: "WY",
-        href: "http://zhengwuyang.com"
+        href: ""
     },{
         title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
+        href: "http://www.jianshu.com/u/11970cb3cebc"
     },{
         title: "Apple",
         href: "https://apple.com"
@@ -105,3 +105,5 @@ friends: [
         href: "https://developer.apple.com/"
     }
 ]
+
+
