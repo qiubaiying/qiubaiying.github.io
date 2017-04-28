@@ -13,8 +13,6 @@ tags:
     - ruby
 ---
 
-> 本文首次发布于 [BY Blog](http://qiubaiying.github.io), 作者 [@柏荧(BY)](http://github.com/qiubaiying) ,转载请保留原文链接.
-
 # 前言
 
 最近换了新机器，重新搭建了开发环境，其中当然包括 **CocoaPods**。
@@ -27,7 +25,7 @@ tags:
 
 ## 安装
 
-CocoaPods是用Ruby实现的，要想使用它首先需要有Ruby的环境。
+**CocoaPods** 是用 ruby 实现的，要想使用它首先需要有 ruby 的环境。
 
 #### 升级ruby
 
@@ -38,20 +36,32 @@ CocoaPods是用Ruby实现的，要想使用它首先需要有Ruby的环境。
 
 CocoaPods需要**2.2.2**版本及以上的，我们先升级ruby。
 
-使用**rvm**安装ruby
+使用 **rvm** 安装 ruby
 	
 	curl -L get.rvm.io | bash -s stable 
 	source ~/.bashrc
 	source ~/.bash_profile
 
-Ruby的软件源使用亚马逊的云服务被墙了，切换国内的 **ruby-china源** （<https://ruby.taobao.org/>已经停止维护，详情[查看公告](https://ruby.taobao.org/)）：
+切换 ruby 源
+
+ruby 下载源使用亚马逊的云服务被墙了，切换国内的 **ruby-china源** （<https://ruby.taobao.org/>已经停止维护，详情[查看公告](https://ruby.taobao.org/)）：
 
 	$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
 	$ gem sources -l
 	*** CURRENT SOURCES ***
 	
 	https://gems.ruby-china.org
-到此ruby升级完毕
+	
+安装并切换 ruby
+
+> 这里不建议安装最新的 2.4.0 版本，因为次版本的 ruby，在xcodebuild 自动打包时，会出现问题！ 所以退一步，安装 2.3.3版本~
+
+	rvm install 2.3.3 --disable-binary
+	rvm use 2.3.3 --default
+	
+到此ruby升级完毕.
+
+有关RVM的使用可以看这篇 [RVM 使用指南](http://qiubaiying.github.io/2017/04/28/RVM-使用指南/)
 
 #### 安装CocoaPods
 
@@ -168,3 +178,4 @@ end
 - [CocoaPods公有仓库的创建](http://qiubaiying.top/2017/03/08/CocoaPods%E5%85%AC%E6%9C%89%E4%BB%93%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA/)
 - [CocoaPods私有仓库的创建](http://qiubaiying.top/2017/03/10/CocoaPods%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA/)
  
+ > 本文首次发布于 [BY Blog](http://qiubaiying.github.io), 作者 [@柏荧(BY)](http://github.com/qiubaiying) ,转载请保留原文链接.
