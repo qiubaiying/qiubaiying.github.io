@@ -1,13 +1,13 @@
 # Site settings
 title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
+SEOTitle: BY Jiayi
 header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
+email: jiayi0206@me.com
 description: "每个胜利背后都有许多尝试"
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "https://qiubaiying.github.io"          # your host, for absolute URL
+keyword: "data science, machine learning, python, R"
+url: "https://jiayiwangjw.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/jiayiwangjw/jiayiwangjw.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -20,8 +20,8 @@ sidebar-avatar: img/avatar-by.jpg      # use absolute URL, seeing it's used in b
 RSS: false
 # weibo_username:     qiubaiying
 zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
+github_username:    jiayiwangjw
+facebook_username:  potentialwjy
 jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
 
