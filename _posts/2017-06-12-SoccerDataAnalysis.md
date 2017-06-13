@@ -20,25 +20,13 @@ We will be using an open dataset from the popular site <a href="https://www.kagg
 
 
 
-<table>
-<col width="550">
-<col width="450">
-<tr>
-<td><img src="http://www.foodculture.dk/~/media/foodculture/_arkiv/aktuelt/2012/14/fodbold.jpg?w=700" align="middle" style="width:550px;height:360px;"/></td>
-<td>
-This week, we will be using an open dataset from the popular site <a href="https://www.kaggle.com">Kaggle</a>. This <a href="https://www.kaggle.com/hugomathien/soccer">European Soccer Database</a> has more than 25,000 matches and more than 10,000 players for European professional soccer seasons from 2008 to 2016. 
-<br>
-<br>
+## Dataset
+We will be using an open dataset from the popular site <a href="https://www.kaggle.com">Kaggle</a>. This <a href="https://www.kaggle.com/hugomathien/soccer">European Soccer Database</a> has more than 25,000 matches and more than 10,000 players for European professional soccer seasons from 2008 to 2016. 
+
 Although we won’t be getting into the details of it for our example, the dataset even has attributes on weekly game updates, team line up, and detailed match events.
-<br>
-<br>
+
 The goal of this notebook is to walk you through an end to end process of analyzing a dataset and introduce you to what we will be covering in this course. Our simple analytical process will include some steps for exploring  and cleaning our dataset, some steps for predicting player performance using basic statistics, and some steps for grouping similar clusters using machine learning. 
-<br>
-<br>
-Let's get started with our Python journey!
-</td>
-</tr>
-</table>
+
 
 ## Getting Started
 <br> To get started, we will need to:
@@ -55,7 +43,6 @@ Let's get started with our Python journey!
 <li><b>matplotlib</b> for data visualization</li>
 <li>specific methods from <b>sklearn</b> for Machine Learning and 
 <li><b>customplot</b>, which contains custom functions we have written for this notebook</li>
-
 </ul>
 
 
@@ -69,7 +56,8 @@ from sklearn.preprocessing import scale
 from customplot import *
 ```
 
-#### Ingest Data
+
+### Ingest Data
 
 Now, we will need to read the dataset using the commands below. 
 
@@ -94,9 +82,6 @@ Let us look at what the data columns are using a pandas attribute called "column
 ```python
 df.columns
 ```
-
-
-
 
     Index(['id', 'player_fifa_api_id', 'player_api_id', 'date', 'overall_rating',
            'potential', 'preferred_foot', 'attacking_work_rate',
@@ -562,7 +547,7 @@ df.describe().transpose()
 
 
 
-<h1 style="font-size:2em;color:#2467C0">Data Cleaning: Handling Missing Data</h1>
+### Data Cleaning: Handling Missing Data
 Real data is never clean. We need to make sure we clean the data by converting or getting rid of null or missing values.<br>
 The next code cell will show you if any of the 183978 rows have null value in one of the 42 columns.
 
@@ -571,9 +556,6 @@ The next code cell will show you if any of the 183978 rows have null value in on
 #is any row NULL ?
 df.isnull().any().any(), df.shape
 ```
-
-
-
 
     (True, (183978, 42))
 
@@ -633,8 +615,6 @@ df.isnull().sum(axis=0)
     gk_reflexes             836
     dtype: int64
 
-
-## 什么是
 
 ## Fixing Null Values by Deleting Them
 
