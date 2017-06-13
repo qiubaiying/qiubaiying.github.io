@@ -56,7 +56,7 @@ from customplot import *
 ```
 
 
-### Ingest Data
+#### Ingest Data
 
 Now, we will need to read the dataset using the commands below. 
 
@@ -641,10 +641,6 @@ df.isnull().any().any(), df.shape
 
     183978
     
-
-
-
-
     (False, (180354, 42))
 
 
@@ -657,9 +653,6 @@ To find exactly how many lines we removed, we need to subtract the current numbe
 
 rows - df.shape[0]
 ```
-
-
-
 
     3624
 
@@ -676,7 +669,7 @@ df = df.reindex(np.random.permutation(df.index))
 
 Predicting: 'overall_rating' of a player, now that our data cleaning step is reasonably complete and we can trust and understand the data more, we will start diving into the dataset further. 
 
-### Let's take a look at top few rows.
+Let's take a look at top few rows.
 
 We will use the head function for data frames for this task. This gives us every column in every row.
 
@@ -924,7 +917,7 @@ df[:10][['penalties', 'overall_rating']]
 ## Feature Correlation Analysis 
 Next, we will check if 'penalties' is correlated to 'overall_rating'. We are using a similar selection operation, bu this time for all the rows and within the correlation function. 
 
-# Are these correlated (using Pearson's correlation coefficient) ?
+Are these correlated (using Pearson's correlation coefficient) ?
 
 ```python
 df['overall_rating'].corr(df['penalties'])
@@ -935,7 +928,7 @@ Pearson goes from -1 to +1. A value of 0 would have told there is no correlation
 At least, we have these attributes which are slightly correlated. This gives us hope that we might be able to build a meaningful predictor using these ‘weakly’ correlated features.<br><br>
 Next, we will create a list of features that we would like to iterate the same operation on.
 
-## Create a list of potential Features that you want to measure correlation with
+Create a list of potential Features that you want to measure correlation with
 
 
 ```python
@@ -962,7 +955,7 @@ for f in potentialFeatures:
     stamina: 0.325606
     
 
-### Which features have the highest correlation with overall_rating?
+Which features have the highest correlation with overall_rating?
 
 Looking at the values printed by the previous cell, we notice that the to two are "ball_control" (0.44) and "shot_power" (0.43). So these two features seem to have higher correlation with "overall_rating".
 
@@ -1038,13 +1031,13 @@ plot_dataframe(df2, 'Player\'s Overall Rating')
 Now it is time for you to analyze what we plotted. Suppose you have to predict a player's overall rating. Which 5 player attributes would you ask for?
 **Hint:** Which are the five features with highest correlation coefficients?
 
-## Clustering Players into Similar Groups
+* Clustering Players into Similar Groups
 
 Until now, we used basic statistics and correlation coefficients to start forming an opinion, but can we do better? What if we took some features and start looking at each player using those features? Can we group similar players based on these features? Let's see how we can do this. 
 
 **Note:** Generally, someone with domain knowledge needs to define which features. We could have also selected some of the features with highest correlation with overall_rating. However, it does not guarantee best outcome always as we are not sure if the top five features are independent. For example, if 4 of the 5 features depend on the remaining 1 feature, taking all 5 does not give new information.
 
-## Select Features on Which to Group Players
+* Select Features on Which to Group Players
 
 
 ```python
@@ -1266,7 +1259,7 @@ parallel_plot(P)
 
 
 ## Analysis of Findings
-### Can you identify the groups for each of the below?
+* Can you identify the groups for each of the below?
 
 Two groups are very similar except in gk_kicking - these players can coach each other on gk_kicking, where they differ
 Two groups are somewhat similar to each other except in potential.
