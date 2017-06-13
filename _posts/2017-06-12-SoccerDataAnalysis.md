@@ -4,7 +4,7 @@ title:      Soccer Data Analysis
 subtitle:   Soccer Data Analysis
 date:       2017-06-12
 author:     Jiayi
-header-img: img/post-bg-swift.jpg
+header-img: img/post-bg-2015.jpg
 catalog: true
 tags:
     - Python
