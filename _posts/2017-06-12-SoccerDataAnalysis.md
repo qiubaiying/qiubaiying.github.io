@@ -11,7 +11,7 @@ tags:
 ---
 
 
-> This blog was initially released [BY Blog](https://jiayiwangjw.github.io), author [@Jiayi](https://jiayiwangjw.github.io/) 
+> This blog was initially released [BY Jiayi](https://jiayiwangjw.github.io), author [@Jiayi](https://jiayiwangjw.github.io/) 
 
 # Preface
 
@@ -19,8 +19,7 @@ We will be using an open dataset from the popular site <a href="https://www.kagg
 ![](https://kaggle2.blob.core.windows.net/datasets-images/63/141/e5591c2bbb5997993769650c8bf5ab79/dataset-original.jpg)
 
 
-<br><br><center><h1 style="font-size:4em;color:#2467C0">Soccer Data Analysis</h1></center>
-<br>
+
 <table>
 <col width="550">
 <col width="450">
