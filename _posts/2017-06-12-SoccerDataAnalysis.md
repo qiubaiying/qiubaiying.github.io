@@ -23,16 +23,6 @@ We will be using an open dataset from the popular site <a href="https://www.kagg
 ## Dataset
 We will be using an open dataset from the popular site <a href="https://www.kaggle.com">Kaggle</a>. This <a href="https://www.kaggle.com/hugomathien/soccer">European Soccer Database</a> has more than 25,000 matches and more than 10,000 players for European professional soccer seasons from 2008 to 2016. 
 
-```python
-import sqlite3
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
-from sklearn.preprocessing import scale
-from customplot import *
-```
-
 Although we won’t be getting into the details of it for our example, the dataset even has attributes on weekly game updates, team line up, and detailed match events.
 
 The goal of this notebook is to walk you through an end to end process of analyzing a dataset and introduce you to what we will be covering in this course. Our simple analytical process will include some steps for exploring  and cleaning our dataset, some steps for predicting player performance using basic statistics, and some steps for grouping similar clusters using machine learning. 
@@ -46,13 +36,12 @@ The goal of this notebook is to walk you through an end to end process of analyz
 </ol>
 
 ## Import Libraries
-<br> We will start by importing the Python libraries we will be using in this analysis. These libraries include:
-<ul>
-<li><b>sqllite3</b> for interacting with a local relational database; and</li>
-<li><b>pandas</b> and <b>numpy</b> for data ingestion and manipulation.</li>
-<li><b>matplotlib</b> for data visualization</li>
-<li>specific methods from <b>sklearn</b> for Machine Learning and 
-<li><b>customplot</b>, which contains custom functions we have written for this notebook</li>
+We will start by importing the Python libraries we will be using in this analysis. These libraries include:
+**sqllite3** for interacting with a local relational database
+**pandas** and **numpy** for data ingestion and manipulation
+**matplotlib** for data visualization
+specific methods from **sklearn** for Machine Learning and 
+**customplot**, which contains custom functions we have written for this notebook
 
 
 
@@ -71,9 +60,9 @@ from customplot import *
 
 Now, we will need to read the dataset using the commands below. 
 
-<b>Note:</b> Make sure you run the import cell above (shift+enter) before you run the data ingest code below.
+**Note:** Make sure you run the import cell above (shift+enter) before you run the data ingest code below.
 
-<b>df</b> is a variable pointing to a pandas data frame. We will learn about them in an upcoming week.
+**df** is a variable pointing to a pandas data frame. 
 
 
 ```python
@@ -82,10 +71,9 @@ cnx = sqlite3.connect('database.sqlite')
 df = pd.read_sql_query("SELECT * FROM Player_Attributes", cnx)
 ```
 
-<h1 style="font-size:2em;color:#2467C0">Exploring Data</h1>
+## Exploring Data
 
 We will start our data exploration by generating simple statistics of the data. 
-<br><br> 
 Let us look at what the data columns are using a pandas attribute called "columns".
 
 
@@ -557,7 +545,7 @@ df.describe().transpose()
 
 
 
-### Data Cleaning: Handling Missing Data
+## Data Cleaning: Handling Missing Data
 Real data is never clean. We need to make sure we clean the data by converting or getting rid of null or missing values.<br>
 The next code cell will show you if any of the 183978 rows have null value in one of the 42 columns.
 
@@ -686,8 +674,7 @@ Our data table has many lines as you have seen. We can only look at few lines at
 df = df.reindex(np.random.permutation(df.index))
 ```
 
-<h1 style="font-size:2em;color:#2467C0">Predicting: 'overall_rating' of a player</h1>
-Now that our data cleaning step is reasonably complete and we can trust and understand the data more, we will start diving into the dataset further. 
+Predicting: 'overall_rating' of a player, now that our data cleaning step is reasonably complete and we can trust and understand the data more, we will start diving into the dataset further. 
 
 ### Let's take a look at top few rows.
 
@@ -858,7 +845,7 @@ df.head(5)
 
 
 Most of the time, we are only interested in plotting some columns. In that case, we can use the pandas column selection option as follows. Please ignore the first column in the output of the one line code below. It is the unique identifier that acts as an index for the data.<br><br>
-<b>Note:</b> From this point on, we will start referring to the columns as "features" in our description.
+**Note:** From this point on, we will start referring to the columns as "features" in our description.
 
 
 ```python
@@ -939,7 +926,9 @@ Next, we will check if 'penalties' is correlated to 'overall_rating'. We are usi
 
 # Are these correlated (using Pearson's correlation coefficient) ?
 
+```python
 df['overall_rating'].corr(df['penalties'])
+```
 
 We see that Pearson's Correlation Coefficient for these two columns is 0.39. <br><br>
 Pearson goes from -1 to +1. A value of 0 would have told there is no correlation, so we shouldn’t bother looking at that attribute. A value of 0.39 shows some correlation, although it could be stronger. <br><br>
@@ -973,12 +962,12 @@ for f in potentialFeatures:
     stamina: 0.325606
     
 
-## Which features have the highest correlation with overall_rating?
+### Which features have the highest correlation with overall_rating?
 
 Looking at the values printed by the previous cell, we notice that the to two are "ball_control" (0.44) and "shot_power" (0.43). So these two features seem to have higher correlation with "overall_rating".
 
 
-<h1 style="font-size:2em;color:#2467C0">Data Visualization:</h1>
+## Data Visualization:
 Next we will start plotting the correlation coefficients of each feature with "overall_rating". We start by selecting the columns and creating a list with correlation coefficients, called "correlations".
 
 
@@ -1047,17 +1036,16 @@ plot_dataframe(df2, 'Player\'s Overall Rating')
 ![png](SoccerDataAnalysis_files/SoccerDataAnalysis_42_0.png)
 
 
-<h1 style="font-size:1.5em;color:#FB41C4">Analysis of Findings</h1>
+## Analysis of Findings
 
 Now it is time for you to analyze what we plotted. Suppose you have to predict a player's overall rating. Which 5 player attributes would you ask for?
-<br><br>
-<b>Hint:</b> Which are the five features with highest correlation coefficients?
+**Hint:** Which are the five features with highest correlation coefficients?
 
-<h1 style="font-size:2em;color:#2467C0">Clustering Players into Similar Groups</h1>
+## Clustering Players into Similar Groups
 
 Until now, we used basic statistics and correlation coefficients to start forming an opinion, but can we do better? What if we took some features and start looking at each player using those features? Can we group similar players based on these features? Let's see how we can do this. 
 
-<b>Note:</b> Generally, someone with domain knowledge needs to define which features. We could have also selected some of the features with highest correlation with overall_rating. However, it does not guarantee best outcome always as we are not sure if the top five features are independent. For example, if 4 of the 5 features depend on the remaining 1 feature, taking all 5 does not give new information.
+**Note:** Generally, someone with domain knowledge needs to define which features. We could have also selected some of the features with highest correlation with overall_rating. However, it does not guarantee best outcome always as we are not sure if the top five features are independent. For example, if 4 of the 5 features depend on the remaining 1 feature, taking all 5 does not give new information.
 
 ## Select Features on Which to Group Players
 
@@ -1261,8 +1249,8 @@ P
 
 
 
-<h1 style="font-size:2em;color:#2467C0">Visualization of Clusters</h1>
-We now have 4 clusters based on the features we selected, we can treat them as profiles for similar groups of players. We can visualize these profiles by plotting the centers for each cluster, i.e., the average values for each featuere within the cluster. We will use matplotlib for this visualization. We will learn more about matplotlib in Week 5. 
+## Visualization of Clusters
+We now have 4 clusters based on the features we selected, we can treat them as profiles for similar groups of players. We can visualize these profiles by plotting the centers for each cluster, i.e., the average values for each featuere within the cluster. We will use matplotlib for this visualization. We will learn more about matplotlib later. 
 
 
 ```python
@@ -1280,10 +1268,9 @@ parallel_plot(P)
 ![png](SoccerDataAnalysis_files/SoccerDataAnalysis_55_0.png)
 
 
-<h1 style="font-size:1.5em;color:#FB41C4">Analysis of Findings</h1>
+## Analysis of Findings
 ### Can you identify the groups for each of the below?
 
-<ul>
-<li>Two groups are very similar except in gk_kicking - these players can coach each other on gk_kicking, where they differ.</li>
-<li>Two groups are somewhat similar to each other except in potential.</li>
-</ul>
+Two groups are very similar except in gk_kicking - these players can coach each other on gk_kicking, where they differ
+Two groups are somewhat similar to each other except in potential.
+
