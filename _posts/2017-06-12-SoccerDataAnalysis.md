@@ -993,9 +993,6 @@ correlations = [ df['overall_rating'].corr(df[f]) for f in cols ]
 len(cols), len(correlations)
 ```
 
-
-
-
     (34, 34)
 
 
@@ -1033,7 +1030,7 @@ plot_dataframe(df2, 'Player\'s Overall Rating')
 ```
 
 
-![png](SoccerDataAnalysis_files/SoccerDataAnalysis_42_0.png)
+![png](/img/soccer01.png)
 
 
 ## Analysis of Findings
@@ -1265,7 +1262,7 @@ parallel_plot(P)
 ```
 
 
-![png](SoccerDataAnalysis_files/SoccerDataAnalysis_55_0.png)
+![png](/img/soccer02.png)
 
 
 ## Analysis of Findings
