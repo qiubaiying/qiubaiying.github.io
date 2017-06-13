@@ -1,6 +1,6 @@
 # Site settings
-title: BY Jiayi22
-SEOTitle: BY Jiayi22
+title: BY Jiayi
+SEOTitle: BY Jiayi
 header-img: img/post-bg-desk.jpg
 email: jiayi0206@me.com
 description: "每个胜利背后都有许多尝试"
@@ -19,7 +19,7 @@ sidebar-avatar: img/image1.png      # use absolute URL, seeing it's used in both
 # SNS settings
 RSS: false
 # weibo_username:     qiubaiying
-kaggle_username:     potentialwjy
+# kaggle_username:     potentialwjy
 github_username:    jiayiwangjw
 facebook_username:  potentialwjy
 linkedin_username:   jiayiwangjw
