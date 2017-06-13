@@ -11,17 +11,13 @@ tags:
 ---
 
 
-> 本文首次发布于 [BY Blog](http://qiubaiying.github.io), 作者 [@柏荧(BY)](http://github.com/qiubaiying) ,转载请保留原文链接.
+> This blog was initially released [BY Blog](https://jiayiwangjw.github.io), author [@Jiayi](https://jiayiwangjw.github.io/) 
 
-# 前言
+# Preface
 
-通过 IB 设置 控件 的属性非常的方便。
+We will be using an open dataset from the popular site <a href="https://www.kaggle.com">Kaggle</a>. This <a href="https://www.kaggle.com/hugomathien/soccer">European Soccer Database</a> has more than 25,000 matches and more than 10,000 players for European professional soccer seasons from 2008 to 2016. 
+![](https://kaggle2.blob.core.windows.net/datasets-images/63/141/e5591c2bbb5997993769650c8bf5ab79/dataset-original.jpg)
 
-![](https://ww3.sinaimg.cn/large/006tNc79gy1ff9fpog0vrj30ho084t9m.jpg)
-
-但是缺点也很明显，那就是有一些属性没有暴露在 IB 的设置面板中。这时候就要使用 `@IBInspectable` 在 IB 面板中添加这些没有的属性。
-
-关于在 OC 中使用 `IBInspectable` 可以看一下我的 [这篇文章](http://qiubaiying.top/2016/12/01/%E5%BF%AB%E9%80%9F%E6%B7%BB%E5%8A%A0%E5%9C%86%E8%A7%92%E5%92%8C%E6%8F%8F%E8%BE%B9/#高级)
 
 # 正文
 
