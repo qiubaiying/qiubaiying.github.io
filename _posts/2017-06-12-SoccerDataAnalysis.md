@@ -43,7 +43,7 @@ The goal of this notebook is to walk you through an end to end process of analyz
 <li><b>matplotlib</b> for data visualization</li>
 <li>specific methods from <b>sklearn</b> for Machine Learning and 
 <li><b>customplot</b>, which contains custom functions we have written for this notebook</li>
-</ul>
+
 
 
 ```python
