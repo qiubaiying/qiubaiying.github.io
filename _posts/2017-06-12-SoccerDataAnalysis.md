@@ -19,9 +19,6 @@ We will be using an open dataset from the popular site <a href="https://www.kagg
 ![](https://kaggle2.blob.core.windows.net/datasets-images/63/141/e5591c2bbb5997993769650c8bf5ab79/dataset-original.jpg)
 
 
-# 正文
-
-
 <br><br><center><h1 style="font-size:4em;color:#2467C0">Soccer Data Analysis</h1></center>
 <br>
 <table>
