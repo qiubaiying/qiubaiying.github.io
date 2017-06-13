@@ -8,6 +8,8 @@ header-img: img/post-bg-2015.jpg
 catalog: true
 tags:
     - Python
+layout:     keynote
+iframe:     "http://huangxuan.me/js-module-7day/"
 ---
 
 
