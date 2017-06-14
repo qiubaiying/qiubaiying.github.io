@@ -4,7 +4,7 @@ title:      Titanic Competition
 subtitle:   Machine Learning from Disater
 date:       2017-06-14
 author:     Jiayi
-header-img: img/post-bg-2015.jpg
+header-img: img/titanic01.jpg
 catalog: true
 tags:
     - R
