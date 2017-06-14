@@ -8,12 +8,11 @@ header-img: img/titanic01.jpg
 catalog: true
 tags:
     - R
+	
 ---
 
 
-
-This is the competition of Titanic：Machine Learning from Disater from Kaggle
------------------------------------------------------------------------------
+#### This is the competition of Titanic：Machine Learning from Disater from Kaggle
 
 Get the dataset
 ---------------
@@ -22,6 +21,7 @@ Get the dataset
     test <- read.csv("test.csv")
     library(dplyr)
     full <- bind_rows(train, test)
+
     head(full)
 
     ##   PassengerId Survived Pclass
@@ -80,6 +80,49 @@ Get the dataset
     ##                    
     ##                    
     ## 
+
+    sapply(full,function(x) sum(is.na(x)))     
+
+    ## PassengerId    Survived      Pclass        Name         Sex         Age 
+    ##           0         418           0           0           0         263 
+    ##       SibSp       Parch      Ticket        Fare       Cabin    Embarked 
+    ##           0           0           0           1           0           0
+
+    sapply(full,function(x) sum(x==''))
+
+    ## PassengerId    Survived      Pclass        Name         Sex         Age 
+    ##           0          NA           0           0           0          NA 
+    ##       SibSp       Parch      Ticket        Fare       Cabin    Embarked 
+    ##           0           0           0          NA        1014           2
+
+    embarked.na <- full$Embarked
+    which(embarked.na %in% "")
+
+    ## [1]  62 830
+
+    full_62 <- full[full$PassengerId==62,]
+    full_62
+
+    ##    PassengerId Survived Pclass                Name    Sex Age SibSp Parch
+    ## 62          62        1      1 Icard, Miss. Amelie female  38     0     0
+    ##    Ticket Fare Cabin Embarked
+    ## 62 113572   80   B28
+
+    full_830 <- full[full$PassengerId==830,]
+    full_830
+
+    ##     PassengerId Survived Pclass                                      Name
+    ## 830         830        1      1 Stone, Mrs. George Nelson (Martha Evelyn)
+    ##        Sex Age SibSp Parch Ticket Fare Cabin Embarked
+    ## 830 female  62     0     0 113572   80   B28
+
+    library(ggplot2)
+    library(scales)
+    library(ggthemes)
+    embark_fare <- full %>% filter(PassengerId !=62 & PassengerId !=830)
+    ggplot(embark_fare, aes(x=Embarked, y=Fare, fill=factor(Pclass)))+geom_boxplot()+geom_hline(aes(yintercept=80), colour='red', linetype='dashed',lwd=2)+scale_y_continuous(labels=dollar_format())+theme_few()+ggtitle('the embarkment by passenger class and median fare')
+
+![](img/unnamed-chunk-3-1.png)
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or
 by pressing *Ctrl+Alt+I*.
