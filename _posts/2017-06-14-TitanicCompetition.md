@@ -1,3 +1,16 @@
+---
+layout:     post
+title:      Titanic Competition
+subtitle:   Machine Learning from Disater
+date:       2017-06-14
+author:     Jiayi
+header-img: img/post-bg-2015.jpg
+catalog: true
+tags:
+    - R
+---
+
+
 This is the competition of Titanic：Machine Learning from Disater from Kaggle
 -----------------------------------------------------------------------------
 
