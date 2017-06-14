@@ -7,21 +7,21 @@ author:     Jiayi
 header-img: img/titanic01.jpg
 catalog: true
 tags:
-    - R
-	
+    - R	
 ---
 
 
 #### This is the competition of Titanic：Machine Learning from Disater from Kaggle
 
-Get the dataset
+## Get the dataset
 ---------------
 
+```r
     train <- read.csv("train.csv")
     test <- read.csv("test.csv")
     library(dplyr)
     full <- bind_rows(train, test)
-
+```
     head(full)
 
     ##   PassengerId Survived Pclass
@@ -122,7 +122,7 @@ Get the dataset
     embark_fare <- full %>% filter(PassengerId !=62 & PassengerId !=830)
     ggplot(embark_fare, aes(x=Embarked, y=Fare, fill=factor(Pclass)))+geom_boxplot()+geom_hline(aes(yintercept=80), colour='red', linetype='dashed',lwd=2)+scale_y_continuous(labels=dollar_format())+theme_few()+ggtitle('the embarkment by passenger class and median fare')
 
-![](img/unnamed-chunk-3-1.png)
+![png](img/unnamed-chunk-3-1.png)
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or
 by pressing *Ctrl+Alt+I*.
