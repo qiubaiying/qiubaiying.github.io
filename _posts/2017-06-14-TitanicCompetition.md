@@ -160,6 +160,7 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
     which(embarked.na %in% "")
 ```
     ## [1]  62 830
+    
 ```r
     #Find out the blank value, we locate 62 and 830
     full_62 <- full[full$PassengerId==62,]
@@ -169,6 +170,7 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
     ## 62          62        1      1 Icard, Miss. Amelie female  38     0     0
     ##    Ticket Fare Cabin Embarked
     ## 62 113572   80   B28
+    
 ```r
     full_830 <- full[full$PassengerId==830,]
     full_830
@@ -177,6 +179,7 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
     ## 830         830        1      1 Stone, Mrs. George Nelson (Martha Evelyn)
     ##        Sex Age SibSp Parch Ticket Fare Cabin Embarked
     ## 830 female  62     0     0 113572   80   B28
+    
 ```r
     library(ggplot2)
     library(scales)
@@ -202,6 +205,7 @@ add "C" to blank value
     which(Fare.na %in% TRUE)
 ```
     ## [1] 1044
+    
 ```r
     full[1044,]
 ```
@@ -209,6 +213,7 @@ add "C" to blank value
     ## 1044        1044       NA      3 Storey, Mr. Thomas male 60.5     0     0
     ##      Ticket Fare Cabin Embarked
     ## 1044   3701   NA              S
+    
 ```r
     full_fare <- full[full$Pclass=='3'&full$Embarked=='S', ]
     
@@ -260,9 +265,11 @@ we can conclude that the passenger embarked at S and Pclass=3 paid $0-20. Then w
     ##   5   3  Age
     ##   5   4  Age
     ##   5   5  Age
+    
 ```r
     mice_output <- complete(mice_mod)
 ```
+
 compare the forecasting by MICE with original data
 ```r
     par(mfrow=c(1,2))
