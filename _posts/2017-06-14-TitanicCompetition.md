@@ -338,6 +338,7 @@ let us take a look at the final version of dataset
     ##           Mr Mrs  Ms Rev Sir the Countess
     ##   female   0 197   2   0   0            1
     ##   male   757   0   0   8   1            0
+
 ```r
     #combine the rare
     rare_title <- c('Capt','Col','Don','Dona','Dr','Jonkheer','Lady','Major','Rev','Sir','the Countess')
@@ -382,7 +383,7 @@ let us take a look at the final version of dataset
     ##                    
     ##                    
     ## 
-```
+
 ```r
     #check the category of name
     table(full$Sex, full$Title)
@@ -391,6 +392,7 @@ let us take a look at the final version of dataset
     ##          Master Miss  Mr Mrs Rare title
     ##   female      0  264   0 198          4
     ##   male       61    0 757   0         25
+
 
 compare the variables
 ```r
