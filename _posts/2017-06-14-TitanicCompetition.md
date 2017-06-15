@@ -162,7 +162,7 @@
     embark_fare <- full %>% filter(PassengerId !=62 & PassengerId !=830)
     ggplot(embark_fare, aes(x=Embarked, y=Fare, fill=factor(Pclass)))+geom_boxplot()+geom_hline(aes(yintercept=80), colour='red', linetype='dashed',lwd=2)+scale_y_continuous(labels=dollar_format())+theme_few()+ggtitle('the embarkment by passenger class and median fare')
 
-![](titanicMD_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+![png](/img/unnamed-chunk-4-1.png)
 
 ##### add "C" to blank value
 
