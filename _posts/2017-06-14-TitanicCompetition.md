@@ -1,4 +1,10 @@
-#### This is the competition of Titanicï Machine Learning from Disater from Kaggle
+### This is the [competition of Titanic Machine Learning](https://www.kaggle.com/c/titanic) from [Kaggle](https://www.kaggle.com)
+
+#### The sinking of the RMS Titanic is one of the most infamous shipwrecks in history.  On April 15, 1912, during her maiden voyage, the Titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew. This sensational tragedy shocked the international community and led to better safety regulations for ships.
+
+#### One of the reasons that the shipwreck led to such loss of life was that there were not enough lifeboats for the passengers and crew. Although there was some element of luck involved in surviving the sinking, some groups of people were more likely to survive than others, such as women, children, and the upper-class.
+
+#### In this challenge, we ask you to complete the analysis of what sorts of people were likely to survive. In particular, we ask you to apply the tools of machine learning to predict which passengers survived the tragedy.
 
 ### 1. Get the dataset
 
@@ -194,7 +200,7 @@
 
     ## Warning: Removed 1 rows containing non-finite values (stat_density).
 
-![](titanicMD_files/figure-markdown_strict/unnamed-chunk-6-1.png)
+![png](/img/titanic/unnamed-chunk-6-1.png)
 
 ##### we can conclude that the passenger embarked at S and Pclass=3 paid $0-20. Then we can add the missing value with median
 
@@ -245,7 +251,7 @@
     hist(full$Age,freq = F,main = 'Age:ORiginal Data',col='darkblue',ylim = c(0,0.04))
     hist(mice_output$Age,freq = F,main = 'Age:MICE Output',col = 'skyblue',ylim = c(0,0.04))
 
-![](titanicMD_files/figure-markdown_strict/unnamed-chunk-9-1.png)
+![png](/img/titanic/unnamed-chunk-9-1.png)
 
 ##### We can use forecast to fill up the missing data since both are similar
 
@@ -372,7 +378,7 @@
     library(ggplot2)
     ggplot(full[1:891,], aes(Title, fill=factor(Survived)))+geom_bar()+facet_grid(.~Sex)+theme_few()+ggtitle('The Survival by Title and Sex')
 
-![](titanicMD_files/figure-markdown_strict/unnamed-chunk-15-1.png)
+![png](/img/titanic/unnamed-chunk-15-1.png)
 
 ##### **Obviously, "Miss", "Mrs" has significant survival rate. "Mr" has significant mortality**
 
@@ -380,7 +386,7 @@
 
     mosaicplot(table(full$Sex, full$Survived), main='survival by Sex', shade=T)
 
-![](titanicMD_files/figure-markdown_strict/unnamed-chunk-16-1.png)
+![png](/img/titanic/unnamed-chunk-16-1.png)
 
 ##### **Female has higher survival rate, but how about rate for those who are mother?**
 
@@ -388,7 +394,7 @@
     full$mother[full$Sex == 'female' & full$Age>18 & full$Parch>0 & full$Title !='Miss'] <- 'mother'
     mosaicplot(table(full$mother, full$Survived), main='survival by mother', color=c('skyblue','pink'))
 
-![](titanicMD_files/figure-markdown_strict/unnamed-chunk-17-1.png)
+![png](/img/titanic/unnamed-chunk-17-1.png)
 
 ##### **mother has higher survival rate**
 
@@ -400,7 +406,7 @@
     full$Surname <- sapply(strsplit(full$Name,split = '[,.]'),'[',1)
     ggplot(full[1:891,],aes(x=familysize,fill=factor(Survived)))+geom_bar(stat = 'count',position='dodge')+scale_x_continuous(breaks = c(1:11))+labs(x='Family size')+theme_bw()+ggtitle("Family size VS Survived")
 
-![](titanicMD_files/figure-markdown_strict/unnamed-chunk-18-1.png)
+![png](/img/titanic/unnamed-chunk-18-1.png)
 
 ##### **higher survival rate for the family size 1-4**
 
@@ -412,7 +418,7 @@
 
     mosaicplot(table(full$Fsize,full$Survived),main = 'Family Size by Survival',shade = T)
 
-![](titanicMD_files/figure-markdown_strict/unnamed-chunk-19-1.png)
+![png](/img/titanic/unnamed-chunk-19-1.png)
 
 ##### **small family has higher survival rate**
 
@@ -422,7 +428,7 @@
 
     ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
-![](titanicMD_files/figure-markdown_strict/unnamed-chunk-20-1.png)
+![png](/img/titanic/unnamed-chunk-20-1.png)
 
 ##### **age 0-20 has higher survival rate regardless of gender**
 
@@ -439,7 +445,7 @@
 
     mosaicplot(table(full$child,full$Survived),main = 'The Survival by Age',shade = T)
 
-![](titanicMD_files/figure-markdown_strict/unnamed-chunk-21-1.png)
+![png](/img/titanic/unnamed-chunk-21-1.png)
 
 ##### **children has higher survival rate than adult**
 
@@ -453,7 +459,7 @@
 
     mosaicplot(table(full$Fare1,full$Survived),main = 'The Survival by Ticket price',shade = T)
 
-![](titanicMD_files/figure-markdown_strict/unnamed-chunk-22-1.png)
+![png](/img/titanic/unnamed-chunk-22-1.png)
 
 ##### cheap ticket has lower survival rate. Cross check with the below
 
@@ -515,7 +521,7 @@
     plot(rf_mode,ylim = c(0,0.36))
     legend('topright',colnames(rf_mode$err.rate),col=1:3,fill=1:3)
 
-![](titanicMD_files/figure-markdown_strict/unnamed-chunk-24-1.png)
+![png](/img/titanic/unnamed-chunk-24-1.png)
 
 ##### **error rate of mortality is 0.1, error rate of survival is 0.3. It means it it much easier to determine if the passenger is dead.**
 
@@ -531,7 +537,7 @@
 
     ggplot(rankImportance,aes(x=reorder(variables,Importance),y=Importance,fill=Importance))+   geom_bar(stat='identity')+  geom_text(aes(x=variables,y=0.5,label=Ranke),hjust=0,vjust=0.55,size=4,colour='red')+   labs(x='Variables')+   coord_flip()+theme_few()+ggtitle('The Importance of Variables')
 
-![](titanicMD_files/figure-markdown_strict/unnamed-chunk-25-1.png)
+![png](/img/titanic/unnamed-chunk-25-1.png)
 
 ##### **the top 3 important factors are Title, Sex, Fare**
 
