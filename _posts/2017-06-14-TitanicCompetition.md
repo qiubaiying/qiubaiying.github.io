@@ -220,17 +220,19 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
 
 * we can conclude that the passenger embarked at S and Pclass=3 paid $0-20. Then we can add the missing value with median
 
+```r
     full$Fare[1044] = median(full_fare$Fare, na.rm=T)
+```
 
 #### 3.3 Add missing data in "Age"
-
+```r
     set.seed(123)
     library(mice)
 
     #delete the variables that are not necessary
     A <- c('PassengerId','Name','Ticket','Cabin','family','Surname','Survived')
     mice_mod <- mice(full[,!names(full) %in% A],method = 'rf')
-
+```
     ## 
     ##  iter imp variable
     ##   1   1  Age
@@ -258,40 +260,40 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
     ##   5   3  Age
     ##   5   4  Age
     ##   5   5  Age
-
+```r
     mice_output <- complete(mice_mod)
-
-##### compare the forecasting by MICE with original data
-
+```
+* compare the forecasting by MICE with original data
+```r
     par(mfrow=c(1,2))
     hist(full$Age,freq = F,main = 'Age:ORiginal Data',col='darkblue',ylim = c(0,0.04))
     hist(mice_output$Age,freq = F,main = 'Age:MICE Output',col = 'skyblue',ylim = c(0,0.04))
-
+```
 ![png](/img/titanic/unnamed-chunk-9-1.png)
 
-##### We can use forecast to fill up the missing data since both are similar
-
+* We can use forecast to fill up the missing data since both are similar
+```r
     full$Age <- mice_output$Age
-
-##### make sure there are no missing data
-
+```
+* make sure there are no missing data
+```r
     sum(is.na(full$Age))
-
+```
     ## [1] 0
-
+```r
     sum(is.na(full$Fare))
-
+```
     ## [1] 0
 
 #### 3.4 drop Cabin variable
-
+```r
     drops <- c("Cabin")
     full = full[ , !(names(full) %in% drops)]
-
-##### let us take a look at the final version of dataset
-
+```
+* let us take a look at the final version of dataset
+```r
     summary(full)
-
+```
     ##   PassengerId      Survived          Pclass          Name          
     ##  Min.   :   1   Min.   :0.0000   Min.   :1.000   Length:1309       
     ##  1st Qu.: 328   1st Qu.:0.0000   1st Qu.:2.000   Class :character  
@@ -320,14 +322,14 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
 ### 4 Analyze the dataset
 
 #### 4.1 how title realtes with survival rate.
-
+```r
     library(stringr)
     #fecth the title
     full$Title <- gsub('(.*, )|(\\..*)','',full$Name)
 
     #check the category of name
     table(full$Sex, full$Title)
-
+```
     ##         
     ##          Capt Col Don Dona  Dr Jonkheer Lady Major Master Miss Mlle Mme
     ##   female    0   0   0    1   1        0    1     0      0  260    2   1
@@ -336,7 +338,7 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
     ##           Mr Mrs  Ms Rev Sir the Countess
     ##   female   0 197   2   0   0            1
     ##   male   757   0   0   8   1            0
-
+```r
     #combine the rare
     rare_title <- c('Capt','Col','Don','Dona','Dr','Jonkheer','Lady','Major','Rev','Sir','the Countess')
 
@@ -345,9 +347,9 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
     full$Title[full$Title=='Mme'] <- 'Mrs'
     full$Title[full$Title=='Ms'] <- 'Miss'
     full$Title[full$Title %in% rare_title] <- 'Rare title'
-
+    
     summary(full)
-
+```
     ##   PassengerId      Survived          Pclass          Name          
     ##  Min.   :   1   Min.   :0.0000   Min.   :1.000   Length:1309       
     ##  1st Qu.: 328   1st Qu.:0.0000   1st Qu.:2.000   Class :character  
@@ -380,112 +382,113 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
     ##                    
     ##                    
     ## 
-
+```
+```r
     #check the category of name
     table(full$Sex, full$Title)
-
+```
     ##         
     ##          Master Miss  Mr Mrs Rare title
     ##   female      0  264   0 198          4
     ##   male       61    0 757   0         25
 
-##### compare the variables
-
+* compare the variables
+```r
     library(ggplot2)
     ggplot(full[1:891,], aes(Title, fill=factor(Survived)))+geom_bar()+facet_grid(.~Sex)+theme_few()+ggtitle('The Survival by Title and Sex')
-
+```
 ![png](/img/titanic/unnamed-chunk-15-1.png)
 
-##### **Obviously, "Miss", "Mrs" has significant survival rate. "Mr" has significant mortality**
+* **Obviously, "Miss", "Mrs" has significant survival rate. "Mr" has significant mortality**
 
 #### 4.2 how sex realtes with survival rate.
-
+```r
     mosaicplot(table(full$Sex, full$Survived), main='survival by Sex', shade=T)
-
+```
 ![png](/img/titanic/unnamed-chunk-16-1.png)
 
-##### **Female has higher survival rate, but how about rate for those who are mother?**
-
+*  **Female has higher survival rate, but how about rate for those who are mother?**
+```r
     full$mother <- 'not mother'
     full$mother[full$Sex == 'female' & full$Age>18 & full$Parch>0 & full$Title !='Miss'] <- 'mother'
     mosaicplot(table(full$mother, full$Survived), main='survival by mother', color=c('skyblue','pink'))
-
+```
 ![png](/img/titanic/unnamed-chunk-17-1.png)
 
-##### **mother has higher survival rate**
+* **mother has higher survival rate**
 
 #### 4.3 how family member affects the survival rate
-
+```r
     full$familysize <- full$SibSp+full$Parch+1
 
     #fecth family name
     full$Surname <- sapply(strsplit(full$Name,split = '[,.]'),'[',1)
     ggplot(full[1:891,],aes(x=familysize,fill=factor(Survived)))+geom_bar(stat = 'count',position='dodge')+scale_x_continuous(breaks = c(1:11))+labs(x='Family size')+theme_bw()+ggtitle("Family size VS Survived")
-
+```
 ![png](/img/titanic/unnamed-chunk-18-1.png)
 
-##### **higher survival rate for the family size 1-4**
+* **higher survival rate for the family size 1-4**
 
-#### categorize the family into bachelor, small and big
-
+* categorize the family into bachelor, small and big
+```r
     full$Fsize[full$familysize==1] <- 'singleton'
     full$Fsize[full$familysize>1&full$familysize<5] <- 'small family'
     full$Fsize[full$familysize>=5] <- 'big family'
 
     mosaicplot(table(full$Fsize,full$Survived),main = 'Family Size by Survival',shade = T)
-
+```
 ![png](/img/titanic/unnamed-chunk-19-1.png)
 
-##### **small family has higher survival rate**
+* **small family has higher survival rate**
 
 #### 4.4 how age affects the survival rate
-
+```r
     ggplot(full[1:891,],aes(Age,fill=factor(Survived)))+geom_histogram()+facet_grid(.~Sex)+theme_few()+ggtitle('The Survival by Age and Sex')
-
+```
     ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![png](/img/titanic/unnamed-chunk-20-1.png)
 
-##### **age 0-20 has higher survival rate regardless of gender**
+* **age 0-20 has higher survival rate regardless of gender**
 
-##### categorize age into child and adult
-
+* categorize age into child and adult
+```r
     full$child[full$Age < 18] <- 'child'
     full$child[full$Age >= 18] <- 'adult'
     table(full$child,full$Survived)
-
+```
     ##        
     ##           0   1
     ##   adult 489 275
     ##   child  60  67
-
+```r
     mosaicplot(table(full$child,full$Survived),main = 'The Survival by Age',shade = T)
-
+```
 ![png](/img/titanic/unnamed-chunk-21-1.png)
 
-##### **children has higher survival rate than adult**
+* **children has higher survival rate than adult**
 
 #### 4.5 how ticket price affects the survival rate
 
-##### categorize price into low, middle, high
-
+* categorize price into low, middle, high
+```r
     full$Fare1 = "low"
     full$Fare1[full$Fare>=100 & full$Fare <=300] = 'middle'
     full$Fare1[full$Fare>300] = 'high'
 
     mosaicplot(table(full$Fare1,full$Survived),main = 'The Survival by Ticket price',shade = T)
-
+```
 ![png](/img/titanic/unnamed-chunk-22-1.png)
 
-##### cheap ticket has lower survival rate. Cross check with the below
-
+* cheap ticket has lower survival rate. Cross check with the below
+```r
     rate_survived <- function(n){
       full_rate <- xtabs(~n+Survived,data = full)
       rate <- prop.table(full_rate,1)
       return(rate)
     }
     rate_survived(full$Fare1)
-
+```
     ##         Survived
     ## n                0         1
     ##   high   0.0000000 1.0000000
