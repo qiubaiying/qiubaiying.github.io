@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Soccer Data Analysis
+title:      Titanic: Machine Learning from Disaster
 subtitle:   Soccer Data Analysis
 date:       2017-06-12
 author:     Jiayi
