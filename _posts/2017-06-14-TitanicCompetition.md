@@ -104,8 +104,9 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
 
 ### 3. Verify the missing number for each variable
 
+```r
     sapply(full,function(x) sum(is.na(x)))     
-
+```
     ## PassengerId    Survived      Pclass        Name         Sex         Age 
     ##           0         418           0           0           0         263 
     ##       SibSp       Parch      Ticket        Fare       Cabin    Embarked 
@@ -154,70 +155,70 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
 -   not add missing data in cabin due to lack of methodology
 
 #### 3.1.Add missing data in "Embarked"
-
+```r
     embarked.na <- full$Embarked
     which(embarked.na %in% "")
-
+```
     ## [1]  62 830
-
+```r
     #Find out the blank value, we locate 62 and 830
     full_62 <- full[full$PassengerId==62,]
     full_62
-
+```
     ##    PassengerId Survived Pclass                Name    Sex Age SibSp Parch
     ## 62          62        1      1 Icard, Miss. Amelie female  38     0     0
     ##    Ticket Fare Cabin Embarked
     ## 62 113572   80   B28
-
+```r
     full_830 <- full[full$PassengerId==830,]
     full_830
-
+```
     ##     PassengerId Survived Pclass                                      Name
     ## 830         830        1      1 Stone, Mrs. George Nelson (Martha Evelyn)
     ##        Sex Age SibSp Parch Ticket Fare Cabin Embarked
     ## 830 female  62     0     0 113572   80   B28
-
+```r
     library(ggplot2)
     library(scales)
     library(ggthemes)
     embark_fare <- full %>% filter(PassengerId !=62 & PassengerId !=830)
     ggplot(embark_fare, aes(x=Embarked, y=Fare, fill=factor(Pclass)))+geom_boxplot()+geom_hline(aes(yintercept=80), colour='red', linetype='dashed',lwd=2)+scale_y_continuous(labels=dollar_format())+theme_few()+ggtitle('the embarkment by passenger class and median fare')
-
+```
 ![png](/img/titanic/unnamed-chunk-4-1.png)
 
-##### add "C" to blank value
-
+* add "C" to blank value
+```r
     full$Embarked[c(62, 830)] <- 'C'
     sapply(full,function(x) sum(x==''))
-
+```
     ## PassengerId    Survived      Pclass        Name         Sex         Age 
     ##           0          NA           0           0           0          NA 
     ##       SibSp       Parch      Ticket        Fare       Cabin    Embarked 
     ##           0           0           0          NA        1014           0
 
 #### 3.2 Add missing data in "Fare"
-
+```r
     Fare.na <- is.na(full$Fare)
     which(Fare.na %in% TRUE)
-
+```
     ## [1] 1044
-
+```r
     full[1044,]
-
+```
     ##      PassengerId Survived Pclass               Name  Sex  Age SibSp Parch
     ## 1044        1044       NA      3 Storey, Mr. Thomas male 60.5     0     0
     ##      Ticket Fare Cabin Embarked
     ## 1044   3701   NA              S
-
+```r
     full_fare <- full[full$Pclass=='3'&full$Embarked=='S', ]
-
+    
     ggplot(full_fare, aes(x=Fare))+geom_density(fill='skyblue',alpha=0.4)+geom_vline(aes(xintercept=median(Fare,na.rm=T)), colour='red', linetype='dashed',lwd=1)+scale_y_continuous(labels=dollar_format())+theme_few()+ggtitle('the density of Fare')
-
-    ## Warning: Removed 1 rows containing non-finite values (stat_density).
+```
+   
 
 ![png](/img/titanic/unnamed-chunk-6-1.png)
 
-##### we can conclude that the passenger embarked at S and Pclass=3 paid $0-20. Then we can add the missing value with median
+* we can conclude that the passenger embarked at S and Pclass=3 paid $0-20. Then we can add the missing value with median
 
     full$Fare[1044] = median(full_fare$Fare, na.rm=T)
 
