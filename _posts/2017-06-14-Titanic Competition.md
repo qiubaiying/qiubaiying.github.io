@@ -2,7 +2,7 @@
 layout:     post
 title:      Titanic: Machine Learning from Disaster
 subtitle:   Start here! Predict survival on the Titanic and get familiar with ML basics
-date:       2017-06-14
+date:       2017-06-15
 author:     Jiayi
 header-img: img/titanic01.jpg
 catalog: true
