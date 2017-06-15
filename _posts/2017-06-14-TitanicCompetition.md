@@ -279,14 +279,17 @@ compare the forecasting by MICE with original data
 ![png](/img/titanic/unnamed-chunk-9-1.png)
 
 We can use forecast to fill up the missing data since both are similar
+
 ```r
     full$Age <- mice_output$Age
 ```
 make sure there are no missing data
+
 ```r
     sum(is.na(full$Age))
 ```
     ## [1] 0
+    
 ```r
     sum(is.na(full$Fare))
 ```
