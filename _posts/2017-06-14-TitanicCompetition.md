@@ -525,7 +525,7 @@ cheap ticket has lower survival rate. Cross check with the below
 ```
 ![png](/img/titanic/unnamed-chunk-24-1.png)
 
-**error rate of mortality is 0.1, error rate of survival is 0.3. It means it it much easier to determine if the passenger is dead.**
+error rate of mortality is 0.1, error rate of survival is 0.3. It means it it much easier to determine if the passenger is dead.
 
 #### 5.2 analyze on the weigh of factor
 ```r
@@ -542,7 +542,7 @@ cheap ticket has lower survival rate. Cross check with the below
 ```
 ![png](/img/titanic/unnamed-chunk-25-1.png)
 
-**the top 3 important factors are Title, Sex, Fare**
+the top 3 important factors are Title, Sex, Fare
 
 **Predict**
 ```r
