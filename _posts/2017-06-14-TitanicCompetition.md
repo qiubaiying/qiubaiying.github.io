@@ -1,18 +1,6 @@
 ---
 layout:     post
 title:      Titanic Machine Learning from Disaster
-subtitle:   Soccer Data Analysis
-date:       2017-06-12
-author:     Jiayi
-header-img: img/post-bg-2015.jpg
-catalog: true
-tags:
-    - Python
----
-
----
-layout:     post
-title:      Titanic: Machine Learning from Disaster
 subtitle:   Start here! Predict survival on the Titanic and get familiar with ML basics
 date:       2017-06-15
 author:     Jiayi
