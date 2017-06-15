@@ -457,8 +457,7 @@ categorize the family into bachelor, small and big
 ```r
     ggplot(full[1:891,],aes(Age,fill=factor(Survived)))+geom_histogram()+facet_grid(.~Sex)+theme_few()+ggtitle('The Survival by Age and Sex')
 ```
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-
+  
 ![png](/img/titanic/unnamed-chunk-20-1.png)
 
 **age 0-20 has higher survival rate regardless of gender**
@@ -473,6 +472,7 @@ categorize age into child and adult
     ##           0   1
     ##   adult 489 275
     ##   child  60  67
+    
 ```r
     mosaicplot(table(full$child,full$Survived),main = 'The Survival by Age',shade = T)
 ```
