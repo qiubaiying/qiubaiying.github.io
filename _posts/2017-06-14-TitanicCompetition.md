@@ -186,7 +186,7 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
 ```
 ![png](/img/titanic/unnamed-chunk-4-1.png)
 
-* add "C" to blank value
+add "C" to blank value
 ```r
     full$Embarked[c(62, 830)] <- 'C'
     sapply(full,function(x) sum(x==''))
@@ -218,7 +218,7 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
 
 ![png](/img/titanic/unnamed-chunk-6-1.png)
 
-* we can conclude that the passenger embarked at S and Pclass=3 paid $0-20. Then we can add the missing value with median
+we can conclude that the passenger embarked at S and Pclass=3 paid $0-20. Then we can add the missing value with median
 
 ```r
     full$Fare[1044] = median(full_fare$Fare, na.rm=T)
@@ -263,7 +263,7 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
 ```r
     mice_output <- complete(mice_mod)
 ```
-* compare the forecasting by MICE with original data
+compare the forecasting by MICE with original data
 ```r
     par(mfrow=c(1,2))
     hist(full$Age,freq = F,main = 'Age:ORiginal Data',col='darkblue',ylim = c(0,0.04))
@@ -271,11 +271,11 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
 ```
 ![png](/img/titanic/unnamed-chunk-9-1.png)
 
-* We can use forecast to fill up the missing data since both are similar
+We can use forecast to fill up the missing data since both are similar
 ```r
     full$Age <- mice_output$Age
 ```
-* make sure there are no missing data
+make sure there are no missing data
 ```r
     sum(is.na(full$Age))
 ```
@@ -290,7 +290,7 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
     drops <- c("Cabin")
     full = full[ , !(names(full) %in% drops)]
 ```
-* let us take a look at the final version of dataset
+let us take a look at the final version of dataset
 ```r
     summary(full)
 ```
@@ -392,14 +392,14 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
     ##   female      0  264   0 198          4
     ##   male       61    0 757   0         25
 
-* compare the variables
+compare the variables
 ```r
     library(ggplot2)
     ggplot(full[1:891,], aes(Title, fill=factor(Survived)))+geom_bar()+facet_grid(.~Sex)+theme_few()+ggtitle('The Survival by Title and Sex')
 ```
 ![png](/img/titanic/unnamed-chunk-15-1.png)
 
-* **Obviously, "Miss", "Mrs" has significant survival rate. "Mr" has significant mortality**
+**Obviously, "Miss", "Mrs" has significant survival rate. "Mr" has significant mortality**
 
 #### 4.2 how sex realtes with survival rate.
 ```r
@@ -407,7 +407,7 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
 ```
 ![png](/img/titanic/unnamed-chunk-16-1.png)
 
-*  **Female has higher survival rate, but how about rate for those who are mother?**
+**Female has higher survival rate, but how about rate for those who are mother?**
 ```r
     full$mother <- 'not mother'
     full$mother[full$Sex == 'female' & full$Age>18 & full$Parch>0 & full$Title !='Miss'] <- 'mother'
@@ -415,7 +415,7 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
 ```
 ![png](/img/titanic/unnamed-chunk-17-1.png)
 
-* **mother has higher survival rate**
+**mother has higher survival rate**
 
 #### 4.3 how family member affects the survival rate
 ```r
@@ -427,9 +427,9 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
 ```
 ![png](/img/titanic/unnamed-chunk-18-1.png)
 
-* **higher survival rate for the family size 1-4**
+**higher survival rate for the family size 1-4**
 
-* categorize the family into bachelor, small and big
+categorize the family into bachelor, small and big
 ```r
     full$Fsize[full$familysize==1] <- 'singleton'
     full$Fsize[full$familysize>1&full$familysize<5] <- 'small family'
@@ -439,7 +439,7 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
 ```
 ![png](/img/titanic/unnamed-chunk-19-1.png)
 
-* **small family has higher survival rate**
+**small family has higher survival rate**
 
 #### 4.4 how age affects the survival rate
 ```r
@@ -449,9 +449,9 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
 
 ![png](/img/titanic/unnamed-chunk-20-1.png)
 
-* **age 0-20 has higher survival rate regardless of gender**
+**age 0-20 has higher survival rate regardless of gender**
 
-* categorize age into child and adult
+categorize age into child and adult
 ```r
     full$child[full$Age < 18] <- 'child'
     full$child[full$Age >= 18] <- 'adult'
@@ -466,11 +466,11 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
 ```
 ![png](/img/titanic/unnamed-chunk-21-1.png)
 
-* **children has higher survival rate than adult**
+**children has higher survival rate than adult**
 
 #### 4.5 how ticket price affects the survival rate
 
-* categorize price into low, middle, high
+categorize price into low, middle, high
 ```r
     full$Fare1 = "low"
     full$Fare1[full$Fare>=100 & full$Fare <=300] = 'middle'
@@ -480,7 +480,7 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
 ```
 ![png](/img/titanic/unnamed-chunk-22-1.png)
 
-* cheap ticket has lower survival rate. Cross check with the below
+cheap ticket has lower survival rate. Cross check with the below
 ```r
     rate_survived <- function(n){
       full_rate <- xtabs(~n+Survived,data = full)
@@ -498,11 +498,11 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
 ### 5 Model Building
 
 #### 5.1 In the analysis in section 4, we consider Pclass+Fare+Embarked+Title++Sex+Fsize+child
-
+```r
     train <- full[1:891,]
     test <- full[892:1309,]
-
-
+```
+```r
     #to avoid error msg of NA enforced in randomForest
     train$Embarked = as.factor(train$Embarked)
     train$Title = as.factor(train$Title)
@@ -513,57 +513,42 @@ In this challenge, we ask you to complete the analysis of what sorts of people w
     test$Title = as.factor(test$Title)
     test$Fsize = as.factor(test$Fsize)
     test$child = as.factor(test$child)
-
+```
+```r
     library(randomForest)
-
-    ## Warning: package 'randomForest' was built under R version 3.3.3
-
-    ## randomForest 4.6-12
-
-    ## Type rfNews() to see new features/changes/bug fixes.
-
-    ## 
-    ## Attaching package: 'randomForest'
-
-    ## The following object is masked from 'package:ggplot2':
-    ## 
-    ##     margin
-
-    ## The following object is masked from 'package:dplyr':
-    ## 
-    ##     combine
-
     set.seed(754)
 
     rf_mode <- randomForest(factor(Survived)~Pclass+Fare+Embarked+Title+Sex+Fsize+child,data = train)
 
     plot(rf_mode,ylim = c(0,0.36))
     legend('topright',colnames(rf_mode$err.rate),col=1:3,fill=1:3)
-
+```
 ![png](/img/titanic/unnamed-chunk-24-1.png)
 
-##### **error rate of mortality is 0.1, error rate of survival is 0.3. It means it it much easier to determine if the passenger is dead.**
+**error rate of mortality is 0.1, error rate of survival is 0.3. It means it it much easier to determine if the passenger is dead.**
 
 #### 5.2 analyze on the weigh of factor
-
+```r
     #fetch important factors
     importance <- importance(rf_mode)
     varImportance <- data.frame(variables=row.names(importance),Importance=round(importance[,'MeanDecreaseGini'],2))
-
+```
+```r
     ###sort the variable by factors
     library(dplyr)
     rankImportance <- varImportance %>% mutate(Ranke=paste0('#',dense_rank(desc(Importance))))
 
     ggplot(rankImportance,aes(x=reorder(variables,Importance),y=Importance,fill=Importance))+   geom_bar(stat='identity')+  geom_text(aes(x=variables,y=0.5,label=Ranke),hjust=0,vjust=0.55,size=4,colour='red')+   labs(x='Variables')+   coord_flip()+theme_few()+ggtitle('The Importance of Variables')
-
+```
 ![png](/img/titanic/unnamed-chunk-25-1.png)
 
-##### **the top 3 important factors are Title, Sex, Fare**
+**the top 3 important factors are Title, Sex, Fare**
 
-##### Predict
-
+**Predict**
+```r
     prediction <- predict(rf_mode,test)
 
     solution <- data.frame(PassengerId=test$PassengerId,Survived=prediction)
 
     # write.csv(solution,file='solution',row.names=F)
+```
