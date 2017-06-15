@@ -1,4 +1,5 @@
 ---
+
 layout:     post
 title:      Titanic: Machine Learning from Disaster
 subtitle:   Start here! Predict survival on the Titanic and get familiar with ML basics
@@ -9,27 +10,29 @@ catalog: true
 tags:
     - R
     - Kaggle
+    
 ---
 
-### This is the [competition of Titanic Machine Learning](https://www.kaggle.com/c/titanic) from [Kaggle](https://www.kaggle.com)
+##### This is the [competition of Titanic Machine Learning](https://www.kaggle.com/c/titanic) from [Kaggle](https://www.kaggle.com)
 
-#### The sinking of the RMS Titanic is one of the most infamous shipwrecks in history.  On April 15, 1912, during her maiden voyage, the Titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew. This sensational tragedy shocked the international community and led to better safety regulations for ships.
+The sinking of the RMS Titanic is one of the most infamous shipwrecks in history.  On April 15, 1912, during her maiden voyage, the Titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew. This sensational tragedy shocked the international community and led to better safety regulations for ships.
 
-#### One of the reasons that the shipwreck led to such loss of life was that there were not enough lifeboats for the passengers and crew. Although there was some element of luck involved in surviving the sinking, some groups of people were more likely to survive than others, such as women, children, and the upper-class.
-
-#### In this challenge, we ask you to complete the analysis of what sorts of people were likely to survive. In particular, we ask you to apply the tools of machine learning to predict which passengers survived the tragedy.
+In this challenge, we ask you to complete the analysis of what sorts of people were likely to survive. In particular, we ask you to apply the tools of machine learning to predict which passengers survived the tragedy.
 
 ### 1. Get the dataset
 
+```r
     train <- read.csv("train.csv")
     test <- read.csv("test.csv")
     library(dplyr)
     full <- bind_rows(train, test)
+```
 
 ### 2. Explore the data
 
+```r
     head(full)
-
+```
     ##   PassengerId Survived Pclass
     ## 1           1        0      3
     ## 2           2        1      1
@@ -52,8 +55,9 @@ tags:
     ## 5     0           373450  8.0500              S
     ## 6     0           330877  8.4583              Q
 
+```r
     summary(full)
-
+```
     ##   PassengerId      Survived          Pclass          Name          
     ##  Min.   :   1   Min.   :0.0000   Min.   :1.000   Length:1309       
     ##  1st Qu.: 328   1st Qu.:0.0000   1st Qu.:2.000   Class :character  
