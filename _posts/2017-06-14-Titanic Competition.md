@@ -1,5 +1,4 @@
 ---
-
 layout:     post
 title:      Titanic: Machine Learning from Disaster
 subtitle:   Start here! Predict survival on the Titanic and get familiar with ML basics
@@ -10,7 +9,6 @@ catalog: true
 tags:
     - R
     - Kaggle
-    
 ---
 
 ##### This is the [competition of Titanic Machine Learning](https://www.kaggle.com/c/titanic) from [Kaggle](https://www.kaggle.com)
