@@ -2,9 +2,9 @@
 layout:     post
 title:      Swift的HMAC和SHA1加密
 subtitle:   swift中利用HMAC的SHA1对文本进行加密
-date:       2017-07-04
+date:       2017-07-19
 author:     BY
-header-img: img/post-bg-coffee.jpeg
+header-img: img/post-bg-hacker.jpg
 catalog: true
 tags:
     - Swift
