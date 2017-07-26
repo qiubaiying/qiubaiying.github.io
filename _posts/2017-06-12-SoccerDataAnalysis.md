@@ -11,8 +11,6 @@ tags:
 ---
 
 
-> This blog was initially released [BY Jiayi](https://jiayiwangjw.github.io), author [@Jiayi](https://jiayiwangjw.github.io/) 
-
 # Preface
 
 We will be using an open dataset from the popular site <a href="https://www.kaggle.com">Kaggle</a>. This <a href="https://www.kaggle.com/hugomathien/soccer">European Soccer Database</a> has more than 25,000 matches and more than 10,000 players for European professional soccer seasons from 2008 to 2016. 
