@@ -1,5 +1,15 @@
-Lazy Learning - Classification Using Nearest Neighbors
-------------------------------------------------------
+---
+layout:     post
+title:      Lazy Learning - Classification Using Nearest Neighbors
+subtitle:   A study note from 'Machine Learning with R, 2nd edition'
+date:       2017-07-27
+author:     Jiayi
+header-img: img/KNN/KNN.jpg
+catalog: true
+tags:
+    - R
+    - Clustering
+---
 
 ### Understanding classification using nearest neighbors
 
@@ -10,8 +20,10 @@ Lazy Learning - Classification Using Nearest Neighbors
 3.  Notice pattern (Similar types of food tend to be grouped
     closely together)
 4.  Use a nearest neighbor approach to determine which class is a better
-    fit the test example ![tomato](tomato.png)
+    fit the test example 
 5.  Calculate distance
+
+![tomato](tomato.png)
 
 -   `Euclidean distance` is measured "as the crow flies," implying the
     shortest direct route. Euclidean distance is specified by the
