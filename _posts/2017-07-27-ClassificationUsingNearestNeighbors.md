@@ -22,7 +22,6 @@ tags:
 4.  Use a nearest neighbor approach to determine which class is a better
     fit the test example 
     ![png](/img/KNN/tomato.png)
-    ![png](/img/titanic/unnamed-chunk-4-1.png)
 5.  Calculate distance
 -   `Euclidean distance` is measured "as the crow flies," implying the
     shortest direct route. Euclidean distance is specified by the
