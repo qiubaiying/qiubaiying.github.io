@@ -1,11 +1,26 @@
-#### This is the competition of Titanicï Machine Learning from Disater from Kaggle
+---
+layout:     post
+title:      Lazy Learning - Classification Using Nearest Neighbors
+subtitle:   A study note from 'Machine Learning with R'
+date:       2017-07-27
+author:     Jiayi
+header-img: img/KNN/KNN.jpg
+catalog: true
+tags:
+    - R
+    - Clustering
+---
 
-### 1. Get the dataset
 
-    train <- read.csv("train.csv")
-    test <- read.csv("test.csv")
-    library(dplyr)
-    full <- bind_rows(train, test)
+#### Lazy Learning - Classification Using Nearest Neighbors
+
+### Understanding classification using nearest neighbors
+
+1. Define feature, link your train example (food) to the result (food type)
+2. Treat the features as coordinates in a multidimensional feature space
+3. Notice pattern (Similar types of food tend to be grouped closely together)
+4. Use a nearest neighbor approach to determine which class is a better fit the test example
+
 
 ### 2. Explore the data
 
