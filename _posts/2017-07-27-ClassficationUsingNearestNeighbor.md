@@ -1,5 +1,6 @@
 ---
 layout:     post
+<<<<<<< HEAD:_posts/2017-07-27-ClassficationUsingNearestNeighbor.md
 title:      Titanic Machine Learning from Disaster
 subtitle:   Start here! Predict survival on the Titanic and get familiar with ML basics
 date:       2017-06-15
@@ -16,15 +17,38 @@ tags:
 The sinking of the RMS Titanic is one of the most infamous shipwrecks in history.  On April 15, 1912, during her maiden voyage, the Titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew. This sensational tragedy shocked the international community and led to better safety regulations for ships.
 
 In this challenge, we ask you to complete the analysis of what sorts of people were likely to survive. In particular, we ask you to apply the tools of machine learning to predict which passengers survived the tragedy.
+=======
+title:      Lazy Learning - Classification Using Nearest Neighbors
+subtitle:   A study note from 'Machine Learning with R'
+date:       2017-07-27
+author:     Jiayi
+header-img: img/KNN/KNN.jpg
+catalog: true
+tags:
+    - R
+    - Clustering
+---
+>>>>>>> origin/master:_posts/2017-07-27-ClassificationUsingNearestNeighbors.md
 
-### 1. Get the dataset
 
+<<<<<<< HEAD:_posts/2017-07-27-ClassficationUsingNearestNeighbor.md
 ```r
     train <- read.csv("train.csv")
     test <- read.csv("test.csv")
     library(dplyr)
     full <- bind_rows(train, test)
 ```
+=======
+#### Lazy Learning - Classification Using Nearest Neighbors
+
+### Understanding classification using nearest neighbors
+
+1. Define feature, link your train example (food) to the result (food type)
+2. Treat the features as coordinates in a multidimensional feature space
+3. Notice pattern (Similar types of food tend to be grouped closely together)
+4. Use a nearest neighbor approach to determine which class is a better fit the test example
+
+>>>>>>> origin/master:_posts/2017-07-27-ClassificationUsingNearestNeighbors.md
 
 ### 2. Explore the data
 
