@@ -21,10 +21,8 @@ tags:
     closely together)
 4.  Use a nearest neighbor approach to determine which class is a better
     fit the test example 
+    ![png](/img/KNN/tomato.png)
 5.  Calculate distance
-
-![tomato](tomato.png)
-
 -   `Euclidean distance` is measured "as the crow flies," implying the
     shortest direct route. Euclidean distance is specified by the
     following formula. The term p1 refers to the value of the first
@@ -34,7 +32,7 @@ tags:
 -   Another common distance measure is `Manhattan distance`, which is
     based on the paths a pedestrian would take by walking city blocks.
 
-1.  Use KNN algorithm to determine which category it belongs to:
+6.  Use KNN algorithm to determine which category it belongs to:
 
 <table>
 <thead>
@@ -86,15 +84,15 @@ tags:
     neighbors is fruit (2 of the 3 votes), the tomato again is
     classified as a fruit.
 
-1.  Choosing an appropriate k: The following figure illustrates more
+7.  Choosing an appropriate k: The following figure illustrates more
     generally how the decision boundary (depicted by a dashed line) is
     affected by larger or smaller k values. Smaller values allow more
     complex decision boundaries that more carefully fit the
     training data. The problem is that we do not know whether the
     straight boundary or the curved boundary better represents the true
-    underlying concept to be learned. ![how much is
-    K](how%20much%20is%20K.png)
-
+    underlying concept to be learned.
+    ![png](/img/KNN/how much is K.png)
+   
 One common practice is to set k equal to the square root of the number
 of training examples. An alternative approach is to test several k
 values on a variety of test datasets and choose the one that delivers
@@ -104,7 +102,7 @@ that it runs the risk of ignoring small, but important patterns. - Using
 a *single nearest neighbor* allows noisy data or outliers, to unduly
 influence the classification of examples.
 
-1.  What we need is a way of "shrinking" or rescaling the various
+8.  What we need is a way of "shrinking" or rescaling the various
     features such that each one contributes relatively equally to the
     distance formula.
 
