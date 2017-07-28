@@ -15,17 +15,17 @@ tags:
 
 #### The probability of both happening is:
 
-![both happening](P97.png)
+![png](/img/NaiveBayes/P97.png)
 
 #### Conditional probability
 
-![conditional probability](conditional%20probability.png)
+![png](/img/NaiveBayes/conditional probability.png)
 
 #### `Naive Bayes` assumes class-conditional independence, which means that events are independent so long as they are conditioned on the same class value.
 
 ### **Case example:**
 
-![naive Bayes table](naive%20Bayes%20table.png)
+![png](/img/NaiveBayes/naive Bayes table.png)
 
 #### The probability that a message is spam, given that Viagra = Yes, Money = No, Groceries = No, and Unsubscribe = Yes:
 
@@ -52,8 +52,7 @@ The naive Bayes classification algorithm
 
 #### Essentially, the probability of level L for class C, given the evidence provided by features F1 through Fn, is equal to the product of the probabilities of each piece of evidence conditioned on the class level, the prior probability of the class level, and a scaling factor 1 / Z, which converts the result to a probability:
 
-![naive Bayes classification
-algorithm](naive%20Bayes%20classification%20algorithm.png)
+![png](/img/NaiveBayes/naive Bayes classification algorithm.png)
 
 The Laplace estimator
 ---------------------
