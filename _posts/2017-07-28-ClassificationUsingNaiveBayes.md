@@ -114,8 +114,8 @@ Because naive Bayes uses frequency tables for learning the data, each feature mu
     original granularity is reduced to a smaller number of categories.
     It is important to strike a balance, since too few bins can result
     in important trends being obscured, while too many bins can result
-    in small counts in the naive Bayes frequency table. ![cutting
-    points](cutting%20points.png)
+    in small counts in the naive Bayes frequency table.
+    ![png](/img/NaiveBayes/cuttingpoints.ong)
 
 ### Example
 
