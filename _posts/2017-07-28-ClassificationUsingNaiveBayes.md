@@ -20,7 +20,7 @@ The probability of both happening is:
 Conditional probability
 ![png](/img/NaiveBayes/conditionalprobability.png)
 
-### **Case example:**
+#### **Case example:**
 
 ![png](/img/NaiveBayes/naiveBayestable.png)
 
@@ -53,7 +53,7 @@ Essentially, the probability of level L for class C, given the evidence provided
 The Laplace estimator
 ---------------------
 
-### Case example 2
+#### Case example 2
 
 Given all Viagra, Groceries, Money, and Unsubscribe = YES
 
@@ -80,7 +80,7 @@ These results suggest that the message is spam with 0 percent probability and ha
     the word Groceries the ability to effectively nullify and overrule
     all of the other evidence
 
-### **Solution**
+#### **Solution**
 
 The `Laplace estimator` essentially adds a small number to each of the counts in the frequency
 
@@ -103,7 +103,7 @@ In summary, this means that the probability of spam is 80 percent and the probab
 
 Because naive Bayes uses frequency tables for learning the data, each feature must be categorical in order to create the combinations of class and feature values comprising the matrix. Since numeric features do not have categories of values, the preceding algorithm does not work directly with numeric data.
 
-### **Solution**
+#### **Solution**
 
 -   Discretize numeric features: This method is ideal when there are
     large amounts of training data, a common condition when working with
@@ -117,7 +117,7 @@ Because naive Bayes uses frequency tables for learning the data, each feature mu
     in small counts in the naive Bayes frequency table.
     ![png](/img/NaiveBayes/cuttingpoints.ong)
 
-### Example
+#### Example
 
     1. read raw material into sms_raw
     2. convert "type" varaible from character to factor
@@ -163,7 +163,7 @@ Because naive Bayes uses frequency tables for learning the data, each feature mu
     CrossTable(sms_test_pred2, sms_test_labels, prop.chisq = FALSE, prop.t = FALSE, prop.r = FALSE,
     dnn = c('predicted', 'actual'))
 
-### Example - filtering mobile phone spam with the naive Bayes algorithm
+#### Example - filtering mobile phone spam with the naive Bayes algorithm
 
 
 #### Step 1 - collecting data
@@ -206,7 +206,7 @@ categorical variable, it would be better to convert it to a factor,
 -   747 (or about 13 percent) of SMS messages were labeled spam, while
     the remainder were labeled ham:
 
-#### Data preparation - processing text data for analysis
+##### Data preparation - processing text data for analysis
 
     library(tm)
 
@@ -351,7 +351,7 @@ Look at the contents of the corpus AGAIN.
     ## $`4`
     ## [1] "complimentary 4 STAR Ibiza Holiday or Â£10,000 cash needs your URGENT collection. 09066364349 NOW from Landline not to lose out! Box434SK38WP150PPM18+"
 
-#### Data preparation - splitting text documents into words
+##### Data preparation - splitting text documents into words
 
 **Tokenization**: The DocumentTermMatrix() function will take a corpus
 and create a data structure called a `sparse matrix`, in which the rows
@@ -373,7 +373,7 @@ Create a sparse matrix given a tm corpus
 -   This tokenizes the corpus and return the sparse matrix with the
     name sms\_dtm.
 
-#### Data preparation - creating training and test datasets
+##### Data preparation - creating training and test datasets
 
 Split the data into a training dataset and test dataset
 
@@ -402,7 +402,7 @@ Split the data into a training dataset and test dataset
     This suggests that the spam messages were divided evenly between the
     two datasets.
 
-#### Visualizing text data - word clouds
+##### Visualizing text data - word clouds
 
     library(wordcloud)
 
@@ -447,7 +447,7 @@ minimum font size for words in the cloud.
 
 -   the ham cloud
 
-#### Data preparation - creating indicator features for frequent words
+##### Data preparation - creating indicator features for frequent words
 
 Transform the sparse matrix into a data structure that can be used to
 train a naive Bayes classifier: we will eliminate any words that appear
@@ -495,7 +495,7 @@ or no depending on whether the word appears at all.
     ##   ..$ Docs : chr [1:1390] "4170" "4171" "4172" "4173" ...
     ##   ..$ Terms: chr [1:1216] "â<U+0082>â<U+0080><U+009C>""| __truncated__ "abiola" "able" "abt" ...
 
-### Step 3 - training a model on the data
+#### Step 3 - training a model on the data
 
     library(e1071) 
 
@@ -507,7 +507,7 @@ or no depending on whether the word appears at all.
 -   The `sms_classifier` object now contains a naiveBayes classifier
     object that can be used to make predictions.
 
-### Step 4 - evaluating model performance
+#### Step 4 - evaluating model performance
 
 Recall that the unseen message features are stored in a matrix named
 `sms_test`, while the class labels (spam or ham) are stored in a vector
@@ -566,7 +566,7 @@ parameter (dimension names) to relabel the rows and columns:
     important text message. We should investigate to see whether we can
     slightly tweak the model to achieve better performance.
 
-### Step 5 - improving model performance
+#### Step 5 - improving model performance
 
 We didn't set a value for the Laplace estimator while training our
 model. This allows words that appeared in zero spam or zero ham messages
@@ -613,8 +613,8 @@ classified as spam.
     small change, it's substantial considering that the model's accuracy
     was already quite impressive
 
-Summary
--------
+## Summary
+
 
 -   **Naive Bayes** constructs tables of probabilities that are used to
     estimate the likelihood that new examples belong to various classes.
