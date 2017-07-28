@@ -1,4 +1,16 @@
-Basic concepts of Bayesian methods
+---
+layout:     post
+title:      Basic concepts of Bayesian methods
+subtitle:   A study note from 'Machine Learning with R, 2nd edition'
+date:       2017-07-28
+author:     Jiayi
+header-img: img/NaiveBayes/NaiveBayes.jpg
+catalog: true
+tags:
+    - R
+    - NaiveBayes
+---
+
 ----------------------------------
 
 #### The probability of both happening is:
