@@ -275,7 +275,7 @@ Look at the contents of the corpus
     ## $`4`
     ## [1] "complimentary 4 STAR Ibiza Holiday or Â£10,000 cash needs your URGENT collection. 09066364349 NOW from Landline not to lose out! Box434SK38WP150PPM18+"
 
-1.  Cleaning steps to remove punctuation and other characters that may
+2.  Cleaning steps to remove punctuation and other characters that may
     clutter the result Convert all of the SMS messages to lowercase:
 
 <!-- -->
