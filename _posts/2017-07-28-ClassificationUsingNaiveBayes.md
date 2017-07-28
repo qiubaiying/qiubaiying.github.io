@@ -19,22 +19,22 @@ tags:
 
 #### Conditional probability
 
-![png](/img/NaiveBayes/conditional probability.png)
+![png](/img/NaiveBayes/conditionalprobability.png)
 
 #### `Naive Bayes` assumes class-conditional independence, which means that events are independent so long as they are conditioned on the same class value.
 
 ### **Case example:**
 
-![png](/img/NaiveBayes/naive Bayes table.png)
+![png](/img/NaiveBayes/naiveBayestable.png)
 
 #### The probability that a message is spam, given that Viagra = Yes, Money = No, Groceries = No, and Unsubscribe = Yes:
 
--   probability that the message is spam: ![simplified
-    bayes](simplified%20bayes.png)
+-   probability that the message is spam: 
+    ![png](/img/NaiveBayes/simplifiedbayes.png)
     =(4/20)\*(10/20)\*(20/20)\*(12/20)\*(20/100)=0.012
 
--   probability that the message is ham: ![simplified
-    bayes](simplified%20bayes2.png)
+-   probability that the message is ham: 
+    ![png](/img/NaiveBayes/simplifiedbayes2.png)
     =(1/80)\*(66/80)\*(71/80)\*(23/80)\*(80/100)=0.002
 
 #### Because 0.012 / 0.002 = 6, we can say that this message is six times more likely to be spam than ham. However, to convert these numbers to probabilities, we need one last step. The probability of spam is equal to the likelihood that the message is spam divided by the likelihood that the message is either spam or ham:
