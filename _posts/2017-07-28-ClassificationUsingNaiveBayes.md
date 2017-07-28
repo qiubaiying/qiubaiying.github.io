@@ -52,7 +52,7 @@ The naive Bayes classification algorithm
 
 #### Essentially, the probability of level L for class C, given the evidence provided by features F1 through Fn, is equal to the product of the probabilities of each piece of evidence conditioned on the class level, the prior probability of the class level, and a scaling factor 1 / Z, which converts the result to a probability:
 
-![png](/img/NaiveBayes/naive Bayes classification algorithm.png)
+![png](/img/NaiveBayes/naiveBayesclassificationalgorithm.png)
 
 The Laplace estimator
 ---------------------
@@ -362,7 +362,8 @@ Look at the contents of the corpus AGAIN.
 **Tokenization**: The DocumentTermMatrix() function will take a corpus
 and create a data structure called a `sparse matrix`, in which the rows
 of the matrix indicate documents (that is, SMS messages) and the columns
-indicate terms (that is, words). ![sparse matrix](sparse%20matrix.png)
+indicate terms (that is, words). 
+ ![png](/img/NaiveBayes/sparsematrix.png)
 
 Create a sparse matrix given a tm corpus
 
@@ -419,6 +420,7 @@ Split the data into a training dataset and test dataset
 
     #  A frequency of 50 is about 1 percent of the corpus, this means that a word must be found in at least 1 percent of the SMS messages to be included in the cloud 
     wordcloud(sms_corpus_clean, min.freq=50, random.order = FALSE)
+
 
 ![](MLwithR.4.ClassificationUsingNaiveBayes_files/figure-markdown_strict/unnamed-chunk-18-1.png)
 
