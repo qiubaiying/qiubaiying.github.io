@@ -11,23 +11,20 @@ tags:
     - NaiveBayes
 ---
 
-----------------------------------
+## What is Naive Bayes?
+`Naive Bayes` assumes class-conditional independence, which means that events are independent so long as they are conditioned on the same class value.
 
-#### The probability of both happening is:
-
+The probability of both happening is:
 ![png](/img/NaiveBayes/P97.png)
 
-#### Conditional probability
-
+Conditional probability
 ![png](/img/NaiveBayes/conditionalprobability.png)
-
-#### `Naive Bayes` assumes class-conditional independence, which means that events are independent so long as they are conditioned on the same class value.
 
 ### **Case example:**
 
 ![png](/img/NaiveBayes/naiveBayestable.png)
 
-#### The probability that a message is spam, given that Viagra = Yes, Money = No, Groceries = No, and Unsubscribe = Yes:
+The probability that a message is spam, given that Viagra = Yes, Money = No, Groceries = No, and Unsubscribe = Yes:
 
 -   probability that the message is spam: 
     ![png](/img/NaiveBayes/simplifiedbayes.png)
@@ -37,20 +34,19 @@ tags:
     ![png](/img/NaiveBayes/simplifiedbayes2.png)
     =(1/80)\*(66/80)\*(71/80)\*(23/80)\*(80/100)=0.002
 
-#### Because 0.012 / 0.002 = 6, we can say that this message is six times more likely to be spam than ham. However, to convert these numbers to probabilities, we need one last step. The probability of spam is equal to the likelihood that the message is spam divided by the likelihood that the message is either spam or ham:
+Because 0.012 / 0.002 = 6, we can say that this message is six times more likely to be spam than ham. However, to convert these numbers to probabilities, we need one last step. The probability of spam is equal to the likelihood that the message is spam divided by the likelihood that the message is either spam or ham:
 
 =0.012/(0.012 + 0.002)=0.857
 
-#### Similarly, the probability of ham is equal to the likelihood that the message is ham divided by the likelihood that the message is either spam or ham:
+Similarly, the probability of ham is equal to the likelihood that the message is ham divided by the likelihood that the message is either spam or ham:
 
 =0.002/(0.012 + 0.002)=0.143
 
-#### In summary, given the pattern of words in the message, we expect that the message is spam with 85.7 percent probability, and ham with 14.3 percent probability. Because these are mutually exclusive and exhaustive events, the probabilities sum up to one.
+In summary, given the pattern of words in the message, we expect that the message is spam with 85.7 percent probability, and ham with 14.3 percent probability. Because these are mutually exclusive and exhaustive events, the probabilities sum up to one.
 
-The naive Bayes classification algorithm
-----------------------------------------
+## The naive Bayes classification algorithm
 
-#### Essentially, the probability of level L for class C, given the evidence provided by features F1 through Fn, is equal to the product of the probabilities of each piece of evidence conditioned on the class level, the prior probability of the class level, and a scaling factor 1 / Z, which converts the result to a probability:
+Essentially, the probability of level L for class C, given the evidence provided by features F1 through Fn, is equal to the product of the probabilities of each piece of evidence conditioned on the class level, the prior probability of the class level, and a scaling factor 1 / Z, which converts the result to a probability:
 
 ![png](/img/NaiveBayes/naiveBayesclassificationalgorithm.png)
 
@@ -59,56 +55,55 @@ The Laplace estimator
 
 ### Case example 2
 
-#### Given all Viagra, Groceries, Money, and Unsubscribe = YES
+Given all Viagra, Groceries, Money, and Unsubscribe = YES
 
-#### the likelihood of spam as:
+- the likelihood of spam as:
 
 (4/20)\*(10/20)\*(0/20)\*(12/20)\*(20/100)=0
 
-#### And the likelihood of ham is:
+- And the likelihood of ham is:
 
 (1/80)\*(14/80)\*(8/80)\*(23/80)\*(80/100)=0.00005
 
-#### Therefore, the probability of spam is:
+- Therefore, the probability of spam is:
 
 0/(0 + 0.0099)=0
 
-#### And the probability of ham is:
+- And the probability of ham is:
 
 0.00005/(0 + 0.0.00005)=1
 
-#### These results suggest that the message is spam with 0 percent probability and ham with 100 percent probability. Does this prediction make sense? Probably not.
+These results suggest that the message is spam with 0 percent probability and ham with 100 percent probability. Does this prediction make sense? Probably not.
 
 -   Because probabilities in naive Bayes are multiplied, this 0 percent
     value causes the posterior probability of spam to be zero, giving
     the word Groceries the ability to effectively nullify and overrule
     all of the other evidence
 
-#### **Solution**
+### **Solution**
 
-#### The `Laplace estimator` essentially adds a small number to each of the counts in the frequency
+The `Laplace estimator` essentially adds a small number to each of the counts in the frequency
 
 table, which ensures that each feature has a nonzero probability of
 occurring with each class. - Typically, the Laplace estimator is set to
 1, which ensures that each class-feature combination is found in the
 data at least once.
 
-#### The likelihood of spam is therefore:
+- The likelihood of spam is therefore:
 
 (5/24)\*(11/24)\*(1/24)\*(13/24)\*(20/100)=0.0004
 
-#### And the likelihood of ham is:
+- And the likelihood of ham is:
 
 (2/84)\*(15/84)\*(9/84)\*(24/84)\*(80/100)=0.0001
 
-#### In summary, this means that the probability of spam is 80 percent and the probability of ham is 20 percent; a more plausible result than the one obtained when Groceries alone determined the result.
+In summary, this means that the probability of spam is 80 percent and the probability of ham is 20 percent; a more plausible result than the one obtained when Groceries alone determined the result.
 
-Using numeric features with naive Bayes
----------------------------------------
+## Using numeric features with naive Bayes
 
-#### Because naive Bayes uses frequency tables for learning the data, each feature must be categorical in order to create the combinations of class and feature values comprising the matrix. Since numeric features do not have categories of values, the preceding algorithm does not work directly with numeric data.
+Because naive Bayes uses frequency tables for learning the data, each feature must be categorical in order to create the combinations of class and feature values comprising the matrix. Since numeric features do not have categories of values, the preceding algorithm does not work directly with numeric data.
 
-#### **Solution**
+### **Solution**
 
 -   Discretize numeric features: This method is ideal when there are
     large amounts of training data, a common condition when working with
@@ -122,8 +117,7 @@ Using numeric features with naive Bayes
     in small counts in the naive Bayes frequency table. ![cutting
     points](cutting%20points.png)
 
-Example
--------
+### Example
 
     1. read raw material into sms_raw
     2. convert "type" varaible from character to factor
@@ -169,15 +163,15 @@ Example
     CrossTable(sms_test_pred2, sms_test_labels, prop.chisq = FALSE, prop.t = FALSE, prop.r = FALSE,
     dnn = c('predicted', 'actual'))
 
-Example - filtering mobile phone spam with the naive Bayes algorithm
---------------------------------------------------------------------
+### Example - filtering mobile phone spam with the naive Bayes algorithm
 
-### Step 1 - collecting data
+
+#### Step 1 - collecting data
 
 [data adapted from the SMS Spam
 Collection](http://www.dt.fee.unicamp.br/~tiago/smsspamcollection/)
 
-### Step 2 - exploring and preparing the data
+#### Step 2 - exploring and preparing the data
 
 We will transform our data into a representation known as
 **bag-of-words**, which ignores the order that words appear in and
@@ -422,7 +416,7 @@ Split the data into a training dataset and test dataset
     wordcloud(sms_corpus_clean, min.freq=50, random.order = FALSE)
 
 
-![](MLwithR.4.ClassificationUsingNaiveBayes_files/figure-markdown_strict/unnamed-chunk-18-1.png)
+![png](/img/NaiveBayes/wordcloud1.png)
 
 -   The cloud will be arranged in non-random order, with the
     higher-frequency words placed closer to the center
@@ -441,15 +435,15 @@ minimum font size for words in the cloud.
 
     wordcloud(spam$text, max.words = 40, scale = c(3, 0.5))
 
-![](MLwithR.4.ClassificationUsingNaiveBayes_files/figure-markdown_strict/unnamed-chunk-19-1.png)
+![png](/img/NaiveBayes/wordcloud2.png)
 
 -   the spam cloud
 
 <!-- -->
 
     wordcloud(ham$text, max.words = 40, scale = c(3, 0.5))
-
-![](MLwithR.4.ClassificationUsingNaiveBayes_files/figure-markdown_strict/unnamed-chunk-20-1.png)
+    
+![png](/img/NaiveBayes/wordcloud3.png)
 
 -   the ham cloud
 
