@@ -2,7 +2,7 @@
 title: BIANDESHEN
 SEOTitle: BIANDESHEN的博客 | BADS Blog
 header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
+email: biandeshen@gmail.com
 description: "I want to make the entire Internet World our playground!"
 keyword: "BIANDESHEN, BADS Blog, BIANDESHEN的博客, fanjiangpan, 范江攀, Java"
 url: "http://biandeshen.github.io"          # your host, for absolute URL
@@ -19,7 +19,7 @@ sidebar-avatar: img/avatar-by.jpg      # use absolute URL, seeing it's used in b
 # SNS settings
 RSS: false
 weibo_username:     not范江攀exception
-zhihu_username:     fanjiangpan
+zhihu_username:     fan-jiang-pan
 github_username:    biandeshen
 facebook_username:  biandeshen
 #jianshu_username:   
