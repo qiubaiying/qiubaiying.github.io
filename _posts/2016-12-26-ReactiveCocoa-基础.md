@@ -827,7 +827,7 @@ RACMulticastConnection *connect = [signal publish];
 
 应用场景：监听 `RedViewController` 中按钮的点击事件 `btnTap:`
 
-跳转到`RedViewController`前，先使用`rac_signalForSelector`订阅rvc中的 btnTap: 点击事件
+跳转到`RedViewController`前，先使用`rac_signalForSelector`订阅rvc中的 `btnTap:` 点击事件
 
 ```
 // 使用segue跳转
