@@ -15,7 +15,7 @@ tags:
 一些介绍文章移植了u－boot，移植了2.4.21的内核。系统跑起来了，但是发现一个问题，简单的说就是eth0不可用，这样target
 board无法与server连通，nfs和tftp都是不可用的，以后的嵌入式软件移植不可能仅仅通过串口连接完成。所以必须解决这个问题，从网上搜
 索，没有发现有价值的东西。在CU上咨询，a－ki给我了很多好的建议，使得这个问题最终得到了解决。
-－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+  －－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
 ## 问题：u-boot从flash启动后ethaddr无效，导致eth0无效。
 环境：移植到at91rm9200，u-boot的版本为 1.1.1
 具体过程如下：
@@ -170,7 +170,7 @@ linux-2.4.27//drivers/at91/net/at91_ether.c
   linux-2.4.27/include/asm-arm/arch-at91rm9200/pio.h  
   找到static inline void AT91_CfgPIO_EMAC_MII(void)函数，
     并将其替换如下内容，然后重新编译内核。
-      
+
 static inline void AT91_CfgPIO_EMAC_MII(void) {
         AT91_SYS->PIOA_PDR |= AT91C_PA16_EMDIO | AT91C_PA15_EMDC | AT91C_PA14_ERXER | AT91C_PA13_ERX1
                 | AT91C_PA12_ERX0 | AT91C_PA11_ECRS_ECRSDV | AT91C_PA7_ETXCK_EREFCK;
