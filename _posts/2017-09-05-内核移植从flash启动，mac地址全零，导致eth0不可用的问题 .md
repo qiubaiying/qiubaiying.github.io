@@ -168,7 +168,7 @@ linux-2.4.27//drivers/at91/net/at91_ether.c
     305 }
 然后修改：
 linux-2.4.27/include/asm-arm/arch-at91rm9200/pio.h
-找到static inline void AT91_CfgPIO_EMAC_MII(void)函数，并将其替换如下内容，然后重新编译内核。
+  找到static inline void AT91_CfgPIO_EMAC_MII(void)函数，并将其替换如下内容，然后重新编译内核。
 static inline void AT91_CfgPIO_EMAC_MII(void) {
         AT91_SYS->PIOA_PDR |= AT91C_PA16_EMDIO | AT91C_PA15_EMDC | AT91C_PA14_ERXER | AT91C_PA13_ERX1
                 | AT91C_PA12_ERX0 | AT91C_PA11_ECRS_ECRSDV | AT91C_PA7_ETXCK_EREFCK;
@@ -181,7 +181,7 @@ static inline void AT91_CfgPIO_EMAC_MII(void) {
         AT91_SYS->PIOD_BSR |= AT91C_PD2_ETX2 | AT91C_PD3_ETX3 | AT91C_PD5_ETXER;
 }
 
-完成后MII接口的网络可以使用，该驱动现在可以支持MII和RMII接口网络，  这个需要在配置时选择，我现在用的是MII。  写入flash启动后mac地址就显示为你所设定的mac地址了。  
+  完成后MII接口的网络可以使用，该驱动现在可以支持MII和RMII接口网络，  这个需要在配置时选择，我现在用的是MII。  写入flash启动后mac地址就显示为你所设定的mac地址了。  
 可以用diff制作一个补丁，方便使用。
                 
                 
