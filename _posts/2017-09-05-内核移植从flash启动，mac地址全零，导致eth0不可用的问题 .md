@@ -166,12 +166,12 @@ linux-2.4.27//drivers/at91/net/at91_ether.c
     303         /*default_ether_addr*/
     304         memcpy(dev->dev_addr,&default_ether_addr, 6);
     305 }  
-    ```
+
   然后修改：
   linux-2.4.27/include/asm-arm/arch-at91rm9200/pio.h  
   找到static inline void AT91_CfgPIO_EMAC_MII(void)函数，
     并将其替换如下内容，然后重新编译内核。
-```bash
+
 static inline void AT91_CfgPIO_EMAC_MII(void) {
         AT91_SYS->PIOA_PDR |= AT91C_PA16_EMDIO | AT91C_PA15_EMDC | AT91C_PA14_ERXER | AT91C_PA13_ERX1
                 | AT91C_PA12_ERX0 | AT91C_PA11_ECRS_ECRSDV | AT91C_PA7_ETXCK_EREFCK;
