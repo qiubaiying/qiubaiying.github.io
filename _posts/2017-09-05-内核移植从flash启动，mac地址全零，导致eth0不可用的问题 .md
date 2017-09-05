@@ -116,8 +116,10 @@ eth0: Setting MAC address to 00:e0:4c:4d:8d:5f     //显示结果
 ```
 
 ## 补充：
+
 解决方法二：
-读代码，以及从网上查找得知，u－boot的网络驱动是没有问题的，只是在和Linux的配合上不太协调。可以将kernel的net驱动部分修改一下，指定一个默认的合法的mac地址。
+读代码，以及从网上查找得知，u－boot的网络驱动是没有问题的，只是在和Linux的配合上不太协调。  
+可以将kernel的net驱动部分修改一下，指定一个默认的合法的mac地址。
 
 我现在用的版本是Linux－2.4.27－vsr1
 先修改驱动：
@@ -178,7 +180,8 @@ static inline void AT91_CfgPIO_EMAC_MII(void) {
                 | AT91C_PB16_ERX3 | AT91C_PB15_ERX2;
         AT91_SYS->PIOD_BSR |= AT91C_PD2_ETX2 | AT91C_PD3_ETX3 | AT91C_PD5_ETXER;
 }
-完成后MII接口的网络可以使用，该驱动现在可以支持MII和RMII接口网络，这个需要在配置时选择，我现在用的是MII。写入flash启动后mac地址就显示为你所设定的mac地址了。
+
+完成后MII接口的网络可以使用，该驱动现在可以支持MII和RMII接口网络，  这个需要在配置时选择，我现在用的是MII。  写入flash启动后mac地址就显示为你所设定的mac地址了。  
 可以用diff制作一个补丁，方便使用。
                 
                 
