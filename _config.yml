@@ -1,10 +1,10 @@
 # Site settings
 title: Shuai qi jun
-SEOTitle: 帅旗军的博客
+SEOTitle: 帅旗军_星系启明星
 header-img: img/post-bg-desk.jpg
 email: 42687880@qq.com
 description: "Every failure is leading towards success."
-keyword: "帅旗军的博客, shuaiqijun, 帅旗军, 黄梅人, 黄梅IT民工, 游走在各星系间的神灵"
+keyword: "帅旗军的博客, shuaiqijun, 帅旗军, 黄梅人, 黄梅IT民工, 游走在众星系间的启明星"
 url: "http://shuaiqijun.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/shuaiqijun/shuaiqijun.github.io.git" # you code repository
