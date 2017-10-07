@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      CentOS change keyboad layout
+title:      CentOS change keyboad layout 
 subtitle:   
 date:       2017-10-07
 author:     Shine
