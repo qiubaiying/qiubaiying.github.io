@@ -1,14 +1,14 @@
 ---
 layout:     post
-title:      Socket
-subtitle:   Network assignment
+title:      Race condition
+subtitle:   secure programming assignment
 date:       2017-10-07
 author:     Shine
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
-    - Network
-    - c
+    - secure programming
+    
 ---
 
 # Race Conditions #
