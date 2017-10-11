@@ -2,7 +2,7 @@
 layout:     post
 title:      tinyHTTP
 subtitle:   Network assignment
-date:       2017-10-11
+date:       2017-10-07
 author:     Shine
 header-img: img/home-bg-art.jpg
 catalog: true
