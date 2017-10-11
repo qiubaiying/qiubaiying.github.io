@@ -33,7 +33,7 @@ pip install --upgrade pip$ pip install shadowsocks
 ```  
 ### 配置shadowsocks
 安装完成后，需要创建配置文件/etc/shadowsocks.json，内容如下：  
-```js
+```json
 { 
 	"server":"0.0.0.0", 
 	"server_port":8388, 
