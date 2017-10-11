@@ -4,7 +4,7 @@ title:      Centos7 MariaDB安装
 subtitle:   Centos7 MariaDB安装及使用
 date:       2017-10-11
 author:     Shuaiqijun
-header-img: http://oxnepqswk.bkt.clouddn.com/10a98b58070bbc25eea4eacd57f892ef.jpg
+header-img: img/blog1.jpg
 catalog: true
 tags:
     - Centos
