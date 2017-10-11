@@ -76,7 +76,7 @@ MariaDB [(none)]>
 ```  
   
   
-:cpuid: 网站建设：[www.rsson.cn](http://www.rsson.cn "中立信网络科技")  
+网站建设：[www.rsson.cn](http://www.rsson.cn "中立信网络科技")  
 ![中立信网络科技][rsson-logo]  
 
 --------------------------------
