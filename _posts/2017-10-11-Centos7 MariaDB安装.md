@@ -20,12 +20,12 @@ E-mail:42687880@qq.com
 ****
 ## 安装MariaDB-server
 ```diff
-+yum -y update  
-+yum -y install mysql  
-+yum -y install mariadb-server mariadb-client  
-+systemctl enable mariadb  
-+systemctl start mariadb  
-+systemctl status mariadb  
++ yum -y update  
++ yum -y install mysql  
++ yum -y install mariadb-server mariadb-client  
++ systemctl enable mariadb  
++ systemctl start mariadb  
++ ystemctl status mariadb  
 ```
 [root@centos-rpi2 ~]# systemctl status mariadb  
 ● mariadb.service - MariaDB database server  
@@ -52,7 +52,7 @@ Hint: Some lines were ellipsized, use -l to show in full.
 ### 配置root账户
 -----------
 ```diff
-+mysql -u root -p
++ mysql -u root -p
 ```  
 直接回车   
 [root@centos-rpi2 ~]# mysql -u root -p  
@@ -67,16 +67,16 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
   
 MariaDB [(none)]>   
 ```diff  
-+use mysql;  
-+update user set password=password('Shuai_sqj') where user='root';  
-+grant all privileges on *.* to 'root'@'%' identified by 'Shuai_sqj' with grant option;  
++ use mysql;  
++ update user set password=password('Shuai_sqj') where user='root';  
++ grant all privileges on *.* to 'root'@'%' identified by 'Shuai_sqj' with grant option;  
 //创建root远程管理  
-+flush privileges;  
++ flush privileges;  
 exit  
 ```  
   
   
-[网站建设：http://www.rsson.cn](http://www.rsson.cn "中立信网络科技")
+网站建设：[http://www.rsson.cn](http://www.rsson.cn "中立信网络科技")
 --------------------------------
 [csdn]:http://blog.csdn.net/shuaiqijun "我的博客"
 [zhihu]:https://www.zhihu.com/people/jellywong "我的知乎，欢迎关注"
