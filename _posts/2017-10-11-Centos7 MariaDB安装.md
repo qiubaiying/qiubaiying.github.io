@@ -79,9 +79,9 @@ MariaDB [(none)]>
 网站建设： [http://www.rsson.cn](http://www.rsson.cn "中立信网络科技")
 --------------------------------
 [CSDN]:[http://blog.csdn.net/shuaiqijun](http://blog.csdn.net/shuaiqijun "我的博客")  
-[zhihu]:(https://www.zhihu.com/people/jellywong "我的知乎，欢迎关注")
-[weibo]:http://weibo.com/linpiaochen
-[baidu-logo]:http://www.baidu.com/img/bdlogo.gif "百度logo"
-[weibo-logo]:/img/weibo.png "点击图片进入我的微博"
-[csdn-logo]:/img/csdn.png "我的CSDN博客"
-[foryou]:https://github.com/shuaiqijun/ImageCache/raw/master/Logo/foryou.gif
+[zhihu]:[https://www.zhihu.com/people/shuaiqijun](https://www.zhihu.com/people/shuaiqijun "我的知乎，欢迎关注")  
+[weibo]:[http://weibo.com/shuaiqijun](http://weibo.com/shuaiqijun "我的微博")
+[baidu-logo]:http://www.baidu.com/img/bdlogo.gif "百度logo"  
+[weibo-logo]:/img/weibo.png "点击图片进入我的微博"  
+[csdn-logo]:/img/csdn.png "我的CSDN博客"  
+[foryou]:https://github.com/shuaiqijun/ImageCache/raw/master/Logo/foryou.gif  
