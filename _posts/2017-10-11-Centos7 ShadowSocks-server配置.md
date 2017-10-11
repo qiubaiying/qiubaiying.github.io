@@ -61,7 +61,11 @@ ExecStart=/usr/bin/ssserver -c /etc/shadowsocks.json
 ```   
 执行以下命令启动 shadowsocks 服务：
 ```  
-systemctl enable shadowsocks$ systemctl start shadowsocks 
+systemctl enable shadowsocks
+```
+
+```
+systemctl start shadowsocks 
 ``` 
 为了检查 shadowsocks 服务是否已成功启动，可以执行以下命令查看服务的状态：
 ```  
