@@ -50,7 +50,7 @@ Hint: Some lines were ellipsized, use -l to show in full.
 
 
 ### 配置root账户
------------
+
 ```diff
 + mysql -u root -p
 ```  
