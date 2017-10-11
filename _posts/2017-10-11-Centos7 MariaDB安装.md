@@ -78,8 +78,8 @@ MariaDB [(none)]>
   
 网站建设： [http://www.rsson.cn](http://www.rsson.cn "中立信网络科技")
 --------------------------------
-[csdn]:http://blog.csdn.net/shuaiqijun "我的博客"
-[zhihu]:https://www.zhihu.com/people/jellywong "我的知乎，欢迎关注"
+[CSDN]:[http://blog.csdn.net/shuaiqijun](http://blog.csdn.net/shuaiqijun "我的博客")  
+[zhihu]:(https://www.zhihu.com/people/jellywong "我的知乎，欢迎关注")
 [weibo]:http://weibo.com/linpiaochen
 [baidu-logo]:http://www.baidu.com/img/bdlogo.gif "百度logo"
 [weibo-logo]:/img/weibo.png "点击图片进入我的微博"
