@@ -81,7 +81,7 @@ MariaDB [(none)]>
 
 --------------------------------
 [CSDN]:[http://blog.csdn.net/shuaiqijun](http://blog.csdn.net/shuaiqijun "我的博客")  
-[zhihu]:[https://www.zhihu.com/people/shuaiqijun](https://www.zhihu.com/people/shuaiqijun "我的知乎，欢迎关注")  
+[zhihu]:[https://www.zhihu.com/people/qijun-shuai](https://www.zhihu.com/people/qijun-shuai "我的知乎，欢迎关注")  
 [weibo]:[http://weibo.com/shuaiqijun](http://weibo.com/shuaiqijun "我的微博")  
  
 
