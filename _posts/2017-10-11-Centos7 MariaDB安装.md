@@ -52,8 +52,7 @@ Hint: Some lines were ellipsized, use -l to show in full.
 ### 配置root账户
 -----------
 mysql -u root -p  
-直接回车  
-  
+直接回车   
 [root@centos-rpi2 ~]# mysql -u root -p  
 Enter password:   
 Welcome to the MariaDB monitor.  Commands end with ; or \g.  
@@ -74,7 +73,7 @@ exit
   
   
   
-网站建设：www.rsson.cn
+`[网站建设](http://www.rsson.cn "中立信网络科技")`|[网站建设](http://www.rsson.cn "中立信网络科技")|
 --------------------------------
 [csdn]:http://blog.csdn.net/shuaiqijun "我的博客"
 [zhihu]:https://www.zhihu.com/people/jellywong "我的知乎，欢迎关注"
