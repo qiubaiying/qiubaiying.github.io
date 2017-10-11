@@ -22,13 +22,19 @@ pip是 python 的包管理工具。在本文中将使用 python 版本的 shadow
 
 在控制台执行以下命令安装 pip:  
 ```
-curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"$ python get-pip.py
+curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
 ```
 
-[root@centos-rpi2 ~]# `curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"$ python get-pip.py`     
+```
+python get-pip.py
+```     
 ### 安装shadowsocks
 ```
-pip install --upgrade pip$ pip install shadowsocks
+pip install --upgrade pip
+```
+
+``` 
+pip install shadowsocks
 ```  
 ### 配置shadowsocks
 安装完成后，需要创建配置文件/etc/shadowsocks.json，内容如下：  
