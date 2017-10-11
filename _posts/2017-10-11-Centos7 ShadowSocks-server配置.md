@@ -23,15 +23,10 @@ pip是 python 的包管理工具。在本文中将使用 python 版本的 shadow
 
 在控制台执行以下命令安装 pip:  
 ```
-`curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"$ python get-pip.py`
+curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"$ python get-pip.py
 ```
 
-[root@centos-rpi2 ~]# `curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"$ python get-pip.py`   
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current  
-                                 Dload  Upload   Total   Spent    Left  Speed  
-100 1558k  100 1558k    0     0  18474      0  0:01:26  0:01:26 --:--:-- 17022  
-curl: (7) Failed connect to python:80; Connection refused  
-curl: (7) Failed connect to get-pip.py:80; Connection refused  
+[root@centos-rpi2 ~]# `curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"$ python get-pip.py`     
 ### 安装shadowsocks
 ```
 pip install --upgrade pip$ pip install shadowsocks
@@ -40,27 +35,33 @@ pip install --upgrade pip$ pip install shadowsocks
 安装完成后，需要创建配置文件/etc/shadowsocks.json，内容如下：  
 ```js
 { 
-	"server": "0.0.0.0", 
-	"server_port": 8388, 
-	"password": "uzon57jd0v869t7w", 
-	"method": "aes-256-cfb"
+	"server":"0.0.0.0", 
+	"server_port":8388, 
+	"password":"uzon57jd0v869t7w", 
+	"method":"aes-256-cfb"
 }
 ```  
 说明：  
-	`method` 为加密方法，可选aes-128-cfb, aes-192-cfb, aes-256-cfb, bf-cfb, cast5-cfb, des-cfb, rc4-md5, chacha20, salsa20, rc4, table
-	`server_port` 为服务监听端口
-	`password` 为密码，可使用密码生成工具生成一个随机密码
+	`method` 为加密方法，可选aes-128-cfb, aes-192-cfb, aes-256-cfb, bf-cfb, cast5-cfb, des-cfb, rc4-md5, chacha20, salsa20, rc4, table  
+	`server_port` 为服务监听端口  
+	`password` 为密码，可使用密码生成工具生成一个随机密码  
 	以上三项信息在配置 shadowsocks 客户端时需要配置一致，具体说明可查看 shadowsocks 的帮助文档。
 ### 配置shadowsocks-server自启动
 新建启动脚本文件/etc/systemd/system/shadowsocks.service，内容如下：  
+```bash
 [Unit]Description=Shadowsocks  
 [Service]TimeoutStartSec=0  
 ExecStart=/usr/bin/ssserver -c /etc/shadowsocks.json  
-[Install]WantedBy=multi-user.target   
-执行以下命令启动 shadowsocks 服务：  
-systemctl enable shadowsocks$ systemctl start shadowsocks  
-为了检查 shadowsocks 服务是否已成功启动，可以执行以下命令查看服务的状态：  
-systemctl status shadowsocks -l  
+[Install]WantedBy=multi-user.target
+```   
+执行以下命令启动 shadowsocks 服务：
+```  
+systemctl enable shadowsocks$ systemctl start shadowsocks 
+``` 
+为了检查 shadowsocks 服务是否已成功启动，可以执行以下命令查看服务的状态：
+```  
+systemctl status shadowsocks -l 
+``` 
 如果服务启动成功，则控制台显示的信息可能类似这样：  
 
 shuaiqijundeMacBook-Pro:~ shuaiqijun$ ssh root@150.95.132.191  
