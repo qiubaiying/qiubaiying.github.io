@@ -82,6 +82,7 @@ MariaDB [(none)]>
 [zhihu]:[https://www.zhihu.com/people/shuaiqijun](https://www.zhihu.com/people/shuaiqijun "我的知乎，欢迎关注")  
 [weibo]:[http://weibo.com/shuaiqijun](http://weibo.com/shuaiqijun "我的微博")  
 ![baidu][baidu-logo]  
+--------------------------------
 [baidu-logo]:http://www.baidu.com/img/bdlogo.gif "百度logo"  
 [weibo-logo]:/img/weibo.png "点击图片进入我的微博"  
 [csdn-logo]:/img/csdn.png "我的CSDN博客"  
