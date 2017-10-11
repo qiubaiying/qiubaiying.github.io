@@ -13,11 +13,11 @@ tags:
 
 Centos7 MariaDB安装
 ===========================
-MariaDB 是 MySQL 数据库的自由开源分支，与 MySQL 在设计思想上同出一源，在未来仍将是自由且开源的。Red Hat Enterprise Linux/CentOS 7.0 发行版已将默认的数据库从 MySQL 切换到 MariaDB.
-****
-Author:Shuaiqijun
-E-mail:42687880@qq.com
-****
+MariaDB 是 MySQL 数据库的自由开源分支，与 MySQL 在设计思想上同出一源，在未来仍将是自由且开源的。Red Hat Enterprise Linux/CentOS 7.0 发行版已将默认的数据库从 MySQL 切换到 MariaDB.  
+****  
+Author:Shuaiqijun  
+E-mail:42687880@qq.com  
+****  
 ## 安装MariaDB-server
 ```diff
 + yum -y update  
@@ -27,7 +27,7 @@ E-mail:42687880@qq.com
 + systemctl start mariadb  
 + ystemctl status mariadb  
 ```
-[root@centos-rpi2 ~]# systemctl status mariadb  
+[root@centos-rpi2 ~]# `systemctl status mariadb`  
 ● mariadb.service - MariaDB database server  
    Loaded: loaded (/usr/lib/systemd/system/mariadb.service; enabled; vendor preset: disabled)  
    Active: active (running) since Wed 2017-10-11 09:46:50 HKT; 4h 12min ago  
@@ -55,7 +55,7 @@ Hint: Some lines were ellipsized, use -l to show in full.
 + mysql -u root -p
 ```  
 直接回车   
-[root@centos-rpi2 ~]# mysql -u root -p  
+[root@centos-rpi2 ~]# `mysql -u root -p` 
 Enter password:   
 Welcome to the MariaDB monitor.  Commands end with ; or \g.  
 Your MariaDB connection id is 5  
@@ -70,13 +70,13 @@ MariaDB [(none)]>
 + use mysql;  
 + update user set password=password('Shuai_sqj') where user='root';  
 + grant all privileges on *.* to 'root'@'%' identified by 'Shuai_sqj' with grant option;  
-//创建root远程管理  
+- //创建root远程管理  
 + flush privileges;  
-exit  
++ exit  
 ```  
   
   
-网站建设：[http://www.rsson.cn](http://www.rsson.cn "中立信网络科技")
+网站建设： [http://www.rsson.cn](http://www.rsson.cn "中立信网络科技")
 --------------------------------
 [csdn]:http://blog.csdn.net/shuaiqijun "我的博客"
 [zhihu]:https://www.zhihu.com/people/jellywong "我的知乎，欢迎关注"
