@@ -14,10 +14,10 @@ tags:
 Centos7 MariaDB安装
 ===========================
 MariaDB 是 MySQL 数据库的自由开源分支，与 MySQL 在设计思想上同出一源，在未来仍将是自由且开源的。Red Hat Enterprise Linux/CentOS 7.0 发行版已将默认的数据库从 MySQL 切换到 MariaDB.  
-****  
+******  
 Author:Shuaiqijun  
 E-mail:42687880@qq.com  
-****  
+******  
 ## 安装MariaDB-server
 ```diff
 + yum -y update  
@@ -55,7 +55,7 @@ Hint: Some lines were ellipsized, use -l to show in full.
 + mysql -u root -p
 ```  
 直接回车   
-[root@centos-rpi2 ~]# `mysql -u root -p` 
+[root@centos-rpi2 ~]# `mysql -u root -p`  
 Enter password:   
 Welcome to the MariaDB monitor.  Commands end with ; or \g.  
 Your MariaDB connection id is 5  
