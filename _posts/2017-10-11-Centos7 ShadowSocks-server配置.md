@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      ShadowSocks-server安装
+title:      Centos7下ShadowSocks-server的安装配置
 subtitle:   Centos7 ShadowSocks-server
 date:       2017-10-11
 author:     Shuaiqijun
