@@ -26,9 +26,7 @@ starts a transaction with the server,client B cannot make a call until A is fini
 >{
 >
 >   new_fd=the connection fo server accept the client(new_fd=accept(listenfd,**,**))
-
 >logic processing...
-
 >send message by this new_fd
 
 >close new_fd
