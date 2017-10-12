@@ -2,7 +2,7 @@
 layout:     post
 title:      Socket-concurrent server
 subtitle:   Network assignment
-date:       2017-10-010
+date:       2017-10-10
 author:     Shine
 header-img: img/home-bg-art.jpg
 catalog: true
