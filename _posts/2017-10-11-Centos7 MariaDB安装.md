@@ -25,7 +25,7 @@ E-mail:42687880@qq.com
 + yum -y install mariadb-server mariadb-client  
 + systemctl enable mariadb  
 + systemctl start mariadb  
-+ ystemctl status mariadb  
++ systemctl status mariadb  
 ```
 [root@centos-rpi2 ~]# `systemctl status mariadb`  
 ● mariadb.service - MariaDB database server  
