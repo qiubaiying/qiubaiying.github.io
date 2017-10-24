@@ -1,7 +1,9 @@
 # BY Blog
 
 > 下面是博客的搭建教程，这个教程修改自 [Hux](https://github.com/Huxpro/huxpro.github.io) 。
-
+> 
+> 更为详细的教程[《利用 GitHub Pages 快速搭建个人博客》](http://www.jianshu.com/p/e68fba58f75c)
+> 
 ### [我的博客在这里 &rarr;](http://qiubaiying.github.io)
 
 ![](https://raw.githubusercontent.com/qiubaiying/qiubaiying.github.io/master/img/readme-home.png)
@@ -31,7 +33,7 @@
 
 ### 环境
 
-如果你安装了jekyll，那你只需要在命令行输入`jekyll serve` 或 `jekyll s`就能在本地浏览器中输入`http://127.0.0.1:4000/`预览主题,还可以边修改边自动运行修改后的文件（需要刷新浏览器）。
+如果你安装了 [jekyll](http://jekyllcn.com/)，那你只需要在命令行输入`jekyll serve` 或 `jekyll s`就能在本地浏览器中输入`http://127.0.0.1:4000/`预览主题,还可以边修改边自动运行修改后的文件（需要刷新浏览器）。
 
 
 
@@ -58,7 +60,7 @@ Jekyll官方网站还有很多的参数可以调，比如设置文章的链接�
 
 ### 撰写博文
 
-要发表的文章一般以markdown的格式放在这里`_posts/`，你只要看看这篇模板里的文章你就立刻明白该如何设置。
+要发表的文章一般以 **Markdown** 的格式放在这里`_posts/`，你只要看看这篇模板里的文章你就立刻明白该如何设置。
 
 yaml 头文件长这样:
 
