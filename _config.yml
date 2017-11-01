@@ -55,7 +55,7 @@ kramdown:
 
 
 # 评论系统
-Disqus settings（https://disqus.com/）
+# Disqus settings（https://disqus.com/）
 disqus_username: Awybupt
 
 # 多说 将于2017年6月1日正式关停服务，建议使用 Disqus（http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241）
