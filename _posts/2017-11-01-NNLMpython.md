@@ -18,7 +18,8 @@ tags:
     * f(wt,wt−1,...,wt−n+2,wt−n+1)=p(wt|w1t−1)
 * 其中wt表示词序列中第t个单词，w1t−1表示从第1个词到第t个词组成的子序列。模型需要满足的约束条件是：
     * f(wt,wt−1,...,wt−n+2,wt−n+1)>0
-    * ∑|V|i=1f(i,wt−1,...,wt−n+2,wt−n+1)=1 下图展示了模型的总体架构：
+    * ∑|V|i=1f(i,wt−1,...,wt−n+2,wt−n+1)=1
+* 下图展示了模型的总体架构：
 ![NNLM](https://github.com/Awybupt/Awybupt.github.io/blob/master/img/NNLM_page.png)
 ```python
 vocabulary_size = 8000
