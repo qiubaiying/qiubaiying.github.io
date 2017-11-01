@@ -22,6 +22,7 @@ tags:
 * 下图展示了模型的总体架构：
 ![NNLM](https://github.com/Awybupt/Awybupt.github.io/blob/master/img/NNLM_page.png)
 ```python
+
 vocabulary_size = 8000
 unknown_token = "UNKNOWN_TOKEN"
 sentence_start_token = "SENTENCE_START"
@@ -64,6 +65,7 @@ print "\nExample sentence after Pre-processing: '%s'" % tokenized_sentences[0]
 # Create the training data
 X_train = np.asarray([[word_to_index[w] for w in sent[:-1]] for sent in tokenized_sentences])
 y_train = np.asarray([[word_to_index[w] for w in sent[1:]] for sent in tokenized_sentences])
+
 ```
 
 
