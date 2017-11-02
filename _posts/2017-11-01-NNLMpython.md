@@ -21,8 +21,8 @@ tags:
     * ∑|V|i=1f(i,wt−1,...,wt−n+2,wt−n+1)=1
 * 下图展示了模型的总体架构：
 ![NNLM](https://github.com/Awybupt/Awybupt.github.io/blob/master/img/NNLM_page.png)
-```python
 
+```python
 vocabulary_size = 8000
 unknown_token = "UNKNOWN_TOKEN"
 sentence_start_token = "SENTENCE_START"
