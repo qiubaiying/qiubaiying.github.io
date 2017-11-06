@@ -10,6 +10,9 @@ tags:
     
 - python 
 
+
+---
+
 based on windows 10 python2.7 anaconda
 ---ImportError: numpy.core.multiarray failed to import
 or 
