@@ -2,7 +2,7 @@
 layout:     post
 title:      import numpy error and UnicodeDecodeError 'ascii' codec can't ...
 subtitle:   python
-date:       2017-11-2
+date:       2017-11-3
 author:     Shine
 header-img: img/home-bg-art.jpg
 catalog: true
