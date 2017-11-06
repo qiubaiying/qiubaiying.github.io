@@ -28,5 +28,8 @@ filepath=unicode('E:\课题\深度学习\codemeterial\代码与素材\代码与�
 allElectronicsData=open(filepath,'rb')
 
 ```
+
+tips:
+folder name can not begin with number 
     
 
