@@ -868,6 +868,25 @@ RACMulticastConnection *connect = [signal publish];
 }];
 ```
 
+#### 替换通知
+
+**rac_addObserverForName**
+
+```
+// 原生的订阅通知
+[[NSNotificationCenter defaultCenter] addObserver:self
+                                         selector:@selector(userDidChange:)
+                                             name:kTTCurrentUserLoggedOffNotification
+                                           object:nil];
+                                           
+// 使用RAC订阅通知 ，takeUntil限定信号的声明周期                                  
+[[[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIApplicationDidEnterBackgroundNotification object:nil]
+  takeUntil:[self rac_willDeallocSignal]]
+  subscribeNext:^(id x) {
+     NSLog(@"Notification received");
+}];
+```
+
 #### 监听事件
 
 **rac_signalForControlEvents:**
