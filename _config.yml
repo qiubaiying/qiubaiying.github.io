@@ -52,7 +52,7 @@ highlighter: rouge
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
 
-
+/*
 
 # 评论系统
 # Disqus settings（https://disqus.com/）
@@ -65,7 +65,7 @@ disqus_username: qiubaiying
 # duoshuo_share: true                     # set to false if you want to use Comment without Sharing
 
 
-
+*/
 /*
 # Analytics settings
 # Baidu Analytics
@@ -90,7 +90,7 @@ chrome-tab-theme-color: "#000000"
 service-worker: true
 
 
-
+/*
 # Friends
 friends: [
     {
@@ -107,3 +107,4 @@ friends: [
         href: "https://developer.apple.com/"
     }
 ]
+*/
