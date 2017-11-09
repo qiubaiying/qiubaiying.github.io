@@ -4,7 +4,7 @@ SEOTitle: 周平的博客 | By Blog
 header-img: img/post-bg-desk.jpg
 email: zp0808@gmail.com
 description: "每天进步一点点."
-keyword: "BY, BY Blog, 周平的博客, zping, 周平, iOS, Apple, iPhone"
+keyword: "BY, BY Blog, 周平的博客, zping, 周平"
 url: "http://zping0808.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/zping0808/zping0808.github.io.git" # you code repository
