@@ -11,7 +11,7 @@ github_repo: "https://github.com/zping0808/zping0808.github.io.git" # you code r
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
+sidebar-about-description: "每天进步一小步!"
 sidebar-avatar: /img/about-by.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
