@@ -3,7 +3,11 @@ layout: page
 title: "Contact"
 description: "get in touch with me"
 header-img: "img/post-bg-2015.jpg"
-form: true
+map:
+  latitude: -45.8787605
+  longitude: 170.5027976
+  address: "1 George Street, Dunedin, New Zealand"
+  zoom: 13
 ---
 
 <p>If you want to contact me, an e-mail is recommended. Once I see it, I will write back as quickly as I can.
@@ -11,7 +15,6 @@ form: true
 <ul>
     <li>E-mail 邮箱: wei.svip@foxmail.com</li>
     <li>E-mail 邮箱: mikebupt@gmail.com</li>
-    <li>Phone  手机: 13051957575</li>
 </ul>
 </p>
 
@@ -19,41 +22,62 @@ form: true
     Also, you can send me a message through the form below. Please fill it and push the "send"  button, I will write back within 24 hours.
     <br/>您也可以通过填写下面的表单，然后表单下方的点击“SEND”按钮，给我发信。我会在24小时之内给您答复。
 </p>
-<!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
-<!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
-<!-- NOTE: To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
-<form name="sentMessage" id="contactForm" novalidate>
-  <div class="control-group">
-    <div class="form-group floating-label-form-group controls">
-      <label>Name</label>
-      <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
-      <p class="help-block text-danger"></p>
-    </div>
-  </div>
-  <div class="control-group">
-    <div class="form-group floating-label-form-group controls">
-      <label>Email Address</label>
-      <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
-      <p class="help-block text-danger"></p>
-    </div>
-  </div>
-  <div class="control-group">
-    <div class="form-group col-xs-12 floating-label-form-group controls">
-      <label>Phone Number</label>
-      <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
-      <p class="help-block text-danger"></p>
-    </div>
-  </div>
-  <div class="control-group">
-    <div class="form-group floating-label-form-group controls">
-      <label>Message</label>
-      <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
-      <p class="help-block text-danger"></p>
-    </div>
-  </div>
-  <br>
-  <div id="success"></div>
-  <div class="form-group">
-    <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
-  </div>
-</form>
+<section class="pad">
+	<div class="text-container contact-box">
+		<form action="https://formspree.io/wxscs.com" method="post" class="contact-form">
+			<input type="hidden" name="_to" value="support@cloudcannon.com">
+			<input type="text" name="_gotcha" style="display: none;">
+
+			<label for="name">Name</label>
+			<input type="text" name="name" id="name" placeholder="Enter your name...">
+
+			<label for="email">Email Address</label>
+			<input type="email" name="email" id="email" placeholder="Enter your email..." required>
+
+			<label for="message">Message</label>
+			<textarea name="message" id="message" placeholder="Enter your message..."></textarea>
+
+			<input type="submit" value="Send Message">
+		</form>
+
+		<div class="contact-details">
+			<h3>Address</h3>
+			<address><a target="_blank" href="https://www.google.com/maps/place/{{ page.map.address | url_encode }}">{{ page.map.address | replace: ", ", ", <br>" }}</a></address>
+
+			<h3>Email</h3>
+			<p class="editable"><a href="mailto:support@example.com">support@example.com</a></p>
+		</div>
+	</div>
+</section>
+<div class="map" id="map"></div>
+
+<script>
+	window.mapData = {{ page.map | jsonify }};
+
+	function initMap() {
+		var myOptions = {
+			scrollwheel: false,
+			draggable: false,
+			panControl: false,
+			disableDefaultUI: true,
+			styles: [{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"color":"#f7f1df"}]},{"featureType":"landscape.natural","elementType":"geometry","stylers":[{"color":"#d0e3b4"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"geometry","stylers":[{"color":"#fbd3da"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#bde6ab"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffe15f"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#efd151"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"black"}]},{"featureType":"transit.station.airport","elementType":"geometry.fill","stylers":[{"color":"#cfb2db"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#a2daf2"}]}],
+			zoom: window.mapData.zoom,
+			maxZoom: window.mapData.zoom,
+			minZoom: window.mapData.zoom,
+			center: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude),
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+
+		var map = new google.maps.Map(document.getElementById('map'), myOptions);
+
+		var marker = new google.maps.Marker({
+			map: map,
+			position: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude)
+		});
+
+		google.maps.event.addDomListener(window, 'resize', function() {
+			map.setCenter(myOptions.center);
+		});
+	}
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{ site.google_maps_javascript_api_key }}&amp;callback=initMap"></script>
