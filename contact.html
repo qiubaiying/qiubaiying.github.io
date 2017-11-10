@@ -24,7 +24,7 @@ map:
 </p>
 <section class="pad">
 	<div class="text-container contact-box">
-		<form action="https://formspree.io/wxscs.com" method="post" class="contact-form">
+		<form action="{{ site.baseurl }}/contact-success/" method="POST" class="contact-form">
 			<input type="hidden" name="_to" value="support@cloudcannon.com">
 			<input type="text" name="_gotcha" style="display: none;">
 
@@ -40,12 +40,13 @@ map:
 			<input type="submit" value="Send Message">
 		</form>
 
+
 		<div class="contact-details">
 			<h3>Address</h3>
 			<address><a target="_blank" href="https://www.google.com/maps/place/{{ page.map.address | url_encode }}">{{ page.map.address | replace: ", ", ", <br>" }}</a></address>
 
 			<h3>Email</h3>
-			<p class="editable"><a href="mailto:support@example.com">support@example.com</a></p>
+			<p class="editable"><a href="mailto:wei.svip@foxmail.com">wei.svip@foxmail.com</a></p>
 		</div>
 	</div>
 </section>
