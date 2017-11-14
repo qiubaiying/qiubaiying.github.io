@@ -30,7 +30,12 @@ tags:
     * score
 
 # 方法描述
-*two way
+* Using way
+
+```
+python fmm.py 1.utf8 2.utf8 3.utf8 FMM/RMM
+```
+* Training two way
     * FMM
     
 ```py
@@ -69,20 +74,23 @@ def FMM(mydict, sentence):#前向最大匹配
     while(start<senlen):
         curword=sentence[start]
         maxlen=1
-        if curword in numMath_suffix or curword in numMath:
-            maxlen=rrules(sentence,start)
-
         if(curword in mydict):
             words = mydict[curword]
             for item in words:
                 itemlen=len(item)
                 if sentence[start-itemlen:start] ==item and itemlen>maxlen:
                     maxlen=itemlen
+        if curword in numMath_suffix or curword in numMath:
+            maxlen=rrules(sentence,start)
         result.append(sentence[start-itemlen:start])
         start = start -maxlen
     return result
 ``` 
+
 # 结果分析
+
+* FMM
+
 ```py
 TRUE WORDS RECALL:	1.000
 TEST WORDS PRECISION:	1.000
@@ -107,7 +115,30 @@ TEST WORDS PRECISION:	1.000
         * presious:1.000  Recall:1.000
     * FMM
         * presicous:0.912  Recall:0.892
-        
+* RMM
+
+```py
+=== SUMMARY:
+=== TOTAL INSERTIONS:	1462
+=== TOTAL DELETIONS:	6531
+=== TOTAL SUBSTITUTIONS:	10724
+=== TOTAL NCHANGE:	18717
+=== TOTAL TRUE WORD COUNT:	109441
+=== TOTAL TEST WORD COUNT:	104372
+=== TOTAL TRUE WORDS RECALL:	0.842
+=== TOTAL TEST WORDS PRECISION:	0.883
+=== F MEASURE:	0.862
+=== OOV Rate:	0.936
+=== OOV Recall Rate:	0.840
+=== IV Recall Rate:	0.883
+###	4.utf8	1462	6531	10724	18717	109441	104372	0.842	0.883	0.862	0.936	0.840	0.883
+```
+* Using score to test the presious of RMM,the result is:
+    * gold
+        * presious:1.000  Recall:1.000
+    * FMM
+        * presicous:0.883  Recall:0.842   
+
 # 源码运行环境
 * Mac OS 10.13
 * Pycharm
