@@ -6,12 +6,13 @@ header-img: "img/post-bg-rwd.jpg"
 ---
 
 <!-- Language Selector -->
-<audio src="img/bgmusic.mp3" controls autoplay></audio>
+
 <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
     <option value="0" selected> 中文 Chinese </option>
     <option value="1"> 英文 English </option>
 </select>
-
+<audio id="audio" src="img/bgmusic.mp3" style="opacity:0" preload="auto" controls loop hidden="true"/></audio>
+var 
 <!-- Chinese Version -->
 <div class="zh post-container">
 
@@ -59,6 +60,8 @@ header-img: "img/post-bg-rwd.jpg"
 <!-- Handle Language Change -->
 <script type="text/javascript">
     // get nodes
+    var myAuto=document.getElementByid('audio');
+    myAuto.play();
     var $zh = document.querySelector(".zh");
     var $en = document.querySelector(".en");
     var $select = document.querySelector("select");
