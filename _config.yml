@@ -1,11 +1,11 @@
 # Site settings
-title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
+title: WY Blog
+SEOTitle: 苑苑的博客 | WY Blog
 header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
+email: wangyuan0928@outlook.com
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+keyword: "WY, WY Blog, 苑苑的博客, wangyuan, 王苑"
+url: "http://wangyuan0928.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
 
@@ -18,12 +18,12 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
-#twitter_username:   qiubaiying
+# weibo_username:     
+zhihu_username:     
+github_username:    wangyuan0928
+facebook_username:  
+jianshu_username:   283af8f474a4
+#twitter_username:   
 
 
 
@@ -58,13 +58,6 @@ kramdown:
 # Disqus settings（https://disqus.com/）
 disqus_username: qiubaiying
 
-# 多说 将于2017年6月1日正式关停服务，建议使用 Disqus（http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241）
-# Duoshuo settings
-# duoshuo_username: qiubaiying
-# Share component is depend on Comment so we can NOT use share only.
-# duoshuo_share: true                     # set to false if you want to use Comment without Sharing
-
-
 
 
 # Analytics settings
@@ -97,8 +90,8 @@ friends: [
         title: "WY",
         href: "http://zhengwuyang.com"
     },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
+        title: "简书·WY",
+        href: "http://www.jianshu.com/u/283af8f474a4"
     },{
         title: "Apple",
         href: "https://apple.com"
