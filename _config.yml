@@ -1,7 +1,7 @@
 # Site settings
 title: WY Blog
 SEOTitle: 苑苑的博客 | WY Blog
-header-img: img/post-bg-desk.jpg
+header-img: img/post-bg-coffee.jpg
 email: wangyuan0928@outlook.com
 description: "开始写吧"
 keyword: "WY, WY Blog, 苑苑的博客, wangyuan, 王苑"
@@ -12,18 +12,18 @@ github_repo: "https://github.com/wangyuan0928/wangyuan0928.github.io.git" # you 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-WY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/about-yuan-gentle.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
 RSS: false
-# weibo_username:     
-zhihu_username:     
+# weibo_username:
+zhihu_username:
 github_username:    wangyuan0928
-facebook_username:  
+facebook_username:
 jianshu_username:   283af8f474a4
-#twitter_username:   
+#twitter_username:
 
 
 
@@ -62,7 +62,7 @@ disqus_username: wangyuan0928
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: 
+ba_track_id:
 
 # Google Analytics
 ga_track_id: 'UA-xxxxxx-xx'            # Format: UA-xxxxxx-xx
