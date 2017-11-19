@@ -1,10 +1,10 @@
 # Site settings
-title: WY Blog
-SEOTitle: 苑苑的博客 | WY Blog
+title: Yuan Blog
+SEOTitle: 苑苑的博客 | Yuan Blog
 header-img: img/post-bg-coffee.jpg
 email: wangyuan0928@outlook.com
 description: "开始写吧"
-keyword: "WY, WY Blog, 苑苑的博客, wangyuan, 王苑"
+keyword: "Yuan, Yuan Blog, 苑苑的博客, wangyuan, 王苑"
 url: "http://wangyuan0928.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/wangyuan0928/wangyuan0928.github.io.git" # you code repository
@@ -12,7 +12,7 @@ github_repo: "https://github.com/wangyuan0928/wangyuan0928.github.io.git" # you 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-yuan-gentle.png      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/about-yuan-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -87,8 +87,8 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        title: "",
+        href: ""
     },{
         title: "简书·WY",
         href: "http://www.jianshu.com/u/283af8f474a4"
