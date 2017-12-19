@@ -57,16 +57,16 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
+disqus_username: qiubaiying
 
 # Gitalk
-gitalk:
-  enable: true    #是否开启Gitalk评论
-  clientID: 'f2c84e7629bb1446c1a4'    #生成的clientID
-  clientSecret: '33cdc622139d68dc2273b818d849a348d7ac7ac8'   #同上
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+# gitalk:
+#   enable: true    #是否开启Gitalk评论
+#   clientID: 'f2c84e7629bb1446c1a4'    #生成的clientID
+#   clientSecret: '33cdc622139d68dc2273b818d849a348d7ac7ac8'   #同上
+#   repo: qiubaiying.github.io    #仓库名称
+#   owner: qiubaiying    #github用户名
+#   admin: qiubaiying
 
 
 
