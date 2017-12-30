@@ -1,5 +1,8 @@
 # BY Blog
 
+> 下面是我的博客的搭建教程，这一行是我写的，剩下的都是上一位作者分享出来的，非常感谢他。
+> 这个教程修改自 [Hux](https://github.com/qiubaiying/qiubaiying.github.io) 。
+
 > 下面是博客的搭建教程，这个教程修改自 [Hux](https://github.com/Huxpro/huxpro.github.io) 。
 > 
 > 更为详细的教程[《利用 GitHub Pages 快速搭建个人博客》](http://www.jianshu.com/p/e68fba58f75c) 
