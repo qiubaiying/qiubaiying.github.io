@@ -54,19 +54,24 @@ kramdown:
   input: GFM                            # use Github Flavored Markdown !important
 
 
-
+# `c1e47c71e2d885602feb`,
+#   clientSecret: `543ab1883fc32052c3261be907cf160b3f1941a5`,
+#   repo: `Yugen-SYSU.github.io`,
+#   owner: 'Yugen-SYSU',
+#   admin: ['Yugen-SYSU'],
+#   id: 'window.location.pathname',
 # 评论系统
 # Disqus（https://disqus.com/）
 # disqus_username: qiubaiying
 
 # Gitalk
 gitalk:
-  enable: false    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4   #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d  #同上
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  enable: true    #是否开启Gitalk评论
+  clientID: c1e47c71e2d885602feb   #生成的clientID
+  clientSecret: 543ab1883fc32052c3261be907cf160b3f1941a5  #同上
+  repo: Yugen-SYSU.github.io    #仓库名称
+  owner: Yugen-SYSU    #github用户名
+  admin: Yugen-SYSU
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
