@@ -22,4 +22,5 @@ tags:
 输入
 >X:\Python27\python.exe setup.py install
 
-回车，完成
+回车，完成.命令行下如图
+[![](https://github.com/shiqingk/shiqingk.github.io/blob/master/img/blog-py-01.png?raw=true)](http://shiqingk.github.io/)
