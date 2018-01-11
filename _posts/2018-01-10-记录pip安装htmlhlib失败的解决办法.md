@@ -4,7 +4,7 @@ title:      记录pip安装htmlhlib失败的解决办法
 subtitle:   下载的依赖没法用[pip install 依赖名]的方法安装，一番折腾，发现了这个解决办法
 date:       2018-01-10
 author:     某清
-header-img: img/post-bg-re-vs-ng2.jpg
+header-img: img/post-bg-py.jpg
 catalog: true
 tags:
     - Blog
