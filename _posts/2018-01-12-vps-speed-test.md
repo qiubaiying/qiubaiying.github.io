@@ -23,14 +23,13 @@ chmod +x superspeed.sh
 ./superspeed.sh
 
 ## 结果  
-vps服务商       价格       地点       ping值       备注
-vultr          2.5$/m     迈阿密     v4.272/v6.452           
-瓦工           19.5$/y    洛杉矶     v4.213/v6.424  
-截图
+截图  
+vultr___2.5$/m___迈阿密___v4.272___v6.452
 [![vultr迈阿密2.5刀/月](https://github.com/shiqingk/shiqingk.github.io/blob/master/img/blog-tw-speed-vt.png?raw=true)](http://shiqingk.github.io/)
+瓦工___19.5$/y___洛杉矶___v4.213/v6.424
 [![瓦工19.5刀/年](https://github.com/shiqingk/shiqingk.github.io/blob/master/img/blog-tw-speed-wg.png?raw=true)](http://shiqingk.github.io/)
 
 ## 总结
 运营商       套餐       评价       
-vultr      2.5$/m        电信太差  
-瓦工        19.5$/y        移动较好
+vultr，价钱不错，按小时计费，一个月大概2.5$，支持支付宝付款，但是对本地电信支持太差  
+瓦工，也支持支付宝付款，买的19.5$包年的ovz的，节点更换不方便，速度实在比vultr加速之后还要差好多，但是从测速上看，用移动的话可能会好一些吧，没试过
