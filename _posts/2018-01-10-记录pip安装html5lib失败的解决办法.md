@@ -27,4 +27,4 @@ tags:
 
 回车，完成.  (X:\Python27\python.exe这个是电脑的python的安装路径)  
 操作下如图，跑一堆代码之后，就安装成功了
-[![](https://github.com/shiqingk/shiqingk.github.io/blob/master/img/blog-py-01.png?raw=true)](http://shiqingk.github.io/)
+[![](https://github.com/shiqingk/shiqingk.github.io/blob/master/img/blog-tw-py-01.png?raw=true)](http://shiqingk.github.io/)
