@@ -27,8 +27,8 @@ vps服务商       价格       地点       ping值       备注
 vultr          2.5$/m     迈阿密     v4.272/v6.452           
 瓦工           19.5$/y    洛杉矶     v4.213/v6.424  
 截图
-[![vultr迈阿密2.5刀/月](https://github.com/shiqingk/shiqingk.github.io/blob/master/img/blog-tw-speed-01.png?raw=true)](http://shiqingk.github.io/)
-[![瓦工19.5刀/年](https://github.com/shiqingk/shiqingk.github.io/blob/master/img/blog-tw-speed-02.png?raw=true)](http://shiqingk.github.io/)
+[![vultr迈阿密2.5刀/月](https://github.com/shiqingk/shiqingk.github.io/blob/master/img/blog-tw-speed-vt.png?raw=true)](http://shiqingk.github.io/)
+[![瓦工19.5刀/年](https://github.com/shiqingk/shiqingk.github.io/blob/master/img/blog-tw-speed-wg.png?raw=true)](http://shiqingk.github.io/)
 
 ## 总结
 运营商       套餐       评价       
