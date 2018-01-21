@@ -1,29 +1,29 @@
 # Site settings
-title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
+title: 跑下去 天自己会亮
+SEOTitle: Mr.Zhou的博客 | Mr.Zhou
 header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
+email: zhhplus@gmail.com
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+keyword: "Mr.Zhou, Mr.Zhou Blog, Mr.Zhou的博客, Mr.Zhou, 周先生, Java, JavaEE, Technology"
+url: "https://alexanderzhou01.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/AlexanderZhou01/AlexanderZhou01.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "跑下去 天自己会亮"
+sidebar-avatar: /img/avatar-m      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
-#twitter_username:   qiubaiying
+# weibo_username:     十二月的奇迹
+zhihu_username:     周瑞欢
+github_username:    AlexanderZhou01
+facebook_username:  AlexanderZhou
+jianshu_username:   十二月的奇迹
+#twitter_username:   AlexanderZhou
 
 
 
@@ -57,7 +57,7 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
+# disqus_username: AlexanderZhou
 
 # Gitalk
 gitalk:
@@ -74,11 +74,11 @@ gitalk:
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: b50bf2b12b5338a1845e33832976fd68
+#ba_track_id: b50bf2b12b5338a1845e33832976fd68
 
 # Google Analytics
-ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+#ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
+#ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
@@ -99,16 +99,16 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        title: "Mr.Zhou",
+        href: "http://huanhuanjun.cn"
     },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
+        title: "StackOverflow",
+        href: "https://stackoverflow.com/"
     },{
-        title: "Apple",
-        href: "https://apple.com"
+        title: "ifeve",
+        href: "http://ifeve.com/"
     },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "InfoQ",
+        href: "http://www.infoq.com/cn/"
     }
 ]
