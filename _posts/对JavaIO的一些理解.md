@@ -1,0 +1,7 @@
+首先要区分开【字节】和【字符】1.基于字节操作的I/O接口：InputStream和OutputStream。2.基于字符操作的I/O接口：Writer和Reader。不管是磁盘还是网络传输，最小的存储单元都是字节，而不是字符，所以I/O操作的都是字节而不是字符。但是为什么有操作字符的I/O接口呢？这是因为我们的程序中通常操作的数据都是字符形式的，为了操作方便当然要提供一个直接写字符的I/O接口。不管是Writer还是Reader类，它们都只定义了读取或写入的数据字符的方式，也就是怎么写或读。
+
+3.字节和字符的转化接口数据持久化或网络传输都是以字节进行的，所以必须要有字符到字节或字节到字符的转化。我们知道字符到字节必须要经过编码转换，而这个编码又非常耗时，而且还会经常出现乱码问题，所以I/O编码问题经常是让人头疼的问题。InputStreamReader类是字节到字符的转化桥梁，InputStream到Reader的过程要指定编码字符集，否则将采用操作系统默认字符集，很可能会出现乱码问题。
+
+如下方式读取一个文件时：try {StringBuffer str = new StringBuffer();Char[] buf = new char[1024];FileReader f = new FileReader("file");while(f.read(buf)>0) {str.append(buf);}str.toString();} catch (IOException e) {}
+
+FileReader类就是按照上面的工作方式读取文件的，FileReader继承了InputStreamReader类，实际上是读取文件流，然后通过StreamDecoder解码成char，只不过这里的编码字符集是默认字符集。写入也是类似的过程，通过OutputStreamWriter类完成字符到字节的编码过程，由StreamEncoder完成编码过程。基于磁盘操作的I/O接口：File基于网络操作的I/O接口：Socket-------而且Java的IO就是基于装饰器模式InputStream就是以抽象组件存在的，而BufferInputStream就是具体组件，实现了所有InputStream的接口，所以它就是装饰对象。装饰对象被赋予了更多的功能。
