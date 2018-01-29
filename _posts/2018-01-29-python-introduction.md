@@ -19,7 +19,7 @@ Python是一种解释型、面向对象、攻台数据类型的高级程序设�
 
 目前，根据2018-01月的TIOBE排行榜，Python使用的人数是处于中上游的。
 
-![](../img/2018-01-tiobe-python.png)
+![](https://huhansi.github.io/huhansi/img/2018-01-tiobe-python.png)
 
 上面的几款编程语言，各有千秋，如果追求代码执行速度和效率，首选C/C++，它们是比较贴近硬件的语言，著名的*Unix系统就是用C写的；如果需要编写大型的企业级应用，那么可以考虑下Java。
 
@@ -29,17 +29,17 @@ Python给我们提供了非常丰富的库，覆盖了网络、文件、GUI、�
 首先，从python[官网](https://www.python.org/)上下载最新的2.x版本，这边是2.7.14。
 
 下载完成之后，双击msi安装包，一直点击next，只需注意勾选安装pip和将python添加的环境变量中。如下图所示
-![](../img/180129-before-enable-pip.png)
+![](https://huhansi.github.io/huhansi/img/180129-before-enable-pip.png)
 
 
 将Add python.exe选中，next。
 
 
-![](../img/180129-after-enable-pip.png)
+![](https://huhansi.github.io/huhansi/img/180129-after-enable-pip.png)
 
 安装完毕时候，打开控制台，输入python，出现以下类似场景则证明安装成功。
 
-![](../img/180129-install-python-success.png)
+![](https://huhansi.github.io/huhansi/img/180129-install-python-success.png)
 
 
 至此，python安装完成。
