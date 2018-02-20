@@ -19,11 +19,15 @@
                     <li>
                         <a href="{{ site.baseurl }}/">主页</a>
                     </li>
-                    {% for page in site.pages %}{% if page.title %}
                     <li>
-                        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                        <a href="{{ site.baseurl }}/about">关于我们</a>
                     </li>
-                    {% endif %}{% endfor %}
+                    <li>
+                        <a href="{{ site.baseurl }}/shenhe" target="_blank">入社审核</a>
+                    </li>
+                    <li>
+                        <a href="{{ site.baseurl }}/tags">分类检索</a>
+                    </li>
                 </ul>
             </div>
         </div>
