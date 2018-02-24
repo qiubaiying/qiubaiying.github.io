@@ -12,7 +12,7 @@ github_repo: "https://github.com/ffengeng/ffengeng.github.io.git" # you code rep
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/about.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -98,16 +98,16 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        title: "Hanjing Wong",
+        href: "https://www.facebook.com/profile.php?id=100013020851329"
     },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
+        title: "Xingguo Chen",
+        href: "https://cs.nju.edu.cn/rl/people/chenxg/"
     },{
-        title: "Apple",
-        href: "https://apple.com"
+        title: "",
+        href: ""
     },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "Andrew Zhu",
+        href: "https://scholar.google.com/citations?user=CtT7JZgAAAAJ&hl=zh-CN"
     }
 ]
