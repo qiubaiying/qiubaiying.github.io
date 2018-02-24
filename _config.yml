@@ -1,6 +1,6 @@
 # Site settings
-title: BY Blog
-SEOTitle: Eric's blog | BY Blog
+title: Fan Feng
+SEOTitle: Eric's blog | Fan Feng
 header-img: img/post-bg-desk.jpg
 email: qiubaiying@gmail.com
 description: "Those violent delights have violent ends."
@@ -19,9 +19,9 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 # SNS settings
 RSS: false
 # weibo_username:     qiubaiying
-zhihu_username:     18252025622
+zhihu_username:     feng-fan-61-24
 github_username:    ffengeng
-facebook_username:  18252025622
+facebook_username:  fan.feng.125
 twitter_username:   ffeng01
 
 
