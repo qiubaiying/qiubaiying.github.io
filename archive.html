@@ -1,0 +1,12 @@
+---
+layout: page
+title: 存档
+header: 文章按年存档
+group: navigation
+---
+{% include JB/setup %}
+
+{% assign posts_collate = site.posts %}
+<div class="page card">
+{% include JB/posts_collate %}
+</div>

@@ -1,0 +1,21 @@
+<section class="read-more">
+   {% if page.next %}
+   {% assign current = page.next %}
+   <div class="read-more-item">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="{{ current.url }}" title="link to {{ current.title }}">{{ current.title }}</a></h2>
+       <p class="excerpt">{{ current.content | markdownify | strip_html | strip_newlines | truncate: 250 }}&hellip;</p>
+       <div class="post-list__meta"><time datetime="{{current.date | date: date_to_xmlschema}}" class="post-list__meta--date date">{{current.date | date: "%F"}}</time> &#8226; <span class="post-list__meta--tags tags">{{current.tags}}</span><a class="btn-border-small" href={{current.url}}>继续阅读</a></div>
+   </div>
+   {% endif %}
+   
+   {% if page.previous %}
+   {% assign current = page.previous %}
+   <div class="read-more-item">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="{{ current.url }}" title="link to {{ current.title }}">{{ current.title }}</a></h2>
+       <p class="excerpt">{{ current.content | markdownify | strip_html | strip_newlines | truncate: 250 }}&hellip;</p>
+       <div class="post-list__meta"><time datetime="{{current.date | date: date_to_xmlschema}}" class="post-list__meta--date date">{{current.date | date: "%F"}}</time> &#8226; <span class="post-list__meta--tags tags">{{current.tags}}</span><a class="btn-border-small" href={{current.url}}>继续阅读</a></div>
+   </div>
+   {% endif %}
+</section>
