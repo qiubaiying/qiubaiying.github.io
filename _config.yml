@@ -1,13 +1,13 @@
 # Site settings
-title: BY Blog
+title: yourzeromax
 SEOTitle: 余智谋的博客 | yourzeromax
 header-img: img/post-bg-desk.jpg
 email: yuzhimou7@gmail.com
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 余智谋的博客, yourzeromax, 余智谋, iOS, Apple, iPhone"
+keyword: "yzm, yourzeromax, 余智谋的博客, yourzeromax, 余智谋, iOS, Apple, iPhone"
 url: "http://yourzeromax.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/yourzeromax/yourzeromax.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -18,12 +18,12 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
-#twitter_username:   qiubaiying
+# weibo_username:     yourzeromax
+zhihu_username:     yourzeromax
+github_username:    yourzeromax
+facebook_username:  yourzeromax.7
+jianshu_username:   c82e9b024b5d
+#twitter_username:   yourzeromax
 
 
 
@@ -64,9 +64,9 @@ gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: f2c84e7629bb1446c1a4   #生成的clientID
   clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d  #同上
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  repo: yourzeromax.github.io    #仓库名称
+  owner: yourzeromax    #github用户名
+  admin: yourzeromax
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
@@ -78,7 +78,7 @@ ba_track_id: b50bf2b12b5338a1845e33832976fd68
 
 # Google Analytics
 ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_domain: yourzeromax.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
@@ -100,10 +100,10 @@ service-worker: true
 friends: [
     {
         title: "WY",
-        href: "http://zhengwuyang.com"
+        href: "http://www.yourzeromax.top"
     },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
+        title: "简书·YZM",
+        href: "https://www.jianshu.com/u/c82e9b024b5d"
     },{
         title: "Apple",
         href: "https://apple.com"
