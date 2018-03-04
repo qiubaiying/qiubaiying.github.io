@@ -62,8 +62,8 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4   #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d  #同上
+  clientID: 51ad22f30492552d9cfc   #生成的clientID
+  clientSecret: 17214b7a9d94f728c12dfd21cb9ecb21a409b8c3  #同上
   repo: yourzeromax.github.io    #仓库名称
   owner: yourzeromax    #github用户名
   admin: yourzeromax
