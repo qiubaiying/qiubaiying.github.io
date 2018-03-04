@@ -24,9 +24,9 @@ chmod +x superspeed.sh
 
 ## 结果  
 截图  
-vultr___2.5$/m___迈阿密___v4.272___v6.452
+|vultr|2.5$/m|迈阿密|v4.272|v6.452|
 [![vultr迈阿密2.5刀/月](https://github.com/shiqingk/shiqingk.github.io/blob/master/img/blog-tw-speed-vt.png?raw=true)](http://shiqingk.github.io/)
-瓦工___19.5$/y___洛杉矶___v4.213/v6.424
+|瓦工|19.5$/y|洛杉矶|v4.213|v6.424|
 [![瓦工19.5刀/年](https://github.com/shiqingk/shiqingk.github.io/blob/master/img/blog-tw-speed-wg.png?raw=true)](http://shiqingk.github.io/)
 
 ## 总结
