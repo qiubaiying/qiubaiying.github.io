@@ -26,8 +26,8 @@ chmod +x superspeed.sh
 截图  
 |    vps    |    price    |    location    |    v4 ping    |    v6 ping    |    
 |    vultr  |    2.5$/m   |    迈阿密       |     272ms     |     452ms     |  
-[![vultr迈阿密2.5刀/月](https://github.com/shiqingk/shiqingk.github.io/blob/master/img/blog-tw-speed-vt.png?raw=true)](http://shiqingk.github.io/)
-|瓦工|19.5$/y|洛杉矶|v4.213|v6.424|
+[![vultr迈阿密2.5刀/月](https://github.com/shiqingk/shiqingk.github.io/blob/master/img/blog-tw-speed-vt.png?raw=true)](http://shiqingk.github.io/)   
+|    搬瓦工  |   19.5$/y   |    洛杉矶       |    213       |      424ms    |  
 [![瓦工19.5刀/年](https://github.com/shiqingk/shiqingk.github.io/blob/master/img/blog-tw-speed-wg.png?raw=true)](http://shiqingk.github.io/)
 
 ## 总结
