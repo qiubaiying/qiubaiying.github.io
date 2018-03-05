@@ -62,12 +62,12 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: a93ee18e3612e23425d2   #生成的clientID
+  clientID: a93ee18e3612e23425d2                           #生成的clientID
   clientSecret: 7a18fbc7407f8cf4999602b48fa7ad6dd4b4ca00   #同上
-  repo: cheng1992zhen.github.io    #仓库名称
-  owner: cheng1992zhen    #github用户名
+  repo: cheng1992zhen.github.io                            #仓库名称
+  owner: cheng1992zhen                                     #github用户名
   admin: cheng1992zhen
-  distractionFreeMode: true #是否启用类似FB的阴影遮罩
+  distractionFreeMode: true                                #是否启用类似FB的阴影遮罩
 
 
 # 统计
@@ -77,7 +77,7 @@ gitalk:
 ba_track_id: 5cd31c35e9614237b21ddf8ec804355b
 
 # Google Analytics
-ga_track_id: 'UA-115104206-1'            # Format: UA-xxxxxx-xx
+ga_track_id: 'UA-115104206-1'         # Format: UA-xxxxxx-xx
 ga_domain:    http://sssss.work/      # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
@@ -85,8 +85,8 @@ ga_domain:    http://sssss.work/      # 默认的是 auto, 这里我是自定义
 
 
 # Featured Tags
-featured-tags: false                     # 是否使用首页标签
-featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+featured-tags: true                     # 是否使用首页标签
+featured-condition-size: 0              # 相同标签数量大于这个数，才会出现在首页
 
 
 
