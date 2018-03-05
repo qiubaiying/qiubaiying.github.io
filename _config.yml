@@ -62,11 +62,12 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4   #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d  #同上
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  clientID: a93ee18e3612e23425d2   #生成的clientID
+  clientSecret: 7a18fbc7407f8cf4999602b48fa7ad6dd4b4ca00
+  Revoke all user tokens  #同上
+  repo: cheng1992zhen.github.io    #仓库名称
+  owner: cheng1992zhen    #github用户名
+  admin: cheng1992zhen
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
@@ -78,7 +79,7 @@ ba_track_id: 5cd31c35e9614237b21ddf8ec804355b
 
 # Google Analytics
 ga_track_id: 'UA-115104206-1'            # Format: UA-xxxxxx-xx
-ga_domain:      auto          # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_domain:    http://sssss.work/      # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
