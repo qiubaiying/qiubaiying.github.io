@@ -74,11 +74,11 @@ gitalk:
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: b50bf2b12b5338a1845e33832976fd68
+ba_track_id: 5cd31c35e9614237b21ddf8ec804355b
 
 # Google Analytics
-ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_track_id: 'UA-115104206-1'            # Format: UA-xxxxxx-xx
+ga_domain:      auto          # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
@@ -99,16 +99,16 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "知乎",
-        href: "https://www.zhihu.com/people/cheng-cheng-23-82/activities"
+        title: "干货集中营",
+        href: "http://gank.io/"
     },{
-        title: "简书·BY",
-        href: "https://www.jianshu.com/u/a1141161bf4d"
+        title: "Android 开发技术周报",
+        href: "https://www.androidweekly.cn/"
     },{
-        title: "",
-        href: ""
+        title: "柏荧的博客",
+        href: "http://qiubaiying.top/"
     },{
-        title: "",
-        href: ""
+        title: "love2",
+        href: "https://love2.io/"
     }
 ]
