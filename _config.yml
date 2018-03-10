@@ -1,6 +1,6 @@
 # Site settings
-title: Rumia-blog
-SEOTitle: Rumia-blog & something interesting
+title: some interesting things & ideas
+SEOTitle: Rumia's blog
 header-img: img/post-bg-desk.jpg
 email: rumialunnar@foxmail.com
 description: "Hey"
@@ -75,14 +75,6 @@ gitalk:
 # Analytics settings
 # Baidu Analytics
 ba_track_id: 2fba29e718e5a5880c70aebdeac55df2
-
-# Google Analytics
-#ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-#ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
-
-
-
-
 
 # Featured Tags
 featured-tags: true                     # 是否使用首页标签
