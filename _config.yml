@@ -1,13 +1,13 @@
 # Site settings
-title: Rumia‘s blog
-SEOTitle: RumiaLunnar|Blog
+title: Rumia-blog
+SEOTitle: Rumia-blog & something interesting
 header-img: img/post-bg-desk.jpg
-email: RumiaLunnar@foxmail.com
-description: "Every failure is leading towards success."
-keyword: "Blog,随想,cs&ee,prml,arduino,Linux" 
-url: "https://RumiaLunnar.github.io"          # your host, for absolute URL
+email: rumialunnar@foxmail.com
+description: "Hey"
+keyword: "ios,arduino,Ubuntu,cs&ee,serching"
+url: "https://rumialunnar.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/RumiaLunnar/RumiaLunnar.github.io.git" # you code repository
+github_repo: "https://github.com/rumialunnar/rumialunnar.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -17,13 +17,13 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 
 
 # SNS settings
-RSS: True
-weibo_username:     入眠v
-zhihu_username:     旧忆新旅
+RSS: true
+weibo_username: 	15689315096
+zhihu_username:     15689315096
 github_username:    RumiaLunnar
-#facebook_username:  
-#jianshu_username:   
-#twitter_username:   
+#facebook_username: i don't have a suitble vpn...  
+#jianshu_username:   ...
+#twitter_username:   same as facebook
 
 
 
@@ -70,7 +70,7 @@ gitalk:
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
-# 统计
+# 
 
 # Analytics settings
 # Baidu Analytics
@@ -111,4 +111,4 @@ friends: [
         title: "Apple Developer",
         href: "https://developer.apple.com/"
     }
-]   #我也不知道这玩意儿咋用
+]
