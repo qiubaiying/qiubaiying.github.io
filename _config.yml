@@ -12,7 +12,7 @@ github_repo: "https://github.com/rumialunnar/rumialunnar.github.io.git" # you co
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "May the force be with you!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/myself.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
