@@ -5,7 +5,7 @@ header-img: img/post-bg-desk.jpg
 email: RumiaLunnar@foxmail.com
 description: "Every failure is leading towards success."
 keyword: "Blog,随想,cs&ee,prml,arduino,Linux" 
-url: "http://RumiaLunnar.github.io"          # your host, for absolute URL
+url: "https://RumiaLunnar.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/RumiaLunnar/RumiaLunnar.github.io.git" # you code repository
 
