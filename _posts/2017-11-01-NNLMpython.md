@@ -4,7 +4,7 @@ title:      Neural Network Language Model
 subtitle:   神经网络语言模型
 date:       2017-11-01
 author:     Awybupt
-header-img: img/NNLM_bg.jpg
+header-img: https://farm1.staticflickr.com/810/39009083260_268771bfe9_z.jpg
 catalog: true
 tags:
     - NNLM
