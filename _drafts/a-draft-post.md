@@ -1,1 +1,0 @@
-* first try about drafts
