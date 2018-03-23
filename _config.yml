@@ -12,7 +12,7 @@ github_repo: "https://github.com/ltstriker/ltstriker.github.io.git" # you code r
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Just as a striker"
-sidebar-avatar: img/avatar-m     # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: img/cat     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -101,9 +101,6 @@ friends: [
     {
         title: "WY",
         href: "http://zhengwuyang.com"
-    },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
     },{
         title: "Apple",
         href: "https://apple.com"
