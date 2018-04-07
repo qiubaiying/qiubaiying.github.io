@@ -21,8 +21,8 @@ RSS: false
 weibo_username:     知春路的猫
 zhihu_username:     catstony
 github_username:    stonycat
-facebook_username:  朱倩
-twitter_username:   Cherry Jul
+#facebook_username:  朱倩
+#twitter_username:   Cherry Jul
 
 
 
@@ -96,18 +96,12 @@ service-worker: true
 
 
 # Friends
-friends: [
-    {
-        title: "WY",
-        href: "http://zhengwuyang.com"
-    },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
-    },{
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
-    }
-]
+#friends: [
+    #{
+    #    title: "Apple",
+     #   href: "https://apple.com"
+    #},{
+      #  title: "Apple Developer",
+       # href: "https://developer.apple.com/"
+    #}
+#]
