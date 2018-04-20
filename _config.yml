@@ -11,13 +11,14 @@ github_repo: "https://github.com/congcong0806/congcong0806.github.io.git" # you 
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "印象笔记资深印象大使<br>Evernote Community Leader<br>印象笔记年度象亲<br>坚果云效率大使"
+sidebar-about-description: "印象笔记资深印象大使<br>Evernote Community Leader<br>印象笔记年度象亲<br>坚果云效率大使<br>Telegram:<a>https://t.me/congcong</a>"
 sidebar-avatar: /img/about-cc-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
-RSS: false
+RSS: true
+telegram_username:     congcong
 weibo_username:     congcong0806
 zhihu_username:     congcong
 github_username:    congcong0806
