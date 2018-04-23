@@ -1,6 +1,6 @@
 {
-  "name": "BY Blog",
-  "short_name": "BY Blog",
+  "name": "Rebecca.Wu blog",
+  "short_name": "Rebecca.Wu blog",
   "description": "A personal blog by engineer",
   "icons": [{
     "src": "icons/pwa_icon_128.png",
