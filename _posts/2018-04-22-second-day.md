@@ -1,20 +1,21 @@
 ---
 layout:     post
-title:      初学markdown基本语法
+title:      磁盘的相关概念
 subtitle:   一只小白喵的初步探爪~
-date:       2018-04-21
+date:       2018-04-22
 author:     Rebecca.Wu
-header-img: img/bluesky.jpg
+header-img: img/post-bg-swift.jpg
 catalog: true
 tags:
     - WMX
 ---
 
-    很多朋友不知道markdown的用法以及代码产生的具体效果，下面列举一下markdown的基本语法
+    各位看官~来了解一下硬件方面的‘姿势’啊~
 
 ### 目录
 
 [TOC]
+-------------
 
 
 
