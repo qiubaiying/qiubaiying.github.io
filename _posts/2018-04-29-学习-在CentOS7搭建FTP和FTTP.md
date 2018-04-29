@@ -18,7 +18,7 @@ FTP 是File Transfer Protocol（文件传输协议）的英文简称，而中文
 一般在各种linux的发行版中，默认带有的ftp软件是vsftp，从各个linux发行版对vsftp的认可可以看出，vsftp应该是一款不错的ftp软件。
 
 
-###FTP源搭建
+### FTP源搭建
 
 1. vsftp下载
 如果没有FTP，需要进行yum下载vsftpd
@@ -54,7 +54,7 @@ ftp的配置文件主要有三个，位于/etc/vsfpd目录下，分别是：
 
 在我的电脑上输入:ftp://x.x.x.x可以进行匿名登陆
 
-###FTTP源搭建
+### FTTP源搭建
 	yum -y install httpd #下载相应的httpd服务
 	systemctl start httpd #启动httpd服务
 	cp -rf /mnt/ /var/www/html/
