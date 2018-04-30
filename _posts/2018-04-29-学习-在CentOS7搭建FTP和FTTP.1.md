@@ -55,9 +55,12 @@ ftp的配置文件主要有三个，位于/etc/vsfpd目录下，分别是：
 在我的电脑上输入:ftp://x.x.x.x可以进行匿名登陆
 
 ### FTTP源搭建
+
 	yum -y install httpd #下载相应的httpd服务
 	systemctl start httpd #启动httpd服务
 	cp -rf /mnt/ /var/www/html/
 	打开浏览器输入：http://x.x.x.x/mnt/
+
+    
 ![](2018-04-29-17-18-41.png)
     
