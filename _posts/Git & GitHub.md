@@ -1,12 +1,15 @@
-layout	title	subtitle	date	author	header-img	catalog	tags
-post
-Git&GitHub
-协同合作
-2018-05-1
-shmilymdt
-img/post-bg-2015.jpg
-true
-机器学习
+---
+layout:     post
+title:      Git&GitHub
+subtitle:   协同合作
+date:       2018-05-1
+author:     shmilymdt
+header-img: img/post-bg-2015.jpg 
+catalog: true
+tags:
+    - Git
+    - GitHub
+---
 # **Git&GitHub**
 
 [TOC]
