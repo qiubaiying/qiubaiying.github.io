@@ -18,7 +18,7 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 
 # SNS settings
 RSS: false
-# weibo_username:   qiubaiying
+# weibo_username:   山泉竹林Memory
 zhihu_username:     zhang-ming-guo-30
 github_username:    shmilymdt
 wechat_name:        mingguo0107
@@ -57,7 +57,7 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
-# disqus_username: zhangmingguo
+# disqus_username: shmilymdt
 
 # Gitalk
 gitalk:
