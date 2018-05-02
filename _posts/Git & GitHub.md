@@ -1,21 +1,17 @@
 ---
 layout:     post
 title:      Git&GitHub
-subtitle:   协同合作
-date:       2018-05-1
+subtitle:   团队协作
+date:       2018-05-2
 author:     shmilymdt
 header-img: img/post-bg-2015.jpg 
 catalog: true
 tags:
-    - Git
-    - GitHub
+    - git
+    - gitHub
 ---
-# **Git&GitHub**
 
-[TOC]
-
-
-
+# Git&GitHub
 ## 1. 我们为什么需要版本控制
 
  *  协同合作
