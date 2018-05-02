@@ -1,5 +1,3 @@
-# Git&GitHub
-
 ---
 layout:     post
 title:      Git&GitHub
@@ -13,9 +11,7 @@ tags:
     - gitHub
 ---
 
-[TOC]
-
-
+# Git&GitHub
 
 ## 1. 我们为什么需要版本控制
 
