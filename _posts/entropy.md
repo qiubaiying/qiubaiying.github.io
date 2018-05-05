@@ -1,3 +1,15 @@
+---
+layout:     post
+title:      CS224学习笔记补充
+subtitle:   信息熵
+date:       2018-05-08
+author:     徐清华
+header-img: img/post-bg-ios9-web.jpg
+catalog: 	 true
+tags:
+    - CS224
+    - 信息熵
+---
 1.Intuition
 --
 &emsp;熵是对信息量大小的一种描述,是香农在信息论中提出的概念,为了了解熵的概念的提出,有必要对信息论有一定的了解.
