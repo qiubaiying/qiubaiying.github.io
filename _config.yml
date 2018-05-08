@@ -5,9 +5,9 @@ header-img: img/post-bg-desk.jpg
 email: fuqingreal@gmail.com
 description: "Don't go gently to that night."
 keyword: "莎乐美的博客, 物理, 算法, Money"
-url: "http://Salomefu.github.io"          # your host, for absolute URL
+url: "http://salomefu.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/Salomefu/Salomefu.github.io.git" # you code repository
+github_repo: "https://github.com/salomefu/salomefu.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
