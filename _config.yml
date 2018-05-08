@@ -1,13 +1,14 @@
 # Site settings
 title: FQ Blog
-SEOTitle: 莎乐美的博客 | FQ Blog
+SEOTitle: Salome | FQ Blog
 header-img: img/post-bg-desk.jpg
 email: fuqingreal@gmail.com
-description: "Don't go gently to that night."
-keyword: "莎乐美的博客, 物理, 算法, Money"
+description: "Do not go gently to that night"
+keyword: "Physics,Math and Money"
 url: "http://Salomefu.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/Salomefu/Salomefu.github.io.git" # you code repository
+github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
