@@ -7,7 +7,7 @@ description: "Every failure is leading towards success."
 keyword: "BY, BY Blog, 王庆勇的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
 url: "http://wang.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://qingyongwang.github.io" # you code repository
+github_repo: "https://wang.github.io" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
