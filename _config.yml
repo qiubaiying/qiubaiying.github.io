@@ -62,8 +62,8 @@ gitalk:
   clientID: f8937e2b514ea0536221                            #生成的clientID
   clientSecret: 0a9b7d542172d79feb56cf40fcd68403d2810231    #生成的clientSecret
   repo: darkeyer.github.io    #仓库名称
-  owner: darkeyer    #github用户名
-  admin: darkeyer
+  owner: DarkEyeR    #github用户名
+  admin: DarkEyeR
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
