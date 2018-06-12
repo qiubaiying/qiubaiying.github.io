@@ -59,8 +59,8 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: 114280bb7fdb9f0a9b38                            #生成的clientID
-  clientSecret: f5a2bee656e449f1abde251506d19698cf24ef49    #生成的clientSecret
+  clientID: b94df2429a2b542b0550                            #生成的clientID
+  clientSecret: 0cc4e86aa868c827045d5400f2215f27bbe68115    #生成的clientSecret
   repo: darkeyer.github.io    #仓库名称
   owner: DarkEyeR    #github用户名
   admin: DarkEyeR
