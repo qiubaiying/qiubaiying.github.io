@@ -2,7 +2,7 @@
 title: Boyan's Blog
 SEOTitle: Boyan的博客 | Boyan Blog
 header-img: img/post-bg-desk.jpg      #显示在首页的背景图片
-email: qiubaiying@gmail.com
+email: bx376@nyu.edu
 description: "We don't know what we don't know."
 keyword: "NYU Shanghai, Software Engineering, Data Science, AI" #关键词
 url: "https://boyanxu.github.io"          # your host, for absolute URL # 这个就是填写你的博客地址
@@ -19,7 +19,7 @@ sidebar-avatar: /img/about-Boyan-Avatar.jpeg      # 你的个人头像 # use abs
 # SNS settings
 RSS: false
 # weibo_username:     qiubaiying
-zhihu_username:     boyanxu
+zhihu_username:     xu-bo-yan-29
 github_username:    BoyanXu
 #facebook_username:  baiying.qiu.7
 #jianshu_username:   e71990ada2fd
