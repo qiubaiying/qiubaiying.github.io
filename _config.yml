@@ -17,7 +17,7 @@ sidebar-avatar: /img/about-Boyan-Avatar.jpeg      # 你的个人头像 # use abs
 
 
 # SNS settings
-RSS: false
+RSS: true
 # weibo_username:     qiubaiying
 zhihu_username:     xu-bo-yan-29
 github_username:    BoyanXu
@@ -98,19 +98,19 @@ service-worker: true
 
 # Friends
 friends: [
-    {
-        title: "WY",
-        href: "http://zhengwuyang.com"
-    },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
-    },{
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
-    }
+#    {
+#        title: "WY",
+#        href: "http://zhengwuyang.com"
+#    },{
+#        title: "简书·BY",
+#        href: "http://www.jianshu.com/u/e71990ada2fd"
+#    },{
+#        title: "Apple",
+#        href: "https://apple.com"
+#    },{
+#        title: "Apple Developer",
+#        href: "https://developer.apple.com/"
+#    }
 ]
 
 theme: jekyll-theme-cayman
