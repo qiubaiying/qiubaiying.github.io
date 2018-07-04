@@ -1,5 +1,5 @@
 # Site settings
-title: My Blog
+title: T^T Blog
 SEOTitle:  T^T的博客 | T^T Blog
 header-img: img/post-bg-desk.png
 email: xixian.2106@gmail.com
@@ -7,7 +7,7 @@ description: "Every failure is leading towards success."
 keyword: "T^T, T^T Blog, T^T的博客"
 url: "http://xixian2106.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/xixian2106/xixian2106.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
