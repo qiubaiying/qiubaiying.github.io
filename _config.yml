@@ -1,7 +1,7 @@
 # Site settings
 title: My Blog
 SEOTitle:  T^T的博客 | T^T Blog
-header-img: img/post-bg-desk.jpg
+header-img: img/post-bg-desk.png
 email: xixian.2106@gmail.com
 description: "Every failure is leading towards success."
 keyword: "T^T, T^T Blog, T^T的博客"
@@ -11,7 +11,7 @@ github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "当断不断，反受其乱!"
+sidebar-about-description: "Do what you what."
 sidebar-avatar: /img/about-T^T-gentle.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -91,7 +91,7 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 
 
 # Progressive Web Apps
-chrome-tab-theme-color: "#000000"
+chrome-tab-theme-color: "#9370DB"
 service-worker: true
 
 
