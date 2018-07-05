@@ -7,7 +7,7 @@ description: "Every failure is leading towards success."  #网站介绍
 keyword: "BY, BY Blog,sssss, iOS, Apple, iPhone" #关键词
 url: "https://superhs.github.io"          # your host, for absolute URL    #博客地址
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/superHS/superhs.github.io" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -65,7 +65,7 @@ gitalk:
   clientID: cca96e377c8fd4f23e5e                            #生成的clientID
   clientSecret: 7c12972f9f523ca1ef841a9476a54bd4faf8a49d    #生成的clientSecret
   repo: superhs.github.io    #仓库名称
-  owner: superhs    #github用户名
+  owner: superHS    #github用户名
   admin: superhs
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
