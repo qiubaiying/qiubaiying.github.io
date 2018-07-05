@@ -1,14 +1,6 @@
-# BY Blog
 
-> 下面是博客的搭建教程，这个教程修改自 [Hux](https://github.com/Huxpro/huxpro.github.io) 。
-> 
 > 更为详细的教程戳这 [《利用 GitHub Pages 快速搭建个人博客》](http://www.jianshu.com/p/e68fba58f75c) 或 [wiki](https://github.com/qiubaiying/qiubaiying.github.io/wiki/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B)
 > 
-### [我的博客在这里 &rarr;](http://qiubaiying.github.io)
-
-![](https://raw.githubusercontent.com/qiubaiying/qiubaiying.github.io/master/img/readme-home.png)
-
-
 ## 使用
 
 * 开始
@@ -81,9 +73,6 @@ tags:
 
 ### 侧边栏
 
-看右边:
-![](https://raw.githubusercontent.com/qiubaiying/qiubaiying.github.io/master/img/readme-side.png)
-
 设置是在 `_config.yml`文件里面的`Sidebar settings`那块。
 
 ```
@@ -117,7 +106,7 @@ featured-condition-size: 1     # A tag will be featured if the size of it is mor
 
 ### Social-media Account
 
-在下面输入的社交账号，没有的添加的不会显示在侧边框中。新加入了[简书](https:/www.jianshu.com)链接, <http://www.jianshu.com/u/e71990ada2fd>
+在下面输入的社交账号，没有的添加的不会显示在侧边框中。新加入了[简书](https:/www.jianshu.com)链接
 
 	# SNS settings
 	RSS: false
@@ -129,7 +118,6 @@ featured-condition-size: 1     # A tag will be featured if the size of it is mor
 	
 	
 
-![](http://ww4.sinaimg.cn/large/006tKfTcgy1fgrgbgf77aj308i02v748.jpg)
 
 ### Friends
 
@@ -142,7 +130,7 @@ featured-condition-size: 1     # A tag will be featured if the size of it is mor
 friends: [
     {
         title: "BY Blog",
-        href: "https://qiubaiying.github.io/"
+        href: ""
     },
     {
         title: "Apple",
@@ -156,7 +144,6 @@ friends: [
 
 HTML5幻灯片的排版：
 
-![](https://camo.githubusercontent.com/f30347a118171820b46befdf77e7b7c53a5641a9/687474703a2f2f6875616e677875616e2e6d652f696d672f626c6f672d6b65796e6f74652e6a7067)
 
 这部分是用于占用html格式的幻灯片的，一般用到的是 Reveal.js, Impress.js, Slides, Prezi 等等.我认为一个现代化的博客怎么能少了放html幻灯的功能呢~
 
@@ -204,7 +191,7 @@ disqus_username: qiubaiying
 
 **使用：**
 
-参考我的这篇文章：[《为博客添加 Gitalk 评论插件》](http://qiubaiying.top/2017/12/19/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-Gitalk-%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6/)
+参考这篇文章：[《为博客添加 Gitalk 评论插件》](http://qiubaiying.top/2017/12/19/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-Gitalk-%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6/)
 
 
 ### Analytics
