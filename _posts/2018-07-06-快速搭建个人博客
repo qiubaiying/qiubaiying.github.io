@@ -1,0 +1,14 @@
+---
+layout:     post  # 使用的布局（不需要改）
+title:      快速搭建个人博客  # 标题 
+subtitle:   手把手教你在半个小时内搭建自己的个人博客  # 副标题
+date:       2018-07-06  # 时间
+author:     CF  # 作者
+header-img: img/post-bg-2015.jpg  # 这篇文章标题背景图片
+catalog:    true # 是否归档
+tags: # 标签
+  - 生活
+---
+
+## Hey
+>这是我的第一篇博客。
