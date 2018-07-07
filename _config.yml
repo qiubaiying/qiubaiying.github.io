@@ -23,7 +23,7 @@ zhihu_username:     wang-chao-feng-29-91
 github_username:    ziyilixin
 facebook_username:  profile.php?id=100013230487849
 jianshu_username:   627b83a77eb6
-#twitter_username:   qiubaiying
+twitter_username:   coder_cf
 
 
 
@@ -62,8 +62,8 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: 52eeb4cad67196baa9eb                            #生成的clientID
-  clientSecret: f8ecd07237a65b15c90f61797ba5a1a65e1120ba    #生成的clientSecret
+  clientID: d45c5bcf01a41023076c                            #生成的clientID
+  clientSecret: f5990bea749763f77cd8949cb1998fd815c76546    #生成的clientSecret
   repo: ziyilixin.github.io    #仓库名称
   owner: ziyilixin    #github用户名
   admin: ziyilixin
