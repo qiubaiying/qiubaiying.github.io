@@ -13,7 +13,7 @@ tags:                               #标签
 ---
 
 ###### 说明
-1，2018.6月，印象笔记中国团队独立了，客户端也会独立（在原Evernote 的基础上）开发和维护，![点击查看官方新闻](https://www.yinxiang.com/blog/blog/2018/06/06/evernote-an-independent-internet-enterprise/)
+1，2018.6月，印象笔记中国团队独立了，客户端也会独立（在原Evernote 的基础上）开发和维护，[点击查看官方新闻](https://www.yinxiang.com/blog/blog/2018/06/06/evernote-an-independent-internet-enterprise/)
 
 2，目前印象笔记-中国版 iOS 和 Mac 客户端已经上线App Store 国区，Win 和 Android 正在测试中；多了中国版的客户端，笔记依然不变的，笔记是随账户的，和客户端没关系的，在哪个客户端登录内容都一样的
 
@@ -23,7 +23,7 @@ tags:                               #标签
 
 5，目前Evernote iOS 和 Mac 也已经下架App Store 国区！
 
-6，点击查看官方服务通知：![印象笔记新 App 上线进展](https://www.yinxiang.com/blog/blog/2018/07/12/new-yxbj-app-update/)
+6，点击查看官方服务通知：[印象笔记新 App 上线进展](https://www.yinxiang.com/blog/blog/2018/07/12/new-yxbj-app-update/)
 
 ###### 福利
 触动力，所有打折优惠软件一网打尽！使用优惠码「congcong」还能立减5元，马上下手咯！
