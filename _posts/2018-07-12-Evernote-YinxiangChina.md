@@ -23,7 +23,7 @@ tags:                               #标签
 
 5，目前Evernote iOS 和 Mac 也已经下架App Store 国区！
 
-6，点击查看官方服务通知：[印象笔记新 App 上线进展](https://www.yinxiang.com/blog/blog/2018/07/12/new-yxbj-app-update/)
+6，点击查看官方服务通知：[印象笔记新 App 上线进展](https://www.yinxiang.com/blog/blog/category/news/)
 
 ###### 福利
 触动力，所有打折优惠软件一网打尽！使用优惠码「congcong」还能立减5元，马上下手咯！
