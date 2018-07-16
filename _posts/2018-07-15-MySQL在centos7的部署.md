@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Mcentos7上部署MySQL5.7.18
+title:      centos7上部署MySQL5.7.18
 subtitle:   一只小白喵的初步探爪~
 date:       2018-07-15
 author:     Rebecca.Wu
@@ -226,13 +226,10 @@ tags:
     [mysqld_safe]
     #malloc-lib= /home/wumx/mysql/lib/mysql/libjemalloc.so
     sql_mode='NO_ENGINE_SUBSTITUTION'
--------------------------------------------------------------------------------------
+
 （2）启动脚本
 ----------------------------start-mysql.sh---------------------------------------
 
-    #!/bin/bash
-    ###author:why
-    ###20170919
     source /etc/init.d/functions
     BASE_DIR="/home/wumx"
     ${BASE_DIR}/mysql/bin/mysqld_safe --defaults-file=${BASE_DIR}/mysql/cnf/my.cnf --ledir=${BASE_DIR}/mysql/bin --
@@ -243,13 +240,9 @@ tags:
     else
     action "Starting MySQL:" /bin/false
     fi
----------------------------------------------------------------------------------------
 （3）停⽌脚本
 ----------------------------------stop-mysql.sh------------------------------------
 
-    #!/bin/sh
-    ###author:why
-    ###20170919
     source /etc/init.d/functions
     BASE_DIR="/home/wumx"
     USER=root
