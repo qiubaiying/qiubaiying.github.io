@@ -32,7 +32,8 @@ tags:
 
 ### 这里我们首先讲述第二条路径：
 
-	#### 1.
+#### 1
+
 
 在vs中打开刚刚下载的SampleIme项目（即项目中的.sln文件），接下来分别在Release WIN32和Release x64的构建条件下build Project。
 
@@ -50,7 +51,7 @@ tags:
 
 这时候我们再次在两个不同的构建条件下进行编译
 
-![1](https://github.com/NJUSSJ/NJUSSJ.github.io/blob/master/sources/1.png)
+![1](https://raw.githubusercontent.com/NJUSSJ/NJUSSJ.github.io/master/sources/1.png)
 
 编译成功！！
 
@@ -74,13 +75,13 @@ tags:
 
 
 
-![2](https://github.com/NJUSSJ/NJUSSJ.github.io/blob/master/sources/2.png)
+![2](https://raw.githubusercontent.com/NJUSSJ/NJUSSJ.github.io/master/sources/2.png)
 
 
 
 出现上图，说明注册成功。
 
-![3](https://github.com/NJUSSJ/NJUSSJ.github.io/blob/master/sources/3.png)
+![3](https://raw.githubusercontent.com/NJUSSJ/NJUSSJ.github.io/master/sources/3.png)
 
 
 
