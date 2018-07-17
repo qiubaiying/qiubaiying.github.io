@@ -66,8 +66,7 @@ gitalk:
   clientSecret: 26e021af150df6db6d60a6251b1d0f557d940671   #生成的clientSecret
   repo: NJUSSJ.github.io    #仓库名称
   owner: NJUSSJ    #github用户名
-  admin: [NJUSSJ]
-  id: 'window.location.pathname'
+  admin: NJUSSJ
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
