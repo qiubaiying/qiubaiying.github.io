@@ -50,7 +50,7 @@ tags:
 
 这时候我们再次在两个不同的构建条件下进行编译
 
-![1](1.png)
+![1](https://github.com/NJUSSJ/NJUSSJ.github.io/blob/master/sources/1.png)
 
 编译成功！！
 
@@ -74,13 +74,13 @@ tags:
 
 
 
-![2](2.png)
+![2](https://github.com/NJUSSJ/NJUSSJ.github.io/blob/master/sources/2.png)
 
 
 
 出现上图，说明注册成功。
 
-![3](3.png)
+![3](https://github.com/NJUSSJ/NJUSSJ.github.io/blob/master/sources/3.png)
 
 
 
