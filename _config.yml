@@ -67,6 +67,7 @@ gitalk:
   repo: NJUSSJ.github.io    #仓库名称
   owner: NJUSSJ    #github用户名
   admin: [NJUSSJ]
+  id: 'window.location.pathname'
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
