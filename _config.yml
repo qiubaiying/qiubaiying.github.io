@@ -1,7 +1,7 @@
 # Site settings
 title: Mr.W Blog
 SEOTitle: 沐风的博客 | Mr.W Blog
-header-img: img/post-bg-desk.jpg
+header-img: img/post-bg-desk_wj.jpg
 email: me.wangjun@qq.com
 description: "Every failure is leading towards success."
 keyword: "Mr.W,Mr.W Blog , AJun, AJun Blog, 沐风的博客, pekaboo, 王俊, Python, HTML5,C#, Apple, iPhone"
@@ -21,9 +21,10 @@ RSS: false
 # weibo_username:     撑伞的猫先生
 zhihu_username:     pekaboo
 github_username:    pekaboo
-facebook_username:  pekaboo
+facebook_username:  vip.wangjun
 jianshu_username:   5962dacbc25b
-#twitter_username:   pekaboo
+twitter_username:   EdwardsWaltz
+wechat_username:    wx_peekaboo
 
 
 
