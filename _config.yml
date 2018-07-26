@@ -1,10 +1,10 @@
 # Site settings
-title: AJun Blog
-SEOTitle: 沐风的博客 | AJun Blog
+title: Mr.W Blog
+SEOTitle: 沐风的博客 | Mr.W Blog
 header-img: img/post-bg-desk.jpg
 email: me.wangjun@qq.com
 description: "Every failure is leading towards success."
-keyword: "AJun, AJun Blog, 沐风的博客, pekaboo, 王俊, Python, HTML5,C#, Apple, iPhone"
+keyword: "Mr.W,Mr.W Blog , AJun, AJun Blog, 沐风的博客, pekaboo, 王俊, Python, HTML5,C#, Apple, iPhone"
 url: "http://pekabo.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/pekabo/pekabo.github.io.git" # you code repository
@@ -12,7 +12,7 @@ github_repo: "https://github.com/pekabo/pekabo.github.io.git" # you code reposit
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/about-ME-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -55,15 +55,15 @@ kramdown:
 
 
 
-# 评论系统
-# Disqus（https://disqus.com/）
-# disqus_username: pekaboo
+# 评论系统 开通
+#Disqus（https://disqus.com/）
+#disqus_username: pekaboo
 
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
+  clientID: 903e3c56c91e16bf19cb                            #生成的clientID
+  clientSecret: 04b0d96e483ee95a8e4c0f6f9187bbd5dfdae67e    #生成的clientSecret
   repo: pekaboo.github.io    #仓库名称
   owner: pekaboo    #github用户名
   admin: pekaboo
@@ -77,8 +77,8 @@ gitalk:
 ba_track_id: b50bf2b12b5338a1845e33832976fd68
 
 # Google Analytics
-ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: http://pekaboo.com               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_track_id: 'UA-122920101-1'            # Format: UA-xxxxxx-xx
+ga_domain: http://pekaboo.ml               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
@@ -99,10 +99,10 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
+        title: "Mr.W",
         href: "http://pekaboo.com"
     },{
-        title: "简书·BY",
+        title: "简书·Mr.W",
         href: "https://www.jianshu.com/u/5962dacbc25b"
     },{
         title: "Apple",
