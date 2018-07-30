@@ -21,9 +21,11 @@ tags:                               #标签
 
 4，Evernote App 和印象笔记-中国版 都能登录国内版和国际版账户
 
-5，目前Evernote iOS 和 Mac 也已经下架App Store 国区！
+5，印象笔记（国内版）和 Evernote International（国际版）是什么区别：[点击查看](https://congcong0806.github.io/2018/04/24/evernote-yinxiang/)
 
-6，点击查看官方服务通知：[印象笔记新 App 上线进展](https://www.yinxiang.com/blog/blog/category/news/)
+6，目前Evernote iOS 和 Mac 也已经下架App Store 国区！
+
+7，点击查看官方服务通知：[印象笔记新 App 上线进展](https://www.yinxiang.com/blog/blog/category/news/)
 
 ###### 福利
 触动力，所有打折优惠软件一网打尽！使用优惠码「congcong」还能立减5元，马上下手咯！
