@@ -3,7 +3,7 @@ title: BY Blog
 SEOTitle: 刘康的博客 | BY Blog
 header-img: img/post-bg-desk.jpg
 email: 18337026860@163.com
-description: "Every failure is leading towards success."
+description: "Every failure is leading towards success!"
 keyword: "BY, BY Blog, 刘康的博客, liukang, 刘康, WepApp Vue React Wexx"
 url: "https://lk1583880553.github.io/"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
@@ -21,7 +21,7 @@ RSS: false
 # weibo_username:   LiuKang111
 zhihu_username:     Mr康先生
 github_username:    lk1583880553
-jianshu_username:   e71990ada2fd
+jianshu_username:   Mr康先生
 
 
 
@@ -101,12 +101,12 @@ friends: [
         href: "http://zhengwuyang.com"
     },{
         title: "知乎·BY",
-        href: "http://www.zhihu.com/"
+        href: "http://www.zhihu.com/people/Mr康先生"
     },{
-        title: "Apple",
-        href: "https://apple.com"
+        title: "Vue",
+        href: "https://cn.vuejs.org/"
     },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "React",
+        href: "http://react.css88.com/"
     }
 ]
