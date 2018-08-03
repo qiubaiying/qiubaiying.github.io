@@ -1,10 +1,10 @@
 # Site settings
-title: BY Blog
-SEOTitle: 刘康的博客 | BY Blog
+title: Kang Blog
+SEOTitle: 刘康的博客 | Kang Blog
 header-img: img/post-bg-desk.jpg
 email: 18337026860@163.com
 description: "Every failure is leading towards success!"
-keyword: "BY, BY Blog, 刘康的博客, liukang, 刘康, WepApp Vue React Wexx"
+keyword: "Kang, Kang Blog, 刘康的博客, liukang, 刘康, WepApp Vue React Wexx"
 url: "https://lk1583880553.github.io/"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/lk1583880553/lk1583880553.github.io.git" # you code repository
