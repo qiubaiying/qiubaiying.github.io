@@ -8,7 +8,8 @@ header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
     - JavaScript
-    - 原生JavaScript
+    - switch
+    - if-else
 ---
 
 >相信很多人有这样的经历,在项目比较忙的时候,都是先考虑实现,用当时以为最好的方式先实现方案,在项目不忙的时候,再看下以前代码,想下有什么更好的实现方案,或者优化方案.笔者也不例外,下面就和读者们分享一下自己最近在特定场合下,代替if-else，switch的解决方案.
@@ -45,7 +46,7 @@ function showGrace(grace) {
 2.方法存在各种神仙数字：700，650，600，550.日后的维护可能存在问题.
 3.if-else太多,看着有点强迫症:
 
-*所以下面用look-up表,把配数据置和业务逻辑分离的方式实现下：
+所以下面用look-up表,把配数据置和业务逻辑分离的方式实现下：
 
 ```
 - function showGrace(grace) {
@@ -62,9 +63,9 @@ function showGrace(grace) {
 
 ```
 
-*这样的修改,优点就是如果有需求修改,只需要修改graceForLevel,levelText.业务逻辑不需要改：
+- 这样的修改,优点就是如果有需求修改,只需要修改graceForLevel,levelText.业务逻辑不需要改：
 
-- 为什么这里推荐配数据置和业务逻辑分离
+为什么这里推荐配数据置和业务逻辑分离
 1.修改配置数据比业务逻辑修改成本更小,风险更低
 2.配置数据来源和修改都可以很灵活
 3.荐配置和业务逻辑分离,可以更快的找到需要修改的代码
@@ -120,7 +121,7 @@ if(~scenicOfHangZhou.indexOf(scenic)){
 
 ```
 
-*这样执行没错，但是写出来的代码可能像下面这样，风格不统一。
+- 这样执行没错，但是写出来的代码可能像下面这样，风格不统一。
 ```
 function getCityForScenic(scenic) {
     let _city='';
@@ -135,7 +136,7 @@ function getCityForScenic(scenic) {
 }
 ```
 
-*即使用switch，也有可能出现这样的情况
+- 即使用switch，也有可能出现这样的情况
 ```
 function getCityForScenic(scenic) {
     let _city='';
@@ -377,7 +378,7 @@ function formatDate(timeStr){
 ```
 
 # 2.配置对象代替switch
-*比如有一个需求：传入cash，check，draft，zfb，wx_pay，对应输出：现金，支票，汇票，支付宝，微信支付。
+- 比如有一个需求：传入cash，check，draft，zfb，wx_pay，对应输出：现金，支票，汇票，支付宝，微信支付。
 需求也很简单，就一个switch就搞定了
 
 ```
@@ -392,7 +393,7 @@ function getPayChanne(tag){
 }
 ```
 
-*但是这个的硬伤还是和上面一样，万一下次又要多加一个如：bank_trans对应输出银行转账呢，代码又要改。类似的问题，同样的解决方案，配置数据和业务逻辑分离。代码如下。
+- 但是这个的硬伤还是和上面一样，万一下次又要多加一个如：bank_trans对应输出银行转账呢，代码又要改。类似的问题，同样的解决方案，配置数据和业务逻辑分离。代码如下。
 ```
 function getPayChanne(tag){
     let payChanneForChinese = {
