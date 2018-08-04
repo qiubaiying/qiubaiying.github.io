@@ -29,7 +29,7 @@ jianshu_username:   Mr康先生
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 permalink: pretty
-paginate: 10
+paginate: 9
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
@@ -84,7 +84,7 @@ ga_domain: auto               # 默认的是 auto, 这里我是自定义了的�
 
 # Featured Tags
 featured-tags: true                     # 是否使用首页标签
-featured-condition-size: 2              # 相同标签数量大于这个数，才会出现在首页
+featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
 
 
 
