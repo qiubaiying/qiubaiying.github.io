@@ -27,7 +27,7 @@ tags:                               #标签
 
 7，点击查看官方服务通知：[印象笔记新 App 上线进展](https://www.yinxiang.com/blog/blog/category/news/)
 
-8，目前本地化的功能进度：
+8，目前 印象笔记-中国版 本地化的功能进度：
 
 	1. Markdown：2018.8.20 日上线Mac 客户端公测版支持，Windows 客户端稍后也会上线
 	2. 锁定密码：在本月Windows 客户端公测版支持（目前未发布），Mac 客户端稍后也会上线
