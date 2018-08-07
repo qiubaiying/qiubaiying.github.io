@@ -65,14 +65,14 @@ gitalk:
   repo: https://github.com/lk1583880553/lk1583880553.github.io    #仓库名称
   owner: lk1583880553    #github用户名
   admin: lk1583880553
-  distractionFreeMode: true #是否启用类似FB的阴影遮罩
+  distractionFreeMode: false #是否启用类似FB的阴影遮罩
 
 
 # 统计
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: b50bf2b12b5338a1845e33832976fd68
+ba_track_id: *
 
 # Google Analytics
 ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
