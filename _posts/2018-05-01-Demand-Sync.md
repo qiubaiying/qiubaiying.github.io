@@ -41,13 +41,9 @@ tags:                               #标签
 
 * 开启部分同步 不建议用摘要视图，因为用摘要视图滚动笔记列表就会把内容下载了，用列表视图 是打开笔记才下载内容
 
-###### 福利
-触动力，所有打折优惠软件一网打尽！使用优惠码「congcong」还能立减5元，马上下手咯！
-<http://www.hitnology.com/listgoods>
-![congcong](/img/redeem-congcong.jpg)
+###### 聪聪
+&copy;聪聪：印象笔记资深印象大使 | 印象笔记年度象亲 | 坚果云效率大使 | 幕布布道师 <https://t.me/congcong>
 
-&copy; Copyright 聪聪：<https://t.me/congcong>
+印象笔记用户群 Telegram 群：<https://t.me/yinxiangbiji>
 
-感谢你的阅读，如有问题，望多指正，谢谢！
-![赞赏](http://ww1.sinaimg.cn/mw690/9b84e6acgy1flppiah6tsj20w00w0q5g.jpg)
-![聪聪](http://ww1.sinaimg.cn/large/9b84e6acgy1flppiu79amj20ll07awga.jpg)
+![聪聪](https://i.v2ex.co/ay8At5dC.png)
