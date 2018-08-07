@@ -34,9 +34,9 @@ tags:                               #标签
 	3. 分享：2018.8.20 日上线Android 客户端公测版支持分享到QQ 空间，其他的稍后也会上线
 	4. Widget 剪切版：印象笔记 iOS 客户端 9.2.0 版本已经上线支持，Android 客户端稍后也会上线
 
-###### 聪̌聪̌
-&copy;聪聪，印象笔记资深印象大使 | 印象笔记年度象亲 | 坚果云效率大使 | 幕布布道师 <https://t.me/congcong>
+###### 聪聪̌
+&copy;聪聪：印象笔记资深印象大使 | 印象笔记年度象亲 | 坚果云效率大使 | 幕布布道师 <https://t.me/congcong>
 
 印象笔记用户群 Telegram 群：<https://t.me/yinxiangbiji>
 
-![聪聪](http://ww1.sinaimg.cn/large/9b84e6acgy1flppiu79amj20ll07awga.jpg)
+![聪聪](https://i.v2ex.co/ay8At5dC.png)
