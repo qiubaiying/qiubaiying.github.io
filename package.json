@@ -1,9 +1,9 @@
 {
-    "name": "by-blog",
-    "title": "BY Blog",
+    "name": "Kang-blog",
+    "title": "Kang Blog",
     "author": "BY <18337026860@163.com>",
     "version": "1.7.0",
-    "homepage": "https://lk1583880553.github.io",
+    "homepage": "http://luckykang.cn",
     "repository": {
         "type": "git",
         "url": "https://github.com/lk1583880553/lk1583880553.github.io"
