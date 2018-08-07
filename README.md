@@ -1,9 +1,9 @@
-# BY Blog
+# Kang Blog
 
 > 下面是博客的搭建教程，这个教程修改自 [Hux](https://github.com/Huxpro/huxpro.github.io) 。
 > 
 > 
-### [我的博客在这里 &rarr;](http://lk1583880553.github.io)
+### [我的博客在这里 &rarr;](http://luckykang.cn)
 
 ![](https://raw.githubusercontent.com/lk1583880553/lk1583880553.github.io/master/img/readme-home.png)
 
@@ -42,13 +42,13 @@
 
 ```
 # Site settings
-title: BY Blog                    # 你的博客网站标题
-SEOTitle: 刘康的博客 | BY Blog     # SEO 标题
+title: Kang Blog                    # 你的博客网站标题
+SEOTitle: 刘康的博客 | Kang Blog     # SEO 标题
 description: "Hey"	   	  # 随便说点，描述一下
 
 # SNS settings      
 github_username: lk1583880553     # 你的github账号
-jianshu_username: e71990ada2fd  # 你的简书ID。
+jianshu_userid: 13390857  # 你的简书ID。
 
 # Build settings
 # paginate: 10              # 一页你准备放几篇文章
@@ -140,8 +140,8 @@ featured-condition-size: 1     # A tag will be featured if the size of it is mor
 # Friends
 friends: [
     {
-        title: "BY Blog",
-        href: "https://lk1583880553.github.io/"
+        title: "Kang Blog",
+        href: "http://luckykang.cn"
     },
     {
         title: "Vue",
@@ -213,7 +213,7 @@ ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
 
 # Google Analytics
 ga_track_id: 'UA-49627206-1'            # 你用Google账号去注册一个就会给你一个这样的id
-ga_domain: huangxuan.me			# 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto。
+ga_domain: luckykang.cn			# 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto。
 ```
 
 ### Customization
@@ -234,7 +234,7 @@ ga_domain: huangxuan.me			# 默认的是 auto, 这里我是自定义了的域名
 
 ### SEO Title
 
-我的博客标题是 **“BY Blog”** 但是我想要在搜索的时候显示 **“刘康的博客 | BY Blog”** ，这个就需要 SEO Title 来定义了。
+我的博客标题是 **“Kang Blog”** 但是我想要在搜索的时候显示 **“刘康的博客 | Kang Blog”** ，这个就需要 SEO Title 来定义了。
 
 其实这个 SEO Title 就是定义了<head><title>标题</title></head>这个里面的东西和多说分享的标题，你可以自行修改的。
 
