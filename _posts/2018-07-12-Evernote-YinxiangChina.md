@@ -12,7 +12,7 @@ tags:                               #标签
 
 ---
 
-###### 说明
+##### 说明
 1，2018.6月，印象笔记中国团队独立了，客户端也会独立（在原Evernote 的基础上）开发和维护，[点击查看官方新闻](https://www.yinxiang.com/blog/blog/2018/06/06/evernote-an-independent-internet-enterprise/)
 
 2，目前印象笔记-中国版 iOS 和 Mac 客户端已经上线App Store 国区，Windows 和 Android 正在测试中；多了中国版的客户端，笔记依然不变的，笔记是随账户的，和客户端没关系的，在哪个客户端登录内容都一样的
@@ -34,7 +34,7 @@ tags:                               #标签
 	3. 分享：2018.8.20 日上线Android 客户端公测版支持分享到QQ 空间，其他的稍后也会上线
 	4. Widget 剪切版：印象笔记 iOS 客户端 9.2.0 版本已经上线支持，Android 客户端稍后也会上线
 
-###### 聪聪
+##### 聪聪
 &copy;聪聪：印象笔记资深印象大使 | 印象笔记年度象亲 | 坚果云效率大使 | 幕布布道师 <https://t.me/congcong>
 
 印象笔记用户群 Telegram 群：<https://t.me/yinxiangbiji>
