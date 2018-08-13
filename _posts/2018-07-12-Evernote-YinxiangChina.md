@@ -23,7 +23,7 @@ tags:                               #标签
 
 5，印象笔记（国内版）和 Evernote International（国际版）是什么区别：[点击查看](https://congcong0806.github.io/2018/04/24/evernote-yinxiang/)
 
-6，目前Evernote iOS 和 Mac 也已经下架App Store 国区！
+6，目前Evernote iOS 和 Mac 也已经下架App Store 国区！已安装的Evernote 客户端可以删了也可以留着。如果想要一直用 Evernote 客户端一直更新，就得去美区等等外区App Store 下载。
 
 7，点击查看官方服务通知：[印象笔记新 App 上线进展](https://www.yinxiang.com/blog/blog/category/news/)
 
