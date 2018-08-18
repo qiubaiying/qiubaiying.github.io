@@ -3,26 +3,26 @@ title: Hyuga Blog
 SEOTitle: 秦枫的博客 | Hyuga Blog
 header-img: img/post-bg-desk.jpg
 email: qiubaiying@gmail.com
-description: "Every failure is leading towards success."
+description: "每一次失败都通向成功."
 keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+url: "http://hyuga0410.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
 
-# Sidebar settings
-sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+# Sidebar settings侧边栏
+sidebar: true                           # 是否使用侧栏
+sidebar-about-description: "目标决定你将成为什么样的人!"
+sidebar-avatar: /img/about-BY-gentle.jpg      # 使用绝对URL，看到它在' / '和' /about/ '
 
 
 
 # SNS settings
 RSS: false
 # weibo_username:     hyuga0410
-zhihu_username:     hyuga0410
+#zhihu_username:     hyuga0410
 github_username:    hyuga0410
-facebook_username:  hyuga0410
-jianshu_username:   hyuga0410
+#facebook_username:  hyuga0410
+#jianshu_username:   hyuga0410
 #twitter_username:   hyuga0410
 
 
@@ -62,11 +62,11 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  clientID: d911b744b34d8355e26b                            #生成的clientID
+  clientSecret: 6531ab897408116d1cee5ca786e7c5c0c02c669e    #生成的clientSecret
+  repo: hyuga0410.github.io    #仓库名称
+  owner: hyuga0410    #github用户名
+  admin: hyuga0410
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
