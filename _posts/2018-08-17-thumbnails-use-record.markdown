@@ -12,13 +12,13 @@ tags:
     - hyuga
 ---
 
-# 前言
+### 前言
 平时对图片处理得很少，最近刚好需要对博客插图进行压缩、缩放等处理，所以把以前用到的google开源项目thumbnails找出来回顾下，顺带整理出来。
 
-# 官方介绍
+### 官方介绍
     提供了一个连贯接口创建缩略图
 
-# maven依赖
+### maven依赖
 ```
 <dependency>
     <groupId>net.coobird</groupId>
@@ -27,7 +27,7 @@ tags:
 </dependency>
 ```
 
-## DEMO
+#### DEMO
 读取目录下的所有文件，将其大小调整为最大200像素乘200像素，同时保留原始的宽高比，然后保存生成的缩略图
 ```
 Thumbnails.of(directory.listFiles())
@@ -37,7 +37,7 @@ Thumbnails.of(directory.listFiles())
 ```
 
 
-# 例子
+### 例子
 
 ![](/img/2018-08-17/471FB23F-E3FE-4B10-9DAB-8F012E18046E.png)
 
@@ -48,7 +48,7 @@ Thumbnails.of(directory.listFiles())
 * BufferedImage数组
 * InputStream数组
 
-# 比例缩放图片，非裁剪
+#### 比例缩放图片，非裁剪
 ```
 Thumbnails.of(image)
     .scale(0.5)
@@ -63,7 +63,7 @@ size（int，int)、scale(double, double)、keepAspectRatio（boolean）
 
 ```
 
-# 图片质量压缩，质量越低代表图片越模糊和size变小
+#### 图片质量压缩，质量越低代表图片越模糊和size变小
 ```
 Thumbnails.of(image)
     .outputQuality(0.5)
@@ -72,7 +72,7 @@ Thumbnails.of(image)
 outputQuality(double)：图片质量0.0f-1.0f
 ```
 
-# 剪裁功能
+#### 剪裁功能
 ![](/img/2018-08-17/6C887AFE-1B0F-4F6E-BE8A-FB79DAAB2EED.png)
 Thumbnails支持多方裁剪定义
 ```
@@ -85,7 +85,7 @@ Thumbnails.of(image)
     .toFile(thumbnail);
 ```
 
-# 根据宽度来缩放
+#### 根据宽度来缩放
 ```
 Thumbnails.of(image)
     .height(500)
@@ -93,7 +93,7 @@ Thumbnails.of(image)
 因为默认keepAspectRatio为true，即长宽比例不变，设置了高度，所以根据高度和原先的比例进行调整略缩图的width
 ```
 
-# 保持长宽比例缩小图片
+#### 保持长宽比例缩小图片
 keepAspectRatio(true);  //默认为true，当设置为false，则输出略缩图不按比例自动调控，而是强制输出，图片可能变形
 ```
 Thumbnails.of(image)
@@ -109,7 +109,7 @@ keepAspectRatio为false，如果原图不是正方形，则输出依旧为160x16
 
 ```
 
-# 加水印
+#### 加水印
 ![](/img/2018-08-17/DA2EA278-8555-4A19-9B9A-ABC0BFC37DCC.png)
 ```
 File watermark = new File("water.png");
@@ -120,14 +120,14 @@ Thumbnails.of("pic.jpg")
     .toFile("pic2.jpg");
 ```
 
-# 图片旋转90度[顺时针]
+#### 图片旋转90度[顺时针]
 ```
 Thumbnails.of("pic.jpg")
     .rotate(90)
     .toFile("pic2.jpg");
 ```
 
-# 处理完的略缩图转输出流
+#### 处理完的略缩图转输出流
 ```
 OutputStream os = null;
 Thumbnails.of("pic.jpg")
@@ -135,7 +135,7 @@ Thumbnails.of("pic.jpg")
     .toOutputStream(os);
 ```
 
-# 定义略缩图格式
+#### 定义略缩图格式
 ```
 OutputStream os = null;
 Thumbnails.of("pic.jpg")
@@ -150,7 +150,7 @@ Thumbnails.of("pic.jpg")
 > 并且只能包含一个
 
 ---
-# 实例Demo
+### 实例Demo
 遍历某个文件夹下所有图片，每张缩小50%，图片质量为原有的0.1，略缩图后缀为png，加水印，水印居中，略缩图顺时针旋转90度，略缩图命名规则为thumbnail-原文件名.png
 ```
 Thumbnails.of(new File("...").listFiles())
