@@ -161,4 +161,5 @@ Thumbnails.of(new File("...").listFiles())
     .watermark(ImageIO.read(watermark))
     .toFiles(Rename.PREFIX_HYPHEN_THUMBNAIL);
 ```
+
 注意：略缩图虽然经过比例质量压缩，但是经常没法一步到位，压缩后图片并没有变小，甚至反而变大了，最好还是写个循环压缩吧，用得不多，有机会再完善下！！！
