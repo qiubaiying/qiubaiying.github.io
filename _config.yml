@@ -1,18 +1,18 @@
 # Site settings
 title: Hyuga Blog
 SEOTitle: 秦枫的博客 | Hyuga Blog
-header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
+header-img: img/home/home-bg.jpg
+email: hyuga0410@gmail.com
 description: "每一次失败都通向成功."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
+keyword: "秦枫, hyuga0410, @hyuga0410, 秦枫的博客, Hyuga0410, 博客, 个人网站, 互联网, Web, 后端"
 url: "http://hyuga0410.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
 
 # Sidebar settings侧边栏
 sidebar: true                           # 是否使用侧栏
-sidebar-about-description: "目标决定你将成为什么样的人!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # 使用绝对URL，看到它在' / '和' /about/ '
+sidebar-about-description: "Never give up.<br>谁的人生不曾迷茫？"
+sidebar-avatar: /img/home/about-pic.jpg      # 使用绝对URL，看到它在' / '和' /about/ '
 
 
 
@@ -78,7 +78,7 @@ ba_track_id: b50bf2b12b5338a1845e33832976fd68
 
 # Google Analytics
 ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_domain: auto               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
