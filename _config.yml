@@ -5,7 +5,7 @@ header-img: img/home/home-bg.jpg
 email: hyuga0410@gmail.com
 description: "每一次失败都通向成功."
 keyword: "秦枫, hyuga0410, @hyuga0410, 秦枫的博客, Hyuga0410, 博客, 个人网站, 互联网, Web, 后端"
-url: "http://hyuga0410.github.io"          # your host, for absolute URL
+url: "http://hyuga.top"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
 
@@ -64,7 +64,7 @@ gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: d911b744b34d8355e26b                            #生成的clientID
   clientSecret: 6531ab897408116d1cee5ca786e7c5c0c02c669e    #生成的clientSecret
-  repo: hyuga0410.github.io    #仓库名称
+  repo: hyuga.top    #仓库名称
   owner: hyuga0410    #github用户名
   admin: hyuga0410
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
