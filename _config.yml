@@ -1,6 +1,6 @@
 # Site settings
-title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
+title: Hyuga Blog
+SEOTitle: 秦枫的博客 | Hyuga Blog
 header-img: img/post-bg-desk.jpg
 email: qiubaiying@gmail.com
 description: "Every failure is leading towards success."
@@ -18,12 +18,12 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
-#twitter_username:   qiubaiying
+# weibo_username:     hyuga0410
+zhihu_username:     hyuga0410
+github_username:    hyuga0410
+facebook_username:  hyuga0410
+jianshu_username:   hyuga0410
+#twitter_username:   hyuga0410
 
 
 
