@@ -4,7 +4,7 @@ title:        "浅出JDK、JRE和JVM三者概念"
 subtitle:     "一个极方便创建略缩图的工具包"
 date:         2018-08-19 10:42:05
 author:       "Hyuga"
-header-img:   "img/2018-08-17/head-top-1.jpg"
+header-img:   "img/2018-08-19/head-top-1.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false
