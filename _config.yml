@@ -7,7 +7,7 @@ description: "每一次失败都通向成功."
 keyword: "秦枫, hyuga0410, @hyuga0410, 秦枫的博客, Hyuga0410, 博客, 个人网站, 互联网, Web, 后端"
 url: "http://hyuga.top"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/hyuga0410/hyuga0410.github.io.git" # you code repository
 
 # Sidebar settings侧边栏
 sidebar: true                           # 是否使用侧栏
