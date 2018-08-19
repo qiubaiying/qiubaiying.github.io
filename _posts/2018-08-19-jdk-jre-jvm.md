@@ -1,7 +1,7 @@
 ---
 layout:       post
 title:        "浅出JDK、JRE和JVM三者概念"
-subtitle:     "一个极方便创建略缩图的工具包"
+subtitle:     "浅显分析JDK、JRE和JVM三者关系"
 date:         2018-08-19 10:42:05
 author:       "Hyuga"
 header-img:   "img/2018-08-19/head-top-1.jpg"

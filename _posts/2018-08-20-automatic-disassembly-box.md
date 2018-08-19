@@ -1,10 +1,10 @@
 ---
 layout:       post
 title:        "Java的自动拆装箱"
-subtitle:     "一个极方便创建略缩图的工具包"
+subtitle:     "归纳自动拆装箱知识点"
 date:         2018-08-20 22:42:05
 author:       "Hyuga"
-header-img:   "img/2018-08-20/head-top.jpg"
+header-img:   "img/2018-08-20/head-top.jpeg"
 header-mask:  0.3
 catalog:      true
 multilingual: false
