@@ -9,7 +9,7 @@ header-mask:  0.3
 catalog:      true
 multilingual: false
 tags:
-    - hyuga
+    - jvm
 ---
 
 ## 什么是JDK
