@@ -62,8 +62,8 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: d911b744b34d8355e26b                            #生成的clientID
-  clientSecret: 6531ab897408116d1cee5ca786e7c5c0c02c669e    #生成的clientSecret
+  clientID: 2d9d50c10d21e42b2220                            #生成的clientID
+  clientSecret: 30d684dd9b0ac44de8130dbc4915f610ac610064    #生成的clientSecret
   repo: hyuga.top    #仓库名称
   owner: hyuga0410    #github用户名
   admin: hyuga0410
