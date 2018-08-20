@@ -29,9 +29,9 @@ tags:                               #标签
 
 8，目前 印象笔记-中国版 本地化的功能进度：
 
-	1. Markdown：2018.8.20 Mac客户端公测版支持Markdown 功能已发布，Windows 客户端稍后也会上线
-	2. 锁定密码：在本月Windows 客户端公测版支持（目前未发布），Mac 客户端稍后也会上线
-	3. 分享：2018.8.20 Android 客户端公测版支持分享到QQ 空间已发布到国内各个市场，其他的稍后也会上线
+	1. Markdown：2018.8.20 Mac客户端公测版已支持Markdown 功能，Windows 客户端稍后也会上线
+	2. 锁定密码：2018.8.20 Windows 客户端公测版已支持锁定密码功能，Mac 客户端稍后也会上线
+	3. 分享：2018.8.20 Android 客户端公测版已支持分享到QQ 空间分享功能， iOS 客户端稍后也会上线
 	4. Widget 剪切版：印象笔记 iOS 客户端 9.2.0 版本已经上线支持，Android 客户端稍后也会上线
 
 9，印象笔记 Mac 客户端 8.2.0 Beta 1 公测版已发布，[点击下载](https://cdn.yinxiang.com/mac-smd/prerelease/Evernote_BETA_8.2.0_beta_1_457096.zip)
