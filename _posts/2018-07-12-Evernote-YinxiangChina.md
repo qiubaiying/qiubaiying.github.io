@@ -34,7 +34,7 @@ tags:                               #标签
 	3. 分享：2018.8.20 Android 客户端公测版支持分享到QQ 空间已发布到国内各个市场，其他的稍后也会上线
 	4. Widget 剪切版：印象笔记 iOS 客户端 9.2.0 版本已经上线支持，Android 客户端稍后也会上线
 
-9，印象笔记 Mac 客户端 8.2.0 Beta 1 公测版已发布
+9，印象笔记 Mac 客户端 8.2.0 Beta 1 公测版已发布，[点击下载](https://cdn.yinxiang.com/mac-smd/prerelease/Evernote_BETA_8.2.0_beta_1_457096.zip)
 
 	新增Markdown笔记功能:
 	 * 一键快速创建Markdown笔记
