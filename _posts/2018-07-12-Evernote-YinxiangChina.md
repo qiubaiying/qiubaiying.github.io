@@ -46,6 +46,17 @@ tags:                               #标签
 
 	下载地址：https://cdn.yinxiang.com/mac-smd/prerelease/Evernote_BETA_8.2.0_beta_1_457096.zip
 
+10, 印象笔记 Windows 客户端 6.13.18 公测版已发布
+
+	新增 pinlock 软件锁定功能功能:
+	 * 开启：菜单栏-工具-密码锁
+	 * 设置或修改密码：菜单栏-工具-选项-安全
+	 * 快捷键：Ctrl+Alt+L（设置中可修改）
+	 * 自动锁定：电脑锁定时自动锁定、最小化到任务栏托盘后锁定、应用程序闲置锁定
+
+	下载地址：http://cdn-dl.yinxiang.com/YXWin6/prerelease/Evernote_6.13.18.316.exe
+
+
 ##### 聪聪
 &copy;聪聪：印象笔记资深印象大使 | 印象笔记年度象亲 | 坚果云效率大使 | 幕布布道师 <https://t.me/congcong>
 
