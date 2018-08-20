@@ -30,7 +30,7 @@ tags:
 
 如下：
 
-{% highlight java linenos %}
+{% highlight java %}
 Integer i = 1; 编译后 Integer i = Integer.valueOf(1);
 Boolean b = true; 编译后 Boolean b = Boolean.valueOf(true);
 {% endhighlight %}
@@ -40,7 +40,7 @@ Boolean b = true; 编译后 Boolean b = Boolean.valueOf(true);
 自动拆箱：编译器通过调用类似intValue(),doubleValue()这类的方法将对象转换成原始数据类型值。
 
 如下：
-{% highlight java linenos %}
+{% highlight java %}
 Integer i = 1;//装箱  编号后 Integer i = Integer.valueOf(1);
 int j = i;//拆箱  编译后 int j = Integer.valueOf(1).intValue();
 {% endhighlight %}
@@ -108,7 +108,7 @@ java将程序中预见常用的数字采用缓存策略，是为了防止每次�
 ** Float、Double：浮点型和双精度没有热点数值，即无法预见常用值，缓存没太大意义和效率。
 
 以下是Integer的自动封箱源码：
-{% highlight java linenos %}
+{% highlight java %}
 //自动封箱入口，调用valueOf，判断i是否在静态常量数组中（-128~127），是则从IntegerCache中获取包装类的实例，否则new Integer()
 public static Integer valueOf(int i) {
     if (i >= IntegerCache.low && i <= IntegerCache.high)
@@ -155,7 +155,7 @@ private static class IntegerCache {
 {% endhighlight %}
 
 八种基本类型自动装箱源码：
-{% highlight java linenos %}
+{% highlight java %}
 //boolean原生类型自动装箱成Boolean
 public static Boolean valueOf(boolean b) {
     return (b ? TRUE : FALSE);
@@ -219,7 +219,7 @@ public static Float valueOf(float f) {
 ## 什么地方可能会自动进行自动拆装箱，如三目运算符
 上面说到当赋值符号两边类型符合基本类型对应包装类型时，就会自动进行拆装箱
 然而，在三目运算符中，也有可能会自动进行拆装箱
-{% highlight java linenos %}
+{% highlight java %}
 Double d1 = null;
 //double d2 = true ? d1 : 0d;
 Double d2 = true ? d1 : 0d;
@@ -227,7 +227,7 @@ System.out.println(d2);
 {% endhighlight %}
 
 d1是包装类型，0d是基础类型，编译时会自动拆装箱：
-{% highlight java linenos %}
+{% highlight java %}
 double d2 = true ? d1.doubleValue() : 0d;
 Double d2 = Double.valueOf(true ? d1.doubleValue() : 0d);
 {% endhighlight %}
