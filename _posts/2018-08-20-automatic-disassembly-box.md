@@ -33,6 +33,11 @@ Integer i = 1; 等同 Integer i = new Integer(1);
 Boolean b = true; 等同 Boolean b = new Boolean(true);
 ```
 
+{% highlight java %}
+Integer i = 1; 等同 Integer i = new Integer(1);
+Boolean b = true; 等同 Boolean b = new Boolean(true);
+{% endhighlight %}
+
 ##### 拆箱
 拆箱就是把Long，Integer，Double，Float 等将基本数据类型的首字母大写的相应的引用类型转化为基本数据类型的动作就叫拆箱。
 
