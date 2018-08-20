@@ -35,16 +35,15 @@ tags:                               #标签
 	4. Widget 剪切版：印象笔记 iOS 客户端 9.2.0 版本已经上线支持，Android 客户端稍后也会上线
 
 9，印象笔记 Mac 客户端 8.2.0 Beta 1 公测版已发布
+	新增Markdown笔记功能:
+	 * 一键快速创建Markdown笔记
+	 * 支持丰富的主流Markdown语法
+	 * 全面支持多种图片插入方式
+	 * 支持多种编辑/预览模式切换及演示模式
+	 * 支持多种编辑主题，新增默认官方主题色“印象绿”
+	 * 兼容原印象笔记历史功能
 
-新增Markdown笔记功能:
- * 一键快速创建Markdown笔记
- * 支持丰富的主流Markdown语法
- * 全面支持多种图片插入方式
- * 支持多种编辑/预览模式切换及演示模式
- * 支持多种编辑主题，新增默认官方主题色“印象绿”
- * 兼容原印象笔记历史功能
-
-下载地址：https://cdn.yinxiang.com/mac-smd/prerelease/Evernote_BETA_8.2.0_beta_1_457096.zip
+	下载地址：<https://cdn.yinxiang.com/mac-smd/prerelease/Evernote_BETA_8.2.0_beta_1_457096.zip>
 
 ##### 聪聪
 &copy;聪聪：印象笔记资深印象大使 | 印象笔记年度象亲 | 坚果云效率大使 | 幕布布道师 <https://t.me/congcong>
