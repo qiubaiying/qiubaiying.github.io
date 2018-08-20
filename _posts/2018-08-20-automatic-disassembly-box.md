@@ -41,8 +41,10 @@ Boolean b = true; 编译后 Boolean b = Boolean.valueOf(true);
 
 如下：
 {% highlight java %}
-Integer i = 1;//装箱  编号后 Integer i = Integer.valueOf(1);
-int j = i;//拆箱  编译后 int j = Integer.valueOf(1).intValue();
+//装箱
+Integer i = 1; 编号后 Integer i = Integer.valueOf(1);
+//拆箱
+int j = i; 编译后 int j = Integer.valueOf(1).intValue();
 {% endhighlight %}
 
 ##### 总结
