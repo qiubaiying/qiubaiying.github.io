@@ -44,7 +44,7 @@ tags:                               #标签
 	 * 支持多种编辑主题，新增默认官方主题色“印象绿”
 	 * 兼容原印象笔记历史功能
 
-	下载地址：<https://cdn.yinxiang.com/mac-smd/prerelease/Evernote_BETA_8.2.0_beta_1_457096.zip>
+	下载地址：https://cdn.yinxiang.com/mac-smd/prerelease/Evernote_BETA_8.2.0_beta_1_457096.zip
 
 ##### 聪聪
 &copy;聪聪：印象笔记资深印象大使 | 印象笔记年度象亲 | 坚果云效率大使 | 幕布布道师 <https://t.me/congcong>
