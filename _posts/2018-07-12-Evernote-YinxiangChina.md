@@ -35,6 +35,7 @@ tags:                               #标签
 	4. Widget 剪切版：印象笔记 iOS 客户端 9.2.0 版本已经上线支持，Android 客户端稍后也会上线
 
 9，印象笔记 Mac 客户端 8.2.0 Beta 1 公测版已发布
+
 	新增Markdown笔记功能:
 	 * 一键快速创建Markdown笔记
 	 * 支持丰富的主流Markdown语法
