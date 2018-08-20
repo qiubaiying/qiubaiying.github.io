@@ -1,28 +1,28 @@
 # Site settings
-title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
-header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
+title: Mizersy
+SEOTitle: Mizersy的博客 | Mizersy
+header-img: img/wangye.jpg
+email: mizersy@163.com
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+keyword: "随笔"
+url: "https://mizersy.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "Try to code more than yesterday."
+sidebar-avatar: /img/sky.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
 RSS: false
 # weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
+zhihu_username:     mizersy
+github_username:    mizersy
+#facebook_username:  none
+#jianshu_username:   none
 #twitter_username:   qiubaiying
 
 
@@ -61,7 +61,7 @@ kramdown:
 
 # Gitalk
 gitalk:
-  enable: true    #是否开启Gitalk评论
+  enable: false    #是否开启Gitalk评论
   clientID: f2c84e7629bb1446c1a4                            #生成的clientID
   clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
   repo: qiubaiying.github.io    #仓库名称
@@ -71,7 +71,7 @@ gitalk:
 
 
 # 统计
-
+#待修改：https://www.jianshu.com/p/e68fba58f75c
 # Analytics settings
 # Baidu Analytics
 ba_track_id: b50bf2b12b5338a1845e33832976fd68
@@ -99,16 +99,16 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        #title: "WY",
+        #href: "http://zhengwuyang.com"
     },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
+        #title: "简书·BY",
+        #href: "http://www.jianshu.com/u/e71990ada2fd"
     },{
-        title: "Apple",
-        href: "https://apple.com"
+       # title: "Apple",
+       # href: "https://apple.com"
     },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+       # title: "Apple Developer",
+       # href: "https://developer.apple.com/"
     }
 ]
