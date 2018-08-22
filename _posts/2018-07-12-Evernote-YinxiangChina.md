@@ -44,9 +44,9 @@ tags:                               #标签
 	 * 支持多种编辑主题，新增默认官方主题色“印象绿”
 	 * 兼容原印象笔记历史功能
 
-	印象笔记新功能：Markdown 详细讲解：<https://congcong0806.github.io/2018/08/20/Markdown>
-	印象笔记 Markdown 入门指南：<https://www.yinxiang.com/markdown-user-guide>
-	下载地址：<https://cdn.yinxiang.com/mac-smd/prerelease/Evernote_BETA_8.2.0_beta_1_457096.zip>
+	印象笔记新功能：Markdown 详细讲解：https://congcong0806.github.io/2018/08/20/Markdown
+	印象笔记 Markdown 入门指南：https://www.yinxiang.com/markdown-user-guide
+	下载地址：https://cdn.yinxiang.com/mac-smd/prerelease/Evernote_BETA_8.2.0_beta_1_457096.zip
 
 10, 印象笔记 Windows 客户端 6.13.18 公测版已发布，[点击下载](http://cdn-dl.yinxiang.com/YXWin6/prerelease/Evernote_6.13.18.316.exe)
 
@@ -56,7 +56,7 @@ tags:                               #标签
 	 * 快捷键：Ctrl+Alt+L（设置中可修改）
 	 * 自动锁定：电脑锁定时自动锁定、最小化到任务栏托盘后锁定、应用程序闲置锁定
 
-	下载地址：<http://cdn-dl.yinxiang.com/YXWin6/prerelease/Evernote_6.13.18.316.exe>
+	下载地址：http://cdn-dl.yinxiang.com/YXWin6/prerelease/Evernote_6.13.18.316.exe
 
 ##### 聪聪
 &copy;聪聪：印象笔记资深印象大使 | 印象笔记年度象亲 | 坚果云效率大使 | 幕布布道师 <https://t.me/congcong>
