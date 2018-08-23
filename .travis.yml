@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+  - 2.4.1
+install: gem install jekyll html-proofer
+script: jekyll build && htmlproofer ./_site
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+  
+
