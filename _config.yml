@@ -18,12 +18,12 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 
 # SNS settings
 RSS: false
-# weibo_username:     _Otone
-zhihu_username:     
+weibo_username:     _Otone
+#zhihu_username:     
 github_username:    FujishiroOtone
-facebook_username:  
-jianshu_username:  
-#twitter_username:   Fujishiro Otone
+# facebook_username: 
+#jianshu_username:  
+twitter_username:   Fujishiro Otone
 
 
 
@@ -66,7 +66,7 @@ gitalk:
   clientSecret: 1066d95935c65d2349ab5c8c5789ef6cefe3fe9d    #生成的clientSecret
   repo: FujishiroOtone.github.io    #仓库名称
   owner: FujishiroOtone    #github用户名
-  admin: qiubaiying
+  admin: FujishiroOtone
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
@@ -77,8 +77,8 @@ gitalk:
 ba_track_id: b50bf2b12b5338a1845e33832976fd68
 
 # Google Analytics
-ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+#ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
+#ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
