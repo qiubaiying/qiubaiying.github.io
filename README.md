@@ -1,4 +1,5 @@
-# BY Blog
+
+<div align="center"> <img src="http://qiubaiying.github.io/img/BY_bolg_logo.png" width="300"/> </div><br>
 
 ![](https://raw.githubusercontent.com/qiubaiying/qiubaiying.github.io/master/img/readme-home.png)
 
