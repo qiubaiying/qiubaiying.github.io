@@ -57,6 +57,9 @@ tags:                               #标签
 
 	下载地址：http://cdn-dl.yinxiang.com/YXWin6/prerelease/Evernote_6.13.18.316.exe
 
+##### 优秀的正版软件
+<https://congcong0806.github.io/2018/09/03/App>
+
 ##### 聪聪
 &copy;聪聪：印象笔记资深印象大使 | 印象笔记年度象亲 | 坚果云效率大使 | 幕布布道师 <https://t.me/congcong>
 
