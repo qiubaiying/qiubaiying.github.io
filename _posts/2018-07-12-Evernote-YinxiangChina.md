@@ -28,16 +28,16 @@ tags:                               #标签
 
 7，目前 印象笔记-中国版 本地化的功能进度：
 
-	1. Markdown：2018.8.20 Mac客户端公测版已支持Markdown 功能，Windows 客户端稍后也会上线
+	1. Markdown：Mac客户端已支持Markdown 功能，Windows 客户端稍后也会上线
 	2. 锁定密码：2018.8.20 Windows 客户端公测版已支持锁定密码功能，Mac 客户端稍后也会上线
 	3. 分享：2018.8.20 Android 客户端公测版已支持分享到QQ 空间分享功能， iOS 客户端稍后也会上线
 	4. Widget 剪切版：印象笔记 iOS 客户端 9.2.0 版本已经上线支持，Android 客户端稍后也会上线
 
-8，印象笔记 Mac 客户端 8.2.0 Beta 1 公测版已发布，[点击下载](https://cdn.yinxiang.com/mac-smd/prerelease/Evernote_BETA_8.2.0_beta_1_457096.zip)
+8，印象笔记 Mac 客户端 8.2.0 正式版已发布，[点击下载](https://cdn.yinxiang.com/mac-smd/public/YinxiangBiji_RELEASE_8.2.0_457181.dmg)
 
-	新增Markdown笔记功能:
-	 * 一键快速创建Markdown笔记
-	 * 支持丰富的主流Markdown语法
+	新增Markdown 笔记功能:
+	 * 一键快速创建Markdown 笔记
+	 * 支持丰富的主流Markdown 语法
 	 * 全面支持多种图片插入方式
 	 * 支持多种编辑/预览模式切换及演示模式
 	 * 支持多种编辑主题，新增默认官方主题色“印象绿”
@@ -45,7 +45,7 @@ tags:                               #标签
 
 	印象笔记新功能：Markdown 详细讲解：https://congcong0806.github.io/2018/08/20/Markdown
 	印象笔记 Markdown 入门指南：https://www.yinxiang.com/markdown-user-guide
-	下载地址：https://cdn.yinxiang.com/mac-smd/prerelease/Evernote_BETA_8.2.0_beta_1_457096.zip
+	下载地址：https://cdn.yinxiang.com/mac-smd/public/YinxiangBiji_RELEASE_8.2.0_457181.dmg
 
 9, 印象笔记 Windows 客户端 6.13.18 公测版已发布，[点击下载](http://cdn-dl.yinxiang.com/YXWin6/prerelease/Evernote_6.13.18.316.exe)
 
@@ -56,6 +56,12 @@ tags:                               #标签
 	 * 自动锁定：电脑锁定时自动锁定、最小化到任务栏托盘后锁定、应用程序闲置锁定
 
 	下载地址：http://cdn-dl.yinxiang.com/YXWin6/prerelease/Evernote_6.13.18.316.exe
+
+10，印象笔记 Android 9.1.0 版本已经发布，国内各个市场可下载
+
+	主要更新：支持分享笔记到QQ 空间
+	操作：打开一条笔记，点击顶部分享按钮，进入“共享笔记” -- 点击右上角三个点 -- 选择「分享到QQ空间」
+	是图文富文本内容一起发送到QQ空间，新建一条「日志」，并不是长图方式
 
 ##### 优秀的正版软件
 <https://congcong0806.github.io/2018/09/03/App>
