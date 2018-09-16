@@ -31,6 +31,11 @@ tags:                               #标签
 7，如何区分呢？看「印象笔记私有邮箱」，国内版是：xxx@m.yinxiang.com；国际版是：xxx@m.evernote.com
     在登录界面如何区分呢？看页面上方大象绿背景里面的文字，国内版是：印象笔记；国际版是：Evernote
 
+8，印象笔记Evernote 迁移笔记到另一个账号的两个方法：
+<http://www.jianshu.com/p/860233c903c7>
+<http://www.jianshu.com/p/c2fdad6ad031>
+个人推荐第一个方法
+
 ###### 优秀的正版软件
 <https://congcong0806.github.io/2018/09/03/App>
 
