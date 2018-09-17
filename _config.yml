@@ -114,5 +114,13 @@ friends: [
    {
         title: "简书-不学无数",
         href: "http://www.jianshu.com/u/52c6d746bd8e"
-    }
+    },
+    {
+            title: "掘金-不学无数",
+            href: "https://juejin.im/user/5b7286a76fb9a009c624342f"
+        },
+        {
+                    title: "CSDN-不学无数",
+                    href: "https://blog.csdn.net/weixin_43133353"
+                }
 ]
