@@ -7,7 +7,7 @@ description: "Every failure is leading towards success."
 keyword: "BY, MoDou Blog, Mr.墨斗的博客, hupengfei, 胡鹏飞, iOS, Apple, iPhone"
 url: "https://modouxiansheng.github.io/"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/modouxiansheng/modouxiansheng.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -86,7 +86,7 @@ ba_track_id: 0858696f6913665486a63a8327bc7fb4
 
 # Featured Tags
 featured-tags: true                     # 是否使用首页标签
-featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+featured-condition-size: 0              # 相同标签数量大于这个数，才会出现在首页
 
 
 
@@ -111,4 +111,8 @@ friends: [
 #        title: "Apple Developer",
 #        href: "https://developer.apple.com/"
 #    }
+   {
+        title: "简书-不学无数",
+        href: "http://www.jianshu.com/u/52c6d746bd8e"
+    }
 ]
