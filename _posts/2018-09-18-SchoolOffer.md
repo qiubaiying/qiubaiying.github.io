@@ -11,7 +11,7 @@ tags:                               #标签
 
 ---
 
-##### 6 折起！10 款口碑软件难得好价
+#### 6 折起！10 款口碑软件难得好价
 
 ![](http://ww1.sinaimg.cn/large/9b84e6acly1fvdomeme0oj22s00xch4g.jpg)
 又是一年返校季，我们联合「数码荔枝」带来了国内外优秀开发商的 10 款口碑软件，在这个 9 月，为大家带来一次实打实的软件促销活动。
@@ -159,10 +159,10 @@ Zoommy 聚合了 50+ 个免费无版权图库，包含 130000+ 张免费图片�
 
 本次「数码荔枝」返校季促销活动仅持续至 9 月底，你可以 [点此前往活动专题页](https://digitalychee.taobao.com/p/school.htm?spm=a1z10.1-c-s.w5003-17000051000.1.610a7311xYAagN&scene=taobao_shop)，进一步了解详情。
 
-##### 优秀的正版软件
+#### 优秀的正版软件
 <https://congcong0806.github.io/2018/09/03/App>
 
-##### 聪聪
+#### 聪聪
 &copy;聪聪：印象笔记资深印象大使 | 印象笔记年度象亲 | 坚果云效率大使 | 幕布布道师 <https://t.me/congcong>
 
 印象笔记用户群 Telegram 群：<https://t.me/yinxiangbiji>
