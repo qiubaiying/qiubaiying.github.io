@@ -4,7 +4,7 @@ title:      6 折起！10 款口碑软件难得好价               # 标题
 subtitle:    #副标题
 date:       2018-09-18              # 时间
 author:     聪聪                      # 作者
-header-img:  http://ww1.sinaimg.cn/large/9b84e6acly1fvdomeme0oj22s00xch4g.jpg   #这篇文章标题背景图片
+header-img:  https://i.v2ex.co/36VHp3xz.png   #这篇文章标题背景图片
 catalog: true                       # 是否归档
 tags:                               #标签
     - App
