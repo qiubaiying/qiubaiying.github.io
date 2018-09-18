@@ -47,7 +47,7 @@ tags:                               #标签
 	印象笔记 Markdown 入门指南：https://www.yinxiang.com/markdown-user-guide
 	下载地址：https://cdn.yinxiang.com/mac-smd/public/YinxiangBiji_RELEASE_8.2.0_457181.dmg
 
-9, 印象笔记 Windows 客户端 >=6.13.18 公测版已发布，[点击下载](http://cdn-dl.yinxiang.com/YXWin6/prerelease/Evernote_6.14.6.354.exe)
+9, 印象笔记 Windows 客户端 6.14.8 正式版已发布，[点击下载](http://cdn-dl.yinxiang.com/YXWin6/public/Evernote_6.14.8.363.exe)
 
 	新增 pinlock 软件锁定功能功能:
 	 * 开启：菜单栏-工具-密码锁
@@ -55,9 +55,9 @@ tags:                               #标签
 	 * 快捷键：Ctrl+Alt+L（设置中可修改）
 	 * 自动锁定：电脑锁定时自动锁定、最小化到任务栏托盘后锁定、应用程序闲置锁定
 
-	下载地址：http://cdn-dl.yinxiang.com/YXWin6/prerelease/Evernote_6.14.6.354.exe
+	下载地址：http://cdn-dl.yinxiang.com/YXWin6/public/Evernote_6.14.8.363.exe
 
-10，印象笔记 Android >=9.1 版本已经发布，国内各个市场可下载
+10，印象笔记 Android 客户端 9.1 正式版已发布，国内各个市场可下载
 
 	主要更新：支持分享笔记到QQ 空间
 	操作：打开一条笔记，点击顶部分享按钮，进入“共享笔记” -- 点击右上角三个点 -- 选择「分享到QQ空间」
