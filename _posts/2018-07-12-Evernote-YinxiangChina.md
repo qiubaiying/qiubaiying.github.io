@@ -29,8 +29,8 @@ tags:                               #标签
 7，目前 印象笔记-中国版 本地化的功能进度：
 
 	1. Markdown：Mac 客户端已支持Markdown 功能，Windows 客户端稍后也会上线
-	2. 锁定密码：2018.8.20 Windows 客户端公测版已支持锁定密码功能，Mac 客户端稍后也会上线
-	3. 分享：2018.8.20 Android 客户端已支持分享到QQ 空间分享功能， iOS 客户端稍后也会上线
+	2. 锁定密码：Windows 客户端已支持锁定密码功能，Mac 客户端稍后也会上线
+	3. 分享：Android 客户端已支持分享到QQ 空间分享功能， iOS 客户端稍后也会上线
 	4. Widget 剪切版：印象笔记 iOS 客户端 9.2.0 版本已经上线支持，Android 客户端稍后也会上线
 
 8，印象笔记 Mac 客户端 8.2.0 正式版已发布，[点击下载](https://cdn.yinxiang.com/mac-smd/public/YinxiangBiji_RELEASE_8.2.0_457181.dmg)
