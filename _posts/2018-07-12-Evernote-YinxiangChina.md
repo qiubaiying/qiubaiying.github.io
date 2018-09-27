@@ -26,6 +26,22 @@ tags:                               #标签
 
 6，点击查看官方服务通知：[印象笔记新 App 上线进展](https://www.yinxiang.com/blog/blog/category/news/)
 
+7，印象笔记 客户端下载地址
+&nbsp;&nbsp;&nbsp;&nbsp;Windows：<https://www.yinxiang.com/download/get.php?file=Win>
+&nbsp;&nbsp;&nbsp;&nbsp;Windows XP：<https://cdn.yinxiang.com/win6/public/Evernote_6.7.6.7584.exe>
+&nbsp;&nbsp;&nbsp;&nbsp;macOS 直装：<https://cdn.yinxiang.com/mac-smd/public/YinxiangBiji_RELEASE_8.2.0_457181.dmg>
+&nbsp;&nbsp;&nbsp;&nbsp;macOS App Store：<https://itunes.apple.com/cn/app/id1356055347>
+&nbsp;&nbsp;&nbsp;&nbsp;iOS App Store：<https://itunes.apple.com/cn/app/id1356054761>
+&nbsp;&nbsp;&nbsp;&nbsp;Android：https://www.yinxiang.com/download/get.php?file=AndroidYinxiangCom>
+	 
+8，Evernote 客户端下载地址
+&nbsp;&nbsp;&nbsp;&nbsp;Windows：<https://cdn1.evernote.com/win6/public/Evernote_6.15.3.7881.exe>
+&nbsp;&nbsp;&nbsp;&nbsp;macOS 直装：<https://www.evernote.com/download/get.php?file=EvernoteMac>
+&nbsp;&nbsp;&nbsp;&nbsp;macOS App Store：<https://itunes.apple.com/us/app/evernote-stay-organized/id406056744>
+&nbsp;&nbsp;&nbsp;&nbsp;iOS App Store：<https://itunes.apple.com/app/evernote/id281796108>
+&nbsp;&nbsp;&nbsp;&nbsp;Android：<https://www.evernote.com/download/get.php?file=AndroidYinxiangCom>
+&nbsp;&nbsp;&nbsp;&nbsp;Android Google Play：<https://play.google.com/store/apps/details?id=com.evernote>
+
 7，目前 印象笔记-中国版 本地化的功能进度：
 
 	1. Markdown：Mac 客户端已支持Markdown 功能，Windows 客户端稍后也会上线
