@@ -27,8 +27,8 @@ tags:                               #标签
 7，点击查看官方服务通知：[印象笔记新 App 上线进展](https://www.yinxiang.com/blog/blog/category/news/)
 
 8，印象笔记 客户端下载地址<br>
-&nbsp;&nbsp;&nbsp;&nbsp;**Windows**：[点击下载](https://www.yinxiang.com/download/get.php?file=Win)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;**Windows XP**：[点击下载](https://cdn.yinxiang.com/win6/public/Evernote_6.7.6.7584.exe)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Windows**：[点击下载](https://www.yinxiang.com/download/get.php?file=Win)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Windows XP**：[点击下载](https://cdn.yinxiang.com/win6/public/Evernote_6.7.6.7584.exe)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;macOS 直装：[点击下载](https://cdn.yinxiang.com/mac-smd/public/YinxiangBiji_RELEASE_8.2.0_457181.dmg)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;macOS App Store：[点击下载](https://itunes.apple.com/cn/app/id1356055347)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;iOS App Store：[点击下载](https://itunes.apple.com/cn/app/id1356054761)<br>
