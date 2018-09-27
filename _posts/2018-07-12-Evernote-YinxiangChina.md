@@ -15,41 +15,41 @@ tags:                               #标签
 ##### 说明
 * 2018.6月，印象笔记中国团队独立了，客户端也会独立（在原Evernote 的基础上）开发和维护，[点击查看官方新闻](https://www.yinxiang.com/blog/blog/2018/06/06/evernote-an-independent-internet-enterprise/)
 
-2，目前印象笔记-中国版 iOS 和 Mac 客户端已经上线App Store 国区，Android 客户端也已上架国内各个市场，Win 客户端已上架官网；印象笔记-中国版客户端，在App 图标右上角加了一个「新」以示区别，以后应该也会去掉的，图标依然是绿底黑大象的图标；印象笔记-中国版客户端会增加一些本地化的功能，目前已经发布的有：Markdown、锁定密码、分享到 QQ 空间。<br>
+* 目前印象笔记-中国版 iOS 和 Mac 客户端已经上线App Store 国区，Android 客户端也已上架国内各个市场，Win 客户端已上架官网；印象笔记-中国版客户端，在App 图标右上角加了一个「新」以示区别，以后应该也会去掉的，图标依然是绿底黑大象的图标；印象笔记-中国版客户端会增加一些本地化的功能，目前已经发布的有：Markdown、锁定密码、分享到 QQ 空间。<br>
 只是多了中国版的客户端，账户并没有变化，笔记依然也不变的，笔记是随账户的，和客户端没关系的，在哪个客户端登录内容都一样的
 
-3，Evernote App 客户端已换用白底绿大象的新图标，目前Evernote iOS 和 Mac 也已经下架App Store 国区！已安装的Evernote App客户端可以删了也可以留着，已安装的客户端也能继续同步，不受影响。如果想要一直用Evernote App 客户端并保持客户端一直更新，就得去美区等等外区App Store 下载。
+* Evernote App 客户端已换用白底绿大象的新图标，目前Evernote iOS 和 Mac 也已经下架App Store 国区！已安装的Evernote App客户端可以删了也可以留着，已安装的客户端也能继续同步，不受影响。如果想要一直用Evernote App 客户端并保持客户端一直更新，就得去美区等等外区App Store 下载。
 
-4，印象笔记（国内版）和 Evernote International（国际版）是什么区别：[点击查看](https://congcong0806.github.io/2018/04/24/evernote-yinxiang/)
+* 印象笔记（国内版）和 Evernote International（国际版）是什么区别：[点击查看](https://congcong0806.github.io/2018/04/24/evernote-yinxiang/)
 
-5，目前有两个客户端：Evernote App和印象笔记-中国版，两种账户类型：国内版和国际版，Evernote App 和印象笔记-中国版 都能登录国内版和国际版账户，也就组成了2x2的情况。
+* 前有两个客户端：Evernote App和印象笔记-中国版，两种账户类型：国内版和国际版，Evernote App 和印象笔记-中国版 都能登录国内版和国际版账户，也就组成了2x2的情况。
 
-6，点击查看官方服务通知：[印象笔记新 App 上线进展](https://www.yinxiang.com/blog/blog/category/news/)
+* 点击查看官方服务通知：[印象笔记新 App 上线进展](https://www.yinxiang.com/blog/blog/category/news/)
 
-7，印象笔记 客户端下载地址<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Windows：<https://www.yinxiang.com/download/get.php?file=Win><br>
-&nbsp;&nbsp;&nbsp;&nbsp;Windows XP：<https://cdn.yinxiang.com/win6/public/Evernote_6.7.6.7584.exe><br>
-&nbsp;&nbsp;&nbsp;&nbsp;macOS 直装：<https://cdn.yinxiang.com/mac-smd/public/YinxiangBiji_RELEASE_8.2.0_457181.dmg><br>
-&nbsp;&nbsp;&nbsp;&nbsp;macOS App Store：<https://itunes.apple.com/cn/app/id1356055347><br>
-&nbsp;&nbsp;&nbsp;&nbsp;iOS App Store：<https://itunes.apple.com/cn/app/id1356054761><br>
-&nbsp;&nbsp;&nbsp;&nbsp;Android：https://www.yinxiang.com/download/get.php?file=AndroidYinxiangCom>
+* 印象笔记 客户端下载地址<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Windows：[点击下载](https://www.yinxiang.com/download/get.php?file=Win)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Windows XP：[点击下载](https://cdn.yinxiang.com/win6/public/Evernote_6.7.6.7584.exe)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;macOS 直装：[点击下载](https://cdn.yinxiang.com/mac-smd/public/YinxiangBiji_RELEASE_8.2.0_457181.dmg)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;macOS App Store：[点击下载](https://itunes.apple.com/cn/app/id1356055347)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;iOS App Store：[点击下载](https://itunes.apple.com/cn/app/id1356054761)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Android：[点击下载](https://www.yinxiang.com/download/get.php?file=AndroidYinxiangCom)
 	 
-8，Evernote 客户端下载地址
-&nbsp;&nbsp;&nbsp;&nbsp;Windows：<https://cdn1.evernote.com/win6/public/Evernote_6.15.3.7881.exe><br>
-&nbsp;&nbsp;&nbsp;&nbsp;macOS 直装：<https://www.evernote.com/download/get.php?file=EvernoteMac><br>
-&nbsp;&nbsp;&nbsp;&nbsp;macOS App Store：<https://itunes.apple.com/us/app/evernote-stay-organized/id406056744><br>
-&nbsp;&nbsp;&nbsp;&nbsp;iOS App Store：<https://itunes.apple.com/app/evernote/id281796108><br>
-&nbsp;&nbsp;&nbsp;&nbsp;Android：<https://www.evernote.com/download/get.php?file=AndroidYinxiangCom><br>
-&nbsp;&nbsp;&nbsp;&nbsp;Android Google Play：<https://play.google.com/store/apps/details?id=com.evernote>
+* Evernote 客户端下载地址
+&nbsp;&nbsp;&nbsp;&nbsp;Windows：[点击下载](https://cdn1.evernote.com/win6/public/Evernote_6.15.3.7881.exe)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;macOS 直装：[点击下载](https://www.evernote.com/download/get.php?file=EvernoteMac)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;macOS App Store：[点击下载](https://itunes.apple.com/us/app/evernote-stay-organized/id406056744)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;iOS App Store：[点击下载](https://itunes.apple.com/app/evernote/id281796108)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Android：[点击下载](https://www.evernote.com/download/get.php?file=AndroidYinxiangCom)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Android Google Play：[点击下载](https://play.google.com/store/apps/details?id=com.evernote)
 
-7，目前 印象笔记-中国版 本地化的功能进度：
+* 目前 印象笔记-中国版 本地化的功能进度：
 
 	1. Markdown：Mac 客户端已支持Markdown 功能，Windows 客户端稍后也会上线
 	2. 锁定密码：Windows 客户端已支持锁定密码功能，Mac 客户端稍后也会上线
 	3. 分享：Android 客户端已支持分享到QQ 空间分享功能， iOS 客户端稍后也会上线
 	4. Widget 剪切版：印象笔记 iOS 客户端 9.2.0 版本已经上线支持，Android 客户端稍后也会上线
 
-8，印象笔记 Mac 客户端 8.2.0 正式版已发布，[点击下载](https://cdn.yinxiang.com/mac-smd/public/YinxiangBiji_RELEASE_8.2.0_457181.dmg)
+* 印象笔记 Mac 客户端 8.2.0 正式版已发布，[点击下载](https://cdn.yinxiang.com/mac-smd/public/YinxiangBiji_RELEASE_8.2.0_457181.dmg)
 
 	新增Markdown 笔记功能:
 	 * 一键快速创建Markdown 笔记
@@ -63,7 +63,7 @@ tags:                               #标签
 	印象笔记 Markdown 入门指南：https://www.yinxiang.com/markdown-user-guide
 	下载地址：https://cdn.yinxiang.com/mac-smd/public/YinxiangBiji_RELEASE_8.2.0_457181.dmg
 
-9, 印象笔记 Windows 客户端 6.14.8 正式版已发布，[点击下载](http://cdn-dl.yinxiang.com/YXWin6/public/Evernote_6.14.8.363.exe)
+* 印象笔记 Windows 客户端 6.14.8 正式版已发布，[点击下载](http://cdn-dl.yinxiang.com/YXWin6/public/Evernote_6.14.8.363.exe)
 
 	新增 pinlock 软件锁定功能功能:
 	 * 开启：菜单栏-工具-密码锁
@@ -73,7 +73,7 @@ tags:                               #标签
 
 	下载地址：http://cdn-dl.yinxiang.com/YXWin6/public/Evernote_6.14.8.363.exe
 
-10，印象笔记 Android 客户端 9.1 正式版已发布，国内各个市场可下载
+* 印象笔记 Android 客户端 9.1 正式版已发布，国内各个市场可下载
 
 	主要更新：支持分享笔记到QQ 空间
 	操作：打开一条笔记，点击顶部分享按钮，进入“共享笔记” -- 点击右上角三个点 -- 选择「分享到QQ空间」
