@@ -7,7 +7,7 @@ description: "流年笑掷 未来可期"
 keyword: "Java 算法 大数据 架构设计 微服务"
 url: "https://sunxiaojian.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/sunxiaojian/sunxiaojian.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -19,10 +19,10 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 # SNS settings
 RSS: false
 # weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
+#zhihu_username:     qiubaiying
+github_username:    sunxiaojian
+#facebook_username:  baiying.qiu.7
+#jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
 
 
@@ -97,18 +97,18 @@ service-worker: true
 
 
 # Friends
-friends: [
-    {
-        title: "WY",
-        href: "http://zhengwuyang.com"
-    },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
-    },{
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
-    }
-]
+# friends: [
+#     {
+#         title: "WY",
+#         href: "http://zhengwuyang.com"
+#     },{
+#         title: "简书·BY",
+#         href: "http://www.jianshu.com/u/e71990ada2fd"
+#     },{
+#         title: "Apple",
+#         href: "https://apple.com"
+#     },{
+#         title: "Apple Developer",
+#         href: "https://developer.apple.com/"
+#     }
+# ]
