@@ -11,7 +11,7 @@ github_repo: "https://github.com/sunxiaojian/sunxiaojian.github.io.git" # you co
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
+sidebar-about-description: "给我一个支点，我替阿基米德撬起地球!"
 sidebar-avatar: /img/about-me.png     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
