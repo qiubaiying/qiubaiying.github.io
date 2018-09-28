@@ -99,16 +99,16 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "tangcuyu",
+        title: "糖醋鱼",
         href: "http://s.zzuzayu.top"
     },{
         title: "云盘",
-        href: "https://shuangzu.top"
+        href: "https://pan.shuangzu.top"
     },{
-        title: "Apple",
-        href: "https://apple.com"
+        title: "Inc_志伟",
+        href: "https://incentancy.com"
     },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "郑大计算机协会",
+        href: "https://yangsx.club"
     }
 ]
