@@ -37,6 +37,7 @@ tags:                               #标签
 	 
 9，Evernote 客户端下载地址
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Windows**：[点击下载](https://evernote.com/intl/zh-cn/download)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Windows 商店**：[点击下载](https://www.microsoft.com/zh-cn/store/p/evernote/9wzdncrfj3mb)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**macOS 直装**：[点击下载](https://evernote.com/intl/zh-cn/download)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**macOS App Store**：[点击下载](https://itunes.apple.com/us/app/evernote-stay-organized/id406056744)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**iOS App Store**：[点击下载](https://itunes.apple.com/app/evernote/id281796108)
