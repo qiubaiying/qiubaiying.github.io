@@ -4,7 +4,7 @@ title:      FMM/RMM Chinese Word Segmentation
 subtitle:   Natural Language Processing homework
 date:       2017-11-13
 author:     WeiXiao
-header-img: img/tag-bg-o.jpg
+header-img: img/blog-bg.jpg
 catalog: true
 tags:
     - NLP
