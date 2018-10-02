@@ -1,10 +1,10 @@
 # Site settings
-title: MJ Blog
-SEOTitle: 鸣健的博客 | MJ Blog
+title: mijamind's Blog
+SEOTitle: 鸣健的博客 | mijamind's Blog
 header-img: img/post-bg-desk.jpg
 email: 13588034533@163.com
-description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
+description: "A little knowledge is a dangerous thing."
+keyword: "mijamind's Blog, 鸣健的博客, quemingjian, 阙鸣健, Software Engineer"
 url: "http://Kernelresolution719.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/Kernelresolution719/Kernelresolution719.github.io.git" # you code repository
@@ -20,7 +20,7 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 RSS: false
 # weibo_username:     qiubaiying
 zhihu_username:     qiubaiying
-github_username:    qiubaiying
+github_username:    Kernelresolution719
 facebook_username:  baiying.qiu.7
 jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
