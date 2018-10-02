@@ -1,13 +1,13 @@
 # Site settings
-title: BY Blog
-SEOTitle: 鸣健的博客 | QueMJ Blog
+title: MJ Blog
+SEOTitle: 鸣健的博客 | MJ Blog
 header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
+email: 13588034533@163.com
 description: "Every failure is leading towards success."
 keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+url: "http://Kernelresolution719.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/Kernelresolution719/Kernelresolution719.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
