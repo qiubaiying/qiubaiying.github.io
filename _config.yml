@@ -91,3 +91,5 @@ service-worker: true
 
 
 # Friends
+
+theme: jekyll-theme-cayman
