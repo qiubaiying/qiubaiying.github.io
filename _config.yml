@@ -1,9 +1,9 @@
 # Site settings
-title: Helena Wang Blog
+title:  Helena Wang Blog
 SEOTitle: 王婷的博客 | Helena Wang Blog
 header-img: img/post-bg-desk.jpg
 email: helena_wang@aliyun.com
-description: "技术积累"
+description:  "技术积累"
 keyword: "Helena Wang, blog"
 url: "http://helenawang.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
