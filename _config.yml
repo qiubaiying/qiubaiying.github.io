@@ -1,6 +1,6 @@
 # Site settings
 title: Helena Wang Blog
-SEOTitle: "王婷的博客" | Helena Wang Blog
+SEOTitle: "王婷的博客 | Helena Wang Blog"
 header-img: img/post-bg-desk.jpg
 email: helena_wang@aliyun.com
 description:  "技术积累"
@@ -50,11 +50,9 @@ highlighter: rouge
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
 
-
-
 # 评论系统
 # Disqus（https://disqus.com/）
- disqus_username: helena_wang
+# disqus_username: helena_wang
 
 # Gitalk
 #gitalk:
@@ -68,7 +66,6 @@ kramdown:
 
 
 # 统计
-
 # Analytics settings
 # Baidu Analytics
 ba_track_id: 295f7bf49766e93a03fd8840bd4a810d
@@ -94,9 +91,3 @@ service-worker: true
 
 
 # Friends
-friends: [
-    {
-        title: "博客园",
-        href: "http://cnblogs.com/helenawang"
-    }
-]
