@@ -100,19 +100,15 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "OPEN CHAT",
-        href: "https://gitter.im/congcong0806/Lobby"
-    },
-    {
         title: "简书·聪聪",
         href: "http://www.jianshu.com/u/da1809147fba"
     },
     {
         title: "Apple",
-        href: "https://apple.com"
+        href: "https://www.apple.com/cn"
     },
     {
         title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        href: "https://developer.apple.com"
     }
 ]
