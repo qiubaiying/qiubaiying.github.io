@@ -1,7 +1,7 @@
 # Site settings
 title: ITFarmer's Blog
 SEOTitle: ITFarmer的博客 | ITFarmer's Blog
-#header-img: img/post-bg-desk.jpg
+header-img: img/post-bg-desk.jpg
 email: itfarmer@163.com
 description: "Every failure is leading towards success."
 keyword: "TFarmer的博客"
@@ -18,11 +18,11 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 
 # SNS settings
 RSS: false
-# weibo_username:     _ITFarmer
+weibo_username:     _ITFarmer
 zhihu_username:     itfarmer
 github_username:    cnitfarmer 
 jianshu_username:   itfarmer
-#twitter_username:   qiubaiying
+#twitter_username:   itfarmer
 
 
 
