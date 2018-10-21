@@ -1,17 +1,17 @@
 # Site settings
 title:SHY's Blog
-SEOTitle: Mayshy的博客 | BY Blog
+SEOTitle: Mayshy的博客 
 header-img: img/post-bg-desk.jpg
 email: justbeshy@outlook.com
 description: "Laziness always pays off."
-keyword: "BY, BY Blog, Mayshy的博客, Shen Huayu, 沈华雨, iOS, Apple, iPhone"
+keyword: " Mayshy的博客, Shen Huayu, 沈华雨, iOS, Apple, iPhone"
 url: "http://Mayshy.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/Mayshy/Mayshy.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
+sidebar-about-description: "Never let the ending block the light of the story."
 sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
