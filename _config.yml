@@ -12,7 +12,7 @@ github_repo: "https://github.com/iammonster2333/iammonster2333.github.io.git" # 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Take all"
-sidebar-avatar: /img/black.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/black.JPEG      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
