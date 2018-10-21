@@ -55,15 +55,15 @@ kramdown:
 
 
 
-# 评论系统
-# Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
+评论系统
+Disqus（https://disqus.com/）
+disqus_username: justbeshy
 
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
+  clientID: ceaa4d654e339c654d05                         #生成的clientID
+  clientSecret: a8f134d6363599094dc06586e0808df25e34af94    #生成的clientSecret
   repo: Mayshy.github.io    #仓库名称
   owner: Mayshy    #github用户名
   admin: Mayshy
