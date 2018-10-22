@@ -48,4 +48,4 @@ tags:                               #标签
 
 印象笔记用户群 Telegram 群：<https://t.me/yinxiangbiji>
 
-![聪聪](https://i.v2ex.co/V7w7q6W8.png)
+![聪聪](https://i.v2ex.co/9dFf23f7.png)
