@@ -1,15 +1,18 @@
 ---
-layout:     post                    # 使用的布局（不需要改）
-title:      My First Post               # 标题 
-subtitle:   Hello World, Hello Blog #副标题
-date:       2018-10-22              # 时间
-author:     Yang                     # 作者
-header-img: img/post-bg-2015.jpg    #这篇文章标题背景图片
-catalog: true                       # 是否归档
-tags:                               #标签
-    - 算法
+layout:     post
+title:      钟带你看18
+subtitle:   WWDC 20e 全记录
+date:       2018-10-22
+author:     Yang
+header-img: img/post-bg-cook.jpg
+catalog: true
+tags:
+    - iOS
 ---
 
-## Hey
->这是我的第一篇博客。哈哈哈
+## 前言
+
+吧!吧!吧!吧!吧!吧!吧!吧!吧!吧!吧!吧!吧!吧!吧!吧!吧!
+
+
 
