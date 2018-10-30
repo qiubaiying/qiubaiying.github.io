@@ -13,6 +13,8 @@ tags:                               #标签
 
 ##### Mac 顶级应用 PDF Expert 要涨价？用比半价更低的价格拿下它
 
+作者：数码荔枝
+
 PDF Expert 是 macOS 上一款全能型 PDF 编辑工具。它集阅读、创建、编辑批注等功能于一身，但仍轻巧易用，美观的设计与 macOS 本身相得益彰，一经发布便获得众多好评，多次被 Apple 编辑推荐，还是 Mac App Store 2015 年最佳应用。
 
 最近，开发商 Readdle 对 PDF Expert for Mac 进行了一次调价，官网价格由原来的 49.99 美元升至 79.99 美元，中国地区的售价则要求不得低于 ¥199 元人民币。
@@ -74,7 +76,7 @@ PDF Expert 支持编辑文档大纲，你可以通过拖动目录来调整顺序
 
 ![](https://md2img.lizhi.io/datasource/wordpress/wp-content/uploads/2018/06/PDF-Expert03.png)
 
-## 
+###### 最后
 
 总的来说，用 PDF Expert 来查看处理 PDF 文档，就和系统原生一样稳定流畅，而它还拥有更强大的批注、编辑等丰富功能。可以说，PDF Expert 能满足从普通用户到专业用户，对 PDF 文档处理的所有需求。
 
