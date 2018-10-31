@@ -5,7 +5,7 @@ header-img: img/post-bg-desk.jpg
 email: yestinl@qq.com
 description: "Every failure is leading towards success."
 keyword: "我的博客,编程刷题,AI,深度学习,计算机视觉"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+url: "http://yestinl.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/yestinl/yestinl.github.io.git" # you code repository
 
@@ -18,7 +18,7 @@ sidebar-avatar: /img/timg.jpg      # use absolute URL, seeing it's used in both 
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
+# weibo_username:     yestinl
 zhihu_username:     龙衍鑫
 github_username:    yestinl
 #facebook_username:  baiying.qiu.7
