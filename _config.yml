@@ -60,24 +60,16 @@ kramdown:
 # disqus_username: qiubaiying
 
 # Gitalk
-#gitalk:
-#  enable: true    #是否开启Gitalk评论
-#  clientID: dc68028f5dc3721b681f                            #生成的clientID
-# clientSecret: 0a4bf51ba8e1afaa08f9cab8c2f50e35a3c76b35    #生成的clientSecret
-#  repo: RechardWong.github.io    #仓库名称
-#  owner: RechardWong    #github用户名
-#  admin: RechardWong
-#  distractionFreeMode: true #是否启用类似FB的阴影遮罩
-
-# Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  clientID: dc68028f5dc3721b681f                            #生成的clientID
+  clientSecret: 0a4bf51ba8e1afaa08f9cab8c2f50e35a3c76b35    #生成的clientSecret
+  repo: RechardWong.github.io    #仓库名称
+  owner: RechardWong    #github用户名
+  admin: RechardWong
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
+
+
 
 
 # 统计
@@ -109,11 +101,8 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
-    },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
+        title: "简书·Rechard",
+        href: "http://www.jianshu.com/u/5a34c6a1173b"
     },{
         title: "Apple",
         href: "https://apple.com"
