@@ -104,10 +104,10 @@ friends: [
         title: "简书·Rechard",
         href: "http://www.jianshu.com/u/5a34c6a1173b"
     },{
-        title: "Apple",
-        href: "https://apple.com"
+        title: "Pytorch",
+        href: "https://pytorch.org/"
     },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "Fast.ai",
+        href: "https://www.fast.ai/"
     }
 ]
