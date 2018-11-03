@@ -6,8 +6,8 @@ email: qiubaiying@gmail.com
 description: "Every failure is leading towards success."
 keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
 url: "http://ds-reading.github.io"          # your host, for absolute URL
-baseurl: '/ds-reading'    # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+baseurl: 'ds-reading'    # for example, '/blog' if your blog hosted on 'host/blog'
+github_repo: "https://github.com/ds-reading.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
