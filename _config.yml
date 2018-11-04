@@ -1,6 +1,6 @@
 # Site settings
 title: 道格读书会
-SEOTitle: 道格读书会 | BY Blog
+SEOTitle: 道格读书会
 header-img: img/post-bg-desk0.jpg
 email: 1355710181@qq.com
 description: 崇尚科学民主，努力开启民智
@@ -94,7 +94,7 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 chrome-tab-theme-color: "#000000"
 service-worker: true
 
-
+<p><strong>欢迎加入我们在电报里的读书频道 @ https://t.me/DS_reading</strong></p>
 
 # Friends
 友情链接: [
