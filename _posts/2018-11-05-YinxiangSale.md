@@ -1,6 +1,6 @@
 ---
 layout:     post                    # 使用的布局（不需要改）
-title:      印象笔记双十一活动               # 标题 
+title:      印象笔记 2018 十一活动               # 标题 
 subtitle:    #副标题
 date:       2018-11-05              # 时间
 author:     聪聪                      # 作者
