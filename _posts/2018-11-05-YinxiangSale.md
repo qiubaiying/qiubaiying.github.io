@@ -16,7 +16,11 @@ tags:                               #标签
 
 免费账户、标准账户、高级账户都可以在官网续订，高级账户首年六折优惠 ¥88.80 元<br>
 （iTunes Store（iOS 内购）购买的不能参加此活动，因为两者支付体系不同，没法关联）<br>
-官网购买地址：<https://app.yinxiang.com/subscriptions#one-1year-recurring>
+官网购买地址：<https://app.yinxiang.com/subscriptions#one-1year-recurring><br>
+
+如果账户是免费账户，购买后立即升为高级账户；<br>
+如果账户是标准账户，购买后会根据剩余时间计算补差价升为高级账户；<br>
+如果账户是高级账户，购买后直接在已有高级账户时间上延长。
 
 ##### 活动2
 
