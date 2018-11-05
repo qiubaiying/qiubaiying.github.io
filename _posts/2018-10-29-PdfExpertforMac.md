@@ -74,7 +74,7 @@ PDF Expert 不光能批注文档，还能直接编辑 PDF 文档内容，就像�
 
 PDF Expert 支持编辑文档大纲，你可以通过拖动目录来调整顺序和层级。如果原文档没有目录，你也可以点击「大纲」底部的「添加项目」按钮，自行添加目录。
 
-![](https://md2img.lizhi.io/datasource/wordpress/wp-content/uploads/2018/06/PDF-Expert03.png)
+![](http://ww1.sinaimg.cn/large/9b84e6acgy1fwwwgsgoirj20q00m3754.jpg)
 
 ###### 最后
 
