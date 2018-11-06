@@ -24,7 +24,8 @@ tags:                               #标签
 - 在 11.11 号当天零点，还有数百份大牌精选软件，限量秒杀！不管原价多少，到时**统统只要 ¥11.11 元！**
 - 下单前先领取我们的专属优惠券，**还能在已有折扣上，叠加再减 5 元！（券可领多次）**
 
-[领取 ¥5 元专属优惠券 >](https://partner.lizhi.io/congcong/cp)
+[领取 ¥5 元专属优惠券 >](https://partner.lizhi.io/congcong/cp)<br>
+
 [前往「数码荔枝」软件商城 >](https://lizhi.io/store)
 
 ![](http://ww1.sinaimg.cn/large/9b84e6acgy1fwy9rex3xaj20ku0gotaq.jpg)
@@ -59,7 +60,8 @@ tags:                               #标签
 
 实话说，这次不少软件的优惠力度，极有可能是你接下来一年都很难再看到的。
 
-[领取 ¥5 元专属优惠券 >](https://partner.lizhi.io/congcong/cp)
+[领取 ¥5 元专属优惠券 >](https://partner.lizhi.io/congcong/cp)<br>
+
 [前往「数码荔枝」软件商城 >](https://lizhi.io/store)
 
 ![](http://ww1.sinaimg.cn/large/9b84e6acgy1fwy9r0x389g20dw07iqmk.gif)
@@ -74,7 +76,7 @@ tags:                               #标签
 
 以上这些软件并不是全部，一直到 11 月 16 日，数码荔枝全店软件都将 **9.5 折！**
 
-而且，这个折扣和我们的 ¥5 元专属优惠券可叠加使用！[去领券 >](https://partner.lizhi.io/congcong/cp)
+而且，这个折扣和我们的 ¥5 元专属优惠券可叠加使用！[去领券 >](https://partner.lizhi.io/congcong/cp)<br>
 
 [前往「数码荔枝」软件商城 >](https://lizhi.io/store)
 
