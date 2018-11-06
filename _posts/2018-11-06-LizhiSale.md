@@ -2,7 +2,7 @@
 layout:     post                    # 使用的布局（不需要改）
 title:      数码荔枝 11.11 年度大促开始了，折上折的优惠！               # 标题 
 subtitle:    #副标题
-date:       2018-11-05              # 时间
+date:       2018-11-06              # 时间
 author:     聪聪                      # 作者
 header-img:     #这篇文章标题背景图片
 catalog: true                       # 是否归档
