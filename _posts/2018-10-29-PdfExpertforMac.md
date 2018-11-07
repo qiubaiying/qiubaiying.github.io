@@ -93,6 +93,6 @@ PDF Expert 支持编辑文档大纲，你可以通过拖动目录来调整顺序
 ##### 聪聪
 &copy;聪聪：印象笔记资深印象大使 | 印象笔记年度象亲 | 坚果云效率大使 | 幕布布道师 <https://t.me/congcong>
 
-印象笔记 Evernote 群(Telegram)：<https://t.me/yinxiangbiji>
+印象笔记 Evernote 群(Telegram)：<https://t.me/YinxiangBiji>
 
 ![聪聪](https://i.v2ex.co/9dFf23f7.png)
