@@ -85,6 +85,9 @@ PDF Expert 支持编辑文档大纲，你可以通过拖动目录来调整顺序
 - 点击链接领取 [聪聪] ¥5 元专属优惠券 > <https://partner.lizhi.io/congcong/pdf_expert_for_mac>
 - [前往「数码荔枝」商城选购 PDF Expert >](https://partner.lizhi.io/congcong/pdf_expert_for_mac) 
 
+数码荔枝 Telegram 群组：<https://t.me/joinchat/C8fnOFRTu1kqa0tcKfTGoQ>
+数码荔枝 Telegram 频道：<https://t.me/digitalychee>
+
 ---
 
 ##### 优秀的正版软件
