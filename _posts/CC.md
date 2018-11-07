@@ -33,4 +33,4 @@ IT从业者、IT咨询和软件产品爱好者、印象笔记资深印象大使�
 
 印象笔记用户群 Telegram 群：<https://t.me/yinxiangbiji>
 
-![聪聪](https://i.v2ex.co/9dFf23f7.png)
+![聪聪](https://i.v2ex.co/3wc207g5.png)

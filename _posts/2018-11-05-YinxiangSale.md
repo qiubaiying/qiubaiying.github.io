@@ -59,4 +59,4 @@ iTunes Store（iOS 内购）购买的不能参加此活动，因为两者支付�
 
 印象笔记 Evernote 群(Telegram)：<https://t.me/YinxiangBiji>
 
-![聪聪](https://i.v2ex.co/9dFf23f7.png)
+![聪聪](https://i.v2ex.co/3wc207g5.png)
