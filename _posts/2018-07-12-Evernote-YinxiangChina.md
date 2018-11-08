@@ -29,7 +29,7 @@ tags:                               #标签
 
 7，点击查看官方服务通知：[印象笔记新 App 上线进展](https://www.yinxiang.com/blog/blog/category/news/)
 
-8，印象笔记 客户端下载地址
+8，印象笔记 客户端下载地址<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Windows**：[点击下载](https://www.yinxiang.com/download/get.php?file=Win)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Windows XP**：[点击下载](https://cdn.yinxiang.com/win6/public/Evernote_6.7.6.7584.exe)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**macOS 直装**：[点击下载](https://www.yinxiang.com/download/get.php?file=EvernoteMac)<br>
@@ -37,7 +37,7 @@ tags:                               #标签
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**iOS App Store**：[点击下载](https://itunes.apple.com/cn/app/id1356054761)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Android**：[点击下载](https://www.yinxiang.com/download/get.php?file=AndroidYinxiangCom)
 	 
-9，Evernote 客户端下载地址
+9，Evernote 客户端下载地址<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Windows**：[点击下载](https://evernote.com/intl/zh-cn/download)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Windows 商店**：[点击下载](https://www.microsoft.com/zh-cn/store/p/evernote/9wzdncrfj3mb)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**macOS 直装**：[点击下载](https://evernote.com/intl/zh-cn/download)<br>
@@ -48,7 +48,7 @@ tags:                               #标签
 
 10，目前 印象笔记-中国版 本地化的功能进度：
 
-	1. Markdown：Mac 客户端已支持Markdown 功能，Windows 客户端稍后也会上线
+	1. Markdown：Mac/Win 客户端均已支持Markdown 功能
 	2. 锁定密码：Windows 客户端已支持锁定密码功能，Mac 客户端稍后也会上线
 	3. 分享：Android 客户端已支持分享到QQ 空间分享功能， iOS 客户端稍后也会上线
 	4. Widget 剪切版：印象笔记 iOS 客户端 9.2.0 版本已经上线支持，Android 客户端稍后也会上线
