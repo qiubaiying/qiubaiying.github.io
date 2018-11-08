@@ -63,7 +63,7 @@ tags:                               #标签
 	 * 兼容原印象笔记历史功能
 
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* 印象笔记 Markdown 入门指南：[点击查看](https://www.yinxiang.com/markdown-user-guide)
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* Mac 客户端下载地址：[点击下载]([](https://cdn.yinxiang.com/mac-smd/public/YinxiangBiji_RELEASE_8.3.0_457351.dmg)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* Mac 客户端下载地址：[点击下载](https://cdn.yinxiang.com/mac-smd/public/YinxiangBiji_RELEASE_8.3.0_457351.dmg)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* Win 客户端下载地址：[点击下载](https://cdn-dl.yinxiang.com/YXWin6/prerelease/Evernote_6.15.11.405.exe)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* 印象笔记 Evernote 群(Telegram)：<https://t.me/YinxiangBiji>
 
