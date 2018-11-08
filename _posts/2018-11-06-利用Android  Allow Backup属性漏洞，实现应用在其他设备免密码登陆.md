@@ -65,11 +65,9 @@ andriod 模拟器
 ![11.jpg](https://github.com/huangqiuhao/huangqiuhao.github.io/blob/master/img/11.jpg?raw=true)
 
 8、恢复备份的数据，执行命令：adb  restore  com.xxxx.xxxx.ab  点击:RESTORE  MY DATA即可。
-
-
-
+![13.png](https://github.com/huangqiuhao/huangqiuhao.github.io/blob/master/img/13.png?raw=true)
 开始恢复
-
+![14.png](https://github.com/huangqiuhao/huangqiuhao.github.io/blob/master/img/14.png?raw=true)
 
 
 
