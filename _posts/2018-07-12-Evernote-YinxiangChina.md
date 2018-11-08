@@ -52,37 +52,20 @@ tags:                               #标签
 	3. 分享：Android 客户端已支持分享到QQ 空间分享功能， iOS 客户端稍后也会上线
 	4. Widget 剪切版：印象笔记 iOS 客户端 9.2.0 版本已经上线支持，Android 客户端稍后也会上线
 
-11，印象笔记 Mac 客户端 8.2.0 正式版已发布，[点击下载](https://cdn.yinxiang.com/mac-smd/public/YinxiangBiji_RELEASE_8.2.0_457181.dmg)
+11，印象笔记 Mac/Win 客户端均已支持 Markdown 功能
 
-	新增Markdown 笔记功能:
-	 * 一键快速创建Markdown 笔记
-	 * 支持丰富的主流Markdown 语法
+	新增Markdown笔记功能:
+	 * 一键快速创建Markdown笔记
+	 * 支持丰富的主流Markdown语法
 	 * 全面支持多种图片插入方式
 	 * 支持多种编辑/预览模式切换及演示模式
 	 * 支持多种编辑主题，新增默认官方主题色“印象绿”
-	* 兼容原印象笔记历史功能
+	 * 兼容原印象笔记历史功能
 
-	印象笔记新功能：Markdown 详细讲解：https://congcong0806.github.io/2018/08/20/Markdown
-	印象笔记 Markdown 入门指南：https://www.yinxiang.com/markdown-user-guide
-	下载地址：https://cdn.yinxiang.com/mac-smd/public/YinxiangBiji_RELEASE_8.2.0_457181.dmg
-
-12，印象笔记 Windows 客户端 6.15.11 公测版已发布，[点击下载](https://cdn-dl.yinxiang.com/YXWin6/prerelease/Evernote_6.15.11.405.exe)
-
-	新增 pinlock 软件锁定功能功能（6.14.8 正式版就已支持）:
-	 * 开启：菜单栏-工具-密码锁
-	 * 设置或修改密码：菜单栏-工具-选项-安全
-	 * 快捷键：Ctrl+Alt+L（设置中可修改）
-	 * 自动锁定：电脑锁定时自动锁定、最小化到任务栏托盘后锁定、应用程序闲置锁定
-
-	6.15.11 公测版，新增Markdown 笔记功能:
-	 * 一键快速创建Markdown 笔记
-	 * 支持丰富的主流Markdown 语法
-	 * 全面支持多种图片插入方式
-	 * 支持多种编辑/预览模式切换及演示模式
-	 * 支持多种编辑主题，新增默认官方主题色“印象绿”
-	* 兼容原印象笔记历史功能
-
-	下载地址：https://cdn-dl.yinxiang.com/YXWin6/prerelease/Evernote_6.15.11.405.exe
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* 印象笔记 Markdown 入门指南：[点击查看](https://www.yinxiang.com/markdown-user-guide)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* Mac 客户端下载地址：[点击下载]([](https://cdn.yinxiang.com/mac-smd/public/YinxiangBiji_RELEASE_8.3.0_457351.dmg)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* Win 客户端下载地址：[点击下载](https://cdn-dl.yinxiang.com/YXWin6/prerelease/Evernote_6.15.11.405.exe)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* 印象笔记 Evernote 群(Telegram)：<https://t.me/YinxiangBiji>
 
 13，印象笔记 Android 客户端 9.1 正式版已发布，官网和国内各个市场可下载
 
