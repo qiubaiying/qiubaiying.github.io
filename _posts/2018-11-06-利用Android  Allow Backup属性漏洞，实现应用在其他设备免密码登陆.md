@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      APP渗透测试：利用Android  Allow Backup属性漏洞，实现应用在其他设备免密码登陆。
-subtitle:   APP渗透测试：利用Android  Allow Backup属性漏洞，实现应用在其他设备免密码登陆。
+title:      利用Android  Allow Backup属性漏洞，实现应用在其他设备免密码登陆。
+subtitle:   Android渗透测试
 date:       2018-11-06
 author:     黄秋豪
 header-img: img\post-bg-ios9-web.jpg
