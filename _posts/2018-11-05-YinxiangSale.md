@@ -45,6 +45,10 @@ iTunes Store（iOS 内购）购买的不能参加此活动，因为两者支付�
 印象分更灵活，印象分可以按月兑换，当月流量和功能够用的时候就可以不兑换，不够用再兑换，这样下去 120 分可以使用不止是 12 个月<br>
 印象分和兑换高级帐户的地址：<https://app.yinxiang.com/Points.action>
 
+如果买多了或买重复了，联系官方申请退款：<br>
+官方微信：`yxbj100`<br>
+官方支持：<https://app.yinxiang.com/SupportLogin.action>
+
 ##### 促销时间轴
 
 ![印象笔记双十一促销时间轴](https://i.v2ex.co/13Qz5y68.jpeg)
