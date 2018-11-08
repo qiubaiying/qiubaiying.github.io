@@ -1,102 +1,1 @@
----
-layout:     post
-title:      APP渗透测试：利用Android  Allow Backup属性漏洞，实现应用在其他设备免密码登陆。
-subtitle:   APP渗透测试：利用Android  Allow Backup属性漏洞，实现应用在其他设备免密码登陆。
-date:       2018-11-06
-author:     大黄
-header-img: img/post-bg-ios9-web.jpg
-catalog: true
-tags:
-    - Allow Backup
-    - Android 
-
----
-好几个月没有写文章了，因为确实比较忙，我想再不登陆，估计公众号都要废掉了。最近一直不断研究APP渗透测试（Andriod软件测试，IOS软件测试还在学习），也学习了许多知识，当然知识固然重要，如何成为自己知识体系中的一部分还是自己要不断学习思考的，很多学习安全的同学在做渗透测试的时候不知道如何开始，个人认为一定先要学会一个大致体系，依据体系来学习，但是时间不能过长，因为学是学不完的，一定要在不断的实践中总结各种知识和方法，成为自己的经验，才能做到学有所获，学有所长。扯远了，因为老是有人催我学习，所以今天我们主要来学习APP渗透测试中的一点，我们将通过实验来学习并了解Allow Backup属性在APP中的利用方法和危害以及解决方法。
-
-1
-
-allowBackup  概念
-Android 的属性 allowBackup 安全漏洞来自 adb backup 允许任何一个能够打开 USB 调试开关的设备都能从Android 手机中复制整体的的应用数据到其他设备，应用数据被备份之后，所有应用数据都可被读取。既然可被备份，那么就可以被读取，adb restore 容许用户指定一个恢复的数据来恢复应用程序数据的创建。所以，当任何一个应用数据被备份之后，用户即可在另外一个Android 手设备上安装同一个应用，并通过恢复该备份的应用数据到该设备上，该应用即可恢复到被备份的应用程序的状态。实现账号免登陆的目的。
-
-2
-
-ADB命令
-
-Android软件开发工具包。被软件开发工程师用于为特定的软件包、软件框架、硬件平台、操作系统等建立应用软件的开发工具的集合里的一个工具, 用这个工具可以直接操作管理android模拟器或者真实的andriod设备。
-
-3
-
-allowBackup 影响范围
-Android API Level 8 以及以上系统。
-
-4
-
-allowBackup 安全漏洞识别
-allowBackup 风险触发前提条件：未将 AndroidMannifest.xml 文件中的 android:allowBackup 属性值设为 false 
-
-allowBackup 风险位置：AndroidMannifest.xml 文件中的代码：android:allowBackup=true
-
-5
-
-实验环境
-
-apktool 
-
-测试的APP（由于各种原因，不公开测试APP）
-
-andriod 模拟器
-
-6
-
-首先对测试APP进行反编译，查看AndroidMannifest.xml中的allowBackup是否为true，使用apktool进行反编译。
-
-
-
-反编译完成，得到测试APP的目录结构。
-
-
-
-7
-
-编辑查看AndroidMannifest.xml，定位漏洞代码（标红处为true）
-
-
-
-8
-
-进入模拟器执行adb命令:首先检查设备是否在线：adb devices  第一个红框为Android studio模拟器默认目录。第二个为有一个设备在线。如果设备为offline，使用命令：adb  kill-server接着执行adb  start-server即可。
-
-
-
-随后执行adb  shell进入设备，可以看到我们已经进入模拟器
-
-
-
-7
-
-开始备份Apk，执行命令adb backup -nosystem -apk -f com.heoll.ha.ab com.heoll.ha这是出现备份密码，不设置点击BACK MY  DATA即可。
-
-
-
-开始备份
-
-
-
-备份完成
-
-
-
-8
-
-恢复备份的数据，执行命令：adb  restore  com.xxxx.xxxx.ab  点击:RESTORE  MY DATA即可。
-
-
-
-开始恢复
-
-
-
-
-
-
-
+﻿﻿---layout:     posttitle:      APP渗透测试：利用Android  Allow Backup属性漏洞，实现应用在其他设备免密码登陆。subtitle:   APP渗透测试：利用Android  Allow Backup属性漏洞，实现应用在其他设备免密码登陆。date:       2018-11-06author:     大黄header-img: img/post-bg-ios9-web.jpgcatalog: truetags:    - Allow Backup    - Android ---好几个月没有写文章了，因为确实比较忙，我想再不登陆，估计公众号都要废掉了。最近一直不断研究APP渗透测试（Andriod软件测试，IOS软件测试还在学习），也学习了许多知识，当然知识固然重要，如何成为自己知识体系中的一部分还是自己要不断学习思考的，很多学习安全的同学在做渗透测试的时候不知道如何开始，个人认为一定先要学会一个大致体系，依据体系来学习，但是时间不能过长，因为学是学不完的，一定要在不断的实践中总结各种知识和方法，成为自己的经验，才能做到学有所获，学有所长。扯远了，因为老是有人催我学习，所以今天我们主要来学习APP渗透测试中的一点，我们将通过实验来学习并了解Allow Backup属性在APP中的利用方法和危害以及解决方法。1allowBackup  概念Android 的属性 allowBackup 安全漏洞来自 adb backup 允许任何一个能够打开 USB 调试开关的设备都能从Android 手机中复制整体的的应用数据到其他设备，应用数据被备份之后，所有应用数据都可被读取。既然可被备份，那么就可以被读取，adb restore 容许用户指定一个恢复的数据来恢复应用程序数据的创建。所以，当任何一个应用数据被备份之后，用户即可在另外一个Android 手设备上安装同一个应用，并通过恢复该备份的应用数据到该设备上，该应用即可恢复到被备份的应用程序的状态。实现账号免登陆的目的。2ADB命令Android软件开发工具包。被软件开发工程师用于为特定的软件包、软件框架、硬件平台、操作系统等建立应用软件的开发工具的集合里的一个工具, 用这个工具可以直接操作管理android模拟器或者真实的andriod设备。3allowBackup 影响范围Android API Level 8 以及以上系统。4allowBackup 安全漏洞识别allowBackup 风险触发前提条件：未将 AndroidMannifest.xml 文件中的 android:allowBackup 属性值设为 false allowBackup 风险位置：AndroidMannifest.xml 文件中的代码：android:allowBackup=true5实验环境apktool 测试的APP（由于各种原因，不公开测试APP）andriod 模拟器6首先对测试APP进行反编译，查看AndroidMannifest.xml中的allowBackup是否为true，使用apktool进行反编译。header-img: img/post-bg-ios9-web.jpg反编译完成，得到测试APP的目录结构。7编辑查看AndroidMannifest.xml，定位漏洞代码（标红处为true）8进入模拟器执行adb命令:首先检查设备是否在线：adb devices  第一个红框为Android studio模拟器默认目录。第二个为有一个设备在线。如果设备为offline，使用命令：adb  kill-server接着执行adb  start-server即可。随后执行adb  shell进入设备，可以看到我们已经进入模拟器7开始备份Apk，执行命令adb backup -nosystem -apk -f com.heoll.ha.ab com.heoll.ha这是出现备份密码，不设置点击BACK MY  DATA即可。开始备份备份完成8恢复备份的数据，执行命令：adb  restore  com.xxxx.xxxx.ab  点击:RESTORE  MY DATA即可。开始恢复
