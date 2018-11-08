@@ -68,7 +68,7 @@ tags:                               #标签
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* Win 客户端下载地址：[点击下载](https://cdn-dl.yinxiang.com/YXWin6/prerelease/Evernote_6.15.11.405.exe)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* 印象笔记 Evernote 群(Telegram)：<https://t.me/YinxiangBiji>
 
-13，印象笔记 Android 客户端 9.1 正式版已发布，官网和国内各个市场可下载
+12，印象笔记 Android 客户端 9.1 正式版已发布，官网和国内各个市场可下载
 
 	主要更新：支持分享笔记到QQ 空间
 	操作：打开一条笔记，点击顶部分享按钮，进入“共享笔记” -- 点击右上角三个点 -- 选择「分享到QQ空间」
