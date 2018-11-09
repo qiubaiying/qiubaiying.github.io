@@ -4,7 +4,7 @@ title:      数码荔枝 11.11 年度大促开始了，折上折的优惠！    
 subtitle:    #副标题
 date:       2018-11-06              # 时间
 author:     聪聪                      # 作者
-header-img:     #这篇文章标题背景图片
+header-img:    image/双11_2240x840.jpg #这篇文章标题背景图片
 catalog: true                       # 是否归档
 tags:                               #标签
     - App
