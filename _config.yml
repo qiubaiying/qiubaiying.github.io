@@ -64,7 +64,7 @@ gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: ff9b7f3c68ef29ec7f34                            #生成的clientID
   clientSecret: 59ede783e06934cc960b5529add8c16d4d583ff2    #生成的clientSecret
-  repo:  CorsairMaster/CorsairMaster.github.io    #仓库名称
+  repo:  CorsairMaster.github.io    #仓库名称
   owner: corsairmaster    #github用户名
   admin: corsairmaster
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
