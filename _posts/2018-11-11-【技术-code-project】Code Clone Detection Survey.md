@@ -57,11 +57,11 @@ Type-4(T4): 语法结构上不相似，实现的功能一致。
 
 ## 参考资料
 
-[1] CCF推荐国际学术刊物与会议(软件工程/系统软件/程序设计语言) [https://www.ccf.org.cn/xspj/rjgc/xtrj/cxsjyy/](https://www.ccf.org.cn/xspj/rjgc/xtrj/cxsjyy/)
-[2] Roy, Chanchal Kumar and James R. Cordy. “A Survey on Software Clone Detection Research ∗.” (2007).
-[3] Sajnani, Hitesh, et al. "SourcererCC: scaling code clone detection to big-code." Software Engineering (ICSE), 2016 IEEE/ACM 38th International Conference on. IEEE, 2016.
-[4] Svajlenko, Jeffrey, et al. "Towards a big data curated benchmark of inter-project code clones." 2014 IEEE International Conference on Software Maintenance and Evolution (ICSME). IEEE, 2014.
-[5] Kamiya T, Kusumoto S, Inoue K (2002) CCFInder: a multilinguistic token-based code clone detection systemfor large scale source code. Trans Softw Eng 28(7):654–670
-[6] Jiang L, Misherghi G, Su Z, Glondu S (2007a) DECKARD: scalable And accurate tree-based detection ofcode clones. In: ICSE’07, pp 96–105
-[7] C. K. Roy and J. R. Cordy, "NICAD: Accurate Detection of Near-Miss Intentional Clones Using Flexible Pretty-Printing and Code Normalization," 2008 16th IEEE International Conference on Program Comprehension, Amsterdam, 2008, pp. 172-181.
+[1] CCF推荐国际学术刊物与会议(软件工程/系统软件/程序设计语言) [https://www.ccf.org.cn/xspj/rjgc/xtrj/cxsjyy/](https://www.ccf.org.cn/xspj/rjgc/xtrj/cxsjyy/)  
+[2] Roy, Chanchal Kumar and James R. Cordy. “A Survey on Software Clone Detection Research ∗.” (2007).  
+[3] Sajnani, Hitesh, et al. "SourcererCC: scaling code clone detection to big-code." Software Engineering (ICSE), 2016 IEEE/ACM 38th International Conference on. IEEE, 2016.  
+[4] Svajlenko, Jeffrey, et al. "Towards a big data curated benchmark of inter-project code clones." 2014 IEEE International Conference on Software Maintenance and Evolution (ICSME). IEEE, 2014.  
+[5] Kamiya T, Kusumoto S, Inoue K (2002) CCFInder: a multilinguistic token-based code clone detection systemfor large scale source code. Trans Softw Eng 28(7):654–670  
+[6] Jiang L, Misherghi G, Su Z, Glondu S (2007a) DECKARD: scalable And accurate tree-based detection ofcode clones. In: ICSE’07, pp 96–105  
+[7] C. K. Roy and J. R. Cordy, "NICAD: Accurate Detection of Near-Miss Intentional Clones Using Flexible Pretty-Printing and Code Normalization," 2008 16th IEEE International Conference on Program Comprehension, Amsterdam, 2008, pp. 172-181.  
 [8] G¨ode N, Koschke R (2009) Incremental clone detection. In: CSMR’09, pp 219–228
