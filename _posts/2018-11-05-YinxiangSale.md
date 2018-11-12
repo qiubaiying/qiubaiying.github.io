@@ -53,7 +53,7 @@ iTunes Store（iOS 内购）购买的不能参加此活动，因为两者支付�
 ##### 活动5
 
 印象笔记高级账户 返场五折团购 ¥74.00 元，最后12小时<br>
-点击链接参与：<https://h5.youzan.com/wscshop/goods/367qhbyfvykjz><br>
+点击链接参与：<https://h5.youzan.com/wscshop/goods/367qhbyfvykjz> 点击“立即参团”直接购买<br>
 
 免费账户、标准账户、高级账户都可以参加；标准账户、高级账户购买后获得印象分，可用于兑换高级账户<br>
 活动进行到2018年11月12日 20:00 截止
