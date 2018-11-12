@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Google hack渗透测试快捷检测脚本
+title:      Web渗透测试：Google hack语法快捷检测脚本
 subtitle:   web渗透测试
 date:       2018-11-10
 author:     黄秋豪
