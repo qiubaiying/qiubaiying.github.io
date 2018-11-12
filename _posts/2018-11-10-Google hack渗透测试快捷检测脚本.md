@@ -45,7 +45,7 @@ tags:
 8、查看phpinfo()文件泄露
 
 `site:www.baidu.com ext:php intitle:phpinfo “published by the PHP Group”`
-
+ 原创文章，转载请联系：whuangqiuhao@outlook.com
 
 
 
