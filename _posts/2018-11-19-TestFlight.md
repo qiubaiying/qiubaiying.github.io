@@ -41,6 +41,7 @@ WhatsApp <https://testflight.apple.com/join/s4rTJVPb><br>
 Snapchat <https://testflight.apple.com/join/yP1ZHFr0><br>
 Tumblr <https://testflight.apple.com/join/nTNSXGV3><br>
 Todoist <https://testflight.apple.com/join/L2pBORZN><br>
+Pocket <https://testflight.apple.com/join/LxKzQMpu><br>
 Feedly Lab <https://testflight.apple.com/join/DcxRQdP9><br>
 Aurora Reader <https://testflight.apple.com/join/xpyLpCmS><br>
 Fenix for Twitter <https://testflight.apple.com/join/poQA1Iml><br>
@@ -64,10 +65,11 @@ Streaks Workou <https://testflight.apple.com/join/OqYBblCA><br>
 Streaks <https://testflight.apple.com/join/y6qA7TMa><br>
 YACReader <https://testflight.apple.com/join/5zhB7sRP><br>
 Booklover <https://testflight.apple.com/join/Wq7G1vFL><br>
+ownCloud <https://testflight.apple.com/join/Oktj0iKv><br>
 
+Pharos Pro <https://testflight.apple.com/join/Y8f67sac><br>
 Kitsunebi <https://testflight.apple.com/join/2w6EF67u><br>
 A.BIG.T IV <https://testflight.apple.com/join/3aArQFMQ><br>
-Pharos Pro <https://testflight.apple.com/join/Y8f67sac><br>
 Potatso Lite <https://testflight.apple.com/join/NkF46PRd><br>
 BananaNet <https://testflight.apple.com/join/0QhRcg1c><br>
 Thor <https://testflight.apple.com/join/wArXdacJ><br>
