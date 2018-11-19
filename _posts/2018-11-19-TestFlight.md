@@ -31,7 +31,7 @@ Microsoft Excel <https://testflight.apple.com/join/3lIiz1eZ><br>
 Microsoft PowerPoint <https://testflight.apple.com/join/a9Ef0N3g><br>
 Microsoft OneNote <https://testflight.apple.com/join/uDgoqfGS><br>
 Microsoft To-Do <https://testflight.apple.com/join/JSq3UkAz><br>
-Skype For iPhone <https://testflight.apple.com/join/fB5IkJT7><br><br>
+Skype For iPhone <https://testflight.apple.com/join/fB5IkJT7><br>
 Skype For iPad <https://testflight.apple.com/join/vnSIsolv><br>
 Telegram <https://testflight.apple.com/join/SRgSA6ru><br>
 1Password <https://testflight.apple.com/join/flDiG5AU><br>
