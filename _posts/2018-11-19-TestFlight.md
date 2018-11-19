@@ -26,15 +26,20 @@ TestFlight - iOS App 测试版发布渠道
 
 ###### 链接分享
 
-Telegram <https://testflight.apple.com/join/SRgSA6ru><br>
 Microsoft Word <https://testflight.apple.com/join/hw76phYi><br>
 Microsoft Excel <https://testflight.apple.com/join/3lIiz1eZ><br>
 Microsoft PowerPoint <https://testflight.apple.com/join/a9Ef0N3g><br>
 Microsoft OneNote <https://testflight.apple.com/join/uDgoqfGS><br>
 Microsoft To-Do <https://testflight.apple.com/join/JSq3UkAz><br>
+Skype For iPhone <https://testflight.apple.com/join/fB5IkJT7><br><br>
+Skype For iPad <https://testflight.apple.com/join/vnSIsolv><br>
+Telegram <https://testflight.apple.com/join/SRgSA6ru><br>
+1Password <https://testflight.apple.com/join/flDiG5AU><br>
 Day One <https://testflight.apple.com/join/NXLBigzY><br>
+WhatsApp <https://testflight.apple.com/join/s4rTJVPb><br>
 2Do <https://testflight.apple.com/join/McBV96Wi><br>
 Snapchat <https://testflight.apple.com/join/yP1ZHFr0><br>
+Tumblr <https://testflight.apple.com/join/nTNSXGV3><br>
 Todoist <https://testflight.apple.com/join/L2pBORZN><br>
 Feedly Lab <https://testflight.apple.com/join/DcxRQdP9><br>
 Aurora Reader <https://testflight.apple.com/join/xpyLpCmS><br>
@@ -44,7 +49,7 @@ Airmail <https://testflight.apple.com/join/1AcpfFq3><br>
 K Music Player 3 Ultimate <https://testflight.apple.com/join/61zjD0e6><br>
 Kaspersky Security Cloud <https://testflight.apple.com/join/yst7K78b><br>
 简书 iOS 5.0.0 <https://testflight.apple.com/join/qlNiqNNA><br>
- 滴答清单 TickTick <https://testflight.apple.com/join/lCgZjMit><br>
+滴答清单 TickTick <https://testflight.apple.com/join/lCgZjMit><br>
 Opera Touch <https://testflight.apple.com/join/ASrCFVHB><br>
 番组计划 <https://testflight.apple.com/join/N0bwYmVR><br>
 To Dot <https://testflight.apple.com/join/7o1Q4Q8p><br>
