@@ -14,7 +14,7 @@ tags:                               #标签
 
 >One today is worth two tomorrows.--一个今天胜似两个明天.
 
-最近做项目的时候，有个业务需求，就是有个业务本身可以被多个线程共享使用，而且又可以达到线程安全的目的，且绝对线程安全。然后就想过了许多实现方法，最终经过最终考虑，我们决定使用了ThreadLocal,那么为什么选择ThreadLocal呢 接下来先看一个测试类
+最近做项目的时候,有个业务需求,就是有个业务本身可以被多个线程共享使用,而且又可以达到线程安全的目的,且绝对线程安全.然后就想过了许多实现方法,最终经过最终考虑,我们决定使用了ThreadLocal,那么为什么选择ThreadLocal呢 接下来先看一个测试类
 
        public class TestThreadLocal {
              public static void main(String[] args) {
@@ -45,7 +45,7 @@ tags:                               #标签
              }
        }
     
-由此我们不由得进行了反问，创建了两个ThreadLocal<String> ,并且都重新赋值了，那么get的时候，不会覆盖吗？经过测试，结果如下：
+由此我们不由得进行了反问,创建了两个ThreadLocal<String> ,并且都重新赋值了,那么get的时候,不会覆盖吗？经过测试,结果如下:
 
       100
       world
@@ -55,7 +55,7 @@ tags:                               #标签
       null---
       100---
 
-由此可知，并没有进行覆盖，那么ThreadLocal里面到底有个神圣呢?接下来，就随我进行追溯源码吧。
+由此可知,并没有进行覆盖,那么ThreadLocal里面到底有个神圣呢?接下来,就随我进行追溯源码吧.
 
 首先 ThreadLoca的构造方法是个泛型类 
 
@@ -72,13 +72,13 @@ tags:                               #标签
          */
         private final int threadLocalHashCode = nextHashCode();
 
-当执行其 set 方法时 ，源码如下
+当执行其 set 方法时 ,源码如下
     
         // T 表示 泛型 就构造方法里面的泛型
       public void set(T value) {
             // Thread 就是当前执行 ThreadLocal的线程  然后通过getMap 得到一个 ThreadLocalMap   getMap 方法如下
             Thread t = Thread.currentThread();
-            // 根据 当前线程 得到 map  如果为空那么进行创建 （由源代码可以发现 创建的时候，用的是this 创建的 ）
+            // 根据 当前线程 得到 map  如果为空那么进行创建 （由源代码可以发现 创建的时候,用的是this 创建的 ）
             ThreadLocalMap map = getMap(t);
             if (map != null)
                 map.set(this, value);
@@ -99,10 +99,10 @@ tags:                               #标签
                  * by the ThreadLocal class. */
                 ThreadLocal.ThreadLocalMap threadLocals = null;
                 
-                // 创建 ThreadLocalMap   注意 参数是 线程T 但是创建 该ThreadLocalMap时 用的参数是 this 那么this代表的就是 ThreadLocal 所以说 每个new ThreadLocal 就会有其特有的ThreadLocalMap 用来存储信息。
+                // 创建 ThreadLocalMap   注意 参数是 线程T 但是创建 该ThreadLocalMap时 用的参数是 this 那么this代表的就是 ThreadLocal 所以说 每个new ThreadLocal 就会有其特有的ThreadLocalMap 用来存储信息.
                 
                  void createMap(Thread t, T firstValue) {
-                 //  对 ThreadLcoalMap 中的 threadLocals 进行了赋值  每个ThreadLocal 的hashCode 不同，所以每个ThreadLocal 实例对象都有其 ThreadLocalMap
+                 //  对 ThreadLcoalMap 中的 threadLocals 进行了赋值  每个ThreadLocal 的hashCode 不同,所以每个ThreadLocal 实例对象都有其 ThreadLocalMap
                         t.threadLocals = new ThreadLocalMap(this, firstValue);
                     }
                     
@@ -113,7 +113,7 @@ tags:                               #标签
                                 m.remove(this);
                         }
                         
-根据测试结果可以看到  remove 也就是移出的t3的值，但是t2 的值还是照样能够得到。所以通过源码我们知道了 ThreadLocal 的ThreadLocalMap 的key 是 ThreadLocal本身，因为每个ThreadLocal的hashCode都不同,因此不会产生覆盖问题。             
+根据测试结果可以看到  remove 也就是移出的t3的值,但是t2 的值还是照样能够得到.所以通过源码我们知道了 ThreadLocal 的ThreadLocalMap 的key 是 ThreadLocal本身,因为每个ThreadLocal的hashCode都不同,因此不会产生覆盖问题.             
 
             
         
