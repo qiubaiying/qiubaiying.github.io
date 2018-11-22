@@ -34,6 +34,7 @@ Microsoft To-Do <https://testflight.apple.com/join/JSq3UkAz><br>
 Skype For iPhone <https://testflight.apple.com/join/fB5IkJT7><br>
 Skype For iPad <https://testflight.apple.com/join/vnSIsolv><br>
 Telegram <https://testflight.apple.com/join/SRgSA6ru><br>
+Telegram [https://rink.hockeyapp.net](https://rink.hockeyapp.net/apps/c6f5a76f5c364ac89a98b77671ef2d63)<br>
 1Password <https://testflight.apple.com/join/flDiG5AU><br>
 Day One <https://testflight.apple.com/join/NXLBigzY><br>
 WhatsApp <https://testflight.apple.com/join/s4rTJVPb><br>
