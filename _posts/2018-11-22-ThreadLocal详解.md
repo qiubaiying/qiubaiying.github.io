@@ -14,7 +14,7 @@ tags:                               #标签
 
 >One today is worth two tomorrows.--一个今天胜似两个明天.
 
-最近做项目的时候,有个业务需求,就是有个业务本身可以被多个线程共享使用,而且又可以达到线程安全的目的,且绝对线程安全.然后就想过了许多实现方法,最终经过最终考虑,我们决定使用了ThreadLocal,那么为什么选择ThreadLocal呢 接下来先看一个测试类
+最近做项目的时候,有个业务需求,就是有个业务本身可以被多个线程共享使用,而且又可以达到线程安全的目的,且绝对线程安全.然后就想过了许多实现方法,经过最终考虑,我们决定使用了ThreadLocal,那么为什么选择ThreadLocal呢 接下来先看一个测试类
 
        public class TestThreadLocal {
              public static void main(String[] args) {
