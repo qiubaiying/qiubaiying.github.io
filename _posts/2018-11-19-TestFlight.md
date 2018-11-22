@@ -80,6 +80,7 @@ Stealth VPN <https://testflight.apple.com/join/7hke8TEt><br>
 TunSafe VPN <https://testflight.apple.com/join/9gbYAJLB><br>
 WireGuard <https://testflight.apple.com/join/63I19SDT><br>
 Paptter <https://testflight.apple.com/join/YiCQfQv3><br>
+SSRVPN <https://testflight.apple.com/join/EeNKSIBZ><br>
 
 Tower Defense Y2K18 <https://testflight.apple.com/join/yqpELkne><br>
 Rapchat <https://testflight.apple.com/join/JjPmPBK5><br>
