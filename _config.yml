@@ -19,8 +19,8 @@ sidebar-avatar: /img/avatar_g.jpg      # use absolute URL, seeing it's used in b
 # SNS settings
 RSS: false
 # weibo_username:     qiubaiying
-zhihu_username:     JackGao
-github_username:    JackGao
+zhihu_username:    高尚
+github_username:    HelloJackGao
 facebook_username: JackGao
 jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
