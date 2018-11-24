@@ -1,4 +1,5 @@
 # Site setting
+SEOTitle:Hello World!!    #显示在浏览器上搜索的时候显示的标题 
 header-img: img/post-bg-desk.jpg
 email: qiubaiying@gmail.com
 description: "Every failure is leading towards success."
@@ -6,9 +7,8 @@ keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhon
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
 title: JackGao的技术专栏
-SEOTitle:Hello World!!    #显示在浏览器上搜索的时候显示的标题 
 brief-intro: Java and Apple
-url: "https://HelloJackGao.github.io1"
+url: "https://HelloJackGao.github.io"
 
 
 # Sidebar settings
