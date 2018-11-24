@@ -6,9 +6,6 @@ description: "Every failure is leading towards success."
 keyword: "JackGao Java"
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
-title: JackGao的技术专栏
-brief-intro: Java and Apple
-url: "https://HelloJackGao.github.io"
 
 
 # Sidebar settings
