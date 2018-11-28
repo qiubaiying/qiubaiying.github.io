@@ -21,39 +21,39 @@ tags:                               #标签
 一 : 漂亮的数组的问题
 
     对于某些固定的 N,如果数组 A 是整数 1, 2, ..., N 组成的排列,使得:
-    
+
     对于每个 i < j,都不存在 k 满足 i < k < j 使得 A[k] * 2 = A[i] + A[j].
-    
+
     那么数组 A 是漂亮数组.
-    
+
     给定 N,返回任意漂亮数组 A（保证存在一个）. 
-    
+
 实例1:
 
     输入:4
     输出:[2,1,4,3]
-    
+
 实例2:
 
     输入:5
     输出:[3,1,2,5,4]
-    
-那么它的思路是什么呢?  (参阅借鉴了 该博客 ![https://blog.csdn.net/qq_17550379/article/details/83572902])
+
+那么它的思路是什么呢?  (参阅借鉴了 该[博客](https://blog.csdn.net/qq_17550379/article/details/83572902)
 
          这个问题有一个非常美妙的数学解法.首先我们要证明漂亮数组满足这样几种性质
-         
+
          减法（减去一个数仍然是漂亮数组）
-         
+
           (A[k]−x)∗2=A[k]∗2−2∗x≠(A[i]−x+A[j]−x)
-         
+
          乘法（乘上一个数仍然是漂亮数组）
-         
+
           A[k]∗2∗x≠(A[i]+A[j])∗x=A[i]∗x+A[j]∗x
-         
+
           有了上面这两个性质,我们就可以很快解决这个问题了.我们知道一个数组A可以分为奇数部分A1和偶数部分A2.此时我们如果有一个漂亮数组B,我们根据前面的性质知道2*B-1是一个漂亮数组并且是奇数数组,而2*B也是一个漂亮数组并且是偶数数组.
-         
+
          那么我们通过2*B+2*B-1必然可以构成任意一个漂亮数组了.真的非常棒.
-         
+
 实现方法如下:
 
      public static int[] beautifulArray(int N) {
@@ -75,23 +75,23 @@ tags:                               #标签
     //        把list 转换为 数组
             return res.stream().mapToInt(i -> i).toArray();
         }           
-        
+
 测试结果如下:
 
                int[] ints = beautifulArray(6);
-               
+
               System.out.println(Arrays.toString(ints));
-              
+
                [1, 5, 3, 2, 6, 4]          
 
 二 二进制间距问题:
 
     给定一个正整数 N,找到并返回 N 的二进制表示中两个连续的 1 之间的最长距离.
-    
+
     如果没有两个连续的 1,返回 0 .
-    
+
     示例 1:
-    
+
     输入:22
     输出:2
     解释:
@@ -119,13 +119,13 @@ tags:                               #标签
     解释:
     8 的二进制是 0b1000 .
     在 8 的二进制表示中没有连续的 1,所以返回 0 .
-    
+
 根据问题,我们就得到了思路:
 
     定义一个表示间距的变量 dist ,一个表示存在的值的位置的变量 pre
-    
+
     进行相与运算,判断是否有相同的二进制,然后进行判断操作
-    
+
 爱码如下:
 
      public static int  binaryGap(int N) {
@@ -143,46 +143,46 @@ tags:                               #标签
               }
               return dist;
           }
-        
+
 测试如下:
 
               int i = binaryGap(5);
               System.out.println(i);
               
               2        
-    
+
 三 两个数组之间求共同值的最短索引的问题
 
     假设Andy和Doris想在晚餐时选择一家餐厅,并且他们都有一个表示最喜爱餐厅的列表,每个餐厅的名字用字符串表示.
-    
+
     你需要帮助他们用最少的索引和找出他们共同喜爱的餐厅. 如果答案不止一个,则输出所有答案并且不考虑顺序. 你可以假设总是存在一个答案.
-    
+
     输入:
     ["Shogun", "Tapioca Express", "Burger King", "KFC"]
     ["Piatti", "The Grill at Torrey Pines", "Hungry Hunter Steakhouse", "Shogun"]
     输出: ["Shogun"]
     解释: 他们唯一共同喜爱的餐厅是“Shogun”.
-  
+      
     输入:
        ["Shogun", "Tapioca Express", "Burger King", "KFC"]
        ["KFC", "Shogun", "Burger King"]
        输出: ["Shogun"]
        解释: 他们共同喜爱且具有最小索引和的餐厅是“Shogun”,它有最小的索引和1(0+1).
-     
+
 思路来了:
 
     先把一个 数组 进行存放到 map中 另一个 Set数组用来存放共同的 值
-    
+
     遍历第一个数组时  然后判断 该数组里面有没有 第二个数组 对应的该下标的值,
-    
+
     如果包含  说明 他们有共同值,然后得到 一个总的下标值 得到一个数组在map中对应的下标值加上当前的下标值
-           
+
     判断大小,如果更小的话,那么交换最小的值,并且把当前的set清空
-    
+
     保证 永远是 最小的索引.
-    
+
      最后返回 该set集合对应的数组.
-     
+
 爱码如下:
 
       public static String[] findRestaurant(String[] list1, String[] list2) {
@@ -220,7 +220,7 @@ tags:                               #标签
                 String str[]= new String[res.size()];
                 return res.toArray(str);
             }     
-            
+
 测试结果如下:
 
               String[] strings1 = new String[]{"Shogun", "Tapioca Express"};
@@ -233,6 +233,6 @@ tags:                               #标签
               
               Tapioca Express
               Shogun
-              
+
 以上三题就是最近做题时,感觉有点难度的问题,比较烧脑,当然,收获也肯定很多,极力推荐大家多练习.              
-                                             
+​                                             
