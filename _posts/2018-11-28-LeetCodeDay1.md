@@ -1,6 +1,6 @@
 ---
 layout:     post                    # 使用的布局（不需要改）
-title:      算法练习--MoudleOne            # 标题 
+title:      算法练习--ModuleOne            # 标题 
 subtitle:   基于算法实现漂亮的数组,二进制间距,以及两数组求最短索引的问题 #副标题
 date:       2018-11-28              # 时间
 author:     MasterJen                # 作者
