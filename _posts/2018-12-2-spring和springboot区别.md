@@ -20,15 +20,15 @@ tags:                               #标签
 
 1 Spring 简单介绍
       
-    Spring是一个开源框架,Spring是于2003 年兴起的一个轻量级的Java 开发框架,由Rod Johnson 在其著作Expert One-On-One J2EE Development and Design中阐述的部分理念和原型衍生而来.
+    * Spring是一个开源框架,Spring是于2003 年兴起的一个轻量级的Java 开发框架,由Rod Johnson 在其著作Expert One-On-One J2EE Development and Design中阐述的部分理念和原型衍生而来.
     
-    它是为了解决企业应用开发的复杂性而创建的.框架的主要优势之一就是其分层架构,分层架构允许使用者选择使用哪一个组件,同时为 J2EE 应用程序开发提供集成的框架.
+    * 它是为了解决企业应用开发的复杂性而创建的.框架的主要优势之一就是其分层架构,分层架构允许使用者选择使用哪一个组件,同时为 J2EE 应用程序开发提供集成的框架.
     
-    Spring使用基本的JavaBean来完成以前只可能由EJB完成的事情.然而,Spring的用途不仅限于服务器端的开发.
+    * Spring使用基本的JavaBean来完成以前只可能由EJB完成的事情.然而,Spring的用途不仅限于服务器端的开发.
     
-    从简单性、可测试性和松耦合的角度而言,任何Java应用都可以从Spring中受益.Spring的核心是控制反转（IoC）和面向切面（AOP）.
+    * 从简单性、可测试性和松耦合的角度而言,任何Java应用都可以从Spring中受益.Spring的核心是控制反转（IoC）和面向切面（AOP）.
     
-    简单来说,Spring是一个分层的JavaSE/EE full-stack(一站式) 轻量级开源框架.
+    * 简单来说,Spring是一个分层的JavaSE/EE full-stack(一站式) 轻量级开源框架.
        
 2 Spring 优点
 
@@ -67,17 +67,24 @@ tags:                               #标签
 
     * 核心容器:核心容器提供 Spring 框架的基本功能.核心容器的主要组件是 BeanFactory,它是工厂模式的实现.BeanFactory 使用控制反转 （IOC） 模式将应用程序的配置和依赖性规范与实际的应用程序代码分开.
 
+
     * Spring 上下文:Spring 上下文是一个配置文件,向 Spring 框架提供上下文信息.Spring 上下文包括企业服务,例如 JNDI、EJB、电子邮件、国际化、校验和调度功能.
+
     
     * Spring AOP:通过配置管理特性,Spring AOP 模块直接将面向方面的编程功能集成到了 Spring 框架中.所以,可以很容易地使 Spring 框架管理的任何对象支持 AOP.Spring AOP 模块为基于 Spring 的应用程序中的对象提供了事务管理服务.通过使用 Spring AOP,不用依赖 EJB 组件,就可以将声明性事务管理集成到应用程序中.
+
     
     * Spring DAO:JDBC DAO 抽象层提供了有意义的异常层次结构,可用该结构来管理异常处理和不同数据库供应商抛出的错误消息.异常层次结构简化了错误处理,并且极大地降低了需要编写的异常代码数量（例如打开和关闭连接）.Spring DAO 的面向 JDBC 的异常遵从通用的 DAO 异常层次结构.
+
     
     * Spring ORM:Spring 框架插入了若干个 ORM 框架,从而提供了 ORM 的对象关系工具,其中包括 JDO、Hibernate 和 iBatis SQL Map.所有这些都遵从 Spring 的通用事务和 DAO 异常层次结构.
+
     
     * Spring Web 模块:Web 上下文模块建立在应用程序上下文模块之上,为基于 Web 的应用程序提供了上下文.所以,Spring 框架支持与 Jakarta Struts 的集成.Web 模块还简化了处理多部分请求以及将请求参数绑定到域对象的工作.
+
     
     * Spring MVC 框架:MVC 框架是一个全功能的构建 Web 应用程序的 MVC 实现.通过策略接口,MVC 框架变成为高度可配置的,MVC 容纳了大量视图技术,其中包括 JSP、Velocity、Tiles、iText 和 POI.3
+
 5 Spring 中的Aop 切面编程 实现原理
 
     aop底层将采用代理机制进行实现.
@@ -124,7 +131,9 @@ Spring就这样简单的介绍完成了.
 
 二 Spring MVC 是什么东东呢?
 
-         SpringMVC是一种基于Java,实现了Web MVC设计模式,请求驱动类型的轻量级Web框架,即使用了MVC架构模式的思想,将Web层进行职责解耦.基于请求驱动指的就是使用请求-响应模型,框架的目的就是帮助我们简化开发,SpringMVC也是要简化我们日常Web开发.
+         SpringMVC是一种基于Java,实现了Web MVC设计模式,请求驱动类型的轻量级Web框架 
+         
+         即使用了MVC架构模式的思想,将Web层进行职责解耦.基于请求驱动指的就是使用请求-响应模型,框架的目的就是帮助我们简化开发,SpringMVC也是要简化我们日常Web开发.
          
 1 SpringMVC架构 
 
@@ -188,9 +197,9 @@ Spring就这样简单的介绍完成了.
     
        6、创建独立Spring应用程序,嵌入式Tomcat,Jetty容器,无需部署WAR包,简化Maven及Gradle配置,尽可能的自动化配置Spring,直接植入产品环境下的实用功能,比如度量指标、健康检查及扩展配置等,无需代码生成及XML配置.
       
-至于详细的 SpringBoot微服务介绍 ,可以欣赏此[博客](https://blog.csdn.net/fly_zhyu/article/details/76407830),这位博主对Springboot 微服务 进行了详细的介绍,自我感觉还是总结的很棒的,相信对大家会有帮助的.
+* 至于详细的 SpringBoot微服务介绍 ,可以欣赏此[博客](https://blog.csdn.net/fly_zhyu/article/details/76407830),这位博主对Springboot 微服务 进行了详细的介绍,自我感觉还是总结的很棒的,相信对大家会有帮助的.
 
-四 了解完这些,相信大家对 上面的三个东东也已经有了 详细的认知了,那么接下来,我就对其进行一个总结吧
+四 了解完这些,相信大家对上面的三个东东也已经有了 详细的认知了,那么接下来,我就对其进行一个总结吧
 
     1 spring boot就是一个大框架里面包含了许许多多的东西,其中spring就是最核心的内容之一,当然就包含spring mvc.
       
