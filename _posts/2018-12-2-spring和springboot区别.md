@@ -18,10 +18,9 @@ tags:                               #标签
 
 一 Spring  
 
-* Spring 简单介绍
-
-    
-     Spring是一个开源框架,Spring是于2003 年兴起的一个轻量级的Java 开发框架,由Rod Johnson 在其著作Expert One-On-One J2EE Development and Design中阐述的部分理念和原型衍生而来.
+1 Spring 简单介绍
+      
+    Spring是一个开源框架,Spring是于2003 年兴起的一个轻量级的Java 开发框架,由Rod Johnson 在其著作Expert One-On-One J2EE Development and Design中阐述的部分理念和原型衍生而来.
     
     它是为了解决企业应用开发的复杂性而创建的.框架的主要优势之一就是其分层架构,分层架构允许使用者选择使用哪一个组件,同时为 J2EE 应用程序开发提供集成的框架.
     
@@ -30,10 +29,8 @@ tags:                               #标签
     从简单性、可测试性和松耦合的角度而言,任何Java应用都可以从Spring中受益.Spring的核心是控制反转（IoC）和面向切面（AOP）.
     
     简单来说,Spring是一个分层的JavaSE/EE full-stack(一站式) 轻量级开源框架.
-    
-    
-*  Spring 优点
-
+       
+2 Spring 优点
 
       * 方便解耦,简化开发 （高内聚低耦合） 
        
@@ -61,11 +58,12 @@ tags:                               #标签
        
              Spring 对JavaEE开发中非常难用的一些API（JDBC、JavaMail、远程调用等）,都提供了封装,使这些API应用难度大大降低
 
-* Spring 体系结构
+3 Spring 体系结构
 
 ![Spring结构图](https://raw.githubusercontent.com/CorsairMaster/img-store/master/boke/spring.png)
     
 * Spring 中的每个模块都可以单独存在
+
 
     * 核心容器:核心容器提供 Spring 框架的基本功能.核心容器的主要组件是 BeanFactory,它是工厂模式的实现.BeanFactory 使用控制反转 （IOC） 模式将应用程序的配置和依赖性规范与实际的应用程序代码分开.
 
@@ -80,8 +78,7 @@ tags:                               #标签
     * Spring Web 模块:Web 上下文模块建立在应用程序上下文模块之上,为基于 Web 的应用程序提供了上下文.所以,Spring 框架支持与 Jakarta Struts 的集成.Web 模块还简化了处理多部分请求以及将请求参数绑定到域对象的工作.
     
     * Spring MVC 框架:MVC 框架是一个全功能的构建 Web 应用程序的 MVC 实现.通过策略接口,MVC 框架变成为高度可配置的,MVC 容纳了大量视图技术,其中包括 JSP、Velocity、Tiles、iText 和 POI.3
-* Spring 中的Aop 切面编程 实现原理
-
+5 Spring 中的Aop 切面编程 实现原理
 
     aop底层将采用代理机制进行实现.
 
@@ -89,8 +86,7 @@ tags:                               #标签
 
     实现类:spring 采用 cglib字节码增强. 
     
-* Spring Aop 基本术语
-
+6 Spring Aop 基本术语
 
     1.target:目标类,需要被代理的类.例如:UserService 
     
@@ -110,8 +106,7 @@ tags:                               #标签
        
         一个切入点和一个通知,组成成一个特殊的面. 
         
-* Spring 中的 IOC  容器
-
+7 Spring 中的 IOC  容器
 
        Spring 设计的核心是 org.springframework.beans 包,它的设计目标是与 JavaBean 组件一起使用.
        
@@ -119,11 +114,11 @@ tags:                               #标签
        
        下一个最高级抽象是 BeanFactory 接口,它是工厂设计模式的实现,允许通过名称创建和检索对象.BeanFactory 也可以管理对象之间的关系.              
    
-* BeanFactory 支持两个对象模型.
+8 BeanFactory 支持两个对象模型.
    
-   * 单态 模型提供了具有特定名称的对象的共享实例,可以在查询时对其进行检索.Singleton 是默认的也是最常用的对象模型.对于无状态服务对象很理想.
+    * 单态 模型提供了具有特定名称的对象的共享实例,可以在查询时对其进行检索.Singleton 是默认的也是最常用的对象模型.对于无状态服务对象很理想.
    
-   * 原型 模型确保每次检索都会创建单独的对象.在每个用户都需要自己的对象时,原型模型最适合.
+    * 原型 模型确保每次检索都会创建单独的对象.在每个用户都需要自己的对象时,原型模型最适合.
    
 Spring就这样简单的介绍完成了.
 
@@ -131,12 +126,11 @@ Spring就这样简单的介绍完成了.
 
          SpringMVC是一种基于Java,实现了Web MVC设计模式,请求驱动类型的轻量级Web框架,即使用了MVC架构模式的思想,将Web层进行职责解耦.基于请求驱动指的就是使用请求-响应模型,框架的目的就是帮助我们简化开发,SpringMVC也是要简化我们日常Web开发.
          
-* SpringMVC架构 
+1 SpringMVC架构 
 
 ![SpringMVC](https://raw.githubusercontent.com/CorsairMaster/img-store/master/boke/SpringMVC.png)    
 
-* Spring MVC具体的操作流程 如下:
-
+2 Spring MVC具体的操作流程 如下:
     
         （1）首先用户发送请求——>DispatcherServlet,前端控制器收到请求后自己不进行处理,而是委托给其他的解析器进行处理,作为统一访问点,进行全局的流程控制；
         
@@ -152,20 +146,18 @@ Spring就这样简单的介绍完成了.
         
         （7）返回控制权给DispatcherServlet,由DispatcherServlet返回响应给用户,到此一个流程结束.
       
-* 那么 HandlerMapping 映射处理器是怎么实现功能的呢?
-
-   
+3 那么 HandlerMapping 映射处理器是怎么实现功能的呢?
+ 
     HandlerMapping 将会把请求映射为 HandlerExecutionChain 对象（包含一个 Handler 处理器（页面控制器）对象、多个 HandlerInterceptor 拦截器）对象,通过这种策略模式,很容易添加新的映射策略.
     
     映射处理器有三种,三种可以共存,相互不影响,分别是BeanNameUrlHandlerMapping、SimpleUrlHandlerMapping和ControllerClassNameHandlerMapping；
     
-* HandlerMapping 架构图如下:
+4 HandlerMapping 架构图如下:
 
 ![HandlerMapping](https://raw.githubusercontent.com/CorsairMaster/img-store/master/boke/Handlermapping.png) 
     
-* 处理器适配器 HandlerAdapter
-
-    
+5 处理器适配器 HandlerAdapter
+   
     处理器适配器有两种,可以共存,分别是SimpleControllerHandlerAdapter和HttpRequestHandlerAdapter.
     
     SimpleControllerHandlerAdapter 
@@ -182,9 +174,8 @@ Spring就这样简单的介绍完成了.
 
     Spring Boot是由Pivotal团队提供的全新框架,其设计目的是用来简化新Spring应用的初始搭建以及开发过程.该框架使用了特定的方式来进行配置,从而使开发人员不再需要定义样板化的配置.用我的话来理解,就是spring boot其实不是什么新的框架,它默认配置了很多框架的使用方式,就像maven整合了所有的jar包,spring boot整合了所有的框架（不知道这样比喻是否合适）.
     
-* 那么 使用 Spring Boot 有什么好处呢?
-
-    
+1 那么 使用 Spring Boot 有什么好处呢?
+  
          1.去除了大量的xml配置文件
     
        2.简化复杂的依赖管理
@@ -211,8 +202,7 @@ Spring就这样简单的介绍完成了.
      
       Spring Boot 是基于 Spring4 的条件注册的一套快速开发整合包    
       
-* 或者说 
-
+或者说 
 
     1. Spring 框架就像一个家族,有众多衍生产品例如 boot、security、jpa等等.但他们的基础都是Spring的ioc、aop等. ioc 提供了依赖注入的容器, aop解决了面向横切面编程,然后在此两者的基础上实现了其他延伸产品的高级功能；
     
