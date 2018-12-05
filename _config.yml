@@ -1,10 +1,10 @@
 # Site settings
-title: BY Blog
-SEOTitle: 徐杰的博客 | BY Blog
+title: Gypsophila Blog
+SEOTitle: 徐杰的博客 | Gypsophila Blog
 header-img: img/post-bg-desk.jpg
 email: hb_xujie@qq.com
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, Gypsophila的博客, Gypsophila, xujie007, iOS, Apple, iPhone"
+keyword: "Gypsophila, BY Blog, Gypsophila的博客, Gypsophila, xujie007, iOS, Apple, iPhone"
 url: "http://xujie007.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/xujie007/xujie007.github.io.git" # you code repository
