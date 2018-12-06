@@ -68,6 +68,7 @@ YACReader <https://testflight.apple.com/join/5zhB7sRP><br>
 Booklover <https://testflight.apple.com/join/Wq7G1vFL><br>
 ownCloud <https://testflight.apple.com/join/Oktj0iKv><br>
 捷径社区 <https://testflight.apple.com/join/LeuKqKYX><br>
+ttte for Twitter <https://testflight.apple.com/join/YsHONy5I><br>
 
 Pharos Pro <https://testflight.apple.com/join/3i6uBkB4><br>
 Kitsunebi <https://testflight.apple.com/join/2w6EF67u><br>
