@@ -55,7 +55,7 @@ kramdown:
 
 
 
-# 评论系统
+
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
