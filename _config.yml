@@ -56,9 +56,6 @@ kramdown:
 
 
 # 评论系统
-# Disqus（https://disqus.com/）
-# disqus_username: shuikezhang
-
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
@@ -74,9 +71,6 @@ gitalk:
 
 
 # 统计
-
-
-
 # Google Analytics
 ga_track_id: 'UA-130628430-1'            # Format: UA-xxxxxx-xx
 ga_domain: yuwenlove.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
