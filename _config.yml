@@ -22,7 +22,7 @@ RSS: false
 zhihu_username:      username
 github_username:    shuikezhang
 facebook_username:  username
-jianshu_username:   username
+jianshu_username:   a81e50a41d49
 #twitter_username:   shuikezhang
 
 
@@ -88,6 +88,22 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
 service-worker: true
+
+# Friends
+friends: [
+    {
+        title: "WY",
+        href: "http://zhengwuyang.com"
+    },{
+        title: "简书·BY",
+        href: "http://www.jianshu.com/u/# Friends
+friends: [
+    {
+        title: "简书·BY",
+        href: "http://www.jianshu.com/u/e71990ada2fd"
+    }
+    
+]
 
 
 
