@@ -33,3 +33,7 @@ Temporary Items
 
 # debug file
 _site
+
+# phpstorm project files
+.idea
+.idea/*
