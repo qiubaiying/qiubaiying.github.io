@@ -31,23 +31,27 @@ Microsoft Excel <https://testflight.apple.com/join/3lIiz1eZ><br>
 Microsoft PowerPoint <https://testflight.apple.com/join/a9Ef0N3g><br>
 Microsoft OneNote <https://testflight.apple.com/join/uDgoqfGS><br>
 Microsoft To-Do <https://testflight.apple.com/join/JSq3UkAz><br>
+Cortana <https://testflight.apple.com/join/4IHpEYnz><br>
 Skype For iPhone <https://testflight.apple.com/join/fB5IkJT7><br>
 Skype For iPad <https://testflight.apple.com/join/vnSIsolv><br>
 Telegram <https://testflight.apple.com/join/SRgSA6ru><br>
 Telegram X [https://rink.hockeyapp.net](https://rink.hockeyapp.net/apps/c6f5a76f5c364ac89a98b77671ef2d63)<br>
 1Password <https://testflight.apple.com/join/flDiG5AU><br>
+Enpass <https://testflight.apple.com/join/hIec0gli><br>
 Day One <https://testflight.apple.com/join/NXLBigzY><br>
 WhatsApp <https://testflight.apple.com/join/s4rTJVPb><br>
 2Do <https://testflight.apple.com/join/McBV96Wi><br>
 Snapchat <https://testflight.apple.com/join/yP1ZHFr0><br>
 Google Chrome <https://testflight.apple.com/join/LPQmtkUs><br>
 Firefox Beta <https://testflight.apple.com/join/JdsubPZs><br>
+Opera <https://testflight.apple.com/join/ASrCFVHB><br>
 1Blocker X <https://testflight.apple.com/join/KjmVWFnT><br>
 Tumblr <https://testflight.apple.com/join/nTNSXGV3><br>
 Todoist <https://testflight.apple.com/join/L2pBORZN><br>
 Pocket <https://testflight.apple.com/join/LxKzQMpu><br>
 Feedly Lab <https://testflight.apple.com/join/DcxRQdP9><br>
 Spotify Music <https://testflight.apple.com/join/1SyedSId><br>
+Signal <https://testflight.apple.com/join/8FHtd1Jq><br>
 Aurora Reader <https://testflight.apple.com/join/xpyLpCmS><br>
 Fenix for Twitter <https://testflight.apple.com/join/poQA1Iml><br>
 Cover Screenshot <https://testflight.apple.com/join/bKTfTrvV><br>
@@ -74,6 +78,8 @@ ownCloud <https://testflight.apple.com/join/Oktj0iKv><br>
 捷径社区 <https://testflight.apple.com/join/LeuKqKYX><br>
 ttte for Twitter <https://testflight.apple.com/join/YsHONy5I><br>
 Termius - SSH client <https://testflight.apple.com/join/MnuClabg><br>
+WordPress <https://testflight.apple.com/join/AkJQt8Pw><br>
+BeSafe <https://testflight.apple.com/join/ICUaKS17><br>
 
 Pharos Pro <https://testflight.apple.com/join/3i6uBkB4><br>
 Kitsunebi <https://testflight.apple.com/join/2w6EF67u><br>
@@ -90,6 +96,7 @@ WireGuard <https://testflight.apple.com/join/63I19SDT><br>
 Paptter <https://testflight.apple.com/join/YiCQfQv3><br>
 SSRVPN <https://testflight.apple.com/join/EeNKSIBZ><br>
 i2Ray-V2Ray Proxy Manager <https://testflight.apple.com/join/K57owAmM><br>
+Paptter <https://testflight.apple.com/join/YiCQfQv3><br>
 
 Tower Defense Y2K18 <https://testflight.apple.com/join/yqpELkne><br>
 Rapchat <https://testflight.apple.com/join/JjPmPBK5><br>
