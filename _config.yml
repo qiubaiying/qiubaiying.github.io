@@ -7,7 +7,7 @@ description: "功不唐捐"
 keyword: "CJY, CJY Blog, 传说的博客, chenjinyi, Cheney Chen, CTF, ACM"
 url: "http://chenjinyi.top"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -19,10 +19,9 @@ sidebar-avatar: /img/avatar-m      # use absolute URL, seeing it's used in both 
 # SNS settings
 RSS: false
 # weibo_username:     传说
-zhihu_username:     传说
+#zhihu_username:     传说
 github_username:    13559837742
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
+#facebook_username:  baiying.qiu.7
 #twitter_username:   CheneyChen
 
 
@@ -60,14 +59,14 @@ kramdown:
 # disqus_username: qiubaiying
 
 # Gitalk
-gitalk:
-  enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: 13559837742.github.io    #仓库名称
-  owner: 13559837742    #github用户名
-  admin: 13559837742
-  distractionFreeMode: true #是否启用类似FB的阴影遮罩
+#gitalk:
+  #enable: true    #是否开启Gitalk评论
+  #clientID: f2c84e7629bb1446c1a4                            #生成的clientID
+  #clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
+  #repo: 13559837742.github.io    #仓库名称
+  #owner: 13559837742    #github用户名
+  #admin: 13559837742
+  #distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
 # 统计
@@ -86,19 +85,19 @@ ga_domain: chenjinyi.top               # 默认的是 auto, 这里我是自定�
 
 
 # Featured Tags
-featured-tags: true                     # 是否使用首页标签
-featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+#featured-tags: true                     # 是否使用首页标签
+#featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
 
 
 
 # Progressive Web Apps
-chrome-tab-theme-color: "#000000"
-service-worker: true
+#chrome-tab-theme-color: "#000000"
+#service-worker: true
 
 
 
 # Friends
-friends: [
+#friends: [
     {
         title: "WY",
         href: "http://zhengwuyang.com"
