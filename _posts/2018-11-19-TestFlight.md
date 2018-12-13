@@ -69,6 +69,7 @@ Booklover <https://testflight.apple.com/join/Wq7G1vFL><br>
 ownCloud <https://testflight.apple.com/join/Oktj0iKv><br>
 捷径社区 <https://testflight.apple.com/join/LeuKqKYX><br>
 ttte for Twitter <https://testflight.apple.com/join/YsHONy5I><br>
+Firefox Beta <https://testflight.apple.com/join/JdsubPZs><br>
 
 Pharos Pro <https://testflight.apple.com/join/3i6uBkB4><br>
 Kitsunebi <https://testflight.apple.com/join/2w6EF67u><br>
