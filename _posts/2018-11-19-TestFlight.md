@@ -40,6 +40,9 @@ Day One <https://testflight.apple.com/join/NXLBigzY><br>
 WhatsApp <https://testflight.apple.com/join/s4rTJVPb><br>
 2Do <https://testflight.apple.com/join/McBV96Wi><br>
 Snapchat <https://testflight.apple.com/join/yP1ZHFr0><br>
+Google Chrome <https://testflight.apple.com/join/LPQmtkUs><br>
+Firefox Beta <https://testflight.apple.com/join/JdsubPZs><br>
+1Blocker X <https://testflight.apple.com/join/KjmVWFnT><br>
 Tumblr <https://testflight.apple.com/join/nTNSXGV3><br>
 Todoist <https://testflight.apple.com/join/L2pBORZN><br>
 Pocket <https://testflight.apple.com/join/LxKzQMpu><br>
@@ -69,7 +72,7 @@ Booklover <https://testflight.apple.com/join/Wq7G1vFL><br>
 ownCloud <https://testflight.apple.com/join/Oktj0iKv><br>
 捷径社区 <https://testflight.apple.com/join/LeuKqKYX><br>
 ttte for Twitter <https://testflight.apple.com/join/YsHONy5I><br>
-Firefox Beta <https://testflight.apple.com/join/JdsubPZs><br>
+Termius - SSH client <https://testflight.apple.com/join/MnuClabg><br>
 
 Pharos Pro <https://testflight.apple.com/join/3i6uBkB4><br>
 Kitsunebi <https://testflight.apple.com/join/2w6EF67u><br>
@@ -124,6 +127,21 @@ KidText.me <https://testflight.apple.com/join/zboNKVYO><br>
 fmoji <https://testflight.apple.com/join/ZfyeFB1S><br>
 VFeed <https://testflight.apple.com/join/ZdC5U0fR><br>
 Status - Ethereum. Anywhere. <https://testflight.apple.com/join/J8EuJmey><br>
+FotMob Live Soccer Scores <https://testflight.apple.com/join/zEAwGlrV><br>
+FanFiction.Net <https://testflight.apple.com/join/NLrhkf2U><br>
+Emma - Money Management <https://testflight.apple.com/join/KSO9dtAn><br>
+Discord <https://testflight.apple.com/join/gdE4pRzI><br>
+DEV Community <https://testflight.apple.com/join/7Wq8VRLQ><br>
+detektor.fm beta <https://testflight.apple.com/join/XocX8UGc><br>
+Comet for reddit <https://testflight.apple.com/join/AShWXMYH><br>
+CoinView <https://testflight.apple.com/join/zjjpM7eC><br>
+CHUNE <https://testflight.apple.com/join/7gH8i3pN><br>
+CARROT Fit <https://testflight.apple.com/join/rhsofJcx><br>
+Beatwave <https://testflight.apple.com/join/2ZowJ3D3><br>
+TV Time - #1 Show Tracker <https://testflight.apple.com/join/hjKkDsc4><br>
+Buffer: Social Media Manager <https://testflight.apple.com/join/DOpMcusn><br>
+AnyList <https://testflight.apple.com/join/xwvLPc6o><br>
+Andrana Project <https://testflight.apple.com/join/RorSFmpx><br>
 
 ---
 
