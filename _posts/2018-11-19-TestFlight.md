@@ -47,6 +47,7 @@ Tumblr <https://testflight.apple.com/join/nTNSXGV3><br>
 Todoist <https://testflight.apple.com/join/L2pBORZN><br>
 Pocket <https://testflight.apple.com/join/LxKzQMpu><br>
 Feedly Lab <https://testflight.apple.com/join/DcxRQdP9><br>
+Spotify Music <https://testflight.apple.com/join/1SyedSId><br>
 Aurora Reader <https://testflight.apple.com/join/xpyLpCmS><br>
 Fenix for Twitter <https://testflight.apple.com/join/poQA1Iml><br>
 Cover Screenshot <https://testflight.apple.com/join/bKTfTrvV><br>
