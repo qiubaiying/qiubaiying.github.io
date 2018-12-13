@@ -69,13 +69,13 @@ gitalk:
   admin: 13559837742
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
-/*
+
 # 统计
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: b50bf2b12b5338a1845e33832976fd68
-*/
+#ba_track_id: b50bf2b12b5338a1845e33832976fd68
+
 
 # Google Analytics
 ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
