@@ -1,10 +1,10 @@
 # Site settings
-title: Zyter's Blog
-SEOTitle: Zyter | BY Blog
+title: Zyter's Blog |张悦橦的博客
+SEOTitle: Zyter.cn | 张悦橦的博客
 header-img: img/post-bg-desk.jpg
 email: 285863821@qq.com
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 张悦橦的博客, zyter, iOS, Apple, iPhone"
+keyword: "博客, 张悦橦的博客, Zyter,zyter.cn "
 url: "http://zc2110340.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
