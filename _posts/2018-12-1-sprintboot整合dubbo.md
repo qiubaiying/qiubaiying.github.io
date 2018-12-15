@@ -322,7 +322,7 @@ Mapper如下:
             return applicationConfig;
         }
     
-        //<dubbo:registry protocol="zookeeper" address="qianfeng1.qfjava.cn:8601"/>
+        //<dubbo:registry protocol="zookeeper" address=""/>
         @Bean
         public RegistryConfig registryConfig() {
             RegistryConfig registryConfig = new RegistryConfig();
