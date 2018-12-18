@@ -19,10 +19,10 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 # SNS settings
 RSS: false
 # weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
+zhihu_username:     liu-tian-jiao-72
+github_username:    liutianjiao1023
+facebook_username:  liutianjiao77
+jianshu_username:   7b55a5a2d381
 #twitter_username:   qiubaiying
 
 
@@ -98,13 +98,7 @@ service-worker: true
 
 # Friends
 friends: [
-    {
-        title: "WY",
-        href: "http://zhengwuyang.com"
-    },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
-    },{
+   {
         title: "Apple",
         href: "https://apple.com"
     },{
