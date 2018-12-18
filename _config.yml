@@ -62,8 +62,8 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: 12b6ccd3b95cd465689f #生成的clientID
-  clientSecret: c8e4f885bdf63482fab4ab6311055db0ed86c3aa    #生成的clientSecret
+  clientID: 64a3153668b96b2d0336 #生成的clientID
+  clientSecret: d2430c29b66235fd8d39d711eae332d8b3d41ebd    #生成的clientSecret
   repo: Jiahyemail.github.io    #仓库名称
   owner: Jiahyemail    #github用户名
   admin: Jiahyemail
