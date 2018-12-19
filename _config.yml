@@ -1,6 +1,6 @@
 # Site settings
 title: Sphinx Blog
-SEOTitle: 袁翔的博客 | BY Blog
+SEOTitle: 袁翔的博客 | YX Blog
 header-img: img/post-bg-desk.jpg
 email: 1162931598@qq.com
 description: "Every failure is leading towards success."
@@ -17,11 +17,11 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 
 # SNS settings
 RSS: false
- weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
+ weibo_username:     YX
+zhihu_username:     YX
+github_username:    YX
+facebook_username:  YX
+#jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
 
 
@@ -76,8 +76,8 @@ gitalk:
 ba_track_id: b50bf2b12b5338a1845e33832976fd68
 
 # Google Analytics
-ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+#ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
+#ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
@@ -90,8 +90,8 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 
 
 # Progressive Web Apps
-chrome-tab-theme-color: "#000000"
-service-worker: true
+#chrome-tab-theme-color: "#000000"
+#service-worker: true
 
 
 
