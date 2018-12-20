@@ -12,7 +12,7 @@ github_repo: "https://github.com/yuan6238816/yuan6238816.github.io.git" # you co
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "温暖纯良 不舍爱与自由"
-sidebar-avatar: /img/about-YX-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/about-yx-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
