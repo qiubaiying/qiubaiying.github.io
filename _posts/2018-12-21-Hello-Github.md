@@ -16,6 +16,8 @@ tags:                               #标签
 进入你的博客主页，新的文章将会出现在你的主页上.
 Please show me!
 
+这里去申请 [Gitalk Application](https://github.com/settings/applications/new)
+
 作者：BYLtan
 链接：https://www.jianshu.com/p/e68fba58f75c
 來源：简书
