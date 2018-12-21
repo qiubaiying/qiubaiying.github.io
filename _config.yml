@@ -98,17 +98,17 @@ friends: [
         title: "Android",
         href: "https://www.android.com/"
     },{
-        title:"Android Developer",
+        title: "Android Developer",
         href: "https://developer.android.com"
     },{
-        title:"Kotlin",
-        href:"https://kotlinlang.org/"
+        title: "Kotlin",
+        href: "https://kotlinlang.org/"
     },{
-        title:"React native",
+        title: "React native",
         href: "https://facebook.github.io/react-native/"
     },{
-        title:"Flutter",
-        href:"https://flutter.io/"
+        title: "Flutter",
+        href: "https://flutter.io/"
     },{
         title: "Apple",
         href: "https://apple.com"
