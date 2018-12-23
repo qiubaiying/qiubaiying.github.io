@@ -1,6 +1,6 @@
 
 
-![](https://raw.githubusercontent.com/tanliner/tanliner.github.io/master/img/preview.png)
+![](https://raw.githubusercontent.com/tanliner/tanliner.github.io/master/img/readme_preview.png)
 
 [![Build Status](https://travis-ci.org/tanliner/tanliner.github.io.svg?branch=master)](https://travis-ci.org/tanliner/tanliner.github.io/)
 [![GitHub issues](https://img.shields.io/github/issues/tanliner/tanliner.github.io.svg?style=flat)](https://github.com/tanliner/tanliner.github.io/issues)
