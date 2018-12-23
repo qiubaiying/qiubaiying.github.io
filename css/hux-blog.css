@@ -1,3 +1,6 @@
+p {
+  margin: 30px 0;
+}
 @media (min-width: 1200px) {
   .post-container,
   .sidebar-container {
@@ -140,9 +143,7 @@ body {
   color: #404040;
   overflow-x: hidden;
 }
-p {
-  margin: 30px 0;
-}
+
 h1,
 h2,
 h3,
@@ -610,7 +611,7 @@ pre code {
 .post-preview > a:hover,
 .post-preview > a:focus {
   text-decoration: none;
-  color: #0085a1;
+  color: #000;
 }
 .post-preview > a > .post-title {
   font-size: 21px;
@@ -630,7 +631,9 @@ pre code {
   color: #808080;
   font-size: 16px;
   font-style: italic;
-  margin-top: 0;
+  margin-top: 10px;
+  margin-bottom: 0;
+  text-align: right;
 }
 .post-preview > .post-meta > a {
   text-decoration: none;
@@ -638,7 +641,7 @@ pre code {
 }
 .post-preview > .post-meta > a:hover,
 .post-preview > .post-meta > a:focus {
-  color: #0085a1;
+  color: #4f85ae;
   text-decoration: underline;
 }
 @media only screen and (min-width: 768px) {
@@ -660,7 +663,7 @@ pre code {
   color: #a3a3a3;
 }
 .post-content-preview:hover {
-  color: #0085a1;
+  color: #4f85ae;
 }
 @media only screen and (min-width: 768px) {
   .post-content-preview {
@@ -809,8 +812,8 @@ form .row:first-child .floating-label-form-group {
 .pager li > a:hover,
 .pager li > a:focus {
   color: white;
-  background-color: #0085a1;
-  border: 1px solid #0085a1;
+  background-color: #4f85ae;
+  border: 1px solid #4f85ae;
 }
 .pager li > a:hover > span,
 .pager li > a:focus > span {
@@ -898,7 +901,7 @@ img::-moz-selection {
 #tag_cloud .tag:hover,
 #tag_cloud a:active,
 #tag_cloud .tag:active {
-  background-color: #0085a1 !important;
+  background-color: #4f85ae !important;
 }
 @media only screen and (min-width: 768px) {
   #tag_cloud {
@@ -917,7 +920,7 @@ img::-moz-selection {
   margin-top: 0px;
 }
 .listing-seperator {
-  color: #0085a1;
+  color: #4f85ae;
   font-size: 21px !important;
 }
 .listing-seperator::before {

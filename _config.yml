@@ -8,6 +8,7 @@ keyword: "Android, ltan, tanlin"
 url: "http://tanliner.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/tanliner/tanliner.github.io.git" # you code repository
+author: Ltan
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -39,7 +40,9 @@ anchorjs: true                          # if you want to customize anchor. check
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
+# @Deprecated
+# gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 
 
 # Markdown settings

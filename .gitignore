@@ -33,3 +33,7 @@ Temporary Items
 
 # debug file
 _site
+package-lock.json
+
+# Intellij jetbrains
+.idea
