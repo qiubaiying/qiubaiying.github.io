@@ -1,6 +1,6 @@
 # Site settings
 title: Tan Lin
-SEOTitle: Blog | BY tanlin
+SEOTitle: Blog | TL
 header-img: img/post-bg-desk.jpg
 email: lintan.spring@gmail.com
 description: "Every failure is leading towards success."
@@ -12,8 +12,8 @@ author: Ltan
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Yes, I'm here"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "Bravely scale new heights"
+sidebar-avatar: /img/about-TL.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
