@@ -11,7 +11,7 @@ github_repo: "https://github.com/congcong0806/congcong0806.github.io.git" # you 
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Evernote Ambassador<br>印象笔记资深印象大使<br>印象笔记年度象亲<br>坚果云效率大使<br>幕布布道师<br>Telegram：<a>https://t.me/congcong</a>"
+sidebar-about-description: "Evernote Ambassador<br>印象笔记资深印象大使<br>印象笔记年度象亲<br>坚果云效率大使<br>幕布布道师"
 sidebar-avatar: /img/about-cc-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -100,15 +100,23 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "简书·聪聪",
+        title: "简书",
         href: "http://www.jianshu.com/u/da1809147fba"
     },
     {
-        title: "Apple",
-        href: "https://www.apple.com/cn"
+        title: "推特",
+        href: "https://twitter.com/congcong0"
     },
     {
-        title: "Apple Developer",
-        href: "https://developer.apple.com"
+        title: "微博",
+        href: "https://weibo.com/congcong0806"
+    },
+    {
+        title: "印象笔记 Evernote 群",
+        href: "https://t.me/YinxiangBiji"
+    },
+    {
+        title: "印象笔记|科技 NEWS",
+        href: "https://t.me/YinxiangBiji_News"
     }
 ]
