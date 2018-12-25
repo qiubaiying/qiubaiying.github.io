@@ -1417,15 +1417,6 @@ ol ol {
   padding-right: 5px;
   padding-left: 5px;
 }
-.list-inline-friends {
-  padding-left: 0;
-  margin-left: -5px;
-  list-style: none;
-}
-.list-inline-friends > li {
-  padding-right: 5px;
-  padding-left: 5px;
-}
 dl {
   margin-top: 0;
   margin-bottom: 20px;
