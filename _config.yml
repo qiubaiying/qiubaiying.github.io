@@ -1,6 +1,6 @@
 # Site settings
 title: 暗悄悄
-SEOTitle: 暗悄悄 | Blog
+SEOTitle: 暗悄悄 | Notebook
 header-img: img/post-bg-desk.jpg
 email: ryuuseiku@gmail.com
 description: "成功不必在我，而功力不必唐捐。"
@@ -54,9 +54,6 @@ kramdown:
 
 
 # 评论系统
-# Disqus（https://disqus.com/）
-# disqus_username: anqiaoqiao
-
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
@@ -69,11 +66,7 @@ gitalk:
 
 
 # 统计
-
 # Analytics settings
-# Baidu Analytics
-ba_track_id: b50bf2b12b5338a1845e33832976fd68
-
 # Google Analytics
 ga_track_id: 'UA-131409332-1'            # Format: UA-xxxxxx-xx
 ga_domain: auto               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
