@@ -3,22 +3,21 @@ title: 暗悄悄
 SEOTitle: 暗悄悄 | Notebook
 header-img: img/post-bg-desk.jpg
 email: ryuuseiku@gmail.com
-description: "成功不必在我，而功力不必唐捐。"
-keyword: "NOTEBOOK, ML, 暗悄悄, anqiaoqiao, DL, AI"
+description: "anqiaoqiao's blog"
+keyword: "Japanese, 日本語, MachineLearning, DeepLearning, AI, 暗悄悄, anqiaoqiao,"
 url: "http://anqiaoqiao.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "I could be bounded in a nutshell and count myself a king of infinite space.  ——William Shakespeare"
+sidebar-avatar: /img/about-anqiaoqiao.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
 RSS: false
-zhihu_username:     暗悄悄
+zhihu_username:     asher-54-91
 github_username:    anqiaoqiao
 
 
