@@ -7,6 +7,7 @@ description: "anqiaoqiao's blog"
 keyword: "Japanese, 日本語, MachineLearning, DeepLearning, AI, 暗悄悄, anqiaoqiao,"
 url: "http://anqiaoqiao.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+github_repo: "https://github.com/anqiaoqiao/anqiaoqiao.github.io"
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
