@@ -83,7 +83,7 @@ BeSafe <https://testflight.apple.com/join/ICUaKS17><br>
 网盘搜索-资源搜索神器 <https://testflight.apple.com/join/k02d3pgQ><br>
 
 Pharos Pro <https://testflight.apple.com/join/3i6uBkB4><br>
-Kitsunebi <https://testflight.apple.com/join/2w6EF67u><br>
+Kitsunebi <https://testflight.apple.com/join/IdFRwmNy><br>
 A.BIG.T IV <https://testflight.apple.com/join/3aArQFMQ><br>
 Potatso Lite <https://testflight.apple.com/join/NkF46PRd><br>
 BananaNet <https://testflight.apple.com/join/0QhRcg1c><br>
