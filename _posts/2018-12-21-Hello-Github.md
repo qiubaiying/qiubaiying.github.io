@@ -1,22 +1,23 @@
 ---
-layout:     post                    # 使用的布局（不需要改）
-title:      My First Post           # 标题 
-subtitle:   Hello Hello Blog        #副标题
-date:       2018-12-21              # 时间
-header-img: img/post-bg-desk.jpg    #这篇文章标题背景图片
+layout:     post
+title:      My First Post
+subtitle:   Hello Blog
+date:       2018-12-21
+header-img: img/post-bg-desk.jpg
 catalog: true                       # 是否归档
-tags:                               #标签
+tags:
 ---
 
 ## Hey
 >这是我的第一篇博客。
 
 进入你的博客主页，新的文章将会出现在你的主页上.
-Please show me!
 
-这里去申请 [Gitalk Application](https://github.com/settings/applications/new)
+**Update**<br/>
+1. 修改了博客里的截图，添加了原作者的博客入口
+2. 新建了仓库[ImageHolder](https://github.com/tanliner/ImageHolder)用来保存博客中需要的图片，尤其是ReadMe文档引用
 
-作者：BYLtan
-链接：https://www.jianshu.com/p/e68fba58f75c
-來源：简书
-简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
+
+感谢 BY 的模板，[BY](https://github.com/qiubaiying/qiubaiying.github.io)
+
+作者：Ltan
