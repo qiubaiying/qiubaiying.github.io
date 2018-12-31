@@ -257,7 +257,7 @@ module.exports = RCTTextView;
 
 #### 总结
 1. 需要特别注意，在 import 的时候，当前文件夹的的js文件需要使用 `./xxx`, 否则
-执行引引擎将会从node_module中去查找，导致运行至报错，module找不到
+执行引引擎将会从node_module中去查找，导致运行时报错，module找不到
 
-2. 必须问text指定宽高 `style={styles.myText}`，否则，native端测量到的宽高始终为零，
+2. 必须为text指定宽高 `style={styles.myText}`，否则，native端测量到的宽高始终为零，
 文字一直显示不出来，只能绘制一个红色的圆
