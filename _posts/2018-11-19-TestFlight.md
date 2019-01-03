@@ -81,6 +81,7 @@ Termius - SSH client <https://testflight.apple.com/join/MnuClabg><br>
 WordPress <https://testflight.apple.com/join/AkJQt8Pw><br>
 BeSafe <https://testflight.apple.com/join/ICUaKS17><br>
 网盘搜索-资源搜索神器 <https://testflight.apple.com/join/k02d3pgQ><br>
+Working Copy <https://testflight.apple.com/join/i4dpUz7J><br>
 
 Pharos Pro <https://testflight.apple.com/join/3i6uBkB4><br>
 Kitsunebi <https://testflight.apple.com/join/IdFRwmNy><br>
