@@ -37,3 +37,4 @@ package-lock.json
 
 # Intellij jetbrains
 .idea
+node_modules
