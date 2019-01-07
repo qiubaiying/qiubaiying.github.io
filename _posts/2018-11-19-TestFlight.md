@@ -82,6 +82,7 @@ WordPress <https://testflight.apple.com/join/AkJQt8Pw><br>
 BeSafe <https://testflight.apple.com/join/ICUaKS17><br>
 网盘搜索-资源搜索神器 <https://testflight.apple.com/join/k02d3pgQ><br>
 Working Copy <https://testflight.apple.com/join/i4dpUz7J><br>
+Pythonista 3 <https://testflight.apple.com/join/qDkBu2ur><br>
 
 Pharos Pro <https://testflight.apple.com/join/3i6uBkB4><br>
 Kitsunebi <https://testflight.apple.com/join/IdFRwmNy><br>
@@ -100,6 +101,16 @@ SSRVPN <https://testflight.apple.com/join/EeNKSIBZ><br>
 i2Ray-V2Ray Proxy Manager <https://testflight.apple.com/join/K57owAmM><br>
 Paptter <https://testflight.apple.com/join/YiCQfQv3><br>
 
+ConchPlayer <https://testflight.apple.com/join/SUsoy2TT><br>
+爱阅书香 <https://testflight.apple.com/join/23FPuktF><br>
+Fly THIS! <https://testflight.apple.com/join/h1eKzSHI><br>
+Piano - Note Taking <https://testflight.apple.com/join/eDPJ91Xt><br>
+黑匣子Player <https://testflight.apple.com/join/uCsUGsvN><br>
+REAL Shuffle Player PRO <><br>
+https://testflight.apple.com/join/iow1BtFD <><br>
+Focus Today <https://testflight.apple.com/join/RkiJ5aNH><br>
+Yandex Browser <https://testflight.apple.com/join/Y4k4ze6V><br>
+Drift Music <https://testflight.apple.com/join/gYn8g7oj><br>
 Tower Defense Y2K18 <https://testflight.apple.com/join/yqpELkne><br>
 Rapchat <https://testflight.apple.com/join/JjPmPBK5><br>
 iSH Shell <https://testflight.apple.com/join/97i7KM8O><br>
