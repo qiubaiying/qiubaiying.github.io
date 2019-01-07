@@ -99,7 +99,7 @@ WireGuard <https://testflight.apple.com/join/63I19SDT><br>
 Paptter <https://testflight.apple.com/join/YiCQfQv3><br>
 SSRVPN <https://testflight.apple.com/join/EeNKSIBZ><br>
 i2Ray-V2Ray Proxy Manager <https://testflight.apple.com/join/K57owAmM><br>
-Paptter <https://testflight.apple.com/join/YiCQfQv3><br>
+寒梅 <https://testflight.apple.com/join/7U4YKpl2><br>
 
 ConchPlayer <https://testflight.apple.com/join/SUsoy2TT><br>
 爱阅书香 <https://testflight.apple.com/join/23FPuktF><br>
