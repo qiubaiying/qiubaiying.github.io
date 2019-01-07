@@ -1,6 +1,6 @@
 ---
 layout:     post                    # 使用的布局（不需要改）
-title:      TestFlight 邀请链接分享               # 标题 
+title:      iOS App 测试版 TestFlight 邀请链接分享               # 标题 
 subtitle:    #副标题
 date:       2018-11-19              # 时间
 author:     聪聪                      # 作者
