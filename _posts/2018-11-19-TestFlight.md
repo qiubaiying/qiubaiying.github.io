@@ -106,8 +106,8 @@ ConchPlayer <https://testflight.apple.com/join/SUsoy2TT><br>
 Fly THIS! <https://testflight.apple.com/join/h1eKzSHI><br>
 Piano - Note Taking <https://testflight.apple.com/join/eDPJ91Xt><br>
 黑匣子Player <https://testflight.apple.com/join/uCsUGsvN><br>
-REAL Shuffle Player PRO <><br>
-https://testflight.apple.com/join/iow1BtFD <><br>
+REAL Shuffle Player PRO <https://testflight.apple.com/join/iow1BtFD><br>
+豌豆多多TestFlight <https://testflight.apple.com/join/gbcprIXM><br>
 Focus Today <https://testflight.apple.com/join/RkiJ5aNH><br>
 Yandex Browser <https://testflight.apple.com/join/Y4k4ze6V><br>
 Drift Music <https://testflight.apple.com/join/gYn8g7oj><br>
@@ -163,6 +163,17 @@ TV Time - #1 Show Tracker <https://testflight.apple.com/join/hjKkDsc4><br>
 Buffer: Social Media Manager <https://testflight.apple.com/join/DOpMcusn><br>
 AnyList <https://testflight.apple.com/join/xwvLPc6o><br>
 Andrana Project <https://testflight.apple.com/join/RorSFmpx><br>
+ilo <https://testflight.apple.com/join/LbF5nuDu><br>
+NoSeen for Facebook Messenger <https://testflight.apple.com/join/DGHcr3A1><br>
+Wall am I <https://testflight.apple.com/join/wx9CLYdl><br>
+BlueWallet <https://testflight.apple.com/join/8KtgcwC6><br>
+Omlet Arcade <https://testflight.apple.com/join/xqSLy94a><br>
+RainViewer <https://testflight.apple.com/join/OZ1B4sTS><br>
+Matso <https://testflight.apple.com/join/7Ar9dmp4><br>
+Spider Solitaire Card Game <https://testflight.apple.com/join/ygPhVWba><br>
+OneProxy <https://testflight.apple.com/join/oIVZQhx1><br>
+HandCash (BETA) <https://testflight.apple.com/join/JUOB0hwr><br>
+Deuce <https://testflight.apple.com/join/hmgmpkX1><br>
 
 ---
 
