@@ -16,12 +16,12 @@ tags:                               #标签
 1，2018.6月，印象笔记中国团队独立了，客户端也会独立（在原Evernote 的基础上）开发和维护，[点击查看官方新闻](https://www.yinxiang.com/blog/blog/2018/06/06/evernote-an-independent-internet-enterprise/)
 
 2，目前印象笔记-中国版 iOS 和 Mac 客户端已经上线App Store 国区，Android 客户端也已上架国内各个市场，Win 客户端已上架官网；<br>
-印象笔记-中国版客户端，在App 图标右上角加了一个「新」以示区别，以后应该也会去掉的，图标依然是绿底黑大象的图标；<br>
-印象笔记-中国版客户端会增加一些本地化的功能，目前已经发布的有：Markdown、锁定密码、分享到 QQ 空间、Widget 剪切版。<br>
-只是多了中国版的客户端，账户并没有变化，笔记依然也不变的，笔记是随账户的，和客户端没关系的，在哪个客户端登录内容都一样的
+印象笔记-中国版客户端，采用了全新的应用图标，由中国团队独立研发运营，为中国用户的使用习惯和需求持续优化，使用更稳定；<br>
+印象笔记-中国版客户端会增加一些本地化的功能，目前已经发布的有：Markdown、锁定密码、分享到 QQ 空间和微信、Widget 剪切版。<br>
+只是多了中国版的客户端，账户并没有变化，笔记依然也不变的，笔记是随账户的，和客户端没关系的，在哪个客户端登录内容都一样的。
 
-3，Evernote App 客户端已换用白底绿大象的新图标，目前Evernote iOS 和 Mac 也已经下架App Store 国区！<br>
-已安装的Evernote App客户端可以删了也可以留着，已安装的客户端也能继续同步，不受影响。如果想要一直用Evernote App 客户端并保持客户端一直更新，就得去美区等等外区App Store 下载。
+3，Evernote App 客户端已换用白底绿大象的图标，目前Evernote iOS 和 Mac 也已经下架App Store 国区！<br>
+已安装的Evernote App客户端可以删了也可以留着，已安装的客户端也能继续同步，不受影响。如果想要一直用Evernote App 客户端并保持客户端一直更新，就得去美区等等外区 App Store 下载。
 
 4，印象笔记（国内版）和 Evernote International（国际版）是什么区别：[点击查看](https://congcong0806.github.io/2018/04/24/evernote-yinxiang/)
 
