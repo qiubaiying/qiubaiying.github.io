@@ -19,10 +19,10 @@ sidebar-avatar: /img/avartar-obrain.png      # use absolute URL, seeing it's use
 # SNS settings
 RSS: false
 # weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
+# zhihu_username:     qiubaiying
+github_username:    anealo
+# facebook_username:  baiying.qiu.7
+jianshu_username:   9c8550f46e9a
 #twitter_username:   qiubaiying
 
 
@@ -62,11 +62,11 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  clientID: bb77af58886cb5c4fafb                            #生成的clientID
+  clientSecret: b97ee2d043d57db750a45786d4a41a6c2d65c4ef    #生成的clientSecret
+  repo: anealo.github.io    #仓库名称
+  owner: anealo    #github用户名
+  admin: anealo
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
