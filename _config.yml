@@ -68,7 +68,7 @@ gitalk:
   owner: anealo    #github用户名
   admin: anealo
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
-
+  id: window.location.pathname #页面的唯一标识，gitalk 会根据这个标识自动创建的issue的标签,我们使用页面的相对路径作为标识
 
 # 统计
 
