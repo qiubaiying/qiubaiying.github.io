@@ -11,7 +11,7 @@ github_repo: "https://github.com/corsairmaster/corsairmaster.github.io.git" # yo
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
+sidebar-about-description: "Virtue never grows old."
 sidebar-avatar: /img/avatar_me.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
