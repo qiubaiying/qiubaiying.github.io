@@ -90,7 +90,7 @@ A.BIG.T IV <https://testflight.apple.com/join/3aArQFMQ><br>
 Potatso Lite <https://testflight.apple.com/join/NkF46PRd><br>
 BananaNet <https://testflight.apple.com/join/0QhRcg1c><br>
 Thor <https://testflight.apple.com/join/wArXdacJ><br>
-WhaleBlue <https://testflight.apple.com/join/udovXNsR><br>
+WhaleBlue <https://testflight.apple.com/join/jtBRluFe><br>
 Mume VPN <https://testflight.apple.com/join/wgXjVEh8><br>
 Loon <https://testflight.apple.com/join/23LA2tmX><br>
 Stealth VPN <https://testflight.apple.com/join/7hke8TEt><br>
