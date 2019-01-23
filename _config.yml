@@ -69,6 +69,8 @@ gitalk:
   admin: anealo
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
+#评论插件：来必力livere
+livere_uid: MTAyMC80MjMwNy8xODg1NA==
 
 # 统计
 
