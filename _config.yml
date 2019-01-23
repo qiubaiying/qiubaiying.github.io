@@ -62,8 +62,8 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: e41b750a6f94645ebb60                            #生成的clientID
-  clientSecret: 84c9a1886b039b62acc823036afb0e04685b9287    #生成的clientSecret
+  clientID: 1b37fef3e8ca947d92a4                            #生成的clientID
+  clientSecret: e75bb8a56c99908538edf3238693ee8adda94112    #生成的clientSecret
   repo: anealo.github.io    #仓库名称
   owner: anealo    #github用户名
   admin: anealo
