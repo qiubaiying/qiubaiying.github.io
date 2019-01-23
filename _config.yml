@@ -23,7 +23,7 @@ RSS: false
 github_username:    anealo
 # facebook_username:  baiying.qiu.7
 jianshu_username:   9c8550f46e9a
-#twitter_username:   qiubaiying
+#twitter_username:   ispotu
 
 
 
@@ -80,7 +80,7 @@ ba_track_id: 84610cc53c4fc6fa78a54654c2592542
 
 # Google Analytics
 ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_domain: jianguocun.com               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
