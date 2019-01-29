@@ -36,6 +36,7 @@ Skype For iPhone <https://testflight.apple.com/join/fB5IkJT7><br>
 Skype For iPad <https://testflight.apple.com/join/vnSIsolv><br>
 Telegram <https://testflight.apple.com/join/SRgSA6ru><br>
 Telegram X [https://rink.hockeyapp.net](https://rink.hockeyapp.net/apps/c6f5a76f5c364ac89a98b77671ef2d63)<br>
+Ulysses <https://testflight.apple.com/join/RXVdMPW1>
 1Password <https://testflight.apple.com/join/flDiG5AU><br>
 Enpass <https://testflight.apple.com/join/hIec0gli><br>
 Day One <https://testflight.apple.com/join/NXLBigzY><br>
