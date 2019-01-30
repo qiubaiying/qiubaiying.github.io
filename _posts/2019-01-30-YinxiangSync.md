@@ -71,14 +71,3 @@ C:\Program Files\Internet Explorer\iexplore.exe`
 * 印象笔记 科技 NEWS：<https://t.me/YinxiangBiji_News>
 
 ![聪聪](https://i.v2ex.co/3wc207g5.png)
-
-##### 聪聪
-&copy;聪聪：印象笔记资深印象大使 | 印象笔记年度象亲 | 坚果云效率大使 | 幕布布道师
-
-* 我的推特：<https://twitter.com/congcong0><br>
-* 我的微博：<https://weibo.com/congcong0806><br>
-* 我的Telegram：<https://t.me/congcong><br>
-* 印象笔记 Evernote 社群：<https://t.me/YinxiangBiji><br>
-* 印象笔记 科技 NEWS：<https://t.me/YinxiangBiji_News>
-
-![聪聪](https://i.v2ex.co/3wc207g5.png)
