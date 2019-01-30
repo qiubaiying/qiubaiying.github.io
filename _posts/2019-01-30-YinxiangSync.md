@@ -44,14 +44,14 @@ C:\Program Files\Internet Explorer\iexplore.exe`
 如果"IE"能打开印象笔记客户端，可印象笔记客户端依然同步失败(同步按钮有叹号)，就得看具体的活动日志
 `印象笔记 Windows 客户端→菜单栏→帮助→活动日志→另存为，文件私聊发我看看`
 
-我的联系方式：
+**我的联系方式：**
 * 印象笔记工作群聊：<171606257@qq.com>
 * QQ 邮箱：<171606257@qq.com>
 * QQ 群：[310980586](https://jq.qq.com/?_wv=1027&k=549SGYY)
 * Telegram 私信：<https://t.me/congcong>
 * Telegram 社群：<https://t.me/YinxiangBiji>
 
-或者联系印象笔记官方客服和技术支持帮你解决问题
+**或者联系印象笔记官方客服和技术支持帮你解决问题：**
 * 官方微博：<https://weibo.com/yinxiangbiji>
 * 官方微信：yxbj100
 * 官方技术支持：<https://app.yinxiang.com/SupportLogin.action>
