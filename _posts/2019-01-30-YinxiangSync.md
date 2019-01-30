@@ -1,16 +1,17 @@
 ---
 layout:     post                    # 使用的布局（不需要改）
-title:      印象笔记 Windows 客户端"无法连接到服务器"和"同步失败"，如何解决？             # 标题 
+title:      印象笔记 Evernote Windows 客户端"无法连接到服务器"和"同步失败"，如何解决？             # 标题 
 subtitle:    #副标题
 date:       2019-01-30              # 时间
 author:     聪聪                      # 作者
 header-img:     #这篇文章标题背景图片
 catalog: true                       # 是否归档
 tags:                               #标签
-    - App
+    - 印象笔记
+    - Evernote
 
 ---
-##### 印象笔记 Windows 客户端"无法连接到服务器"和"同步失败"，如何解决？
+##### 印象笔记 Evernote Windows 客户端"无法连接到服务器"和"同步失败"，如何解决？
 
 ###### 第一步
 用 Internet Explorer (以下简称：IE) 浏览器试试能否打开这个地址？**必须 IE 浏览器**
