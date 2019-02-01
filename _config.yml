@@ -99,8 +99,8 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "微博",
-        href: "https://weibo.com/u/3841168827?refer_flag=1005055013_&is_all=1"
+        title: "公司",
+        href: "http://www.cnooc.com.cn/"
     },{
         title: "软件定制",
         href: "http://95hou.club"
