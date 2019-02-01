@@ -14,7 +14,7 @@
                         </a>
                     </li>
                     {% endif %}
-                    <!-- add jianshu add target = "_blank" to <a> by BY -->
+                    <!-- add jianshu add target = "_blank" to <a> by DD -->
                     {% if site.jianshu_username %}
                             <li>
                                 <a target="_blank" href="https://www.jianshu.com/u/{{ site.jianshu_username }}">
@@ -140,15 +140,15 @@
     }
 </script>
 
-<!-- 
-     Because of the native support for backtick-style fenced code blocks 
-     right within the Markdown is landed in Github Pages, 
-     From V1.6, There is no need for Highlight.js, 
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
      so Huxblog drops it officially.
 
-     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
-     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
-     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
 -->
 <!--
     <script>
@@ -235,7 +235,7 @@
             l = $('<li class="'+n+'_nav"></li>').append(c);
             $(selector).append(l);
         });
-        return true;    
+        return true;
     }
 
     generateCatalog(".catalog-body");
