@@ -13,12 +13,16 @@ tags:
 
 ## Introdution
 
-This article explains the Miller-Rabin primality test in cryptography. It consists of three parts. The first part gives the math background for this algorithm and adaptions to make it praticle to real world use. The second part gives a python impeletion The third part discuss the of the unit test to make sure the algorithm is correct.  
+This article explains the Miller-Rabin primality test in cryptography. It consists of three parts. The first part gives the math background for this algorithm and adaptions to make it praticle to real world use. The second part gives a python impeletion The third part discuss the design of the corresponding unit test to make sure the algorithm is correct.  
 
 
-## 1. Math deduction for the Miller-Rabin test
+## 1. Math backgroud for the Miller-Rabin test
 
 The main reference for this section is [An Introduction to Cryptography](https://www.mathematik.uni-kl.de/~ederc/download/Cryptography.pdf)
+
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}">
+
+
 
 
 上次看了一篇 [《从一道网易面试题浅谈OC线程安全》](https://www.jianshu.com/p/cec2a41aa0e7) 的博客，主要内容是：
