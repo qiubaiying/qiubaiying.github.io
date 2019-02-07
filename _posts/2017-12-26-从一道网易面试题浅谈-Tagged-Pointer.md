@@ -1,22 +1,25 @@
 ---
 layout:     post
-title:      从一道网易面试题浅谈 Tagged Pointer
-subtitle:   浅谈 Tagged Pointer
-date:       2017-12-26
+title:      An introdution to RSA algorithm and its Python impletion
+subtitle:   RSA algorithm
+date:       201-2-10
 author:     BY
 header-img: img/post-bg-universe.jpg
 catalog: true
 tags:
-    - iOS
+    - algorithm
 ---
 
 
-## 前言
+## Introdution
 
-这篇博客九月就想写了，因为赶项目拖了到现在，抓住17年尾巴写吧~
+This article explains the Miller-Rabin primality test in cryptography. It consists of three parts. The first part gives the math background for this algorithm and adaptions to make it praticle to real world use. The second part gives a python impeletion The third part discuss the of the unit test to make sure the algorithm is correct.  
 
 
-## 正文
+## 1. Math deduction for the Miller-Rabin test
+
+The main reference for this section is [An Introduction to Cryptography](https://www.mathematik.uni-kl.de/~ederc/download/Cryptography.pdf)
+
 
 上次看了一篇 [《从一道网易面试题浅谈OC线程安全》](https://www.jianshu.com/p/cec2a41aa0e7) 的博客，主要内容是：
 
