@@ -20,7 +20,14 @@ This article explains the Miller-Rabin primality test in cryptography. It consis
 
 The main reference for this section is [An Introduction to Cryptography](https://www.mathematik.uni-kl.de/~ederc/download/Cryptography.pdf)
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}">
+First let us recall the Fermat's little Theorem:
+### Fermat's little Theorem:
+Let p be a prime number, then <img src="https://latex.codecogs.com/svg.latex?\Large&space;a^{p-1}\equiv{1}\mod{p}">.
+
+
+For a general integer n. We call a is a Fermat witness if <img src="https://latex.codecogs.com/svg.latex?\Large&space;a^{n-1}\not\equiv{1}\mod{n}">. Denote 
+
+
 
 
 
