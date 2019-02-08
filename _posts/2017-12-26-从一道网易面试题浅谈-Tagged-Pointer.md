@@ -3,7 +3,7 @@ layout:     post
 title:      An introdution to RSA algorithm and its Python impletion
 subtitle:   RSA algorithm
 date:       201-2-10
-author:     BY
+author:     Jiayin Guo
 header-img: img/post-bg-universe.jpg
 catalog: true
 tags:
