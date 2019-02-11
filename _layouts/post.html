@@ -41,7 +41,7 @@ layout: default
                     <h2 class="subheading">{{ page.subtitle }}</h2>
                     {% comment %} endif {% endcomment %}
                     <!--<span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>-->
-                    <span class="meta"> {{ page.date | date: "%B %-d, %Y" }} by {{ page.author }} </span>
+                    <span class="meta"> {{ page.date | date: "%Y.%m.%d %A" }} by {{ page.author }} </span>
                 </div>
             </div>
         </div>
