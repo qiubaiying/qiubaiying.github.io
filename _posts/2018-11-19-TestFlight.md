@@ -84,6 +84,7 @@ BeSafe <https://testflight.apple.com/join/ICUaKS17><br>
 网盘搜索-资源搜索神器 <https://testflight.apple.com/join/k02d3pgQ><br>
 Working Copy <https://testflight.apple.com/join/i4dpUz7J><br>
 Pythonista 3 <https://testflight.apple.com/join/qDkBu2ur><br>
+票夹 <https://testflight.apple.com/join/sPJTq8Ff><br>
 
 Pharos Pro <https://testflight.apple.com/join/3i6uBkB4><br>
 Kitsunebi <https://testflight.apple.com/join/IdFRwmNy><br>
