@@ -10,9 +10,9 @@ baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/xiaopan999/xiaopan999.github.io.git" # you code repository
 
 # Sidebar settings
-sidebar: false                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar: true                        # whether or not using Sidebar.
+sidebar-about-description: "有志者，事竞成！"
+sidebar-avatar: /img/avatar-by.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
