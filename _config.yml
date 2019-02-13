@@ -5,7 +5,7 @@ header-img: img/post-bg-desk.jpg
 email: 18810930068@163.com
 description: "失败乃成功之母！"
 keyword: "XP, XP Blog, 薛盼的博客,xuepan, 薛盼, iOS, Apple, iPhone"
-url: "http://xiaopan999.github.io"          # your host, for absolute URL
+url: "http://xiaopan999.blog"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/xiaopan999/xiaopan999.github.io.git" # you code repository
 
