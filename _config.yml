@@ -64,9 +64,9 @@ gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: 03c6c28953a6993da167                            #生成的clientID
   clientSecret: 02d04f643172122e03bc77ff024ee15a6f7f1cf5    #生成的clientSecret
-  repo: Yuwenchn.github.io    #仓库名称
-  owner: Yuwenchn    #github用户名
-  admin: Yuwenchn
+  repo: yuwenchn.github.io    #仓库名称
+  owner: yuwenchn    #github用户名
+  admin: yuwenchn
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
