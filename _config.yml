@@ -62,26 +62,7 @@ kramdown:
 #   owner: xiaopan999    #github用户名
 #   admin: xiaopan999
 #   distractionFreeMode: true #是否启用类似FB的阴影遮罩
-<!-- Gitalk 评论 start  -->
 
-<!-- Link Gitalk 的支持文件  -->
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
-<div id="gitalk-container"></div>     <script type="text/javascript">
-    var gitalk = new Gitalk({
-
-    // gitalk的主要参数
-		clientID: `Github Application clientID`,
-		clientSecret: `Github Application clientSecret`,
-		repo: `xiaopan999.github.io`,
-		owner: 'xiaopan999',
-		admin: ['xiaopan999'],
-		id: 'window.location.github.com/xiaopan999/xiaopan999.github.io/edit/master/_config.yml',
-    
-    });
-    gitalk.render('gitalk-container');
-</script> 
-<!-- Gitalk end -->
 
 # 统计
 
