@@ -54,7 +54,7 @@ kramdown:
 # disqus_username:xiaopan999
 
 # Gitalk
-# gitalk:
+gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: 1ad5251032c985ee6e23                            #生成的clientID
   clientSecret: 3335bb9c073f2f142204ee210c0f76ff5f799c17    #生成的clientSecret
