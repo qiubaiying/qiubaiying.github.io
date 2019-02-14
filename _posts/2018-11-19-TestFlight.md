@@ -31,6 +31,8 @@ Microsoft Excel <https://testflight.apple.com/join/3lIiz1eZ><br>
 Microsoft PowerPoint <https://testflight.apple.com/join/a9Ef0N3g><br>
 Microsoft OneNote <https://testflight.apple.com/join/uDgoqfGS><br>
 Microsoft To-Do <https://testflight.apple.com/join/JSq3UkAz><br>
+Microsoft Edge <https://testflight.apple.com/join/VtDI7uRL><br>
+Outlook <https://testflight.apple.com/join/QkU4VS1s><br>
 Cortana <https://testflight.apple.com/join/4IHpEYnz><br>
 Skype For iPhone <https://testflight.apple.com/join/fB5IkJT7><br>
 Skype For iPad <https://testflight.apple.com/join/vnSIsolv><br>
@@ -52,6 +54,13 @@ Todoist <https://testflight.apple.com/join/L2pBORZN><br>
 Pocket <https://testflight.apple.com/join/LxKzQMpu><br>
 Feedly Lab <https://testflight.apple.com/join/DcxRQdP9><br>
 Spotify Music <https://testflight.apple.com/join/1SyedSId><br>
+Dropbox <https://testflight.apple.com/join/LBZaRq4I><br>
+Overcast <https://testflight.apple.com/join/ua0oicPc><br>
+Sleep Cycle <https://testflight.apple.com/join/8RcEFqFF><br>
+Wikipedia <https://testflight.apple.com/join/Z0AU0KXC><br>
+Twitterrific 5 <https://testflight.apple.com/join/1G3zEeId><br>
+Launch Center Pro <https://testflight.apple.com/join/DpujKg3U><br>
+Xbox <https://testflight.apple.com/join/dfUeaFHS><br>
 Signal <https://testflight.apple.com/join/8FHtd1Jq><br>
 Aurora Reader <https://testflight.apple.com/join/xpyLpCmS><br>
 Fenix for Twitter <https://testflight.apple.com/join/poQA1Iml><br>
@@ -84,6 +93,14 @@ BeSafe <https://testflight.apple.com/join/ICUaKS17><br>
 网盘搜索-资源搜索神器 <https://testflight.apple.com/join/k02d3pgQ><br>
 Working Copy <https://testflight.apple.com/join/i4dpUz7J><br>
 Pythonista 3 <https://testflight.apple.com/join/qDkBu2ur><br>
+Imgur <https://testflight.apple.com/join/Qd42y5Pw><br>
+Infltr <https://testflight.apple.com/join/In6e3GcJ><br>
+WeatherKit <https://testflight.apple.com/join/kAvJV2Gp><br>
+Happy Mail <https://testflight.apple.com/join/Pg9PbgEw><br>
+Parcel <https://testflight.apple.com/join/fMeg6C4A><br>
+Musixmatch <https://testflight.apple.com/join/7yLzN5td><br>
+Darkroom <https://testflight.apple.com/join/mzR3XvHe><br>
+MEGA <https://testflight.apple.com/join/4x1P5Tnx><br>
 票夹 <https://testflight.apple.com/join/sPJTq8Ff><br>
 
 Pharos Pro <https://testflight.apple.com/join/3i6uBkB4><br>
@@ -103,6 +120,20 @@ SSRVPN <https://testflight.apple.com/join/EeNKSIBZ><br>
 i2Ray-V2Ray Proxy Manager <https://testflight.apple.com/join/K57owAmM><br>
 寒梅 <https://testflight.apple.com/join/7U4YKpl2><br>
 
+9GAG <https://testflight.apple.com/join/S2q4mD2b><br>
+GroupMe <https://testflight.apple.com/join/6CcTotfX><br>
+Feedbin <https://testflight.apple.com/join/ynrJI46U><br>
+Spend Together <https://testflight.apple.com/join/plMhyWoV><br>
+Pillow <https://testflight.apple.com/join/apGxTqB1><br>
+Wikiloc <https://testflight.apple.com/join/P93jBr23><br>
+Tapatalk <https://testflight.apple.com/join/oGFXVgl6><br>
+Birdie <https://testflight.apple.com/join/vhS1cy14><br>
+SwiftKey <https://testflight.apple.com/join/yhIhAvjp><br>
+Television Time <https://testflight.apple.com/join/eP0BTwVi><br>
+BBM <https://testflight.apple.com/join/XwVRKYO2><br>
+Nano for Reddit <https://testflight.apple.com/join/9qB4yqkL><br>
+Strike <https://testflight.apple.com/join/BTZRrfEX><br>
+Screens <https://testflight.apple.com/join/soRRXSyT><br>
 ConchPlayer <https://testflight.apple.com/join/SUsoy2TT><br>
 爱阅书香 <https://testflight.apple.com/join/23FPuktF><br>
 Fly THIS! <https://testflight.apple.com/join/h1eKzSHI><br>
@@ -176,6 +207,7 @@ Spider Solitaire Card Game <https://testflight.apple.com/join/ygPhVWba><br>
 OneProxy <https://testflight.apple.com/join/oIVZQhx1><br>
 HandCash (BETA) <https://testflight.apple.com/join/JUOB0hwr><br>
 Deuce <https://testflight.apple.com/join/hmgmpkX1><br>
+
 
 ---
 
