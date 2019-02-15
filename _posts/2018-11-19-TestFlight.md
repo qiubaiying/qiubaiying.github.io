@@ -134,7 +134,7 @@ BBM <https://testflight.apple.com/join/XwVRKYO2><br>
 Nano for Reddit <https://testflight.apple.com/join/9qB4yqkL><br>
 Strike <https://testflight.apple.com/join/BTZRrfEX><br>
 Screens <https://testflight.apple.com/join/soRRXSyT><br>
-ConchPlayer <https://testflight.apple.com/join/SUsoy2TT><br>
+ConchPlayer <https://testflight.apple.com/join/WpAo1ALq><br>
 爱阅书香 <https://testflight.apple.com/join/23FPuktF><br>
 Fly THIS! <https://testflight.apple.com/join/h1eKzSHI><br>
 Piano - Note Taking <https://testflight.apple.com/join/eDPJ91Xt><br>
