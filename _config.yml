@@ -1,9 +1,9 @@
 # Site settings
-title: 聪聪
-SEOTitle: 聪聪
+title: 聪聪 的博客
+SEOTitle: 聪聪 的博客
 header-img: img/post-bg-desk.jpg
 email: 
-description: "Evernote Ambassador, Telegram, Shadowsocks"
+description: "Evernote Ambassador, Telegram, Shadowsocks, Surge, 印象笔记资深印象大使, 印象笔记年度象亲, 坚果云效率大使，幕布布道师"
 keyword: "Evernote Ambassador, Telegram, Shadowsocks, Surge, 印象笔记资深印象大使, 印象笔记年度象亲, 坚果云效率大使，幕布布道师"
 url: "http://congcong0806.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
