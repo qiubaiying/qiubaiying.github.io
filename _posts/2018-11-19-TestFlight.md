@@ -103,7 +103,7 @@ Darkroom <https://testflight.apple.com/join/mzR3XvHe><br>
 MEGA <https://testflight.apple.com/join/4x1P5Tnx><br>
 票夹 <https://testflight.apple.com/join/sPJTq8Ff><br>
 
-Pharos Pro <https://testflight.apple.com/join/3i6uBkB4><br>
+Pharos Pro <https://testflight.apple.com/join/ZgnSkCjs><br>
 Kitsunebi <https://testflight.apple.com/join/IdFRwmNy><br>
 A.BIG.T IV <https://testflight.apple.com/join/3aArQFMQ><br>
 Potatso Lite <https://testflight.apple.com/join/NkF46PRd><br>
