@@ -18,7 +18,7 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 
 # SNS settings
 RSS: false
-weibo_username:     闫安华仔
+# weibo_username:     闫安华仔
 # zhihu_username:     yananhuazai
 github_username:    YanAnHuaZai
 # facebook_username:  yananhuazai
@@ -67,7 +67,7 @@ gitalk:
   repo: YanAnHuaZai.github.io    #仓库名称
   owner: YanAnHuaZai    #github用户名
   admin: YanAnHuaZai
-  distractionFreeMode: true #是否启用类似FB的阴影遮罩
+  distractionFreeMode: false #是否启用类似FB的阴影遮罩
 
 
 # 统计
