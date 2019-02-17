@@ -61,9 +61,9 @@ disqus_username: yananhuazai
 
 # Gitalk
 gitalk:
-  enable: false    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
+  enable: true    #是否开启Gitalk评论
+  clientID: 09e0c2511552974071be                            #生成的clientID
+  clientSecret: acc30dc369ac4474232e0d6542d7dbc6f727b4a3    #生成的clientSecret
   repo: YanAnHuaZai.github.io    #仓库名称
   owner: YanAnHuaZai    #github用户名
   admin: YanAnHuaZai
