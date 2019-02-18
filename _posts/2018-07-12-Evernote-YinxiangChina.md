@@ -1,6 +1,6 @@
 ---
 layout:     post                    # 使用的布局（不需要改）
-title:      关于Evernote App 和印象笔记-中国版 的说明               # 标题 
+title:      关于 Evernote App 和印象笔记-中国版 的说明               # 标题 
 subtitle:    #副标题
 date:       2018-07-12              # 时间
 author:     聪聪                      # 作者
