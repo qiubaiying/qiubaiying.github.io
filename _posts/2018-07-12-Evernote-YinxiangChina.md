@@ -64,6 +64,7 @@ tags:                               #标签
 	 * 兼容原印象笔记历史功能
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* 印象笔记 Markdown 入门指南:[点击查看](https://www.yinxiang.com/markdown-user-guide)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* 印象笔记新功能：Markdown 详细讲解:[点击查看](https://congcong0806.github.io/2018/08/20/Markdown)
 
 12，两者存在差异的功能:
 
