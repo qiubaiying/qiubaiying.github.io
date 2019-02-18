@@ -50,9 +50,9 @@ tags:                               #标签
 
 	国际版:
 	1. 高级帐户:USD69.99(≈￥485)/年，已取消标准账户
-	1. 保存微信公众号文章到"MyEvernote"
-	2. 公开链接分享
-	3. 添加 Google Drive 文件
+	2. 保存微信公众号文章到"MyEvernote"
+	3. 公开链接分享
+	4. 添加 Google Drive 文件
 
 9，印象笔记 Evernote 迁移笔记到另一个账号的两个方法:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<http://www.jianshu.com/p/860233c903c7><br/>
