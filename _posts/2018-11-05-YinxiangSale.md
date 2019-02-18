@@ -15,7 +15,7 @@ tags:                               #标签
 ##### 活动1
 
 免费账户、标准账户、高级账户都可以在官网续订，高级账户首年六折优惠 ¥88.80 元<br>
-官网购买地址：<https://app.yinxiang.com/subscriptions#one-1year-recurring><br>
+官网购买地址:<https://app.yinxiang.com/subscriptions#one-1year-recurring><br>
 活动截止 2018.11.11<br>
 
 iTunes Store（iOS 内购）购买的不能参加此活动，因为两者支付体系不同，没法关联；<br>
@@ -27,11 +27,11 @@ iTunes Store（iOS 内购）购买的不能参加此活动，因为两者支付�
 
 ##### 活动2
 
-在「印象笔记」公众号（微信号：yxbj100）底部菜单栏「大象好物」可以买到双十一实体周边福袋。
+在「印象笔记」公众号（微信号:yxbj100）底部菜单栏「大象好物」可以买到双十一实体周边福袋。
 
 ##### 活动3
 
-一年高级账户六折优惠 ¥88.80 元，复制链接在微信里打开：<https://wechat.yinxiang.com/premium/Upgrade.action?pid=54><br>
+一年高级账户六折优惠 ¥88.80 元，复制链接在微信里打开:<https://wechat.yinxiang.com/premium/Upgrade.action?pid=54><br>
 免费账户、标准账户、高级账户都可以参加，包括之前用 iTunes Store（iOS 内购）购买的、2023年或以后到期的高级账户。<br>
 活动截止 2018.11.11<br>
 
@@ -41,7 +41,7 @@ iTunes Store（iOS 内购）购买的不能参加此活动，因为两者支付�
 ##### 活动4
 
 印象笔记高级账户 拼团独享折扣低至五折 ¥74.00 元，限时24小时<br>
-点击链接参与：<https://h5.youzan.com/wscshop/feature/Z7UJlxqIjy><br>
+点击链接参与:<https://h5.youzan.com/wscshop/feature/Z7UJlxqIjy><br>
 
 免费账户、标准账户、高级账户都可以参加；标准账户、高级账户购买后获得印象分，可用于兑换高级账户<br>
 活动进行到2018年11月10日 18:30 截止
@@ -53,7 +53,7 @@ iTunes Store（iOS 内购）购买的不能参加此活动，因为两者支付�
 ##### 活动5
 
 印象笔记高级账户 返场五折团购 ¥74.00 元，最后12小时<br>
-点击链接参与：<https://h5.youzan.com/wscshop/goods/367qhbyfvykjz> 点击“立即参团”直接购买<br>
+点击链接参与:<https://h5.youzan.com/wscshop/goods/367qhbyfvykjz> 点击“立即参团”直接购买<br>
 
 免费账户、标准账户、高级账户都可以参加；标准账户、高级账户购买后获得印象分，可用于兑换高级账户<br>
 活动进行到2018年11月12日 20:00 截止
@@ -66,15 +66,15 @@ iTunes Store（iOS 内购）购买的不能参加此活动，因为两者支付�
 
 所有活动只适用于印象笔记国内版账户，不适用于 Evernote 国际版账户。<br>
 
-活动1 会开启自动续订（也就是高级账户到期的时候会自动续费扣款），如果不想自动续订的，购买完了之后可以在官网设置界面或者支付宝里关闭自动续订（支付宝：设置->支付设置->免密支付/自动扣款）；<br>
+活动1 会开启自动续订（也就是高级账户到期的时候会自动续费扣款），如果不想自动续订的，购买完了之后可以在官网设置界面或者支付宝里关闭自动续订（支付宝:设置->支付设置->免密支付/自动扣款）；<br>
 活动1、活动3、活动4、活动5 单独只能参加一次，但4个活动都不冲突，也就的可以同一个 ID 可以参加4个活动。 <br>
 
 印象分更灵活，印象分可以按月兑换，当月流量和功能够用的时候就可以不兑换，不够用再兑换，这样下去 120 分可以使用不止是 12 个月<br>
-印象分和兑换高级帐户的地址：<https://app.yinxiang.com/Points.action>
+印象分和兑换高级帐户的地址:<https://app.yinxiang.com/Points.action>
 
-如果买多了或买重复了，联系官方申请退款：<br>
-官方微信：`yxbj100`<br>
-官方支持：<https://app.yinxiang.com/SupportLogin.action>
+如果买多了或买重复了，联系官方申请退款:<br>
+官方微信:`yxbj100`<br>
+官方支持:<https://app.yinxiang.com/SupportLogin.action>
 
 ##### 促销时间轴
 
@@ -86,12 +86,12 @@ iTunes Store（iOS 内购）购买的不能参加此活动，因为两者支付�
 <https://congcong0806.github.io/2018/09/03/App>
 
 ##### 聪聪
-&copy;聪聪：印象笔记资深印象大使 | 印象笔记年度象亲 | 坚果云效率大使 | 幕布布道师
+&copy;聪聪:印象笔记资深印象大使 | 印象笔记年度象亲 | 坚果云效率大使 | 幕布布道师
 
-* 我的推特：<https://twitter.com/congcong0><br>
-* 我的微博：<https://weibo.com/congcong0806><br>
-* 我的Telegram：<https://t.me/congcong><br>
-* 印象笔记 Evernote 社群：<https://t.me/YinxiangBiji><br>
-* 印象笔记 科技 NEWS：<https://t.me/YinxiangBiji_News>
+* 我的推特:<https://twitter.com/congcong0><br>
+* 我的微博:<https://weibo.com/congcong0806><br>
+* 我的Telegram:<https://t.me/congcong><br>
+* 印象笔记 Evernote 社群:<https://t.me/YinxiangBiji><br>
+* 印象笔记 科技 NEWS:<https://t.me/YinxiangBiji_News>
 
 ![聪聪](https://i.v2ex.co/3wc207g5.png)

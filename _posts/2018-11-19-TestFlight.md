@@ -22,7 +22,7 @@ TestFlight - iOS App 测试版发布渠道
 
 但是 TestFlight 并不是用来获取 App 免费版的方式，更不是永久的，目前一个 TestFlight 版本最长可是用90 天，而且一个 App 的 TestFlight 人数也有限制的，目前是1W。
 
-如何使用 TestFlight 参与 App 测试：<https://sspai.com/post/27311>
+如何使用 TestFlight 参与 App 测试:<https://sspai.com/post/27311>
 
 ###### 链接分享
 
@@ -215,12 +215,12 @@ Deuce <https://testflight.apple.com/join/hmgmpkX1><br>
 <https://congcong0806.github.io/2018/09/03/App>
 
 ##### 聪聪
-&copy;聪聪：印象笔记资深印象大使 | 印象笔记年度象亲 | 坚果云效率大使 | 幕布布道师
+&copy;聪聪:印象笔记资深印象大使 | 印象笔记年度象亲 | 坚果云效率大使 | 幕布布道师
 
-* 我的推特：<https://twitter.com/congcong0><br>
-* 我的微博：<https://weibo.com/congcong0806><br>
-* 我的Telegram：<https://t.me/congcong><br>
-* 印象笔记 Evernote 社群：<https://t.me/YinxiangBiji><br>
-* 印象笔记 科技 NEWS：<https://t.me/YinxiangBiji_News>
+* 我的推特:<https://twitter.com/congcong0><br>
+* 我的微博:<https://weibo.com/congcong0806><br>
+* 我的Telegram:<https://t.me/congcong><br>
+* 印象笔记 Evernote 社群:<https://t.me/YinxiangBiji><br>
+* 印象笔记 科技 NEWS:<https://t.me/YinxiangBiji_News>
 
 ![聪聪](https://i.v2ex.co/3wc207g5.png)

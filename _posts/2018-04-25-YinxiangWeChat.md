@@ -17,11 +17,11 @@ tags:                               #标签
 感谢那么多朋友对印象笔记的给力支持，为了方便象亲们相互交流使用心得，印象笔记为大家创建了地区微信群，快找到自己的群组并踊跃加入吧，这里有一群跟你一样爱大象的朋友！
 
 需要加群的用户，请联系安安@印象笔记，备注清楚，手动拉你入群哦！
-安安@印象笔记：`myyxbj100`
+安安@印象笔记:`myyxbj100`
 
 ![安安@印象笔记](http://ww1.sinaimg.cn/large/9b84e6acgy1fuyntur68yj20pu0z8467.jpg)
 
-在加群前，小象希望每位象亲都可以遵守以下群规，良好和谐的群秩序需要大家的共同维护：
+在加群前，小象希望每位象亲都可以遵守以下群规，良好和谐的群秩序需要大家的共同维护:
 > 1. 群内谢绝广告和鸡汤；
 > 2. 请不要在群内发布或讨论敏感话题；
 > 3. 遇到问题大家可以在群内互相讨论，给印象笔记微信公众号（yxbj100）留言可能会更快得到答复哦；
@@ -85,12 +85,12 @@ tags:                               #标签
 <https://congcong0806.github.io/2018/09/03/App>
 
 ##### 聪聪
-&copy;聪聪：印象笔记资深印象大使 | 印象笔记年度象亲 | 坚果云效率大使 | 幕布布道师
+&copy;聪聪:印象笔记资深印象大使 | 印象笔记年度象亲 | 坚果云效率大使 | 幕布布道师
 
-* 我的推特：<https://twitter.com/congcong0><br>
-* 我的微博：<https://weibo.com/congcong0806><br>
-* 我的Telegram：<https://t.me/congcong><br>
-* 印象笔记 Evernote 社群：<https://t.me/YinxiangBiji><br>
-* 印象笔记 科技 NEWS：<https://t.me/YinxiangBiji_News>
+* 我的推特:<https://twitter.com/congcong0><br>
+* 我的微博:<https://weibo.com/congcong0806><br>
+* 我的Telegram:<https://t.me/congcong><br>
+* 印象笔记 Evernote 社群:<https://t.me/YinxiangBiji><br>
+* 印象笔记 科技 NEWS:<https://t.me/YinxiangBiji_News>
 
 ![聪聪](https://i.v2ex.co/3wc207g5.png)
