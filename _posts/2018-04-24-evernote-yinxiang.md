@@ -1,6 +1,6 @@
 ---
 layout:     post                    # 使用的布局(不需要改)
-title:      印象笔记(国内版)和 Evernote International(国际版)是什么区别               # 标题 
+title:      印象笔记(国内版)和 Evernote International (国际版)是什么区别               # 标题 
 subtitle:    #副标题
 date:       2018-04-24              # 时间
 author:     聪聪                      # 作者
