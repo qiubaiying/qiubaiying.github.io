@@ -65,19 +65,19 @@ tags:                               #标签
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* 印象笔记 Markdown 入门指南:[点击查看](https://www.yinxiang.com/markdown-user-guide)<br>
 
-12，两者存在差异的功能:<br>
-印象笔记-中国版:
-- logo:绿底黑大象的图标
-- 新建 Markdown 笔记
-- 密码锁
-- 微信注册/登录
-- 手机号注册/登录
-- 分享笔记到微信好友/群组
-- 分享笔记到 QQ 空间
-
-Evernote App:
-- logo:白底绿大象的图标
-- 分享笔记到社交网络
+12，两者存在差异的功能:
+	印象笔记-中国版:
+	- logo:绿底黑大象的图标
+	- 新建 Markdown 笔记
+	- 密码锁
+	- 微信注册/登录
+	- 手机号注册/登录
+	- 分享笔记到微信好友/群组
+	- 分享笔记到 QQ 空间
+<br>
+	Evernote App:
+	- logo:白底绿大象的图标
+	- 分享笔记到社交网络
 
 ##### 优秀的正版软件
 <https://congcong0806.github.io/2018/09/03/App>
