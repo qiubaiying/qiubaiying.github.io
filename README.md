@@ -9,7 +9,27 @@
 [![](https://img.shields.io/github/forks/tanliner/tanliner.github.io.svg?style=social&label=Fork)](https://github.com/tanliner/tanliner.github.io)
 
 >
-### [查看博客戳这里 👆](http://tanliner.github.io)
+### [查看博客戳这里](http://tanliner.github.io)
+
+### 本地环境
+> server start: jekyll server [--detach]
+> hot dev: jekyll build [--watch]
+> http://localhost:4000
+> server stop: pkill -f jekyll
+
+
+##### 优雅点的本地环境
+alias jkybuild='jkybuild'
+alias jkybuildw='jkybuild --watch'
+alias jkyStart='server --detach'
+alias jkykill='pkill -f jekyll'
+
+```bash
+$ jkyStart &
+$ jkybuildw
+web> http://localhost:4000
+```
+
 
 
 ## 致谢
