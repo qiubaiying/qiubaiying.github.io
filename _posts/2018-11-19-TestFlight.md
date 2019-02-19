@@ -102,6 +102,7 @@ Musixmatch <https://testflight.apple.com/join/7yLzN5td><br>
 Darkroom <https://testflight.apple.com/join/mzR3XvHe><br>
 MEGA <https://testflight.apple.com/join/4x1P5Tnx><br>
 票夹 <https://testflight.apple.com/join/sPJTq8Ff><br>
+Eastwatch <https://testflight.apple.com/join/SmfNOeJ2><br>
 
 Pharos Pro <https://testflight.apple.com/join/ZgnSkCjs><br>
 Kitsunebi <https://testflight.apple.com/join/IdFRwmNy><br>
