@@ -5,7 +5,7 @@ header-img: img/post-bg-desk.jpg
 email: yananhuazai@163.com
 description: "My Blog."
 keyword: "Java, HuaZai"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+url: "http://YanAnHuaZai.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://YanAnHuaZai.github.io" # you code repository
 
@@ -99,7 +99,7 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "音乐中心",
+        title: "concert",
         href: "http://concert.yananhuazai.cn"
     }
 ]
