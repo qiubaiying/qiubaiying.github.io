@@ -1,7 +1,7 @@
 <html>
 <div>
     <br>catalogue here. mocking some integration systems.</br>
-    <form action="form_action.asp" method="get">
+    <form action="/test_nodejs_api" method="get">
         country: <input type="text" name="country"/>
         product code: <input type="text" name="code"/>
         <input type="submit" value="Submit"/>
@@ -14,6 +14,34 @@
         <option value="ecomm">ecomm</option>
         <option value="lms">lms</option>
     </select>
+
+    <input type="button" name="mock_integration" value="模拟集成" onclick="partRefresh('ecomm','liecomm')">
+    <input type="button" name="clear" value="清除缓存" onclick="clear()">
+
 </div>
-<iframe width="1200" height="500" src="https://dcsc.lenovo.com/" frameborder="1" allowfullscreen></iframe>
+
+<iframe name="iframe_dcsc" id="iframe_dcsc_id" width="1200" height="500" src='https://www.baidu.com/'
+        frameborder="1" allowfullscreen></iframe>
+
+
+<script type="text/javascript">
+    function partRefresh(site, role) {
+        let param = '?';
+        if (site === 'ecomm') {
+            param += 'token=ecomm';
+        } else if (site === 'lms') {
+            param += 'token=LMS_BP';
+        }
+        document.getElementById("iframe_dcsc_id").src = 'https://us-dcsc.lenovo.com/#/' + param;
+        console.log(document.getElementById("iframe_dcsc_id").src);
+    }
+
+    function clear() {
+        document.getElementById("iframe_dcsc_id").src = 'http://www.google.com';
+        console.log(document.getElementById("iframe_dcsc_id").src);
+    }
+</script>
+
+
+
 </html>
