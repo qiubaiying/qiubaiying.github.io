@@ -97,16 +97,16 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "Tencent",
-        href: "http://www.qq.com"
+        title: "Baidu",
+        href: "http://www.baidu.com"
     },{
-        title: "知乎·BY",
-        href: "http://www.zhihu.com/"
+        title: "Alibaba",
+        href: "http://www.taobao.com/"
+    },{
+        title: "Tencent",
+        href: "https://www.qq.com"
     },{
         title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        href: "https://apple.com/"
     }
 ]
