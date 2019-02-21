@@ -20,24 +20,24 @@
 
 </div>
 
-<iframe name="iframe_dcsc" id="iframe_dcsc_id" width="1200" height="500" src='https://www.baidu.com/'
+<iframe name="iframe_dcsc" id="iframe_dcsc_id" width="1200" height="500" src='https://us-dcsc.lenovo.com/#/'
         frameborder="1" allowfullscreen></iframe>
 
 
 <script type="text/javascript">
     function partRefresh(site, role) {
-        let param = '?';
+        let param = '?time=' + new Date().getTime();
         if (site === 'ecomm') {
-            param += 'token=ecomm';
+            param += '&token=ecomm';
         } else if (site === 'lms') {
-            param += 'token=LMS_BP';
+            param += '&token=LMS_BP';
         }
         document.getElementById("iframe_dcsc_id").src = 'https://us-dcsc.lenovo.com/#/' + param;
         console.log(document.getElementById("iframe_dcsc_id").src);
     }
 
     function clear() {
-        document.getElementById("iframe_dcsc_id").src = 'http://www.google.com';
+        document.getElementById("iframe_dcsc_id").src = 'http://www.google.com'+'?time=' + new Date().getTime();
         console.log(document.getElementById("iframe_dcsc_id").src);
     }
 </script>
