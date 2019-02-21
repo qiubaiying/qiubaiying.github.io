@@ -11,7 +11,8 @@ github_repo: "https://github.com/yabaowang/yabaowang.github.io.git" # you code r
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "网站制作，软件定制"
+sidebar-about-description: "网站制作,软件定制<br>### QQ : 838472987
+                                      <br>### 好看视频公众号: shihuishangye"
 sidebar-avatar: /img/zjy.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
