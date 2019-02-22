@@ -19,7 +19,8 @@
 <div>
     <br>
     <form action="/test_nodejs_api" method="get">
-        locale(*): <input type="text" id="locale" value="en_US"/>
+        country(*): <input type="text" id="country" value="US"/>
+        language(*): <input type="text" id="language" value="en"/>
         product code: <input type="text" id="code"/>
         mode(*):
         <select id="mode">
@@ -47,7 +48,7 @@
 </div>
 
 <iframe name="iframe_dcsc" id="iframe_dcsc_id" width="1200" height="500"
-        src='https://us-dcsc.lenovo.com/#/?locale=en_US'
+        src='https://us-dcsc.lenovo.com/#/?country=US'
         frameborder="1" allowfullscreen></iframe>
 
 <script src="../js/jquery.min.js "></script>
@@ -69,12 +70,12 @@
     partRefreshBtn.onclick = function () {
         let code = $("#code").val();
         let site = $("#site_select").val();
-        let locale = $('#locale').val();
+        let country = $('#country').val();
+        let language = $('#language').val();
 
         let finalUrl = "";
 
-        console.log('code=' + code + ',site=' + site + 'locale=' + locale);
-        let param = '?time=' + new Date().getTime() + '&locale=' + locale;
+        let param = '?time=' + new Date().getTime() + '&country=' + country + '&language=' + language;
         if (site === 'ecomm') {
             param += '&token=ecomm';
         } else if (site === 'lms') {
