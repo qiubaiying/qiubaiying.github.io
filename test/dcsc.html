@@ -40,7 +40,7 @@
             <option value="lms">lms</option>
         </select>
         role:
-        <input type="text" name="role"/>
+        <input type="text" name="role" disabled="disabled" value="有空了加上"/>
 
         <input class="divcss5" type="button" name="mock_integration" value="回车执行" id="partRefresh">
     </form>
@@ -85,8 +85,8 @@
             param += '&token=LMS_BP';
         } else if (site === 'lbp') {
             param += '&token=LBP_T1_D_B';
-        } else if (site === 'lbp') {
-            param += '&token=LBP_T1_D_B';
+        } else if (site === 'crm') {
+            param += '&token=CRM';
         }
 
         if (code == null || code == '') {
