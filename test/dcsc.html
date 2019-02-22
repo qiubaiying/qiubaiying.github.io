@@ -21,6 +21,8 @@
     <form action="/test_nodejs_api" method="get">
         country(*): <input type="text" id="country" value="US"/>
         language(*): <input type="text" id="language" value="en"/>
+        currency(*): <input type="text" id="currency" value="en"/>
+        <br>
         product code: <input type="text" id="code"/>
         mode(*):
         <select id="mode">
@@ -72,10 +74,11 @@
         let site = $("#site_select").val();
         let country = $('#country').val();
         let language = $('#language').val();
+        let currency = $('#currency').val();
 
         let finalUrl = "";
 
-        let param = '?time=' + new Date().getTime() + '&country=' + country + '&language=' + language;
+        let param = '?time=' + new Date().getTime() + '&country=' + country + '&language=' + language + '&currency=' + currency;
         if (site === 'ecomm') {
             param += '&token=ecomm';
         } else if (site === 'lms') {
