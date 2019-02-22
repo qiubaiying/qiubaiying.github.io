@@ -1,10 +1,10 @@
-# Site settings
-title: BY Blog
-SEOTitle: 锵锵锵的博客 | Qiang Blog
+﻿# Site settings
+title: WQ Blog
+SEOTitle: 锵锵的博客 | WQ Blog
 header-img: img/post-bg-desk.jpg
 email: wangqiang1996106@gmail.com
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 锵锵的博客, WinnerQiang, 王锵, iOS, Apple, iPhone"
+keyword: "WQ, WQ Blog, 锵锵的博客, WinnerQiang,  iOS, Apple, iPhone"
 url: "http://WinnerQiang.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://WinnerQiang.github.io" # you code repository
@@ -37,7 +37,7 @@ anchorjs: true                          # if you want to customize anchor. check
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 
 
 
