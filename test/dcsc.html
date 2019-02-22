@@ -31,6 +31,13 @@
             <option value="lfo-as-cto">lfo-as-cto</option>
         </select>
         <br>
+        env:
+        <select id="env_select">
+            <option value="us">us</option>
+            <option value="cn">cn</option>
+            <option value="tst">tst</option>
+            <option value="uat">uat</option>
+        </select>
         site:
         <select id="site_select">
             <option value="非集成"></option>
@@ -50,7 +57,7 @@
 </div>
 
 <iframe name="iframe_dcsc" id="iframe_dcsc_id" width="1200" height="500"
-        src='https://us-dcsc.lenovo.com/#/'
+        src='https://dcsc.lenovo.com/#/'
         frameborder="1" allowfullscreen></iframe>
 
 <script src="../js/jquery.min.js "></script>
@@ -76,6 +83,7 @@
         let language = $('#language').val();
         let currency = $('#currency').val();
 
+        const baseUrl = 'https://' + $("#env_select").val() + '-dcsc.lenovo.com/#/';
         let finalUrl = "";
 
         let param = '?time=' + new Date().getTime() + '&country=' + country + '&language=' + language + '&currency=' + currency;
@@ -90,12 +98,12 @@
         }
 
         if (code == null || code == '') {
-            finalUrl = 'https://us-dcsc.lenovo.com/#/' + param;
+            finalUrl = baseUrl + param;
         } else {
             if ($("#mode").val() == 'lfo') {
-                finalUrl = 'https://us-dcsc.lenovo.com/#/configuration/lfo/' + code + param + '&mode=lfo';
+                finalUrl = baseUrl + 'configuration/lfo/' + code + param + '&mode=lfo';
             } else {
-                finalUrl = 'https://us-dcsc.lenovo.com/#/configuration/' + $("#mode").val() + '/' + code + param;
+                finalUrl = baseUrl + 'configuration/' + $("#mode").val() + '/' + code + param;
             }
         }
         // $("#iframe_dcsc_id").attr("src", finalUrl);
