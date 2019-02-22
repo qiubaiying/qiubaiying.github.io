@@ -4,12 +4,10 @@
         text-indent: 15px;
         font-weight: bold
     }
-
     html, body {
         height: 100%;
         overflow: hidden;
     }
-
     iframe {
         margin: 0;
         /*border-style: none;*/
@@ -41,7 +39,7 @@
         role:
         <input type="text" name="role"/>
 
-        <input class="divcss5" type="button" name="mock_integration" value="run" id="partRefresh">
+        <input class="divcss5" type="button" name="mock_integration" value="回车执行" id="partRefresh">
     </form>
     <p>
         实际访问的地址: <input type="text" id="final_url" disabled="disabled" value="" size="130"/>
@@ -58,6 +56,12 @@
     $(function () {
         $("#final_url").attr("value", $("#iframe_dcsc_id").attr("src"));
     })
+
+    $(document).keyup(function (event) {
+        if (event.keyCode == 13) {
+            $("#partRefresh").trigger("click");
+        }
+    });
 </script>
 <script type="text/javascript">
 
