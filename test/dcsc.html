@@ -71,6 +71,8 @@
         let site = $("#site_select").val();
         let locale = $('#locale').val();
 
+        let finalUrl = "";
+
         console.log('code=' + code + ',site=' + site + 'locale=' + locale);
         let param = '?time=' + new Date().getTime() + '&locale=' + locale;
         if (site === 'ecomm') {
@@ -84,16 +86,42 @@
         }
 
         if (code == null || code == '') {
-            $("#iframe_dcsc_id").attr("src", 'https://us-dcsc.lenovo.com/#/' + param);
+            finalUrl = 'https://us-dcsc.lenovo.com/#/' + param;
         } else {
             if ($("#mode").val() == 'lfo') {
-                $("#iframe_dcsc_id").attr("src", 'https://us-dcsc.lenovo.com/#/configuration/lfo/' + code + param + '&mode=lfo');
+                finalUrl = 'https://us-dcsc.lenovo.com/#/configuration/lfo/' + code + param + '&mode=lfo';
             } else {
-                $("#iframe_dcsc_id").attr("src", 'https://us-dcsc.lenovo.com/#/configuration/' + $("#mode").val() + '/' + code + param);
+                finalUrl = 'https://us-dcsc.lenovo.com/#/configuration/' + $("#mode").val() + '/' + code + param;
             }
         }
-        console.log($("#iframe_dcsc_id").attr("src"));
-        $("#final_url").attr("value", $("#iframe_dcsc_id").attr("src"));
+        // $("#iframe_dcsc_id").attr("src", finalUrl);
+        refreshIframeByCreateNew(finalUrl);
+        console.log(finalUrl);
+        $("#final_url").attr("value", finalUrl);
+    }
+
+
+    function refreshIframeByCreateNew(url) {
+        destroyIframe('iframe_dcsc_id')
+        let newIframe = document.createElement("iframe");
+        newIframe.id = 'iframe_dcsc_id';
+        newIframe.src = url;
+        document.body.appendChild(newIframe);
+        return newIframe;
+    }
+
+
+    function destroyIframe(iframeID) {
+        let iframe = $('#' + iframeID).prop('contentWindow');
+
+        $('#' + iframeID).attr('src', 'about:blank');
+
+        try {
+            iframe.document.write('');
+            iframe.document.clear();
+        } catch (e) {
+        }
+        $('#' + iframeID).remove();
     }
 
 
