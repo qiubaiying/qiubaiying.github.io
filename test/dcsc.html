@@ -1,45 +1,86 @@
 <html>
+<style type="text/css">
+    .divcss5 {
+        text-indent: 15px;
+        font-weight: bold
+    }
+</style>
+
 <div>
-    <br>catalogue here. mocking some integration systems.</br>
+    <br>
     <form action="/test_nodejs_api" method="get">
-        country: <input type="text" name="country"/>
-        product code: <input type="text" name="code"/>
-        <input type="submit" value="Submit"/>
+        locale(*): <input type="text" id="locale" value="en_US"/>
+        product code: <input type="text" id="code"/>
+        mode(*):
+        <select id="mode">
+            <option value="cto">cto</option>
+            <option value="lfo">lfo</option>
+            <option value="lfo-as-cto">lfo-as-cto</option>
+        </select>
+        <br>
+        site:
+        <select id="site_select">
+            <option value="非集成"></option>
+            <option value="ecomm">ecomm</option>
+            <option value="lbp">lbp</option>
+            <option value="crm">crm</option>
+            <option value="lms">lms</option>
+        </select>
+        role:
+        <input type="text" name="role"/>
+
+        <input class="divcss5" type="button" name="mock_integration" value="run" id="partRefresh">
     </form>
-
-    <select>
-        <option value="NI">非集成</option>
-        <option value="lbp">lbp</option>
-        <option value="crm">crm</option>
-        <option value="ecomm">ecomm</option>
-        <option value="lms">lms</option>
-    </select>
-
-    <input type="button" name="mock_integration" value="模拟集成" onclick="partRefresh('ecomm','liecomm')">
-    <input type="button" name="clear" value="清除缓存" onclick="clear()">
-
+    <p>
+        实际访问的地址: <input type="text" id="final_url" disabled="disabled" value="" size="130"/>
+    </p>
 </div>
 
-<iframe name="iframe_dcsc" id="iframe_dcsc_id" width="1200" height="500" src='https://us-dcsc.lenovo.com/#/'
+<iframe name="iframe_dcsc" id="iframe_dcsc_id" width="1200" height="500"
+        src='https://us-dcsc.lenovo.com/#/?locale=en_US'
         frameborder="1" allowfullscreen></iframe>
 
+<script src="../js/jquery.min.js "></script>
 
+<script>
+    $(function () {
+        $("#final_url").attr("value", $("#iframe_dcsc_id").attr("src"));
+    })
+</script>
 <script type="text/javascript">
-    function partRefresh(site, role) {
-        let param = '?time=' + new Date().getTime();
+
+    const partRefreshBtn = document.getElementById("partRefresh");
+    partRefreshBtn.onclick = function () {
+        let code = $("#code").val();
+        let site = $("#site_select").val();
+        let locale = $('#locale').val();
+
+        console.log('code=' + code + ',site=' + site + 'locale=' + locale);
+        let param = '?time=' + new Date().getTime() + '&locale=' + locale;
         if (site === 'ecomm') {
             param += '&token=ecomm';
         } else if (site === 'lms') {
             param += '&token=LMS_BP';
+        } else if (site === 'lbp') {
+            param += '&token=LBP_T1_D_B';
+        } else if (site === 'lbp') {
+            param += '&token=LBP_T1_D_B';
         }
-        document.getElementById("iframe_dcsc_id").src = 'https://us-dcsc.lenovo.com/#/' + param;
-        console.log(document.getElementById("iframe_dcsc_id").src);
+
+        if (code == null || code == '') {
+            $("#iframe_dcsc_id").attr("src", 'https://us-dcsc.lenovo.com/#/' + param);
+        } else {
+            if ($("#mode").val() == 'lfo') {
+                $("#iframe_dcsc_id").attr("src", 'https://us-dcsc.lenovo.com/#/configuration/lfo/' + code + param + '&mode=lfo');
+            } else {
+                $("#iframe_dcsc_id").attr("src", 'https://us-dcsc.lenovo.com/#/configuration/' + $("#mode").val() + '/' + code + param);
+            }
+        }
+        console.log($("#iframe_dcsc_id").attr("src"));
+        $("#final_url").attr("value", $("#iframe_dcsc_id").attr("src"));
     }
 
-    function clear() {
-        document.getElementById("iframe_dcsc_id").src = 'http://www.google.com'+'?time=' + new Date().getTime();
-        console.log(document.getElementById("iframe_dcsc_id").src);
-    }
+
 </script>
 
 
