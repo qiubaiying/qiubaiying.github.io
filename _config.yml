@@ -1,10 +1,10 @@
 # Site settings
-title: 丁丁小屋
-SEOTitle: 丁丁小屋 | 软件开发 | 技术博客
+title: 丁丁电影小屋
+SEOTitle: 丁丁电影 | 软件开发 | 技术博客
 header-img: img/post-bg-desk.jpg
 email: 838472987@qq.com
 description: "Every failure is leading towards success."
-keyword: "周佳音, 邢浩, 周佳音的博客, zhoujiayin, zjy, 财务, 网站定制, 软件"
+keyword: "博客, 看电影，技术博客"
 url: "http://yabaowang.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/yabaowang/yabaowang.github.io.git" # you code repository
@@ -88,7 +88,7 @@ gitalk:
 
 # Featured Tags
 featured-tags: true                     # 是否使用首页标签
-featured-condition-size: 0              # 相同标签数量大于这个数，才会出现在首页
+featured-condition-size: 3              # 相同标签数量大于这个数，才会出现在首页
 
 
 
