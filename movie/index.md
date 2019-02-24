@@ -7,11 +7,15 @@ catalog: 	 false
 ---
 
 
-### 关注公众号，每天有你好看
+### 影视大全公众号
+个人微信，满足你的个性化需求
+![](https://yabaowang.github.io/img/avatar.jpg)
 
- 点击进入资源站1|免费最新影视资源
- ----|----
- [![影院入口](https://yabaowang.github.io/img/bofang.jpg)](http://28xx.top/)|![](https://yabaowang.github.io/img/avatar.jpg)
+### 影视资源站
+** 线路1 **
+[![影院入口](https://yabaowang.github.io/img/movie/bofang_small.jpg)](http://28xx.top/)
+** 线路2 **
+[![影院入口](https://yabaowang.github.io/img/movie/dianying.jpg)](http://www.wapianwang.com/)
  
 
 
