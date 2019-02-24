@@ -208,7 +208,7 @@ Spider Solitaire Card Game <https://testflight.apple.com/join/ygPhVWba><br>
 OneProxy <https://testflight.apple.com/join/oIVZQhx1><br>
 HandCash (BETA) <https://testflight.apple.com/join/JUOB0hwr><br>
 Deuce <https://testflight.apple.com/join/hmgmpkX1><br>
-
+Color Capture <https://testflight.apple.com/join/7JecM2hD><br>
 
 ---
 
