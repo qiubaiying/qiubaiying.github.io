@@ -13,9 +13,9 @@ catalog: 	 false
 
 ### 影视资源站
 ** 线路1 **
-[![影院入口](https://yabaowang.github.io/img/movie/bofang_small.jpg)](http://28xx.top/)
+[![影院入口](https://yabaowang.github.io/img/movie/yingyuanrukou.jpg)](http://28xx.top/)
 ** 线路2 **
-[![影院入口](https://yabaowang.github.io/img/movie/dianying.jpg)](http://www.wapianwang.com/)
+[![影院入口](https://yabaowang.github.io/img/movie/yingyuanrukou.jpg)](http://www.wapianwang.com/)
  
 
 
