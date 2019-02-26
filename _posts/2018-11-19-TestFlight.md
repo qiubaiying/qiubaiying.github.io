@@ -26,6 +26,8 @@ TestFlight - iOS App 测试版发布渠道
 
 ###### 链接分享
 
+点击链接加入测试版：
+
 Microsoft Word <https://testflight.apple.com/join/hw76phYi><br>
 Microsoft Excel <https://testflight.apple.com/join/3lIiz1eZ><br>
 Microsoft PowerPoint <https://testflight.apple.com/join/a9Ef0N3g><br>
