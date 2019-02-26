@@ -22,6 +22,8 @@ TestFlight - iOS App 测试版发布渠道
 
 但是 TestFlight 并不是用来获取 App 免费版的方式，更不是永久的，目前一个 TestFlight 版本最长可是用90 天，而且一个 App 的 TestFlight 人数也有限制的，目前是1W。
 
+TestFlight 下载地址:<https://itunes.apple.com/cn/app/testflight/id899247664>
+
 如何使用 TestFlight 参与 App 测试:<https://sspai.com/post/27311>
 
 ###### 链接分享
