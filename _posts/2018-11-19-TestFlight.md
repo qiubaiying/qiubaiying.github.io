@@ -36,8 +36,8 @@ Microsoft PowerPoint <https://testflight.apple.com/join/a9Ef0N3g><br>
 Microsoft OneNote <https://testflight.apple.com/join/uDgoqfGS><br>
 Microsoft To-Do <https://testflight.apple.com/join/JSq3UkAz><br>
 Microsoft Edge <https://testflight.apple.com/join/VtDI7uRL><br>
-Outlook <https://testflight.apple.com/join/QkU4VS1s><br>
-Cortana <https://testflight.apple.com/join/4IHpEYnz><br>
+Microsoft Outlook <https://testflight.apple.com/join/QkU4VS1s><br>
+Microsoft Cortana <https://testflight.apple.com/join/4IHpEYnz><br>
 Skype For iPhone <https://testflight.apple.com/join/fB5IkJT7><br>
 Skype For iPad <https://testflight.apple.com/join/vnSIsolv><br>
 Telegram <https://testflight.apple.com/join/SRgSA6ru><br>
