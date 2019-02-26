@@ -107,12 +107,15 @@ Darkroom <https://testflight.apple.com/join/mzR3XvHe><br>
 MEGA <https://testflight.apple.com/join/4x1P5Tnx><br>
 票夹 <https://testflight.apple.com/join/sPJTq8Ff><br>
 Eastwatch <https://testflight.apple.com/join/SmfNOeJ2><br>
+小記 <https://testflight.apple.com/join/aqoXcoG3><br>
+细语 Small Talk <https://testflight.apple.com/join/ArSNTmMC><br>
+DevSwitch <https://testflight.apple.com/join/qYu3ptEV><br>
 
 Pharos Pro <https://testflight.apple.com/join/ZgnSkCjs><br>
 Kitsunebi <https://testflight.apple.com/join/IdFRwmNy><br>
 A.BIG.T IV <https://testflight.apple.com/join/3aArQFMQ><br>
 Potatso Lite <https://testflight.apple.com/join/NkF46PRd><br>
-BananaNet <https://testflight.apple.com/join/0QhRcg1c><br>
+BananaNet <https://testflight.apple.com/join/v5x8B81b><br>
 Thor <https://testflight.apple.com/join/wArXdacJ><br>
 WhaleBlue <https://testflight.apple.com/join/jtBRluFe><br>
 Mume VPN <https://testflight.apple.com/join/wgXjVEh8><br>
@@ -124,6 +127,7 @@ Paptter <https://testflight.apple.com/join/YiCQfQv3><br>
 SSRVPN <https://testflight.apple.com/join/EeNKSIBZ><br>
 i2Ray-V2Ray Proxy Manager <https://testflight.apple.com/join/K57owAmM><br>
 寒梅 <https://testflight.apple.com/join/7U4YKpl2><br>
+NetShuttle <https://testflight.apple.com/join/742YC03J><br>
 
 9GAG <https://testflight.apple.com/join/S2q4mD2b><br>
 GroupMe <https://testflight.apple.com/join/6CcTotfX><br>
@@ -213,6 +217,13 @@ OneProxy <https://testflight.apple.com/join/oIVZQhx1><br>
 HandCash (BETA) <https://testflight.apple.com/join/JUOB0hwr><br>
 Deuce <https://testflight.apple.com/join/hmgmpkX1><br>
 Color Capture <https://testflight.apple.com/join/7JecM2hD><br>
+Holo Ball <https://testflight.apple.com/join/UslXTcn2><br>
+Jetsam <https://testflight.apple.com/join/C57z8lm0><br>
+Power 9 - Magic: The Gathering <https://testflight.apple.com/join/hKI4xKRj><br>
+Road Trip <https://testflight.apple.com/join/mfxR5OPR><br>
+Bello: Safety app for cyclists <https://testflight.apple.com/join/kONQhQtO><br>
+StarPlayrX <https://testflight.apple.com/join/Ecz0xXvf><br>
+Torus.wallet <https://testflight.apple.com/join/Rkh83mtc><br>
 
 ---
 
