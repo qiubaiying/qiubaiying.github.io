@@ -1,10 +1,10 @@
 # Site settings
-title: 丁丁电影小屋
-SEOTitle: 丁丁电影 | 软件开发 | 技术博客
+title: 丁丁小屋
+SEOTitle: 看电影 | 博客
 header-img: img/post-bg-desk.jpg
 email: 838472987@qq.com
 description: "Every failure is leading towards success."
-keyword: "博客, 看电影，技术博客"
+keyword: "博客, 看电影"
 url: "http://yabaowang.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/yabaowang/yabaowang.github.io.git" # you code repository

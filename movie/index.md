@@ -13,7 +13,7 @@ catalog: 	 false
 
 ### 影视资源站
 **线路1**
-[![影院入口](https://yabaowang.github.io/img/movie/yingyuanrukou.jpg)](http://28xx.top/)
+[![影院入口](https://yabaowang.github.io/img/movie/yingyuanrukou.jpg)](http://dy.28xx.top/)
 **线路2**
 [![影院入口](https://yabaowang.github.io/img/movie/yingyuanrukou.jpg)](http://www.wapianwang.com/)
  
