@@ -1,5 +1,5 @@
 ---
-layout:     default
+layout:     post
 title:      最新电影免费看
 subtitle:   
 header-img: img/movie/dianying.jpg
