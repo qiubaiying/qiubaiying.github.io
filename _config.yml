@@ -71,6 +71,12 @@ gitalk:
   admin: yabaowang
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
+## indextank settings
+#indextank_index: my_index
+#indextank_api_url: http://:myapikey@myapi.api.indextank.com
+#
+## these values are applied as regular expressions
+#indextank_excludes: [index.html, 404.html, ^/secret/]
 
 # 统计
 
