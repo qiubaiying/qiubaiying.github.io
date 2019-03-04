@@ -9,7 +9,7 @@ url: "http://corsairmaster.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/corsairmaster/corsairmaster.github.io.git" # you code repository
 
-# Sidebar settings
+# Sidebar settings test
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Virtue never grows old."
 sidebar-avatar: /img/avatar_me.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
