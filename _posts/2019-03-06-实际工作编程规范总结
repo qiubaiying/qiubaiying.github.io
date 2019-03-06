@@ -1,0 +1,123 @@
+---
+layout:     post
+title:      实际工作编程规范总结
+subtitle:   常用编程规范整理
+date:       2019-03-06
+author:     Ranxxxxxx
+header-img: img/post-bg-desk.jpg
+catalog: true
+tags:
+    - 编程规范
+    - 服务器开发
+---
+[Google编程规范](https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/)
+
+- 实际工作中按照不同的项目要求，编程规范有所不同，各自的要求不太一样
+- 小驼峰命名法
+- 大驼峰命名法
+- 匈牙利命名法
+- google命名规范
+
+### 开发过程中需要注意的点
+
+**头文件**  
+- 所有头文件都应该用#define防止头文件多重包含,格式为： 
+```
+#ifndef __TIMER_H__
+#define __TIMER_H__
+#endif //__TIMER_H__
+```
+- 使用前置声明尽量减少头文件中的#include的数量
+- 要注意包含头文件的顺序要统一
+  
+**变量**  
+- 变量名使用小驼峰命名法，不要缩写
+- 类静态变量前加s_
+- 局部变量定义尽量靠近第一次使用的地方，尽可能置于最小作用域中，并在声明的时候初始化
+- 全局变量只允许const的基本类型，不允许出现全局指针，class类型
+- 严禁使用匈牙利命名法
+
+**常量**
+- 不允许出现魔数,魔数要么定义成宏，要么读取配置
+
+**命名空间**
+- 不允许使用using namespace
+
+**函数**
+- 函数命名大驼峰命名法
+- 函数输入参数在前，输出在后
+- 原则上迭代器不允许出现在函数的参数中，这种写法非常不好
+
+**语句**  
+- 不要为了字符对齐增加不必要的空格
+- 指针或者引用的左右必要要有空格  
+
+**if**
+- 注意检查编写的if语句
+- if或者else后面的执行语句如果只有一行（非宏定义），不要用大括号括起来，但是必须另起一行  
+
+**循环**
+- for语句中的迭代器，如果没有外部使用，要全部写到for语句中
+- 循环语句注意循环跳出的条件，避免死循环，一定要考虑清楚逻辑再去编写代码，以免造成不必要的损失  
+
+**容器和迭代器**
+- 使用map和set容器insert返回值中的迭代器前，一定要判断second
+- 迭代器注意判断有效性，防止迭代器失效，案例：
+
+```
+std::map<s32,std::vector<QuizPrice>>::iterator iter = s_quizPrizes.begin();
+for(; iter != s_quizPrizes.end; ++iter){
+    if(iter->first > player->GetPropInt32(attr_def:level)){
+        break
+    }
+}
+std::vector<QuizPrice>& prizeInfo = (--iter)->second;
+错位的写法,迭代器可能失效
+std::map<s32,std::vector<QuizPrice>>::iterator iterFind = s_quizPrizes.begin();
+for(auto iter = s_quizPrizes.begin();iter != s_quizPrizes.end; ++iter ){
+    if(iter->first > player->GetPropInt32(attr_def:level))
+    break;
+}
+if(iterFind == s_quizPrizes.end())
+return false;
+std::vector<QuizPrice>& prizeInfo =iterFind->second;
+
+```
+**类**
+- 类命名使用大驼峰命名法，类名前不加C
+
+**接口文件**
+- 不允许#include其他接口文件
+- 不允许出现成员变量定义
+
+**成员函数**
+- 函数名意义要与逻辑有关，不要太长但是不要缩写
+- 处理同意逻辑的函数放在一起定义
+- cpp中的成员函数顺序必须与头文件中顺序一致
+
+**针对传世3d项目引入其他模块**
+- 以静态变量的方式来定义，获取其他模块，使用FIND_MODULE宏
+- TMODULE方式获取
+
+**断言**
+- 断言使用TASSERT
+- 断言的提示内容尽量准确
+
+**协议**
+- 所有客户端的协议都必须要检查参数的合法性：数字参数的范围；对象ID的类型是否合法；对象的位置是否合法
+
+**针对传世3d开发过程中的注意事项**
+- 指针：一定要判断
+- 定时器：一定要确保定时器在对象销毁前把所有启动的相关定时器全部停止
+- lamda：
+- 异步调用：异步调用Excecute时，不要使用主线程会变的资源；同一个异步任务，不允许同时投递多次；异步调用完成时，注意回收异步任务
+- AsyncDB的使用
+- 元宝操作
+- 物品转移：保证前后物品流水号一致
+- 活动：活动结束时候，所有物品申请资源必须回收（如活动中启动的定时器等）
+- 多logic：对象之间的操作只能通过command来做；直接通过IObjectMgr的FindObject获取对象：一定要判断指针是否为空，要考虑对象可能是影子的问题；对象生命周期要保证多logic下不出问题：实际工作中多注意自己的业务逻辑
+- redis操作：redis操作频率高的操作，不允许使用
+- 合法性判断：所有客户端协议发过来的值都需要判断合法性；所有IDIP发过来的值都需要判断合法性
+- IDIP（腾讯的协议规范）：所有IDIP接口的字符串都需要UrlDecode和UrlEncode
+- 版本号兼容：注意新旧协议兼容客户端
+- 日志：记录日志要做到关键，量少；关键日志的标准：1.功能发生变化的逻辑点，如出错就进入错误逻辑点2.功能必须经过的逻辑点，如果出错就没有办法继续的点3.容易出问题，但又不容易调试的地方4.容易和外网玩家发生纠纷的点；量少主要是为了防止日志膨胀导致线上硬盘压力；debug日志不受量少的这一限制，要做到逻辑全部覆盖；严重偏离逻辑预期的逻辑要写error日志，其他关键日志要写trace日志
