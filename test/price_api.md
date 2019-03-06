@@ -1,0 +1,86 @@
+---
+layout:     post
+subtitle:   A demo API doc
+author:     大暴马
+catalog: 	true
+date:       2019-03-06
+tags:
+    - 开发
+    - API设计
+---
+
+## 获取物料单价
+
+### 请求
+#### 类型
+HTTP.POST
+#### 参数
+**header**  用于传递安全认证类参数
+是否启用待定
+
+**parameter**
+
+ 参数|说明|类型|举例|是否必须
+ ----|----|----|----|----
+ country|国家二字码|string|US,CN|是
+ currency|货币三字码|string|USD,CNY|是
+ price_type|价格类型ID|array|[1],[1,4,5]|否，默认是[1]
+
+价格类型ID映射说明
+
+ID | Price type
+----|----
+1|list price
+2|T1 Channel price
+3|T2 Channel price
+4|China BP store price
+5|China SALES store price
+6|China JV_BP store price
+7|China JV_SALES store price
+
+**request body**
+
+ 无
+
+### 响应
+#### 类型
+JSON
+#### 属性说明
+
+ 属性名|说明
+ ----|----
+ status|接口状态码
+ error|错误信息(如果有)
+ data.code|lfoCode
+ data.unit_price|不同渠道的单价mapping，保留两位小数,
+
+status使用约束。实际开发中可能使用不到这么多的状态。
+
+ status code|说明
+ ----|----
+ 200|请求成功返回
+ 204|没有查找到数据
+ 206|部分数据缺失
+ 304|该请求的数据没有发生变化，客户端可以使用最近缓存
+ 400|请求参数错误
+ 401|身份认证未通过
+ 403|权限不足，不可请求该数据
+ 408|超时
+ 413|接口数据量过大或客户端请求过于频繁
+ 500|服务端接口crash
+
+#### 举例
+```json
+{
+  "status": 200,
+  "error": "",
+  "data": {
+    "code": "8871KAU",
+    "unit_price": {
+      "1": 300.00,
+      "4": 150.55,
+      "5": 200.62
+    }
+  }
+}
+```

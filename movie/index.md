@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      最新电影免费看
+title:      电影站
 subtitle:   
 header-img: img/movie/dianying.jpg
 catalog: 	 false
@@ -8,13 +8,13 @@ catalog: 	 false
 
 
 ### 影视大全公众号
-个人微信，满足你的个性化需求
-![](https://yabaowang.github.io/img/avatar.jpg)
+微信扫码关注 或微信搜索 ^丁丁带你看电影^，每日更新最新最热的影视资源
+![](https://yabaowang.github.io/img/dianyingweixinhao.jpg)
 
 ### 影视资源站
-**线路1**
+**微信入口**
 [![影院入口](https://yabaowang.github.io/img/movie/yingyuanrukou.jpg)](http://dy.28xx.top/)
-**线路2**
+**手机/电脑入口**
 [![影院入口](https://yabaowang.github.io/img/movie/yingyuanrukou.jpg)](http://www.wapianwang.com/)
  
 
