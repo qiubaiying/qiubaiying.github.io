@@ -66,7 +66,14 @@ tags:                               #标签
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* 印象笔记 Markdown 入门指南:[点击查看](https://www.yinxiang.com/markdown-user-guide)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* 印象笔记新功能：Markdown 详细讲解:[点击查看](https://congcong0806.github.io/2018/08/20/Markdown)
 
-12，两者存在差异的功能:
+12，印象笔记 Mac/Win/iOS 客户端新增 “模板” 功能
+
+	新增 “模板” 功能:
+	 * 新建笔记-编辑区内-支持添加 “模板”
+	 * 新增“快速进入工作状态”系列模板内容，帮助提升工作效率
+	 * 新增其他5个类别的模板内容，包括工作效率、生活出行、团队协作、学生必备以及 GTD
+
+13，两者存在差异的功能:
 
 	印象笔记-中国版:
 	1. logo:绿底黑大象的图标
