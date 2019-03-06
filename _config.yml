@@ -90,7 +90,10 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "Wiki",
-        href: "https://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5"
+        title: "Stackoverflow",
+        href: "https://stackoverflow.com/"
+    }, {
+        title: "Google",
+        href: "https://www.google.com"
     }
 ]
