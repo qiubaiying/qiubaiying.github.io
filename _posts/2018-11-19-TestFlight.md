@@ -112,6 +112,10 @@ Eastwatch <https://testflight.apple.com/join/SmfNOeJ2><br>
 小記 <https://testflight.apple.com/join/aqoXcoG3><br>
 细语 Small Talk <https://testflight.apple.com/join/ArSNTmMC><br>
 DevSwitch <https://testflight.apple.com/join/qYu3ptEV><br>
+HTTP Catcher <https://testflight.apple.com/join/4Qt2lIm5><br>
+Quizlet <https://testflight.apple.com/join/mwhcPqxJ><br>
+Yamble <https://testflight.apple.com/join/sWspgco2><br>
+Color Defense <https://testflight.apple.com/join/uWKe9m1h><br>
 
 Pharos Pro <https://testflight.apple.com/join/ZgnSkCjs><br>
 Kitsunebi <https://testflight.apple.com/join/IdFRwmNy><br>
