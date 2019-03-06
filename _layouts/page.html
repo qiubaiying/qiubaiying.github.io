@@ -100,7 +100,10 @@ layout: default
 
                 <!-- Short About -->
                 <section class="visible-md visible-lg">
-                    <hr><h5><a href="{{'/about/'}}">Ranx 2 Charl</a></h5>
+                    <hr><h5></h5>
+			{% if site.sidebar-about-description %}
+                            <p>{{site.sidebar-about-description}}</p>
+                        {% endif %}
                         <!-- SNS Link -->
                         <ul class="list-inline">
                             {% if site.RSS %}
