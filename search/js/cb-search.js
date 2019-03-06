@@ -3,8 +3,6 @@ $(document).ready(function () {
     var show = false;
     var names = new Array(); //文章名字等
     var urls = new Array(); //文章地址
-    var contents = new Array();//文章内容
-
     $(document).keyup(function (e) {
         var time2 = new Date().getTime();
         if (e.keyCode == 17) {
@@ -69,11 +67,10 @@ $(document).ready(function () {
                 var item = data.data[index];
                 names.push(item.title);
                 urls.push(item.url);
-                contents.push(item.content);
             }
 
             $("#cb-search-content").typeahead({
-                source: contents,
+                source: names,
 
                 afterSelect: function (item) {
                     $(".cb-search-tool").css("display", "none");
