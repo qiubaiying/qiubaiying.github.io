@@ -69,7 +69,8 @@ gitalk:
 
 
 # Google Analytics
-
+ga_track_id: 'UA-135757080-1'            # Format: UA-xxxxxx-xx
+ga_domain: auto
 
 
 
