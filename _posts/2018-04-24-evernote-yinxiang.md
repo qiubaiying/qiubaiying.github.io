@@ -54,7 +54,7 @@ tags:                               #标签
 	2. 保存微信公众号文章到"MyEvernote"
 	3. 公开链接分享
 	4. 添加 Google Drive 文件
-	5. 官网是:https://evernote.com/intl/zh-cn
+	5. 官网是:https://evernote.com
 
 9，印象笔记 Evernote 迁移笔记到另一个账号的两个方法:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<http://www.jianshu.com/p/860233c903c7><br/>
