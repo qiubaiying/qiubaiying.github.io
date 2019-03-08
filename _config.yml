@@ -53,7 +53,7 @@ disqus_username: charlranx
 
 # Gitalk
 gitalk:
-  enable: true    #是否开启Gitalk评论
+  enable: false   #是否开启Gitalk评论
   clientID: 6a620f4415dd5e51d79a                            #生成的clientID
   clientSecret: b8406a96f3ebea8bd67982486ccacf4870775383    #生成的clientSecret
   repo: charlranx.github.io    #仓库名称
