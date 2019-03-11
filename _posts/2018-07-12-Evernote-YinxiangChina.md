@@ -1,6 +1,6 @@
 ---
 layout:     post                    # 使用的布局（不需要改）
-title:      "Evernote App"和"印象笔记-中国版"两个客户端的说明和区别               # 标题 
+title:      「Evernote App」和「印象笔记-中国版」两个客户端的说明和区别               # 标题 
 subtitle:    #副标题
 date:       2018-07-12              # 时间
 author:     聪聪                      # 作者
