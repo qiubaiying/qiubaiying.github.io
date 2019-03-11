@@ -87,11 +87,11 @@ tags:                               #标签
 ##### 聪聪
 &copy;聪聪:印象笔记资深印象大使 | 印象笔记年度象亲 | 坚果云效率大使 | 幕布布道师
 
-* 我的推特:<https://twitter.com/congcong0><br>
-* 我的微博:<https://weibo.com/congcong0806><br>
-* Telegram 私聊:<https://t.me/congcong><br>
-* Telegram 中文圈:<https://t.me/tgzhcn><br>
-* Telegram 社群:<https://t.me/YinxiangBiji><br>
+* 我的推特:<https://twitter.com/congcong0>
+* 我的微博:<https://weibo.com/congcong0806>
+* Telegram 私聊:<https://t.me/congcong>
+* Telegram 中文圈:<https://t.me/tgzhcn>
+* Telegram 社群:<https://t.me/YinxiangBiji>
 * Telegram 频道:<https://t.me/YinxiangBiji_News>
 
 ![聪聪](https://i.v2ex.co/3wc207g5.png)
