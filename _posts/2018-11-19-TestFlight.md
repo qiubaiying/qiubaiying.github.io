@@ -117,7 +117,7 @@ Quizlet <https://testflight.apple.com/join/mwhcPqxJ><br>
 Yamble <https://testflight.apple.com/join/sWspgco2><br>
 Color Defense <https://testflight.apple.com/join/uWKe9m1h><br>
 
-Pharos Pro <https://testflight.apple.com/join/ZgnSkCjs><br>
+Pharos lite <https://testflight.apple.com/join/DAs8hpAh><br>
 Kitsunebi <https://testflight.apple.com/join/IdFRwmNy><br>
 A.BIG.T IV <https://testflight.apple.com/join/3aArQFMQ><br>
 Potatso Lite <https://testflight.apple.com/join/NkF46PRd><br>
