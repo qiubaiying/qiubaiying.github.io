@@ -42,8 +42,9 @@ Telegram 公告中心：<https://t.me/dlercloud_news>
 
 * 我的推特:<https://twitter.com/congcong0>
 * 我的微博:<https://weibo.com/congcong0806>
-* 我的Telegram:<https://t.me/congcong>
-* 印象笔记 Evernote 社群:<https://t.me/YinxiangBiji>
-* 印象笔记 科技 NEWS:<https://t.me/YinxiangBiji_News>
+* Telegram 私聊:<https://t.me/congcong>
+* Telegram 中文圈:<https://t.me/tgzhcn>
+* Telegram 社群:<https://t.me/YinxiangBiji>
+* Telegram 频道:<https://t.me/YinxiangBiji_News>
 
 ![聪聪](https://i.v2ex.co/3wc207g5.png) 
