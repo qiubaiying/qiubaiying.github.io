@@ -91,7 +91,6 @@ iTunes Store（iOS 内购）购买的不能参加此活动，因为两者支付�
 * 我的推特:<https://twitter.com/congcong0>
 * 我的微博:<https://weibo.com/congcong0806>
 * Telegram 私聊:<https://t.me/congcong>
-
 * Telegram 社群:<https://t.me/YinxiangBiji>
 * Telegram 频道:<https://t.me/YinxiangBiji_News>
 * Telegram 中文圈:<https://t.me/tgzhcn>
