@@ -83,7 +83,7 @@ tags:                               #标签
 	5. iOS Widget 剪藏
 	6. 微信注册/登录
 	7. 手机号注册/登录
-	8. 分享笔记到微信好友/群组
+	8. 分享笔记给微信好友/群组
 	9. 分享笔记到 QQ 空间
 
 	Evernote App:
@@ -99,8 +99,9 @@ tags:                               #标签
 * 我的推特:<https://twitter.com/congcong0>
 * 我的微博:<https://weibo.com/congcong0806>
 * Telegram 私聊:<https://t.me/congcong>
-* Telegram 中文圈:<https://t.me/tgzhcn>
+
 * Telegram 社群:<https://t.me/YinxiangBiji>
 * Telegram 频道:<https://t.me/YinxiangBiji_News>
+* Telegram 中文圈:<https://t.me/tgzhcn>
 
 ![聪聪](https://i.v2ex.co/3wc207g5.png)
