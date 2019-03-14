@@ -2,7 +2,7 @@
 layout:     post
 title:      2019-03-14-以macOS原生docker创建k8s集群(上)
 subtitle:   手把手教你如何在Linux服务器上安装配置go环境
-date:       2019-03-214
+date:       2019-03-14
 author:     秋酱
 header-img: img/post-bg-kuaidi.jpg
 catalog: true
