@@ -131,7 +131,7 @@ Stealth VPN <https://testflight.apple.com/join/7hke8TEt><br>
 TunSafe VPN <https://testflight.apple.com/join/9gbYAJLB><br>
 WireGuard <https://testflight.apple.com/join/63I19SDT><br>
 Paptter <https://testflight.apple.com/join/YiCQfQv3><br>
-SSRVPN <https://testflight.apple.com/join/EeNKSIBZ><br>
+SSR-SS <https://testflight.apple.com/join/EeNKSIBZ><br>
 i2Ray-V2Ray Proxy Manager <https://testflight.apple.com/join/K57owAmM><br>
 寒梅 <https://testflight.apple.com/join/7U4YKpl2><br>
 NetShuttle <https://testflight.apple.com/join/742YC03J><br>
