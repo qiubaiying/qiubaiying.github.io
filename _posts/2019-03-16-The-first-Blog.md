@@ -1,4 +1,3 @@
-#The first Blog
 ## Hello Everyone
 >这是我的第一篇博客。
 
