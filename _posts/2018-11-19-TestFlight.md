@@ -68,7 +68,7 @@ Twitterrific 5 <https://testflight.apple.com/join/1G3zEeId><br>
 Launch Center Pro <https://testflight.apple.com/join/DpujKg3U><br>
 Xbox <https://testflight.apple.com/join/dfUeaFHS><br>
 Signal <https://testflight.apple.com/join/8FHtd1Jq><br>
-Aurora Reader <https://testflight.apple.com/join/xpyLpCmS><br>
+Aurora Reader <https://testflight.apple.com/join/3KgOyweE><br>
 Fenix for Twitter <https://testflight.apple.com/join/poQA1Iml><br>
 Cover Screenshot <https://testflight.apple.com/join/bKTfTrvV><br>
 Airmail <https://testflight.apple.com/join/1AcpfFq3><br>
