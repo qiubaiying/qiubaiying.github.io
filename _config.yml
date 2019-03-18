@@ -1,5 +1,5 @@
 # Site settings
-title: BY Blog
+title: MY Blog
 SEOTitle: SJK | BY Blog
 header-img: img/post-bg-desk.jpg
 email: shijinkui@gmail.com
@@ -11,7 +11,7 @@ github_repo: "https://github.com/Moersin/Moersin.github.io.git" # you code repos
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
+sidebar-about-description: "八千里路云和月，莫等闲，白了少年头"
 sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -19,10 +19,10 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 # SNS settings
 RSS: false
 # weibo_username:   ****
-zhihu_username:     
+#zhihu_username:     
 github_username:    Moersin
-facebook_username:  
-jianshu_username:   
+#facebook_username:  
+jianshu_username:   Moerxin
 #twitter_username:  ****
 
 
@@ -74,11 +74,11 @@ gitalk:
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: b50bf2b12b5338a1845e33832976fd68
+#ba_track_id: b50bf2b12b5338a1845e33832976fd68
 
 # Google Analytics
-ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: auto.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+#ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
+#ga_domain: auto.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
@@ -99,10 +99,10 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
+        title: "知乎",
         href: ""
     },{
-        title: "简书·BY",
+        title: "简书",
         href: "http://www.jianshu.com"
     },{
         title: "",
