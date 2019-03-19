@@ -11,7 +11,7 @@ github_repo: "https://github.com/Moersin/Moersin.github.io.git" # you code repos
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "八千里路云和月，莫等闲，白了少年头"
+sidebar-about-description: "既然选择了远方，便只顾风雨兼程"
 sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
