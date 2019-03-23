@@ -1,10 +1,10 @@
 # Site settings
-title: BY Blog
-SEOTitle: Jack的博客 | BY Blog
+title: Jack Blog
+SEOTitle: Jack的博客 | Jack Blog
 header-img: img/post-bg-desk.jpg
 email: jack3021g@gmail.com
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, Jack的博客, jack, iOS, Apple, iPhone,Java"
+keyword: "Jack, Jack Blog, Jack的博客, Jack, iOS, Apple, iPhone,Java"
 url: "http://JavaJack86.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "git@github.com:JavaJack86/JavaJack86.github.io.git" # you code repository
