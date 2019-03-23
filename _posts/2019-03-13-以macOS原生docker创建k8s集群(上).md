@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      2019-03-14-以macOS原生docker创建k8s集群(上)
+title:      以macOS原生docker创建k8s集群(上)
 subtitle:   k8s初探
 date:       2019-03-14
 author:     秋酱
