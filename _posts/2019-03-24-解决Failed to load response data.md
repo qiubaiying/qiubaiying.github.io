@@ -17,7 +17,7 @@ tags:
 ```
 Failed to load response data
 ```
-![](https://yabaowang.github.io/img/failed_to_load_response_data.png)
+![](https://yabaowang.github.io/img/tech/failed_to_load_response_data.png)
 
 尝试使用其它浏览器，也有类似的问题，比如 firefox，只能看到部分不完整的数据(比如不完整JSON)，不能解决问题。
 
@@ -43,7 +43,7 @@ TXT文本文件，NotePad++ 都可以。抓包工具我用过Fiddler和Charles�
 
  > 生成证书文件FiddlerRoot.cer
  > 在菜单栏中依次选择 【Tools】->【Options】->【HTTPS】，勾上如下图的选项
- ![](https://yabaowang.github.io/img/fiddler1.png)
+ ![](https://yabaowang.github.io/img/tech/fiddler1.png)
  
 **定制Fiddler功能**
 
