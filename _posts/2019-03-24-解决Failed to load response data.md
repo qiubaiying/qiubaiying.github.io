@@ -10,7 +10,7 @@ tags:
     - 浏览器技巧
 ---
 
-## Failed to load 原因
+### Failed to load 原因
 开发者(前后端)经常需要打开浏览器的开发者工具(F12功能窗口)，来查看浏览器发送的请求和对应的响应结果。
 但如果response中返回的数据过大，比如笔者从事开发的系统，一个接口的返回值经常几十兆，chrome的开发者窗口中的response区域，
 就会显示 
@@ -21,13 +21,13 @@ Failed to load response data
 
 尝试使用其它浏览器，也有类似的问题，比如 firefox，只能看到部分不完整的数据(比如不完整JSON)，不能解决问题。
 
-## 解决办法
+### 解决办法
 浏览器之所以显示不完全或者干脆不显示，是因为浏览器不能擅自把超大的响应结果放到磁盘文件，在可用的有限空间展示大量数据，
 就变得困难。因此我想，可以使用HTTP抓包工具，拦截请求和响应，存储到本地文件中，而能够打开大文件的软件工具就非常多了，比如UltraEdit，
 TXT文本文件，NotePad++ 都可以。抓包工具我用过Fiddler和Charles，前者重在"抓"，后者强在mock API，对应到这个场景，我倾向使用Fiddler来完成抓包任务。
 
 
-### 使用Fiddler存储请求
+#### 使用Fiddler存储请求
 
 **Fiddler介绍**  
 
@@ -45,7 +45,7 @@ TXT文本文件，NotePad++ 都可以。抓包工具我用过Fiddler和Charles�
  > 在菜单栏中依次选择 【Tools】->【Options】->【HTTPS】，勾上如下图的选项
  ![](https://yabaowang.github.io/img/fiddler1.png)
  
-**定制Fiddler功能第一步**
+**定制Fiddler功能**
 
 注意，我们的目标是保存你需要保存的场景(比如我的场景是数据量过大，浏览器不能显示)，而非全部请求。
 因此，存储哪些 请求/响应， 需要咱们自己定制一下。
@@ -95,7 +95,7 @@ if(oSession.fullUrl.Contains("/cfxml_import"))
 
 上面两个方法就能把你关注的请求、响应 HTTP(S)请求保存到本地目录。具体里面的常用方法，比如oSession的可用方法，简单百度一下就可以了。
 
-## 疑难杂症
+### 疑难杂症
 
 1, 遇到乱码?
 试试oSession.utilDecodeRequest(); oSession.utilDecodeResponse();
@@ -104,5 +104,5 @@ if(oSession.fullUrl.Contains("/cfxml_import"))
 
 右面有空我再调整下格式。
 
-## 关注一下，啥看好的影视都有，谢谢了~
+### 关注一下，啥看好的影视都有，谢谢了~
  ![](https://open.weixin.qq.com/qr/code?username=zhihuishangye)
