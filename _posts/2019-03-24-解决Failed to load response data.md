@@ -104,5 +104,5 @@ if(oSession.fullUrl.Contains("/cfxml_import"))
 
 右面有空我再调整下格式。
 
-### 关注一下，啥看好的影视都有，谢谢了~
+### 微信扫一下，啥看好电影都有，谢谢了~
  ![](https://open.weixin.qq.com/qr/code?username=zhihuishangye)
