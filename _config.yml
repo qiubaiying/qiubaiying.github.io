@@ -14,8 +14,6 @@ sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Evernote Ambassador<br>印象笔记资深印象大使<br>印象笔记年度象亲<br>坚果云效率大使<br>幕布布道师"
 sidebar-avatar: /img/about-cc-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
-
-
 # SNS settings
 RSS: true
 telegram_username:     congcong
@@ -26,9 +24,6 @@ github_username:    congcong0806
 jianshu_username:   da1809147fba
 twitter_username:   congcong0
 
-
-
-
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 permalink: pretty
@@ -36,14 +31,9 @@ paginate: 100   # 每页条数
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
-
-
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
 gems: [jekyll-paginate]
-
-
-
 
 # Markdown settings
 # replace redcarpet to kramdown,
@@ -53,8 +43,6 @@ markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
-
-
 
 # 评论系统
 # Disqus（https://disqus.com/）
@@ -70,7 +58,6 @@ gitalk:
   admin: congcong0806
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
-
 # 统计
 
 # Analytics settings
@@ -81,21 +68,13 @@ gitalk:
 ga_track_id: 'UA-117962740-1'            # Format: UA-xxxxxx-xx
 ga_domain: auto               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
-
-
-
-
 # Featured Tags
 featured-tags: true                     # 是否使用首页标签
 featured-condition-size: 0              # 相同标签数量大于这个数，才会出现在首页
 
-
-
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
 service-worker: true
-
-
 
 # Friends
 friends: [
