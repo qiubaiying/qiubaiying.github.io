@@ -5,7 +5,7 @@ header-img: img/post-bg-desk.jpg
 email: yuho2916@outlook.com
 description: "Do More Of What Makes You Happy"
 keyword: "Hugo,俞果，DeepLearning，AI"
-url: "http://yuho8818.github.io"          # your host, for absolute URL
+url: "https://yuho8818.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/yuho8818" # you code repository
 
