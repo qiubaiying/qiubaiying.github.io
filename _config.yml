@@ -100,13 +100,13 @@ service-worker: true
 friends: [
     {
         title: "知乎",
-        href: ""
+        href: "http://www.zhihu.com"
     },{
         title: "简书",
         href: "http://www.jianshu.com"
     },{
-        title: "",
-        href: ""
+        title: "哔哩哔哩",
+        href: "http://www.bilibili.com"
     },{
         title: "",
         href: ""
