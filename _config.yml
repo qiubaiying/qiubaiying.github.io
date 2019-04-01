@@ -5,9 +5,9 @@ header-img: img/post-bg-desk.jpg
 email: shuhuan329@163.com
 description: "Every failure is leading towards success."
 keyword: "BY, BY Blog, 书桓的博客, shuhuan, 高书桓, iOS, Apple, iPhone, Mac"
-url: "https://shluckyseven.github.io"          # your host, for absolute URL
+url: "https://shLuckySeven.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/shluckyseven/shluckyseven.github.io.git" # you code repository
+github_repo: "https://github.com/shLuckySeven/shLuckySeven.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -20,7 +20,7 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 RSS: false
 weibo_username:     IS亘亘
 zhihu_username:     shuhuan
-github_username:    shluckyseven
+github_username:    shLuckySeven
 # facebook_username:  baiying.qiu.7
 jianshu_username:   c2d50b036179
 #twitter_username:   qiubaiying
