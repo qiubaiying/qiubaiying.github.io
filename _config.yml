@@ -7,7 +7,7 @@ description: "balalalalalala"
 keyword: "BY, BY Blog, 书桓的博客, shuhuan, 高书桓, iOS, Apple, iPhone, Mac"
 url: "https://shLuckySeven.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-# github_repo: "https://github.com/shLuckySeven/shLuckySeven.github.io.git" # you code repository
+github_repo: "https://github.com/shLuckySeven/shLuckySeven.github.io" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
