@@ -14,7 +14,22 @@ tags:
 
 >随便整理的一些自用的Git指令
 
+>为毕设做准备
+# GitHub下载jeesite.zip
 
+# Oracle 11g
+设置好username和password
+#### 配置环境变量
+# sqldeveloper
+建立名为jeesite的数据库
+# eclipse导入项目
+#### 配置maven
+#### 配置tomcat
+# 修改jeesite.properties
+注释掉mysql语句，取消Oracle相关语句的注释
+# 修改pom.xml
+
+# svn
 # GitHub创建仓库提示代码
 
 	echo "# 项目名" >> README.md
