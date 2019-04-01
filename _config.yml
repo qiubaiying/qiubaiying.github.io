@@ -5,7 +5,7 @@ header-img: img/post-bg-debug.png
 email: shuhuan329@163.com
 description: "balalalalalala"
 keyword: "BY, BY Blog, 书桓的博客, shuhuan, 高书桓, iOS, Apple, iPhone, Mac"
-url: "https://shluckyseven.github.io"          # your host, for absolute URL
+# url: "https://shluckyseven.github.io"          # your host, for absolute URL，因为还没来得及整理自己的文章，所以暂时关闭自己的地址
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 # github_repo: "https://github.com/shLuckySeven/shLuckySeven.github.io" # you code repository
 
