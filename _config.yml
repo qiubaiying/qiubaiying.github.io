@@ -1,6 +1,6 @@
 # Site settings
-title: Jazzik Blog
-SEOTitle: 哲健的博客 | Jazzik Blog
+title: Jazzik's Blog
+SEOTitle: 哲健的博客 | Jazzik's Blog
 header-img: img/post-bg-desk.jpg
 email: zhejianpeng@yahoo.com
 description: "Every failure is leading towards success."
@@ -17,13 +17,12 @@ sidebar-avatar: /img/about_Jazzik.jpg      # use absolute URL, seeing it's used 
 
 
 # SNS settings
-social-network-links:
-    rss: true
-    # weibo_username:     qiubaiying
-    github:             Jazzikpeng
-    linkedin:           Zhejian Peng
-    instagram:          jazzik_peng
-    youtube:            user/jazzikpeng
+RSS: false
+# weibo_username:     qiubaiying
+github_username:             Jazzikpeng
+linkedin_username:           zhejian-peng-82302712b
+instagram_username:          jazzik_peng
+# youtube_username:            user/jazzikpeng
 #twitter_username:   qiubaiying
 
 
