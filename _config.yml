@@ -106,3 +106,5 @@ friends: [
         href: "http://www.jianshu.com/u/e71990ada2fd"
     }
 ]
+
+theme: jekyll-theme-minimal
