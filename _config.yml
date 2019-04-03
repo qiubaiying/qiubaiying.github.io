@@ -1,5 +1,5 @@
 # Site settings
-title: BY Blog
+title: OUR Blog
 SEOTitle: 连修明 & 张静
 header-img: img/post-bg-desk.jpg
 email: 1034552569@qq.com
@@ -12,17 +12,17 @@ github_repo: "https://github.com/easyAation/easyAation.github.io" # you code rep
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "we are forever"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar:       # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
 RSS: false
 # weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
+zhihu_username:     连修明
+github_username:    easyAation
+#facebook_username:  
+#jianshu_username:   
 #twitter_username:   qiubaiying
 
 
