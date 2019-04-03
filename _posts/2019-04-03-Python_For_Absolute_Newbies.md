@@ -10,4 +10,4 @@ tags:
     - Python
     - Data Science
 ---
-I will add contents tommorow. Not I have to go to sleep !!!
+I will add contents tommorow. Now, I have to go to sleep !!!
