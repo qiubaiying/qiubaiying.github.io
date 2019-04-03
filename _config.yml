@@ -20,9 +20,9 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 RSS: false
 # weibo_username:     
 # zhihu_username:     
-github_username:    liudongliangHI
+github_username:liudongliangHI
 #facebook_username:  
-jianshu_username:   e68fba58f75c
+jianshu_username:8a84a1abc593
 #twitter_username:   
 
 
@@ -61,7 +61,7 @@ kramdown:
 
 # Gitalk
 gitalk:
-  enable: false #是否开启Gitalk评论
+  enable: true #是否开启Gitalk评论
   clientID: 60de3da53da08b7df9f0                            #生成的clientID
   clientSecret: ca0fb3a5bbc84ff9f406fb06f151d9cd6d47f1fc    #生成的clientSecret
   repo: liudongliangHI.github.io    #仓库名称
@@ -86,7 +86,7 @@ ba_track_id: 0c8372fa6f58b54bc1e5601a9023256c
 
 # Featured Tags
 featured-tags: true                     # 是否使用首页标签
-featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+featured-condition-size: 0              # 相同标签数量大于这个数，才会出现在首页
 
 
 
