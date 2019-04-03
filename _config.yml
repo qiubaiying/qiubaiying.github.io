@@ -20,9 +20,9 @@ sidebar-avatar: /img/avatar_m.jpg      # use absolute URL, seeing it's used in b
 RSS: false
 # weibo_username:     
 # zhihu_username:     
-github_username:liudongliangHI
+github_username: liudongliangHI
 #facebook_username:  
-jianshu_username:8a84a1abc593
+jianshu_username: 8a84a1abc593
 #twitter_username:   
 
 
@@ -103,6 +103,6 @@ friends: [
         href: "https://github.com/liudongliangHI"
     },{
         title: "简书·Liu",
-        href: "http://www.jianshu.com/u/e68fba58f75c"
+        href: "http://www.jianshu.com/u/8a84a1abc593"
     }
 ]
