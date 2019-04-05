@@ -101,7 +101,7 @@ Now every time before you start coding, remember to activate the virtual environ
 alias tutorial='source ~/Environment/python_tutorial/bin/activate'
 ``` 
 
-Here you need to install code command. It's very easy. Open VS code you installed previously, and type <kbd>shift</kbd> + <kbd>command</kbd> + <kbd>p</kbd>. Then type ![this](../img/Python_for_Absolute_Newbies/code.jpg)
+Here you need to install code command. It's very easy. Open VS code you installed previously, and type <kbd>shift</kbd> + <kbd>command</kbd> + <kbd>p</kbd>. Then type ![this](https://raw.githubusercontent.com/JazzikPeng/jazzikpeng.github.io/master/img/Python_for_Absolute_Newbies/code.jpg)
 
 Now you have the basic environment setup!!! Let's start coding
 
