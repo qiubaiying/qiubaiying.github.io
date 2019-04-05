@@ -59,7 +59,50 @@ Congrats! You know have the latest version of Python ready!
 
 # Virtual Environment
 
-Do use a virtual environment, PLEASE!!!
+Do use a virtual environment, PLEASE!!! Virtual environment allow you to separate your developing environment without interfering with the system. 
 
 I want you to have the best programming habit from the beginning. I learned this the hard way.
 
+Lets try to setup virtual environment using virtualenv.
+
+First go to home directory and create a directory Environment to store all your virtual environments
+```bash
+~ » cd ~
+~ » mkdir Environment
+~ » cd Environment
+```
+
+Then install virtualenv and create a new virtual environment named it python_tutorial
+
+```bash
+~ » pip install virtualenv
+~ » virtualenv ~/Environment/python_tutorial
+```
+
+Activate python_tutorial. Now type which python3. It will return the path to the virtual environment.
+
+```bash
+~ » source ~/Environment/python_tutorial/bin/activate
+~ » which python3
+/Users/zhejianpeng/Environment/python_tutorial/bin/python3
+```
+
+Deactivate python_tutorial environment
+
+```bash
+~ » deactivate
+```
+
+Now every time before you start coding, remember to activate the virtual environment. It's recommended to create a short alias of the activation command and add it to ~/.bash_profile. You don't have to type the long version.
+
+```bash
+~ » code ~/.bash_profile
+# User Define Alias, add following line to your bash_profile
+alias tutorial='source ~/Environment/python_tutorial/bin/activate'
+``` 
+
+Here you need to install code command. It's very easy. Open VS code you installed previously, and type <kbd>shift</kbd> + <kbd>command</kbd> + <kbd>p</kbd>. Then type ![this](../img/Python_for_Absolute_Newbies/code.jpg)
+
+Now you have the basic environment setup!!! Let's start coding
+
+# Hello World
