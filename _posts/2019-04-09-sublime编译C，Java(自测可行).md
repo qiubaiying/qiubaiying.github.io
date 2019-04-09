@@ -1,15 +1,15 @@
-﻿---
+---
 layout:     post
 title:      sublime编译C，java（自测可行）
 subtitle:   sublime轻巧方便
 date:       2019-04-08
 author:     Hrain
-header-img: post-bg-universe.jpg
+header-img: img/post-bg-universe.jpg
 catalog: true
 tags:
     - 技术文章
 ---
-# 1：简述
+# 简述
 
 之前编译C语言一直用的是vc6.0或者是vs系列。但是不如sublime来的小巧，方便快捷，最主要的是好看。
 上网查看了好多关于这方面的教程，花费了我好长的时间，但是都是行不通。好气。
@@ -18,7 +18,7 @@ tags:
 
 # 解决办法：
 
-#### 1:C语言
+#### C语言
 <p><font color = "red">1:C语言编译我用的是gcc，gcc我直接用的是dev Cpp这个软件里边的。</font></p>
 <hr>
 <p><font color = "blue">PS:有需要的就直接上网下载dev cpp就行了，但是有一点要说明的是：不推荐用dev cpp来进行编程，咱要的是里边的gcc,就行</font></p>
@@ -54,11 +54,11 @@ ctrl+s,命名ccc(你自己看懂，明白什么意思就行)
 开始写代码，最后开始编译的时候，一定要ctrl+s,保存下你的代码。
 1：ctrl+shift+b ：选择ccc--->这一步是为了进行编译
 2：ctrl+shift+b：选择ccc run --->这一步是执行
-</font></p>
+</font>
 <br>
 <hr>
 
-#### 2:java
+#### java
 <hr><font color = "red">2:Java语言编译首先安装java环境</font><hr>
 1：配置环境变量<br>
 2：如上方法：写代码：
@@ -74,7 +74,8 @@ ctrl+s,命名ccc(你自己看懂，明白什么意思就行)
 
 ```
 <hr>
-<font color = "blue">注意：代码中path环境变量那个位置写的是<b>自己的环境变量配的位置</font><hr>
+<font color = "blue">注意：代码中path环境变量那个位置写的是<b>自己的环境变量配的位置</b></font>
+<hr>
 
 接着的步骤就是和上边的一样了，熟能生巧，多尝试，多练就是可以的。<br>
 但是java直接ctrl+b就执行了。
