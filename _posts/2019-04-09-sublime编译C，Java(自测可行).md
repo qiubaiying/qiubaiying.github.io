@@ -22,7 +22,8 @@ C:\Program Files (x86)\Dev-Cpp\MinGW64\bin<br>环境变量也是这个路径，�
 <p><br>
 <b>最主要的是这一部分：</b><br>
 打开sunlime-->tools-->build system -->
-粘贴这段代码：<br>
+粘贴这段代码：
+
 
 ```
 {
@@ -42,6 +43,7 @@ C:\Program Files (x86)\Dev-Cpp\MinGW64\bin<br>环境变量也是这个路径，�
 }
 
 ```
+<hr>
 <br>
 ctrl+s,命名ccc(你自己看懂，明白什么意思就行)
 <hr>
@@ -51,9 +53,9 @@ ctrl+s,命名ccc(你自己看懂，明白什么意思就行)
 1：ctrl+shift+b ：选择ccc--->这一步是为了进行编译
 2：ctrl+shift+b：选择ccc run --->这一步是执行
 </font></p>
-<br><br><br><br>
+<br>
 <hr>
-<hr><font color = "red">2:Java语言编译首先安装java环境</font><hr><hr>
+<hr><font color = "red">2:Java语言编译首先安装java环境</font><hr>
 1：配置环境变量<br>
 2：如上方法：写代码：
 
