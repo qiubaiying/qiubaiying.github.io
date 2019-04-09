@@ -9,25 +9,28 @@ catalog: true
 tags:
     - 技术文章
 ---
+#1：简述
 
 之前编译C语言一直用的是vc6.0或者是vs系列。但是不如sublime来的小巧，方便快捷，最主要的是好看。
 上网查看了好多关于这方面的教程，花费了我好长的时间，但是都是行不通。好气。
 解决方法，我就不那么细致的来说了，有点基础的人应该会明白，其实说多了会更加的晕。
-<hr><hr>
+<hr>
+
+#解决办法：
+
 <p><font color = "red">1:C语言编译我用的是gcc，gcc我直接用的是dev Cpp这个软件里边的。</font></p>
 <hr><hr>
 <p><font color = "blue">PS:有需要的就直接上网下载dev cpp就行了，但是有一点要说明的是：不推荐用dev cpp来进行编程，咱要的是里边的gcc,就行</font></p>
 我dev Cpp安装的路径是这里，找到bin目录:
 C:\Program Files (x86)\Dev-Cpp\MinGW64\bin<br>环境变量也是这个路径，设置环境变量，和配置java的没什么区别。若是不会的，直接上网搜索，配置java环境变量的过程，教程有很多。
 <p><br>
-<b>最主要的是这一部分：</b><br>
-打开sunlime-->tools-->build system -->
+<b>最主要的是这一部分：</b>
+打开sunlime-->tools-->build system --><br>
 粘贴这段代码：
-
 
 ```
 {
-	"cmd": ["gcc","${file}","-o", "${file_path}/${file_base_name}"],
+  "cmd": ["gcc","${file}","-o", "${file_path}/${file_base_name}"],
   "file_regex":"^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
   "working_dir":"${file_path}",
   "encoding":"cp936",
@@ -43,6 +46,7 @@ C:\Program Files (x86)\Dev-Cpp\MinGW64\bin<br>环境变量也是这个路径，�
 }
 
 ```
+
 <hr>
 <br>
 ctrl+s,命名ccc(你自己看懂，明白什么意思就行)
