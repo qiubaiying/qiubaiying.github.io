@@ -22,7 +22,7 @@ C:\Program Files (x86)\Dev-Cpp\MinGW64\bin<br>环境变量也是这个路径，�
 <p><br>
 <b>最主要的是这一部分：</b><br>
 打开sunlime-->tools-->build system -->
-粘贴这段代码：
+粘贴这段代码：<br>
 
 ```
 {
@@ -42,6 +42,7 @@ C:\Program Files (x86)\Dev-Cpp\MinGW64\bin<br>环境变量也是这个路径，�
 }
 
 ```
+<br>
 ctrl+s,命名ccc(你自己看懂，明白什么意思就行)
 <hr>
 <font color ="green">
@@ -72,4 +73,4 @@ ctrl+s,命名ccc(你自己看懂，明白什么意思就行)
 接着的步骤就是和上边的一样了，熟能生巧，多尝试，多练就是可以的。<br>
 但是java直接ctrl+b就执行了。
 
-本文首次发布于 [BY Hrain](http://www.gaoxinya.xyz), 作者 [@Hrain(BY)](http://www.gaoxinya.xyz) ,转载请保留原文链接.
+<p>-----本文首次发布于 [BY Hrain](http://www.gaoxinya.xyz), 作者 [@Hrain(BY)](http://www.gaoxinya.xyz) ,转载请保留原文链接.-----</p>
