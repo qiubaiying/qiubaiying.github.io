@@ -55,7 +55,6 @@ ctrl+s,命名ccc(你自己看懂，明白什么意思就行)
 1：ctrl+shift+b ：选择ccc--->这一步是为了进行编译
 2：ctrl+shift+b：选择ccc run --->这一步是执行
 </font>
-<br>
 <hr>
 
 #### java
@@ -79,9 +78,11 @@ ctrl+s,命名ccc(你自己看懂，明白什么意思就行)
 
 接着的步骤就是和上边的一样了，熟能生巧，多尝试，多练就是可以的。<br>
 但是java直接ctrl+b就执行了。
-
-<p>
-<p>
-<p><-----本文首次发布于 [BY Hrain](http://www.gaoxinya.xyz), 作者 [@Hrain(BY)](http://www.gaoxinya.xyz) ,转载请保留原文链接.-----></p>
-</p>
-</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr>
+<hr>
+<p><----------------本文首次发布于 [BY Hrain](http://www.gaoxinya.xyz), 作者 [@Hrain(BY)](http://www.gaoxinya.xyz) ,转载请保留原文链接.-----------------></p>
