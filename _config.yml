@@ -81,18 +81,9 @@ var _hmt = _hmt || [];
 })();
 </script>
 
-# Google Analytics
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138142460-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-138142460-1');
-</script>
-
+ga_track_id: 'UA-138142460-1'            # Format: UA-xxxxxx-xx
+ga_domain: gaoxinya.xyz               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
