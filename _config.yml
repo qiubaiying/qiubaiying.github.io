@@ -1,3 +1,13 @@
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?639d69ba46060f864b005f1d97856c8c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 # Site settings
 title: Hrain's blog
 SEOTitle: 高欣的博客 | Hrain's blog
@@ -31,38 +41,7 @@ highlighter: rouge
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
 
-<<<<<<< HEAD
-=======
 
-
-# 评论系统
-# Disqus（https://disqus.com/）
-# disqus_username: gaoxin
-
-# Gitalk
-gitalk:
-  enable: false    #是否开启Gitalk评论,开启后将这里改为true
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: paydebt.github.io    #仓库名称
-  owner: paydebt    #github用户名
-  admin: gaoxin
-  distractionFreeMode: true #是否启用类似FB的阴影遮罩
-
-
->>>>>>> parent of b4ea430... Update _config.yml
-# 统计
-
-# Analytics settings
-# Baidu Analytics
-ba_track_id: 639d69ba46060f864b005f1d97856c8c
-
-# Google Analytics
-ga_track_id: UA-90855596-1            # Format: UA-xxxxxx-xx
-ga_domain: http://www.gaoxinya.xyz               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
-
-
-<!-- Gitalk 评论 start  -->
 {% if site.gitalk.enable %}
 <!-- Link Gitalk 的支持文件  -->
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
@@ -78,25 +57,29 @@ ga_domain: http://www.gaoxinya.xyz               # 默认的是 auto, 这里我�
         repo: PingLun
         owner: PayDebt
         admin: PayDebt
-        id: decodeURI(window.location.pathname)   
+        id: decodeURI(window.location.pathname)
+    
     });
     gitalk.render('gitalk-container');
 </script>
 {% endif %}
-<!-- Gitalk end -->
+
+ba_track_id: 639d69ba46060f864b005f1d97856c8c
+
+# Google Analytics
+ga_track_id: UA-90855596-1            # Format: UA-xxxxxx-xx
+ga_domain: http://www.gaoxinya.xyz               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+
+
 
 
 # Featured Tags
 featured-tags: true                     # 是否使用首页标签
 featured-condition-size: 0              # 相同标签数量大于这个数，才会出现在首页
 
-
-
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
 service-worker: true
-
-
 
 # Friends
 friends: [
@@ -105,10 +88,10 @@ friends: [
         href: "http://www.cnblogs.com/Hrain"
     },{
         title: "Hrain's CSDN",
-        href: "https://blog.csdn.net/gaoxin_gx"
+        href: "http://blog.csdn.net/gaoxin_gx"
     },{
         title: "微博",
-        href: "https://weibo.com/u/6735644192?is_all=1"
+        href: "http://weibo.com/u/6735644192?is_all=1"
     },{
         title: "baidu",
         href: "http://www.baidu.com"
