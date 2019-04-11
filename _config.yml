@@ -38,14 +38,7 @@ kramdown:
 # disqus_username: gaoxin
 
 # Gitalk
-gitalk:
-  enable: true    #是否开启Gitalk评论,开启后将这里改为true
-  clientID: c30dab81d2ed10ea5f02                            #生成的clientID
-  clientSecret: 7e20f920fad965c8e7cf71c9ea4cdb022339f000    #生成的clientSecret
-  repo: paydebt.github.io    #仓库名称
-  owner: paydebt    #github用户名
-  admin: gaoxin
-  distractionFreeMode: true #是否启用类似FB的阴影遮罩
+
 
 <!-- Gitalk 评论 start  -->
 {% if site.gitalk.enable %}
@@ -79,9 +72,6 @@ gitalk:
 # Baidu Analytics
 ba_track_id: 639d69ba46060f864b005f1d97856c8c
 
-# Google Analytics
-ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: gaoxinya.xyz               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
