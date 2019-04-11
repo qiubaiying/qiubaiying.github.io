@@ -53,7 +53,7 @@ kramdown:
     // gitalk的主要参数
         clientID: c30dab81d2ed10ea5f02
         clientSecret: 7e20f920fad965c8e7cf71c9ea4cdb022339f000
-        repo: PayDebt.github.io
+        repo: PingLun
         owner: PayDebt
         admin: PayDebt
         id: http://www.gaoxinya.xyz
@@ -82,8 +82,7 @@ var _hmt = _hmt || [];
 </script>
 
 # Google Analytics
-ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: gaoxinya.xyz               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+
 
 
 
