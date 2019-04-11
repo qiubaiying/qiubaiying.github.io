@@ -39,9 +39,9 @@ kramdown:
 
 # Gitalk
 gitalk:
-  enable: false    #是否开启Gitalk评论,开启后将这里改为true
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
+  enable: true    #是否开启Gitalk评论,开启后将这里改为true
+  clientID: c30dab81d2ed10ea5f02                            #生成的clientID
+  clientSecret: 7e20f920fad965c8e7cf71c9ea4cdb022339f000    #生成的clientSecret
   repo: paydebt.github.io    #仓库名称
   owner: paydebt    #github用户名
   admin: gaoxin
@@ -81,10 +81,10 @@ friends: [
         href: "http://www.cnblogs.com/Hrain"
     },{
         title: "Hrain's CSDN",
-        href: "https://blog.csdn.net/gaoxin_gx"
+        href: "http://blog.csdn.net/gaoxin_gx"
     },{
         title: "微博",
-        href: "https://weibo.com/u/6735644192?is_all=1"
+        href: "http://weibo.com/u/6735644192?is_all=1"
     },{
         title: "baidu",
         href: "http://www.baidu.com"
