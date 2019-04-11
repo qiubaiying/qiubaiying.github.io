@@ -31,38 +31,6 @@ highlighter: rouge
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
 
-{% if site.gitalk.enable %}
-<!-- Link Gitalk 的支持文件  -->
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
-
-<div id="gitalk-container"></div>
-    <script type="text/javascript">
-    var gitalk = new Gitalk({
-
-    // gitalk的主要参数
-        clientID: c30dab81d2ed10ea5f02
-        clientSecret: 7e20f920fad965c8e7cf71c9ea4cdb022339f000
-        repo: PingLun
-        owner: PayDebt
-        admin: PayDebt
-        id: decodeURI(window.location.pathname)
-    
-    });
-    gitalk.render('gitalk-container');
-</script>
-{% endif %}
-
-=======
-# Analytics settings
-# Baidu Analytics
-ba_track_id: 639d69ba46060f864b005f1d97856c8c
-
-# Google Analytics
-ga_track_id: UA-90855596-1            # Format: UA-xxxxxx-xx
-ga_domain: http://www.gaoxinya.xyz               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
-
-
 
 # Featured Tags
 featured-tags: true                     # 是否使用首页标签
