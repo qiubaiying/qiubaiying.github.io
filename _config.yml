@@ -7,7 +7,7 @@ description: "Every failure is leading towards success."
 keyword: "BY, BY Blog, 高欣的博客, gaoxin, 高欣, java, php, pyhton"
 url: "https://paydebt.github.io/"          
 baseurl: ""     
-github_repo: "https://paydebt.github.io/" 
+github_repo: "http://paydebt.github.io/" 
 
 
 sidebar: true                           
@@ -31,8 +31,6 @@ highlighter: rouge
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
 
-
-<<<<<<< HEAD
 {% if site.gitalk.enable %}
 <!-- Link Gitalk 的支持文件  -->
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
@@ -58,18 +56,12 @@ kramdown:
 =======
 # Analytics settings
 # Baidu Analytics
->>>>>>> parent of 73f38fc... Update _config.yml
 ba_track_id: 639d69ba46060f864b005f1d97856c8c
 
 # Google Analytics
 ga_track_id: UA-90855596-1            # Format: UA-xxxxxx-xx
 ga_domain: http://www.gaoxinya.xyz               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> parent of 73f38fc... Update _config.yml
 
 
 # Featured Tags
