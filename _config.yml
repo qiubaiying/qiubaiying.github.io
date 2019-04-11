@@ -47,6 +47,31 @@ gitalk:
   admin: gaoxin
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
+<!-- Gitalk 评论 start  -->
+{% if site.gitalk.enable %}
+<!-- Link Gitalk 的支持文件  -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+    <script type="text/javascript">
+    var gitalk = new Gitalk({
+
+    // gitalk的主要参数
+        clientID: c30dab81d2ed10ea5f02
+        clientSecret: 7e20f920fad965c8e7cf71c9ea4cdb022339f000
+        repo: PayDebt.github.io
+        owner: PayDebt
+        admin: PayDebt
+        id: http://www.gaoxinya.xyz
+    
+    });
+    gitalk.render('gitalk-container');
+</script>
+{% endif %}
+<!-- Gitalk end -->
+
+
 
 # 统计
 
