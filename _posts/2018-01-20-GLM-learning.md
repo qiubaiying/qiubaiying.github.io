@@ -1,3 +1,19 @@
+---
+layout:     post   				    # 使用的布局（不需要改）
+title:      数据的风流韵事 				# 标题
+subtitle:   基于R语言的广义线性模型 #副标题
+date:       2018-01-20 				# 时间
+author:     Liu 						# 作者
+header-img: img/post-bg-2015.jpg 	#这篇文章标题背景图片
+catalog: true 						# 是否归档
+tags:								#标签
+    - 统计学
+    - GLM
+    - 广义线性模型
+---
+
+
+
 # 数据的风流韵事——基于R语言的广义线性模型
 ## 刘栋梁 2018.1.20 于南京林业大学
 
