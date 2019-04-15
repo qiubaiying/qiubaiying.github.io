@@ -137,7 +137,13 @@ TestFlight 下载地址:<https://itunes.apple.com/cn/app/testflight/id899247664>
 - i2Ray-V2Ray Proxy Manager <https://testflight.apple.com/join/K57owAmM>
 - 寒梅 <https://testflight.apple.com/join/7U4YKpl2>
 - NetShuttle <https://testflight.apple.com/join/742YC03J>
+- Hotspot+VPN Tor Browser Proxy <https://testflight.apple.com/join/bKAEdVG3>
 <br>
+- 爱阅书香 <https://testflight.apple.com/join/23FPuktF>
+- 黑匣子Player <https://testflight.apple.com/join/uCsUGsvN>
+- 豌豆多多TestFlight <https://testflight.apple.com/join/gbcprIXM>
+- 树洞(sudo) <https://testflight.apple.com/join/dNThSezF>
+- 阅读清单 <https://testflight.apple.com/join/kBS5mVao>
 - 9GAG <https://testflight.apple.com/join/S2q4mD2b>
 - GroupMe <https://testflight.apple.com/join/6CcTotfX>
 - Feedbin <https://testflight.apple.com/join/ynrJI46U>
@@ -153,12 +159,9 @@ TestFlight 下载地址:<https://itunes.apple.com/cn/app/testflight/id899247664>
 - Strike <https://testflight.apple.com/join/BTZRrfEX>
 - Screens <https://testflight.apple.com/join/soRRXSyT>
 - ConchPlayer <https://testflight.apple.com/join/WpAo1ALq>
-- 爱阅书香 <https://testflight.apple.com/join/23FPuktF>
 - Fly THIS! <https://testflight.apple.com/join/h1eKzSHI>
 - Piano - Note Taking <https://testflight.apple.com/join/eDPJ91Xt>
-- 黑匣子Player <https://testflight.apple.com/join/uCsUGsvN>
 - REAL Shuffle Player PRO <https://testflight.apple.com/join/iow1BtFD>
-- 豌豆多多TestFlight <https://testflight.apple.com/join/gbcprIXM>
 - Focus Today <https://testflight.apple.com/join/RkiJ5aNH>
 - Yandex Browser <https://testflight.apple.com/join/Y4k4ze6V>
 - Drift Music <https://testflight.apple.com/join/gYn8g7oj>
@@ -186,7 +189,6 @@ TestFlight 下载地址:<https://itunes.apple.com/cn/app/testflight/id899247664>
 - Classic Euchre <https://testflight.apple.com/join/0Ip6r1tw>
 - Doppi <https://testflight.apple.com/join/dWc5NgTO>
 - Gr‏ow <https://testflight.apple.com/join/h3xyVeII>
-- 树洞(sudo) <https://testflight.apple.com/join/dNThSezF>
 - ChastiKey <https://testflight.apple.com/join/0pHRZcVD>
 - Nextcloud <https://testflight.apple.com/join/GjNbfo2a>
 - Artstudio Pro <https://testflight.apple.com/join/Npva2kOl>
