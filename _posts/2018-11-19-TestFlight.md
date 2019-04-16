@@ -118,6 +118,7 @@ TestFlight 下载地址:<https://itunes.apple.com/cn/app/testflight/id899247664>
 - Color Defense <https://testflight.apple.com/join/uWKe9m1h>
 - KyPass 4 密码管理 <https://testflight.apple.com/join/wlZmOo9t>
 - MK播放器 <https://testflight.apple.com/join/qUEu2p3L>
+- LyricsX <https://testflight.apple.com/join/pjjhQLZJ>
 <br>
 - Pharos lite <https://testflight.apple.com/join/DAs8hpAh>
 - Pharos Pro <https://testflight.apple.com/join/StuF0Ast>
