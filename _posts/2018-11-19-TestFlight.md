@@ -118,8 +118,6 @@ TestFlight 下载地址:<https://itunes.apple.com/cn/app/testflight/id899247664>
 - Color Defense <https://testflight.apple.com/join/uWKe9m1h>
 - KyPass 4 密码管理 <https://testflight.apple.com/join/wlZmOo9t>
 - MK播放器 <https://testflight.apple.com/join/qUEu2p3L>
-- LyricsX <https://testflight.apple.com/join/pjjhQLZJ>
-- TelePlus <https://testflight.apple.com/join/LQ2GXZag>
 <br>
 - Pharos lite <https://testflight.apple.com/join/DAs8hpAh>
 - Pharos Pro <https://testflight.apple.com/join/StuF0Ast>
@@ -146,6 +144,8 @@ TestFlight 下载地址:<https://itunes.apple.com/cn/app/testflight/id899247664>
 - 豌豆多多TestFlight <https://testflight.apple.com/join/gbcprIXM>
 - 树洞(sudo) <https://testflight.apple.com/join/dNThSezF>
 - 阅读清单 <https://testflight.apple.com/join/kBS5mVao>
+- Space Browser <https://testflight.apple.com/join/UZCCWbHA>
+- Vite Multi-token Wallet <https://testflight.apple.com/join/UhrGJLb2>
 - 9GAG <https://testflight.apple.com/join/S2q4mD2b>
 - GroupMe <https://testflight.apple.com/join/6CcTotfX>
 - Feedbin <https://testflight.apple.com/join/ynrJI46U>
