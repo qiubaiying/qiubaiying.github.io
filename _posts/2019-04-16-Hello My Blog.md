@@ -1,6 +1,6 @@
 ---
 layout:     post
-title: 2019-04-16-Hello My Blog
+title: Hello My Blog
 subtitle: 正式的第一个博客
 date: 2019-04-16
 author: Bend
