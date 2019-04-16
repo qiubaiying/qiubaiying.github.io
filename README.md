@@ -10,110 +10,110 @@
 [![](https://img.shields.io/github/forks/qiubaiying/qiubaiying.github.io.svg?style=social&label=Fork)](https://github.com/qiubaiying/qiubaiying.github.io)
 
 
-博客的搭建教程修改自 [Hux](https://github.com/Huxpro/huxpro.github.io) 
+ĺĺŽ˘çć­ĺťşćç¨äżŽćščŞ [Hux](https://github.com/Huxpro/huxpro.github.io) 
  
-更为详细的教程戳这 [《利用 GitHub Pages 快速搭建个人博客》](http://www.jianshu.com/p/e68fba58f75c) 或 [wiki](https://github.com/qiubaiying/qiubaiying.github.io/wiki/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B)
+ć´ä¸şčŻŚçťçćç¨ćłčż [ăĺŠç¨ GitHub Pages ĺżŤéć­ĺťşä¸ŞäşşĺĺŽ˘ă](http://www.jianshu.com/p/e68fba58f75c) ć [wiki](https://github.com/qiubaiying/qiubaiying.github.io/wiki/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B)
 
 >
-### [查看博客戳这里 👆](http://qiubaiying.github.io)
+### [ćĽçĺĺŽ˘ćłčżé đ](http://qiubaiying.github.io)
 
 
 
-## 使用
+## ä˝żç¨
 
-* 开始
-	* [环境](#环境)
-	* [开始](#开始)
-	* [撰写博文](#撰写博文)
-* 组件
-	* [侧边栏](#侧边栏)
-	* [迷你关于我](#mini-about-me)
-	* [推荐标签](#featured-tags)
-	* [好友链接](#friends)
-	* [HTML5 演示文档布局](#keynote-layout)
-* 评论与 Google/Baidu Analytics
-	* [评论](#comment)
-	* [网站分析](#analytics) 
-* 高级部分
-	* [自定义](#customization)
-	* [标题底图](#header-image)
-	* [搜索展示标题-头文件](#seo-title)
-
-
-
-### 环境
-
-如果你安装了 [jekyll](http://jekyllcn.com/)，那你只需要在命令行输入`jekyll serve` 或 `jekyll s`就能在本地浏览器中输入`http://127.0.0.1:4000/`预览主题，对主题的修改也能实时展示（需要强刷浏览器）。
+* ĺźĺ§
+	* [çŻĺ˘](#çŻĺ˘)
+	* [ĺźĺ§](#ĺźĺ§)
+	* [ć°ĺĺć](#ć°ĺĺć)
+* çťäťś
+	* [äž§čžšć ](#äž§čžšć )
+	* [čżˇä˝ ĺłäşć](#mini-about-me)
+	* [ć¨čć ç­ž](#featured-tags)
+	* [ĺĽ˝ĺéžćĽ](#friends)
+	* [HTML5 ćźç¤şććĄŁĺ¸ĺą](#keynote-layout)
+* čŻčŽşä¸ Google/Baidu Analytics
+	* [čŻčŽş](#comment)
+	* [ç˝çŤĺć](#analytics) 
+* éŤçş§é¨ĺ
+	* [čŞĺŽäš](#customization)
+	* [ć é˘ĺşĺž](#header-image)
+	* [ćç´˘ĺąç¤şć é˘-ĺ¤´ćäťś](#seo-title)
 
 
 
-### 开始
+### çŻĺ˘
 
-你可以通用修改 `_config.yml`文件来轻松的开始搭建自己的博客:
+ĺŚćä˝ ĺŽčŁäş [jekyll](http://jekyllcn.com/)ďźéŁä˝ ĺŞéčŚĺ¨ĺ˝äť¤čĄčžĺĽ`jekyll serve` ć `jekyll s`ĺ°ąč˝ĺ¨ćŹĺ°ćľč§ĺ¨ä¸­čžĺĽ`http://127.0.0.1:4000/`é˘č§ä¸ťé˘ďźĺŻšä¸ťé˘çäżŽćšäšč˝ĺŽćśĺąç¤şďźéčŚĺźşĺˇćľč§ĺ¨ďźă
+
+
+
+### ĺźĺ§
+
+ä˝ ĺŻäťĽéç¨äżŽćš `_config.yml`ćäťśćĽč˝ťćžçĺźĺ§ć­ĺťşčŞĺˇąçĺĺŽ˘:
 
 ```
 # Site settings
-title: BY Blog                    # 你的博客网站标题
-SEOTitle: 柏荧的博客 | BY Blog		# SEO 标题
-description: "Hey"	   	   # 随便说点，描述一下
+title: BY Blog                    # ä˝ çĺĺŽ˘ç˝çŤć é˘
+SEOTitle: ćč§çĺĺŽ˘ | BY Blog		# SEO ć é˘
+description: "Hey"	   	   # éäžżčŻ´çšďźćčż°ä¸ä¸
 
 # SNS settings      
-github_username: qiubaiying     # 你的github账号
-jianshu_username: e71990ada2fd  # 你的简书ID。
+github_username: qiubaiying     # ä˝ çgithubč´Śĺˇ
+jianshu_username: e71990ada2fd  # ä˝ ççŽäšŚIDă
 
 # Build settings
-# paginate: 10              # 一页你准备放几篇文章
+# paginate: 10              # ä¸éĄľä˝ ĺĺ¤ćžĺ çŻćçŤ 
 ```
 
-Jekyll官方网站还有很多的参数可以调，比如设置文章的链接形式...网址在这里：[Jekyll - Official Site](http://jekyllrb.com/) 中文版的在这里：[Jekyll中文](http://jekyllcn.com/).
+JekyllĺŽćšç˝çŤčżćĺžĺ¤çĺć°ĺŻäťĽč°ďźćŻĺŚčŽžç˝ŽćçŤ çéžćĽĺ˝˘ĺź...ç˝ĺĺ¨čżéďź[Jekyll - Official Site](http://jekyllrb.com/) ä¸­ćççĺ¨čżéďź[Jekyllä¸­ć](http://jekyllcn.com/).
 
-### 撰写博文
+### ć°ĺĺć
 
-要发表的文章一般以 **Markdown** 的格式放在这里`_posts/`，你只要看看这篇模板里的文章你就立刻明白该如何设置。
+čŚĺčĄ¨çćçŤ ä¸čŹäťĽ **Markdown** çć źĺźćžĺ¨čżé`_posts/`ďźä˝ ĺŞčŚççčżçŻć¨ĄćżéçćçŤ ä˝ ĺ°ąçŤĺťćç˝čŻĽĺŚä˝čŽžç˝Žă
 
-yaml 头文件长这样:
+yaml ĺ¤´ćäťśéżčżć ˇ:
 
 ```
 ---
 layout:     post
-title:      定时器 你真的会使用吗？
-subtitle:   iOS定时器详解
+title:      ĺŽćśĺ¨ ä˝ ççäźä˝żç¨ĺďź
+subtitle:   iOSĺŽćśĺ¨čŻŚč§Ł
 date:       2016-12-13
 author:     BY
 header-img: img/post-bg-ios9-web.jpg
 catalog: 	 true
 tags:
     - iOS
-    - 定时器
+    - ĺŽćśĺ¨
 ---
 
 ```
 
-### 侧边栏
+### äž§čžšć 
 
-看右边:
+çĺłčžš:
 ![](https://raw.githubusercontent.com/qiubaiying/qiubaiying.github.io/master/img/readme-side.png)
 
-设置是在 `_config.yml`文件里面的`Sidebar settings`那块。
+čŽžç˝ŽćŻĺ¨ `_config.yml`ćäťśéé˘ç`Sidebar settings`éŁĺă
 
 ```
 # Sidebar settings
-sidebar: true  #添加侧边栏
-sidebar-about-description: "简单的描述一下你自己"
-sidebar-avatar: /img/avatar-by.jpg     #你的大头贴，请使用绝对地址.注意：名字区分大小写！后缀名也是
+sidebar: true  #ćˇťĺ äž§čžšć 
+sidebar-about-description: "çŽĺçćčż°ä¸ä¸ä˝ čŞĺˇą"
+sidebar-avatar: /img/avatar-by.jpg     #ä˝ çĺ¤§ĺ¤´č´´ďźčŻˇä˝żç¨çťĺŻšĺ°ĺ.ćł¨ćďźĺĺ­ĺşĺĺ¤§ĺ°ĺďźĺçźĺäšćŻ
 ```
 
-侧边栏是响应式布局的，当屏幕尺寸小于992px的时候，侧边栏就会移动到底部。具体请见bootstrap栅格系统 <http://v3.bootcss.com/css/>
+äž§čžšć ćŻĺĺşĺźĺ¸ĺąçďźĺ˝ĺąĺšĺ°şĺŻ¸ĺ°äş992pxçćśĺďźäž§čžšć ĺ°ąäźç§ťĺ¨ĺ°ĺşé¨ăĺˇä˝čŻˇč§bootstrapć ć źçłťçť <http://v3.bootcss.com/css/>
 
 
 ### Mini About Me
 
-Mini-About-Me 这个模块将在你的头像下面，展示你所有的社交账号。这个也是响应式布局，当屏幕变小时候，会将其移动到页面底部，只不过会稍微有点小变化，具体请看代码。
+Mini-About-Me čżä¸Şć¨Ąĺĺ°ĺ¨ä˝ çĺ¤´ĺä¸é˘ďźĺąç¤şä˝ ććçç¤žäş¤č´Śĺˇăčżä¸ŞäšćŻĺĺşĺźĺ¸ĺąďźĺ˝ĺąĺšĺĺ°ćśĺďźäźĺ°ĺśç§ťĺ¨ĺ°éĄľé˘ĺşé¨ďźĺŞä¸čżäźç¨ĺžŽćçšĺ°ĺĺďźĺˇä˝čŻˇçäťŁç ă
 
 ### Featured Tags
 
-看到这个网站 [Medium](http://medium.com) 的推荐标签非常的炫酷，所以我将他加了进来。
-这个模块现在是独立的，可以呈现在所有页面，包括主页和发表的每一篇文章标题的头上。
+çĺ°čżä¸Şç˝çŤ [Medium](http://medium.com) çć¨čć ç­žéĺ¸¸ççŤéˇďźćäťĽćĺ°äťĺ äşčżćĽă
+čżä¸Şć¨Ąĺç°ĺ¨ćŻçŹçŤçďźĺŻäťĽĺç°ĺ¨ććéĄľé˘ďźĺćŹä¸ťéĄľĺĺčĄ¨çćŻä¸çŻćçŤ ć é˘çĺ¤´ä¸ă
 
 ```
 # Featured Tags
@@ -121,13 +121,13 @@ featured-tags: true
 featured-condition-size: 1     # A tag will be featured if the size of it is more than this condition value
 ```
 
-唯一需要注意的是`featured-condition-size`: 如果一个标签的 SIZE，也就是使用该标签的文章数大于上面设定的条件值，这个标签就会在首页上被推荐。
+ĺŻä¸éčŚćł¨ćçćŻ`featured-condition-size`: ĺŚćä¸ä¸Şć ç­žç SIZEďźäšĺ°ąćŻä˝żç¨čŻĽć ç­žçćçŤ ć°ĺ¤§äşä¸é˘čŽžĺŽçćĄäťśĺźďźčżä¸Şć ç­žĺ°ąäźĺ¨éŚéĄľä¸č˘Ťć¨čă
  
-内部有一个条件模板 `{% if tag[1].size > {{site.featured-condition-size}} %}` 是用来做筛选过滤的.
+ĺé¨ćä¸ä¸ŞćĄäťść¨Ąćż `{% if tag[1].size > {{site.featured-condition-size}} %}` ćŻç¨ćĽĺç­éčżćť¤ç.
 
 ### Social-media Account
 
-在下面输入的社交账号，没有的添加的不会显示在侧边框中。新加入了[简书](https:/www.jianshu.com)链接, <http://www.jianshu.com/u/e71990ada2fd>
+ĺ¨ä¸é˘čžĺĽçç¤žäş¤č´Śĺˇďźć˛Ąćçćˇťĺ çä¸äźćžç¤şĺ¨äž§čžšćĄä¸­ăć°ĺ ĺĽäş[çŽäšŚ](https:/www.jianshu.com)éžćĽ, <http://www.jianshu.com/u/e71990ada2fd>
 
 	# SNS settings
 	RSS: false
@@ -143,9 +143,9 @@ featured-condition-size: 1     # A tag will be featured if the size of it is mor
 
 ### Friends
 
-好友链接部分。这会在全部页面显示。
+ĺĽ˝ĺéžćĽé¨ĺăčżäźĺ¨ĺ¨é¨éĄľé˘ćžç¤şă
 
-设置是在 `_config.yml`文件里面的`Friends`那块，自己加吧。
+čŽžç˝ŽćŻĺ¨ `_config.yml`ćäťśéé˘ç`Friends`éŁĺďźčŞĺˇąĺ ĺ§ă
 
 ```
 # Friends
@@ -164,13 +164,13 @@ friends: [
 
 ### Keynote Layout
 
-HTML5幻灯片的排版：
+HTML5ĺšťçŻççćçďź
 
 ![](https://camo.githubusercontent.com/f30347a118171820b46befdf77e7b7c53a5641a9/687474703a2f2f6875616e677875616e2e6d652f696d672f626c6f672d6b65796e6f74652e6a7067)
 
-这部分是用于占用html格式的幻灯片的，一般用到的是 Reveal.js, Impress.js, Slides, Prezi 等等.我认为一个现代化的博客怎么能少了放html幻灯的功能呢~
+čżé¨ĺćŻç¨äşĺ ç¨htmlć źĺźçĺšťçŻççďźä¸čŹç¨ĺ°çćŻ Reveal.js, Impress.js, Slides, Prezi ç­ç­.ćčŽ¤ä¸şä¸ä¸Şç°äťŁĺçĺĺŽ˘ćäšč˝ĺ°äşćžhtmlĺšťçŻçĺč˝ĺ˘~
 
-其主要原理是添加一个 `iframe`，在里面加入外部链接。你可以直接写到头文件里面去，详情请见下面的yaml头文件的写法。
+ĺśä¸ťčŚĺçćŻćˇťĺ ä¸ä¸Ş `iframe`ďźĺ¨éé˘ĺ ĺĽĺ¤é¨éžćĽăä˝ ĺŻäťĽç´ćĽĺĺ°ĺ¤´ćäťśéé˘ĺťďźčŻŚćčŻˇč§ä¸é˘çyamlĺ¤´ćäťśçĺćłă
 
 ```
 ---
@@ -179,104 +179,104 @@ iframe:     "http://huangxuan.me/js-module-7day/"
 ---
 ```
 
-iframe在不同的设备中，将会自动的调整大小。保留内边距是为了让手机用户可以向下滑动，以及添加更多的内容。
+iframeĺ¨ä¸ĺçčŽžĺ¤ä¸­ďźĺ°äźčŞĺ¨çč°ć´ĺ¤§ĺ°ăäżçĺčžščˇćŻä¸şäşčŽŠććşç¨ćˇĺŻäťĽĺä¸ćťĺ¨ďźäťĽĺćˇťĺ ć´ĺ¤çĺĺŽšă
 
 
 ### Comment
 
-博客不仅支持 [Disqus](http://disqus.com) 评论系统,还加入了 [Gitalk](https://gitalk.github.io/) 评论系统，[支持 Markdwon 语法](https://guides.github.com/features/mastering-markdown/)，cool~
+ĺĺŽ˘ä¸äťćŻć [Disqus](http://disqus.com) čŻčŽşçłťçť,čżĺ ĺĽäş [Gitalk](https://gitalk.github.io/) čŻčŽşçłťçťďź[ćŻć Markdwon čŻ­ćł](https://guides.github.com/features/mastering-markdown/)ďźcool~
 
 #### Disqus
 
-优点：国际比较流行，界面也很大气、简洁，如果有人评论，还能实时通知，直接回复通知的邮件就行了；
+äźçšďźĺ˝éćŻčžćľčĄďźçé˘äšĺžĺ¤§ć°ăçŽć´ďźĺŚććäşşčŻčŽşďźčżč˝ĺŽćśéçĽďźç´ćĽĺĺ¤éçĽçéŽäťśĺ°ąčĄäşďź
 
-缺点：评论必须要去注册一个disqus账号，分享一般只有Facebook和Twitter，另外在墙内加载速度略慢了一点。想要知道长啥样，可以看以前的版本点[这里](http://brucezhaor.github.io/about.html) 最下面就可以看到。
+çźşçšďźčŻčŽşĺżéĄťčŚĺťćł¨ĺä¸ä¸Şdisqusč´ŚĺˇďźĺäşŤä¸čŹĺŞćFacebookĺTwitterďźĺŚĺ¤ĺ¨ĺ˘ĺĺ č˝˝éĺşŚçĽć˘äşä¸çšăćłčŚçĽééżĺĽć ˇďźĺŻäťĽçäťĽĺççćŹçš[čżé](http://brucezhaor.github.io/about.html) ćä¸é˘ĺ°ąĺŻäťĽçĺ°ă
 
-> Node：有很多人反映 Disqus 插件加载不出来，可能墙又架高了，有条件的话翻个墙就好了~
+> Nodeďźćĺžĺ¤äşşĺć  Disqus ćäťśĺ č˝˝ä¸ĺşćĽďźĺŻč˝ĺ˘ĺćśéŤäşďźććĄäťśçčŻçżťä¸Şĺ˘ĺ°ąĺĽ˝äş~
 
-**使用：**
+**ä˝żç¨ďź**
 
-**首先**，你需要去注册一个Disqus帐号。**不要直接使用我的啊！**
+**éŚĺ**ďźä˝ éčŚĺťćł¨ĺä¸ä¸ŞDisqusĺ¸ĺˇă**ä¸čŚç´ćĽä˝żç¨ćçĺďź**
 
-**其次**，你只需要在下面的 yaml 头文件中设置一下就可以了。
+**ĺśćŹĄ**ďźä˝ ĺŞéčŚĺ¨ä¸é˘ç yaml ĺ¤´ćäťśä¸­čŽžç˝Žä¸ä¸ĺ°ąĺŻäťĽäşă
 
 ```
-# 评论系统
-# Disqus（https://disqus.com/）
+# čŻčŽşçłťçť
+# Disqusďźhttps://disqus.com/ďź
 disqus_username: qiubaiying
 ```
 
 #### Gitalk
 
-优点：界面干净简洁，利用 Github issue API 做的评论插件，使用 Github 帐号进行登录和评论，最喜欢的支持 Markdown 语法，对于程序员来说真是太 cool 了。
+äźçšďźçé˘ĺš˛ĺçŽć´ďźĺŠç¨ Github issue API ĺçčŻčŽşćäťśďźä˝żç¨ Github ĺ¸ĺˇčżčĄçťĺ˝ĺčŻčŽşďźćĺćŹ˘çćŻć Markdown čŻ­ćłďźĺŻšäşç¨ĺşĺćĽčŻ´çćŻĺ¤Ş cool äşă
 
-缺点：配置比较繁琐，每篇文章的评论都需要初始化。
+çźşçšďźéç˝ŽćŻčžçšçďźćŻçŻćçŤ çčŻčŽşé˝éčŚĺĺ§ĺă
 
-**使用：**
+**ä˝żç¨ďź**
 
-参考我的这篇文章：[《为博客添加 Gitalk 评论插件》](http://qiubaiying.top/2017/12/19/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-Gitalk-%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6/)
+ĺčćçčżçŻćçŤ ďź[ăä¸şĺĺŽ˘ćˇťĺ  Gitalk čŻčŽşćäťśă](http://qiubaiying.top/2017/12/19/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-Gitalk-%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6/)
 
 
 ### Analytics
 
-网站分析，现在支持百度统计和Google Analytics。需要去官方网站注册一下，然后将返回的code贴在下面：
+ç˝çŤĺćďźç°ĺ¨ćŻćçžĺşŚçťčŽĄĺGoogle AnalyticsăéčŚĺťĺŽćšç˝çŤćł¨ĺä¸ä¸ďźçśĺĺ°čżĺçcodeč´´ĺ¨ä¸é˘ďź
 
 ```
 # Baidu Analytics
 ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
 
 # Google Analytics
-ga_track_id: 'UA-49627206-1'            # 你用Google账号去注册一个就会给你一个这样的id
-ga_domain: huangxuan.me			# 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto。
+ga_track_id: 'UA-49627206-1'            # ä˝ ç¨Googleč´Śĺˇĺťćł¨ĺä¸ä¸Şĺ°ąäźçťä˝ ä¸ä¸Şčżć ˇçid
+ga_domain: huangxuan.me			# éťčŽ¤çćŻ auto, čżéććŻčŞĺŽäšäşçĺĺďźä˝ ĺŚćć˛ĄćčŞĺˇąçĺĺďźéčŚćšćautoă
 ```
 
 ### Customization
 
-如果你喜欢折腾，你可以去自定义这个模板的 Code。
+ĺŚćä˝ ĺćŹ˘ćčžďźä˝ ĺŻäťĽĺťčŞĺŽäščżä¸Şć¨Ąćżç Codeă
 
-**如果你可以理解 `_include/` 和 `_layouts/`文件夹下的代码（这里是整个界面布局的地方），你就可以使用 Jekyll 使用的模版引擎 [Liquid](https://github.com/Shopify/liquid/wiki)的语法直接修改/添加代码，来进行更有创意的自定义界面啦！**
+**ĺŚćä˝ ĺŻäťĽçč§Ł `_include/` ĺ `_layouts/`ćäťśĺ¤šä¸çäťŁç ďźčżéćŻć´ä¸Şçé˘ĺ¸ĺąçĺ°ćšďźďźä˝ ĺ°ąĺŻäťĽä˝żç¨ Jekyll ä˝żç¨çć¨Ąçĺźć [Liquid](https://github.com/Shopify/liquid/wiki)çčŻ­ćłç´ćĽäżŽćš/ćˇťĺ äťŁç ďźćĽčżčĄć´ćĺćçčŞĺŽäšçé˘ĺŚďź**
 
 ### Header Image
 
-博客每页的标题底图是可以自己选的，看看几篇示例post你就知道如何设置了。
+ĺĺŽ˘ćŻéĄľçć é˘ĺşĺžćŻĺŻäťĽčŞĺˇąéçďźççĺ çŻç¤şäžpostä˝ ĺ°ąçĽéĺŚä˝čŽžç˝Žäşă
   
-标题底图的选取完全是看个人的审美了。每一篇文章可以有不同的底图，你想放什么就放什么，最后宽度要够，大小不要太大，否则加载慢啊。
+ć é˘ĺşĺžçéĺĺŽĺ¨ćŻçä¸ŞäşşçĺŽĄçžäşăćŻä¸çŻćçŤ ĺŻäťĽćä¸ĺçĺşĺžďźä˝ ćłćžäťäšĺ°ąćžäťäšďźćĺĺŽ˝ĺşŚčŚĺ¤ďźĺ¤§ĺ°ä¸čŚĺ¤Şĺ¤§ďźĺŚĺĺ č˝˝ć˘ĺă
 
-> 上传的图片最好先压缩，这里推荐 imageOptim 图片压缩软件，让你的博客起飞。
+> ä¸äź çĺžçćĺĽ˝ĺĺçźŠďźčżéć¨č imageOptim ĺžçĺçźŠč˝ŻäťśďźčŽŠä˝ çĺĺŽ˘čľˇéŁă
 
-但是需要注意的是本模板的标题是**白色**的，所以背景色要设置为**灰色**或者**黑色**，总之深色系就对了。当然你还可以自定义修改字体颜色，总之，用github pages就是可以完全的个性定制自己的博客。
+ä˝ćŻéčŚćł¨ćçćŻćŹć¨Ąćżçć é˘ćŻ**ç˝č˛**çďźćäťĽčćŻč˛čŚčŽžç˝Žä¸ş**ç°č˛**ćč**éťč˛**ďźćťäšćˇąč˛çłťĺ°ąĺŻšäşăĺ˝çśä˝ čżĺŻäťĽčŞĺŽäšäżŽćšĺ­ä˝é˘č˛ďźćťäšďźç¨github pagesĺ°ąćŻĺŻäťĽĺŽĺ¨çä¸Şć§ĺŽĺśčŞĺˇąçĺĺŽ˘ă
 
 ### SEO Title
 
-我的博客标题是 **“BY Blog”** 但是我想要在搜索的时候显示 **“柏荧的博客 | BY Blog”** ，这个就需要 SEO Title 来定义了。
+ćçĺĺŽ˘ć é˘ćŻ **âBY Blogâ** ä˝ćŻććłčŚĺ¨ćç´˘çćśĺćžç¤ş **âćč§çĺĺŽ˘ | BY Blogâ** ďźčżä¸Şĺ°ąéčŚ SEO Title ćĽĺŽäšäşă
 
-其实这个 SEO Title 就是定义了<head><title>标题</title></head>这个里面的东西和多说分享的标题，你可以自行修改的。
+ĺśĺŽčżä¸Ş SEO Title ĺ°ąćŻĺŽäšäş<head><title>ć é˘</title></head>čżä¸Şéé˘çä¸čĽżĺĺ¤čŻ´ĺäşŤçć é˘ďźä˝ ĺŻäťĽčŞčĄäżŽćšçă
 
-### 关于收到"Page Build Warning"的 Email
+### ĺłäşćśĺ°"Page Build Warning"ç Email
 
-由于jekyll升级到3.0.x,对原来的 pygments 代码高亮不再支持，现只支持一种-rouge，所以你需要在 `_config.yml`文件中修改`highlighter: rouge`.另外还需要在`_config.yml`文件中加上`gems: [jekyll-paginate]`.
+çąäşjekyllĺçş§ĺ°3.0.x,ĺŻšĺćĽç pygments äťŁç éŤäşŽä¸ĺćŻćďźç°ĺŞćŻćä¸ç§-rougeďźćäťĽä˝ éčŚĺ¨ `_config.yml`ćäťśä¸­äżŽćš`highlighter: rouge`.ĺŚĺ¤čżéčŚĺ¨`_config.yml`ćäťśä¸­ĺ ä¸`gems: [jekyll-paginate]`.
 
-同时,你需要更新你的本地 jekyll 环境.
+ĺćś,ä˝ éčŚć´ć°ä˝ çćŹĺ° jekyll çŻĺ˘.
 
-使用`jekyll server`的同学需要这样：
+ä˝żç¨`jekyll server`çĺĺ­ŚéčŚčżć ˇďź
 
-1. `gem update jekyll` # 更新jekyll
-2. `gem update github-pages` #更新依赖的包
+1. `gem update jekyll` # ć´ć°jekyll
+2. `gem update github-pages` #ć´ć°äžčľçĺ
 
-使用`bundle exec jekyll server`的同学在更新 jekyll 后，需要输入`bundle update`来更新依赖的包.
+ä˝żç¨`bundle exec jekyll server`çĺĺ­Śĺ¨ć´ć° jekyll ĺďźéčŚčžĺĽ`bundle update`ćĽć´ć°äžčľçĺ.
 
-> Note：
-> 可以使用 `jekyll -s` 命令在本地实时配置博客，提高效率。详见 [Jekyll.com](http://jekyllcn.com/)
+> Noteďź
+> ĺŻäťĽä˝żç¨ `jekyll -s` ĺ˝äť¤ĺ¨ćŹĺ°ĺŽćśéç˝ŽĺĺŽ˘ďźćéŤćçăčŻŚč§ [Jekyll.com](http://jekyllcn.com/)
 
-参考文档：[using jekyll with pages](https://help.github.com/articles/using-jekyll-with-pages/) & [Upgrading from 2.x to 3.x](http://jekyllrb.com/docs/upgrading/2-to-3/)
+ĺčććĄŁďź[using jekyll with pages](https://help.github.com/articles/using-jekyll-with-pages/) & [Upgrading from 2.x to 3.x](http://jekyllrb.com/docs/upgrading/2-to-3/)
 
 
-## 致谢
+## č´č°˘
 
-1. 这个模板是从这里 [Hux](https://github.com/Huxpro/huxpro.github.io) fork 的, 感谢这个作者。 
-2. 感谢 Jekyll、Github Pages 和 Bootstrap!
+1. čżä¸Şć¨ĄćżćŻäťčżé [Hux](https://github.com/Huxpro/huxpro.github.io) fork ç, ćč°˘čżä¸Şä˝čă 
+2. ćč°˘ JekyllăGithub Pages ĺ Bootstrap!
 
 ## License
 
-遵循 MIT 许可证。有关详细,请参阅 [LICENSE](https://github.com/qiubaiying/qiubaiying.github.io/blob/master/LICENSE)。
+éľĺžŞ MIT čŽ¸ĺŻčŻăćĺłčŻŚçť,čŻˇĺé [LICENSE](https://github.com/qiubaiying/qiubaiying.github.io/blob/master/LICENSE)ă
 
