@@ -14,7 +14,7 @@ sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Goals determine what you going to be!"
 sidebar-avatar: /img/about-Bend.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 
 # SNS settings
 RSS: false
@@ -39,7 +39,7 @@ anchorjs: true                          # if you want to customize anchor. check
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
+
 
 
 
