@@ -6,7 +6,8 @@ date: 2019-04-16
 author: Bend
 header-img: img/post-bg-star.jpg
 catalog: true
-tags:
+tags: 
+    - 随笔
 ---
 
 # Hello My Blog
