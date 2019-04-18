@@ -66,7 +66,7 @@ gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: bb295be577347842d0ec                            #生成的clientID
   clientSecret: d1df9583af13ee4da166d16970fa069e8d634276    #生成的clientSecret
-  repo: yabaowang.github.io    #仓库名称
+  repo: 95hou.club    #仓库名称
   owner: yabaowang    #github用户名
   admin: yabaowang
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
