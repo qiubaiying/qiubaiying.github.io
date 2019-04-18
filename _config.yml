@@ -97,7 +97,7 @@ service-worker: true
 
 
 # Friends
-#friends: [
+friends: [
     {
         #title: "简书·一只毛鹿",
         #href: "https://www.jianshu.com/u/29e49033f7ec"
