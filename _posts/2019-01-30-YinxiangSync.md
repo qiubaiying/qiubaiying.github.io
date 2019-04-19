@@ -65,7 +65,7 @@ C:\Program Files\Internet Explorer\iexplore.exe`
 ##### 聪聪
 &copy;聪聪:印象笔记资深印象大使 | 印象笔记年度象亲 | 坚果云效率大使 | 幕布布道师
 
-* 我的推特:<https://twitter.com/congcong0>
+* 我的推特:<https://twitter.com/congcongxo>
 * 我的微博:<https://weibo.com/congcong0806>
 * Telegram 私聊:<https://t.me/congcong>
 * Telegram 社群:<https://t.me/YinxiangBiji>
