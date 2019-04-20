@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      并发你应该马上想到这三个词
+title:      并发? 该马上想到这3个关键字
 subtitle:   
 author:     大暴马
 catalog: 	true
