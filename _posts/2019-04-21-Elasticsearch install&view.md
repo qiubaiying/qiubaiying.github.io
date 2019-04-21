@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Elasticsearch的安装和查看
+title:      Elasticsearch安装、查看和交互
 subtitle:   
 author:     大暴马
 catalog: 	 true
@@ -68,5 +68,62 @@ Sense 是一个 Kibana 应用 它提供交互式的控制台，通过你的浏�
 3. 在你的浏览器中打开 Sense
   访问 <http://localhost:5601/app/sense>
 
+### 和 Elasticsearch 交互
+
+#### JAVA API
+如果你正在使用 Java，在代码中你可以使用 Elasticsearch 内置的两个客户端：
+
+1.节点客户端（Node client）
+节点客户端作为一个非数据节点加入到本地集群中。换句话说，它本身不保存任何数据，但是它知道数据在集群中的哪个节点中，并且可以把请求转发到正确的节点。
+2.传输客户端（Transport client）
+轻量级的传输客户端可以可以将请求发送到远程集群。它本身不加入集群，但是它可以将请求转发到集群中的一个节点上。
+
+两个 Java 客户端都是通过 9300 端口并使用本地 Elasticsearch 传输 协议和集群交互。
+集群中的节点通过端口 9300 彼此通信。如果这个端口没有打开，节点将无法形成一个集群。
+
+Java 客户端作为节点必须和 Elasticsearch 有相同的 主要 版本；否则，它们之前将无法互相理解。
+
+#### RESTful API with JSON over HTTP
+所有其他语言可以使用 RESTful API 通过端口 9200 和 Elasticsearch 进行通信.
+一个 Elasticsearch 请求和任何 HTTP 请求一样由若干相同的部件组成：
+```sh
+curl -X<VERB> '<PROTOCOL>://<HOST>:<PORT>/<PATH>?<QUERY_STRING>' -d '<BODY>'
+```
+
+  part|说明
+ ----|----
+VERB|适当的 HTTP 方法 或 谓词 : `GET`、 `POST`、 `PUT`、 `HEAD` 或者 `DELETE`
+PROTOCOL | http 或者 https（如果你在 Elasticsearch 前面有一个https代理）
+HOST|Elasticsearch 集群中任意节点的主机名，或者用 localhost 代表本地机器上的节点。
+PORT|运行 Elasticsearch HTTP 服务的端口号，默认是 9200 。
+
+PATH|API 的终端路径（例如 _count 将返回集群中文档数量）。Path 可能包含多个组件，例如：_cluster/stats 和 _nodes/stats/jvm 。
+
+QUERY_STRING|任意可选的查询字符串参数 (例如 ?pretty 将格式化地输出 JSON 返回值，使其更容易阅读)
+
+BODY|一个 JSON 格式的请求体 (如果请求需要的话)
+
+ 
+ 例如，计算集群中文档的数量，我们可以用这个:
+ ```shell
+ curl -i -XGET 'http://localhost:9200/_count?pretty' -d ' //-i表示显示header
+ {
+     "query": {
+         "match_all": {}
+     }
+ }
+ '
+ 
+ //返回值如下
+ {
+     "count" : 0,
+     "_shards" : {
+         "total" : 5,
+         "successful" : 5,
+         "failed" : 0
+     }
+ }
+ ```
+ 
 ### 微信扫一下，最新最全最好看的电影都有，谢谢了~
  ![](https://open.weixin.qq.com/qr/code?username=zhihuishangye)
