@@ -87,30 +87,29 @@ Java 客户端作为节点必须和 Elasticsearch 有相同的 主要 版本；�
 里面包含了document操作、search、Aggregation(聚合)、Query DSL(通用的查询框架，专注于通过Java API构建类型安全的SQL查询)、Java API Administration
 
 #### JAVA rest client
-<JAVA rest client文档>(https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/index.html)
-分成
+[JAVA rest client文档](https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/index.html)
+分成Java Low Level REST Client
+>> minimal dependencies
 
-<details>
-<summary>Java Low Level REST Client</summary>
-minimal dependencies
-load balancing across all available nodes
-failover in case of node failures and upon specific response codes
-failed connection penalization (whether a failed node is retried depends on how many consecutive times it failed; the more failed attempts the longer the client will wait before trying that same node again)
-persistent connections
-trace logging of requests and responses
-optional automatic discovery of cluster nodes
-</details>
+>> load balancing across all available nodes
 
-和
+>> failover in case of node failures and upon specific response codes
 
-<details>
-<summary>Java High Level REST Client</summary>
-The Java High Level REST Client works on top of the Java Low Level REST client. Its main goal is to expose API specific methods, that accept request objects as an argument and return response objects, so that request marshalling and response un-marshalling is handled by the client itself.
+>> failed connection penalization (whether a failed node is retried depends on how many consecutive times it failed; the more failed attempts the longer the client will wait before trying that same node again)
 
-Each API can be called synchronously or asynchronously. The synchronous methods return a response object, while the asynchronous methods, whose names end with the async suffix, require a listener argument that is notified (on the thread pool managed by the low level client) once a response or an error is received.
+>> persistent connections
 
-The Java High Level REST Client depends on the Elasticsearch core project. It accepts the same request arguments as the TransportClient and returns the same response objects.
-</details>
+>> trace logging of requests and responses
+
+>> optional automatic discovery of cluster nodes
+
+和Java High Level REST Client 
+>> The Java High Level REST Client works on top of the Java Low Level REST client. Its main goal is to expose API specific methods, that accept request objects as an argument and return response objects, so that request marshalling and response un-marshalling is handled by the client itself.
+
+>> Each API can be called synchronously or asynchronously. The synchronous methods return a response object, while the asynchronous methods, whose names end with the async suffix, require a listener argument that is notified (on the thread pool managed by the low level client) once a response or an error is received.
+
+>> The Java High Level REST Client depends on the Elasticsearch core project. It accepts the same request arguments as the TransportClient and returns the same response objects.
+
 
 #### RESTful API with JSON over HTTP
 所有其他语言可以使用 RESTful API 通过端口 9200 和 Elasticsearch 进行通信。其实各个语言的客户端，都是RESTful API的封装而已。
