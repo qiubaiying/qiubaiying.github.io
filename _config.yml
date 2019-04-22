@@ -6,12 +6,12 @@ email: czy1145554053@gmail.com
 description: "言止"
 keyword: "Blog,Study"
 url: "http://bend1031.github.io"          # your host, for absolute URL
-baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: "Harder"      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/Bend1031/Bend1031.github.io" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
+sidebar-about-description: ""
 sidebar-avatar: /img/about-Bend.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 plugins: [jekyll-paginate]
@@ -99,7 +99,7 @@ service-worker: true
 # Friends
 friends: [
     {
-        #title: "简书·一只毛鹿",
-        #href: "https://www.jianshu.com/u/29e49033f7ec"
+        #title: "简书",
+        #href: "https://www.jianshu.com/"
     },
 ]
