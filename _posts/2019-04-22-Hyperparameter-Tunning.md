@@ -28,8 +28,21 @@ tags:
 
 在我看来 Grid Search 是无法满足自动调参的需求的。它只能作为手动调参的辅助工具，在人的经验之上选择可靠的区间和备选数值，并且认为的在过程中调整区间从而找到较优参数组。如果相信超参数之间是独立的话，那这个 Grid Search 的时间复杂度是可以从 ${O(n^m)}$ 下降到 ${O(nm)}$ 的。唯一需要注意的是，超参之间的独立性并不是绝对成立的，目前我没找到理论证明这一点。(*"Usually most of these hyperparameters are independent from each other"* - Bengio-2016)
 
+推荐 Grid Search Package: 
+```python
+from sklearn.model_selection import GridSearchCV
+# Please refer to scikit-learn website for example
+```
+
 ## Random Search
+相比 Grid Search, **Random Search** 一样简单，更加方便，最重要的是收敛更快(Bergstra and Bengio, 2012)。
+1. 给每个超参数定义一个边缘分布 (marginal distribution)。不要给超参数固定的几个数值。这要做的优势是在不增加算力的前提下，Random Search 可以有更多选择。
+    - 二项值超参：伯努利分布
+    - 离散值超参：多项分布
+    - 连续值超参：对数比例上的均匀分布 （Uniform on log-scale）
+        - e.g. log_lr ~ u(-1, -5) ; lr = ${10^{log\_lr}}$
+
 
 ## Grid Search VS. Random Search
-![](./img/Grid_Random.png)
+![](https://github.com/JazzikPeng/jazzikpeng.github.io/blob/master/_posts/img/Grid_Random.png)
 
