@@ -107,6 +107,8 @@ tags:                               #标签
 数码荔枝 Telegram 群组:<https://t.me/joinchat/C8fnOFRTu1kqa0tcKfTGoQ><br>
 数码荔枝 Telegram 频道:<https://t.me/digitalychee>
 
+> 转载请注明原文出处:[数码荔枝 11.11 年度大促开始了，折上折的优惠！](https://congcong0806.github.io/2018/11/06/LizhiSale)
+
 ---
 
 ##### 优秀的正版软件

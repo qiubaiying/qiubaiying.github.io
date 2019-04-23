@@ -10,6 +10,7 @@ tags:                               #标签
     - App
 
 ---
+> 转载请注明原文出处:[iOS App 测试版 TestFlight 邀请链接分享](https://congcong0806.github.io/2018/11/19/TestFlight)
 
 ##### 介绍
 
@@ -241,6 +242,8 @@ TestFlight 下载地址:<https://itunes.apple.com/cn/app/testflight/id899247664>
 - Torus.wallet <https://testflight.apple.com/join/Rkh83mtc>
 - Almost Impossible! 2 <https://testflight.apple.com/join/9orkRXOg>
 - Cs Music Player <https://testflight.apple.com/join/dU2r1pkq>
+
+> 转载请注明原文出处:[iOS App 测试版 TestFlight 邀请链接分享](https://congcong0806.github.io/2018/11/19/TestFlight)
 
 ---
 

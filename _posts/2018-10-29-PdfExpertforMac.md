@@ -88,6 +88,8 @@ PDF Expert 支持编辑文档大纲，你可以通过拖动目录来调整顺序
 数码荔枝 Telegram 群组:<https://t.me/joinchat/C8fnOFRTu1kqa0tcKfTGoQ><br>
 数码荔枝 Telegram 频道:<https://t.me/digitalychee>
 
+> 转载请注明原文出处:[Mac 顶级应用 PDF Expert 要涨价？用比半价更低的价格拿下它](https://congcong0806.github.io/2018/10/29/PdfExpertforMac)
+
 ---
 
 ##### 优秀的正版软件

@@ -80,6 +80,8 @@ iTunes Store（iOS 内购）购买的不能参加此活动，因为两者支付�
 
 ![印象笔记双十一促销时间轴](https://i.v2ex.co/13Qz5y68.jpeg)
 
+> 转载请注明原文出处:[印象笔记 2018 十一活动](https://congcong0806.github.io/2018/11/05/YinxiangSale)
+
 ---
 
 ##### 优秀的正版软件

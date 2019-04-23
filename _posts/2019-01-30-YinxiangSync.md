@@ -57,6 +57,8 @@ C:\Program Files\Internet Explorer\iexplore.exe`
 * 官方微信:yxbj100
 * 官方技术支持:<https://app.yinxiang.com/SupportLogin.action>
 
+> 转载请注明原文出处:[印象笔记 Evernote Windows 客户端"无法连接到服务器"和"同步失败"，如何解决？](https://congcong0806.github.io/2019/01/30/YinxiangSync)
+
 - - - -
 
 ##### 优秀的正版软件
