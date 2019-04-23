@@ -40,9 +40,10 @@ from sklearn.model_selection import GridSearchCV
     - 二项值超参：伯努利分布
     - 离散值超参：多项分布
     - 连续值超参：对数比例上的均匀分布 （Uniform on log-scale）
-        - e.g. log_lr ~ u(-1, -5) ; lr = ${10^{log\_lr}}$
+        - e.g. log_lr ~ u(-1, -5) ; $${lr = 10^{log\_lr}}$$
 
 
 ## Grid Search VS. Random Search
-![](https://github.com/JazzikPeng/jazzikpeng.github.io/blob/master/_posts/img/Grid_Random.png)
+
+![](https://raw.githubusercontent.com/JazzikPeng/jazzikpeng.github.io/master/_posts/img/Grid_Random.png)
 
