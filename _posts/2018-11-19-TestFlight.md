@@ -130,6 +130,7 @@ TestFlight 下载地址:<https://itunes.apple.com/cn/app/testflight/id899247664>
 - Potatso Lite <https://testflight.apple.com/join/NkF46PRd>
 - BananaNet <https://testflight.apple.com/join/v5x8B81b>
 - Thor <https://testflight.apple.com/join/wArXdacJ>
+- Shu - Magic File Viewer beta <https://testflight.apple.com/join/4nss4sdk>
 - WhaleBlue <https://testflight.apple.com/join/jtBRluFe>
 - Mume VPN <https://testflight.apple.com/join/wgXjVEh8>
 - Loon <https://testflight.apple.com/join/23LA2tmX>
