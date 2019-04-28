@@ -120,7 +120,8 @@ TestFlight 下载地址:<https://itunes.apple.com/cn/app/testflight/id899247664>
 - KyPass 4 密码管理 <https://testflight.apple.com/join/wlZmOo9t>
 - MK播放器 <https://testflight.apple.com/join/qUEu2p3L>
 - Focus Buddy: Next Study Timer <https://testflight.apple.com/join/gBcR6FXj>
-- Wax for iPhone <https://testflight.apple.com/join/PnKidEdF>
+- Wax for iPhone <https://testflight.apple.com/join/PnKidEdF>
+- Notes Plus <https://testflight.apple.com/join/DHJexhQq>
 > 
 - Pharos lite <https://testflight.apple.com/join/DAs8hpAh>
 - Pharos Pro <https://testflight.apple.com/join/StuF0Ast>
