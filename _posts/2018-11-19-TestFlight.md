@@ -122,6 +122,7 @@ TestFlight 下载地址:<https://itunes.apple.com/cn/app/testflight/id899247664>
 - Focus Buddy: Next Study Timer <https://testflight.apple.com/join/gBcR6FXj>
 - Wax for iPhone <https://testflight.apple.com/join/PnKidEdF>
 - Notes Plus <https://testflight.apple.com/join/DHJexhQq>
+- 易有云 <https://testflight.apple.com/join/Pl4jm65I>
 > 
 - Pharos lite <https://testflight.apple.com/join/DAs8hpAh>
 - Pharos Pro <https://testflight.apple.com/join/StuF0Ast>
