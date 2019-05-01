@@ -1,0 +1,23 @@
+{
+  "name": "learning_markdown",
+  "version": "2.0.0",
+  "description": "Markdown guidance and reference（Markdown 入门参考）",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LearnShare/Learning-Markdown.git"
+  },
+  "keywords": [
+    "markdown",
+    "reference"
+  ],
+  "author": "LearnShare",
+  "license": "CC-BY-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/LearnShare/Learning-Markdown/issues"
+  },
+  "homepage": "https://github.com/LearnShare/Learning-Markdown#readme"
+}

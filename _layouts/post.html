@@ -45,6 +45,15 @@ layout: default
             </div>
         </div>
     </div>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-8567346745113491",
+            enable_page_level_ads: true
+        });
+    </script>
+
 </header>
 
 <!-- Post Content -->
@@ -98,7 +107,7 @@ layout: default
                     repo: '{{site.gitalk.repo}}',
                     owner: '{{site.gitalk.owner}}',
                     admin: ['{{site.gitalk.admin}}'],
-                    distractionFreeMode: {{site.gitalk.distractionFreeMode}},
+                    // distractionFreeMode: {{site.gitalk.distractionFreeMode}},
                     id: md5(location.pathname),
                     });
                     gitalk.render('gitalk-container');
@@ -114,7 +123,7 @@ layout: default
                 <!-- disqus 评论框 end -->
                 {% endif %}
 
-            </div>  
+            </div>
 
     <!-- Side Catalog Container -->
         {% if page.catalog %}
@@ -205,7 +214,7 @@ layout: default
 <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
 <script>
     async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
-        // BY Fix:去除标题前的‘#’ issues:<https://github.com/qiubaiying/qiubaiying.github.io/issues/137>
+        // DD Fix:去除标题前的‘#’ issues:<https://github.com/qiubaiying/qiubaiying.github.io/issues/137>
         // anchors.options = {
         //   visible: 'always',
         //   placement: 'right',

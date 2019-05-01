@@ -15,6 +15,13 @@ layout: default
             </div>
         </div>
     </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-8567346745113491",
+            enable_page_level_ads: true
+        });
+    </script>
 </header>
 
 <!-- Main Content -->
@@ -81,48 +88,31 @@ layout: default
                 col-xs-12
                 sidebar-container
             ">
-                <!-- Featured Tags -->
-                {% if site.featured-tags %}
-                <section>
-                    <hr class="hidden-sm hidden-xs">
-                    <h5><a href="{{'/tags/' | prepend: site.baseurl }}">FEATURED TAGS</a></h5>
-                    <div class="tags">
-                        {% for tag in site.tags %}
-                            {% if tag[1].size > {{site.featured-condition-size}} %}
-                                <a href="{{ site.baseurl }}/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
-                                    {{ tag[0] }}
-                                </a>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </section>
-                {% endif %}
-
                 <!-- Short About -->
                 <section class="visible-md visible-lg">
                     <hr><h5><a href="{{'/about/' | prepend: site.baseurl }}">ABOUT ME</a></h5>
                     <div class="short-about">
                         {% if site.sidebar-avatar %}
-                            <a href="{{ site.baseurl }}/about">
-                                <img src="{{site.sidebar-avatar}}"/>
-                            </a>
+                        <a href="{{ site.baseurl }}/about">
+                            <img src="{{site.sidebar-avatar}}"/>
+                        </a>
                         {% endif %}
                         {% if site.sidebar-about-description %}
-                            <p>{{site.sidebar-about-description}}</p>
+                        <p>{{site.sidebar-about-description}}</p>
                         {% endif %}
                         <!-- SNS Link -->
                         <ul class="list-inline">
                             {% if site.RSS %}
                             <li>
                                 <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
-                                    <span class="fa-stack fa-lg">
+                                <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
                             </li>
                             {% endif %}
-                            <!-- add jianshu add target = "_blank" to <a> by BY -->
+                            <!-- add jianshu add target = "_blank" to <a> by DD -->
                             {% if site.jianshu_username %}
                             <li>
                                 <a target="_blank" href="https://www.jianshu.com/u/{{ site.jianshu_username }}">
@@ -183,13 +173,32 @@ layout: default
                                 </a>
                             </li>
                             {% endif %}
-                            
+
                         </ul>
                         {% if site.email %}
-                            <p>✉️ {{site.email}}</p>
+                        <p>✉️ {{site.email}}</p>
                         {% endif %}
                     </div>
                 </section>
+
+                <!-- Featured Tags -->
+                {% if site.featured-tags %}
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="{{'/tags/' | prepend: site.baseurl }}">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        {% for tag in site.tags %}
+                            {% if tag[1].size > {{site.featured-condition-size}} %}
+                                <a href="{{ site.baseurl }}/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
+                                    {{ tag[0] }}
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </section>
+                {% endif %}
+
+
                 <!-- Friends Blog -->
                 {% if site.friends %}
                 <hr>
