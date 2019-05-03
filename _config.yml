@@ -1,10 +1,10 @@
 # Site settings
-title: H W
-SEOTitle: H W的博客 
+title: Alistarrh
+SEOTitle: Alistarrh的博客 | Alistarrh Blog 
 header-img: img/ancient-architecture-asia-734102.jpg
-#email: wang30529@gmail.com
+email: wang30529@gmail.com
 description: "A NEW DAY"
-#keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
+keyword: "sql"
 url: "http://alistarrh.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 #github_repo: "" # you code repository
@@ -12,13 +12,13 @@ baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "SideBar"
-#sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: img/ancient-architecture-asia-734102.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
+#weibo_username:     qiubaiying
 #zhihu_username:     qiubaiying
 #github_username:    qiubaiying
 #facebook_username:  baiying.qiu.7
@@ -56,18 +56,10 @@ kramdown:
 
 
 # 评论系统
-# Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
+Disqus（https://disqus.com/）
+disqus_username: alistarrh
 
-# Gitalk
-#gitalk:
-  #enable: true    #是否开启Gitalk评论
-  #clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  #clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  #repo: qiubaiying.github.io    #仓库名称
-  #owner: qiubaiying    #github用户名
-  #admin: qiubaiying
-  #distractionFreeMode: true #是否启用类似FB的阴影遮罩
+
 
 
 # 统计
@@ -96,19 +88,4 @@ service-worker: true
 
 
 
-# Friends
-#friends: [
-    {
-        title: "WY",
-        href: "http://zhengwuyang.com"
-    },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
-    },{
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
-    }
-#]
+
