@@ -1,6 +1,6 @@
 ---
 layout:     post                    # 使用的布局（不需要改）
-title:      SS/SSR 服务商(机场)推荐             # 标题 
+title:      SS/SSR/V2Ray 服务商(机场)推荐             # 标题 
 subtitle:    #副标题
 date:       2019-03-13            # 时间
 author:     聪聪                      # 作者
@@ -10,7 +10,7 @@ tags:                               #标签
     - Shadowsocks
 
 ---
-> 转载请注明原文出处:[SS/SSR 服务商(机场)推荐:Dler Cloud](https://congcong0806.github.io/2019/03/13/DlerCloud)
+> 转载请注明原文出处:[SS/SSR/V2Ray 服务商(机场)推荐:Dler Cloud](https://congcong0806.github.io/2019/03/13/DlerCloud)
 
 ##### 机场推荐:Dler Cloud
 
@@ -22,19 +22,19 @@ tags:                               #标签
 `lhie1` 大佬爱折腾新技术，机场支持 Surge/Clash 托管、SSR/SS/SSD/V2Ray 订阅、Surfboard 配置、一键导入Quantumult/Shadowrocket/Surfboard；<br>
 还支持Surge iOS 3.4 和Surge Mac 3 最新的 Proxy list 分组订阅功能，可以自定义服务器节点列表。
 
-官方网站:[https://dlercloud.org](https://dlercloud.org/auth/register?affid=8079&code=qiangdong)<br>
+官方网站:[https://dlercloud.me](https://dlercloud.me/auth/register?affid=8079&code=qiangdong)<br>
 文档中心:<https://docs.lhie1.com/black-hole>
 
 Telegram 官方群(仅限已购用户):<https://t.me/dlercloud_talk><br>
 Telegram 官方Bot:<https://t.me/DlerCloud_bot><br>
 Telegram 公告中心:<https://t.me/dlercloud_news>
 
-毒药大佬评测:<https://t.me/DuyaoSS/201>
+毒药大佬评测:<https://t.me/DuyaoSS/508>
 ![2019.2.23 晚高峰6点-7点测速](http://ww1.sinaimg.cn/large/9b84e6acgy1g10zhgiynoj20fx0q5wj6.jpg)
 
-浅谈部分机场（SS/SSR提供商）的使用感受 (毒药):<http://www.evernote.com/l/AmEIfRIK0H9LE5XUla9dVz21Q8NQ5sVaxMM>
+浅谈部分机场（SS/SSR提供商）的使用感受 (毒药):<https://www.duyaoss.com/index.php/archives/3>
 
-> 转载请注明原文出处:[SS/SSR 服务商(机场)推荐:Dler Cloud](https://congcong0806.github.io/2019/03/13/DlerCloud)
+> 转载请注明原文出处:[SS/SSR/V2Ray 服务商(机场)推荐:Dler Cloud](https://congcong0806.github.io/2019/03/13/DlerCloud)
 
 - - - -
 
