@@ -25,7 +25,7 @@ tags:                               #标签
 官方网站:[https://dlercloud.me](https://dlercloud.me/auth/register?affid=8079&code=qiangdong)<br>
 文档中心:<https://docs.lhie1.com/black-hole>
 
-Telegram 官方群(仅限已购用户):<https://t.me/dlercloud_talk><br>
+Telegram 官方群组:<https://t.me/dlercloud_talk><br>
 Telegram 官方Bot:<https://t.me/DlerCloud_bot><br>
 Telegram 公告中心:<https://t.me/dlercloud_news>
 
