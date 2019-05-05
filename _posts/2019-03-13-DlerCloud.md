@@ -35,7 +35,7 @@ Telegram 公告中心:<https://t.me/dlercloud_news>
 浅谈部分机场（SS/SSR提供商）的使用感受 (毒药):<br>
 <https://www.duyaoss.com/index.php/archives/3>
 
-我正在用的规则 (把 token 替换为你的就可以直接使用, 节点和规则都会自动更新的):<br>
+我正在用的规则 (下载配置, 把 token 替换为你的就可以直接使用, 节点和规则都会自动更新的):<br>
 <https://github.com/congcong0806/surge-list/raw/master/DlerCloud.conf>
 
 > 转载请注明原文出处:[SS/SSR/V2Ray 服务商(机场)推荐:Dler Cloud](https://congcong0806.github.io/2019/03/13/DlerCloud)
