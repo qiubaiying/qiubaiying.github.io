@@ -124,6 +124,7 @@ TestFlight 下载地址:<https://itunes.apple.com/cn/app/testflight/id899247664>
 - Wax for iPhone <https://testflight.apple.com/join/PnKidEdF>
 - Notes Plus <https://testflight.apple.com/join/DHJexhQq>
 - 易有云 <https://testflight.apple.com/join/Pl4jm65I>
+- AirPlay 便捷切换工具 <https://testflight.apple.com/join/E7U0UsBs>
 > 
 - Pharos lite <https://testflight.apple.com/join/DAs8hpAh>
 - Pharos Pro <https://testflight.apple.com/join/StuF0Ast>
