@@ -43,7 +43,7 @@ TestFlight 下载地址:<https://itunes.apple.com/cn/app/testflight/id899247664>
 - Microsoft Whiteboard <https://testflight.apple.com/join/HSWkbCxV>
 - Skype For iPhone <https://testflight.apple.com/join/fB5IkJT7>
 - Skype For iPad <https://testflight.apple.com/join/vnSIsolv>
-- Telegram <https://testflight.apple.com/join/SRgSA6ru>
+- Telegram <https://testflight.apple.com/join/u6iogfd0>
 - Telegram X [https://rink.hockeyapp.net](https://rink.hockeyapp.net/apps/c6f5a76f5c364ac89a98b77671ef2d63)
 - Ulysses <https://testflight.apple.com/join/RXVdMPW1>
 - 1Password <https://testflight.apple.com/join/flDiG5AU>
