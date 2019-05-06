@@ -126,6 +126,7 @@ TestFlight 下载地址:<https://itunes.apple.com/cn/app/testflight/id899247664>
 - Notes Plus <https://testflight.apple.com/join/DHJexhQq>
 - 易有云 <https://testflight.apple.com/join/Pl4jm65I>
 - AirPlay 便捷切换工具 <https://testflight.apple.com/join/E7U0UsBs>
+- 泼辣修图出品视频编辑应用 24fps <https://testflight.apple.com/join/aY3y9aOM>
 > 
 - Pharos lite <https://testflight.apple.com/join/DAs8hpAh>
 - Pharos Pro <https://testflight.apple.com/join/StuF0Ast>
