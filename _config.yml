@@ -99,10 +99,10 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
+        title: "WST",
         href: ""
     },{
-        title: "简书·BY",
+        title: "",
         href: ""
     }
 ]
