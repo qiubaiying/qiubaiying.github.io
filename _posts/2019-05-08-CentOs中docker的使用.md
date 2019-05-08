@@ -21,19 +21,16 @@ tags:
 ### docker中安装mysql
 
 1. 拉取MySql镜像
-
 ```shell
 docker pull mysql
 ```
 
 2. 拉取成功后确认一下
-
 ```shell
 docker images
 ```
 
 3. 创建并启动一个mysql容器
-
 ```shell
 docker run --name huazai-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql
 ```
@@ -45,7 +42,6 @@ docker run --name huazai-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mys
 - 最后一个`mysql`指的是`mysql镜像名字`
 
 4. 确认容器运行状态
-
 ```shell
 docker ps
 ```
@@ -57,25 +53,21 @@ docker ps
 ### docker中安装zookeeper
 
 1. 拉取zookeeper镜像
-
 ```shell
 docker pull zookeeper
 ```
 
 2. 拉取成功后确认一下
-
 ```shell
 docker images
 ```
 
 3. 创建并启动一个zookeeper容器
-
 ```shell
 docker run --privileged=true -d --name huazai-zookeeper --publish 2181:2181  -d zookeeper
 ```
 
 4. 确认容器运行状态
-
 ```shell
 docker ps
 ```
