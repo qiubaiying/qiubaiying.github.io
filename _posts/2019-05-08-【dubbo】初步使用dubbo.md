@@ -12,7 +12,6 @@ tags:
 ---
 
 #### 起因
-
 ​	刚好最近开始在重新写`concert`，所以就重新动手从零搭了完整的项目，到了dubbo，正好记录一下。
 
 #### 选用版本
@@ -145,9 +144,11 @@ public class Consumer {
 }  
 ```
 
-![](http://blog-ipic.yananhuazai.cn/Fl3NCACUhpyRmY4jAoxq59cnjrvx)
+![](http://blog-ipic.yananhuazai.cn/Fl3NCACUhpyRmY4jAoxq59cnjrvx"项目结构图")
 
-applicationContext-dubbo：）provider
+#### 生产者和消费者的配置文件
+
+**applicationContext-dubbo：）provider**
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -182,7 +183,7 @@ applicationContext-dubbo：）provider
 </beans>
 ```
 
-applicationContext-dubbo：）consumer
+**applicationContext-dubbo：）consumer**
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -210,4 +211,3 @@ applicationContext-dubbo：）consumer
 ```
 
 #### 先跑provider然后再跑consumer，实测没问题
-
