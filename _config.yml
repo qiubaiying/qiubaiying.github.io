@@ -1,18 +1,18 @@
 # Site settings
-title: By jXF2008
+title: By JXF2008
 SEOTitle: JXF2008
 header-img: img/post-bg-desk.jpg
 email: jxf2008@outlook.com
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+keyword: "C++ Qt Android Python jxf2008"
+url: "http://jxf2008.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://jxf2008.github.io/" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "The Speed Is The Power."
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/huaji.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
