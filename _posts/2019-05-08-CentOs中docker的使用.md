@@ -18,6 +18,32 @@ tags:
 > docker18.09.5
 
 
+# docker普通命令
+
+### docker查看日志
+
+```shell
+docker logs -f -t --since=“2019-05-10” --tail=50 huazai-software
+```
+
+**参数介绍**：
+
+```
+–since : 此参数指定了输出日志开始日期，即只输出指定日期之后的日志。
+
+-f : 查看实时日志
+
+-t : 查看日志产生的日期
+
+-tail=10 : 查看最后的10条日志。
+
+huazai-software : 容器名称
+```
+
+​	
+
+# docker实践安装软件
+
 ### docker中安装mysql
 
 1. 拉取MySql镜像
@@ -73,3 +99,6 @@ docker ps
 ```
 
 ![docker安装zookeeper](http://blog-ipic.yananhuazai.cn/Fi1vuHkzxAI-G-OnTG3X97K32h6w)
+
+
+
