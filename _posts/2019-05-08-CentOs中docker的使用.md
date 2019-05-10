@@ -20,85 +20,85 @@ tags:
 
 # docker普通命令
 
-### docker查看日志
-
-```shell
-docker logs -f -t --since=“2019-05-10” --tail=50 huazai-software
-```
-
-**参数介绍**：
-
-```
-–since : 此参数指定了输出日志开始日期，即只输出指定日期之后的日志。
-
--f : 查看实时日志
-
--t : 查看日志产生的日期
-
--tail=10 : 查看最后的10条日志。
-
-huazai-software : 容器名称
-```
+	### docker查看日志
+	
+		```shell
+		docker logs -f -t --since=“2019-05-10” --tail=50 huazai-software
+		```
+		
+		**参数介绍**：
+		
+		```
+		–since : 此参数指定了输出日志开始日期，即只输出指定日期之后的日志。
+		
+		-f : 查看实时日志
+		
+		-t : 查看日志产生的日期
+		
+		-tail=10 : 查看最后的10条日志。
+		
+		huazai-software : 容器名称
+		```
 
 ​	
 
 # docker实践安装软件
 
-### docker中安装mysql
-
-1. 拉取MySql镜像
-```shell
-docker pull mysql
-```
-
-2. 拉取成功后确认一下
-```shell
-docker images
-```
-
-3. 创建并启动一个mysql容器
-```shell
-docker run --name huazai-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql
-```
-
-- –name：给新创建的容器命名，此处命名为`huazai-mysql`
-- -e：配置信息，此处配置mysql的root用户的登陆密码
-- -p：端口映射，此处映射`主机3306端口`到容器`huazai-mysql`的3306端口
-- -d：成功启动容器后输出容器的完整ID，例如上图 `...`
-- 最后一个`mysql`指的是`mysql镜像名字`
-
-4. 确认容器运行状态
-```shell
-docker ps
-```
-
-![docker安装mysql效果图](http://blog-ipic.yananhuazai.cn/FoeDoyxAo2MKvPqSu3LB67w_itkk)
-
-
-
-### docker中安装zookeeper
-
-1. 拉取zookeeper镜像
-```shell
-docker pull zookeeper
-```
-
-2. 拉取成功后确认一下
-```shell
-docker images
-```
-
-3. 创建并启动一个zookeeper容器
-```shell
-docker run --privileged=true -d --name huazai-zookeeper --publish 2181:2181  -d zookeeper
-```
-
-4. 确认容器运行状态
-```shell
-docker ps
-```
-
-![docker安装zookeeper](http://blog-ipic.yananhuazai.cn/Fi1vuHkzxAI-G-OnTG3X97K32h6w)
-
+	### docker中安装mysql
+		
+		1. 拉取MySql镜像
+		```shell
+		docker pull mysql
+		```
+		
+		2. 拉取成功后确认一下
+		```shell
+		docker images
+		```
+		
+		3. 创建并启动一个mysql容器
+		```shell
+		docker run --name huazai-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql
+		```
+		
+		- –name：给新创建的容器命名，此处命名为`huazai-mysql`
+		- -e：配置信息，此处配置mysql的root用户的登陆密码
+		- -p：端口映射，此处映射`主机3306端口`到容器`huazai-mysql`的3306端口
+		- -d：成功启动容器后输出容器的完整ID，例如上图 `...`
+		- 最后一个`mysql`指的是`mysql镜像名字`
+		
+		4. 确认容器运行状态
+		```shell
+		docker ps
+		```
+		
+		![docker安装mysql效果图](http://blog-ipic.yananhuazai.cn/FoeDoyxAo2MKvPqSu3LB67w_itkk)
+		
+		
+		
+		### docker中安装zookeeper
+		
+		1. 拉取zookeeper镜像
+		```shell
+		docker pull zookeeper
+		```
+		
+		2. 拉取成功后确认一下
+		```shell
+		docker images
+		```
+		
+		3. 创建并启动一个zookeeper容器
+		```shell
+		docker run --privileged=true -d --name huazai-zookeeper --publish 2181:2181  -d zookeeper
+		```
+		
+		4. 确认容器运行状态
+		```shell
+		docker ps
+		```
+		
+		![docker安装zookeeper](http://blog-ipic.yananhuazai.cn/Fi1vuHkzxAI-G-OnTG3X97K32h6w)
+		
 
 
