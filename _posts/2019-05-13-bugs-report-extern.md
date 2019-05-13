@@ -1,7 +1,7 @@
 ---
 layout:     post   				    # 使用的布局（不需要改）
 title:      错误解决 				# 标题
-subtitle:   ImportError: No module named extern #副标题
+subtitle:   No module named extern #副标题
 date:       2019-05-13 				# 时间
 author:     Liu 						# 作者
 header-img: img/post-bg-2015.jpg 	#这篇文章标题背景图片
@@ -12,6 +12,7 @@ tags:								#标签
     - ImportError
     - extern
 ---
+
 # 错误解决：ImportError: No module named extern
 
 ## 解决方法：
