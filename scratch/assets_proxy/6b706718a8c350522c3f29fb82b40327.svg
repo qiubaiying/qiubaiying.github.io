@@ -1,0 +1,40 @@
+<svg version="1.1" width="78" height="87" viewBox="-1 -1 78 87" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- Exported by Scratch - http://scratch.mit.edu/ -->
+  <g id="ID0.90372109785676" transform="matrix(1, 0, 0, 1, 1, -1)">
+    <g id="Page-1">
+      <g id="glasses-e-[people,fashion,glasses]">
+        <g id="Rabbit">
+          <path id="Shape" fill="#FFF017" stroke="#FDAE38" stroke-width="1.696" d="M 57.688 59.372 C 59.435 56.210 60.333 52.656 60.294 49.052 L 4.826 49.052 C 4.787 52.656 5.685 56.210 7.432 59.372 C 7.432 59.372 0.306 64.659 3.410 72.351 C 6.145 79.136 13.931 79.693 17.551 77.910 C 21.807 81.399 27.805 81.901 32.592 79.168 C 37.384 81.904 43.389 81.402 47.650 77.910 C 50.267 79.046 53.235 79.097 55.892 78.053 C 58.548 77.009 60.672 74.956 61.790 72.351 C 64.814 64.659 57.688 59.372 57.688 59.372 Z " transform="matrix(1, 0, 0, 1, 5.8, 1)"/>
+          <path id="Shape" fill="#FFF017" stroke="#FDAE38" stroke-width="1.696" d="M 61.452 3.265 C 56.551 -0.322 49.657 0.602 45.896 5.351 C 41.183 10.814 38.013 28.221 37 32.091 C 35.987 35.961 34.989 38.636 32.624 38.636 C 30.260 38.636 29.310 35.961 28.249 32.091 C 27.187 28.221 23.953 10.814 19.304 5.351 C 15.544 0.602 8.649 -0.322 3.748 3.265 C -0.225 6.450 0.370 12.438 3.748 15.607 C 6.724 18.394 8.896 23.077 10.424 33.811 C 11.953 44.545 15.250 49.052 15.250 49.052 L 49.870 49.052 C 49.870 49.052 53.264 44.465 54.696 33.811 C 56.127 23.156 58.396 18.394 61.372 15.607 C 64.830 12.438 65.442 6.466 61.452 3.265 Z " transform="matrix(1, 0, 0, 1, 5.8, 1)"/>
+          <path id="Shape" fill="none" stroke="#FDAE38" stroke-width="1.696" d="M 17.470 77.910 C 16.119 76.435 15.099 74.692 14.478 72.797 " transform="matrix(1, 0, 0, 1, 5.8, 1)"/>
+          <path id="Shape" fill="none" stroke="#FDAE38" stroke-width="1.696" d="M 47.569 77.910 C 48.898 76.429 49.896 74.687 50.497 72.797 " transform="matrix(1, 0, 0, 1, 5.8, 1)"/>
+          <path id="Shape" fill="#FDAE38" stroke="#FDAE38" stroke-width="1.696" d="M 21.026 25.975 C 22.811 33.460 24.372 38.859 21.251 39.608 C 18.371 40.309 16.344 35.021 14.559 27.520 C 12.773 20.019 11.518 14.779 14.671 13.967 C 17.358 13.250 19.304 18.474 21.026 25.975 Z " transform="matrix(1, 0, 0, 1, 5.8, 1)"/>
+          <path id="Shape" fill="#FDAE38" stroke="#FDAE38" stroke-width="1.696" d="M 44.094 25.975 C 42.309 33.460 40.748 38.859 43.869 39.608 C 46.990 40.356 48.695 35.021 50.561 27.520 C 52.427 20.019 53.602 14.779 50.449 13.967 C 47.762 13.250 45.880 18.474 44.094 25.975 Z " transform="matrix(1, 0, 0, 1, 5.8, 1)"/>
+        </g>
+        <g id="Nose">
+          <path id="Rectangle-path" fill="#FFFFFF" stroke="#5E154D" stroke-width="1.28" stroke-linecap="round" stroke-linejoin="round" d="M 2.751 11.100 L 10.891 11.100 L 10.891 16.467 L 2.751 16.467 L 2.751 11.100 Z " transform="matrix(1, 0, 0, 1, 31.55, 69.45)"/>
+          <path id="Oval" fill="#5E154D" stroke="#5E154D" stroke-width="1.696" stroke-linecap="round" stroke-linejoin="round" d="M 6.821 0.048 C 8.530 0.048 10.078 0.724 11.199 1.817 C 12.320 2.909 13.014 4.418 13.014 6.084 C 13.014 7.749 12.320 9.258 11.199 10.351 C 10.078 11.443 8.530 12.120 6.821 12.120 C 5.112 12.120 3.564 11.443 2.443 10.351 C 1.321 9.258 0.627 7.749 0.627 6.084 C 0.627 4.418 1.321 2.909 2.443 1.817 C 3.564 0.724 5.112 0.048 6.821 0.048 Z " transform="matrix(1, 0, 0, 1, 31.55, 69.45)"/>
+          <path id="Oval" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.848" d="M 6.821 1.210 C 7.282 1.210 7.701 1.389 8.004 1.677 C 8.306 1.965 8.494 2.364 8.494 2.803 C 8.494 3.242 8.306 3.640 8.004 3.929 C 7.701 4.217 7.282 4.396 6.821 4.396 C 6.359 4.396 5.941 4.217 5.638 3.929 C 5.335 3.640 5.148 3.242 5.148 2.803 C 5.148 2.364 5.335 1.965 5.638 1.677 C 5.941 1.389 6.359 1.210 6.821 1.210 Z " transform="matrix(1, 0, 0, 1, 31.55, 69.45)"/>
+          <path id="Shape" fill="#FFFFFF" stroke="#5E154D" stroke-width="1.28" stroke-linecap="round" stroke-linejoin="round" d="M 6.773 10.686 L 6.773 16.467 " transform="matrix(1, 0, 0, 1, 31.55, 69.45)"/>
+        </g>
+        <g id="Glasses">
+          <path id="Shape" fill="#FFC0EC" stroke="#5E154D" stroke-width="2.56" stroke-linecap="round" stroke-linejoin="round" d="M 35.021 4.459 L 39.751 4.459 " transform="matrix(1, 0, 0, 1, 1, 45.55)"/>
+          <path id="Shape" fill="#FFC0EC" stroke="#5E154D" stroke-width="2.56" stroke-linecap="round" stroke-linejoin="round" d="M 0.354 0.080 L 9.572 4.459 " transform="matrix(1, 0, 0, 1, 1, 45.55)"/>
+          <path id="Shape" fill="#FFC0EC" stroke="#5E154D" stroke-width="2.56" stroke-linecap="round" stroke-linejoin="round" d="M 73.646 0.080 L 65.217 3.981 " transform="matrix(1, 0, 0, 1, 1, 45.55)"/>
+          <path id="Shape" fill="#FFC0EC" stroke="none" stroke-width="1" d="M 9.652 4.459 C 9.652 13.314 14.221 20.513 22.377 20.513 C 23.137 20.508 23.895 20.444 24.645 20.321 C 22.618 16.897 17.921 8.919 15.363 4.396 L 9.652 4.459 Z " transform="matrix(1, 0, 0, 1, 1, 45.55)"/>
+          <path id="Shape" fill="#FFC0EC" stroke="none" stroke-width="1" d="M 35.021 4.459 L 24.517 4.459 L 31.450 16.499 C 33.989 13.005 35.249 8.758 35.021 4.459 Z " transform="matrix(1, 0, 0, 1, 1, 45.55)"/>
+          <path id="Shape" fill="#FFC0EC" stroke="none" stroke-width="1" d="M 21.042 4.459 L 29.230 18.554 C 29.606 18.289 29.966 18.001 30.308 17.694 C 27.991 13.760 24.613 7.963 22.522 4.459 L 21.042 4.459 Z " transform="matrix(1, 0, 0, 1, 1, 45.55)"/>
+          <path id="Shape" fill="#FFFFFF" stroke="none" stroke-width="1" d="M 15.283 4.459 C 17.840 8.919 22.538 16.897 24.565 20.385 C 26.233 20.144 27.826 19.541 29.230 18.617 L 21.042 4.459 L 15.283 4.459 Z " transform="matrix(1, 0, 0, 1, 1, 45.55)"/>
+          <path id="Shape" fill="#FFFFFF" stroke="none" stroke-width="1" d="M 31.450 16.499 L 24.517 4.459 L 22.522 4.459 C 24.565 7.995 27.943 13.760 30.260 17.694 C 30.689 17.329 31.088 16.930 31.450 16.499 Z " transform="matrix(1, 0, 0, 1, 1, 45.55)"/>
+          <path id="Shape" fill="#FFC0EC" stroke="none" stroke-width="1" d="M 65.217 4.459 L 54.599 4.459 L 61.533 16.627 C 64.154 13.119 65.456 8.816 65.217 4.459 Z " transform="matrix(1, 0, 0, 1, 1, 45.55)"/>
+          <path id="Shape" fill="#FFC0EC" stroke="none" stroke-width="1" d="M 52.443 4.459 L 50.626 4.459 L 58.910 18.793 C 59.360 18.534 59.786 18.235 60.181 17.901 L 52.443 4.459 Z " transform="matrix(1, 0, 0, 1, 1, 45.55)"/>
+          <path id="Shape" fill="#FFC0EC" stroke="none" stroke-width="1" d="M 39.751 4.459 C 39.751 13.314 44.320 20.513 52.476 20.513 C 52.969 20.537 53.463 20.537 53.956 20.513 L 44.802 4.587 L 39.751 4.459 Z " transform="matrix(1, 0, 0, 1, 1, 45.55)"/>
+          <path id="Shape" fill="#FFFFFF" stroke="none" stroke-width="1" d="M 44.802 4.459 L 53.956 20.385 C 55.708 20.232 57.402 19.688 58.910 18.793 L 50.626 4.459 L 44.802 4.459 Z " transform="matrix(1, 0, 0, 1, 1, 45.55)"/>
+          <path id="Shape" fill="#FFFFFF" stroke="none" stroke-width="1" d="M 61.533 16.627 L 54.599 4.459 L 52.443 4.459 L 60.181 17.949 C 60.667 17.545 61.119 17.103 61.533 16.627 Z " transform="matrix(1, 0, 0, 1, 1, 45.55)"/>
+          <path id="Shape" fill="none" stroke="#5E154D" stroke-width="2.56" stroke-linecap="round" stroke-linejoin="round" d="M 22.297 20.513 C 31.209 20.513 35.021 13.314 35.021 4.459 L 9.652 4.459 C 9.652 13.314 14.140 20.513 22.297 20.513 Z " transform="matrix(1, 0, 0, 1, 1, 45.55)"/>
+          <path id="Shape" fill="none" stroke="#5E154D" stroke-width="2.56" stroke-linecap="round" stroke-linejoin="round" d="M 52.476 20.513 C 61.404 20.513 65.217 13.314 65.217 4.459 L 39.751 4.459 C 39.751 13.314 44.320 20.513 52.476 20.513 Z " transform="matrix(1, 0, 0, 1, 1, 45.55)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

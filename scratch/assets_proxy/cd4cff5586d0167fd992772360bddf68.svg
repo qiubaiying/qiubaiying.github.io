@@ -1,0 +1,203 @@
+<svg version="1.1" width="106" height="124" viewBox="-1 -1 106 124" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- Exported by Scratch - http://scratch.mit.edu/ -->
+  <g id="ID0.4767421088181436" transform="matrix(1, 0, 0, 1, 0.5, -0.25)">
+    <g id="Page-1">
+      <g id="MediaLab_Sprites_Room_Radio-02">
+        <g id="MediaLab_Sprites_Room_Radio-01">
+          <g id="Handle">
+            <path id="Shape" fill="#1C9B47" stroke="#1C9B47" stroke-width="2" d="M 87.080 0.100 L 0.900 0.100 L 0.900 17.380 L 1.760 17.380 L 1.760 1.140 L 86.220 1.140 L 86.220 17.380 L 87.080 17.380 L 87.080 0.100 " transform="matrix(1, 0, 0, 1, 6.5, 47.25)"/>
+            <path id="Shape" fill="#007C2C" stroke="#007C2C" stroke-width="2" d="M 1.760 1.140 L 1.760 17.380 L 3.780 17.380 L 3.780 3.080 L 84.220 3.080 L 84.220 17.380 L 86.220 17.380 L 86.220 1.140 L 1.760 1.140 " transform="matrix(1, 0, 0, 1, 6.5, 47.25)"/>
+          </g>
+          <g id="Background-Colors">
+            <path id="Shape" fill="#FFDB48" stroke="none" stroke-width="1" d="M 2.460 2.840 C 2.090 3.382 1.895 4.024 1.900 4.680 L 1.900 16.280 L 102.100 16.280 L 102.100 4.680 C 102.105 4.024 101.910 3.382 101.540 2.840 L 2.460 2.840 Z " transform="matrix(1, 0, 0, 1, -1.5, 63.25)"/>
+            <path id="Shape" fill="#FFED9F" stroke="none" stroke-width="1" d="M 98.800 1.380 L 5.200 1.380 C 4.102 1.387 3.078 1.933 2.460 2.840 L 101.540 2.840 C 100.922 1.933 99.898 1.387 98.800 1.380 Z " transform="matrix(1, 0, 0, 1, -1.5, 63.25)"/>
+            <path id="Shape" fill="#D2A6CC" stroke="none" stroke-width="1" d="M 102.100 56.140 L 102.100 16.280 L 2 16.280 L 2 56.140 C 2.003 56.579 2.091 57.014 2.260 57.420 L 101.840 57.420 C 102.009 57.014 102.097 56.579 102.100 56.140 Z " transform="matrix(1, 0, 0, 1, -1.5, 63.25)"/>
+            <path id="Shape" fill="#9F509E" stroke="none" stroke-width="1" d="M 2.160 57.420 C 2.685 58.632 3.879 59.417 5.200 59.420 L 98.800 59.420 C 100.121 59.417 101.315 58.632 101.840 57.420 L 2.160 57.420 Z " transform="matrix(1, 0, 0, 1, -1.5, 63.25)"/>
+            <path id="Shape" fill="none" stroke="#CA90C7" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 5.980 29.640 L 6.580 31.180 " transform="matrix(1, 0, 0, 1, -1.5, 63.25)"/>
+            <path id="Shape" fill="none" stroke="#CA90C7" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 37.600 30.960 L 36.160 32.220 " transform="matrix(1, 0, 0, 1, -1.5, 63.25)"/>
+            <path id="Shape" fill="none" stroke="#CA90C7" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 28.540 25.360 L 29.500 26.360 " transform="matrix(1, 0, 0, 1, -1.5, 63.25)"/>
+            <path id="Shape" fill="none" stroke="#CA90C7" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 31.120 54.820 L 29.340 55.680 " transform="matrix(1, 0, 0, 1, -1.5, 63.25)"/>
+            <path id="Shape" fill="none" stroke="#CA90C7" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 8.120 55.240 L 8.420 53.940 " transform="matrix(1, 0, 0, 1, -1.5, 63.25)"/>
+            <path id="Shape" fill="none" stroke="#CA90C7" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 4.380 43.800 L 4.380 42.040 " transform="matrix(1, 0, 0, 1, -1.5, 63.25)"/>
+            <path id="Shape" fill="none" stroke="#CA90C7" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 36.700 48.080 L 36.040 49.820 " transform="matrix(1, 0, 0, 1, -1.5, 63.25)"/>
+            <path id="Shape" fill="none" stroke="#CA90C7" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 70.620 28.760 L 71.420 27.360 " transform="matrix(1, 0, 0, 1, -1.5, 63.25)"/>
+            <path id="Shape" fill="none" stroke="#CA90C7" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 94.860 26.920 L 95.480 28.320 " transform="matrix(1, 0, 0, 1, -1.5, 63.25)"/>
+            <path id="Shape" fill="none" stroke="#CA90C7" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 99 49.380 L 97.720 50.280 " transform="matrix(1, 0, 0, 1, -1.5, 63.25)"/>
+            <path id="Shape" fill="none" stroke="#CA90C7" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 92.020 55.580 L 93.600 55.580 " transform="matrix(1, 0, 0, 1, -1.5, 63.25)"/>
+            <path id="Shape" fill="none" stroke="#CA90C7" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 74.200 55.400 L 73.040 54.060 " transform="matrix(1, 0, 0, 1, -1.5, 63.25)"/>
+            <path id="Shape" fill="none" stroke="#CA90C7" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 67.720 46.200 L 67.720 48.040 " transform="matrix(1, 0, 0, 1, -1.5, 63.25)"/>
+            <path id="Shape" fill="none" stroke="#CA90C7" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 67.180 34.640 L 68.260 36.260 " transform="matrix(1, 0, 0, 1, -1.5, 63.25)"/>
+            <path id="Shape" fill="none" stroke="#CA90C7" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 13.900 25.860 L 15.760 25.860 " transform="matrix(1, 0, 0, 1, -1.5, 63.25)"/>
+          </g>
+          <g id="Top-Buttons">
+            <path id="Rectangle-path" fill="#C9E2B3" stroke="none" stroke-width="1" d="M 0.560 3.460 L 6.420 3.460 L 6.420 5.460 L 0.560 5.460 L 0.560 3.460 Z " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Rectangle-path" fill="#FFFFFF" stroke="none" stroke-width="1" d="M 0.560 1.540 L 6.420 1.540 L 6.420 3.540 L 0.560 3.540 L 0.560 1.540 Z " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Rectangle-path" fill="#FFFFFF" stroke="none" stroke-width="1" d="M 8.500 1.540 L 14.360 1.540 L 14.360 3.540 L 8.500 3.540 L 8.500 1.540 Z " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Rectangle-path" fill="#C9E2B3" stroke="none" stroke-width="1" d="M 8.500 3.460 L 14.360 3.460 L 14.360 5.460 L 8.500 5.460 L 8.500 3.460 Z " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Rectangle-path" fill="#C9E2B3" stroke="none" stroke-width="1" d="M 20.880 3.460 L 26.740 3.460 L 26.740 5.460 L 20.880 5.460 L 20.880 3.460 Z " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Rectangle-path" fill="#FFFFFF" stroke="none" stroke-width="1" d="M 20.880 1.540 L 26.740 1.540 L 26.740 3.540 L 20.880 3.540 L 20.880 1.540 Z " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Rectangle-path" fill="#C9E2B3" stroke="none" stroke-width="1" d="M 28.820 3.460 L 34.680 3.460 L 34.680 5.460 L 28.820 5.460 L 28.820 3.460 Z " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Rectangle-path" fill="#FFFFFF" stroke="none" stroke-width="1" d="M 28.820 1.540 L 34.680 1.540 L 34.680 3.540 L 28.820 3.540 L 28.820 1.540 Z " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Rectangle-path" fill="#FFFFFF" stroke="none" stroke-width="1" d="M 36.700 3.460 L 42.560 3.460 L 42.560 5.460 L 36.700 5.460 L 36.700 3.460 Z " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Rectangle-path" fill="#C9E2B3" stroke="none" stroke-width="1" d="M 44.640 3.460 L 50.500 3.460 L 50.500 5.460 L 44.640 5.460 L 44.640 3.460 Z " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Rectangle-path" fill="#FFFFFF" stroke="none" stroke-width="1" d="M 44.640 1.540 L 50.500 1.540 L 50.500 3.540 L 44.640 3.540 L 44.640 1.540 Z " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Rectangle-path" fill="#FFFFFF" stroke="none" stroke-width="1" d="M 57.620 1.540 L 63.480 1.540 L 63.480 3.540 L 57.620 3.540 L 57.620 1.540 Z " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Rectangle-path" fill="#C9E2B3" stroke="none" stroke-width="1" d="M 57.620 3.460 L 63.480 3.460 L 63.480 5.460 L 57.620 5.460 L 57.620 3.460 Z " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Rectangle-path" fill="#FFFFFF" stroke="none" stroke-width="1" d="M 65.540 1.540 L 71.400 1.540 L 71.400 3.540 L 65.540 3.540 L 65.540 1.540 Z " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Rectangle-path" fill="#C9E2B3" stroke="none" stroke-width="1" d="M 65.540 3.460 L 71.400 3.460 L 71.400 5.460 L 65.540 5.460 L 65.540 3.460 Z " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Shape" fill="none" stroke="#149948" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 0.560 3.460 L 0.560 5.380 L 6.420 5.380 L 6.420 3.460 L 6.420 1.540 L 0.560 1.540 L 0.560 3.460 " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Shape" fill="none" stroke="#149948" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 8.480 3.460 L 8.480 5.380 L 14.360 5.380 L 14.360 3.460 L 14.360 1.540 L 8.480 1.540 L 8.480 3.460 " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Shape" fill="none" stroke="#149948" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 20.880 3.460 L 20.880 5.380 L 26.740 5.380 L 26.740 3.460 L 26.740 1.540 L 20.880 1.540 L 20.880 3.460 " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Shape" fill="none" stroke="#149948" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 28.820 3.460 L 28.820 5.380 L 34.680 5.380 L 34.680 3.460 L 34.680 1.540 L 28.820 1.540 L 28.820 3.460 " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Rectangle-path" fill="none" stroke="#149948" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 36.700 3.460 L 42.560 3.460 L 42.560 5.460 L 36.700 5.460 L 36.700 3.460 Z " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Shape" fill="none" stroke="#149948" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 44.640 3.460 L 44.640 5.380 L 50.500 5.380 L 50.500 3.460 L 50.500 1.540 L 44.640 1.540 L 44.640 3.460 " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Shape" fill="none" stroke="#149948" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 57.620 3.460 L 57.620 5.380 L 63.480 5.380 L 63.480 3.460 L 63.480 1.540 L 57.620 1.540 L 57.620 3.460 " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+            <path id="Shape" fill="none" stroke="#149948" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 65.540 1.540 L 65.540 3.460 L 65.540 5.380 L 71.400 5.380 L 71.400 3.460 L 71.400 1.540 L 65.540 1.540 " transform="matrix(1, 0, 0, 1, 14.5, 59.25)"/>
+          </g>
+          <g id="White-Panel">
+            <path id="Rectangle-path" fill="#FFFFFF" stroke="#5E154D" stroke-width="0.72" d="M 1.280 1.140 L 70.120 1.140 L 70.120 8.600 L 1.280 8.600 L 1.280 1.140 Z " transform="matrix(1, 0, 0, 1, 14.5, 67.25)"/>
+            <path id="Shape" fill="none" stroke="#5E154D" stroke-width="0.5" d="M 25.020 3.760 L 66.080 3.760 " transform="matrix(1, 0, 0, 1, 14.5, 67.25)"/>
+            <path id="Shape" fill="none" stroke="#5E154D" stroke-width="0.5" d="M 25.020 6.020 L 66.080 6.020 " transform="matrix(1, 0, 0, 1, 14.5, 67.25)"/>
+            <path id="Shape" fill="none" stroke="#5E154D" stroke-width="0.5" d="M 45.560 1.140 L 45.560 8.620 " transform="matrix(1, 0, 0, 1, 14.5, 67.25)"/>
+            <g id="Group-2">
+              <path id="Rectangle-path" fill="#007C2C" stroke="#007C2C" stroke-width="2" d="M 1.660 1.760 L 5.160 1.760 L 5.160 4.020 L 1.660 4.020 L 1.660 1.760 Z " transform="matrix(1, 0, 0, 1, 18.5, 69.25)"/>
+              <path id="Rectangle-path" fill="#F05822" stroke="#F05822" stroke-width="2" d="M 5.160 1.760 L 8.540 1.760 L 8.540 4.020 L 5.160 4.020 L 5.160 1.760 Z " transform="matrix(1, 0, 0, 1, 18.5, 69.25)"/>
+              <path id="Rectangle-path" fill="#007C2C" stroke="#007C2C" stroke-width="2" d="M 8.540 1.760 L 11.920 1.760 L 11.920 4.020 L 8.540 4.020 L 8.540 1.760 Z " transform="matrix(1, 0, 0, 1, 18.5, 69.25)"/>
+              <path id="Rectangle-path" fill="#F05822" stroke="#F05822" stroke-width="2" d="M 11.920 1.760 L 15.420 1.760 L 15.420 4.020 L 11.920 4.020 L 11.920 1.760 Z " transform="matrix(1, 0, 0, 1, 18.5, 69.25)"/>
+            </g>
+          </g>
+          <g id="Left-Orange-Speaker">
+            <path id="Oval" fill="#FFFFFF" stroke="#F05822" stroke-width="0.96" d="M 5.620 1.960 C 6.977 1.960 8.207 2.511 9.098 3.402 C 9.989 4.293 10.540 5.523 10.540 6.880 C 10.540 8.237 9.989 9.467 9.098 10.358 C 8.207 11.249 6.977 11.800 5.620 11.800 C 4.263 11.800 3.033 11.249 2.142 10.358 C 1.251 9.467 0.700 8.237 0.700 6.880 C 0.700 5.523 1.251 4.293 2.142 3.402 C 3.033 2.511 4.263 1.960 5.620 1.960 Z " transform="matrix(1, 0, 0, 1, 2.5, 65.25)"/>
+            <path id="Shape" fill="none" stroke="#F05822" stroke-width="0.5" d="M 1.060 8.680 L 7.420 2.340 " transform="matrix(1, 0, 0, 1, 2.5, 65.25)"/>
+            <path id="Shape" fill="none" stroke="#F05822" stroke-width="0.5" d="M 2.340 9.960 L 8.680 3.620 " transform="matrix(1, 0, 0, 1, 2.5, 65.25)"/>
+            <path id="Shape" fill="none" stroke="#F05822" stroke-width="0.5" d="M 3.580 11.200 L 9.920 4.840 " transform="matrix(1, 0, 0, 1, 2.5, 65.25)"/>
+            <path id="Shape" fill="none" stroke="#F05822" stroke-width="0.5" d="M 10.160 8.920 L 3.820 2.580 " transform="matrix(1, 0, 0, 1, 2.5, 65.25)"/>
+            <path id="Shape" fill="none" stroke="#F05822" stroke-width="0.5" d="M 8.880 10.200 L 2.540 3.860 " transform="matrix(1, 0, 0, 1, 2.5, 65.25)"/>
+            <path id="Shape" fill="none" stroke="#F05822" stroke-width="0.5" d="M 7.660 11.440 L 1.300 5.080 " transform="matrix(1, 0, 0, 1, 2.5, 65.25)"/>
+            <path id="Oval" fill="none" stroke="#F05822" stroke-width="0.5" d="M 5.620 3.240 C 6.624 3.240 7.534 3.648 8.193 4.307 C 8.852 4.966 9.260 5.876 9.260 6.880 C 9.260 7.884 8.852 8.794 8.193 9.453 C 7.534 10.112 6.624 10.520 5.620 10.520 C 4.616 10.520 3.706 10.112 3.047 9.453 C 2.388 8.794 1.980 7.884 1.980 6.880 C 1.980 5.876 2.388 4.966 3.047 4.307 C 3.706 3.648 4.616 3.240 5.620 3.240 Z " transform="matrix(1, 0, 0, 1, 2.5, 65.25)"/>
+          </g>
+          <g id="Right-orange-speaker">
+            <path id="Oval" fill="#FFFFFF" stroke="#F05822" stroke-width="0.96" d="M 6.080 1.960 C 7.437 1.960 8.667 2.511 9.558 3.402 C 10.449 4.293 11 5.523 11 6.880 C 11 8.237 10.449 9.467 9.558 10.358 C 8.667 11.249 7.437 11.800 6.080 11.800 C 4.723 11.800 3.493 11.249 2.602 10.358 C 1.711 9.467 1.160 8.237 1.160 6.880 C 1.160 5.523 1.711 4.293 2.602 3.402 C 3.493 2.511 4.723 1.960 6.080 1.960 Z " transform="matrix(1, 0, 0, 1, 86.5, 65.25)"/>
+            <path id="Oval" fill="none" stroke="#F05822" stroke-width="0.5" d="M 6.080 3.240 C 7.084 3.240 7.994 3.648 8.653 4.307 C 9.312 4.966 9.720 5.876 9.720 6.880 C 9.720 7.884 9.312 8.794 8.653 9.453 C 7.994 10.112 7.084 10.520 6.080 10.520 C 5.076 10.520 4.166 10.112 3.507 9.453 C 2.848 8.794 2.440 7.884 2.440 6.880 C 2.440 5.876 2.848 4.966 3.507 4.307 C 4.166 3.648 5.076 3.240 6.080 3.240 Z " transform="matrix(1, 0, 0, 1, 86.5, 65.25)"/>
+            <path id="Shape" fill="none" stroke="#F05822" stroke-width="0.5" d="M 1.520 8.680 L 7.880 2.340 " transform="matrix(1, 0, 0, 1, 86.5, 65.25)"/>
+            <path id="Shape" fill="none" stroke="#F05822" stroke-width="0.5" d="M 2.800 9.960 L 9.140 3.620 " transform="matrix(1, 0, 0, 1, 86.5, 65.25)"/>
+            <path id="Shape" fill="none" stroke="#F05822" stroke-width="0.5" d="M 4.040 11.200 L 10.380 4.840 " transform="matrix(1, 0, 0, 1, 86.5, 65.25)"/>
+            <path id="Shape" fill="none" stroke="#F05822" stroke-width="0.5" d="M 10.620 8.920 L 4.280 2.580 " transform="matrix(1, 0, 0, 1, 86.5, 65.25)"/>
+            <path id="Shape" fill="none" stroke="#F05822" stroke-width="0.5" d="M 9.360 10.200 L 3 3.860 " transform="matrix(1, 0, 0, 1, 86.5, 65.25)"/>
+            <path id="Shape" fill="none" stroke="#F05822" stroke-width="0.5" d="M 8.120 11.440 L 1.760 5.080 " transform="matrix(1, 0, 0, 1, 86.5, 65.25)"/>
+          </g>
+          <g id="Left-Speaker">
+            <path id="Oval" fill="#CA90C7" stroke="none" stroke-width="1" d="M 17.020 2.360 C 21.004 2.360 24.614 3.978 27.228 6.592 C 29.842 9.206 31.460 12.816 31.460 16.800 C 31.460 20.784 29.842 24.394 27.228 27.008 C 24.614 29.622 21.004 31.240 17.020 31.240 C 13.036 31.240 9.426 29.622 6.812 27.008 C 4.198 24.394 2.580 20.784 2.580 16.800 C 2.580 12.816 4.198 9.206 6.812 6.592 C 9.426 3.978 13.036 2.360 17.020 2.360 Z " transform="matrix(1, 0, 0, 1, 2.5, 87.25)"/>
+            <path id="Oval" fill="#EAC5DD" stroke="#EAC5DD" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 17.020 5.120 C 20.242 5.120 23.162 6.429 25.277 8.543 C 27.391 10.658 28.700 13.578 28.700 16.800 C 28.700 20.022 27.391 22.942 25.277 25.057 C 23.162 27.171 20.242 28.480 17.020 28.480 C 13.798 28.480 10.878 27.171 8.763 25.057 C 6.649 22.942 5.340 20.022 5.340 16.800 C 5.340 13.578 6.649 10.658 8.763 8.543 C 10.878 6.429 13.798 5.120 17.020 5.120 Z " transform="matrix(1, 0, 0, 1, 2.5, 87.25)"/>
+            <g id="Group">
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 1.640 20.380 L 20.700 1.320 " transform="matrix(1, 0, 0, 1, 2.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 4 22.780 L 23.060 3.720 " transform="matrix(1, 0, 0, 1, 2.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 6.360 25.180 L 25.440 6.100 " transform="matrix(1, 0, 0, 1, 2.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 8.720 27.560 L 27.800 8.500 " transform="matrix(1, 0, 0, 1, 2.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 11.080 29.960 L 30.160 10.900 " transform="matrix(1, 0, 0, 1, 2.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 13.460 32.360 L 32.520 13.280 " transform="matrix(1, 0, 0, 1, 2.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 20.620 32.280 L 1.560 13.200 " transform="matrix(1, 0, 0, 1, 2.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 23.020 29.920 L 3.960 10.840 " transform="matrix(1, 0, 0, 1, 2.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 25.420 27.560 L 6.340 8.480 " transform="matrix(1, 0, 0, 1, 2.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 27.800 25.180 L 8.740 6.120 " transform="matrix(1, 0, 0, 1, 2.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 30.200 22.820 L 11.140 3.760 " transform="matrix(1, 0, 0, 1, 2.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 32.600 20.460 L 13.520 1.400 " transform="matrix(1, 0, 0, 1, 2.5, 87.25)"/>
+            </g>
+            <path id="Oval" fill="none" stroke="#5E154D" stroke-width="0.96" stroke-linecap="round" stroke-linejoin="round" d="M 17.020 5.120 C 20.242 5.120 23.162 6.429 25.277 8.543 C 27.391 10.658 28.700 13.578 28.700 16.800 C 28.700 20.022 27.391 22.942 25.277 25.057 C 23.162 27.171 20.242 28.480 17.020 28.480 C 13.798 28.480 10.878 27.171 8.763 25.057 C 6.649 22.942 5.340 20.022 5.340 16.800 C 5.340 13.578 6.649 10.658 8.763 8.543 C 10.878 6.429 13.798 5.120 17.020 5.120 Z " transform="matrix(1, 0, 0, 1, 2.5, 87.25)"/>
+          </g>
+          <g id="Left-Speaker">
+            <g id="Group">
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 1.640 20.380 L 20.700 1.320 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 4 22.780 L 23.060 3.720 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 6.360 25.180 L 25.440 6.100 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 8.720 27.560 L 27.800 8.500 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 11.080 29.960 L 30.160 10.900 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 13.460 32.360 L 32.520 13.280 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 20.620 32.280 L 1.560 13.200 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 23.020 29.920 L 3.960 10.840 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 25.420 27.560 L 6.340 8.480 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 27.800 25.180 L 8.740 6.120 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 30.200 22.820 L 11.140 3.760 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 32.600 20.460 L 13.520 1.400 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+            </g>
+            <path id="Oval" fill="#CA90C7" stroke="none" stroke-width="1" d="M 17.020 2.360 C 21.004 2.360 24.614 3.978 27.228 6.592 C 29.842 9.206 31.460 12.816 31.460 16.800 C 31.460 20.784 29.842 24.394 27.228 27.008 C 24.614 29.622 21.004 31.240 17.020 31.240 C 13.036 31.240 9.426 29.622 6.812 27.008 C 4.198 24.394 2.580 20.784 2.580 16.800 C 2.580 12.816 4.198 9.206 6.812 6.592 C 9.426 3.978 13.036 2.360 17.020 2.360 Z " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+            <path id="Oval" fill="#EAC5DD" stroke="#EAC5DD" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 17.020 5.120 C 20.242 5.120 23.162 6.429 25.277 8.543 C 27.391 10.658 28.700 13.578 28.700 16.800 C 28.700 20.022 27.391 22.942 25.277 25.057 C 23.162 27.171 20.242 28.480 17.020 28.480 C 13.798 28.480 10.878 27.171 8.763 25.057 C 6.649 22.942 5.340 20.022 5.340 16.800 C 5.340 13.578 6.649 10.658 8.763 8.543 C 10.878 6.429 13.798 5.120 17.020 5.120 Z " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+            <g id="Group">
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 2.040 20.380 L 21.120 1.320 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 4.400 22.780 L 23.480 3.720 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 6.780 25.180 L 25.840 6.100 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 9.140 27.560 L 28.200 8.500 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 11.500 29.960 L 30.560 10.900 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 13.860 32.360 L 32.920 13.280 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 21.040 32.280 L 1.960 13.200 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 23.440 29.920 L 4.360 10.840 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 25.820 27.560 L 6.760 8.480 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 28.220 25.180 L 9.140 6.120 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 30.620 22.820 L 11.540 3.760 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+              <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 33 20.460 L 13.940 1.400 " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+            </g>
+            <path id="Oval" fill="none" stroke="#5E154D" stroke-width="0.96" stroke-linecap="round" stroke-linejoin="round" d="M 17.020 5.120 C 20.242 5.120 23.162 6.429 25.277 8.543 C 27.391 10.658 28.700 13.578 28.700 16.800 C 28.700 20.022 27.391 22.942 25.277 25.057 C 23.162 27.171 20.242 28.480 17.020 28.480 C 13.798 28.480 10.878 27.171 8.763 25.057 C 6.649 22.942 5.340 20.022 5.340 16.800 C 5.340 13.578 6.649 10.658 8.763 8.543 C 10.878 6.429 13.798 5.120 17.020 5.120 Z " transform="matrix(1, 0, 0, 1, 64.5, 87.25)"/>
+          </g>
+          <g id="Purple-Vents">
+            <path id="Rectangle-path" fill="#EAC5DD" stroke="#EAC5DD" stroke-width="0.5" d="M 0.560 0.860 L 29.440 0.860 L 29.440 5.360 L 0.560 5.360 L 0.560 0.860 Z " transform="matrix(1, 0, 0, 1, 4.5, 81.25)"/>
+            <path id="Rectangle-path" fill="#EAC5DD" stroke="#EC2777" stroke-width="0.5" d="M 63.140 0.860 L 92.020 0.860 L 92.020 5.360 L 63.140 5.360 L 63.140 0.860 Z " transform="matrix(1, 0, 0, 1, 4.5, 81.25)"/>
+            <path id="Rectangle-path" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 63.140 0.920 L 92.020 0.920 L 92.020 5.420 L 63.140 5.420 L 63.140 0.920 Z " transform="matrix(1, 0, 0, 1, 4.5, 81.25)"/>
+            <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.5" d="M 0.560 2.360 L 29.440 2.360 " transform="matrix(1, 0, 0, 1, 4.5, 81.25)"/>
+            <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.5" d="M 0.580 3.880 L 29.440 3.880 " transform="matrix(1, 0, 0, 1, 4.5, 81.25)"/>
+            <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.5" d="M 63.140 2.360 L 92.020 2.360 " transform="matrix(1, 0, 0, 1, 4.5, 81.25)"/>
+            <path id="Shape" fill="none" stroke="#9F509E" stroke-width="0.5" d="M 63.140 3.880 L 92.020 3.880 " transform="matrix(1, 0, 0, 1, 4.5, 81.25)"/>
+            <path id="Rectangle-path" fill="none" stroke="#9F509E" stroke-width="0.72" d="M 0.560 0.860 L 29.440 0.860 L 29.440 5.360 L 0.560 5.360 L 0.560 0.860 Z " transform="matrix(1, 0, 0, 1, 4.5, 81.25)"/>
+          </g>
+          <g id="Center-Panel">
+            <path id="Rectangle-path" fill="#5E154D" stroke="#5E154D" stroke-width="0.96" stroke-linecap="round" stroke-linejoin="round" d="M 4.500 12.960 L 24.800 12.960 L 24.800 23.560 L 4.500 23.560 L 4.500 12.960 Z " transform="matrix(1, 0, 0, 1, 36.5, 81.25)"/>
+            <path id="Rectangle-path" fill="#FFDB48" stroke="none" stroke-width="1" d="M 2.060 0.920 L 27.360 0.920 L 27.360 10.580 L 2.060 10.580 L 2.060 0.920 Z " transform="matrix(1, 0, 0, 1, 36.5, 81.25)"/>
+            <path id="Rectangle-path" fill="#007C2C" stroke="none" stroke-width="1" d="M 2.060 26.520 L 27.360 26.520 L 27.360 37.580 L 2.060 37.580 L 2.060 26.520 Z " transform="matrix(1, 0, 0, 1, 36.5, 81.25)"/>
+            <path id="Rectangle-path" fill="none" stroke="none" stroke-width="1" d="M 2.060 10.580 L 27.360 10.580 L 27.360 26.540 L 2.060 26.540 L 2.060 10.580 Z " transform="matrix(1, 0, 0, 1, 36.5, 81.25)"/>
+            <path id="Shape" fill="#5E154D" stroke="#5E154D" stroke-width="0.72" stroke-linecap="round" stroke-linejoin="round" d="M 29.180 41.440 L 0.120 41.440 L 2.060 37.600 L 27.360 37.600 L 29.180 41.440 " transform="matrix(1, 0, 0, 1, 36.5, 81.25)"/>
+            <path id="Rectangle-path" fill="#F05822" stroke="none" stroke-width="1" d="M 2.060 0.920 L 27.360 0.920 L 27.360 10.580 L 2.060 10.580 L 2.060 0.920 Z " transform="matrix(1, 0, 0, 1, 36.5, 81.25)"/>
+            <path id="Shape" fill="none" stroke="#5E154D" stroke-width="0.72" stroke-linecap="round" stroke-linejoin="round" d="M 2.060 0.920 L 2.060 10.580 L 2.060 26.540 L 2.060 37.600 L 27.360 37.600 L 27.360 26.540 L 27.360 10.580 L 27.360 0.920 L 2.060 0.920 " transform="matrix(1, 0, 0, 1, 36.5, 81.25)"/>
+            <path id="Rectangle-path" fill="#FFDB48" stroke="#5E154D" stroke-width="0.72" stroke-linecap="round" stroke-linejoin="round" d="M 4.500 3.680 L 24.800 3.680 L 24.800 8.180 L 4.500 8.180 L 4.500 3.680 Z " transform="matrix(1, 0, 0, 1, 36.5, 81.25)"/>
+            <path id="Shape" fill="none" stroke="#5E154D" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 6.840 5 L 6.840 6.860 " transform="matrix(1, 0, 0, 1, 36.5, 81.25)"/>
+            <path id="Shape" fill="none" stroke="#5E154D" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 12.080 5 L 12.080 6.860 " transform="matrix(1, 0, 0, 1, 36.5, 81.25)"/>
+            <path id="Shape" fill="none" stroke="#5E154D" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 17.320 5 L 17.320 6.860 " transform="matrix(1, 0, 0, 1, 36.5, 81.25)"/>
+            <path id="Shape" fill="none" stroke="#5E154D" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 22.560 5 L 22.560 6.860 " transform="matrix(1, 0, 0, 1, 36.5, 81.25)"/>
+            <path id="Shape" fill="none" stroke="#5E154D" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 4.500 5.920 L 24.800 5.920 " transform="matrix(1, 0, 0, 1, 36.5, 81.25)"/>
+            <g id="Tape-Buttons">
+              <path id="Rectangle-path" fill="#FFFFFF" stroke="#5E154D" stroke-width="0.72" d="M 0.500 0.980 L 20.800 0.980 L 20.800 4 L 0.500 4 L 0.500 0.980 Z " transform="matrix(1, 0, 0, 1, 40.5, 109.25)"/>
+              <path id="Rectangle-path" fill="#FFDB48" stroke="#5E154D" stroke-width="0.72" d="M 0.500 4 L 20.800 4 L 20.800 7.020 L 0.500 7.020 L 0.500 4 Z " transform="matrix(1, 0, 0, 1, 40.5, 109.25)"/>
+              <path id="Shape" fill="none" stroke="#5E154D" stroke-width="0.72" d="M 5.660 0.960 L 5.660 4 " transform="matrix(1, 0, 0, 1, 40.5, 109.25)"/>
+              <path id="Shape" fill="none" stroke="#5E154D" stroke-width="0.72" d="M 15.620 0.960 L 15.620 4 " transform="matrix(1, 0, 0, 1, 40.5, 109.25)"/>
+              <path id="Shape" fill="none" stroke="#5E154D" stroke-width="0.72" d="M 10.640 0.960 L 10.640 4 " transform="matrix(1, 0, 0, 1, 40.5, 109.25)"/>
+            </g>
+            <path id="Oval" fill="none" stroke="#FFFFFF" stroke-width="0.72" stroke-linecap="round" stroke-linejoin="round" d="M 9.420 21.040 C 7.885 21.040 6.640 19.795 6.640 18.260 C 6.640 16.725 7.885 15.480 9.420 15.480 C 10.955 15.480 12.200 16.725 12.200 18.260 C 12.200 19.795 10.955 21.040 9.420 21.040 Z M 14 18.260 L 15.280 18.260 L 14 18.260 Z " transform="matrix(1, 0, 0, 1, 36.5, 81.25)"/>
+            <path id="Oval" fill="none" stroke="#FFFFFF" stroke-width="0.72" stroke-linecap="round" stroke-linejoin="round" d="M 19.880 15.480 C 20.647 15.480 21.342 15.792 21.845 16.295 C 22.348 16.798 22.660 17.493 22.660 18.260 C 22.660 19.027 22.348 19.722 21.845 20.225 C 21.342 20.728 20.647 21.040 19.880 21.040 C 19.113 21.040 18.418 20.728 17.915 20.225 C 17.412 19.722 17.100 19.027 17.100 18.260 C 17.100 17.493 17.412 16.798 17.915 16.295 C 18.418 15.792 19.113 15.480 19.880 15.480 Z " transform="matrix(1, 0, 0, 1, 36.5, 81.25)"/>
+            <path id="Oval" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 9.420 16.260 C 9.972 16.260 10.472 16.484 10.834 16.846 C 11.196 17.208 11.420 17.708 11.420 18.260 C 11.420 18.812 11.196 19.312 10.834 19.674 C 10.472 20.036 9.972 20.260 9.420 20.260 C 8.868 20.260 8.368 20.036 8.006 19.674 C 7.644 19.312 7.420 18.812 7.420 18.260 C 7.420 17.708 7.644 17.208 8.006 16.846 C 8.368 16.484 8.868 16.260 9.420 16.260 Z " transform="matrix(1, 0, 0, 1, 36.5, 81.25)"/>
+            <path id="Oval" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" d="M 19.880 16.260 C 20.432 16.260 20.932 16.484 21.294 16.846 C 21.656 17.208 21.880 17.708 21.880 18.260 C 21.880 18.812 21.656 19.312 21.294 19.674 C 20.932 20.036 20.432 20.260 19.880 20.260 C 19.328 20.260 18.828 20.036 18.466 19.674 C 18.104 19.312 17.880 18.812 17.880 18.260 C 17.880 17.708 18.104 17.208 18.466 16.846 C 18.828 16.484 19.328 16.260 19.880 16.260 Z " transform="matrix(1, 0, 0, 1, 36.5, 81.25)"/>
+          </g>
+          <g id="Reflection">
+            <path id="Shape" fill="none" stroke="#FFFFFF" stroke-width="0.96" d="M 1.980 17.740 L 1.980 20.100 " transform="matrix(1, 0, 0, 1, 96.5, 87.25)"/>
+            <path id="Shape" fill="none" stroke="#FFFFFF" stroke-width="0.96" d="M 1.980 1.240 L 1.980 15.760 " transform="matrix(1, 0, 0, 1, 96.5, 87.25)"/>
+          </g>
+          <path id="Shape" fill="none" stroke="#5E154D" stroke-width="0.96" stroke-linecap="round" stroke-linejoin="round" d="M 98.800 17.380 L 5.200 17.380 C 3.417 17.434 1.999 18.896 2 20.680 L 2 72.140 C 2 73.963 3.477 75.440 5.300 75.440 L 98.800 75.440 C 99.675 75.440 100.515 75.092 101.133 74.473 C 101.752 73.855 102.100 73.015 102.100 72.140 L 102.100 20.680 C 102.100 18.857 100.623 17.380 98.800 17.380 Z " transform="matrix(1, 0, 0, 1, -1.5, 47.25)"/>
+        </g>
+        <g id="Group-4">
+          <path id="Shape" fill="#5E154D" stroke="#5E154D" stroke-width="0.5" d="M 4.740 13.780 L 2 3.240 " transform="matrix(1, 0, 0, 1, 72.5, 11.25)"/>
+          <path id="Shape" fill="#5E154D" stroke="#5E154D" stroke-width="0.5" d="M 12.580 11.740 L 9.840 1.200 " transform="matrix(1, 0, 0, 1, 72.5, 11.25)"/>
+          <path id="Rectangle-path" fill="#5E154D" stroke="#5E154D" stroke-width="0.5" d="M 2.062 1.931 L 10.162 1.931 L 10.162 3.931 L 2.062 3.931 L 2.062 1.931 Z " transform="matrix(0.9677091836929321, -0.252069354057312, 0.252069354057312, 0.9677091836929321, 71.95, 12.85)"/>
+          <path id="Oval" fill="#5E154D" stroke="#5E154D" stroke-width="0.5" d="M 14.540 9.756 C 15.092 9.756 15.592 9.980 15.954 10.342 C 16.316 10.704 16.540 11.204 16.540 11.756 C 16.540 12.308 16.316 12.808 15.954 13.170 C 15.592 13.532 15.092 13.756 14.540 13.756 C 13.988 13.756 13.488 13.532 13.126 13.170 C 12.764 12.808 12.540 12.308 12.540 11.756 C 12.540 11.204 12.764 10.704 13.126 10.342 C 13.488 9.980 13.988 9.756 14.540 9.756 Z " transform="matrix(0.009424638003110886, -0.9999555945396423, 0.9999555945396423, 0.009424638003110886, 75.1, 37.4)"/>
+          <path id="Oval" fill="#5E154D" stroke="#5E154D" stroke-width="0.5" d="M 6.706 11.795 C 7.258 11.795 7.758 12.019 8.120 12.381 C 8.482 12.743 8.706 13.243 8.706 13.795 C 8.706 14.347 8.482 14.847 8.120 15.209 C 7.758 15.571 7.258 15.795 6.706 15.795 C 6.154 15.795 5.654 15.571 5.292 15.209 C 4.930 14.847 4.706 14.347 4.706 13.795 C 4.706 13.243 4.930 12.743 5.292 12.381 C 5.654 12.019 6.154 11.795 6.706 11.795 Z " transform="matrix(0.009424638003110886, -0.9999555945396423, 0.9999555945396423, 0.009424638003110886, 65.3, 31.6)"/>
+        </g>
+        <g id="Group-3">
+          <path id="Oval" fill="#5E154D" stroke="#5E154D" stroke-width="0.5" d="M 3.450 12.171 C 4.001 12.171 4.501 12.395 4.863 12.757 C 5.225 13.119 5.450 13.619 5.450 14.171 C 5.450 14.723 5.225 15.223 4.863 15.585 C 4.501 15.947 4.001 16.171 3.450 16.171 C 2.898 16.171 2.398 15.947 2.036 15.585 C 1.674 15.223 1.450 14.723 1.450 14.171 C 1.450 13.619 1.674 13.119 2.036 12.757 C 2.398 12.395 2.898 12.171 3.450 12.171 Z " transform="matrix(0.5658307671546936, -0.8245214223861694, 0.8245214223861694, 0.5658307671546936, 88.3, 8.2)"/>
+          <path id="Shape" fill="#5E154D" stroke="#5E154D" stroke-width="0.5" d="M 1.720 13.360 L 5.780 1.780 " transform="matrix(1, 0, 0, 1, 98.5, -0.75)"/>
+          <path id="Shape" fill="#5E154D" stroke="#5E154D" stroke-width="0.5" d="M 0.440 7.200 C 0.430 5.287 1.508 3.534 3.220 2.680 C 4.030 2.269 4.891 1.967 5.780 1.780 L 5.120 3.640 C 4.225 3.724 3.356 3.982 2.560 4.400 C 1.598 5.109 0.862 6.082 0.440 7.200 Z " transform="matrix(1, 0, 0, 1, 98.5, -0.75)"/>
+        </g>
+        <g id="Group-2">
+          <path id="Oval" fill="#5E154D" stroke="#5E154D" stroke-width="0.5" d="M 6.023 12.156 C 6.575 12.156 7.075 12.380 7.437 12.742 C 7.799 13.104 8.023 13.604 8.023 14.156 C 8.023 14.707 7.799 15.207 7.437 15.570 C 7.075 15.932 6.575 16.156 6.023 16.156 C 5.471 16.156 4.971 15.932 4.609 15.570 C 4.247 15.207 4.023 14.707 4.023 14.156 C 4.023 13.604 4.247 13.104 4.609 12.742 C 4.971 12.380 5.471 12.156 6.023 12.156 Z " transform="matrix(0.2512247860431671, -0.9679287672042847, 0.9679287672042847, 0.2512247860431671, 47.3, 37.65)"/>
+          <path id="Shape" fill="#5E154D" stroke="#5E154D" stroke-width="0.5" d="M 4.120 13.980 L 3.980 1.720 " transform="matrix(1, 0, 0, 1, 56.5, 21.25)"/>
+          <path id="Shape" fill="#5E154D" stroke="#5E154D" stroke-width="0.5" d="M 0.800 8.640 C 0.134 6.843 0.553 4.823 1.880 3.440 C 2.473 2.786 3.145 2.208 3.880 1.720 L 3.880 3.720 C 3.065 4.111 2.332 4.654 1.720 5.320 C 1.109 6.319 0.790 7.469 0.800 8.640 Z " transform="matrix(1, 0, 0, 1, 56.5, 21.25)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

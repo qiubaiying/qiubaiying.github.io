@@ -1,0 +1,26 @@
+<svg width="70px" height="28px" viewBox="0 0 70 28" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs/>
+  <g>
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g id="glasses-b-[people,fashion,glasses]" transform="translate(1.000000, 1.000000)">
+        <path d="M34.7477273,10.01 L36.4977273,10.01" id="Shape" stroke="#F93DBF" stroke-width="1.28" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10.3590909,10.5625 L0.288636364,7.26375" id="Shape" stroke="#F93DBF" stroke-width="2.128" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M60.7113636,10.725 L67.7113636,8.0275" id="Shape" stroke="#F93DBF" stroke-width="2.128" stroke-linecap="round" stroke-linejoin="round"/>
+        <polygon id="Shape" fill="#FFD110" fill-rule="nonzero" points="13.6681818 25.65875 21.7181818 21.33625 29.7681818 25.65875 29.7681818 25.65875 21.6545455 14.67375"/>
+        <polygon id="Shape" fill="#FFD110" fill-rule="nonzero" points="17.6931818 8.6775 8.68863636 10.01 21.6545455 14.67375 21.7181818 0.34125"/>
+        <polygon id="Shape" fill="#FFE922" fill-rule="nonzero" points="21.6545455 14.67375 29.7681818 25.65875 28.2409091 16.49375 34.7477273 10.01"/>
+        <polygon id="Shape" fill="#FFF4A4" fill-rule="nonzero" points="25.7431818 8.6775 21.7181818 0.34125 21.7181818 0.34125 21.6545455 14.67375 34.7477273 10.01"/>
+        <polygon id="Shape" fill="#F2C900" fill-rule="nonzero" points="8.68863636 10.01 15.1954545 16.49375 13.6681818 25.65875 21.6545455 14.67375"/>
+        <polygon id="Shape" fill="#FFD110" fill-rule="nonzero" points="41.4772727 25.65875 49.5272727 21.33625 57.5772727 25.65875 57.5772727 25.65875 49.5272727 14.51125"/>
+        <polygon id="Shape" fill="#FFD110" fill-rule="nonzero" points="45.5022727 8.6775 36.4977273 10.01 49.5272727 14.51125 49.5272727 0.34125"/>
+        <polygon id="Shape" fill="#F2C900" fill-rule="nonzero" points="36.4977273 10.01 43.0045455 16.49375 41.4772727 25.65875 49.5272727 14.51125"/>
+        <polygon id="Shape" stroke="#F93DBF" stroke-width="1.28" stroke-linecap="round" stroke-linejoin="round" points="21.7181818 0.34125 25.7431818 8.6775 34.7477273 10.01 28.2409091 16.49375 29.7681818 25.65875 21.7181818 21.33625 13.6681818 25.65875 15.1954545 16.49375 8.68863636 10.01 17.6931818 8.6775"/>
+        <polygon id="Shape" fill="#FFF4A4" fill-rule="nonzero" points="62.5568182 10.01 53.5522727 8.6775 49.5272727 0.34125 49.5272727 0.34125 49.5272727 14.51125"/>
+        <polygon id="Shape" fill="#FFE922" fill-rule="nonzero" points="62.5568182 10.01 62.5568182 10.01 49.5272727 14.51125 57.5772727 25.65875 56.05 16.49375"/>
+        <polygon id="Shape" stroke="#F93DBF" stroke-width="1.28" stroke-linecap="round" stroke-linejoin="round" points="49.5272727 0.34125 53.5522727 8.6775 62.5568182 10.01 56.05 16.49375 57.5772727 25.65875 49.5272727 21.33625 41.4772727 25.65875 43.0045455 16.49375 36.4977273 10.01 45.5022727 8.6775"/>
+      </g>
+    </g>
+  </g>
+</svg>

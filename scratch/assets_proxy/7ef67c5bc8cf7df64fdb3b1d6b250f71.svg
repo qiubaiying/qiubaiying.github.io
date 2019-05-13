@@ -1,0 +1,14 @@
+<svg version="1.1" id="Layer_1" x="0px" y="0px" width="144px" height="144px" viewBox="0 0 144 144" enable-background="new 0 0 144 144" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="29.375" y1="73.8672" x2="112.375" y2="73.8672" gradientTransform="matrix(1 0 0 -1 0 144)">
+      <stop offset="0" style="stop-color:#8DC63F"/>
+      <stop offset="1" style="stop-color:#006838"/>
+    </linearGradient>
+    <path fill="url(#SVGID_1_)" d="M70.875,28.632c-22.884,0-41.5,18.617-41.5,41.5c0,22.882,18.617,41.5,41.5,41.5&#xD;&#xA;&#x9;c22.884,0,41.5-18.618,41.5-41.5C112.375,47.25,93.759,28.632,70.875,28.632z"/>
+    <radialGradient id="SVGID_2_" cx="70.875" cy="73.8672" r="33.9434" gradientTransform="matrix(1 0 0 -1 0 144)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" style="stop-color:#D7DF23"/>
+      <stop offset="1" style="stop-color:#009444"/>
+    </radialGradient>
+    <circle fill="url(#SVGID_2_)" cx="70.875" cy="70.133" r="33.944"/>
+  </g>
+</svg>

@@ -1,0 +1,135 @@
+<svg width="105px" height="176px" viewBox="0 0 105 176" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs/>
+  <g>
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g id="MediaLab_Sprites_Room_Robot-03" transform="translate(2.000000, 1.000000)">
+        <g id="Left-Wheel" transform="translate(9.000000, 129.000000)">
+          <path d="M11.43,15.45 L7.14,15.45 C3.84,15.45 1.14,19.08 1.14,23.55 C1.14,28.02 3.81,31.65 7.14,31.65 L11.43,31.65 L11.43,15.45 Z" id="Shape" stroke="#5E154D" stroke-width="1.44" fill="#FFDB48" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <ellipse id="Oval" stroke="#5E154D" stroke-width="1.44" fill="#FFDB48" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" cx="11.43" cy="23.55" rx="5.97" ry="8.1"/>
+          <path d="M9.36,37.41 L29.22,37.41 L29.22,33.45 L7.38,33.45 C7.90024719,34.8353712 8.56385145,36.1625796 9.36,37.41 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9.36,9.69 C8.56385145,10.9374204 7.90024719,12.2646289 7.38,13.65 L29.22,13.65 L29.22,9.69 L9.36,9.69 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12.66,41.37 L29.22,41.37 L29.22,37.41 L9.36,37.41 C10.2718161,38.8760841 11.382376,40.2087558 12.66,41.37 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M21.24,45 L29.22,45 L29.22,41.37 L12.66,41.37 C14.9679654,43.6065474 18.0276714,44.9010384 21.24,45 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6.21,29.49 L29.22,29.49 L29.22,25.53 L5.64,25.53 C5.73519528,26.8619175 5.92568283,28.1853046 6.21,29.49 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M7.38,33.45 L29.22,33.45 L29.22,29.49 L6.21,29.49 C6.50035359,30.8374188 6.89145261,32.1611385 7.38,33.45 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M29.22,2.25 L21.24,2.25 C18.047905,2.30829915 14.9908281,3.54823242 12.66,5.73 L29.22,5.73 L29.22,2.25 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M5.58,23.55 C5.58,24.21 5.58,24.87 5.58,25.53 L29.16,25.53 L29.16,21.57 L5.64,21.57 C5.61,22.23 5.58,22.89 5.58,23.55 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M29.22,5.73 L12.66,5.73 C11.382376,6.89124408 10.2718161,8.22391599 9.36,9.69 L29.22,9.69 L29.22,5.73 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6.21,17.61 L29.22,17.61 L29.22,13.65 L7.38,13.65 C6.89145261,14.9388615 6.50035359,16.2625813 6.21,17.61 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M5.64,21.57 L29.22,21.57 L29.22,17.61 L6.21,17.61 C5.92785774,18.9150875 5.73739251,20.2383197 5.64,21.57 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <ellipse id="Oval" fill="#FFBD39" fill-rule="nonzero" cx="29.22" cy="23.55" rx="15.66" ry="21.3"/>
+          <ellipse id="Oval" stroke="#E69724" stroke-width="1.08" fill="#E69724" fill-rule="nonzero" cx="29.22" cy="23.55" rx="9" ry="12.21"/>
+          <ellipse id="Oval" stroke="#DD3627" stroke-width="0.72" stroke-linecap="round" stroke-linejoin="round" cx="29.22" cy="23.55" rx="3.93" ry="5.37"/>
+          <path d="M29.22,2.25 L21.24,2.25 C18.047905,2.30829915 14.9908281,3.54823242 12.66,5.73 C11.382376,6.89124408 10.2718161,8.22391599 9.36,9.69 C8.56385145,10.9374204 7.90024719,12.2646289 7.38,13.65 C6.89145261,14.9388615 6.50035359,16.2625813 6.21,17.61 C5.92785774,18.9150875 5.73739251,20.2383197 5.64,21.57 C5.64,22.23 5.64,22.89 5.64,23.55 C5.64,24.21 5.64,24.87 5.64,25.53 C5.73519528,26.8619175 5.92568283,28.1853046 6.21,29.49 C6.50035359,30.8374188 6.89145261,32.1611385 7.38,33.45 C7.90024719,34.8353712 8.56385145,36.1625796 9.36,37.41 C10.2718161,38.8760841 11.382376,40.2087558 12.66,41.37 C14.9679654,43.6065474 18.0276714,44.9010384 21.24,45 L29.22,45 C37.86,45 44.88,35.46 44.88,23.7 C44.88,11.94 37.86,2.25 29.22,2.25 Z" id="Shape" stroke="#5E154D" stroke-width="1.44" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <g id="Left-Arm" transform="translate(0.000000, 45.000000)" fill-rule="nonzero" stroke="#5E154D">
+          <path d="M36,5.73 L32.64,3.57 C28.74,1.02 23.64,3.03 20.04,8.34 L11.31,21.84 L2.55,35.37 C-0.87,40.68 -0.45,46.26 3.36,48.81 L6.69,50.97 L36,5.73 Z" id="Shape" stroke-width="1.44" fill="#5E154D" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M36,5.73 C32.07,3.21 26.82,5.22 23.4,10.5 L14.7,24 L6,37.53 C2.55,42.84 3,48.45 6.78,50.97 C10.56,53.49 15.78,51.51 19.38,46.2 L28.14,32.7 L36.87,19.17 C40.29,13.89 39.96,8.28 36,5.73 Z" id="Shape" stroke-width="1.44" fill="#FFDB48"/>
+          <circle id="Oval" stroke-width="0.72" fill="#000000" stroke-linecap="round" stroke-linejoin="round" cx="32.07" cy="11.91" r="3"/>
+          <circle id="Oval" stroke-width="0.72" fill="#5E154D" stroke-linecap="round" stroke-linejoin="round" cx="10.89" cy="44.58" r="3"/>
+        </g>
+        <g id="Head" transform="translate(9.000000, 0.000000)">
+          <rect id="Rectangle-path" stroke="#5E154D" stroke-width="1.44" stroke-linecap="round" stroke-linejoin="round" x="35.16" y="32.97" width="24.06" height="7.23"/>
+          <path d="M7.05,6.93 L4.05,7.5 C3.22795734,10.7866133 2.81483245,14.162146 2.82,17.55 C2.79155545,20.9392152 3.20503911,24.3176792 4.05,27.6 L7.29,28.17 C6.69096213,24.6590606 6.34009302,21.1102701 6.24,17.55 C6.27962577,13.9961896 6.55019607,10.4487121 7.05,6.93 Z" id="Shape" stroke="#5E154D" stroke-width="1.44" fill="#5E154D" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M7.05,6.93 C6.52007184,10.4467438 6.21943728,13.9942315 6.15,17.55 C6.25009302,21.1102701 6.60096213,24.6590606 7.2,28.17 C13.83,29.22 20.4,29.55 20.4,29.55 L20.4,5.55 C20.4,5.55 13.74,6 7.05,6.93 Z" id="Shape" stroke="#5E154D" stroke-width="1.44" fill="#D2A6CC" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M87.3,6.93 L90.3,7.5 C91.1220426,10.7866133 91.5351675,14.162146 91.53,17.55 C91.5584445,20.9392152 91.1449608,24.3176792 90.3,27.6 L87.06,28.17 C87.6488838,24.6583339 87.989727,21.1095552 88.08,17.55 C88.050315,13.9968415 87.7897662,10.4493672 87.3,6.93 Z" id="Shape" stroke="#5E154D" stroke-width="1.44" fill="#5E154D" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M87.3,6.93 C87.8299281,10.4467438 88.1305626,13.9942315 88.2,17.55 C88.109727,21.1095552 87.7688838,24.6583339 87.18,28.17 C80.55,29.22 73.95,29.55 73.95,29.55 L73.95,5.55 C73.95,5.55 80.64,6 87.3,6.93 Z" id="Shape" stroke="#5E154D" stroke-width="1.44" fill="#D2A6CC" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M77.04,1.89 C67.0770936,0.788331078 57.0634659,0.207540681 47.04,0.15 C37.0164939,0.20628328 27.0028009,0.787077483 17.04,1.89 C14.0806857,12.1100877 14.0806857,22.9599123 17.04,33.18 C27.0028009,34.2829224 37.0164939,34.8637167 47.04,34.92 C57.0634659,34.8624594 67.0770936,34.281669 77.04,33.18 C79.9588095,22.9542054 79.9588095,12.1157946 77.04,1.89 Z" id="Shape" stroke="#5E154D" stroke-width="1.08" fill="#9F509E" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20.58,4.74 C17.9399071,13.0657183 17.9399071,22.0042817 20.58,30.33 C20.58,30.33 32.16,31.59 44.88,31.74 L44.88,3.36 C32.16,3.48 20.58,4.74 20.58,4.74 Z" id="Shape" fill="#5E154D" fill-rule="nonzero"/>
+          <path d="M75.75,17.55 C75.7636599,13.2050516 75.1059006,8.88407853 73.8,4.74 C73.8,4.74 65.49,3.84 55.23,3.48 L55.23,31.59 C65.49,31.23 73.8,30.33 73.8,30.33 C75.1056636,26.1961661 75.7634541,21.8851077 75.75,17.55 Z" id="Shape" fill="#5E154D" fill-rule="nonzero"/>
+          <polygon id="Shape" fill="#702061" fill-rule="nonzero" points="47.19 3.33 45 3.33 45 31.71 48.81 31.71 48.81 3.33"/>
+          <polygon id="Shape" fill="#7F1D71" fill-rule="nonzero" points="48.69 3.33 48.69 31.74 51.33 31.74 51.33 3.39"/>
+          <path d="M51.33,3.39 L51.33,31.71 L55.23,31.71 L55.23,3.48 C54,3.45 52.65,3.39 51.33,3.39 Z" id="Shape" fill="#702061" fill-rule="nonzero"/>
+        </g>
+        <g id="Eyes" transform="translate(33.000000, 9.000000)" stroke-width="3">
+          <circle id="Oval" stroke="#FFFFFF" fill="#D2A6CC" fill-rule="nonzero" cx="10.89" cy="8.55" r="8.13"/>
+          <circle id="Oval" stroke="#DD3627" cx="10.89" cy="8.55" r="4.23"/>
+          <circle id="Oval" stroke="#FFFFFF" fill="#D2A6CC" fill-rule="nonzero" cx="35.46" cy="8.55" r="8.13"/>
+          <circle id="Oval" stroke="#DD3627" cx="35.46" cy="8.55" r="4.23"/>
+        </g>
+        <g id="Body" transform="translate(21.000000, 39.000000)">
+          <rect id="Rectangle-path" fill="#FFE578" fill-rule="nonzero" x="34.02" y="1.17" width="4.05" height="60.48"/>
+          <rect id="Rectangle-path" fill="#FFDB48" fill-rule="nonzero" x="2.97" y="1.17" width="31.05" height="60.48"/>
+          <rect id="Rectangle-path" fill="#FFE578" fill-rule="nonzero" x="40.59" y="1.17" width="4.62" height="60.48"/>
+          <rect id="Rectangle-path" fill="#FFF1B6" fill-rule="nonzero" x="38.07" y="1.17" width="3" height="60.48"/>
+          <rect id="Rectangle-path" fill="#FFDB48" fill-rule="nonzero" x="45.24" y="1.17" width="7.5" height="60.48"/>
+          <polygon id="Shape" fill="#E69724" fill-rule="nonzero" points="72.36 56.79 52.74 61.65 52.74 1.17 72.36 5.07"/>
+          <polygon id="Shape" fill="#E69724" fill-rule="nonzero" points="52.74 61.65 43.41 78.66 63.03 74.19 72.36 56.79"/>
+          <polygon id="Shape" fill="#E69724" fill-rule="nonzero" points="63.06 108.27 43.41 113.55 43.41 78.66 63.06 74.16"/>
+          <polygon id="Shape" fill="#FFDB48" fill-rule="nonzero" points="12.78 78.27 12.81 113.19 29.97 113.19 29.97 78.27"/>
+          <rect id="Rectangle-path" fill="#FFE578" fill-rule="nonzero" x="29.97" y="78.3" width="4.05" height="34.89"/>
+          <rect id="Rectangle-path" fill="#FFF1B6" fill-rule="nonzero" x="34.02" y="78.3" width="3" height="34.89"/>
+          <rect id="Rectangle-path" fill="#FFE578" fill-rule="nonzero" x="36.66" y="78.3" width="4.56" height="34.89"/>
+          <rect id="Rectangle-path" fill="#FFDB48" fill-rule="nonzero" x="41.19" y="78.3" width="3" height="34.89"/>
+          <polygon id="Shape" fill="#FFE578" fill-rule="nonzero" points="33.99 61.65 29.97 78.66 34.02 78.66 38.04 61.65"/>
+          <polygon id="Shape" fill="#FFDB48" fill-rule="nonzero" points="27.84 61.65 2.97 61.65 12.69 78.66 27.84 78.66 29.97 78.66 33.99 61.65"/>
+          <polygon id="Shape" fill="#FFF1B6" fill-rule="nonzero" points="38.04 61.65 34.02 78.66 36.66 78.66 40.68 61.65"/>
+          <polygon id="Shape" fill="#FFE578" fill-rule="nonzero" points="40.68 61.65 36.66 78.66 41.19 78.66 45.24 61.65"/>
+          <polygon id="Shape" fill="#FFDB48" fill-rule="nonzero" points="52.74 61.65 45.24 61.65 41.19 78.66 43.38 78.66"/>
+          <polygon id="Shape" stroke="#5E154D" stroke-width="1.44" stroke-linecap="round" stroke-linejoin="round" points="43.41 78.66 12.84 78.66 12.96 113.55 43.41 113.55 63.06 108.27 63.06 74.16"/>
+          <polygon id="Shape" stroke="#5E154D" stroke-width="1.44" stroke-linecap="round" stroke-linejoin="round" points="52.74 61.65 27.84 61.65 2.97 61.65 12.69 78.66 27.84 78.66 43.38 78.66 63.03 74.19 72.36 56.79"/>
+          <polygon id="Shape" stroke="#5E154D" stroke-width="1.44" stroke-linecap="round" stroke-linejoin="round" points="52.74 1.17 2.97 1.17 2.97 61.65 52.74 61.65 72.36 56.79 72.36 5.07"/>
+          <path d="M48.54,35.67 L48.54,38.55" id="Shape" stroke="#FFFFFF" stroke-width="2.16" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M48.54,14.16 L48.54,31.38" id="Shape" stroke="#FFFFFF" stroke-width="2.16" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <g id="Dial" stroke-linecap="round" stroke-linejoin="round" transform="translate(39.000000, 75.000000)" fill-rule="nonzero" stroke="#DD3627">
+          <path d="M18.69,10.32 C18.732601,6.16918131 15.5401236,2.70081082 11.4,2.4 L9.51,2.4 L9.51,18.27 L11.4,18.27 C15.5518119,17.9685342 18.7485954,14.4823299 18.69,10.32 Z" id="Shape" stroke-width="0.72" fill="#DD3627"/>
+          <ellipse id="Oval" stroke-width="0.72" fill="#FFFFFF" cx="9.3" cy="10.32" rx="7.71" ry="7.95"/>
+          <rect id="Rectangle-path" stroke-width="0.54" fill="#DD3627" x="7.62" y="4.77" width="3" height="11.1"/>
+          <polygon id="Shape" stroke-width="0.54" fill="#FFDB48" points="9.51 15.87 11.4 15.36 11.4 5.19 9.51 4.77"/>
+        </g>
+        <g id="Meter" transform="translate(30.000000, 48.000000)">
+          <rect id="Rectangle-path" stroke="#D2A6CC" stroke-width="1.08" fill="#D2A6CC" fill-rule="nonzero" x="2.67" y="1.65" width="31.74" height="19.5"/>
+          <path d="M12.06,6.36 L13.56,8.97" id="Shape" stroke="#FFDB48" stroke-width="0.72"/>
+          <path d="M18.54,7.62 L18.54,4.62" id="Shape" stroke="#FFDB48" stroke-width="0.72"/>
+          <path d="M7.32,11.1 L9.93,12.6" id="Shape" stroke="#FFDB48" stroke-width="0.72"/>
+          <path d="M13.56,8.97 L12.06,6.36" id="Shape" stroke="#FFDB48" stroke-width="0.72"/>
+          <path d="M5.58,17.58 L8.61,17.58" id="Shape" stroke="#FFDB48" stroke-width="0.72"/>
+          <path d="M9.93,12.6 L7.32,11.1" id="Shape" stroke="#FFDB48" stroke-width="0.72"/>
+          <path d="M28.47,17.58 L31.5,17.58" id="Shape" stroke="#FFDB48" stroke-width="0.72"/>
+          <path d="M27.15,12.6 L29.76,11.1" id="Shape" stroke="#FFDB48" stroke-width="0.72"/>
+          <path d="M18.54,4.62 L18.54,7.62" id="Shape" stroke="#FFDB48" stroke-width="0.72"/>
+          <path d="M23.52,8.97 L25.02,6.36" id="Shape" stroke="#FFDB48" stroke-width="0.72"/>
+          <polyline id="Shape" stroke="#F05822" stroke-width="1.08" points="22.2 11.1 18.33 17.58 14.88 15"/>
+        </g>
+        <g id="Right-Wheel" transform="translate(60.000000, 129.000000)">
+          <path d="M4.26,33.45 L26.1,33.45 L26.1,29.49 L3,29.49 C3.31966839,30.8398491 3.74086719,32.1636168 4.26,33.45 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3,29.49 L26.1,29.49 L26.1,25.53 L2.52,25.53 C2.58551526,26.8597445 2.74592339,28.1831114 3,29.49 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2.46,23.55 C2.46,24.21 2.46,24.87 2.46,25.53 L26.1,25.53 L26.1,21.57 L2.52,21.57 C2.49,22.23 2.46,22.89 2.46,23.55 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6.24,37.41 L26.1,37.41 L26.1,33.45 L4.26,33.45 C4.78024719,34.8353712 5.44385145,36.1625796 6.24,37.41 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18,45 L26.1,45 L26.1,41.37 L9.54,41.37 C11.8143862,43.5840846 14.828259,44.8772712 18,45 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9.54,41.37 L26.1,41.37 L26.1,37.41 L6.24,37.41 C7.15181607,38.8760841 8.26237602,40.2087558 9.54,41.37 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M26.1,5.73 L9.54,5.73 C8.26237602,6.89124408 7.15181607,8.22391599 6.24,9.69 L26.1,9.69 L26.1,5.73 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2.52,21.57 L26.1,21.57 L26.1,17.61 L3,17.61 C2.74809361,18.9172297 2.58770414,20.2404428 2.52,21.57 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6.24,9.69 C5.44385145,10.9374204 4.78024719,12.2646289 4.26,13.65 L26.1,13.65 L26.1,9.69 L6.24,9.69 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3,17.61 L26.1,17.61 L26.1,13.65 L4.26,13.65 C3.74086719,14.9363832 3.31966839,16.2601508 3,17.61 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M26.1,2.25 L18,2.25 C14.8067376,2.30257958 11.7476815,3.54331563 9.42,5.73 L26.1,5.73 L26.1,2.25 Z" id="Shape" stroke="#DD3627" stroke-width="0.72" fill="#F05822" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <ellipse id="Oval" fill="#FFBD39" fill-rule="nonzero" cx="26.1" cy="23.55" rx="15.66" ry="21.3"/>
+          <path d="M26.1,2.25 L18,2.25 C14.8067376,2.30257958 11.7476815,3.54331563 9.42,5.73 C8.14237602,6.89124408 7.03181607,8.22391599 6.12,9.69 C5.32385145,10.9374204 4.66024719,12.2646289 4.14,13.65 C3.66163851,14.939678 3.28057203,16.2633826 3,17.61 C2.71785774,18.9150875 2.52739249,20.2383197 2.43,21.57 C2.43,22.23 2.43,22.89 2.43,23.55 C2.43,24.21 2.43,24.87 2.43,25.53 C2.5251953,26.8619175 2.71568282,28.1853046 3,29.49 C3.29035359,30.8374188 3.68145261,32.1611385 4.17,33.45 C4.69024719,34.8353712 5.35385145,36.1625796 6.15,37.41 C7.06181607,38.8760841 8.17237602,40.2087558 9.45,41.37 C11.747131,43.604592 14.7968626,44.8993902 18,45 L26.1,45 C34.74,45 41.76,35.46 41.76,23.7 C41.76,11.94 34.74,2.25 26.1,2.25 Z" id="Shape" stroke="#5E154D" stroke-width="1.44" stroke-linecap="round" stroke-linejoin="round"/>
+          <ellipse id="Oval" stroke="#FFFFFF" stroke-width="1.08" cx="26.1" cy="23.55" rx="9" ry="12.21"/>
+          <path d="M31.32,15.45 L27,15.45 C23.7,15.45 21,19.08 21,23.55 C21,28.02 23.67,31.65 27,31.65 L31.32,31.65 L31.32,15.45 Z" id="Shape" fill="#FFDB48" fill-rule="nonzero"/>
+          <ellipse id="Oval" fill="#E69724" fill-rule="nonzero" cx="31.32" cy="23.55" rx="5.97" ry="8.1"/>
+          <circle id="Oval" stroke="#5E154D" stroke-width="1.44" fill="#5E154D" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" cx="31.59" cy="23.55" r="3"/>
+          <path d="M31.32,15.45 L27,15.45 C23.7,15.45 21,19.08 21,23.55 C21,28.02 23.67,31.65 27,31.65 L31.32,31.65 C34.59,31.65 37.32,28.02 37.32,23.55 C37.32,19.08 34.59,15.45 31.32,15.45 Z" id="Shape" stroke="#5E154D" stroke-width="1.44" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <g id="Head" stroke-linecap="round" stroke-linejoin="round" transform="translate(93.000000, 9.000000)" stroke="#FFFFFF" stroke-width="1.8">
+          <path d="M0.6,12 C0.6,12.78 0.6,13.2 0.36,14.04" id="Shape"/>
+          <path d="M0,0.87 C0.519395646,3.51655251 0.720822324,6.21567003 0.6,8.91" id="Shape"/>
+        </g>
+        <g id="Right-Arm" transform="translate(78.000000, 45.000000)">
+          <path d="M13.05,2.49 L9,2.49 C4.35,2.49 1.05,7.05 1.05,13.35 L1.05,45.54 C1.05,51.87 4.35,56.4 9,56.4 L12.99,56.4 L13.05,2.49 Z" id="Shape" stroke="#5E154D" stroke-width="1.44" fill="#5E154D" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13.05,2.49 C8.4,2.49 5.07,7.05 5.07,13.35 L5.07,45.54 C5.07,51.87 8.4,56.4 13.05,56.4 L13.41,56.4 L13.41,2.4 L13.05,2.49 Z" id="Shape" fill="#FFDB48" fill-rule="nonzero"/>
+          <path d="M13.41,2.52 L13.41,56.52 C13.9532282,56.4359832 14.4861444,56.295213 15,56.1 L15,2.82 C14.4848531,2.65303049 13.9505708,2.55222252 13.41,2.52 Z" id="Shape" fill="#FFE578" fill-rule="nonzero"/>
+          <path d="M18.18,4.8 L18.18,54 C20.2081526,51.6220632 21.277701,48.5738502 21.18,45.45 L21.18,13.35 C21.2719374,10.2270417 20.2030952,7.18084158 18.18,4.8 Z" id="Shape" fill="#FFDB48" fill-rule="nonzero"/>
+          <path d="M16.17,3.24 L16.17,55.65 C16.9233209,55.2472896 17.6029439,54.7198209 18.18,54.09 L18.18,4.8 C17.5946989,4.17919104 16.9166369,3.65293401 16.17,3.24 Z" id="Shape" fill="#FFE578" fill-rule="nonzero"/>
+          <path d="M15,2.82 L15,56.1 C15.3701961,55.9757484 15.7311034,55.8253704 16.08,55.65 L16.08,3.24 C15.7306122,3.07410918 15.3696679,2.93374196 15,2.82 Z" id="Shape" fill="#FFF1B6" fill-rule="nonzero"/>
+          <circle id="Oval" stroke="#5E154D" stroke-width="0.72" fill="#5E154D" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" cx="13.05" cy="9.87" r="3"/>
+          <circle id="Oval" stroke="#5E154D" stroke-width="0.72" fill="#5E154D" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" cx="13.05" cy="48.78" r="3"/>
+          <path d="M13.05,2.49 C8.4,2.49 5.07,7.05 5.07,13.35 L5.07,45.54 C5.07,51.87 8.4,56.4 13.05,56.4 C17.7,56.4 21,51.87 21,45.54 L21,13.35 C21,7.05 17.73,2.49 13.05,2.49 Z" id="Shape" stroke="#5E154D" stroke-width="1.44" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

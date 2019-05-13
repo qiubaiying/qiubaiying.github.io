@@ -1,0 +1,16 @@
+<svg width="66px" height="26px" viewBox="0 0 66 26" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs/>
+  <g>
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g id="glasses-a-[people,fashion,glasses]" transform="translate(1.000000, 1.000000)" stroke="#DD3627">
+        <path d="M31.136,10.39125 L35.12,10.39125" id="Shape" stroke-width="2.128"/>
+        <ellipse id="Oval" stroke-width="2.128" cx="19.264" cy="12" rx="11.328" ry="11.505"/>
+        <ellipse id="Oval" stroke-width="2.128" cx="46.416" cy="12" rx="11.328" ry="11.505"/>
+        <path d="M0.384,5.58125 L7.68,10.39125" id="Shape" stroke-width="2.56"/>
+        <path d="M63.616,5.89 L57.968,10.39125" id="Shape" stroke-width="2.56"/>
+      </g>
+    </g>
+  </g>
+</svg>

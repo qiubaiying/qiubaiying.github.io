@@ -1,0 +1,19 @@
+<svg version="1.1" width="64" height="74" viewBox="-1 -1 64 74" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- Exported by Scratch - http://scratch.mit.edu/ -->
+  <g id="ID0.12219182541593909" transform="matrix(1, 0, 0, 1, 0.65, 0)">
+    <g id="Page-1">
+      <path id="Stroke-1" fill="none" stroke="#E54529" stroke-width="1.44" stroke-linecap="round" d="M 22.935 72.370 L 22.935 51.130 "/>
+      <path id="Stroke-3" fill="none" stroke="#E54529" stroke-width="1.44" stroke-linecap="round" d="M 31.919 72.370 L 31.919 51.130 "/>
+      <g id="Group">
+        <path id="Stroke-5" fill="none" stroke="#E54529" stroke-width="2.88" stroke-linecap="round" d="M 27.138 23.258 L 32.673 23.258 " transform="matrix(1, 0, 0, 1, 28, 1)"/>
+        <path id="Fill-7" fill="#FFDB5D" stroke="none" stroke-width="1" d="M 27.297 21.165 C 27.297 28.721 21.263 34.846 13.819 34.846 C 6.376 34.846 0.341 28.721 0.341 21.165 C 0.341 13.609 6.376 7.484 13.819 7.484 C 21.263 7.484 27.297 13.609 27.297 21.165 " transform="matrix(1, 0, 0, 1, 28, 1)"/>
+        <path id="Fill-9" fill="#FFF4E3" stroke="none" stroke-width="1" d="M 19.346 21.165 C 19.346 24.262 16.871 26.774 13.819 26.774 C 10.767 26.774 8.294 24.262 8.294 21.165 C 8.294 18.067 10.767 15.556 13.819 15.556 C 16.871 15.556 19.346 18.067 19.346 21.165 " transform="matrix(1, 0, 0, 1, 28, 1)"/>
+        <path id="Fill-11" fill="#17242D" stroke="none" stroke-width="1" d="M 17.425 21.165 C 17.425 23.187 15.811 24.825 13.819 24.825 C 11.828 24.825 10.213 23.187 10.213 21.165 C 10.213 19.143 11.828 17.505 13.819 17.505 C 15.811 17.505 17.425 19.143 17.425 21.165 " transform="matrix(1, 0, 0, 1, 28, 1)"/>
+        <path id="Stroke-13" fill="none" stroke="#FFDB5D" stroke-width="1.44" d="M 16.361 8.640 C 14.011 8.640 12.106 6.706 12.106 4.320 C 12.106 1.934 14.011 0.000 16.361 0.000 " transform="matrix(1, 0, 0, 1, 28, 1)"/>
+      </g>
+      <path id="Fill-15" fill="#FFDB5D" stroke="none" stroke-width="1" d="M 50.331 32.289 C 50.331 46.397 39.064 57.834 25.165 57.834 C 11.267 57.834 0.000 46.397 0.000 32.289 L 50.331 32.289 Z "/>
+      <path id="Fill-17" fill="#FECB43" stroke="none" stroke-width="1" d="M 33.279 32.320 C 33.279 38.831 28.079 44.110 21.664 44.110 C 15.249 44.110 10.049 38.831 10.049 32.320 L 33.279 32.320 Z "/>
+      <path id="Fill-19" fill="#FFDB5D" stroke="none" stroke-width="1" d="M 0.000 32.394 L 0.000 21.204 L 12.490 21.204 C 14.462 21.204 16.368 21.920 17.865 23.224 L 28.431 32.424 L 0.000 32.394 Z "/>
+    </g>
+  </g>
+</svg>
