@@ -18,35 +18,6 @@ description: "Evernote Ambassador<br>印象笔记资深印象大使<br>印象笔
 {% for post in paginator.posts %}
 {% if post.title == 'SS/SSR 简介' %}
     <div class="post-preview" style="display: none;">
-        <a href="{{ post.url | prepend: site.baseurl }}" target="_blank">
-            <h2 class="post-title">
-                {{ post.title }}ssssssssssssssss
-            </h2>
-            {% if post.subtitle %}
-            <h3 class="post-subtitle">
-                {{ post.subtitle }}
-            </h3>
-            {% endif %}
-        </a>
-        <p class="post-meta">
-           {{ post.date | date: "%Y.%m.%d %A" }}
-        </p>
-    </div>
-{% elseif post.title == '推荐' %}
-    <div class="post-preview" style="display: none;">
-        <a href="{{ post.url | prepend: site.baseurl }}" target="_blank">
-            <h2 class="post-title">
-                {{ post.title }}ssssssssssssssss
-            </h2>
-            {% if post.subtitle %}
-            <h3 class="post-subtitle">
-                {{ post.subtitle }}
-            </h3>
-            {% endif %}
-        </a>
-        <p class="post-meta">
-           {{ post.date | date: "%Y.%m.%d %A" }}
-        </p>
     </div>
 {% else %}
     <div class="post-preview">
