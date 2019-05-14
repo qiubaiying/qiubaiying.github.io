@@ -130,6 +130,7 @@ TestFlight 下载地址:<https://itunes.apple.com/cn/app/testflight/id899247664>
 - OnlyTalk - 你和她/他的专属语聊 <https://testflight.apple.com/join/TLomK0Vy>
 - Yuri beta <https://testflight.apple.com/join/xCgwh5WX>
 - 七猫小说 <https://testflight.apple.com/join/UaD5Pl6t>
+- 期待 <https://testflight.apple.com/join/i37NXl07>
 > 
 - Pharos lite <https://testflight.apple.com/join/DAs8hpAh>
 - Pharos Pro <https://testflight.apple.com/join/StuF0Ast>
