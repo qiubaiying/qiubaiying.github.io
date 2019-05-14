@@ -16,7 +16,7 @@ description: "Evernote Ambassador<br>印象笔记资深印象大使<br>印象笔
 <hr>
 
 {% for post in paginator.posts %}
-{% if post.title.indexof('SS') !== -1 %}
+{% if post.title contains 'SS' %}
     <div class="post-preview" style="display: none;">
     </div>
 {% else %}
