@@ -131,6 +131,7 @@ TestFlight 下载地址:<https://itunes.apple.com/cn/app/testflight/id899247664>
 - Yuri beta <https://testflight.apple.com/join/xCgwh5WX>
 - 七猫小说 <https://testflight.apple.com/join/UaD5Pl6t>
 - 期待 <https://testflight.apple.com/join/i37NXl07>
+- V2LF <https://testflight.apple.com/join/cvx4MQuh>
 > 
 - Pharos lite <https://testflight.apple.com/join/DAs8hpAh>
 - Pharos Pro <https://testflight.apple.com/join/StuF0Ast>
