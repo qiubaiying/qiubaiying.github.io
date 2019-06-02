@@ -2,28 +2,28 @@
 title: BY Blog
 SEOTitle: 白日梦女的博客 | BY Blog
 header-img: img/post-bg-desk.jpg
-#email: 
-description: "迷惘导致bug，bug导致愤怒，然后尤达大师就会教我们如何如何..."
-keyword: "BY, BY Blog, 白日梦女的博客,daydreamgirl, Web ,Nodejs"
+#email: qiubaiying@gmail.com
+#description: "Every failure is leading towards success."
+keyword: "BY, BY Blog, 白日梦女的博客"
 url: "https://daydreamgirl.github.io/"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/daydreamgirl/daydreamgirl.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "\"
+sidebar-about-description: "Goals determine what you going to be!"
 sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
 RSS: false
-# weibo_username:     
-#zhihu_username:     
-#github_username:    
-#facebook_username: 
-#jianshu_username:   
-#twitter_username:   
+# weibo_username:     qiubaiying
+#zhihu_username:     qiubaiying
+#github_username:    qiubaiying
+#facebook_username:  baiying.qiu.7
+#jianshu_username:   e71990ada2fd
+#twitter_username:   qiubaiying
 
 
 
@@ -61,9 +61,9 @@ kramdown:
 
 # Gitalk
 #gitalk:
- # enable: true    #是否开启Gitalk评论
-#  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
- # clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
+  #enable: true    #是否开启Gitalk评论
+  #clientID: f2c84e7629bb1446c1a4                            #生成的clientID
+  #clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
   #repo: qiubaiying.github.io    #仓库名称
   #owner: qiubaiying    #github用户名
   #admin: qiubaiying
@@ -93,4 +93,24 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
 service-worker: true
+
+
+
+# Friends
+#friends: [
+    #{
+        #title: "WY",
+        #href: "http://zhengwuyang.com"
+   # },{
+        #title: "简书·BY",
+       # href: "http://www.jianshu.com/u/e71990ada2fd"
+   # },{
+        #title: "Apple",
+        #href: "https://apple.com"
+   # },{
+        #title: "Apple Developer",
+        #href: "https://developer.apple.com/"
+    #}
+#]
+
 
