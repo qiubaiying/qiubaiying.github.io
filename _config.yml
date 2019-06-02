@@ -2,7 +2,7 @@
 title: BY Blog
 SEOTitle: 白日梦女的博客 | BY Blog
 header-img: img/post-bg-desk.jpg
-email: 
+#email: 
 description: "迷惘导致bug，bug导致愤怒，然后尤达大师就会教我们如何如何..."
 keyword: "BY, BY Blog, 白日梦女的博客,daydreamgirl, Web ,Nodejs"
 url: "https://daydreamgirl.github.io/"          # your host, for absolute URL
