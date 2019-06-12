@@ -10,7 +10,6 @@ tags:
     - Talk
 ---
 
-[![IMAGE ALT TEXT HERE](http://i3.ytimg.com/vi/0JvVczVfY10/maxresdefault.jpg)]
-(https://www.youtube.com/watch?v=0JvVczVfY10&t=88s)
+[![IMAGE ALT TEXT HERE](http://i3.ytimg.com/vi/0JvVczVfY10/maxresdefault.jpg)](https://www.youtube.com/watch?v=0JvVczVfY10&t=88s)
 
 
