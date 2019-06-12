@@ -10,4 +10,4 @@ tags:
     - Talk
 ---
 
-[![The Story of Anxiety and its AI-aided dianosis](https://imgur.com/5yrTWpV)](https://www.youtube.com/watch?v=0JvVczVfY10)
+[![The Story of Anxiety and its AI-aided diagnosis](https://imgur.com/5yrTWpV.jpg)](https://www.youtube.com/watch?v=0JvVczVfY10)
