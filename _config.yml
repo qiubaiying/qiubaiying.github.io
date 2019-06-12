@@ -1,5 +1,5 @@
 # Site settings
-title: By Blog
+title: By Moriarty
 SEOTitle: Moriarty的博客 | By Blog
 header-img: img/post-bg-desk.jpg
 email: hpc56789@163.com
@@ -55,7 +55,7 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
-# disqus_username: moriarty_jim
+# disqus_username: disqus_w6Gr9H9jS7
 
 # Gitalk
 gitalk:
