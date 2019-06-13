@@ -63,8 +63,8 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
+  clientID: 60d08aacac49d5f1198f                            #生成的clientID
+  clientSecret: 35c9f13d1d9e23f0e12469ae5040343bbca323ac    #生成的clientSecret
   repo: chichina.github.io    #仓库名称
   owner: chichina    #github用户名
   admin: chichina
