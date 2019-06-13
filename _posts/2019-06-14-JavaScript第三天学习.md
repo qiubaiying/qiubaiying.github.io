@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      JavaScript 第三天学习
+title:      JavaScript 第四天学习
 subtitle:   JavaScript快速学习及与其他语言对比
 date:       2019-6-14
 author:     xinxin
@@ -8,7 +8,7 @@ header-img: img/tag-bg-o.jpg
 catalog: true
 tags:
     - JavaScript
- ---
+---
  
  
  generator生成器
