@@ -11,7 +11,7 @@ tags:
 ---
  
  
- generator生成器
+ #generator生成器
 
 javascript中的生成器与Python的生成器语法相似
 
