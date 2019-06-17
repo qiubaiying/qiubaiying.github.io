@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      iOS手势与变形
+title:      Synchronized简介
 subtitle:   手势与变形基础知识笔记
 date:       2016-10-10
 author:     BY
