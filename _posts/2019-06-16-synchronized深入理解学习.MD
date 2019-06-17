@@ -1,3 +1,15 @@
+---
+layout:     post
+title:      iOS手势与变形
+subtitle:   手势与变形基础知识笔记
+date:       2016-10-10
+author:     BY
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - iOS
+    - iOS开发基础
+---
 > 记录的都是我自己通过视频,博客学习后自己总结出来的,不一定完全正确,但是肯定是自己这样理解的,如果有理解错误的地方,需要及时更正
 
 # Synchronized简介
