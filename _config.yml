@@ -1,6 +1,6 @@
 # Site settings
 title: MHYCDH-blog
-SEOTitle: HIGHER RISE Hacker
+SEOTitle: common Hacker(poor)
 header-img: img/t019d23b99f5a6a580a.png
 email: 2094216191@gmail.com
 description: "rise yourself and everything can be hacked"
@@ -11,8 +11,8 @@ github_repo: "https://github.com/MHYCDH/MHYCDH.github.io.git" # you code reposit
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "hack hard and struggle to marry CDH!"
-sidebar-avatar: /img/CDH.jpeg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "hack hard and struggle to 109 97 114 114 121 CDH!"
+sidebar-avatar: /img/cat.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
