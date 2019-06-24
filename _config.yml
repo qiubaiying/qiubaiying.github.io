@@ -7,7 +7,7 @@ description: "Every failure is leading towards success."
 keyword: "BY, BY Blog, 毛艺颖的博客, maoyiying, 毛艺颖, iOS, Apple, iPhone"
 url: "http://qiubaiying.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/FMyao/FMyao.github.io.git" # you code repository
+github_repo: "https://github.com/yiyingmao/yiyingmao.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -20,7 +20,7 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 RSS: false
 # weibo_username:     qiubaiying
 zhihu_username:     qiubaiying
-github_username:    FMyao
+github_username:    yiyingmao
 facebook_username:  maoyiying
 jianshu_username:   e71990ada2fd
 #twitter_username:   maoyiying
