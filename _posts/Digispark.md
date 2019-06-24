@@ -64,7 +64,7 @@ tags:
 
 **如图，我们可以选择我们对应的Digispark版本进行编程和烧写，这里我选择Deafult-16.5mhz.
 **选好之后，此时咱们把这段代码写进去**
-(```)
+```
 #include "DigiKeyboard.h"
 void setup() {
   // don't need to set anything up to use DigiKeyboard
@@ -81,7 +81,7 @@ void loop() {
   // sure the computer knows the keyboard is alive and connected
   DigiKeyboard.delay(5000);
 }
-(```)
+```
 **写好之后，咱们点击‘上传’（Ctrl+u）此时，ArduinoIDE会等待一分钟的时间，我们把Digispark插进电脑后，Digispark会亮灯**
 >![Digispark-light](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/digispard/Digispark-light.jpg?raw=true)
 
