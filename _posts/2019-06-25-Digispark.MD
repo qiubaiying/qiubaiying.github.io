@@ -40,7 +40,7 @@ tags:
 因为他是金手指，所以要插入的电脑USB串口要比较紧才能够使用 ~~(弹射起步)~~
 如果你是有一定的单片机或电子器件的基础，可以引出引脚接上USB接口来使用(´-ι_-｀)
 当然也可以不用这么麻烦啦，你可以去某宝购买个比较紧的[USB hub](https://s.taobao.com/search?q=usb+hub&type=p&tmhkh5=&spm=a21wu.241046-us.a2227oh.d100&from=sea_1_searchbutton&catId=100) 或者是[双母头的USB线](https://s.taobao.com/search?q=%E5%8F%8C%E6%AF%8D%E5%A4%B4USB%E7%BA%BF&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20190625&ie=utf8) ，接上PC之后能够识别得了就能够使用**
-##下载ArduinoIDE
+## 下载ArduinoIDE
 >当我们将到手的Digispark插入pc之后，打开设备管理器可以看到这个画面
 ![设备管理器](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/digispard/digispark-1.jpg?raw=true "设备管理器")
 
