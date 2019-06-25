@@ -81,7 +81,7 @@ void loop() {
 **写好之后，咱们点击‘上传’（Ctrl+u）此时，ArduinoIDE会等待一分钟的时间，我们把Digispark插进电脑后，Digispark会亮灯**
 >![Digispark-light](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/digispard/Digispark-light.jpg?raw=true)
 
-**此时表示它正在烧录，当ArduinoIDE显示
+**此时表示它正在烧录，当ArduinoIDE显示**
 >![complite](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/digispard/complite.png?raw=true)
 
 **就表示Digispark已经OK了**
