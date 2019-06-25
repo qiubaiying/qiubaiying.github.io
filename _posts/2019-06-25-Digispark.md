@@ -24,7 +24,7 @@ tags:
 <center>**~~看了价钱之后，果断选择了Digispark~~**</center>
 <center>**不是因为价格问题就不提供教学了，是因为我真没有啊╮(￣▽￣)╭**</center>
 ## 拥有了Digispark之后，需注意些啥？
-##咱们再来看看Digispark的样子
+## 咱们再来看看Digispark的样子
 
 ![Digispark](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/digispard/Digispark2.png?raw=true "Digispark")
 
