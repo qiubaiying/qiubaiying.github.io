@@ -15,7 +15,7 @@ tags:
 # 前言
 ###### _**~~新人写blog,见笑了~~**_
 >**上一篇关于[Digispark](https://mhycdh.github.io/2019/06/25/Digispark)的使用中讲述了Digispark的开篇,下面是使用一些已有的有效payload**
-##将Ducky上使用的语言转换为DigiSpark使用
+## 将Ducky上使用的语言转换为DigiSpark使用
 - **当我们把上期的Digispark弄好之后,我们就可以开始自己编写了**
 - **但是相对于ducky的语法而言,在Arduino上编写的要麻烦一点,但是现在可以用这个方法将ducky编写的payload翻译过来,所以我们只要懂得编写ducky的脚本就好了**
 - **看回咱们上一期打开的ArduinoIDE界面**
