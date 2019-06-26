@@ -12,8 +12,8 @@ tags:
 ---
 
 
-#前言
-######_**~~新人写blog,见笑了~~**_
+# 前言
+###### _**~~新人写blog,见笑了~~**_
 >**上一篇关于[Digispark](https://mhycdh.github.io/2019/06/25/Digispark)的使用中讲述了Digispark的开篇,下面是使用一些已有的有效payload**
 ##将Ducky上使用的语言转换为DigiSpark使用
 - **当我们把上期的Digispark弄好之后,我们就可以开始自己编写了**
@@ -24,11 +24,11 @@ tags:
 >我们在GitHub上找到duckyUSB的[payload](https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Payloads)
 
 **关于烧写的步骤我在上一篇已经有写过教程了,下面咱们开始讲解如何将duckyUSB平台的语言翻译为ArduinoIDE识别的语言**
-##步骤一:
-####搭建python环境
+## 步骤一:
+#### 搭建python环境
 **进入到下载Python的[官网](https://www.python.org/downloads/)选择你电脑对应的系统版本(Windows/mac OS/Linux等等),您可以跳转到[python安装教学](http://www.runoob.com/python/python-install.html)里查找你要安装的系统和方法,下面就不细说安装方法了(,,•́ . •̀,,)**
-##步骤二:
-####下载DuckySpark
+## 步骤二:
+#### 下载DuckySpark
 **第一个步骤的python环境搭建好后,在终端(Terminal)或cmd当中输入python就可以看到python的版本并且可以使用python了**
 ![python3](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/digispark2/Python3.png?raw=true "python3")
 **然后输入print(
@@ -58,8 +58,8 @@ tags:
 >>```unzip Duckyspark-master.zip```(解开压缩包)
 
 >当我们下载并解压完成之后,就可以开始使用了(..•˘_˘•..)
-##步骤三
-####使用方法
+## 步骤三
+#### 使用方法
 
 >**我把解压的文件夹放在了这个目录里**
 >![目录](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/digispark2/mulu.jpeg?raw=true)
