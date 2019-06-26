@@ -64,7 +64,7 @@ tags:
 **进入后等待它下载平台索引之后，我们将左上角的类选选择为“贡献（contrib"）然后我们就会进入到这个画面
 >![ArduinoIDE_setting2](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/digispard/arduinoIDE_setting2.png?raw=true)
 
-**然后选择第三个（Digistump AVR Boards...)选好之后点击安装，等待一会，等它安装完成后，就会在开发板的这个选项里就会变成这样**
+**然后选择第三个（Digistump AVR Boards...)选好之后点击安装，如果你没有开代理的话，这个安装过程可能有点久(￣ε(#￣)，等待一会，等它安装完成后，在开发板的这个选项里就会出现这个**
 >![ArduinoIDE_setting3](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/digispard/arduinoIDE_setting3.jpg?raw=true)
 
 **如图，我们可以选择我们对应的Digispark版本进行编程和烧写，这里我选择Deafult-16.5mhz.
