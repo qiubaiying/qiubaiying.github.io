@@ -4,7 +4,7 @@ title:      翻译ducky_payload
 subtitle:   关于如何翻译ducky的payload
 date:       2019-06-26
 author:     MHYCDH
-header-img: img/how_to_translate_ducky's_payload.jpg
+header-img: img/ducky's_payload.jpeg
 catalog: true
 tags:
     - Blog
