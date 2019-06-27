@@ -243,7 +243,12 @@ layout: default
     }
 </style>
 {% if site.intensedebate_comments %}
-      {% include intensedebate-comments.html %}
+...
+
+<div class="post">{{ content }}</div>
+
+<!-- Comments will go underneath the post -->
+{% include comments.html %}
 {% endif %}
 {% endif %}
 
