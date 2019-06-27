@@ -81,8 +81,8 @@ gitalk:
 ga_track_id: 'UA-142586043-1'            # Format: UA-xxxxxx-xx
 ga_domain: http://MHYCDH.github.io        # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
-
-
+#评论配置参数
+intensedebate_comments: true
 
 
 # Featured Tags
