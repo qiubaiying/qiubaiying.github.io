@@ -102,7 +102,7 @@ layout: default
                     repo: '{{site.gitalk.repo}}',
                     owner: '{{site.gitalk.owner}}',
                     admin: ['{{site.gitalk.admin}}'],
-                    id: window.location.pathname,
+                    id: decodeURI(window.location.pathname),
                     });
                     gitalk.render('gitalk-container');
                 </script>
