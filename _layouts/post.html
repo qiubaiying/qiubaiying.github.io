@@ -20,7 +20,7 @@ layout: default
         repo: 'mhycdh.github.io',
         owner: 'MHYCDH',
         admin: ['MHYCDH'],
-        id:window.location.pathname,
+        id:decodeURI(window.location.pathname),
 
     });
     gitalk.render('gitalk-container');
