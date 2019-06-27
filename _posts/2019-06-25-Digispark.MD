@@ -13,7 +13,8 @@ tags:
 
 # 前言
 >第一篇blog我就从我最近开始做的事情开始写吧，效果能展示出来就尽量展示出来
->如果出来的效果还有一些需要解释的东西说得不太清楚还希望大佬们原谅我哈 (๑• . •๑)
+>如果出来的效果还有一些需要解释的东西说得不太清楚还希望大佬们原谅我哈         (๑• . •๑)
+
 >好，咱们现在正式进入话题
 
 ## 我们从市面上买得到的BadUSB有这几款：
@@ -30,7 +31,7 @@ tags:
 >大名鼎鼎的ducky
 
 **~~看了价钱之后，果断选择了Digispark~~**
-<center>**不是因为价格问题就不提供教学了，是因为我真没有啊╮(￣▽￣)╭**</center>
+**不是因为价格问题就不提供教学了，是因为我真没有啊╮(￣▽￣)╭**
 ## 拥有了Digispark之后，需注意些啥？
 ## 咱们再来看看Digispark的样子
 
@@ -55,19 +56,19 @@ tags:
 **当我们安装好ArduinoIDE之后，我们看看主页面**
 >![Arduino](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/digispard/Arduinoide.png?raw=true)
 
-**点击文件（file）之后选择首选项(setting)(快捷键：Ctrl+逗号）
+**点击文件（file）之后选择首选项(setting)(快捷键：Ctrl+逗号）**
 **然后就会弹出这个画面**
 >![ArduinoIDE_setting](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/digispard/ArduinoIDE_setting.png?raw=true "ArduinoIDE_setting")
 
-**然后，我们在“附加开发板管理器网址”这一栏加入这个网址：http://digistump.com/package_digistump_index.json（复制粘贴过去就行）
+**接着，我们在“附加开发板管理器网址”这一栏加入这个网址：http://digistump.com/package_digistump_index.json（复制粘贴过去就行）**
 **咱们弄好之后点击确定,然后回到主页面，这次点击工具->开发板->开发板管理器（第一个）**
-**进入后等待它下载平台索引之后，我们将左上角的类选选择为“贡献（contrib"）然后我们就会进入到这个画面
+**进入后等待它下载平台索引之后，我们将左上角的类选选择为“贡献（contrib"）然后我们就会进入到这个画面**
 >![ArduinoIDE_setting2](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/digispard/arduinoIDE_setting2.png?raw=true)
 
 **然后选择第三个（Digistump AVR Boards...)选好之后点击安装，如果你没有开代理的话，这个安装过程可能有点久(￣ε(#￣)，等待一会，等它安装完成后，在开发板的这个选项里就会出现这个**
 >![ArduinoIDE_setting3](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/digispard/arduinoIDE_setting3.jpg?raw=true)
 
-**如图，我们可以选择我们对应的Digispark版本进行编程和烧写，这里我选择Deafult-16.5mhz.
+**如图，我们可以选择我们对应的Digispark版本进行编程和烧写，这里我选择Deafult-16.5mhz.**
 **选好之后，此时咱们把这段代码写进去**
 ```
 #include "DigiKeyboard.h"
