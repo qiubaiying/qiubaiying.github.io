@@ -7,6 +7,22 @@ layout: default
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
 <!-- Post Header -->
+
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+    owner: 'MHYCDH',
+    repo: 'https://mhycdh.github.io',
+    oauth: {
+        client_id: '12786851e32a35aa5f9e',
+        client_secret: '38201876e6ff81c9791dab58b7a3efd81ab7cc4c',
+    },
+});
+gitment.render('gitmentContainer');
+</script>
+
 <style type="text/css">
     header.intro-header{
         position: relative;
