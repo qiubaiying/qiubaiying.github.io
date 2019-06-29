@@ -1,6 +1,11 @@
+# MHYCDH的专属BLOG
+欢迎各位莅临我的blog，鄙人奋发向上，至少一个星期写一篇blog。
+我会分享一些个人的学习经历和知识的总结，把它们做成教程也是可以的。
+~~之前折腾的评论框也可以用了~~
+如果你们有什么更好的想法和建议，可以与我一同探讨和学习哦，再次感谢大家（●>∀<●）
 
 ## 致谢
 
-1. 这个模板是从这里 [Hux](https://github.com/Huxpro/huxpro.github.io) fork 的, 感谢这个作者。 
+1. 这个模板是从这里 [qiubaiying](https://github.com/qiubaiying/qiubaiying.github.io) fork 的,感谢他.
 2. 感谢 Jekyll、Github Pages 和 Bootstrap!
 
