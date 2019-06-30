@@ -92,16 +92,23 @@ layout: default
 		<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 		<script src="https://unpkg.com/gitalk/dist/gitalk.min.js">
 		</script>
+		    
                 {% endif %}
                 <!-- Gitalk end -->
 
-                {% if site.disqus_username %}
-                <!-- disqus 评论框 start -->
-                <div class="comment">
-                    <div id="disqus_thread" class="disqus-thread"></div>
-                </div>
-                <!-- disqus 评论框 end -->
-                {% endif %}
+                <script>
+		const gitalk = new Gitalk({
+  		clientID: '12786851e32a35aa5f9e',
+  		clientSecret: '38201876e6ff81c9791dab58b7a3efd81ab7cc4c',
+  		repo: 'MHYCDH.github.io',
+  		owner: 'MHYCDH',
+  		admin: ['MHYCDH'],
+  		id: '{{ page.title }}',      // Ensure uniqueness and length less than 50
+  		distractionFreeMode: false  // Facebook-like distraction free mode
+		})
+
+		gitalk.render('gitalk-container')
+		</script>
 
             </div>  
 
