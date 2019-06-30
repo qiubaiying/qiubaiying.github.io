@@ -109,8 +109,7 @@ friends: [
         href: "https://github.com/MHYCDH/"
     },{
         title: "Mr_xueyuan's blog",
-        tip:"一个废宅？(肥宅)整天念诗、长者风范？",
-        href: "https://xueyuan.tech"
+        href: "https://xueyuan.tech",
         img:"https://w.wallhaven.cc/full/nk/wallhaven-nk8511.png"
     }
 ]
