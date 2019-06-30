@@ -52,6 +52,11 @@ layout: default
     <div class="container">
         <div class="row">
 
+		 <!-- 在正文开头添加网易云音乐插件 -->
+  			{% if page.music-id %}
+    			{% include cloud-music.html %}
+  			{% endif %} 
+  			{{ content }}
     <!-- Post Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
@@ -59,11 +64,7 @@ layout: default
                 post-container">
 
 		{{ content }}
-		    <!-- 在正文开头添加网易云音乐插件 -->
-  			{% if page.music-id %}
-    			{% include cloud-music.html %}
-  			{% endif %} 
-  			{{ content }}
+		   
 		    
                 <hr style="visibility: hidden;">
 
