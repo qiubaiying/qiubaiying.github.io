@@ -42,6 +42,7 @@ tags:
 >>当然还有另一种,如果您的电脑上安装了git bash,或者您使用的是Linux系统,可以采用命令行的型式下载
 
 `git clone https://github.com/toxydose/Duckyspark.git`
+
 `unzip Duckyspark-master.zip`(解开压缩包)
 
 >当我们下载并解压完成之后,就可以开始使用了(..•˘_˘•..)
