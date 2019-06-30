@@ -4,50 +4,10 @@
 {% include head.html %}
 
     
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>splash screen example</title>
-        <link rel="stylesheet" href="nprogress.css">
-        <link rel="stylesheet" href="main.css">
-        <script src="jquery.min.js"></script>
-        <script src="nprogress.js"></script>
-        <script type="text/javascript">
-            $(function(){
-                NProgress.configure({
-                    template: $('#splash-template').html()
-                });
-                NProgress.start();
-            });
-            $(window).load(function(){
-                NProgress.done();
-            })
-        </script>
-    </head>
-    
-    
     
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="">
-    
-    <body>
-        <script type="text" id="splash-template">
-            <div class="splash card">
-                <div role="spinner">
-                    <div class="spinner-icon"></div>
-                </div>
-                <p class="lead" style="text-align:center">crack也要时间的...</p >
-                <div class="progress">
-                    <div class="mybar" role="bar">
-                    </div>
-                </div>
-            </div>
-        </script>
-        <iframe id="iframe" style="width: 100%; height: 660px;" src="http://mhycdh.github.io" frameborder="0"></iframe>
-    </body>
-    
+      
 
     {% include nav.html %}
 
