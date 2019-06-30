@@ -15,13 +15,15 @@ tags:
 # 前言
 ###### _**~~新人写blog,见笑了~~**_
 >**上一篇关于[Digispark](https://mhycdh.github.io/2019/06/25/Digispark)的使用中讲述了Digispark的开篇,下面是使用一些已有的有效payload**
+
 ## 将Ducky上使用的语言转换为DigiSpark使用
 - **当我们把上期的Digispark弄好之后,我们就可以开始自己编写了**
 - **但是相对于ducky的语法而言,在Arduino上编写的要麻烦一点,但是现在可以用这个方法将ducky编写的payload翻译过来,所以我们只要懂得编写ducky的脚本就好了**
 - **看回咱们上一期打开的ArduinoIDE界面**
 ![ArduinoIDE](https://raw.githubusercontent.com/MHYCDH/MHYCDH.github.io/master/img/digispard/Arduinoide.png "ArduinoIDE")
 >依旧是简洁的界面,但是暂时还用不到
->我们在GitHub上找到duckyUSB的[payload](https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Payloads)
+
+>我们可以在GitHub上找到duckyUSB的paload->[传送门](https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Payloads)<-
 
 **关于烧写的步骤我在上一篇已经有写过教程了,下面咱们开始讲解如何将duckyUSB平台的语言翻译为ArduinoIDE识别的语言**
 ## 步骤一:
@@ -39,11 +41,11 @@ tags:
 >*点击绿色框的**clone or download**之后,点击**Download Zip**,它就会下载到电脑里.当然,我这里也提供了*->[下载链接](https://github.com/toxydose/Duckyspark/archive/master.zip)<-
 >>当然还有另一种,如果您的电脑上安装了git bash,或者您使用的是Linux系统,可以采用命令行的型式下载
 
->>```git clone https://github.com/toxydose/Duckyspark.git```
-
->>```unzip Duckyspark-master.zip```(解开压缩包)
+`git clone https://github.com/toxydose/Duckyspark.git`
+`unzip Duckyspark-master.zip`(解开压缩包)
 
 >当我们下载并解压完成之后,就可以开始使用了(..•˘_˘•..)
+
 ## 步骤三
 #### 使用方法
 
@@ -56,6 +58,7 @@ tags:
 
 
 >**打开命令行界面(Windows下是输入Win+R之后输入cmd,在Linux下是CTRL+SHIFT+T),下面就用windows来演示**
+
 >我的cmd
 ![mycmd](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/digispark2/webwxgetmsgimg.jpeg?raw=true "mycmd")
 
