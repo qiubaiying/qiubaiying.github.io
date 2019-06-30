@@ -1,10 +1,10 @@
 ---
-layout:     post
+layout:     keynote
 title:      Digispark的用法
 subtitle:   关于BadUSB的一些用法
 date:       2019-06-25
 author:     MHYCDH
-header-img: img/585932.png
+iframe:     "https://github.com/MHYCDH/MHYCDH.github.io/tree/master/img/HDP/"
 catalog: true
 tags:
     - Blog
