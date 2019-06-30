@@ -15,12 +15,6 @@ sidebar-about-description: "hack hard and struggle to 109 97 114 114 121 CDH!"
 sidebar-avatar: /img/cat.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
----
-layout:     keynote
-iframe:     "https://github.com/MHYCDH/MHYCDH.github.io/tree/master/img/HDP/"
----
-
-
 # SNS settings
 RSS: false
 # weibo_username:     qiubaiying
