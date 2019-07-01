@@ -51,6 +51,7 @@ void Bubble_sort(int arr[],int len)
 ![冒泡排序](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/algorithm/bubble_sort2.png?raw=true)
 
 **冒泡排序总结:**
+
 **优点**:比较简单,空间复杂度较低,属于稳定排序.  **缺点**:时间复杂度太高,效率低
 
 ***
@@ -60,7 +61,7 @@ void Bubble_sort(int arr[],int len)
 >咱们看看"选择"的过程
 ![选择排序](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/algorithm/select_sort.gif?raw=true "选择排序")
 
-**选择排序也可以看作是冒泡排序的优化,因为其目的相同,知识选择排序只有在确定了最小(大)数的前提下进行交换,大大减少了交换的次数,选择排序的时间复杂度为O(n^2)**
+**选择排序也可以看作是冒泡排序的优化,因为其目的是相同的,只不过选择排序只有在确定了最小(大)数的前提下进行交换,大大减少了交换的次数,选择排序的时间复杂度为O(n^2)**
 >C代码实现
 ```c
 void select_sort(int arr[],int len)
