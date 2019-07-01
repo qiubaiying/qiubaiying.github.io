@@ -30,6 +30,11 @@
     <!-- Pygments Github CSS -->
     <link rel="stylesheet" href="{{ "/css/syntax.css" | prepend: site.baseurl }}">
 
+    
+     <!--APlayer-->
+	<link rel="stylesheet" href="{{ "/css/APlayer.min.css" | prepend: site.baseurl }}">
+    
+    
     <!-- Custom Fonts -->
     <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
     <!-- Hux change font-awesome CDN to qiniu -->
@@ -52,4 +57,22 @@
 
     <!-- ga & ba script hoook -->
     <script></script>
+    
+    
+        <!--页面动画-->
+		<div class="bg_content">
+		  <canvas id="canvas"></canvas>
+		</div>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124497414-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-124497414-1');
+    </script>
+    
+    
+    
 </head>
