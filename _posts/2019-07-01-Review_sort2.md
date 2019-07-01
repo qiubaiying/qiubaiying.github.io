@@ -82,8 +82,10 @@ void quick_sort(int arr[],int maxlen,int begin,int end)
 ```
 **快排总结**:
 
-**结合了几种方式来排序:冒泡 +二分+递归分治**
+**结合了几种方式来排序:冒泡 +[二分](https://github.com/julycoding/The-Art-Of-Programming-By-July/blob/master/ebook/zh/04.01.md)+[递归](https://baike.baidu.com/item/%E9%80%92%E5%BD%92)分治**
+
 ****
+
 ## 归并排序
 **归并排序是一种不同与其他排序算法的一种排序方法,因为归并排序使用了递归分治的思想,理解起来也比较容易.**
 
