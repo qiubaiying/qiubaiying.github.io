@@ -44,15 +44,21 @@ void quick_sort(int arr[],int maxlen,int begin,int end)
     if(begin<end)
     {
         i = begin + 1;  //将数组中下标为begin的数作为基准数
+        
                         //因此从arr[begin+1]开始与基准数进行比较
+                        
         j = end;        //arr[end]为数组的最后一位
+        
     }
     while(i < j)
     {
         if(arr[i]>arr[begin])//如果比较的数组元素大于基准数
         {
+        
             swap(&arr[i],&arr[j]);//交换两个数的位置
+            
             j--;
+            
         }
         else
         {
@@ -60,8 +66,11 @@ void quick_sort(int arr[],int maxlen,int begin,int end)
         }
     }
     if(arr[i] >= arr[begin])    //用>=,否则当数组元素出现有相同的值的时候,会出错
+    
     {
+    
         i--;
+        
     }
     swap(&arr[begin],&arr[i]);//交换arr[i]与arr[begin]的位置
 
@@ -69,7 +78,7 @@ void quick_sort(int arr[],int maxlen,int begin,int end)
     quick_sort(arr,maxlen,j,end);
 }
 ```
-**<font color="#0099ff" size=6>快排总结</font>**:
+**快排总结**:
 
 **结合了几种方式来排序:冒泡 +二分+递归分治**
 ****
@@ -96,32 +105,39 @@ void merge(int arr[],int left,int n,int m,int right,int len/*数组大小*/)
     //i和j和k分别是第一个数组索引,第二个数组索引,临时数组索引
     
     for(i = left,j = m+1 , k = 0 ; k <= right - left ; k++)//将i和j和k分别指向数组开头
+    
     {
     
         if(i == m+1)//若i到达第一个数组的尾部,就将第二个数组剩下的元素都复制到临时数组中
+        
         {
             aux[k]=arr[j++];
             continue;
         }
         
         if(j == right+1)//如果j到达第二个数组的尾部,将第一个数组剩下的元素都复制到临时数组中
+        
         {
             aux[k]=arr[i++];
             continue;
         }
         
         if(arr[i]<arr[j])//如果第一个数组的当前元素比第二数组的当前元素小,该元素复制到临时数组中
+        
         {
             aux[k]=arr[i++];
         }
         
         else//如果第二个数组的当前元素比第一个数组的当前元素小,该元素复制到临时数组中
+        
         {
             aux[k]=arr[j++];
         }
+        
     }
 
     for(i = left , j = 0 ; j <= right; i++, j++)//将有序的临时数组元素赋值到被排序的数组arr中
+    
     {
         arr[i]=aux[j];
     }
@@ -129,12 +145,16 @@ void merge(int arr[],int left,int n,int m,int right,int len/*数组大小*/)
 }
 
 void merge_sort(int arr[],int start,int end)
+
 {
     if(start < end)
+    
     {
         int i;
         i = (end + start)/2;//对前半部分进行排序
+        
         merge_sort(arr,start,i);//对后半部分进行排序
+        
         merge(arr,start,i,end);//合并两个已排序的部分
     }
     
@@ -171,21 +191,31 @@ void bucket_sort(int arr[],int len,int x)
 {
     int bucket[len],i,j,k;
     for(i = 0 ; i <= len ; i++)
+    
     {
-        a[i] = 0;//初始化为0
+    
+        a[i] = 0;       //初始化为0
+        
     }
     for(i = 0 i <= x ; i++)
+    
     {
-        scanf("%d",&t);//把每个数读到变量t中去
+        scanf("%d",&t);     //把每个数读到变量t中去
+        
         a[t++];//进行计数
+        
     }
-    for(i = 0 ; i <= len ; i++)//依次判断
+    for(i = 0 ; i <= len ; i++)     //依次判断
+    
     {
-        for(j = 1; j <= a[j]; j++)//出现几次就打印几次
+        for(j = 1; j <= a[j]; j++)      //出现几次就打印几次
+        
         {
             printf("%d",i);
         }
+        
     }
+    
 }
 ```
 
