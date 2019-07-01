@@ -52,7 +52,8 @@ void quick_sort(int arr[],int maxlen,int begin,int end)
     }
     while(i < j)
     {
-        if(arr[i]>arr[begin])//如果比较的数组元素大于基准数
+        if(arr[i]>arr[begin])   //如果比较的数组元素大于基准数
+        
         {
         
             swap(&arr[i],&arr[j]);//交换两个数的位置
@@ -63,6 +64,7 @@ void quick_sort(int arr[],int maxlen,int begin,int end)
         else
         {
             i++;    //将数组元素向后一位,继续与基准数进行比较
+            
         }
     }
     if(arr[i] >= arr[begin])    //用>=,否则当数组元素出现有相同的值的时候,会出错
@@ -156,6 +158,7 @@ void merge_sort(int arr[],int start,int end)
         merge_sort(arr,start,i);//对后半部分进行排序
         
         merge(arr,start,i,end);//合并两个已排序的部分
+        
     }
     
 }
@@ -191,7 +194,6 @@ void bucket_sort(int arr[],int len,int x)
 {
     int bucket[len],i,j,k;
     for(i = 0 ; i <= len ; i++)
-    
     {
     
         a[i] = 0;       //初始化为0
