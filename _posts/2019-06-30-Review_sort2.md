@@ -12,7 +12,9 @@ tags:
 # 前言
 **~~熬夜写blog~~**
 >在上一章当中,我们讲到关于排序算法中的一些基础的知识,分别讲述了冒泡排序,选择排序和插入排序.这次,我继续把剩下的一些排序讲下去,我会努力去把它们讲明白讲透的(ง •̀_•́)ง
-***
+
+****
+
 ## 快速排序
 **快速排序,这名字一听就觉得不一般,而它在实际应用中也确实是表现最好的排序算法,虽然它很高端,但其思想其实还是来自于冒泡排序.**
 
@@ -69,7 +71,7 @@ void quick_sort(int arr[],int maxlen,int begin,int end)
 ```
 **<font color="#0099ff" size=6>快排总结</font>**:
 
-**结合了几种方式来排序:<font color="#f54842" size=6>冒泡</font>+<font color="#f54842" size=6>二分</font>+<font color="#f54842" size=6>递归</font>分治**
+**结合了几种方式来排序:冒泡 +二分+递归分治**
 ****
 ## 归并排序
 **归并排序是一种不同与其他排序算法的一种排序方法,因为归并排序使用了递归分治的思想,理解起来也比较容易.**
@@ -82,28 +84,37 @@ void quick_sort(int arr[],int maxlen,int begin,int end)
 ![归并排序示例图](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/algorithm/merge_sort2.png?raw=true)
 
 >C代码实现(分为合并与归并)
+
 ```c
+
 void merge(int arr[],int left,int n,int m,int right,int len/*数组大小*/)
 {
     int aux[len]={0};//临时数组
+    
     int i,j,k;
+    
     //i和j和k分别是第一个数组索引,第二个数组索引,临时数组索引
+    
     for(i = left,j = m+1 , k = 0 ; k <= right - left ; k++)//将i和j和k分别指向数组开头
     {
+    
         if(i == m+1)//若i到达第一个数组的尾部,就将第二个数组剩下的元素都复制到临时数组中
         {
             aux[k]=arr[j++];
             continue;
         }
+        
         if(j == right+1)//如果j到达第二个数组的尾部,将第一个数组剩下的元素都复制到临时数组中
         {
             aux[k]=arr[i++];
             continue;
         }
+        
         if(arr[i]<arr[j])//如果第一个数组的当前元素比第二数组的当前元素小,该元素复制到临时数组中
         {
             aux[k]=arr[i++];
         }
+        
         else//如果第二个数组的当前元素比第一个数组的当前元素小,该元素复制到临时数组中
         {
             aux[k]=arr[j++];
@@ -114,6 +125,7 @@ void merge(int arr[],int left,int n,int m,int right,int len/*数组大小*/)
     {
         arr[i]=aux[j];
     }
+    
 }
 
 void merge_sort(int arr[],int start,int end)
@@ -125,10 +137,12 @@ void merge_sort(int arr[],int start,int end)
         merge_sort(arr,start,i);//对后半部分进行排序
         merge(arr,start,i,end);//合并两个已排序的部分
     }
+    
 }
 ```
-<font color="#0099ff" size=6>归并排序总结</font>
-**通过先递<font color="#f54842" size=5>归</font>分解数组,在合<font color="#f54842" size=5>并</font>数列就完成了<font color="#f54842" size=5>归并</font>排序**
+
+**归并排序总结**
+**通过先递(归)分解数组,在合(并)数列就完成了归并排序**
 ***
 ## 桶排序
 **桶排序算是技术排序的一种改进和推广,但是经常会有人把计数排序和桶排序混为一谈,其实桶排序要比计数排序要复杂很多,我们先来说说他的基本思想**
@@ -151,6 +165,7 @@ void merge_sort(int arr[],int start,int end)
 
 这时候,我们只需要将他们一个个从小到大依次呼唤出来(打印出来)就好了.
 >C代码实现
+
 ```c
 void bucket_sort(int arr[],int len,int x)
 {
@@ -173,10 +188,11 @@ void bucket_sort(int arr[],int len,int x)
     }
 }
 ```
+
 **如果你仔细观察可以发现,我们实现的是从小到大,但是我们要求的是从大到小排序,那怎么办呢?**
 
 答案很简单:**只需要将for(i=0;i<=len;i++)改成for(i=len;i>=0;i--)就可以了**
-## <font color="#0099ff" size=6>桶排序总结</font>
+## 桶排序总结
 **最后再说说时间复杂度,桶排序的时间复杂度为O(M+N).最好的桶时间复杂度能达到O(N)所以,这是一种非常快的排序算法.**
 
 **但是,桶排序的空间复杂度为O(N+M),如果输入的数量非常庞大,而桶的数量也会非常多,空间代价无疑是昂贵的,此外,桶排序是稳定的**
