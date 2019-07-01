@@ -192,25 +192,25 @@ void merge_sort(int arr[],int start,int end)
 ```c
 void bucket_sort(int arr[],int len,int x)
 {
-    int bucket[len],i,j,k;
+    int i,j,k;
     for(i = 0 ; i <= len ; i++)
     {
     
-        a[i] = 0;       //初始化为0
+        arr[i] = 0;       //初始化为0
         
     }
-    for(i = 0 i <= x ; i++)
+    for(i = 1 ; i <= x ; i++)
     
     {
         scanf("%d",&t);     //把每个数读到变量t中去
         
-        a[t++];//进行计数
+        arr[t++];//进行计数
         
     }
     for(i = 0 ; i <= len ; i++)     //依次判断
     
     {
-        for(j = 1; j <= a[j]; j++)      //出现几次就打印几次
+        for(j = 1; j <= arr[j]; j++)      //出现几次就打印几次
         
         {
             printf("%d",i);
