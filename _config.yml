@@ -64,7 +64,7 @@ gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: cf1fef93921fdec65a3b                            #生成的clientID
   clientSecret: 796f6fce0a6bedddf136182254c2818f181ab7ee    #生成的clientSecret
-  repo: MHYCDH.info    #仓库名称
+  repo: MHYCDH.github.io    #仓库名称
   owner: MHYCDH    #github用户名
   admin: MHYCDH
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
