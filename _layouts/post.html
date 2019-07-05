@@ -93,28 +93,38 @@ layout: default
 		
 		<div id='gitalk-container'></div>
 		
-		      <!--Gitalk评论start  -->  
-                      {% if site.gitalk.enable %}  
-                      <!-- 引入Gitalk评论插件  -->  
-                      <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">  
-                      <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>  
-                      <div id="gitalk-container"></div>  
-                      <script type="text/javascript">  
-                          var gitalk = new Gitalk({  
-                          clientID: '12786851e32a35aa5f9e',  
-                          clientSecret: '38201876e6ff81c9791dab58b7a3efd81ab7cc4c',  
-                          repo: 'mhycdh.github.io',  
-                          owner: 'mhycdh',  
-                          admin: ['mhycdh'],  
-                          distractionFreeMode: false,  // Facebook-like distraction free mode
-                          id: {{ page.title }},  				// Ensure uniqueness and length less than 50
-                          });  
-                          gitalk.render('gitalk-container');  
-                      </script>  
-                      {% endif %}  
-                      <!-- Gitalk end -->  
 		
-		</div> 
+                <!--Gitalk评论start  -->
+                {% if site.gitalk.enable %}
+                <!-- 引入Gitalk评论插件  -->
+               <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+		<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+		<!-- or -->
+	
+		<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+		<script src="https://unpkg.com/gitalk/dist/gitalk.min.js">
+		</script>
+		    
+                {% endif %}
+                <!-- Gitalk end -->
+
+                <script>
+		const gitalk = new Gitalk({
+  		clientID: '12786851e32a35aa5f9e',
+  		clientSecret: '38201876e6ff81c9791dab58b7a3efd81ab7cc4c',
+  		repo: 'MHYCDH.github.io',
+  		owner: 'MHYCDH',
+  		admin: ['MHYCDH'],
+  		id: '{{ page.title }}',      // Ensure uniqueness and length less than 50
+  		distractionFreeMode: false  // Facebook-like distraction free mode
+		})
+
+		 gitalk.render('gitalk-container')  
+		</script>
+
+            </div>
+		
 		
 		
 		
