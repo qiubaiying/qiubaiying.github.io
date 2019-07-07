@@ -41,6 +41,37 @@ layout: default
                     <h2 class="subheading">{{ page.subtitle }}</h2>
                     {% comment %} endif {% endcomment %}
                     <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
+			
+			
+			<!-- 置顶博客显示部分 -->
+			{% for post in site.posts %} 
+			{% if post.top == true %}
+			<ul>
+			<li class="wow fadeInLeft" data-wow-duration="1.5s">
+		    	<a class="zoombtn" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+		        <p>{{ post.excerpt }}</p>
+		        <a href="{{ site.url }}{{ post.url }}" class="btn zoombtn">Read More</a>
+		    </li>
+		</ul>
+			{% endif %}
+		{% endfor %}
+		<!-- 其他博客显示部分 -->
+		{% for post in site.posts %} 
+			{% if post.project == null %}
+				{% if post.top == null %}
+		<ul>
+			<li class="wow fadeInLeft" data-wow-duration="1.5s">
+				<a class="zoombtn" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+				<p>{{ post.excerpt }}</p>
+				<a href="{{ site.url }}{{ post.url }}" class="btn zoombtn">Read More</a>
+			</li>
+		</ul>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+			
+			
+			
                 </div>
             </div>
         </div>
