@@ -10,18 +10,6 @@ tags:
     - Java
     - Spring Cloud
 ---  
----
-layout:     post
-title:      Spring Cloud GateWay 入门
-subtitle:   服务网关
-date:       2019-06-18
-author:     BY
-header-img: img/post-bg-ios9-web.jpg
-catalog: true
-tags:
-    - Java
-    - Spring Cloud
----  
 # Spring Cloud Gateway
 Spring Cloud Gateway 是 Spring Cloud 的一个全新项目，该项目是基于 Spring 5.0，Spring Boot 2.0 和 Project Reactor 等技术开发的网关，它旨在为微服务架构提供一种简单有效的统一的 API 路由管理方式。
 Spring Cloud Gateway 作为 Spring Cloud 生态系统中的网关，目标是替代 Netflix Zuul，其不仅提供统一的路由方式，并且基于 Filter 链的方式提供了网关基本的功能，例如：安全，监控/指标，和限流
