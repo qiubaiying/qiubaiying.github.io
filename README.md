@@ -1,6 +1,8 @@
 # MHYCDH的专属BLOG
 欢迎各位莅临我的blog，鄙人奋发向上，至少一个星期写一篇blog。
 
+![](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/hardwork/write99.gif?raw=true)
+
 我会分享一些个人的学习经历和知识的总结，把它们做成教程也是可以的。
 
 ~~折腾了一段时间的评论框（但最后还是可以用了）~~
