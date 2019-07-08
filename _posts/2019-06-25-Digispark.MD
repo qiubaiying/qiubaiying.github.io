@@ -16,6 +16,8 @@ tags:
 >第一篇blog我就从我最近开始做的事情开始写吧，效果能展示出来就尽量展示出来
 >如果出来的效果还有一些需要解释的东西说得不太清楚还希望大佬们原谅我哈         (๑• . •๑)
 
+![](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/hardwork/en.gif?raw=true)
+
 >好，咱们现在正式进入话题
 
 #### 我们从市面上买得到的BadUSB有这几款：
