@@ -11,6 +11,9 @@ tags:
 ---
 # 前言
 **~~熬夜写blog~~**
+
+![](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/hardwork/wirte11.gif?raw=true)
+
 >在[上一章](https://mhycdh.github.io/2019/06/30/Review_sort/)当中,我们讲到关于排序算法中的一些基础的知识,分别讲述了冒泡排序,选择排序和插入排序.这次,我继续把剩下的一些排序讲下去,我会努力去把它们讲明白讲透的(ง •̀_•́)ง
 
 ****
