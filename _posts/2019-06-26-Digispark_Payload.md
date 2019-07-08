@@ -76,4 +76,4 @@ F:\Duckyspark-master**
 
 **这时您可以右键点击它,选择用ArduinoIDE打开,就可以使用翻译完成的代码啦( •̀ .̫ •́ )✧**
 
-![](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/hardwork/gif/tenor(5).gif?raw=true)
+![](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/hardwork/gif/tenor%20(5).gif?raw=true)
