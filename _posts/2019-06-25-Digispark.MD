@@ -119,3 +119,4 @@ void loop() {
 
 **此时你可以将Digispark拔出来，然后在PC端新建一个txt文件，光标移动到txt，然后再将Digispark插进电脑，就可以看到神奇的效果了**
 
+![](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/hardwork/gif/tenor.gif?raw=true)
