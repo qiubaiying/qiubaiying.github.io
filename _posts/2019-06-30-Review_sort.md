@@ -15,7 +15,7 @@ tags:
 - **~~blog一时更新快了,原本是想一星期一篇的~~**
 >快要考试了,所以blog也就进入了复习阶段了,此次blog主要是写给自己的,做个学习和知识的总结,当然,如果有感兴趣的朋友也可以和我一块探讨算法的有趣和奥妙.
 
-![](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/hardwork/write17.gif?raw=true)
+![](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/hardwork/wirte17.gif?raw=true)
 
 ----
 
