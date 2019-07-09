@@ -1,8 +1,13 @@
---------------------------------------------------------------------------------
-
-layout: post title: 排序算法(下) subtitle: 讲解一些常用常考的算法 date: 2019-07-01 author: MHYCDH header-img: img/algorithm/suanfa.png catalog: true
-
-# tags: - 算法(algorithm)
+---
+layout:     post
+title:      一些工具
+subtitle:   一些hacker的硬件工具
+date:       2019-07-09
+author:     MHYCDH
+header-img: img/hacker_tools.png
+catalog: true
+tags:    - tools
+---
 
 # 前言
 
