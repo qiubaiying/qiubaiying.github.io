@@ -1,7 +1,7 @@
 # Site settings
-title: Lemonhh Note
-SEOTitle: Lemonhh的笔记 | HH Note
-header-img: img/post-bg-desk.jpg
+title: Lemonhh Note         #你的网站标题
+SEOTitle: Lemonhh的笔记 | HH Note    #SEO标题  搜索search engine optimization
+header-img: img/post-bg-desk.jpg   #头图
 email: 13811164483@139.com
 description: "lemonhh's note"
 keyword: "HH, HH Note, lemonhh's note, lemonhh, lemonwh, CDH, Hadoop, K8S"
