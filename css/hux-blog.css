@@ -139,8 +139,8 @@ body {
   font-size: 16px;
   color: #404040;
   overflow-x: hidden;
-  cursor: url(img/SC2-cursor-protoss-small.cur), auto;
 }
+body {cursor: url(img/SC2-cursor-protoss-small.cur), auto;}
 
 p {
   margin: 30px 0;
