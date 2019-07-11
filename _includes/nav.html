@@ -77,6 +77,15 @@
      *
      * Also, we use 'click' instead of 'touchstart' as compromise
      */
+    
+    
+        <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="hide-button">隐藏</div>
+        </div>
+    
+    
     document.addEventListener('click', function(e){
         if(e.target == $toggle) return;
         if(e.target.className == 'icon-bar') return;
