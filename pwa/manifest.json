@@ -1,14 +1,10 @@
 {
-  "name": "BY Blog",
-  "short_name": "BY Blog",
+  "name": "HH Note",
+  "short_name": "HH Note",
   "description": "A personal blog by engineer",
   "icons": [{
-    "src": "icons/pwa_icon_128.png",
-    "sizes": "128x128",
-    "type": "image/png"
-  }, {
-    "src": "icons/pwa_icon_512.png",
-    "sizes": "512x512",
+    "src": "icons/pwa_icon_200.png",
+    "sizes": "200x200",
     "type": "image/png"
   }],
   "background_color": "#fff",
