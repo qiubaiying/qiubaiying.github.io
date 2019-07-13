@@ -1,10 +1,10 @@
 # Site settings
-title: Lemonhh Note         #你的网站标题
-SEOTitle: Lemonhh的笔记 | HH Note    #SEO标题  搜索search engine optimization
-header-img: img/post-bg-desk.jpg   #头图
+title: Lemonhh Blog         #你的网站标题
+SEOTitle: Lemonhh的博客 | HH Blog    #SEO标题  搜索search engine optimization
+header-img: img/post-bg-red-heart.jpg   #头图
 email: 13811164483@139.com
-description: "lemonhh's note"
-keyword: "HH, HH Note, lemonhh's note, lemonhh, lemonwh, CDH, Hadoop, K8S"
+description: "lemonhh's blog"
+keyword: "HH, HH Blog, lemonhh's blog, lemonhh, lemonwh, CDH, Hadoop, K8S"
 url: "http://lemonwh.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/lemonwh/lemonwh.github.io.git" # you code repository
