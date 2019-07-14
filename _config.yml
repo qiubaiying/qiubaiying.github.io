@@ -1,7 +1,7 @@
 # Site settings
 title: Brown Blog
 SEOTitle: Brown的博客 | BY Brown
-header-img: img/alla.jpg
+header-img: img/alla.png
 email: chrisliu1314@gmail.com
 description: "人生的乐趣在于满足感或者成就感"
 keyword: "Brown的博客，Java"
@@ -12,7 +12,7 @@ github_repo: "https://github.com/brownlincoln/brownlincoln.github.io.git" # you 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "以终为始，聚沙成塔"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: img/alla.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
