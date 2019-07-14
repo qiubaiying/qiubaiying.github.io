@@ -4,7 +4,7 @@ title:      Metaspace 整体介绍
 subtitle:   永久代被替换的原因、元空间特点、元空间内存查看分析方法
 date:       2019-07-10
 author:     HH
-header-img: img/post-bg-ios9-web.jpg
+header-img: img/ps-bg-sushi.jpg
 catalog: true
 tags:
     - java8
@@ -14,1505 +14,236 @@ tags:
 ---
 # 前言
 
->在[上篇文章](http://qiubaiying.github.io/2016/12/26/ReactiveCocoa-基础/)中介绍了**ReactiveCocoa**的基础知识,接下来我们来深入介绍**ReactiveCocoa**及其在**MVVM**中的用法。
+>这篇博文来自[·学无止境·](https://www.cnblogs.com/duanxz/p/3520829.html)的博客园。博文对 **Java8** 中的 **Metaspace** 做了一个整体介绍，包括永久代被替代的原因、元空间特点及元空间内存查看方法，我在这里对这篇博文做了一些补充。
 
+根据JVM内存区域的划分，区域主要分为两大块，一块是堆区（Heap），我们所New出的对象都会在堆区进行分配，在C语言中的malloc所分配的方法就是从Heap区获取的。而垃圾回收器主要是对堆区的内存进行回收的。
 
-![ReactiveCocoa进阶思维导图](https://ww3.sinaimg.cn/large/006y8lVagw1fbgye3re5xj30je0iomz8.jpg)
-# 常见操作方法介绍
+而另一部分则是非堆区，非堆区主要包括用于编译和保存本地代码的“代码缓存区(Code Cache)”、保存JVM自己的静态数据的“永生代（Perm Gen）”、存放方法参数局部变量等引用以及记录方法调用顺序的“Java虚拟机栈（JVM Stack）”和“本地方法栈（Local Method Stack）”。
 
+永生代和堆是所有线程共有的，而JVM Stack、Native Method Stack以及程序计数器（Program Counter Register）是线程私有的。
+![JVM堆内存的划分](https://img2018.cnblogs.com/blog/285763/201901/285763-20190108221653081-1421492645.png)
 
-#### 操作须知
+垃圾回收器主要回收的是堆区中未使用的内存区域，并对相应的区域进行整理。在堆区中，又根据对象内存的存活时间或者对象大小，分为“年轻代”和“年老代”。“年轻代”中的对象是不稳定的易产生垃圾，而“年老代”中的对象比较稳定，不易产生垃圾。之所以将其分开，是分而治之，根据不同区域的内存块的特点，采取不同的内存回收算法，从而提高堆区的垃圾回收的效率。
 
-所有的信号（RACSignal）都可以进行操作处理，因为所有操作方法都定义在RACStream.h中，因此只要继承RACStream就有了操作处理方法。
-#### 操作思想
+永久代存放JVM运行时使用的类。永久代同样包含了Java SE库的类和方法。永久代的对象在full GC时进行垃圾收集。
+# 一、元空间替换持久代
 
-运用的是Hook（钩子）思想，Hook是一种用于改变API(应用程序编程接口：方法)执行结果的技术.
 
-Hook用处：截获API调用的技术。
+#### 1.1、持久代
 
-有关Hook的知识可以看我的这篇博客[《Objective-C Runtime 的一些基本使用》](http://www.jianshu.com/p/ff114e69cc0a)中的 *更换代码的实现方法* 一节,
+PermGen space的全称是Permanent Generation space,是指内存的永久保存区域，说说为什么会内存益出：这一部分用于存放Class和Meta的信息,Class在被 Load的时候被放入PermGen space区域，它和和存放Instance的Heap区域不同,所以如果你的APP会LOAD很多CLASS的话,就很可能出现PermGen space错误。这种错误常见在web服务器对JSP进行pre compile的时候。
 
-Hook原理：在每次调用一个API返回结果之前，先执行你自己的方法，改变结果的输出。
+JVM 种类有很多，比如 Oralce-Sun Hotspot, Oralce JRockit, IBM J9, Taobao JVM（淘宝好样的！）等等。当然武林盟主是Hotspot了，这个毫无争议。需要注意的是，PermGen space是Oracle-Sun Hotspot才有，JRockit以及J9是没有这个区域。
 
-#### 操作方法
+持久代中包含了虚拟机中所有可通过反射获取到的数据，比如Class和Method对象。不同的Java虚拟机之间可能会进行类共享，因此持久代又分为只读区和读写区。
 
-#### **bind**（绑定）- ReactiveCocoa核心方法
+JVM用于描述应用程序中用到的类和方法的元数据也存储在持久代中。JVM运行时会用到多少持久代的空间取决于应用程序用到了多少类。除此之外，Java SE库中的类和方法也都存储在这里。
 
-**ReactiveCocoa** 操作的核心方法是 **bind**（绑定）,而且也是RAC中核心开发方式。之前的开发方式是赋值，而用RAC开发，应该把重心放在绑定，也就是可以在创建一个对象的时候，就绑定好以后想要做的事情，而不是等赋值之后在去做事情。
+如果JVM发现有的类已经不再需要了，它会去回收（卸载）这些类，将它们的空间释放出来给其它类使用。Full GC会进行持久代的回收。
 
-列如，把数据展示到控件上，之前都是重写控件的 `setModel` 方法，用RAC就可以在一开始创建控件的时候，就绑定好数据。
+- JVM中类的元数据在Java堆中的存储区域。
+- Java类对应的HotSpot虚拟机中的内部表示也存储在这里。
+- 类的层级信息，字段，名字。
+- 方法的编译信息及字节码。
+- 变量
+- 常量池和符号解析
 
-- **作用**
+**持久代的大小**
 
-	RAC底层都是调用**bind**， 在开发中很少直接使用 **bind** 方法，**bind**属于RAC中的底层方法，我们只需要调用封装好的方法，**bind**用作了解即可.
+- 它的上限是MaxPermSize，默认是64M
+- Java堆中的连续区域 : 如果存储在非连续的堆空间中的话，要定位出持久代到新对象的引用非常复杂并且耗时。卡表（card table），是一种记忆集（Remembered Set），它用来记录某个内存代中普通对象指针（oops）的修改。
+- 持久代用完后，会抛出OutOfMemoryError "PermGen space"异常。解决方案：应用程序清理引用来触发类卸载；增加MaxPermSize的大小。
+- 需要多大的持久代空间取决于类的数量，方法的大小，以及常量池的大小。
 
-- **bind方法使用步骤**
-     1. 传入一个返回值 `RACStreamBindBlock` 的 block。
-     2. 描述一个 `RACStreamBindBlock` 类型的 `bindBlock`作为block的返回值。
-     3. 描述一个返回结果的信号，作为 `bindBlock` 的返回值。
-     
-     注意：在bindBlock中做信号结果的处理。
-- 	**bind方法参数**
-	
-	**RACStreamBindBlock**:
-`typedef RACStream * (^RACStreamBindBlock)(id value, BOOL *stop);`
 
-     `参数一(value)`:表示接收到信号的原始值，还没做处理
-     
-     `参数二(*stop)`:用来控制绑定Block，如果*stop = yes,那么就会结束绑定。
-     
-     `返回值`：信号，做好处理，在通过这个信号返回出去，一般使用 `RACReturnSignal`,需要手动导入头文件`RACReturnSignal.h`
+#### 1.2、为什么移除持久代
 
-- **使用**
 
-	假设想监听文本框的内容，并且在每次输出结果的时候，都在文本框的内容拼接一段文字“输出：”
+- 它的大小是在启动时固定好的——很难进行调优。-XX:MaxPermSize，设置成多少好呢？
+- HotSpot的内部类型也是Java对象：它可能会在Full GC中被移动，同时它对应用不透明，且是非强类型的，难以跟踪调试，还需要存储元数据的元数据信息（meta-metadata）。
+- 简化Full GC：每一个回收器有专门的元数据迭代器。
+- 可以在GC不进行暂停的情况下并发地释放类数据。
+- 使得原来受限于持久代的一些改进未来有可能实现
 
-	- 使用封装好的方法：在返回结果后，拼接。
+根据上面的各种原因，永久代最终被移除，方法区移至Metaspace，字符串常量移至Java Heap。
 
-		```
-		[_textField.rac_textSignal subscribeNext:^(id x) {
-		
-			// 在返回结果后，拼接 输出：
-			NSLog(@"输出:%@",x);
-		
-		}];
-		```
+#### 1.3、移除持久代后，PermGen空间的状况
 
 
-	- 方式二:，使用RAC中 `bind` 方法做处理，在返回结果前，拼接。
-	  
-		这里需要手动导入`#import <ReactiveCocoa/RACReturnSignal.h>`，才能使用`RACReturnSignal`
-
-		```	
-		[[_textField.rac_textSignal bind:^RACStreamBindBlock{
-		   // 什么时候调用:
-		   // block作用:表示绑定了一个信号.
-		
-		   return ^RACStream *(id value, BOOL *stop){
-		
-		       // 什么时候调用block:当信号有新的值发出，就会来到这个block。
-		
-		       // block作用:做返回值的处理
-		
-		       // 做好处理，在返回结果前，拼接 输出:
-		       return [RACReturnSignal return:[NSString stringWithFormat:@"输出:%@",value]];
-		   };
-		
-		}] subscribeNext:^(id x) {
-		
-		   NSLog(@"%@",x);
-		
-		}];
-
-		```
-
-- **底层实现**
-     1. 源信号调用bind,会重新创建一个绑定信号。
-     2. 当绑定信号被订阅，就会调用绑定信号中的 `didSubscribe` ，生成一个 `bindingBlock` 。
-     3. 当源信号有内容发出，就会把内容传递到 `bindingBlock` 处理，调用`bindingBlock(value,stop)`
-     4. 调用`bindingBlock(value,stop)`，会返回一个内容处理完成的信号`RACReturnSignal`。
-     5. 订阅`RACReturnSignal`，就会拿到绑定信号的订阅者，把处理完成的信号内容发送出来。
-    
-     注意:不同订阅者，保存不同的nextBlock，看源码的时候，一定要看清楚订阅者是哪个。
-
-#### 映射
-
-映射主要用这两个方法实现：**flattenMap**,**Map**,用于把源信号内容映射成新的内容。
-
-###### flattenMap
-
-- **作用**
-
-	把源信号的内容映射成一个新的信号，信号可以是任意类型
-
-- **使用步骤**
-
-     1. 传入一个block，block类型是返回值`RACStream`，参数value
-     2. 参数value就是源信号的内容，拿到源信号的内容做处理
-     3. 包装成`RACReturnSignal`信号，返回出去。
-
-
-
-- **使用**
-
-	监听文本框的内容改变，把结构重新映射成一个新值.
-	
-	```
-	[[_textField.rac_textSignal flattenMap:^RACStream *(id value) {
-        
-        // block调用时机：信号源发出的时候
-        
-        // block作用：改变信号的内容
-        
-        // 返回RACReturnSignal
-        return [RACReturnSignal return:[NSString stringWithFormat:@"信号内容：%@", value]];
-        
-    }] subscribeNext:^(id x) {
-        
-        NSLog(@"%@", x);
-    }];
-    ```
-- **底层实现**
-
-     0. **flattenMap**内部调用 `bind` 方法实现的,**flattenMap**中block的返回值，会作为bind中bindBlock的返回值。
-     1. 当订阅绑定信号，就会生成 `bindBlock`。
-     2. 当源信号发送内容，就会调用` bindBlock(value, *stop)`
-     3. 调用`bindBlock`，内部就会调用 **flattenMap** 的 bloc k，**flattenMap** 的block作用：就是把处理好的数据包装成信号。
-     4. 返回的信号最终会作为 `bindBlock` 中的返回信号，当做 `bindBlock` 的返回信号。
-     5. 订阅 `bindBlock` 的返回信号，就会拿到绑定信号的订阅者，把处理完成的信号内容发送出来。
-	
-###### Map
-
-- **作用**
- 
-	把源信号的值映射成一个新的值
-
-	
-- **使用步骤**
-     1. 传入一个block,类型是返回对象，参数是 `value`
-     2. `value`就是源信号的内容，直接拿到源信号的内容做处理
-     3. 把处理好的内容，直接返回就好了，不用包装成信号，返回的值，就是映射的值。
-    
-- **使用**
-
-	监听文本框的内容改变，把结构重新映射成一个新值.
-     
-    ```
-	[[_textField.rac_textSignal map:^id(id value) {
-       
-       // 拼接完后，返回对象
-        return [NSString stringWithFormat:@"信号内容: %@", value];
-        
-    }] subscribeNext:^(id x) {
-        
-        NSLog(@"%@", x);
-    }];
-	```
-- **底层实现**:
-     0. Map底层其实是调用 `flatternMa`p,`Map` 中block中的返回的值会作为 `flatternMap` 中block中的值
-     1. 当订阅绑定信号，就会生成 `bindBlock` 
-     3. 当源信号发送内容，就会调用 `bindBlock(value, *stop)`
-     4. 调用 `bindBlock` ，内部就会调用 `flattenMap的block`
-     5. `flattenMap的block` 内部会调用 `Map` 中的block，把 `Map` 中的block返回的内容包装成返回的信号
-     5. 返回的信号最终会作为 `bindBlock` 中的返回信号，当做 `bindBlock` 的返回信号
-     6. 订阅 `bindBlock` 的返回信号，就会拿到绑定信号的订阅者，把处理完成的信号内容发送出来。
-
-###### FlatternMap 和 Map 的区别
--  **FlatternMap** 中的Block **返回信号**。 
-2. **Map** 中的Block **返回对象**。
-3. 开发中，如果信号发出的值 **不是信号** ，映射一般使用 `Map`
-4. 如果信号发出的值 **是信号**，映射一般使用 `FlatternMap`。
-
-
-
-- `signalOfsignals`用 **FlatternMap**
-
-	```
-    // 创建信号中的信号
-    RACSubject *signalOfsignals = [RACSubject subject];
-    RACSubject *signal = [RACSubject subject];
-
-    [[signalOfsignals flattenMap:^RACStream *(id value) {
-
-     // 当signalOfsignals的signals发出信号才会调用
-
-        return value;
-
-    }] subscribeNext:^(id x) {
-
-        // 只有signalOfsignals的signal发出信号才会调用，因为内部订阅了bindBlock中返回的信号，也就是flattenMap返回的信号。
-        // 也就是flattenMap返回的信号发出内容，才会调用。
-
-        NSLog(@"signalOfsignals：%@",x);
-    }];
-
-    // 信号的信号发送信号
-    [signalOfsignals sendNext:signal];
-
-    // 信号发送内容
-    [signal sendNext:@"hi"];
-	
-	```
-	
-#### 组合
-
-组合就是将多个信号按照某种规则进行拼接，合成新的信号。
-
-###### concat
-
-- **作用** 
-
-	按**顺序拼接**信号，当多个信号发出的时候，有顺序的接收信号。
-- **底层实现**
-     1. 当拼接信号被订阅，就会调用拼接信号的didSubscribe
-     2. didSubscribe中，会先订阅第一个源信号（signalA）
-     3. 会执行第一个源信号（signalA）的didSubscribe
-     4. 第一个源信号（signalA）didSubscribe中发送值，就会调用第一个源信号（signalA）订阅者的nextBlock,通过拼接信号的订阅者把值发送出来.
-     5. 第一个源信号（signalA）didSubscribe中发送完成，就会调用第一个源信号（signalA）订阅者的completedBlock,订阅第二个源信号（signalB）这时候才激活（signalB）。
-     6. 订阅第二个源信号（signalB）,执行第二个源信号（signalB）的didSubscribe
-     7. 第二个源信号（signalA）didSubscribe中发送值,就会通过拼接信号的订阅者把值发送出来.
-- **使用步骤**
-
-	1. 使用`concat:`拼接信号
-	2. 订阅拼接信号，内部会自动按拼接顺序订阅信号
-- **使用**
-
-	拼接信号 `signalA`、 `signalB`、 `signalC`
-	
-	```
-	RACSignal *signalA = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
-        [subscriber sendNext:@"Hello"];
-        
-        [subscriber sendCompleted];
-        
-        return nil;
-    }];
-    
-    RACSignal *signalB = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
-        [subscriber sendNext:@"World"];
-        
-        [subscriber sendCompleted];
-        
-        return nil;
-    }];
-    
-    RACSignal *signalC = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
-        [subscriber sendNext:@"!"];
-        
-        [subscriber sendCompleted];
-        
-        return nil;
-    }];
-    
-    // 拼接 A B, 把signalA拼接到signalB后，signalA发送完成，signalB才会被激活。
-    RACSignal *concatSignalAB = [signalA concat:signalB];
-    
-    // A B + C
-    RACSignal *concatSignalABC = [concatSignalAB concat:signalC];
-    
-    
-    // 订阅拼接的信号, 内部会按顺序订阅 A->B->C
-    // 注意：第一个信号必须发送完成，第二个信号才会被激活...
-    [concatSignalABC subscribeNext:^(id x) {
-        
-        NSLog(@"%@", x);
-    }];
-	```
-
-######  then
-- **作用** 
-
-	用于连接两个信号，当第一个信号完成，才会连接then返回的信号。
-- **底层实现**
-	
-	1. 先过滤掉之前的信号发出的值
-	2. 使用concat连接then返回的信号
-	
-- **使用**
-
-	```
-   [[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-      
-      [subscriber sendNext:@1];
-      
-      [subscriber sendCompleted];
-      
-      return nil;
-      
-    }] then:^RACSignal *{
-      
-      	return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-          
-          [subscriber sendNext:@2];
-          
-          return nil;
-      }];
-      
-    }] subscribeNext:^(id x) {
-      
-      // 只能接收到第二个信号的值，也就是then返回信号的值
-      NSLog(@"%@", x);
-      
-    }];
-    
-    ///
-    输出：2
-	```
-- **注意**
-
-	注意使用`then`，之前信号的值会被忽略掉.
-
-###### merge
-- **作用** 
-	
-	合并信号,任何一个信号发送数据，都能监听到.
-- **底层实现**
-
-     1. 合并信号被订阅的时候，就会遍历所有信号，并且发出这些信号。
-     2. 每发出一个信号，这个信号就会被订阅
-     3. 也就是合并信号一被订阅，就会订阅里面所有的信号。
-     4. 只要有一个信号被发出就会被监听。
-- **使用**
-
-	```
-	RACSignal *signalA = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
-        [subscriber sendNext:@"A"];
-        
-        return nil;
-    }];
-
-    RACSignal *signalB = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
-        [subscriber sendNext:@"B"];
-        
-        return nil;
-    }];
-
-    // 合并信号, 任何一个信号发送数据，都能监听到
-    RACSignal *mergeSianl = [signalA merge:signalB];
-
-    [mergeSianl subscribeNext:^(id x) {
-        
-        NSLog(@"%@", x);
-    }];
-    
-    // 输出
-	2017-01-03 13:29:08.013 ReactiveCocoa进阶[3627:718315] A
-	2017-01-03 13:29:08.014 ReactiveCocoa进阶[3627:718315] B
-
-    
-	```
-
-###### zip
-
-- **作用** 
-	
-	把两个信号压缩成一个信号，只有当两个信号 **同时** 发出信号内容时，并且把两个信号的内容合并成一个元组，才会触发压缩流的next事件。
-- **底层实现**
-	
-	1. 定义压缩信号，内部就会自动订阅signalA，signalB
-	2. 每当signalA或者signalB发出信号，就会判断signalA，signalB有没有发出个信号，有就会把每个信号 第一次 发出的值包装成元组发出
-	     
-- **使用**
-
-	```
-	RACSignal *signalA = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
-        [subscriber sendNext:@"A1"];
-        [subscriber sendNext:@"A2"];
-        
-        return nil;
-    }];
-    
-    RACSignal *signalB = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
-        [subscriber sendNext:@"B1"];
-        [subscriber sendNext:@"B2"];
-        [subscriber sendNext:@"B3"];
-        
-        return nil;
-    }];
-    
-    RACSignal *zipSignal = [signalA zipWith:signalB];
-    
-    [zipSignal subscribeNext:^(id x) {
-        
-        NSLog(@"%@", x);
-    }];
-	
-	// 输出
-	2017-01-03 13:48:09.234 ReactiveCocoa进阶[3997:789720] zipWith: <RACTuple: 0x600000004df0> (
-    A1,
-    B1
-	)
-	2017-01-03 13:48:09.234 ReactiveCocoa进阶[3997:789720] zipWith: <RACTuple: 0x608000003410> (
-    A2,
-    B2
-	)
-	```
-	
-	
-###### combineLatest
-- **作用** 
-	
-	将多个信号合并起来，并且拿到各个信号最后一个值,必须每个合并的signal至少都有过一次sendNext，才会触发合并的信号。
-
-- **底层实现**
-	
- 	1. 当组合信号被订阅，内部会自动订阅signalA，signalB,必须两个信号都发出内容，才会被触发。
- 	2. 并且把两个信号的 最后一次 发送的值组合成元组发出。
-	     
-- **使用**
-
-	```
-	RACSignal *signalA = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
-        [subscriber sendNext:@"A1"];
-        [subscriber sendNext:@"A2"];
-        
-        return nil;
-    }];
-    
-    RACSignal *signalB = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
-        [subscriber sendNext:@"B1"];
-        [subscriber sendNext:@"B2"];
-        [subscriber sendNext:@"B3"];
-        
-        return nil;
-    }];
-    
-    RACSignal *combineSianal = [signalA combineLatestWith:signalB];
-    
-    [combineSianal subscribeNext:^(id x) {
-        
-        NSLog(@"combineLatest:%@", x);
-    }];
-	
-	// 输出
-	2017-01-03 13:48:09.235 ReactiveCocoa进阶[3997:789720] combineLatest:<RACTuple: 0x60800000e150> (
-    A2,
-    B1
-	)
-	2017-01-03 13:48:09.235 ReactiveCocoa进阶[3997:789720] combineLatest:<RACTuple: 0x600000004db0> (
-    A2,
-    B2
-	)
-	2017-01-03 13:48:09.236 ReactiveCocoa进阶[3997:789720] combineLatest:<RACTuple: 0x60800000e180> (
-    A2,
-    B3
-	)
-	```
-	
-- **注意**
-
-	**combineLatest**与**zip**用法相似，必须每个合并的signal至少都有过一次sendNext，才会触发合并的信号。
-	
-	区别看下图：
-	
-	![](https://ww2.sinaimg.cn/large/006y8lVagw1fbdf6cyez6j30id0kkabf.jpg)
-
-
-###### reduce   
-
-- **作用** 
-	
-	把信号发出元组的值聚合成一个值
-- **底层实现**
-	
- 	1. 订阅聚合信号，
- 	2. 每次有内容发出，就会执行reduceblcok，把信号内容转换成reduceblcok返回的值。
-	     
-- **使用**
-
-     常见的用法，（先组合在聚合）`combineLatest:(id<NSFastEnumeration>)signals reduce:(id (^)())reduceBlock`
-     
-     reduce中的block简介:
-     
-     reduceblcok中的参数，有多少信号组合，reduceblcok就有多少参数，每个参数就是之前信号发出的内容
-     reduceblcok的返回值：聚合信号之后的内容。
-
-
-
-	```
-	    RACSignal *signalA = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
-        [subscriber sendNext:@"A1"];
-        [subscriber sendNext:@"A2"];
-        
-        return nil;
-    }];
-    
-    RACSignal *signalB = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
-        [subscriber sendNext:@"B1"];
-        [subscriber sendNext:@"B2"];
-        [subscriber sendNext:@"B3"];
-        
-        return nil;
-    }];
-    
-    
-    RACSignal *reduceSignal = [RACSignal combineLatest:@[signalA, signalB] reduce:^id(NSString *str1, NSString *str2){
-        
-        return [NSString stringWithFormat:@"%@ %@", str1, str2];
-    }];
-    
-    [reduceSignal subscribeNext:^(id x) {
-        
-        NSLog(@"%@", x);
-    }];
-    
-    // 输出
-    2017-01-03 15:42:41.803 ReactiveCocoa进阶[4248:1264674] A2 B1
-	2017-01-03 15:42:41.803 ReactiveCocoa进阶[4248:1264674] A2 B2
-	2017-01-03 15:42:41.803 ReactiveCocoa进阶[4248:1264674] A2 B3
-    
-	```
-	
-#### 过滤
-
-过滤就是过滤信号中的 特定值 ，或者过滤指定 发送次数 的信号。
-
-###### filter
-
-- **作用**
-
-	过滤信号，使用它可以获取满足条件的信号.
-	
-	block的返回值是Bool值，返回`NO`则过滤该信号
-	
-- **使用**
-
-	```
-	// 过滤:
-	// 每次信号发出，会先执行过滤条件判断.
-	[[_textField.rac_textSignal filter:^BOOL(NSString *value) {
-        
-        NSLog(@"原信号: %@", value);
-
-        // 过滤 长度 <= 3 的信号
-        return value.length > 3;
-        
-    }] subscribeNext:^(id x) {
-        
-        NSLog(@"长度大于3的信号：%@", x);
-    }];
-    
-    // 在_textField中输出12345
-	// 输出
-	2017-01-03 16:36:54.938 ReactiveCocoa进阶[4714:1552910] 原信号: 1
-	2017-01-03 16:36:55.383 ReactiveCocoa进阶[4714:1552910] 原信号: 12
-	2017-01-03 16:36:55.706 ReactiveCocoa进阶[4714:1552910] 原信号: 123
-	2017-01-03 16:36:56.842 ReactiveCocoa进阶[4714:1552910] 原信号: 1234
-	2017-01-03 16:36:56.842 ReactiveCocoa进阶[4714:1552910] 长度大于3的信号：1234
-	2017-01-03 16:36:58.350 ReactiveCocoa进阶[4714:1552910] 原信号: 12345
-	2017-01-03 16:36:58.351 ReactiveCocoa进阶[4714:1552910] 长度大于3的信号：12345
-	```
-	
-###### ignore
-
-- **作用**
-
-	忽略某些信号.
-	
-- **使用**
-
-- **作用**
-
-	忽略某些值的信号.
-	
-	底层调用了 `filter` 与 过滤值进行比较，若相等返回则 `NO`
-	
-- **使用**
-
-	```
-  	// 内部调用filter过滤，忽略掉字符为 @“1”的值
-[[_textField.rac_textSignal ignore:@"1"] subscribeNext:^(id x) {
-
- 	 NSLog(@"%@",x);
-}];
-
-
-	```
-
-###### distinctUntilChanged
-
-- **作用**
-
-	当上一次的值和当前的值有明显的变化就会发出信号，否则会被忽略掉。
-	
-- **使用**
-
-	```
-	[[_textField.rac_textSignal distinctUntilChanged] subscribeNext:^(id x) {
-        
-        NSLog(@"%@",x);
-    }];
-	```
-	
-###### skip	
-
-- **作用**
-
-	跳过 **第N次** 的发送的信号.
-	
-- **使用**
-	
-	```
-// 表示输入第一次，不会被监听到，跳过第一次发出的信号
-[[_textField.rac_textSignal skip:1] subscribeNext:^(id x) {
-
-   NSLog(@"%@",x);
-}];
-	```
-
-
-
-##### take
-- **作用**
-
-	取 **前N次** 的发送的信号.
-- **使用**
-
-	```
-	RACSubject *subject = [RACSubject subject] ;
-    
-    // 取 前两次 发送的信号
-    [[subject take:2] subscribeNext:^(id x) {
-        
-        NSLog(@"%@", x);
-    }];
-    
-    [subject sendNext:@1];
-    [subject sendNext:@2];
-    [subject sendNext:@3];
-    
-    // 输出
-	2017-01-03 17:35:54.566 ReactiveCocoa进阶[4969:1677908] 1
-	2017-01-03 17:35:54.567 ReactiveCocoa进阶[4969:1677908] 2
-	```
-
-###### takeLast
-
-- **作用**
-
-	取 **最后N次** 的发送的信号
-	
-	前提条件，订阅者必须调用完成 `sendCompleted`，因为只有完成，就知道总共有多少信号.
-	
-- **使用**	
-
-	```
-	RACSubject *subject = [RACSubject subject] ;
-    
-    // 取 后两次 发送的信号
-    [[subject takeLast:2] subscribeNext:^(id x) {
-        
-        NSLog(@"%@", x);
-    }];
-    
-    [subject sendNext:@1];
-    [subject sendNext:@2];
-    [subject sendNext:@3];
-    
-    // 必须 跳用完成
-    [subject sendCompleted];
-	```
-
-###### takeUntil
-
-- **作用**
-
-	获取信号直到某个信号执行完成
-- **使用**	
-
-	```
-	// 监听文本框的改变直到当前对象被销毁
-[_textField.rac_textSignal takeUntil:self.rac_willDeallocSignal];
-	```
-	
-###### switchToLatest
-- **作用**
-
-	用于signalOfSignals（信号的信号），有时候信号也会发出信号，会在signalOfSignals中，获取signalOfSignals发送的最新信号。
-	
-- **注意**
-
-	switchToLatest：只能用于信号中的信号
-
-- **使用**	
-
-	```
-	RACSubject *signalOfSignals = [RACSubject subject];
-    RACSubject *signal = [RACSubject subject];
-    
-    // 获取信号中信号最近发出信号，订阅最近发出的信号。
-    [signalOfSignals.switchToLatest subscribeNext:^(id x) {
-        
-        NSLog(@"%@", x);
-    }];
-    
-    [signalOfSignals sendNext:signal];
-    [signal sendNext:@1];
-	```
-
-#### 秩序
-
-秩序包括 `doNext` 和 `doCompleted` 这两个方法，主要是在 执行`sendNext` 或者 `sendCompleted`之前，先执行这些方法中Block。
-
-###### doNext 
-	
-执行`sendNext`之前，会先执行这个`doNext`的 Block
-
-###### doCompleted
-
-执行`sendCompleted`之前，会先执行这`doCompleted`的`Block`
-
-```
-[[[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-    
-    [subscriber sendNext:@"hi"];
-    
-    [subscriber sendCompleted];
-    
-    return nil;
-    
-}] doNext:^(id x) {
-    
-    // 执行 [subscriber sendNext:@"hi"] 之前会调用这个 Block
-    NSLog(@"doNext");
-    
-}] doCompleted:^{
-    
-    // 执行 [subscriber sendCompleted] 之前会调用这 Block
-    NSLog(@"doCompleted");
-}] subscribeNext:^(id x) {
-    
-    NSLog(@"%@", x);
-}];
-    
-
-```
-
-#### 线程
-
-**ReactiveCocoa** 中的线程操作 包括 `deliverOn` 和 `subscribeOn`这两种，将 *传递的内容* 或 创建信号时 *block中的代码* 切换到指定的线程中执行。
-
-###### deliverOn
-
-- **作用**
-
-	内容传递切换到制定线程中，副作用在原来线程中,把在创建信号时block中的代码称之为副作用。
-- **使用**
-
-	```
-	// 在子线程中执行
-	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-        [[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
-            NSLog(@"%@", [NSThread currentThread]);
-            
-            [subscriber sendNext:@123];
-            
-            [subscriber sendCompleted];
-            
-            return nil;
-        }]
-          deliverOn:[RACScheduler mainThreadScheduler]]
-          
-         subscribeNext:^(id x) {
-         
-             NSLog(@"%@", x);
-             
-             NSLog(@"%@", [NSThread currentThread]);
-         }];
-    });
-    
-    // 输出
-2017-01-04 10:35:55.415 ReactiveCocoa进阶[1183:224535] <NSThread: 0x608000270f00>{number = 3, name = (null)}
-2017-01-04 10:35:55.415 ReactiveCocoa进阶[1183:224482] 123
-2017-01-04 10:35:55.415 ReactiveCocoa进阶[1183:224482] <NSThread: 0x600000079bc0>{number = 1, name = main}
-	```
-	
-	可以看到`副作用`在 *子线程* 中执行，而 `传递的内容` 在 *主线程* 中接收
-
-
-###### subscribeOn
-- **作用**
-
-	**subscribeOn**则是将 `内容传递` 和 `副作用` 都会切换到指定线程中
-- **使用**
-
-	```
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-        [[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
-            NSLog(@"%@", [NSThread currentThread]);
-            
-            [subscriber sendNext:@123];
-            
-            [subscriber sendCompleted];
-            
-            return nil;
-        }]
-          subscribeOn:[RACScheduler mainThreadScheduler]] //传递的内容到主线程中
-         subscribeNext:^(id x) {
-         
-             NSLog(@"%@", x);
-             
-             NSLog(@"%@", [NSThread currentThread]);
-         }];
-    });	
-	//
-2017-01-04 10:44:47.558 ReactiveCocoa进阶[1243:275126] <NSThread: 0x608000077640>{number = 1, name = main}
-2017-01-04 10:44:47.558 ReactiveCocoa进阶[1243:275126] 123
-2017-01-04 10:44:47.558 ReactiveCocoa进阶[1243:275126] <NSThread: 0x608000077640>{number = 1, name = main}
-	```
-	
-	`内容传递` 和 `副作用` 都切换到了 *主线程* 执行
-	
-#### 时间
-
-时间操作就会设置信号超时，定时和延时。
-
-###### interval 定时
-- **作用**
-
-	定时：每隔一段时间发出信号
-	
-	```
-	// 每隔1秒发送信号，指定当前线程执行
-	[[RACSignal interval:1 onScheduler:[RACScheduler currentScheduler]] subscribeNext:^(id x) {
-        
-        NSLog(@"定时:%@", x);
-    }];
-    
-	// 输出
-	2017-01-04 13:48:55.196 ReactiveCocoa进阶[1980:492724] 定时:2017-01-04 05:48:55 +0000
-	2017-01-04 13:48:56.195 ReactiveCocoa进阶[1980:492724] 定时:2017-01-04 05:48:56 +0000
-	2017-01-04 13:48:57.196 ReactiveCocoa进阶[1980:492724] 定时:2017-01-04 05:48:57 +0000
-	```
-
-
-###### timeout 超时
-
-- **作用**
-
-	超时，可以让一个信号在一定的时间后，自动报错。
-	
-	```
-	RACSignal *signal = [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
-        // 不发送信号，模拟超时状态
-        // [subscriber sendNext:@"hello"];
-        //[subscriber sendCompleted];
-        
-        return nil;
-    }] timeout:1 onScheduler:[RACScheduler currentScheduler]];// 设置1秒超时
-    
-    [signal subscribeNext:^(id x) {
-        
-        NSLog(@"%@", x);
-    } error:^(NSError *error) {
-        
-        NSLog(@"%@", error);
-    }];
-    
-    // 执行代码 1秒后 输出：
-    2017-01-04 13:48:55.195 ReactiveCocoa进阶[1980:492724] Error Domain=RACSignalErrorDomain Code=1 "(null)"
-	```
-
-###### delay 延时
-- **作用**
-
-	延时，延迟一段时间后发送信号
-	
-	```
-	RACSignal *signal2 = [[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
-        [subscriber sendNext:@"延迟输出"];
-        
-        return nil;
-    }] delay:2] subscribeNext:^(id x) {
-        
-        NSLog(@"%@", x);
-    }];
-    
-    // 执行代码 2秒后 输出
-    2017-01-04 13:55:23.751 ReactiveCocoa进阶[2030:525038] 延迟输出
-	```
-
-
-#### 重复
-
-###### retry
-
-- **作用**
-
-	重试：只要 发送错误 `sendError:`,就会 重新执行 创建信号的Block 直到成功
-	
-	```
-	__block int i = 0;
-    
-    [[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
-        if (i == 5) {
-            
-            [subscriber sendNext:@"Hello"];
-            
-        } else {
-            
-            // 发送错误
-            NSLog(@"收到错误:%d", i);
-            [subscriber sendError:nil];
-        }
-        
-        i++;
-        
-        return nil;
-        
-    }] retry] subscribeNext:^(id x) {
-        
-        NSLog(@"%@", x);
-        
-    } error:^(NSError *error) {
-        
-        NSLog(@"%@", error);
-        
-    }];
-
-	// 输出
-2017-01-04 14:36:51.594 ReactiveCocoa进阶[2443:667226] 收到错误信息:0
-2017-01-04 14:36:51.595 ReactiveCocoa进阶[2443:667226] 收到错误信息:1
-2017-01-04 14:36:51.595 ReactiveCocoa进阶[2443:667226] 收到错误信息:2
-2017-01-04 14:36:51.596 ReactiveCocoa进阶[2443:667226] 收到错误信息:3
-2017-01-04 14:36:51.596 ReactiveCocoa进阶[2443:667226] 收到错误信息:4
-2017-01-04 14:36:51.596 ReactiveCocoa进阶[2443:667226] Hello
-
-	```
-
-###### replay
-
-- **作用**
-
-	重放：当一个信号被多次订阅,反复播放内容
-	
-	```
-	RACSignal *signal = [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        
-        [subscriber sendNext:@1];
-        [subscriber sendNext:@2];
-        
-        return nil;
-    }] replay];
-    
-    [signal subscribeNext:^(id x) {
-        NSLog(@"%@", x);
-    }];
-    
-    [signal subscribeNext:^(id x) {
-        NSLog(@"%@", x);
-    }];
-    
-    // 输出
-2017-01-04 14:51:01.934 ReactiveCocoa进阶[2544:706740] 1
-2017-01-04 14:51:01.934 ReactiveCocoa进阶[2544:706740] 2
-2017-01-04 14:51:01.934 ReactiveCocoa进阶[2544:706740] 1
-2017-01-04 14:51:01.935 ReactiveCocoa进阶[2544:706740] 2
-	```
-
-
-###### throttle
-
-- **作用**
-
-	节流:当某个信号发送比较频繁时，可以使用节流，在某一段时间不发送信号内容，过了一段时间获取信号的最新内容发出。
-	
-	```
-	RACSubject *subject = [RACSubject subject];
-    
-    // 节流1秒，1秒后接收最后一个发送的信号
-    [[subject throttle:1] subscribeNext:^(id x) {
-        
-        NSLog(@"%@", x);
-    }];
-    
-    [subject sendNext:@1];
-    [subject sendNext:@2];
-    [subject sendNext:@3];
-    
-    // 输出
-    2017-01-04 15:02:37.543 ReactiveCocoa进阶[2731:758193] 3
-	```
-
-# MVVM架构思想
----
-程序为什么要有架构？便于程序开发与维护.
-
-#### 常见的架构
-- **MVC**
-
-	M:模型 V:视图 C:控制器
-
-- **MVVM**
-
-	M:模型 V:视图+控制器 VM:视图模型
-
-- **MVCS**
-
-	 M:模型 V:视图 C:控制器 C:服务类
-
-- [**VIPER**](http://www.cocoachina.com/ios/20140703/9016.html)
-
-	V:视图 I:交互器 P:展示器 E:实体 R:路由
-
-#### MVVM介绍
-
-- 模型(M):保存视图数据。
-
-- 视图+控制器(V):展示内容 + 如何展示
-
-- 视图模型(VM):处理展示的业务逻辑，包括按钮的点击，数据的请求和解析等等。
-
-# 实战一：登录界面
-
-#### 需求
-1. 监听两个文本框的内容
-2. 有内容登录按键才允许按钮点击
-3. 返回登录结果
-
-#### 分析
-1. 界面的所有业务逻辑都交给控制器做处理
-2. 在MVVM架构中把控制器的业务全部搬去VM模型，也就是每个控制器对应一个VM模型.
-
-#### 步骤
-1. 创建LoginViewModel类，处理登录界面业务逻辑.
-2. 这个类里面应该保存着账号的信息，创建一个账号Account模型
-3. LoginViewModel应该保存着账号信息Account模型。
-4. 需要时刻监听Account模型中的账号和密码的改变，怎么监听？
-5. 在非RAC开发中，都是习惯赋值，在RAC开发中，需要改变开发思维，由赋值转变为绑定，可以在一开始初始化的时候，就给Account模型中的属性绑定，并不需要重写set方法。
-6. 每次Account模型的值改变，就需要判断按钮能否点击，在VM模型中做处理，给外界提供一个能否点击按钮的信号.
-7. 这个登录信号需要判断Account中账号和密码是否有值，用KVO监听这两个值的改变，把他们聚合成登录信号.
-8. 监听按钮的点击，由VM处理，应该给VM声明一个RACCommand，专门处理登录业务逻辑.
-9. 执行命令，把数据包装成信号传递出去
-10. 监听命令中信号的数据传递
-11. 监听命令的执行时刻
-
-
-
-#### 运行效果
-
-![登录界面](https://ww3.sinaimg.cn/large/006y8lVagw1fbgvoh8yu6j30bj0l43yz.jpg)
-
-#### 代码
-
-`MyViewController.m`
-
-```
-#import "MyViewController.h"
-#import "LoginViewModel.h"
-
-@interface MyViewController ()
-
-@property (nonatomic, strong) LoginViewModel *loginViewModel;
-
-@property (weak, nonatomic) IBOutlet UITextField *accountField;
-
-@property (weak, nonatomic) IBOutlet UITextField *pwdField;
-
-@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
-
-@end
-
-@implementation MyViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [self bindModel];
-    
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
-// 视图模型绑定
-- (void)bindModel {
-
-    // 给模型的属性绑定信号
-    //
-    RAC(self.loginViewModel.account, account) = _accountField.rac_textSignal;
-    RAC(self.loginViewModel.account, pwd) = _pwdField.rac_textSignal;
-    
-    RAC(self.loginBtn, enabled) = self.loginViewModel.enableLoginSignal;
-    
-    // 监听登录点击
-    [[_loginBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        
-        [self.loginViewModel.LoginCommand execute:nil];
-    }];
-    
-}
-- (IBAction)btnTap:(id)sender {
-    
-    
-}
-
-#pragma mark - lazyLoad
-
-- (LoginViewModel *)loginViewModel {
-    
-    if (nil == _loginViewModel) {
-        _loginViewModel = [[LoginViewModel alloc] init];
-    }
-    
-    return _loginViewModel;
-}
-```	
-		
-`LoginViewModel.h`
-
-```
-#import <UIKit/UIKit.h>
-
-@interface Account : NSObject
-
-@property (nonatomic, strong) NSString *account;
-@property (nonatomic, strong) NSString *pwd;
-
-@end
-
-
-@interface LoginViewModel : UIViewController
-
-@property (nonatomic, strong) Account *account;
-
-// 是否允许登录的信号
-@property (nonatomic, strong, readonly) RACSignal *enableLoginSignal;
-
-@property (nonatomic, strong, readonly) RACCommand *LoginCommand;
-
-@end
-
-```
-
-`LoginViewModel.m`
-
-```
-#import "LoginViewModel.h"
-
-@implementation Account
-
-@end
-
-
-@interface LoginViewModel ()
-
-@end
-
-@implementation LoginViewModel
-
-- (instancetype)init {
-    
-    if (self = [super init]) {
-        [self initialBind];
-    }
-    return self;
-}
-
-- (void)initialBind {
-
-    // 监听账号属性改变， 把他们合成一个信号
-    _enableLoginSignal = [RACSubject combineLatest:@[RACObserve(self.account, account), RACObserve(self.account, pwd)] reduce:^id(NSString *accout, NSString *pwd){
-        
-        return @(accout.length && pwd.length);
-    }];
-    
-    // 处理业务逻辑
-    _LoginCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-        
-        NSLog(@"点击了登录");
-        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-            
-            // 模仿网络延迟
-
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                
-                // 返回登录成功 发送成功信号
-                [subscriber sendNext:@"登录成功"];
-            });
-            
-            return nil;
-        }];
-    }];
-    
-    
-    // 监听登录产生的数据
-    [_LoginCommand.executionSignals.switchToLatest subscribeNext:^(id x) {
-       
-        if ([x isEqualToString:@"登录成功"]) {
-            NSLog(@"登录成功");
-        }
-        
-    }];
-    
-    [[_LoginCommand.executing skip:1] subscribeNext:^(id x) {
-        
-        if ([x isEqualToNumber:@(YES)]) {
-            
-            NSLog(@"正在登陆...");
-        } else {
-            
-        // 登录成功
-        NSLog(@"登陆成功");
-        
-        }
-        
-    }];
-}
-
-#pragma mark - lazyLoad
-
-- (Account *)account
-{
-    if (_account == nil) {
-        _account = [[Account alloc] init];
-    }
-    return _account;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-}
-
-@end
-
-```
-
-# 实战二：网络请求数据
-
-#### 需求
-1. 请求一段网络数据，将请求到的数据在`tableView`上展示
-2. 该数据为豆瓣图书的搜索返回结果，URL：url:https://api.douban.com/v2/book/search?q=悟空传
-
-#### 分析
-1. 界面的所有业务逻辑都交给**控制器**做处理
-2. 网络请求交给**MV**模型处理
-
-#### 步骤
-
-1. 控制器提供一个视图模型（requesViewModel），处理界面的业务逻辑
-2. VM提供一个命令，处理请求业务逻辑
-3. 在创建命令的block中，会把请求包装成一个信号，等请求成功的时候，就会把数据传递出去。
-4. 请求数据成功，应该把字典转换成模型，保存到视图模型中，控制器想用就直接从视图模型中获取。
-
-#### 其他
-
-网络请求与图片缓存用到了[AFNetworking](https://github.com/AFNetworking/AFNetworking) 和 [SDWebImage](https://github.com/rs/SDWebImage),自行在Pods中导入。
-
-```
-platform :ios, '8.0'
-
-target 'ReactiveCocoa进阶' do
-
-use_frameworks!
-pod 'ReactiveCocoa', '~> 2.5'
-pod 'AFNetworking'
-pod 'SDWebImage'
-end
-```
-
-#### 运行效果
-
-![](https://ww3.sinaimg.cn/large/006y8lVagw1fbgw1xnz74j30bj0l4408.jpg)
-
-
-#### 代码
-
-`SearchViewController.m`
-
-```
-#import "SearchViewController.h"
-#import "RequestViewModel.h"
-
-@interface SearchViewController ()<UITableViewDataSource>
-
-@property (nonatomic, strong) UITableView *tableView;
-
-@property (nonatomic, strong) RequestViewModel *requesViewModel;
-
-@end
-
-@implementation SearchViewController
-
-- (RequestViewModel *)requesViewModel
-{
-    if (_requesViewModel == nil) {
-        _requesViewModel = [[RequestViewModel alloc] init];
-    }
-    return _requesViewModel;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
-    
-    self.tableView.dataSource = self;
-    
-    [self.view addSubview:self.tableView];
-    
-    //
-    RACSignal *requesSiganl = [self.requesViewModel.reuqesCommand execute:nil];
-    
-    [requesSiganl subscribeNext:^(NSArray *x) {
-        
-        self.requesViewModel.models = x;
-        
-        [self.tableView reloadData];
-    }];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.requesViewModel.models.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *ID = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-    }
-    
-    Book *book = self.requesViewModel.models[indexPath.row];
-    cell.detailTextLabel.text = book.subtitle;
-    cell.textLabel.text = book.title;
-    
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:book.image] placeholderImage:[UIImage imageNamed:@"cellImage"]];
-    
-    
-    return cell;
-}
-@end
-```
-
-`RequestViewModel.h`
-
-```
-#import <Foundation/Foundation.h>
-
-@interface Book : NSObject
-
-@property (nonatomic, copy) NSString *subtitle;
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *image;
-
-@end
-
-@interface RequestViewModel : NSObject
-
-// 请求命令
-@property (nonatomic, strong, readonly) RACCommand *reuqesCommand;
-
-//模型数组
-@property (nonatomic, strong) NSArray *models;
-
-
-@end
-```
-
-`RequestViewModel.m`
-
-```
-#import "RequestViewModel.h"
-
-@implementation Book
-
-- (instancetype)initWithValue:(NSDictionary *)value {
-    
-    if (self = [super init]) {
-        
-        self.title = value[@"title"];
-        self.subtitle = value[@"subtitle"];
-        self.image = value[@"image"];
-    }
-    return self;
-}
-
-+ (Book *)bookWithDict:(NSDictionary *)value {
-    
-    return [[self alloc] initWithValue:value];
-}
-
-
-
-@end
-
-@implementation RequestViewModel
-
-- (instancetype)init
-{
-    if (self = [super init]) {
-        
-        [self initialBind];
-    }
-    return self;
-}
-
-
-- (void)initialBind
-{
-    _reuqesCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-        
-      RACSignal *requestSiganl = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-          
-          NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-          parameters[@"q"] = @"悟空传";
-          
-          //
-          [[AFHTTPSessionManager manager] GET:@"https://api.douban.com/v2/book/search" parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
-              
-              NSLog(@"downloadProgress: %@", downloadProgress);
-          } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-              
-              // 数据请求成功就讲数据发送出去
-              NSLog(@"responseObject:%@", responseObject);
-              
-              [subscriber sendNext:responseObject];
-              
-              [subscriber sendCompleted];
-              
-          } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-              
-              NSLog(@"error: %@", error);
-          }];
-          
-          
-         return nil;
-      }];
-        
-        // 在返回数据信号时，把数据中的字典映射成模型信号，传递出去
-        return [requestSiganl map:^id(NSDictionary *value) {
-            
-            NSMutableArray *dictArr = value[@"books"];
-            
-            NSArray *modelArr = [[dictArr.rac_sequence map:^id(id value) {
-                
-                return [Book bookWithDict:value];
-                
-            }] array];
-            
-            return modelArr;
-            
-        }];
-        
-    }];
-}
-
-
-@end
-
-```
-
->最后附上GitHub：<https://github.com/qiubaiying/ReactiveCocoa_Demo>
+- 这部分内存空间将全部移除。
+- JVM的参数：PermSize 和 MaxPermSize 会被忽略并给出警告（如果在启用时设置了这两个参数）。
+
+# 二、元空间
+
+随着JDK8的到来，JVM不再有PermGen。但类的元数据信息（metadata）还在，只不过不再是存储在连续的堆空间上，而是移动到叫做“Metaspace”的本地内存（Native memory）中。
+
+#### 2.1、metaspace的组成
+
+- Klass Metaspace:Klass Metaspace就是用来存klass的，klass是我们熟知的class文件在jvm里的运行时数据结构，不过有点要提的是我们看到的类似A.class其实是存在heap里的，是java.lang.Class的一个对象实例。这块内存是紧接着Heap的，和我们之前的perm一样，这块内存大小可通过-XX:CompressedClassSpaceSize参数来控制，这个参数前面提到了默认是1G，但是这块内存也可以没有，假如没有开启压缩指针就不会有这块内存，这种情况下klass都会存在NoKlass Metaspace里，另外如果我们把-Xmx设置大于32G的话，其实也是没有这块内存的，因为会这么大内存会关闭压缩指针开关。还有就是这块内存最多只会存在一块。
+- NoKlass Metaspace:NoKlass Metaspace专门来存klass相关的其他的内容，比如method，constantPool等，这块内存是由多块内存组合起来的，所以可以认为是不连续的内存块组成的。这块内存是必须的，虽然叫做NoKlass Metaspace，但是也其实可以存klass的内容，上面已经提到了对应场景。
+
+Klass Metaspace和NoKlass Mestaspace都是所有classloader共享的，所以类加载器们要分配内存，但是每个类加载器都有一个SpaceManager，来管理属于这个类加载的内存小块。如果Klass Metaspace用完了，那就会OOM了，不过一般情况下不会，NoKlass Mestaspace是由一块块内存慢慢组合起来的，在没有达到限制条件的情况下，会不断加长这条链，让它可以持续工作。
+
+元空间的本质和永久代类似，都是对JVM规范中方法区的实现。不过元空间与永久代之间最大的区别在于：元空间并不在虚拟机中，而是使用本地内存。因此，默认情况下，元空间的大小仅受本地内存限制，但可以通过以下参数来指定元空间的大小：　
+-XX:MetaspaceSize，初始空间大小，达到该值就会触发垃圾收集进行类型卸载，同时GC会对该值进行调整：如果释放了大量的空间，就适当降低该值；如果释放了很少的空间，那么在不超过MaxMetaspaceSize时，适当提高该值。 
+-XX:MaxMetaspaceSize，最大空间，默认是没有限制的。 
+除了上面两个指定大小的选项以外，还有两个与 GC 相关的属性： -XX:MinMetaspaceFreeRatio，在GC之后，最小的Metaspace剩余空间容量的百分比，减少为分配空间所导致的垃圾收集 
+-XX:MaxMetaspaceFreeRatio，在GC之后，最大的Metaspace剩余空间容量的百分比，减少为释放空间所导致的垃圾收集
+
+　　-verbose参数是为了获取类型加载和卸载的信息
+#### 2.2、元空间的特点
+
+
+- 充分利用了Java语言规范中的好处：类及相关的元数据的生命周期与类加载器的一致。
+- 每个加载器有专门的存储空间
+- 只进行线性分配
+- 不会单独回收某个类
+- 省掉了GC扫描及压缩的时间
+- 元空间里的对象的位置是固定的
+- 如果GC发现某个类加载器不再存活了，会把相关的空间整个回收掉
+
+#### 2.3、元空间的内存分配模型
+
+- 绝大多数的类元数据的空间都从本地内存中分配
+- 用来描述类元数据的类(klasses)也被删除了
+- 分元数据分配了多个虚拟内存空间
+- 给每个类加载器分配一个内存块的列表。块的大小取决于类加载器的类型; sun/反射/代理对应的类加载器的块会小一些
+- 归还内存块，释放内存块列表
+- 一旦元空间的数据被清空了，虚拟内存的空间会被回收掉
+- 减少碎片的策略
+
+我们来看下JVM是如何给元数据分配虚拟内存的空间的
+
+你可以看到虚拟内存空间是如何分配的(vs1,vs2,vs3) ，以及类加载器的内存块是如何分配的。CL是Class Loader的缩写。
+
+**理解_mark和_klass指针**
+
+要想理解下面这张图，你得搞清楚这些指针都是什么东西。
+
+JVM中，每个对象都有一个指向它自身类的指针，不过这个指针只是指向具体的实现类，而不是接口或者抽象类。
+
+对于32位的JVM:
+
+_mark : 4字节常量
+
+_klass: 指向类的4字节指针 对象的内存布局中的第二个字段( _klass，在32位JVM中，相对对象在内存中的位置的偏移量是4，64位的是8)指向的是内存中对象的类定义。
+
+64位的JVM：
+
+_mark : 8字节常量
+
+_klass: 指向类的8字节的指针
+
+开启了指针压缩的64位JVM： _mark : 8字节常量
+
+_klass: 指向类的4字节的指针
+
+**Java对象的内存布局**
+
+![Java对象的内存布局](https://images2018.cnblogs.com/blog/285763/201803/285763-20180306173026502-1011531412.png)
+
+类指针压缩空间（Compressed Class Pointer Space）
+
+只有是64位平台上启用了类指针压缩才会存在这个区域。对于64位平台，为了压缩JVM对象中的_klass指针的大小，引入了类指针压缩空间（Compressed Class Pointer Space）。
+
+**压缩指针后的内存布局**
+
+![压缩指针后的内存布局](https://images2018.cnblogs.com/blog/285763/201803/285763-20180306173134936-1569355422.png)
+
+**指针压缩概要**
+
+- 64位平台上默认打开
+
+- 使用-XX:+UseCompressedOops压缩对象指针 "oops"指的是普通对象指针("ordinary" object pointers)。 Java堆中对象指针会被压缩成32位。 使用堆基地址（如果堆在低26G内存中的话，基地址为0）
+
+- 使用-XX:+UseCompressedClassPointers选项来压缩类指针
+
+- 对象中指向类元数据的指针会被压缩成32位
+
+- 类指针压缩空间会有一个基地址
+
+**元空间和类指针压缩空间的区别**
+
+- 类指针压缩空间只包含类的元数据，比如InstanceKlass, ArrayKlass 仅当打开了UseCompressedClassPointers选项才生效 为了提高性能，Java中的虚方法表也存放到这里 这里到底存放哪些元数据的类型，目前仍在减少
+
+- 元空间包含类的其它比较大的元数据，比如方法，字节码，常量池等。
+
+# 三、元空间内存管理  
+元空间的内存管理由元空间虚拟机来完成。先前，对于类的元数据我们需要不同的垃圾回收器进行处理，现在只需要执行元空间虚拟机的C++代码即可完成。在元空间中，类和其元数据的生命周期和其对应的类加载器是相同的。话句话说，只要类加载器存活，其加载的类的元数据也是存活的，因而不会被回收掉。 
+
+准确的来说，每一个类加载器的存储区域都称作一个元空间，所有的元空间合在一起就是我们一直说的元空间。当一个类加载器被垃圾回收器标记为不再存活，其对应的元空间会被回收。在元空间的回收过程中没有重定位和压缩等操作。但是元空间内的元数据会进行扫描来确定Java引用。 
+
+元空间虚拟机负责元空间的分配，其采用的形式为组块分配。组块的大小因类加载器的类型而异。在元空间虚拟机中存在一个全局的空闲组块列表。当一个类加载器需要组块时，它就会从这个全局的组块列表中获取并维持一个自己的组块列表。当一个类加载器不再存活，那么其持有的组块将会被释放，并返回给全局组块列表。类加载器持有的组块又会被分成多个块，每一个块存储一个单元的元信息。组块中的块是线性分配（指针碰撞分配形式）。组块分配自内存映射区域。这些全局的虚拟内存映射区域以链表形式连接，一旦某个虚拟内存映射区域清空，这部分内存就会返回给操作系统。
+
+上图展示的是虚拟内存映射区域如何进行元组块的分配。类加载器1和3表明使用了反射或者为匿名类加载器，他们使用了特定大小组块。 而类加载器2和4根据其内部条目的数量使用小型或者中型的组块。
+
+# 四、Metaspace调优
+使用-XX:MaxMetaspaceSize参数可以设置元空间的最大值，默认是没有上限的，也就是说你的系统内存上限是多少它就是多少。-XX:MetaspaceSize选项指定的是元空间的初始大小，如果没有指定的话，元空间会根据应用程序运行时的需要动态地调整大小。
+
+**MaxMetaspaceSize的调优**
+
+- -XX:MaxMetaspaceSize={unlimited}
+- 元空间的大小受限于你机器的内存
+- 限制类的元数据使用的内存大小，以免出现虚拟内存切换以及本地内存分配失败。如果怀疑有类加载器出现泄露，应当使用这个参数；32位机器上，如果地址空间可能会被耗尽，也应当设置这个参数。
+- 元空间的初始大小是21M——这是GC的初始的高水位线，超过这个大小会进行Full GC来进行类的回收。
+- 如果启动后GC过于频繁，请将该值设置得大一些
+- 可以设置成和持久代一样的大小，以便推迟GC的执行时间
+
+**CompressedClassSpaceSize的调优**
+
+- 只有当-XX:+UseCompressedClassPointers开启了才有效
+- -XX:CompressedClassSpaceSize=1G
+- 由于这个大小在启动的时候就固定了的，因此最好设置得大点。
+- 没有使用到的话不要进行设置
+- JVM后续可能会让这个区可以动态的增长。不需要是连续的区域，只要从基地址可达就行；可能会将更多的类元信息放回到元空间中；未来会基于PredictedLoadedClassCount的值来自动的设置该空间的大小
+
+正如前面提到了，Metaspace VM管理Metaspace空间的增长。但有时你会想通过在命令行显示的设置参数-XX:MaxMetaspaceSize来限制Metaspace空间的增长。默认情况下，-XX:MaxMetaspaceSize并没有限制，因此，在技术上，Metaspace的尺寸可以增长到交换空间，而你的本地内存分配将会失败。
+
+每次垃圾收集之后，Metaspace VM会自动的调整high watermark，推迟下一次对Metaspace的垃圾收集。
+
+这两个参数，-XX：MinMetaspaceFreeRatio和-XX：MaxMetaspaceFreeRatio,类似于GC的FreeRatio参数，可以放在命令行。
+# 五、Metaspace可以使用的工具
+针对Metaspace，JDK自带的一些工具做了修改来展示Metaspace的信息：
+
+- jmap -clstats :打印类加载器的统计信息(取代了在JDK8之前打印类加载器信息的permstat)。
+- jstat -gc :Metaspace的信息也会被打印出来。
+- jcmd GC.class_stats:这是一个新的诊断命令，可以使用户连接到存活的JVM，转储Java类元数据的详细统计。
+# 六、提高GC的性能
+
+如果你理解了元空间的概念，很容易发现GC的性能得到了提升。
+
+- Full GC中，元数据指向元数据的那些指针都不用再扫描了。很多复杂的元数据扫描的代码（尤其是CMS里面的那些）都删除了。
+- 元空间只有少量的指针指向Java堆。这包括：类的元数据中指向java/lang/Class实例的指针;数组类的元数据中，指向java/lang/Class集合的指针。
+- 没有元数据压缩的开销
+- 减少了根对象的扫描（不再扫描虚拟机里面的已加载类的字典以及其它的内部哈希表）
+- 减少了Full GC的时间
+- G1回收器中，并发标记阶段完成后可以进行类的卸载
+
+java8中metaspace总结如下：
+
+**PermGen 空间的状况**
+
+这部分内存空间将全部移除。
+
+JVM的参数：PermSize 和 MaxPermSize 会被忽略并给出警告（如果在启用时设置了这两个参数）。
+
+**Metaspace 内存分配模型**
+
+大部分类元数据都在本地内存中分配。
+
+用于描述类元数据的“klasses”已经被移除。
+
+**Metaspace 容量**
+
+默认情况下，类元数据只受可用的本地内存限制（容量取决于是32位或是64位操作系统的可用虚拟内存大小）。
+
+新参数（MaxMetaspaceSize）用于限制本地内存分配给类元数据的大小。如果没有指定这个参数，元空间会在运行时根据需要动态调整。
+
+**Metaspace 垃圾回收**
+
+对于僵死的类及类加载器的垃圾回收将在元数据使用达到“MaxMetaspaceSize”参数的设定值时进行。
+
+适时地监控和调整元空间对于减小垃圾回收频率和减少延时是很有必要的。持续的元空间垃圾回收说明，可能存在类、类加载器导致的内存泄漏或是大小设置不合适。
+# 七、元空间的问题
+
+前面已经提到，元空间虚拟机采用了组块分配的形式，同时区块的大小由类加载器类型决定。类信息并不是固定大小，因此有可能分配的空闲区块和类需要的区块大小不同，这种情况下可能导致碎片存在。元空间虚拟机目前并不支持压缩操作，所以碎片化是目前最大的问题。
