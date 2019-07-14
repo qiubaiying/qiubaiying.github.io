@@ -6,8 +6,8 @@ email: chrisliu1314@gmail.com
 description: "人生的乐趣在于满足感或者成就感"
 keyword: "Chris的博客，Java"
 url: "https://brownlincoln.github.io/"          # your host, for absolute URL
-baseurl: "/post"      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/brownlincoln/post.git" # you code repository
+baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+github_repo: "https://github.com/brownlincoln/brownlincoln.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
