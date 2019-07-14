@@ -1,10 +1,10 @@
 # Site settings
-title: Chris Blog
-SEOTitle: Chris的博客 | BY Chris
+title: Brown Blog
+SEOTitle: Brown的博客 | BY Brown
 header-img: img/post-bg-desk.jpg
 email: chrisliu1314@gmail.com
 description: "人生的乐趣在于满足感或者成就感"
-keyword: "Chris的博客，Java"
+keyword: "Brown的博客，Java"
 url: "https://brownlincoln.github.io/"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/brownlincoln/brownlincoln.github.io.git" # you code repository
