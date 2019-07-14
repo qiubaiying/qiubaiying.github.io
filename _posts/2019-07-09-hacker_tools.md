@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      一些工具
-subtitle:   一些关于hacker
+subtitle:   一些关于hack的硬件工具
 date:       2019-07-09
 author:     MHYCDH
 header-img: img/bizhi01.jpg
