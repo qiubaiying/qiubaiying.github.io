@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+<div>
+        <input id="query" type="text" placeholder="正则搜索标题、标签、URL和内容・ω・"/>
+        <button id="searchBut" type="submit" onclick="getXMLHttp()">GO</button>
+</div>
+<div id="result"></div>
+
+<script type="text/javascript">
+    function startSearch(searchPattern,ajaxResult){
+        var output="";
+        var reg = new RegExp(searchPattern,"im");
+        var dataJson = eval("(" + ajaxResult + ")");    
+        
+        for (var i=0;i<dataJson.length;i++){
+            var title = dataJson[i].title;
+            var tags = dataJson[i].tags;
+            var url = dataJson[i].url;
+            var content = dataJson[i].content;
+            if (reg.test(title+tags+url+content)){
+                var item = '';
+                item = "<h3><a href='"+url+"'>" + title + "</a></h3><p>标签： " + tags + "</p><p>" + content.substr(0,254) + " ...</p>";
+                output += item;
+            }
+        }
+        if (output === ""){
+            output="Not found...";
+        }
+        document.getElementById("result").innerHTML=output;    
+        
+    }
+    function getXMLHttp(){
+        var searchPattern = "";  
+        searchPattern = document.getElementById("query").value;
+        if (searchPattern === ""){
+            return;
+        }
+        
+        if (window.XMLHttpRequest){
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        }else{
+            // code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function(){
+            if (xmlhttp.readyState==4 && xmlhttp.status==200){
+                startSearch(searchPattern,xmlhttp.responseText);
+            }
+        }
+        xmlhttp.open("GET","/search.json",true);
+        xmlhttp.send();
+        xmlhttp.onerror = function(data){console.log("ajax errrorr")};
+    }
+</script>
