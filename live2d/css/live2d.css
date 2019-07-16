@@ -1,9 +1,9 @@
 #landlord {
     user-select: none;
     position: fixed;
-    left: 25px;
+    left: 20px;
     bottom: 0;
-    width: 2450px;
+    width: 245px;
     height: 250px;
     z-index: 10000;
     font-size: 0;
@@ -20,7 +20,7 @@
     height: auto;
     margin: auto;
     padding: 7px;
-    top: -80px;
+    top: -70px;
     left: -10px;
     text-align: center;
     border: 1px solid rgba(255,137,255,.4);
