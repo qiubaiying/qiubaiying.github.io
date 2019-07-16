@@ -83,7 +83,7 @@ layout: default
 
 
                 <!--Gitalk评论start  -->
-                <!--{% if site.gitalk.enable %}-->
+                {% if site.gitalk.enable %}
                 <!-- 引入Gitalk评论插件  -->
                 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
                 <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
@@ -103,7 +103,7 @@ layout: default
                     });
                     gitalk.render('gitalk-container');
                 </script>
-                <!--{% endif %}-->
+                {% endif %}
                 <!-- Gitalk end -->
 
                 {% if site.disqus_username %}
