@@ -62,8 +62,8 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: 5341ecec492e6b037146                            #生成的clientID
-  clientSecret: 16422e31b30c5cbfca1ab1cbd8949a1032dcd118    #生成的clientSecret
+  clientID: 3cf47485f010485d746a                            #生成的clientID
+  clientSecret: 0e8b20b06355feed53a639d4f342bc3eaef20a62    #生成的clientSecret
   repo: lemonwh.github.io    #仓库名称
   owner: lemonwh    #github用户名
   admin: lemonwh
