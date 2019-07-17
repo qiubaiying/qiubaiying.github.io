@@ -1,5 +1,5 @@
 # Site settings
-title: BY Blog
+title: XuWei's Blog
 SEOTitle: 许威的博客 | Blog
 header-img: img/post-bg-desk.jpg
 email: my@gmail.com
@@ -57,7 +57,7 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
-# disqus_username: xuweiDD
+disqus_username: xuweiDD
 
 # Gitalk
 gitalk:
