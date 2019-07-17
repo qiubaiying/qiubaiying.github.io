@@ -6,6 +6,10 @@ description: "hack everything for protect our lovely people."
 
 
 {% for post in paginator.posts %}
+<body>
+
+<div id="container">
+    
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">
@@ -19,12 +23,18 @@ description: "hack everything for protect our lovely people."
         <div class="post-content-preview">
             {{ post.content | strip_html | truncate:200 }}
         </div>
+        
+        </div>
+    
     </a>
     <p class="post-meta">
         Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
     </p>
 </div>
 <hr>
+    
+</body>
+
 {% endfor %}
 
 
@@ -68,11 +78,7 @@ description: "hack everything for protect our lovely people."
             height: 100%;
         }
     </style>
-<body>
-    <div id="container">
-        background-image透明，背景图片透明，这些字并不会透明
-    </div>
-</body>
+
 
 
 
