@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      一些工具
+title:      工具_零件
 subtitle:   一些关于hack的硬件工具
 date:       2019-07-09
 author:     MHYCDH
