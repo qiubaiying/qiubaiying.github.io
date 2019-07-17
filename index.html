@@ -19,6 +19,9 @@ description: "hack everything for protect our lovely people."
         <center><h3 class="post-subtitle">
             {{ post.subtitle }}
             </h3></center>
+        
+        </div>
+        
         {% endif %}
         <div class="post-content-preview">
             {{ post.content | strip_html | truncate:200 }}
@@ -29,8 +32,6 @@ description: "hack everything for protect our lovely people."
     </p>
 </div>
 <hr>
-    
-</div>
     
 </body>
 
@@ -83,9 +84,6 @@ description: "hack everything for protect our lovely people."
 
 <!-- Pager -->
 {% if paginator.total_pages > 1 %}
-<body>
-
-<div id="container">
     
 <ul class="pager">
     {% if paginator.previous_page %}
@@ -99,10 +97,7 @@ description: "hack everything for protect our lovely people."
     </li>
     {% endif %}
 </ul>
-    
-</div>
-    
-</body>
+
 {% endif %}
 
 
