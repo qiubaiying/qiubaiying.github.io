@@ -6,6 +6,7 @@ description: "hack everything for protect our lovely people."
 
 
 {% for post in paginator.posts %}
+
 <body>
 
 <div id="container">
@@ -19,26 +20,26 @@ description: "hack everything for protect our lovely people."
         
         {% if post.subtitle %}   
         <center><p style="color:#A9A9A9";>
-            <h5 class="post-subtitle">
+            <h4 class="post-subtitle">
             {{ post.subtitle }}
-            </h5></p>
+            </h4></p>
         </center>            
-            
-        </div>
-        
+
         {% endif %} 
         <div class="post-content-preview">               
             {{ post.content | strip_html | truncate:200 }}
         </div>    
     </a>
+      
+        </div>
+    
+    </body>
+    
     <p class="post-meta">
         Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
     </p>
 </div>
 <hr>
-    
-</body>
-
 {% endfor %}
 
 
