@@ -12,26 +12,25 @@ description: "hack everything for protect our lovely people."
     
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
+        <center><h2 class="post-title">
             {{ post.title }}
-        </h2>
+        </h2></center>
         {% if post.subtitle %}
-        <h3 class="post-subtitle">
+        <center><h3 class="post-subtitle">
             {{ post.subtitle }}
-        </h3>
+            </h3></center>
         {% endif %}
         <div class="post-content-preview">
             {{ post.content | strip_html | truncate:200 }}
-        </div>
-        
-        </div>
-    
+        </div>    
     </a>
     <p class="post-meta">
         Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
     </p>
 </div>
 <hr>
+    
+</div>
     
 </body>
 
@@ -84,6 +83,10 @@ description: "hack everything for protect our lovely people."
 
 <!-- Pager -->
 {% if paginator.total_pages > 1 %}
+<body>
+
+<div id="container">
+    
 <ul class="pager">
     {% if paginator.previous_page %}
     <li class="previous">
@@ -96,6 +99,10 @@ description: "hack everything for protect our lovely people."
     </li>
     {% endif %}
 </ul>
+    
+</div>
+    
+</body>
 {% endif %}
 
 
