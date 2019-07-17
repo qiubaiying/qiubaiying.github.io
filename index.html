@@ -23,8 +23,15 @@ description: "hack everything for protect our lovely people."
         </div>
         
         {% endif %}
+    
+         <body>
+    
         <div class="post-content-preview">
+            
+            <p style="color:#F5FFFA";>
+                
             {{ post.content | strip_html | truncate:200 }}
+             </p></body>
         </div>    
     </a>
     <p class="post-meta">
