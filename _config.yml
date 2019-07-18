@@ -2,7 +2,7 @@
 title: XuWei's Blog
 SEOTitle: 许威的博客 | Blog
 header-img: img/post-bg-desk.jpg
-email: my@gmail.com
+email: helloWold@gmail.com
 description: "Every failure is leading towards success."
 keyword: "Blog, 许威的博客, xuwei, 许威, Java"
 url: "http://xuengineer.github.io"          # your host, for absolute URL
@@ -98,11 +98,8 @@ service-worker: true
 
 # Friends
 friends: [
-   {
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+    {
+        title: "Java",
+        href: "https://www.java.com"
     }
 ]
