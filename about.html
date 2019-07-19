@@ -114,7 +114,7 @@ header-img: "img/wade.jpg"
         owner: 'Demmon-tju',
         admin: ['Demmon-tju'],
         distractionFreeMode: true,
-        id: 'about'
+        id: md5(location.pathname),
     });
     gitalk.render('gitalk-container');
 </script>
