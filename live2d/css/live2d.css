@@ -1,10 +1,10 @@
 #landlord {
     user-select: none;
     position: fixed;
-    left: 20px;
+    left: 10px;
     bottom: 0;
-    width: 245px;
-    height: 250px;
+    width: 235px;
+    height: 240px;
     z-index: 10000;
     font-size: 0;
     transition: all .3s ease-in-out;
