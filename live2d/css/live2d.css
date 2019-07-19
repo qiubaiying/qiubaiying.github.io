@@ -1,7 +1,7 @@
 #landlord {
     user-select: none;
-    position: fixed;
-    left: 15px;
+    position: right bottom;
+    left: 20px;
     bottom: 0;
     width: 245px;
     height: 250px;
