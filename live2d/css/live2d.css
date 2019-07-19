@@ -1,9 +1,9 @@
 #landlord {
     user-select: none;
     position: fixed;
-    left: 30px;
+    left: 15px;
     bottom: 0;
-    width: 235px;
+    width: 245px;
     height: 250px;
     z-index: 10000;
     font-size: 0;
@@ -16,7 +16,7 @@
 
 .message {
     opacity: 0;
-    width: 280px;
+    width: 270px;
     height: auto;
     margin: auto;
     padding: 7px;
