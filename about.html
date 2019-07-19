@@ -107,13 +107,14 @@ header-img: "img/wade.jpg"
 <div id="gitalk-container"></div>
     <script type="text/javascript">
     var gitalk = new Gitalk({
-    clientID: '9a78f5bd6246c2baf3bc',
-    clientSecret: 'e5b584a5928d4c26b568be1939fc0bb39fc4cb8a',
-    repo: 'Demmon-tju.github.io',
-    owner: 'Demmon-tju',
-    admin: ['Demmon-tju'],
-    distractionFreeMode: {{site.gitalk.distractionFreeMode}},
-    id: 'about',
+        enable: true,
+        clientID: '9a78f5bd6246c2baf3bc',
+        clientSecret: 'e5b584a5928d4c26b568be1939fc0bb39fc4cb8a',
+        repo: 'Demmon-tju.github.io',
+        owner: 'Demmon-tju',
+        admin: ['Demmon-tju'],
+        distractionFreeMode: true,
+        id: 'about'
     });
     gitalk.render('gitalk-container');
 </script>
