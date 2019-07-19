@@ -4,7 +4,7 @@
     left: 20px;
     bottom: 0;
     width: 245px;
-    height: 260px;
+    height: 245px;
     z-index: 10000;
     font-size: 0;
     transition: all .3s ease-in-out;
@@ -20,15 +20,15 @@
     height: auto;
     margin: auto;
     padding: 7px;
-    top: -75px;
-    left: 0px;
+    top: -65px;
+    left: -10px;
     text-align: center;
     border: 1px solid rgba(255,137,255,.4);
     border-radius: 12px;
     background-color: rgba(255,137,255,.2);
     box-shadow: 0 3px 15px 2px rgba(255,137,255,.4);
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 375;
     text-overflow: ellipsis;
     text-transform: uppercase;
     overflow: hidden;
