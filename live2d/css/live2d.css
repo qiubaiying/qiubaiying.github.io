@@ -3,8 +3,8 @@
     position: fixed;
     left: 20px;
     bottom: 0;
-    width: 230px;
-    height: 245px;
+    width: 245px;
+    height: 250px;
     z-index: 10000;
     font-size: 0;
     transition: all .3s ease-in-out;
@@ -16,7 +16,7 @@
 
 .message {
     opacity: 0;
-    width: 270px;
+    width: 280px;
     height: auto;
     margin: auto;
     padding: 7px;
