@@ -7,7 +7,7 @@
     "layout":{
         "center_x":0.0,
         "center_y":-0.05,
-        "width":1.8
+        "width":2.0
     },
     "hit_areas_custom":{
         "head_x":[-0.35, 0.6],
