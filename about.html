@@ -98,8 +98,8 @@ header-img: "img/wade.jpg"
 </script>
 
 
-<!-- Gitalk 评论 start  -->
-{% if site.gitalk.enable %}
+<!-- Gitalk 评论 start {% if site.gitalk.enable %}  -->
+
 <!-- Gitalk link  -->
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
@@ -114,12 +114,12 @@ header-img: "img/wade.jpg"
         owner: 'Demmon-tju',
         admin: ['Demmon-tju'],
         distractionFreeMode: true,
-        id: md5(location.pathname),
+        id: 'about',
     });
     gitalk.render('gitalk-container');
 </script>
-{% endif %}
-<!-- Gitalk end -->
+
+<!-- Gitalk end {% endif %} -->
 
  <!-- disqus 评论框 start  -->
 {% if site.disqus.enable %}
