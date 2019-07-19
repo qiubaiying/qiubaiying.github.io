@@ -62,8 +62,8 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: 9a78f5bd6246c2baf3bc                           #生成的clientID
-  clientSecret: e5b584a5928d4c26b568be1939fc0bb39fc4cb8a    #生成的clientSecret
+  clientID: c1662352f7c2cc5f6def                           #生成的clientID
+  clientSecret: 60a508afae5bd28705822722fb2414ce7492b6e1    #生成的clientSecret
   repo: Demmon-tju.github.io    #仓库名称
   owner: Demmon-tju    #github用户名
   admin: Demmon-tju
