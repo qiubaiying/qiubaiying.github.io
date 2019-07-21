@@ -10,6 +10,7 @@ tags:
     - 机器学习
     - Andrew Ng 吴恩达 Stanford 机器学习公开课
     - Gaussian Discriminant Analysis
+    - Generative Learning
     - Naive Bayes
 ---
 
@@ -27,8 +28,6 @@ tags:
 如逻辑回归、决策树、SVM等常见算法都是直接对p(y|x;θ)进行建模，这类算法叫做判别式发算法(Discriminative learning algorithm)。以二分类的逻辑回归为例，对于给定的一组动物的特征数据，需要我们对数据进行分类：y=1代表大象、y=0代表狗。那么分类算法（如lr）要做的就是找到一个决策边界（在一维空间就是一条线），之后对于一条数据，根据该数据在决策边界的哪一边，来判断该动物是狗还是大象。
 
 Discriminative learning algorithm的重点在于找到一个映射mapping，从x->y的映射，这样可以根据特征x判断类别y。
-
-![](https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/404-bg.sjpg)
 
 ### 生成式学习 Generative Learning algorithm
 
@@ -84,7 +83,7 @@ Gaussian discrim- inant analysis (GDA)高斯判别分析就是生成式算法的
 
 ![gda_3](https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/gda_3.png)
 
-通过最大化似然估计，可以推导出各个参数的估计为：这里只给出结果，如果想了解具体推导过程，请参考<链接>
+通过最大化似然估计，可以推导出各个参数的估计为：这里只给出结果，如果想了解具体推导过程，请参考[博客](https://www.cnblogs.com/jcchen1987/p/4424436.html)。
 
 ![gda_4](https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/gda_4.png)
 
@@ -95,6 +94,8 @@ Gaussian discrim- inant analysis (GDA)高斯判别分析就是生成式算法的
 图中圆圈代表正样本，叉号代表负样本，直线p(y = 1|x) = 0.5代表分类边界(decision boundary)。因为Σ相同所以两个形状相同，但是具有不同的μ 。
 
 ### 1.3  高斯判别分析 VS 逻辑回归
+
+>逻辑回归LR请参考我的另一篇[文章](https://github.com/Demmon-tju/spark-ml-source-mark/blob/master/ml/classification/logistic%20regression/Logistic%20Regression%20逻辑回归.md)
 
 首先说结论：对于GDA的概率分布p(y = 1|x; φ, μ0, μ1, Σ)，如果将其看作针对变量x的函数的话，那么p可以表示成逻辑函数的形式：其中θ是φ,Σ,μ0,μ1的函数。
 
@@ -163,3 +164,9 @@ Gaussian discrim- inant analysis (GDA)高斯判别分析就是生成式算法的
 ![nb_formula_6_20190719](https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/nb_formula_6_20190719.png)
 
 
+### 参考
+
+- [GDA数学推导](https://www.cnblogs.com/jcchen1987/p/4424436.html)
+- [网易公开课](http://open.163.com/movie/2008/1/M/C/M6SGF6VB4_M6SGHFBMC.html?frm=record )
+- [课程主页](http://cs229.stanford.edu/)
+- [课程笔记](https://yunlongs-1253041399.cos.ap-chengdu.myqcloud.com/Books/cs229-notes2.pdf)
