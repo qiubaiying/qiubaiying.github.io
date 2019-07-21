@@ -35,7 +35,7 @@ Discriminative learning algorithm的重点在于找到一个映射mapping，从x
 
 那么，那么用特征分布来对样本分类呢，答案是贝叶斯定理（Bayes rule）。根据贝叶斯rule：
 
-![bayes_rule_20190719](img/bayes_rule_20190719.png)
+![bayes_rule_20190719](https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/bayes_rule_20190719.png)
 
 其中p(y)叫做先验分布（class priors），根据概率公式不难得出p(x) = p(x|y = 1)p(y = 1) + p(x|y = 0)p(y = 0)，但其实预测分类的时候，根本用不到p(x)，因为对于某个样本来说，不非是比较p(y=0|x)和p(y=1|x)的大小，根据大小判断样本所属类别，其中p(x)是比较项的公共分母，因此可以直接去掉，不影响大小关系。用公式表达就是：
 
