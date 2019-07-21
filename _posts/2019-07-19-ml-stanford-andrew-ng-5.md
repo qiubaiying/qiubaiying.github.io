@@ -4,7 +4,7 @@ title:      Andrew Ng Stanford机器学习公开课 总结（5）
 subtitle:   Lecture 5 高斯判别分析和朴素贝叶斯
 date:       2019-07-19
 author:     ZhangWenXiang
-header-img: img/bg-andrew-ng.jpg
+header-img: img/bg-andrew-ng.jpeg
 catalog: true
 tags:
     - 机器学习
