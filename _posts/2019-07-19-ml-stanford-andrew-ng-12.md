@@ -111,6 +111,13 @@ EM算法是一种迭代式算法，主要包含两个步骤：
 
 假设存在一组包含m个样本训练集合{x(1), . . . , x(m)}，引入一个latent变量之后，其似然函数为：
 
+<p align="center">
+	<img src="https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lecture_12_em_formula_1_20190719.png" alt="Sample"  width="250" height="140">
+	<p align="center">
+		<em>lecture_12_em_formula_1_20190719</em>
+	</p>
+</p>
+
 ![lecture_12_em_formula_1_20190719](https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lecture_12_em_formula_1_20190719.png)
 
 因为z是latent的，所以极大似然估计无法求解。在这种情况下，EM算法的思路是：无法确定l(θ) ，那么就(E-Step)构造l(θ) 的下界(lower-bound)函数，之后(M-Step)对下界(lower-bound)函数进行最优化。下面直观理解一下为什么采用下界函数：
