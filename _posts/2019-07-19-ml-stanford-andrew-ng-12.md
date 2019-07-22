@@ -84,7 +84,7 @@ EM算法是一种迭代式算法，主要包含两个步骤：
 
 ![lecture_12_mg_formula_5_20190719](https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lecture_12_mg_formula_5_20190719.png)
 
-其中p(x(i)|z(i) = j;μ,Σ)根据高斯密度函数估计。w(i)表示对在（i）的一种软估计(soft guesses)。在M-Step知道了z(i)的值，就可以类似高斯判别分析的方法计算更新模型参数了，只不过其中的指示函数I{z(i) = j}变成了wj(i)。
+其中p(x(i)\|z(i) = j;μ,Σ)根据高斯密度函数估计。w(i)表示对在（i）的一种软估计(soft guesses)。在M-Step知道了z(i)的值，就可以类似高斯判别分析的方法计算更新模型参数了，只不过其中的指示函数I{z(i) = j}变成了wj(i)。
 
 与k-means对比，k-means是一种对c(i)的硬(hard)指派；而混合高斯是一种soft的指派，利用概率分布来计算wj(i)。与k-means类似，混合高斯分布也存在出现局部最优解的可能。
 
@@ -101,7 +101,7 @@ EM算法是一种迭代式算法，主要包含两个步骤：
 
 ![lecture_12_ji_formula_1_20190719](https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lecture_12_ji_formula_1_20190719.png)
 
-如果f是严格凸的，那么当且仅当X = E[X](X是常数)，等号才成立E[f(X)] = f(EX)。下面直观理解Jensen不等式：
+如果f是严格凸的，那么当且仅当X = E\[X](X是常数)，等号才成立E\[f(X)] = f(EX)。下面直观理解Jensen不等式：
 
 ![lecture_12_jensen_figure_1_20190719](https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lecture_12_jensen_figure_1_20190719.png)
 
