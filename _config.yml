@@ -1,10 +1,10 @@
 # Site settings
-title: TF Blog
-SEOTitle: TF的博客 | BY Blog
+title: xiaoxiangyuTF Blog
+SEOTitle: xiaoxiangyuTF的博客 | BY Blog
 header-img: img/post-bg-desk.jpg
 email: xiaoxiangyu717@163.com
-description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, TF的博客, xiaoxiangyuTF, xiaoxiangyuTF, iOS, Apple, iPhone"
+description: "要么读书，要么运动，要么睡觉，身体和灵魂总有一个要休息."
+keyword: "BY, BY Blog, xiaoxiangyuTF的博客, xiaoxiangyuTF, xiaoxiangyuTF"
 url: "https://xiaoxiangyutf.github.io/"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/xiaoxiangyuTF/xiaoxiangyuTF.github.io.git" # you code repository
