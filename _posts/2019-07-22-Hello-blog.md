@@ -4,7 +4,7 @@ title:      Hello Blog
 subtitle:    "\"Hello World, Hello Blog\""
 date:       2019-07-22
 author:     Panda
-header-img: /img/post-bg-2019.jpg
+header-img: img/post-bg-2019.jpg
 catalog: true
 tags:
     - 生活
