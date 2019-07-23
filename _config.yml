@@ -18,12 +18,12 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
+weibo_username:     qianshuiwoniu
 #zhihu_username:     qiubaiying
-#github_username:    qiubaiying
+github_username:    pandaduyan
 #facebook_username:  baiying.qiu.7
 #jianshu_username:   e71990ada2fd
-#twitter_username:   qiubaiying
+twitter_username:   11duyan
 
 
 
@@ -99,16 +99,16 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        title: "Panda ssr",
+        href: "https://origamissr.top/"
     },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
+        title: "YouTuBe",
+        href: "https://www.youtube.com/"
     },{
-        title: "Apple",
-        href: "https://apple.com"
+        title: "Behance",
+        href: "https://www.behance.net/"
     },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+       # title: "Apple Developer",
+        #href: "https://developer.apple.com/"
     }
 ]
