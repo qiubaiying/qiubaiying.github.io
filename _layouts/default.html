@@ -16,6 +16,9 @@
     {% include footer.html %}
 
 
+    {{ page.content | strip_html | strip_newlines | remove: " " | size }}
+                            
+    
 <!-- Image to hack wechat -->
 <img src="/img/cat-touch-ico.png" width="0" height="0" />
 <!-- Migrate from head to bottom, no longer block render and still work -->
