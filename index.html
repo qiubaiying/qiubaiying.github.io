@@ -7,6 +7,8 @@ description: "hack everything for protect our lovely people."
 
 {% for post in paginator.posts %}
 
+{{ page.content | strip_html | strip_newlines | remove: " " | size }}
+
 <body>
 
 <div id="container">
