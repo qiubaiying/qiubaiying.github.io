@@ -33,7 +33,7 @@ Look-alike技术根据具体实现的算法，可以大致分为如下集中：�
 Similarity-based是最直接的一种实现Look-alike的方法，其中主要是基于user-2-user之间的某种距离大小来衡量用户之间的相似度。主流的相似度计算方法包括：针对连续值的余弦相似度(Cosine similarity)以及针对离散值的(Jaccard similarity)：
 
 <p align="center">
- <img src="https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lookalike_formula_1_20190722.png" alt="lookalike_formula_1_20190722"  width="250" height="140">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_formula_1_20190722.png?raw=ture" alt="lookalike_formula_1_20190722"  width="250" height="100">
 </p>
 
 两个user之间的相似度计算之后，那么怎么计算某个用户对seeds整体的相似度呢？一个用户u1与seeds整体的相似度可以总很多角度来考虑：
@@ -42,7 +42,7 @@ Similarity-based是最直接的一种实现Look-alike的方法，其中主要是
 - 基于概率：该方法要求用户之间的相似度在\[0,1]之间。通过不相似度反向得到相似度。
 - - 
 <p align="center">
- <img src="https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lookalike_formula_2_20190722.png" alt="lookalike_formula_2_20190722"  width="250" height="140">
+ <img src="https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lookalike_formula_2_20190722.png" alt="lookalike_formula_2_20190722"  width="250" height="50">
 </p>
 
 **总结： Similarity-based非常简单，但是复杂度过高，很难在大规模数据集上进行。如果候选集的用户量是N，种子用户量是M，计算相似度用到的特征维度是k的话，那么这种算法的时间复杂度就是O(kMN)。**
@@ -76,13 +76,13 @@ LSH可以看作是一种简化计算similarity的方法，大体可以分为两�
 在LSH中的hash技术目的就是减少用户特征空间，同时保持原有的相似度关系。对于Jaccard相似度来说，对应的hash就是MinHash：
 
 <p align="center">
- <img src="https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lookalike_formula_3_20190722.png" alt="lookalike_formula_3_20190722"  width="250" height="140">
+ <img src="https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lookalike_formula_3_20190722.png" alt="lookalike_formula_3_20190722"  width="250" height="50">
 </p>
 
 其中，fi是用户i的K-dimensional的特征向量，x是fi中特征的index。哈希函数h(x), [h : (1, . . . , K) → R]将特征的index映射到一个随机数。而函数hmin(fi)定义为具有最小hash值的特征index，这里的hmin(fi)就叫做哈希signature。为什么这样定义MinHash呢，因为只有这样定义才满足：**两个用户的MinHash值相同的概率等于他们之间的Jaccard相似度**。证明过程在后面，这里先给出结论：
 
 <p align="center">
- <img src="https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lookalike_formula_4_20190722.png" alt="lookalike_formula_4_20190722"  width="350" height="140">
+ <img src="https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lookalike_formula_4_20190722.png" alt="lookalike_formula_4_20190722"  width="350" height="50">
 </p>
 
 换种表述方式：如果两个用户的Jaccard相似度为r，我们利用H个MinHash函数对两个用户分别进行转换，这样每个用户会形成H个signature，那么两个用户相同的signature数量应该为H*r个。
@@ -127,13 +127,13 @@ LSH可以看作是一种简化计算similarity的方法，大体可以分为两�
 举个例子，如果我们定义两个Hash映射函数h1(x)=x+1 mod 5,  h2(x)=3*x+1 mod 5，那么结果如下图：
 
 <p align="center">
- <img src="https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lookalike_figure_11_20190722.png" alt="lookalike_figure_11_20190722"  width="350" height="140">
+ <img src="https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lookalike_figure_11_20190722.png" alt="lookalike_figure_11_20190722"  width="350" height="100">
 </p>
 
 其中最后两列Hash映射之后值就代表随机扰动之后对应的新行号h，对于每一列集合S，只要(在等于1的行中)找到最小的行号h，就得到了MinHash，因此Signature签名矩阵为：
 
 <p align="center">
- <img src="https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lookalike_figure_12_20190722.png" alt="lookalike_figure_12_20190722"  width="350" height="140">
+ <img src="https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lookalike_figure_12_20190722.png" alt="lookalike_figure_12_20190722"  width="300" height="100">
 </p>
 
 
@@ -159,13 +159,13 @@ LSH可以看作是一种简化计算similarity的方法，大体可以分为两�
 首先定义：S表示Seeds用户，U表示候选集合。pj表示Seeds中存在feature j的用户比例
 
 <p align="center">
- <img src="https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.5_20190722.png" alt="lookalike_formula_5_20190722"  width="350" height="140">
+ <img src="https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lookalike_formula_5_20190722.png" alt="lookalike_formula_5_20190722"  width="150" height="50">
 </p>
 
 候选集中存在feature j的用户比例：qi
 
 <p align="center">
- <img src="https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lookalike_formula_6_20190722.png" alt="lookalike_formula_6_20190722"  width="350" height="140">
+ <img src="https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lookalike_formula_6_20190722.png" alt="lookalike_formula_6_20190722"  width="150" height="50">
 </p>
 
 通过单变量分析(univariate analysis)来计算特征重要性的方法有：互信息(mutual information)、信息增益(information gain)、和信息值(information value, IV)等。这些方法都假设特征之间是相互独立的，而且Yahoo实验发现这些方法的效果非常相似，因此采用IV进行介绍。
@@ -173,7 +173,7 @@ LSH可以看作是一种简化计算similarity的方法，大体可以分为两�
 对于binary的特征j来说，基于IV的重要性可以通过如下公式度量：
 
 <p align="center">
- <img src="https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lookalike_formula_7_20190722.png" alt="lookalike_formula_7_20190722"  width="350" height="140">
+ <img src="https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lookalike_formula_7_20190722.png" alt="lookalike_formula_7_20190722"  width="350" height="100">
 </p>
 
 其中pj > 0.5说明：只有"positive"的特征才会被考虑，这些特征在Seeds中的重要程度要高于在候选集U中的重要程度。根据IV值排序，值越大的feature则具有更强的预测能力。同时可以将特征排序结果展示给广告主，提供模型的解释能力(transparency)。
@@ -181,20 +181,24 @@ LSH可以看作是一种简化计算similarity的方法，大体可以分为两�
 有了上述IV矩阵A之后，Yahoo采用如下公式计算每个候选用户对于改次营销活动c的价值分：
 
 <p align="center">
- <img src="https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lookalike_formula_8_20190722.png" alt="lookalike_formula_8_20190722"  width="350" height="140">
+ <img src="https://raw.githubusercontent.com/Demmon-tju/Demmon-tju.github.io/master/img/lookalike_formula_8_20190722.png" alt="lookalike_formula_8_20190722"  width="350" height="100">
 </p>
 
 其中fi代表该用户的特征向量，这个值并不是\[0,1]的，因此可以通过sigmoid函数进行转换之后作为结果。
 
 >小结：LSH提供了一种缩小候选集的方法，同时保持了内在的相似性。为每个任务定制化模型是很耗时的，虽然Yahoo采用了非迭代的方法IV来计算用户得分，极大的提高了效率，但是每次任务都要定制化，依旧无法实现real-time的要求。
 
-## 基于Attention的Look-alike
+## 基于Attention的Look-alike：Real-time Attention Based Look-alike Model for Recommender System
+
+### 背景
+
+- 马太效应Matthew effect：在微信的“看一看”场景中，存在大量的长尾文章，这些文章可能是最新的新闻，但是去缺少用户和特征，因此导致模型无法推荐这类文章。而一些热门的文章却会一直被推荐，从而形成了推荐系统的马太效应。
+- 多样性diversity：解决马太效应的有效方法就是提高推荐结果的多样性，让最新的新闻，长尾的文章也有机会触达人群。
+- 实时性Real-time：
+该篇论文的重点是Real-time，同时利用了当前比较fancy的Attention模块，作者将整个流程分为：线下训练和线上预测。
 
 
 ### 参考
 
-- [网易公开课](http://open.163.com/movie/2008/1/M/C/M6SGF6VB4_M6SGHFBMC.html?frm=record)
-- [课程主页](http://cs229.stanford.edu/)
-- [课程笔记7a](https://yunlongs-1253041399.cos.ap-chengdu.myqcloud.com/Books/cs229-notes7a.pdf)
-- [课程笔记7b](https://yunlongs-1253041399.cos.ap-chengdu.myqcloud.com/Books/cs229-notes7b.pdf)
-- [课程笔记8](https://yunlongs-1253041399.cos.ap-chengdu.myqcloud.com/Books/cs229-notes8.pdf)
+- [Mining of Massive Datasets](http://infolab.stanford.edu/~ullman/mmds/book.pdf)
+- [Real-time Attention Based Look-alike Model for Recommender System](http://arxiv.org/abs/1906.05022)
