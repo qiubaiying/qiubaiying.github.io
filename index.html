@@ -7,7 +7,7 @@ description: "hack everything for protect our lovely people."
 
 {% for post in paginator.posts %}
 
-{{ page.content | strip_html | strip_newlines | remove: " " | size }}
+
 
 <body>
 
@@ -37,6 +37,8 @@ description: "hack everything for protect our lovely people."
     
     </body>
     
+{{ page.content | strip_html | strip_newlines | remove: " " | size }}
+
     <p class="post-meta">
         Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
     </p>
