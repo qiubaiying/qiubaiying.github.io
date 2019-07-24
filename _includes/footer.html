@@ -98,6 +98,10 @@
                           Copyright <a href="{{ site.home_repo }}">&copy; {{ site.title }} {{ site.time | date: '%Y' }}</a >  
                           
   
+                            {{ page.content | strip_html | strip_newlines | remove: " " | size }}
+                            
+                            
+                            
                           Theme on <a href="{{ site.github_repo }}">GitHub</a > |  
                           <iframe  
                               style="margin-left: 2px; margin-bottom:-5px;"  
