@@ -190,15 +190,146 @@ LSH可以看作是一种简化计算similarity的方法，大体可以分为两�
 
 ## 基于Attention的Look-alike：Real-time Attention Based Look-alike Model for Recommender System
 
-### 背景
+这是腾讯最近提出的一个基于deep leanrning的Look-alike系统，采用了当前比较热的attention，能够满足Real-time的要求。
 
+### 1. 背景
+
+#### 1.1 业务背景
 - 马太效应Matthew effect：在微信的“看一看”场景中，存在大量的长尾文章，这些文章可能是最新的新闻，但是去缺少用户和特征，因此导致模型无法推荐这类文章。而一些热门的文章却会一直被推荐，从而形成了推荐系统的马太效应。
 - 多样性diversity：解决马太效应的有效方法就是提高推荐结果的多样性，让最新的新闻，长尾的文章也有机会触达人群。
-- 实时性Real-time：
-该篇论文的重点是Real-time，同时利用了当前比较fancy的Attention模块，作者将整个流程分为：线下训练和线上预测。
+- 实时性Real-time：微信“看一看”场景对实时性要求极高，不可能产出了一篇文章后，线下花上几个小时训练一个LR模型，之后在进行预测。因此要求模型能够实时在线预测。
+
+#### 1.2 模型背景
+- Attention机制：Attention是2015年被提出来的，在NLP领域大放光彩。Attention具有在繁多信息中自动focus到重点的能力，而且Attention可以实现并行，一定程度上可以替代LSTM等循环神经网络，提高模型效率。Attention的具体介绍可以参考阿里的[一篇综述](https://mp.weixin.qq.com/s/i3Xd_IB7R0-QPztn-pgpng)，或者我github上有[英文版ppt](https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/papers/Attention-in-detail-alibaba.pdf)。
+- Embedding：主要分为User Embedding和Item Embedding两个方面，而这篇文章主要用到的是User Embedding 作为 User Representation，在look-alike模型中作为输入。该文是对[Youtube DNN模型](https://dl.acm.org/citation.cfm?doid=2959100.2959190)作为基础，进行了一定的调整，最后目的是获取user embedding。
+
+### 2. 模型
+
+<p align="center">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_1.png?raw=ture" alt="lookalike_rabl_1"  width="250" height="150">
+</p>
+
+首先看一下整体模型结构，存在两个输入：
+- 左侧：该item的Seeds用户，其实是Seeds用户的clusters，不需要实时更新只要定时异步更新即可，后面会详细介绍
+- 右侧：候选集的某个用户，因此模型会遍历候选集，为每个候选集用户进行计算
+
+之后根据模型参数和模型结构计算两种Attention，进而计算look-alike得分，最后根据得分排序，输出扩展人群。
+
+
+模型整体大致可以分为三个主要部分：离线训练、在线数据处理、在线实时预测
+
+<p align="center">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_2.png?raw=ture" alt="lookalike_rabl_2"  width="250" height="150">
+</p>
+
+- 最下面离线训练：表示离线部分Offine，主要包括两个模型的训练：User Representation Learning(user-item模型)和Look-alike Learning(user-user模型)
+- 最上面在线处理：代表Seeds的clusters结果的异步更新，这是线上定时完成的。因为用户对文章的浏览行为时刻发生，因此Seeds用户是时刻增加的，但是又不可能每次发生行为都去更新clusters，文章采用每5分钟更新一次clusters的策略。这样不会影响模型的实时性。
+- 中间在线预测：遍历候选集，根据模型逐层计算的过程。因为在这之前，模型输入和模型参数等都已经准备就绪（Offine训练搞定了User embedding和模型参数，而定时更新clusters搞定了Seeds端的输入），因此可以实时进行预测。
+
+#### 2.1 离线训练 之 User Representation Learning
+
+>这部分是一个user-item的deep learning模型，文章采用的整体策略是类似于双塔的结构，左侧user tower的目的是得到user embedding，右侧item tower的目的是得到item embedding，最后将两个embedding向量进行点乘(dot)，最后一层softmax进行分类。这里的item embedding比较简单，随机初始化后随着模型一起训练就可以，重点部分在于左侧的user部分。
+
+#### 2.1.1 User embedding
+
+存在很多模型结构可以得到user embedding，这篇文章借鉴Youtube DNN模型，因此有必要对Youtube DNN模型进行简要介绍：
+- 1. 将行为分为多个fields，并且每个field内部各个行为的embedding向量长度相同
+- 2. 对每个field做average pooling，得到每个field对应的一个向量
+- 3. 再将所有fields的向量concatenate到一起
+- 4. 经过若干层MLP layer之后，输出的就是user embedding
+
+这里的第3步骤concatenate操作对应下图中的"Merge Layer"，但是本文对Youtube DNN做了调整，在"Merge Layer"这一层并没有采用concatenate的方式，而是采用的Self-Attention机制。
+
+<p align="center">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_3.png?raw=ture" alt="lookalike_rabl_3"  width="250" height="150">
+</p>
+
+原因：作者发现，如果简单将多个fields进行concatenate的话，那么相当于强制模型利用同一个分布去学习不同的fields（forces all users’ interest to be learned into the same distribution）。这样会导致：只有少数与用户interest关联较强的fields对用户产生影响，这部分特征过拟合，而其他特征又会欠拟合。也会导致权重矩阵非常稀疏，因为多数fields影响较小。因此，本文采用Attention机制解决这个问题，因为Attention可以学习到关于用户的个性化的fields权重，而不是同一个分布。
+
+Attention的机制和权重计算方式很丰富，这里只介绍本文采用的方法，如果想了解详细的Attention可以参考[Attention总结](https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/papers/Attention-in-detail-alibaba.pdf)。
+
+假设存在n个fields，对应的向量长度都是m，那么每个向量h ∈ Rm，之后在第2个维度上将这些向量concatenate到一起(罗列在一起)，就形成了矩阵H ∈ Rn×m。权重向量a的计算采用如下公式：
+
+<p align="center">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_4.png?raw=ture" alt="lookalike_rabl_4"  width="250" height="150">
+</p>
+
+其中W1 ∈ Rk×n , W2 ∈ Rk都是权重矩阵，k表示attention单元的size。u ∈ Rk*m，最后得到a ∈ Rn表示n个fields的权重。之后将权重a与原始fields矩阵merge到一起，就得到了最终结果 M ∈ Rm：
+
+<p align="center">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_5.png?raw=ture" alt="lookalike_rabl_5"  width="250" height="150">
+</p>
+
+将M作为MLP layers的输入，最后即可得到user embedding。如上文所属，最后将user embedding和item embedding进行dot之后softmax分类，模型就搭建完成了。
+
+#### 2.1.2 negative sampling
+
+**采样**
+
+类似与word2vec的操作，本文同样采用负采样negative sampling代替传统的softmax。由于随机抽样会不符合实际情况，因此本文采用了一种类似与[谷歌NEC Loss](https://arxiv.org/abs/1310.4546)的方法：首先根据item的频率进行排序，之后根据如下公式计算概率：
+
+<p align="center">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_6.png?raw=ture" alt="lookalike_rabl_6"  width="250" height="150">
+</p>
+
+其中xi表示第i个item，k表示第i个item的排序rank，D表示所有items中最大的rank，最后结果p(xi)表示第i个item被抽中作为负样本的概率。为了避免部分活跃用户支配Loss的情况，本文对样本进行如下限制：
+- 每个用户最多50个正样本，减少少量活跃用户的影响
+- 正负样本比例设为：1:10
+
+**概率**
+
+采用softmax函数来计算用户u对item的概率，如下公式，u代表用户向量，xi代表item向量，结果P(c = i|U,Xi)表示用户U对item Xi的概率：
+
+<p align="center">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_7.png?raw=ture" alt="lookalike_rabl_7"  width="250" height="150">
+</p>
+
+**损失Loss**
+
+本文采用的是cross entropy loss，yi ∈ {0, 1} 
+
+<p align="center">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_8.png?raw=ture" alt="lookalike_rabl_8"  width="250" height="150">
+</p>
+
+
+#### 2.1 离线训练 之 Look-alike Learning
+
+<p align="center">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_9.png?raw=ture" alt="lookalike_rabl_9"  width="250" height="150">
+</p>
+
+首先看结构图，Look-alike模块的输入就是上一步得到User embedding。Look-alike模块采用的典型的双塔模型，左侧是Seeds tower，右侧是tartget tower。
+
+#### 2.1.1 target tower
+
+右侧的target tower其实就是user embedding，比较简单不需要做任何处理。
+
+#### 2.1.2 seeds tower
+
+#### 2.1.2.1 k-means cluster
+
+由于Seeds的用户量相对较大，会严重影响后面attention层的效率，因此这里采用k-means聚类的方法，将Seeds聚成k个clusters，将k个clusters作为 seeds tower的输入。
+- 减少模型复杂度：k提前确定，k个clusers存在内存中，极大减少了模型复杂度
+- 线上预测clusters在线异步更新：由于浏览点击等行为时刻发生，因此Seeds时刻都在发生变化，但是不需要实时更新clusters，只要定时更新即可(每隔5分钟更新一次)。
+- Iterative training：因为训练时模型反向传播，会更新user embedding值，因此每个epoch结束都要重新进行cluster，得到最新的clusers。
+
+#### 2.1.2.1 global attention和local attention
+
+其实文章中的global attention就是selt-attention，而local-attention就是普通的attention，由于attention的文章比较多，这里不做详细介绍，有兴趣可以参考[attention介绍](https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/papers/Attention-in-detail-alibaba.pdf)
+
+#### 2.1.2.3 Loss
+
+只要Look-alike模块采用的Loss就是比较常用的sigmoid cross entropy：
+<p align="center">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_10.png?raw=ture" alt="lookalike_rabl_10"  width="250" height="150">
+</p>
+
+其中D表示训练集，y{0, 1}表示label, p(x)表示双塔计算cosine并且经过sigmoid的预测概率得分。 
 
 
 ### 参考
 
 - [Mining of Massive Datasets](http://infolab.stanford.edu/~ullman/mmds/book.pdf)
 - [Real-time Attention Based Look-alike Model for Recommender System](http://arxiv.org/abs/1906.05022)
+[Attention](http://infolab.stanford.edu/~ullman/mmds/book.pdf)
