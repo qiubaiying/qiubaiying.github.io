@@ -37,7 +37,7 @@ HBase是KV存储，不支持SQL和创建二级索引。社区有Pheonix提供支
 
 #### 最后
 
-下面是HBase Conference Asia 2019我参与了的部分PPT原文，从拍的照片手打出来的，后续社区应该会放出原版，我会在这里贴下载链接。
+下面是HBase Conference Asia 2019我参与了的部分PPT原文，从拍的照片手打出来的，后续社区应该会放出原版，我会在这里贴下载[链接](https://pan.baidu.com/s/1AW0HkFmk6ipVB5laqz3b1g )。提取码：i60j。
 
 HBase拥抱云原生，逐渐脱离HDFS和zk在当时的现场是有些担忧和怀疑的，通过后面的深入了解这或许就是趋势。最后引一下全场最让我感动的地方“Community Over Code”。一个健康的社区比好的代码更重要，代码不好可以重构，脱离社区一个产品也将走向尽头。
 
