@@ -12,6 +12,8 @@ tags:
     - Similarity
     - Regression
     - deep learning
+    - attention
+    - embedding
     - LSH
 ---
 
@@ -206,7 +208,7 @@ LSH可以看作是一种简化计算similarity的方法，大体可以分为两�
 ### 2. 模型
 
 <p align="center">
- <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_1.png?raw=ture" alt="lookalike_rabl_1"  width="250" height="150">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_1.png?raw=ture" alt="lookalike_rabl_1"  width="350" height="250">
 </p>
 
 首先看一下整体模型结构，存在两个输入：
@@ -219,7 +221,7 @@ LSH可以看作是一种简化计算similarity的方法，大体可以分为两�
 模型整体大致可以分为三个主要部分：离线训练、在线数据处理、在线实时预测
 
 <p align="center">
- <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_2.png?raw=ture" alt="lookalike_rabl_2"  width="250" height="150">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_2.png?raw=ture" alt="lookalike_rabl_2"  width="350" height="250">
 </p>
 
 - 最下面离线训练：表示离线部分Offine，主要包括两个模型的训练：User Representation Learning(user-item模型)和Look-alike Learning(user-user模型)
@@ -241,7 +243,7 @@ LSH可以看作是一种简化计算similarity的方法，大体可以分为两�
 这里的第3步骤concatenate操作对应下图中的"Merge Layer"，但是本文对Youtube DNN做了调整，在"Merge Layer"这一层并没有采用concatenate的方式，而是采用的Self-Attention机制。
 
 <p align="center">
- <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_3.png?raw=ture" alt="lookalike_rabl_3"  width="250" height="150">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_3.png?raw=ture" alt="lookalike_rabl_3"  width="350" height="200">
 </p>
 
 原因：作者发现，如果简单将多个fields进行concatenate的话，那么相当于强制模型利用同一个分布去学习不同的fields（forces all users’ interest to be learned into the same distribution）。这样会导致：只有少数与用户interest关联较强的fields对用户产生影响，这部分特征过拟合，而其他特征又会欠拟合。也会导致权重矩阵非常稀疏，因为多数fields影响较小。因此，本文采用Attention机制解决这个问题，因为Attention可以学习到关于用户的个性化的fields权重，而不是同一个分布。
@@ -251,13 +253,13 @@ Attention的机制和权重计算方式很丰富，这里只介绍本文采用�
 假设存在n个fields，对应的向量长度都是m，那么每个向量h ∈ Rm，之后在第2个维度上将这些向量concatenate到一起(罗列在一起)，就形成了矩阵H ∈ Rn×m。权重向量a的计算采用如下公式：
 
 <p align="center">
- <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_4.png?raw=ture" alt="lookalike_rabl_4"  width="250" height="150">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_4.png?raw=ture" alt="lookalike_rabl_4"  width="250" height="100">
 </p>
 
 其中W1 ∈ Rk×n , W2 ∈ Rk都是权重矩阵，k表示attention单元的size。u ∈ Rk*m，最后得到a ∈ Rn表示n个fields的权重。之后将权重a与原始fields矩阵merge到一起，就得到了最终结果 M ∈ Rm：
 
 <p align="center">
- <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_5.png?raw=ture" alt="lookalike_rabl_5"  width="250" height="150">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_5.png?raw=ture" alt="lookalike_rabl_5"  width="250" height="50">
 </p>
 
 将M作为MLP layers的输入，最后即可得到user embedding。如上文所属，最后将user embedding和item embedding进行dot之后softmax分类，模型就搭建完成了。
@@ -269,7 +271,7 @@ Attention的机制和权重计算方式很丰富，这里只介绍本文采用�
 类似与word2vec的操作，本文同样采用负采样negative sampling代替传统的softmax。由于随机抽样会不符合实际情况，因此本文采用了一种类似与[谷歌NEC Loss](https://arxiv.org/abs/1310.4546)的方法：首先根据item的频率进行排序，之后根据如下公式计算概率：
 
 <p align="center">
- <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_6.png?raw=ture" alt="lookalike_rabl_6"  width="250" height="150">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_6.png?raw=ture" alt="lookalike_rabl_6"  width="250" height="50">
 </p>
 
 其中xi表示第i个item，k表示第i个item的排序rank，D表示所有items中最大的rank，最后结果p(xi)表示第i个item被抽中作为负样本的概率。为了避免部分活跃用户支配Loss的情况，本文对样本进行如下限制：
@@ -281,7 +283,7 @@ Attention的机制和权重计算方式很丰富，这里只介绍本文采用�
 采用softmax函数来计算用户u对item的概率，如下公式，u代表用户向量，xi代表item向量，结果P(c = i|U,Xi)表示用户U对item Xi的概率：
 
 <p align="center">
- <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_7.png?raw=ture" alt="lookalike_rabl_7"  width="250" height="150">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_7.png?raw=ture" alt="lookalike_rabl_7"  width="250" height="50">
 </p>
 
 **损失Loss**
@@ -289,14 +291,14 @@ Attention的机制和权重计算方式很丰富，这里只介绍本文采用�
 本文采用的是cross entropy loss，yi ∈ {0, 1} 
 
 <p align="center">
- <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_8.png?raw=ture" alt="lookalike_rabl_8"  width="250" height="150">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_8.png?raw=ture" alt="lookalike_rabl_8"  width="250" height="50">
 </p>
 
 
 #### 2.1 离线训练 之 Look-alike Learning
 
 <p align="center">
- <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_9.png?raw=ture" alt="lookalike_rabl_9"  width="250" height="150">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_9.png?raw=ture" alt="lookalike_rabl_9"  width="350" height="200">
 </p>
 
 首先看结构图，Look-alike模块的输入就是上一步得到User embedding。Look-alike模块采用的典型的双塔模型，左侧是Seeds tower，右侧是tartget tower。
@@ -322,7 +324,7 @@ Attention的机制和权重计算方式很丰富，这里只介绍本文采用�
 
 只要Look-alike模块采用的Loss就是比较常用的sigmoid cross entropy：
 <p align="center">
- <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_10.png?raw=ture" alt="lookalike_rabl_10"  width="250" height="150">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/lookalike_rabl_10.png?raw=ture" alt="lookalike_rabl_10"  width="250" height="50">
 </p>
 
 其中D表示训练集，y{0, 1}表示label, p(x)表示双塔计算cosine并且经过sigmoid的预测概率得分。 
@@ -332,4 +334,4 @@ Attention的机制和权重计算方式很丰富，这里只介绍本文采用�
 
 - [Mining of Massive Datasets](http://infolab.stanford.edu/~ullman/mmds/book.pdf)
 - [Real-time Attention Based Look-alike Model for Recommender System](http://arxiv.org/abs/1906.05022)
-[Attention](http://infolab.stanford.edu/~ullman/mmds/book.pdf)
+- [Attention总结](https://mp.weixin.qq.com/s/i3Xd_IB7R0-QPztn-pgpng)
