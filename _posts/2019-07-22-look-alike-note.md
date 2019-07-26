@@ -4,7 +4,7 @@ title:      Look-alike 技术总结
 subtitle:   Similarity-based,Regression-based,Attention-based
 date:       2019-07-22
 author:     ZhangWenXiang
-header-img: img/bg-ai.jpg
+header-img: img/bg-ai-dark1.jpeg
 catalog: true
 tags:
     - 机器学习
