@@ -202,7 +202,7 @@ LSH可以看作是一种简化计算similarity的方法，大体可以分为两�
 - 实时性Real-time：微信“看一看”场景对实时性要求极高，不可能产出了一篇文章后，线下花上几个小时训练一个LR模型，之后在进行预测。因此要求模型能够实时在线预测。
 
 #### 1.2 模型背景
-- Attention机制：Attention是2015年被提出来的，在NLP领域大放光彩。Attention具有在繁多信息中自动focus到重点的能力，而且Attention可以实现并行，一定程度上可以替代LSTM等循环神经网络，提高模型效率。Attention的具体介绍可以参考阿里的[一篇综述](https://mp.weixin.qq.com/s/i3Xd_IB7R0-QPztn-pgpng)，或者我github上有[英文版ppt](https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/papers/Attention-in-detail-alibaba.pdf)。
+- Attention机制：Attention是2015年被提出来的，在NLP领域大放光彩。Attention具有在繁多信息中自动focus到重点的能力，而且Attention可以实现并行，一定程度上可以替代LSTM等循环神经网络，提高模型效率。Attention的具体介绍可以参考[Attention总结](https://blog.csdn.net/weixin_40901056/article/details/88357187)。
 - Embedding：主要分为User Embedding和Item Embedding两个方面，而这篇文章主要用到的是User Embedding 作为 User Representation，在look-alike模型中作为输入。该文是对[Youtube DNN模型](https://dl.acm.org/citation.cfm?doid=2959100.2959190)作为基础，进行了一定的调整，最后目的是获取user embedding。
 
 ### 2. 模型
@@ -248,7 +248,7 @@ LSH可以看作是一种简化计算similarity的方法，大体可以分为两�
 
 原因：作者发现，如果简单将多个fields进行concatenate的话，那么相当于强制模型利用同一个分布去学习不同的fields（forces all users’ interest to be learned into the same distribution）。这样会导致：只有少数与用户interest关联较强的fields对用户产生影响，这部分特征过拟合，而其他特征又会欠拟合。也会导致权重矩阵非常稀疏，因为多数fields影响较小。因此，本文采用Attention机制解决这个问题，因为Attention可以学习到关于用户的个性化的fields权重，而不是同一个分布。
 
-Attention的机制和权重计算方式很丰富，这里只介绍本文采用的方法，如果想了解详细的Attention可以参考[Attention总结](https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/papers/Attention-in-detail-alibaba.pdf)。
+Attention的机制和权重计算方式很丰富，这里只介绍本文采用的方法，如果想了解详细的Attention可以参考[Attention总结](https://blog.csdn.net/weixin_40901056/article/details/88357187)。
 
 假设存在n个fields，对应的向量长度都是m，那么每个向量h ∈ Rm，之后在第2个维度上将这些向量concatenate到一起(罗列在一起)，就形成了矩阵H ∈ Rn×m。权重向量a的计算采用如下公式：
 
@@ -318,7 +318,7 @@ Attention的机制和权重计算方式很丰富，这里只介绍本文采用�
 
 #### 2.1.2.1 global attention和local attention
 
-其实文章中的global attention就是selt-attention，而local-attention就是普通的attention，由于attention的文章比较多，这里不做详细介绍，有兴趣可以参考[attention介绍](https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/papers/Attention-in-detail-alibaba.pdf)
+其实文章中的global attention就是selt-attention，而local-attention就是普通的attention，由于attention的文章比较多，这里不做详细介绍，有兴趣可以参考[attention介绍](https://blog.csdn.net/weixin_40901056/article/details/88357187)
 
 #### 2.1.2.3 Loss
 
@@ -334,4 +334,4 @@ Attention的机制和权重计算方式很丰富，这里只介绍本文采用�
 
 - [Mining of Massive Datasets](http://infolab.stanford.edu/~ullman/mmds/book.pdf)
 - [Real-time Attention Based Look-alike Model for Recommender System](http://arxiv.org/abs/1906.05022)
-- [Attention总结](https://mp.weixin.qq.com/s/i3Xd_IB7R0-QPztn-pgpng)
+- [Attention总结](https://blog.csdn.net/weixin_40901056/article/details/88357187)
