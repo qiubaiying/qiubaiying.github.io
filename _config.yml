@@ -97,10 +97,10 @@ service-worker: true
 
 
 # Friends
-friends: [
+friends: [ 
     {
-        title: "Panda ssr",
-        href: "https://origamissr.top/"
+        title: "instagram",
+        href: "https://www.instagram.com/"
     },{
         title: "YouTuBe",
         href: "https://www.youtube.com/"
