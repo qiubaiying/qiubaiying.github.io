@@ -80,8 +80,7 @@ tags:
     ![docker安装mysql效果图](http://blog-ipic.yananhuazai.cn/FoeDoyxAo2MKvPqSu3LB67w_itkk)
 
 
-​		
-​		
+		
 ### docker中安装zookeeper
 
     1. 拉取zookeeper镜像
@@ -107,6 +106,8 @@ tags:
     ```
     
     ![docker安装zookeeper](http://blog-ipic.yananhuazai.cn/Fi1vuHkzxAI-G-OnTG3X97K32h6w)
+
+
 
 ### docker中安装kafka
 
