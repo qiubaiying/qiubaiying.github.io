@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CentOS7中docker的各种实践
+title: 入门docker的各种实践
 subtitle: 😝新电脑没有小表情了...😝
 date: 2019-05-08
 author: 华仔
@@ -108,4 +108,19 @@ tags:
     
     ![docker安装zookeeper](http://blog-ipic.yananhuazai.cn/Fi1vuHkzxAI-G-OnTG3X97K32h6w)
 
+### docker中安装kafka
 
+    1. 拉取zookeeper和kafka镜像
+    
+    ```shell
+    docker pull wurstmeister/zookeeper
+    docker pull wurstmeister/kafka
+    ```
+    
+    2. 创建并启动zookeeper、kafka容器
+    ```
+    docker run -d --name zookeeper -p 2181:2181 -t wurstmeister/zookeeper
+    docker run -d --name kafka --publish 9092:9092 --link zookeeper --env KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 --env KAFKA_ADVERTISED_HOST_NAME=192.168.66.202 --env KAFKA_ADVERTISED_PORT=9092 --volume /etc/localtime:/etc/localtime wurstmeister/kafka:latest
+    
+    其中KAFKA_ADVERTISED_HOST_NAME改成宿主句ip（docker所在的主机的ip）
+    ```
