@@ -94,6 +94,9 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 chrome-tab-theme-color: "#000000"
 service-worker: true
 
+#数学公式设置第一步
+#设置markdown引擎为kramdown
+markdown: kramdown
 
 
 # Friends
