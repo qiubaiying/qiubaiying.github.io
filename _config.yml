@@ -63,7 +63,7 @@ kramdown:
 gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: f3d3bccc3d5c3ede5e2d                            #生成的clientID
-  clientSecret: a045a4e4dae17315c3ae61ab34f800f531ad9c6a    #生成的clientSecret
+  clientSecret: 04851501589e9e753dfdad28a03aed1511b2d088    #生成的clientSecret
   repo: DestinyEnvoy.github.io    #仓库名称
   owner: DestinyEnvoy   #github用户名
   admin: DestinyEnvoy
