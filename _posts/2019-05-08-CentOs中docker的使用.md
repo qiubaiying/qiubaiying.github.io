@@ -18,10 +18,24 @@ tags:
 > docker18.09.5
 
 
+# CentOS7环境docker相关安装
+
+### docker-compose安装
+```shell
+curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+```
+or
+```shell
+使用python的pip来pip install docker-compose
+前提是使用yum安装python-pip
+```
+
+
+
 # docker普通命令
 
 ### docker查看日志
-
 ```shell
 docker logs -f -t --since=“2019-05-10” --tail=50 huazai-software
 ```
@@ -155,8 +169,8 @@ docker pull wurstmeister/kafka
 
 2. 创建并启动zookeeper、kafka容器
 ```shell
-docker run -d --name zookeeper -p 2181:2181 -t wurstmeister/zookeeper
-docker run -d --name kafka --publish 9092:9092 --link zookeeper --env KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 --env KAFKA_ADVERTISED_HOST_NAME=192.168.66.202 --env KAFKA_ADVERTISED_PORT=9092 --volume /etc/localtime:/etc/localtime wurstmeister/kafka:latest
+docker run -d --name huazai-zookeeper -p 2181:2181 -t wurstmeister/zookeeper
+docker run -d --name kafka --publish 9092:9092 --link huazai-zookeeper --env KAFKA_ZOOKEEPER_CONNECT=huazai-zookeeper:2181 --env KAFKA_ADVERTISED_HOST_NAME=192.168.66.202 --env KAFKA_ADVERTISED_PORT=9092 --volume /etc/localtime:/etc/localtime wurstmeister/kafka:latest
 
 其中KAFKA_ADVERTISED_HOST_NAME改成宿主句ip（docker所在的主机的ip）
 ```
