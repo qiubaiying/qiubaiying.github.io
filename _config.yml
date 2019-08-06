@@ -17,7 +17,7 @@ sidebar-avatar: /img/about-DR-gentle.jpg      # use absolute URL, seeing it's us
 
 
 # SNS settings
-RSS: false
+RSS: true
 # weibo_username:     qiubaiying
 #zhihu_username:     qiubaiying
 github_username:    DestinyEnvoy
@@ -51,8 +51,8 @@ gems: [jekyll-paginate]
 # document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 highlighter: rouge
-#kramdown:
- # input: GFM                            # use Github Flavored Markdown !important
+kramdown:
+ input: GFM                            # use Github Flavored Markdown !important
 
 
 
