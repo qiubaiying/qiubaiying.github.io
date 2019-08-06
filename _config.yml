@@ -25,7 +25,8 @@ github_username:    DestinyEnvoy
 #jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
 
-
+#替换默认的Markdown引擎为kramdown
+markdown: kramdown
 
 
 # Build settings
