@@ -21,9 +21,9 @@ RSS: true
 # weibo_username:     qiubaiying
 #zhihu_username:     qiubaiying
 github_username:    DestinyEnvoy
-facebook_username:  柯南
+facebook_username: DestinyEnvoy
 #jianshu_username:   e71990ada2fd
-#twitter_username:   qiubaiying
+twitter_username:   DestinyEnvoy
 
 #替换默认的Markdown引擎为kramdown
 #markdown: kramdown
