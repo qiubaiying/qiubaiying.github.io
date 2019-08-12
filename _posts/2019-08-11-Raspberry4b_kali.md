@@ -66,7 +66,7 @@ PC端我们也要准备好工具,就是这款[**win32diskimager**](https://sourc
 
 选择你的SD卡,注意不要选错哦,选错的后果很严重
 
-![](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/19-08-11/11.png?raw=true)
+![](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/19-08-11/11.PNG?raw=true)
 >清除扇区数据,这个会彻底把SD卡清干净,所以如果有重要的资料,还是备份出来才好
 
 清除完毕后,就可以重新再刷一遍了.
