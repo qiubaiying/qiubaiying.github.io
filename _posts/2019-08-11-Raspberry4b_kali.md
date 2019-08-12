@@ -121,12 +121,15 @@ apt-get upgrade
 ```
 
 这个是用来安装kali的所有工具包的命令,建议**空间充足**的同学装.
+
 `apt-get install kali-linux-full`
 
 然后是安装**字体**
+
 `apt-get install ttf-wqy-zenhei`
 
 **配置区域**
+
 `dpkg-reconfigure locales`
 
 在选项中寻找以下几样
