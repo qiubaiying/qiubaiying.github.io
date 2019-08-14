@@ -68,7 +68,7 @@ gitalk:
   clientSecret: 7a477b20ac33f82201c3094d60139cdcd1979228    #生成的clientSecret
   repo: qcnhy.github.io    #仓库名称
   owner: qcnhy    #github用户名
-  admin: 浅唱
+  admin: qcnhy
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
@@ -101,11 +101,11 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        title: "浅唱云任务",
+        href: "http://mz.qcnhy.cn"
     },{
-        title: "Apple",
-        href: "https://apple.com"
+        title: "浅唱发卡网",
+        href: "https://fk.qcnhy.cn"
     },{
         title: "Apple Developer",
         href: "https://developer.apple.com/"
