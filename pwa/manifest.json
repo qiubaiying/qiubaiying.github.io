@@ -1,7 +1,7 @@
 {
-  "name": "BY Blog",
-  "short_name": "BY Blog",
-  "description": "A personal blog by engineer",
+  "name": "浅唱博客",
+  "short_name": "浅唱博客",
+  "description": "在这里与你分享生活",
   "icons": [{
     "src": "icons/pwa_icon_128.png",
     "sizes": "128x128",

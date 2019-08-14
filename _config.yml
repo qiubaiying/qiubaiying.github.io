@@ -11,7 +11,7 @@ github_repo: "https://github.com/qcnhy/qcnhy.github.io.git" # you code repositor
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
+sidebar-about-description: "在这里与你分享生活"
 sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -78,7 +78,7 @@ ba_track_id: 03c3c465b1dd8f67c7e360bcb37bd29b
 
 # Google Analytics
 ga_track_id: 'UA-145388892-1'            # Format: UA-xxxxxx-xx
-ga_domain: qcnhy.github.io               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_domain: blog.qcnhy.cn             # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
