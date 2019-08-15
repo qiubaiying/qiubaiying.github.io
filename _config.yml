@@ -1,26 +1,26 @@
 # Site settings
-title: 筚路蓝缕，以启山林
-SEOTitle: Zhongqi的博客 | ZZQ Blog
-header-img: img/post-bg-desk.jpg
-email: djzts@gmail.com
-description: "Welcome in my friends."
-keyword: "DJZTS, DJZTS Blog, zzq的博客, Zhongqi, BJTU, HKUST, UMN, EE"
-url: "http://djzts.github.io"          # your host, for absolute URL
-baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/djzts/djzts.github.io.git" # you code repository
+  title: 筚路蓝缕，以启山林
+  SEOTitle: Zhongqi的博客 | ZZQ Blog
+  header-img: img/post-bg-desk.jpg
+  email: djzts@gmail.com
+  description: "Welcome in my friends."
+  keyword: "DJZTS, DJZTS Blog, zzq的博客, Zhongqi, BJTU, HKUST, UMN, EE"
+  url: "http://djzts.github.io"          # your host, for absolute URL
+  baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+  github_repo: "https://github.com/djzts/djzts.github.io.git" # you code repository
 
 # Sidebar settings
-sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "投资项目管理作业请看这里"
-sidebar-avatar: /img/profile.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+  sidebar: true                           # whether or not using Sidebar.
+  sidebar-about-description: "投资项目管理作业请看这里"
+  sidebar-avatar: /img/profile.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
-RSS: false
-weibo_username:     士干土工
-zhihu_username:     灵活三分死胖子
-github_username:    djzts
+  RSS: false
+  weibo_username:     士干土工
+  zhihu_username:     灵活三分死胖子
+  github_username:    djzts
 #facebook_username:
 #jianshu_username:
 #twitter_username:
@@ -30,10 +30,10 @@ github_username:    djzts
 
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
-permalink: pretty
-paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
-anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+  permalink: pretty
+  paginate: 10
+  exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+  anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
 
 
@@ -48,19 +48,19 @@ gems: [jekyll-paginate]
 # replace redcarpet to kramdown,
 # although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
 # document: http://jekyllrb.com/docs/configuration/#kramdown
-markdown: kramdown
-highlighter: rouge
-kramdown:
+  markdown: kramdown
+  highlighter: rouge
+  kramdown:
   input: GFM                            # use Github Flavored Markdown !important
 
 
 
-# 评论系统
-# Disqus（https://disqus.com/）
+ 评论系统
+ Disqus（https://disqus.com/）
 # disqus_username: qiubaiying
 
  Gitalk
-gitalk:
+  gitalk:
   enable: false    #是否开启Gitalk评论
   clientID: f2c84e7629bb1446c1a4                            #生成的clientID#
   clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
@@ -85,24 +85,24 @@ gitalk:
 
 
 # Featured Tags
-featured-tags: true                     # 是否使用首页标签
-featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+  featured-tags: true                     # 是否使用首页标签
+  featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
 
 
 
 # Progressive Web Apps
-chrome-tab-theme-color: "#000001"
-service-worker: true
+  chrome-tab-theme-color: "#000001"
+  service-worker: true
 
 
 
 # Friends
-friends: [
-    {
-        title: "UMN/ 明尼苏达大学",
-        href: "https://twin-cities.umn.edu/"
-    },{
+  friends: [
+      {
+          title: "UMN/ 明尼苏达大学",
+          href: "https://twin-cities.umn.edu/"
+      },{
         title: "BJTU/ 北京交通大学",
         href: "https://www.bjtu.edu.cn/"
-    }
-]
+      }
+      ]
