@@ -13,5 +13,7 @@
 
 
 ### 正在施工，会渐渐的和fork的原模板产生差异
-https://raw.githubusercontent.com/myName/myRepo/master/vendor/assets/music/Tetris.mp3
+
+<audio ref='https://raw.githubusercontent.com/myName/myRepo/master/vendor/assets/music/Tetris.mp3' autoPlay loop></audio>
+
 
