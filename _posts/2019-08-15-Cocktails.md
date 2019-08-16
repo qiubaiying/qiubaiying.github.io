@@ -9,7 +9,7 @@ catalog: true
 tags:
     - life
     - cocktails
-    - 先挖一个坑 试一试
+    - 先挖一个坑
 ---
 
 >
