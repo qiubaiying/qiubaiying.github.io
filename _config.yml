@@ -1,10 +1,10 @@
 # Site settings
-title: BY Blog
-SEOTitle: 小彬彬的博客 | BY Blog
+title: YB Blog
+SEOTitle: 小彬彬的博客 | YB Blog
 header-img: img/post-bg-desk.jpg
 email: 2045165565@qq.com
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 小彬彬的博客, liaoyibin, 廖宜彬, iOS, Apple, iPhone"
+keyword: "YB, YB Blog, 小彬彬的博客, liaoyibin, 廖宜彬, iOS, Apple, iPhone"
 url: "http://yibinliao.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/yibinliao/yibinliao.github.io.git" # you code repository
