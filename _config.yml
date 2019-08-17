@@ -7,7 +7,7 @@ description: "龙应当藏在云里， 你应当藏在心里."
 keyword: " 北苇悄悄的博客, Fateart, 北苇"
 url: "http://Fate.art.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/Fateart/Fateart.github.io.git" # you code repository
+github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
