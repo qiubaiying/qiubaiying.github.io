@@ -1,8 +1,8 @@
 # Site settings
 title: 南风知我意
-SEOTitle: 北苇悄悄的博客 | BY Blog
+SEOTitle: 北苇Blog
 header-img: img/post-bg-desk.jpg
-email: yx.fateart@gmail.com
+email: yx.love@foxmail.com
 description: "龙应当藏在云里， 你应当藏在心里."
 keyword: " 北苇悄悄的博客, Fateart, 北苇"
 url: "http://Fate.art.github.io"          # your host, for absolute URL
@@ -12,13 +12,13 @@ github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "为了寻找你,我搬进鸟的眼睛,经常盯着路边的风!"
-sidebar-avatar: /img/avatar-m      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/avatar-DIY      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
-RSS: false
-# weibo_username: 
+RSS: ture
+# weibo_username: 野雨不醉
 zhihu_username:  Fate-art  
 github_username:   Fateart
 facebook_username:  
@@ -99,16 +99,7 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
-    },{
-        title: "简书·Fateart",
+        title: "简书",
         href: "https://www.jianshu.com/u/62adf76240fc"
-    },{
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
     }
 ]
