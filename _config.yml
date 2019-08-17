@@ -22,7 +22,7 @@ RSS: true
 #zhihu_username:     qiubaiying
 github_username:    DestinyEnvoy
 facebook_username: kodunull
-#jianshu_username:   e71990ada2fd
+jianshu_username:   DestinyEnvoy
 twitter_username:   DestinyEnvoy
 
 #替换默认的Markdown引擎为kramdown
