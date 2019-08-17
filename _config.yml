@@ -17,7 +17,7 @@ sidebar-avatar: /img/about-DR-gentle.jpg      # use absolute URL, seeing it's us
 
 
 # SNS settings
-RSS: true
+RSS: false
 # weibo_username:     qiubaiying
 #zhihu_username:     qiubaiying
 github_username:    DestinyEnvoy
