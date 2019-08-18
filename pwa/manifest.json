@@ -3,11 +3,11 @@
   "short_name": "DJZTS Blog",
   "description": "A personal blog by ZZQ",
   "icons": [{
-    "src": "icons/page_icon_128.png",
+    "src": "icons/page_ico_128.png",
     "sizes": "128x128",
     "type": "image/png"
   }, {
-    "src": "icons/page_icon_512.png",
+    "src": "icons/page_ico_512.png",
     "sizes": "512x512",
     "type": "image/png"
   }],
