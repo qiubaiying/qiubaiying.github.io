@@ -98,9 +98,10 @@ service-worker: true
 
 # Friends
 friends: [
+    
     {
-        title: "Apache",
-        href: "http://www.apache.org/"
+        title: "赛赛",
+        href: "https://llussy.github.io/"
     },{
         title: "简书·米茶饿了",
         href: "http://www.jianshu.com/u/e71990ada2fd"
@@ -108,7 +109,7 @@ friends: [
         title: "磊磊",
         href: "http://han1994.com/"
     },{
-        title: "赛赛",
-        href: "https://llussy.github.io/"
+        title: "Apache",
+        href: "http://www.apache.org/"
     }
 ]
