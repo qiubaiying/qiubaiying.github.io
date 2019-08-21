@@ -1,7 +1,15 @@
-.intro-header h1+h2+.meta{
+.post-heading>h1{
     text-shadow: black 0.1em 0.1em 0.2em;
 }
 
-.container>.row .tags>a{
+.post-heading>.subheading {
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.post-heading>.meta {
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.post-heading>.tags>a{
     text-shadow: black 0.1em 0.1em 0.2em;
 }
