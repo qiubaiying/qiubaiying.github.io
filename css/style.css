@@ -1,4 +1,4 @@
-.intro-header h1 h2 .meta{
+.intro-header h1+h2+.meta{
     text-shadow: black 0.1em 0.1em 0.2em;
 }
 
