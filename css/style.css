@@ -1,3 +1,7 @@
-.intro-header h1 {
-    text-shadow: black 0.1em 0.1em 0.2em；
+.intro-header h1 h2 .meta{
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.container>.row .tags>a{
+    text-shadow: black 0.1em 0.1em 0.2em;
 }
