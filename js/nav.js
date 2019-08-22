@@ -6,8 +6,8 @@
 // });
 
 Window.onload=function(){
-    if(document.getElementsByClassName("navbar-brand").style.color == "#fff") {
+    // if(document.getElementsByClassName("navbar-brand").style.color == "#fff") {
         document.getElementsByClassName("navbar-brand").style['text-shadow'] = "black 0.1em 0.1em 0.2em";
         document.getElementsByClassName(".nav").getElementsByTagName("li").style['text-shadow'] = "black 0.1em 0.1em 0.2em";
-    }
+    // }
 }
