@@ -13,3 +13,11 @@
 .post-heading>.tags>a{
     text-shadow: black 0.1em 0.1em 0.2em;
 }
+
+.navbar-brand {
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.nav>li {
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
