@@ -3,10 +3,11 @@ $(document).ready(function() {
     console.log(str);
     $(".navbar-brand").css("text-shadow","black 0.1em 0.1em 0.2em");
     $(".nav").children("li").css("text-shadow","black 0.1em 0.1em 0.2em");
+    $("article").css("overflow-x", "");
     $(".navbar-brand").change(function (e) { 
          if (str == "rgb(255, 255, 255)") {
-            $(".navbar-brand").css("text-shadow","black 0.1em 0.1em 0.2em");
-            $(".nav").children("li").css("text-shadow","black 0.1em 0.1em 0.2em");
+            $(".navbar-brand").css("text-shadow", "");
+            $(".nav").children("li").css("text-shadow", "");
         } else {
             $(".navbar-brand").css("text-shadow", "");
             $(".nav").children("li").css("text-shadow", "");
