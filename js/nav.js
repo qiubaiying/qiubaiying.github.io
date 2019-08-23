@@ -4,7 +4,7 @@ $(document).ready(function() {
     console.log(str);
     $(".navbar-brand").css("text-shadow","black 0.1em 0.1em 0.2em");
     $(".nav").children("li").css("text-shadow","black 0.1em 0.1em 0.2em");
-    $(".navbar-brand").change(function (e) { 
+    $("nav").change(function (e) { 
         if ($(".navbar-brand").css("color") + "" != "rgb(255, 255, 255)") {
             $(".navbar-brand").css("text-shadow", "");
             $(".nav").children("li").css("text-shadow", "");
