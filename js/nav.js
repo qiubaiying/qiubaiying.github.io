@@ -16,7 +16,7 @@ $(document).ready(function() {
     $("nav").change(function (e) { 
         $('.navbar-custom').css("text-shadow","black 0.1em 0.1em 0.2em");
         $('.navbar-custom').children("li").css("text-shadow","black 0.1em 0.1em 0.2em");
-        $('.is-visible').css("text-shadow","black 0.1em 0.1em 0.2em");
-        $('.is-visible').children("li").css("text-shadow","black 0.1em 0.1em 0.2em");
+        $('.is-visible').css("text-shadow","");
+        $('.is-visible').children("li").css("text-shadow","");
     });
 });
