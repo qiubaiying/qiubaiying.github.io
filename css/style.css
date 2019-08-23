@@ -21,9 +21,3 @@
 .nav>li {
     text-shadow: black 0.1em 0.1em 0.2em;
 }
-
-body, html {margin: 0}
-
-canvas { 
-    position: fixed;
-}
