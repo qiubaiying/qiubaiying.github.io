@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $("article").css("overflow-x", "");
+    $("article").css("overflow", "hidden");
     var str = $(".navbar-brand").css("color") + "";
     console.log(str);
     $(".navbar-brand").css("text-shadow","black 0.1em 0.1em 0.2em");
