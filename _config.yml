@@ -7,7 +7,7 @@ description: "Regression testing? What's that? If it compiles, it is good; if it
 keyword: "Ahogek, AhogeK Blog, 呆毛的博客, Jonah Shi, 施佳祺, Java, Ubuntu, PlayStation"
 url: "http://ahogek.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/AhogeK/ahogek.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
