@@ -1,5 +1,5 @@
 # Site settings
-title: BY Blog
+title: Jokerboozp
 SEOTitle: 张鹏的博客|By Jokerboozp
 header-img: img/post-bg-desk.jpg
 email: 2929590482@qq.com
@@ -55,11 +55,5 @@ kramdown:
 # Featured Tags
 featured-tags: false                    # 是否使用首页标签
 featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
-
-
-
-# Progressive Web Apps
-chrome-tab-theme-color: "#000000"
-service-worker: true
 
 
