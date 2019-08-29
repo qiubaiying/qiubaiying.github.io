@@ -52,7 +52,7 @@ class Dog{
 
 - `public Boolean equals(Object obj)`：提供定义对象是否相等的逻辑
 - Object的equals方法定义为：`x.equals(y)`，当x和y是同一个对象的引用时返回true，否则返回false
-- JDK提供的一些类，如String、Date等，重写了Object类的equals方法，调用这些类 的equals方法时，当x和y所引用的对象是同一类是对象且属性相同时（并不一定是相同对象），返回true，否则返回false。
+- JDK提供的一些类，如String、Date等，重写了Object类的equals方法，调用这些类 的equals方法时，当x和y所引用的对象是同一类是对象且属性相同时（并不一定是相同对象），返回true，否则返回false。(也就是说不需要重写方法，直接比较即可)
 - 可以根据用户需要在用户自定义类型中重写equals方法。
 - 引用之间比较的是内存地址，不是数值（x==y比较的是x和y在内存中的地址以及数值，不能只看数值)
 ```java
@@ -70,6 +70,38 @@ class Cat{
         this.color=color;
         this.height=height;
         this.weight=weight;
+    }
+}
+```
+- obj instanceof cat:判断obj是否是cat的一个引用
+- equals为空值，则返回的值为false
+```java
+public class Test{
+    public static void main(String[] args){
+        Cat c1=new Cat(1,2,3);
+        Cat c2=new Cat(1,2,6);
+        System.out.println(c1==c2);
+        System.out.println(c1.equals(c2));
+    }
+}
+class Cat{
+    int color;
+    int height,weight;
+    public Cat(int color,int height,int weight){
+        this.color=color;
+        this.height=height;
+        this.weight=weight;
+    }
+    public boolean equals(Object obj){
+        if(obj==null)return false;
+        else{
+            if(obj instanceof Cat){
+                Cat c=(Cat)obj;
+                if(c.color=this.color && c.height=this.height && c.weight=this.weight){
+                    return true;
+                }
+            }
+        }
     }
 }
 ```
