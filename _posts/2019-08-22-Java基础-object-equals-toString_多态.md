@@ -105,3 +105,29 @@ class Cat{
     }
 }
 ```
+### 对象转型（casting）
+
+- 一个基类的引用类型变量可以“指向”其子类的对象（A要求传过来一只猫，B传过来一只狗，这是可以的，猫属于动物，狗从动物继承就可以了）
+- 一个基类的引用不可以访问其子类对象新增的成员（属性和方法）（要求传过来一只动物，结果传过来一只狗，这时候不能把这只狗当作狗看待，他只是一只动物，狗所新增加的方法动物就不能够访问了）——在你眼中只能看见子类对象中的父类对象
+- 可以使用引用变量instanceof类名来判断该引用类型变量所“指向”的对象是否属于该类或该类的子类
+- 子类的对象可以当作基类的对象来使用称为向上转型（upcasting），反之称为向下转型（downcasting）——父类对象或基类对象引用指向子类对象叫做向上转型，反之叫做向下转型
+```java
+public class Test{
+    public static void main(String[] args){
+        Animal a=new Animal("name");
+        Cat c=new Cat("catname","blue");
+        Dog d=new Dog("dogname","black");
+        System.out.println(a instanceof Animal);
+        System.out.println(c instanceof Animal);
+        System.out.println(d instanceof Animal);
+        System.out.println(a instanceof c);
+        a=new Dog("bigyellow","yellow");
+        System.out.println(a.name);
+        System.out.println(a.furname);
+        System.out.println(a instanceof Animal);
+        System.out.println(a instanceof dog);
+        Dog d1=Dog(a);
+        System.out.println(d1.furcolor);
+    }
+}
+```
