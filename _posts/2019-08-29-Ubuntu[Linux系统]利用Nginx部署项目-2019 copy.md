@@ -1,6 +1,6 @@
 ---
 layout:     post                    # 使用的布局（不需要改）
-title:      Ubuntu[Linux系统]用Nginx部署项目               # 标题 
+title:      Ubuntu[Linux系统]利用Nginx部署项目               # 标题 
 subtitle:   不通过公司给员工的.exe一键运行软件配置Nginx #副标题
 date:       2019-08-29              # 时间
 author:     AhogeK                      # 作者
