@@ -55,3 +55,21 @@ class Dog{
 - JDK提供的一些类，如String、Date等，重写了Object类的equals方法，调用这些类 的equals方法时，当x和y所引用的对象是同一类是对象且属性相同时（并不一定是相同对象），返回true，否则返回false。
 - 可以根据用户需要在用户自定义类型中重写equals方法。
 - 引用之间比较的是内存地址，不是数值（x==y比较的是x和y在内存中的地址以及数值，不能只看数值)
+```java
+public class Test{
+    public static void main(String[] args){
+        Cat c1=new Cat(1,2,3);
+        Cat c2=new Cat(1,2,3);
+        System.out.println(c1==c2);
+    }
+}
+class Cat{
+    int color;
+    int height,weight;
+    public Cat(int color,int height,int weight){
+        this.color=color;
+        this.height=height;
+        this.weight=weight;
+    }
+}
+```
