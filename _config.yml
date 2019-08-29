@@ -4,7 +4,7 @@ SEOTitle: 张鹏的博客|By Jokerboozp
 header-img: img/post-bg-desk.jpg
 email: 2929590482@qq.com
 description: "Stay hungry,stay foolish."
-keyword: "BY, BY Jokerboozp, 张鹏的博客, Jokerboozp, iOS, Apple, iPhone"
+keyword: "BY, BY Jokerboozp, 张鹏的博客, Jokerboozp, Java, Spring, SpringBoot, maven, SSM"
 url: "http://jokerboozp.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/Jokerboozp/Jokerboozp.github.io.git" # you code repository
@@ -53,7 +53,7 @@ kramdown:
 
 
 # Featured Tags
-featured-tags: false                    # 是否使用首页标签
-featured-condition-size: 10000              # 相同标签数量大于这个数，才会出现在首页
+featured-tags: true                   # 是否使用首页标签
+featured-condition-size: 0              # 相同标签数量大于这个数，才会出现在首页
 
 
