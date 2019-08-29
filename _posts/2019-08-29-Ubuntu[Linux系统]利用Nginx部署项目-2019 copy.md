@@ -18,7 +18,7 @@ tags:                               #标签
 安装完成后，可以通过 `` systemctl status nginx `` 确认Nginx服务状态
 并且可以通过在浏览器输入 `` http://localhost | 127.0.0.1 ``看到如下页面：<br>
 ![page](/img/default_page.png)
-这样你就完成第一部啦！
+这样你就完成第一步啦！<br>
 *注：可能会出现因防火墙或Proxy代理的原因无法看到此页面，可以通过[Step 2 - Adjusting the Firewall](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04-quickstart)该网站第二步解决*
 
 ## Step 2 - 拷贝文件
