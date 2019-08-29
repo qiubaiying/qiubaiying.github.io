@@ -16,7 +16,7 @@ tags:
 
 - object类是所有Java类的根基类
 - 如果在类的声明中未使用extends关键字指明其基类，则默认基类为object类。
-```
+```java
 public class Person{
     ......
 }
