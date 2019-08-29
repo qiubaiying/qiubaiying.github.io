@@ -57,6 +57,7 @@ class Dog{
 - 可以根据用户需要在用户自定义类型中重写equals方法。
 - 引用之间比较的是内存地址，不是数值（`x==y`比较的是x和y在内存中的地址以及数值，不能只看数值）
 ```java
+
 public class Test{
 	public static void main(String[] args){
 		Cat c1=new Cat(1,2,3);
@@ -64,7 +65,6 @@ public class Test{
 		System.out.println(c1==c2);
 	}
 }
-
 class Cat{
 	int color;
 	int height,weight;
@@ -75,6 +75,7 @@ class Cat{
 		this.weight=weight;
 	}
 }
+
 ```
 内存示意图
 ![Test](/img/javaTest_0822_2.png)
