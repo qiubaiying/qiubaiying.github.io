@@ -43,7 +43,6 @@ class Dog{
     }
 }
 ```
-![Test](/img/Test_0822_1.png)
 
 ### HashCode
 
@@ -55,7 +54,7 @@ class Dog{
 - Object的equals方法定义为：`x.equals(y)`，当x和y是同一个对象的引用时返回true，否则返回false
 - JDK提供的一些类，如String、Date等，重写了Object类的equals方法，调用这些类 的equals方法时，当x和y所引用的对象是同一类是对象且属性相同时（并不一定是相同对象），返回true，否则返回false。
 - 可以根据用户需要在用户自定义类型中重写equals方法。
-- 引用之间比较的是内存地址，不是数值（`x==y`比较的是x和y在内存中的地址以及数值，不能只看数值)
+- 引用之间比较的是内存地址，不是数值（x==y比较的是x和y在内存中的地址以及数值，不能只看数值)
 ```java
 
 public class Test{
@@ -77,5 +76,3 @@ class Cat{
 }
 
 ```
-内存示意图
-![Test](/img/javaTest_0822_2.png)
