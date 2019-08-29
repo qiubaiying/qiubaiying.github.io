@@ -25,4 +25,22 @@ public class Person extends Object{
     ......
 }
 ```
+### toString()方法
 
+- object类中定义有`public String toString()`方法，其返回值是String类型，描述当前对象的有关信息。
+- 在进行String与其他类型数据的连接操作时（如`System.out.println("info"+person)`），将自动调用该对象的类的toString()方法。
+- 可以根据用户需要在用户自定义类型中重写toString()方法
+```
+public class Test{
+    public static void main(String[] args){
+        Dog d=new Dog();
+        System.out.println("d="+d.toString());
+    }
+}
+class Dog{
+    public String toString(){
+        return "I'm a cool dog!";
+    }
+}
+```
+![Test](img/Test_0822_1.png "测试1")
