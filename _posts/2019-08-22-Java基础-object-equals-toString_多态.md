@@ -48,3 +48,33 @@ class Dog{
 ### HashCode
 
 - 独一无二的代表了一个对象，并且可以根据哈希编码找到一个对象所在的位置
+
+### Equals方法
+
+- `public Boolean equals(Object obj)`：提供定义对象是否相等的逻辑
+- Object的equals方法定义为：`x.equals(y)`，当x和y是同一个对象的引用时返回true，否则返回false
+- JDK提供的一些类，如String、Date等，重写了Object类的equals方法，调用这些类 的equals方法时，当x和y所引用的对象是同一类是对象且属性相同时（并不一定是相同对象），返回true，否则返回false。
+- 可以根据用户需要在用户自定义类型中重写equals方法。
+- 引用之间比较的是内存地址，不是数值（`x==y`比较的是x和y在内存中的地址以及数值，不能只看数值）
+```
+public class Test{
+	public static void main(String[] args){
+		Cat c1=new Cat(1,2,3);
+		Cat c2=new Cat(1,2,3);
+		System.out.println(c1==c2);
+	}
+}
+
+class Cat{
+	int color;
+	int height,weight;
+	
+	public Cat(int color,int height,int weight){
+		this.color=color;
+		this.height=height;
+		this.weight=weight;
+	}
+}
+```
+内存示意图
+![Test](/img/javaTest_0822_2.png)
