@@ -3,16 +3,16 @@ title: BY Blog
 SEOTitle: 天涯的博客 | BY Blog
 header-img: img/post-bg-desk.jpg
 email: liyaofeng66@gmail.com
-description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, "
+description: "饮马江湖上,仗剑走天涯."
+keyword: "BY, tianya Blog, "
 url: "http://github.com"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/tianyale" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/me/photo.png  # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -20,10 +20,11 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 RSS: false
 # weibo_username:     qiubaiying
 #zhihu_username:     qiubaiying
-github_username:    qiubaiying
+github_username:    tianyale
 #facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
+#jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
+csdn_username: qq_29267429
 
 
 
@@ -57,16 +58,16 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
+# disqus_username: tianyale
 
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  clientID: ffc96377a94a71fa67e9                            #生成的clientID
+  clientSecret: 3787df06bf1825545b6af291590ec0b1a35f96b4    #生成的clientSecret
+  repo: tianyale.github.io    #仓库名称
+  owner: tianyale    #github用户名
+  admin: tianyale
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
