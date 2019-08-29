@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    // $("article").css("overflow", "hidden");
+    $("article").css("overflow", "hidden");
 
     $(".navbar-brand").css("text-shadow", "black 0.1em 0.1em 0.2em");
     $("#huxblog_navbar").find("li").css("text-shadow", "black 0.1em 0.1em 0.2em");
