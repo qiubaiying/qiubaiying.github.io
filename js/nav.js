@@ -20,4 +20,15 @@ $(window).scroll(function(){
             $(".navbar-brand").css("text-shadow", "")
         }
     }
+    $(".catalog-body").find("a").each(function(){
+        // 判断是否在区域内                
+        var str = $(this).text().replace(/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\-|\_|\+|\=|\||\\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?]/g,"");
+        console.log(str);
+        if ($("#" + str).offset().top > 0 && $("#" + str).offset().top <= $(window).height()) {
+            $("#" + str).parent().addClass("active");
+        } else {
+            $("#" + str).parent().removeClass("active");
+        }
+    });
+
 });
