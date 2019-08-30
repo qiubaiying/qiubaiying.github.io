@@ -18,7 +18,7 @@ sidebar-avatar: /img/1.jpg      # use absolute URL, seeing it's used in both `/`
 
 # SNS settings
 RSS: false
-# weibo_username:     贱贱的张小贤
+weibo_username:     贱贱的张小贤
 zhihu_username:    张小贤
 github_username:    Jokerboozp
 
