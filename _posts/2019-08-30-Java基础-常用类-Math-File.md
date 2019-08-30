@@ -25,6 +25,7 @@ tags:
    - `public File(String parent,String child)`
    以parent为父路径，child为子路径创建File对象
 - File的静态属性String separator存储了当前系统的路径分隔符
+- 文件路径名分隔符在Windows下是“/”，在Linux下是“\”。可以在任何平台上写“\”来避免错误。
 
 ------
 
@@ -73,3 +74,4 @@ public class Test{
     }
 }
 ```
+#### 递归列出目录结构
