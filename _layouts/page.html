@@ -183,8 +183,37 @@ layout: default
                                 </a>
                             </li>
                             {% endif %}
-                            
+
+
+                            {% endif %}
+                            {% if site.tg_url %}
+                            <li>
+                                <a target="{site.tg_url}}" href="https://img.icons8.com/metro/26/000000/paper-plane.png">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            {% endif %}
+
+
+                            {% endif %}
+                            {% if site.tg_url %}
+                            <li>
+                                <a target="{site.tg_group}}" href="https://img.icons8.com/metro/26/000000/user-group-man-man.png">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            {% endif %}
+
                         </ul>
+
+
+                        
                         {% if site.email %}
                             <p>✉️ {{site.email}}</p>
                         {% endif %}
