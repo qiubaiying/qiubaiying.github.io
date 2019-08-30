@@ -187,44 +187,13 @@ layout: default
 
                             {% endif %}
                             {% if site.tg_url %}
-                            <li>
-                                <a target="{site.tg_url}}" href="https://img.icons8.com/metro/26/000000/paper-plane.png">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            {% endif %}
 
-
-                            {% endif %}
-                            {% if site.tg_url %}
-                            <li>
-                                <a target="{site.tg_group}}" href="https://img.icons8.com/metro/26/000000/user-group-man-man.png">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            {% endif %}
 
                         </ul>
 
 
 
-                    <!--    {% if site.email %}
-                            <p>✉️ {{site.email}}</p>
-                        {% endif %}
-                        &lt;!&ndash;tg 用户名 地址&ndash;&gt;
-                        {% if site.tg_name %}
-                        <p> <img src="https://img.icons8.com/metro/26/000000/paper-plane.png" width="10%" >️ <a href="{{site.tg_url}}"> {{site.tg_name}} </a> </p>
-                        {% endif %}
-                        &lt;!&ndash;tg群组&ndash;&gt;
-                        {% if site.tg_group %}
-                        <p><img src="https://img.icons8.com/metro/26/000000/user-group-man-man.png" width="10%" >️<a href="{{friend.tg_group}}">{{site.tg_group_name}}</a> </p>
-                        {% endif %}-->
+
                     </div>
                 </section>
                 <!-- Friends Blog -->
@@ -234,27 +203,6 @@ layout: default
                 <ul class="list-inline">
                     {% for friend in site.friends %}
                         <li><a href="{{friend.href}}">{{friend.title}}</a></li>
-                    <li>
-                        <a target="{site.tg_url}}" href="https://img.icons8.com/metro/26/000000/paper-plane.png">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                        </a>
-                    </li>
-                    {% endif %}
-
-
-                    {% endif %}
-                    {% if site.tg_url %}
-                    <li>
-                        <a target="{site.tg_group}}" href="https://img.icons8.com/metro/26/000000/user-group-man-man.png">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                        </a>
-                    </li>
                     {% endfor %}
                 </ul>
                 {% endif %}
