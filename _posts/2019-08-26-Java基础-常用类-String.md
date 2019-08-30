@@ -201,3 +201,40 @@ tags:
   	abc数字012345
   	543210字数cba
    ```
+  
+#### 基本数据类型包装类
+
+- 包装类（如Integer、Double等）这些类封装了一个相应的基本数据类型，并为其提供了一系列操作
+- 例子：
+```java
+public class Test{
+	public static void main(String[] args){
+		Integer i=new Integer(100);
+		Double d=new Double("123.456");
+		int j=i.intValue()+d.intValue();
+		float f=i.floatValue()+d.floatValue();
+		System.out.println(j);
+		System.out.println(f);
+		double pi=Double.parseDouble("3.1415926");
+		double r=Double.valueOf("2.0").doubleValue();
+		double s=pi*r*r;
+		System.out.println(s);
+		try{
+			int k=Integer.parseInt("1.25");
+		}catch(NumberFormatException e){
+			System.out.println("数据格式不对！");
+		}
+		System.out.println(Integer.toBinaryString(123)+"B");//把123以2进制显示
+		System.out.println(Integer.toHexString(123)+"H");//把123以16进制显示
+		System.out.println(Integer.toOctalString(123)+"O");//把123以八进制显示
+	}
+}
+运行结果：
+	223
+	223.456
+	12.5663704
+	数据格式不对！
+	1111011B
+	7bH
+	1730
+```
