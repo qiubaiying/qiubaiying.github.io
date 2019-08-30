@@ -1,7 +1,7 @@
 ---
 layout:     post 
 title:      Java基础0830
-subtitle:   Math、File
+subtitle:   Math、File、Enum
 date:       2019-08-30
 author:     张鹏
 header-img: img/post-bg-debug.png
@@ -99,3 +99,10 @@ public class Test{
     }
 }
 ```
+
+#### Enum枚举类型
+
+- 枚举类型：
+   - 只能够取特定值中的一个
+   - 使用enum关键字
+   - 是java.lang.Enum类型
