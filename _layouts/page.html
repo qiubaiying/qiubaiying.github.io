@@ -184,18 +184,43 @@ layout: default
                         </li>
                         {% endif %}
 
+                        {% endif %}
+                        {% if site.github_username %}
+                        <li>
+                            <a target="_blank" href="https://github.com/{{ site.github_username }}">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                            </a>
+                        </li>
+                        {% endif %}
+
+                        {% endif %}
+                        {% if site.github_username %}
+                        <li>
+                            <a target="_blank" href="https://github.com/{{ site.github_username }}">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                            </a>
+                        </li>
+                        {% endif %}
+
+
                     </ul>
-                    {% if site.email %}
+                   <!-- {% if site.email %}
                     <p>✉️ {{site.email}}</p>
                     {% endif %}
-                    <!--tg 用户名 地址-->
+                    &lt;!&ndash;tg 用户名 地址&ndash;&gt;
                     {% if site.tg_name %}
                     <p><i class="fa fa-telegram"></i>️ <a href="{{site.tg_url}}"> {{site.tg_name}} </a> </p>
                     {% endif %}
-                    <!--tg群组-->
+                    &lt;!&ndash;tg群组&ndash;&gt;
                     {% if site.tg_group %}
                     <p>✉️<a href="{{friend.tg_group}}">{{site.tg_group_name}}</a> </p>
-                    {% endif %}
+                    {% endif %}-->
                 </div>
             </section>
             <!-- Friends Blog -->
