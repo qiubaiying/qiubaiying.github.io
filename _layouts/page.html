@@ -188,6 +188,14 @@ layout: default
                         {% if site.email %}
                             <p>✉️ {{site.email}}</p>
                         {% endif %}
+                        <!--tg 用户名 地址-->
+                        {% if site.tg_name %}
+                        <p>✉️ <a href="{{site.tg_url}}"> {{site.tg_name}} </a> </p>
+                        {% endif %}
+                        <!--tg群组-->
+                        {% if site.tg_group %}
+                        <p>✉️<a href="{{friend.tg_group}}">{{friend.tg_group_name}}</a> </p>
+                        {% endif %}
                     </div>
                 </section>
                 <!-- Friends Blog -->
