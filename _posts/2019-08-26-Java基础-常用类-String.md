@@ -117,7 +117,7 @@ tags:
    F
    1976
    ```
-   
+  
    - 例4：编写一个程序，输出一个字符串中的大写英文字母数，小写英文字母数以及非英文字母数
    ```java
    public class Test{
@@ -139,7 +139,7 @@ tags:
 	}
 }
    ```
-   
+  
    - 例5：编写一个方法，输出在一个字符串中，指定字符串出现的次数
    ```java
    public class Test{
@@ -155,4 +155,49 @@ tags:
 		System.out.println(count);
 	}
 }
+   ```
+  
+#### StringBuffer类
+
+- java.lang.StringBuffer代表可变的字符序列
+- String和StringBuffer类似，但StringBuffer可以对其字符串进行改变
+
+##### StringBuffer类常见的构造方法
+- `StringBuffer()`
+创建一个不包含字符序列的“空”的StringBuffer对象
+- `StringBuffer(String str)`
+创建一个StringBuffer对象，包含与String对象str相同的字符序列
+- `public StringBuffer append()`
+可以为该StringBuffer对象添加字符序列，返回添加后的该StringBuffer对象引用
+- `public StringBuffer insert()`
+可以为该StringBuffer对象在指定位置插入字符序列，返回修改后的该StringBuffer对象引用
+- `public StringBuffer delete(int start,int end)`
+可以删除从start开始到end-1为止的一段字符序列，返回修改后的该StringBuffer对象引用
+- `public StringBuffer reverse()`
+  用于将字符序列逆序，返回修改后的该StringBuffer对象引用
+
+   - 例子：
+   ```java
+   public class Test{
+  public static void main(String[] args){
+  	String s="Microsoft";
+  	char[] a={'a','b','c'};
+  	StringBuffer sb1=new StringBuffer(s);
+  	sb1.append('/').append("IBM").append('/').append("Sun");
+  	System.out.println(sb1);
+  	StringBuffer sb2=new StringBuffer("数字");
+  	for(int i=0;i<9;i++){
+  		sb2.append(i);
+  	}
+  	System.out.println(sb2);
+  	sb2.delete(8,sb2.length()).insert(0,a);
+  	System.out.println(sb2);
+  	System.out.println(sb2.reverse());
+  }
+  }
+  运行结果：
+  	Microsoft/IBM/Sun
+  	数字012345678
+  	abc数字012345
+  	543210字数cba
    ```
