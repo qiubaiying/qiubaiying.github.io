@@ -27,7 +27,7 @@ tags:
 
 [这里是现在的音频](https://github.com/djzts/djzts.github.io/blob/master/music/love_river.mp3)
 
-<audio preload="auto" autoplay="autoplay">
+<audio controls preload="auto">
     <source src="love_river.mp3" type="audio/mp3" />
     u know it
 </audio>
