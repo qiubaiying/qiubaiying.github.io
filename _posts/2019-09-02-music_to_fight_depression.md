@@ -29,6 +29,6 @@ tags:
 
 
 <audio controls>
-  <source src="djzts.github.io/music/love_river.mp3" type="audio/mpeg">
+  <source src="music/love_river.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
