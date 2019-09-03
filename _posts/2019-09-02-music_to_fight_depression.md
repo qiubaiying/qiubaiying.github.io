@@ -27,4 +27,7 @@ tags:
 
 [这里是现在的音频](https://github.com/djzts/djzts.github.io/blob/master/music/love_river.mp3)
 
-<a href="https://github.com/djzts/djzts.github.io/blob/master/music/love_river.mp3">这里是现在的音频</a>
+<audio controls>
+  <source src="https://github.com/djzts/djzts.github.io/blob/master/music/love_river.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
