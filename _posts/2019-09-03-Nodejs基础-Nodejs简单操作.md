@@ -43,6 +43,28 @@ tags:
 var fs=require('fs')
 fs.readFile('./A.txt',function(error,data){
 //因为会把文件中的数据转成16进制，所以用toString方法来转换
-    console.log(data.toString())
+    if(error){
+        console.log('文件不存在')
+    }else{
+        console.log(data.toString())
+    }
+})
+```
+### 利用node.js写入文件
+
+```javascript
+//第一个参数：文件路径
+//第二个参数：文件内容
+//第三个参数：回调函数
+//error
+//成功：
+//文件写入成功
+//error null
+//失败
+//文件写入失败
+//error是错误对象
+var fs=require('fs')
+fs.writeFile('./readme.md','大家好，我是Node.js'，function(error){
+    console.log('文件写入成功')
 })
 ```
