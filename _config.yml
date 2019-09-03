@@ -58,17 +58,17 @@ gems: [jekyll-paginate]
 
 
  评论系统
- Disqus（https://disqus.com/）
+# Disqus（https://disqus.com/）
 # disqus_username: qiubaiying
 
  Gitalk
   gitalk:
-  enable: false    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID#
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  enable: true   #是否开启Gitalk评论
+  clientID: c04ef5c3d67c30cd933f                            #生成的clientID#
+  clientSecret: 7971b22bef325463805612eae63e07bf41131dc6    #生成的clientSecret
+  repo: djzts.github.io    #仓库名称
+  owner: djzts    #github用户名
+  admin: djzts
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
@@ -88,7 +88,7 @@ gems: [jekyll-paginate]
 
 # Featured Tags
   featured-tags: true                     # 是否使用首页标签
-  featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+  featured-condition-size: 2              # 相同标签数量大于这个数，才会出现在首页
 
 
 
