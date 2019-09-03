@@ -62,7 +62,7 @@ gems: [jekyll-paginate]
 # disqus_username: qiubaiying
 
  Gitalk
-  gitalk:
+ gitalk:
   enable: true   #是否开启Gitalk评论
   clientID: f2c84e7629bb1446c1a4                               #生成的clientID#
   clientSecret: 2db350447433bb0bf0ebcf0b152f818fedaa4f9b    #生成的clientSecret
