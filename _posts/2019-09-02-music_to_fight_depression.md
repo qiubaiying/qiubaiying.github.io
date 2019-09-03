@@ -27,4 +27,4 @@ tags:
 
 [这里是现在的音频](https://github.com/djzts/djzts.github.io/blob/master/music/love_river.mp3)
 
-<a href="https://github.com/djzts/djzts.github.io/blob/master/audio.html">这里可以在线听</a>
+<a href="/audio/">这里可以在线听</a>
