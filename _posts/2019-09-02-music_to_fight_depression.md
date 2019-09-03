@@ -33,7 +33,3 @@ tags:
 </audio>
 
 
-<audio controls preload="auto">
-    <source src="https://raw.githubusercontent.com/djzts/djzts.github.io/blob/master/music/love_river.mp3" type="audio/mp3" />
-    u know it
-</audio>
