@@ -65,6 +65,25 @@ fs.readFile('./A.txt',function(error,data){
 //error是错误对象
 var fs=require('fs')
 fs.writeFile('./readme.md','大家好，我是Node.js'，function(error){
-    console.log('文件写入成功')
+    if(error){
+        console.log('文件创建失败')
+    }else{
+        console.log('文件创建成功')
+    }
 })
+```
+### 简单的http服务
+
+- 使用node构建一个简单的web服务器
+- 在node中专门提供了一个核心模块：http
+
+```javascript
+var http=require(http)//加载http核心模块
+var server=http.createServer()//使用http.createServer()方法创建一个web服务器
+server.on('request',function(){
+	console.log('收到客户端的请求了')
+})//接收请求(注册request请求事件，当客户端请求过来，就会自动触发服务器的request请求时间，然后执行第二个参数，回调处理函数)
+server.listen(3000,function(){
+	console.log('服务器启动成功了，可以通过http://127.0.0.1:3000来进行访问')
+})//绑定端口号，启动服务器
 ```
