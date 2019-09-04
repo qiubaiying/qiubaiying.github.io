@@ -64,8 +64,8 @@ gems: [jekyll-paginate]
 # Gitalk
  gitalk:
   enable: true   #是否开启Gitalk评论
-  clientID: 52bb49bc1d3ba9ecd986                               #生成的clientID#
-  clientSecret: 2db350447433bb0bf0ebcf0b152f818fedaa4f9b   #生成的clientSecret
+  clientID: c04ef5c3d67c30cd933f                          #生成的clientID#
+  clientSecret: 7971b22bef325463805612eae63e07bf41131dc6   #生成的clientSecret
   repo: djzts.github.io    #仓库名称
   owner: djzts    #github用户名
   admin: djzts
