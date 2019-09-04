@@ -54,7 +54,7 @@ kramdown:
   input: GFM                            # use Github Flavored Markdown !important
   
 paginate: 10
-paginate_path: "page/:num"
+paginate_path: "blog/page:num"
 baseurl: ""
 
 
