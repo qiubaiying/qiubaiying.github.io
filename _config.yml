@@ -66,8 +66,8 @@ baseurl: ""
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: b6b82677f223eb2dfde8                           #生成的clientID
-  clientSecret: b3481f5f03b80e8f2079c42ea216ac3bb59962f4    #生成的clientSecret
+  clientID: af505702df4a86e743aa                           #生成的clientID
+  clientSecret: 102588d917d6a6ac0709f2cc62fc9b13da9b70d2    #生成的clientSecret
   repo: F3ngdw.github.io    #仓库名称
   owner: F3ngdw    #github用户名
   admin: F3ngdw
