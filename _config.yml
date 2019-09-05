@@ -61,7 +61,7 @@ baseurl: ""
 
 # 评论系统
 # Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
+disqus_username: ouwen feng
 
 # Gitalk
 gitalk:
