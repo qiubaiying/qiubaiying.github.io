@@ -7,8 +7,8 @@ author:     AhogeK                      # 作者
 header-img: img/nginx.png   #这篇文章标题背景图片
 catalog: true                       # 是否归档
 tags:                               #标签
-    - Ubuntu
-    - Nginx
+    - ubuntu
+    - nginx
 ---
 
 ## Step 1 - 安装 Nginx
@@ -36,7 +36,7 @@ tags:                               #标签
 在 ``server{}``包裹中 一个是 listen 主要是最后进入前端页面的监听端口；而 server_name 是端口号前的域名地址，此处就是本地地址。
 而我们要修改的地方即是
 ![page](/img/Screenshot&#32;from&#32;2019-08-29&#32;20-52-38.png)
-在```location / {}``中，其中 *root* 代表网站根目录，而 *index* 指根目录下首页的地址
+在``location / {}``中，其中 *root* 代表网站根目录，而 *index* 指根目录下首页的地址
 在公司下载下的项目中，这里一般填的是相对路径，因为.exe文件就会在项目中，我这边就直接将root根目录修改成*绝对路径*即可
 
 **最后即可在浏览器中输入 ``http://server_name:listen/targetPage``访问了！**

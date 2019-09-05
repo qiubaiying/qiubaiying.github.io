@@ -1,0 +1,25 @@
+---
+layout:     post                    # 使用的布局（不需要改）
+title:      Redis删除hash表的单条缓存              # 标题 
+subtitle:   命令行操作redis的方法 #副标题
+date:       2019-09-05            # 时间
+author:     AhogeK                      # 作者
+header-img: img/redis.png    #这篇文章标题背景图片
+catalog: true                       # 是否归档
+tags:                               #标签
+    - redis
+    - ubuntu
+---
+
+>这一次与上次相仿，也是因为Ubuntu并不能用红盒子，我也觉得没必要用，直接用终端来删公司表单接口缓存，这边讲下如何删除，还是很简单的：
+1. 首先先得确认自己的系统是否安装了redis
+<a href="https://redis.io/download">![install](/img/Screenshot&#32;from&#32;2019-09-05&#32;09-24-25.png)</a>
+安装的话，官网有详细的教程
+2. 连接指定redis服务器
+``redis-cli -h ip地址 -p 端口号 -a "密码"``
+3. 可以使用 **INFO** 指令查看redis的详细信息，并可以找到自己想要选择的db库
+4. 使用 ``SELECT 9`` 进入db9的库（这里依个人情况选择）
+5. 再通过 ``KEYS *`` 可以查看db9下所有的key
+6. 比如我这边我只要看我其中的一个key下的存的value，我可以通过 ``HKEYS key名`` 查看当中key下存的hash内容的所有key值
+7. 但其实最后只需要一行命令就可以完成想要删除的hash单条内容
+``HDEL key名 hash表字段`` 即可删除该条字段的缓存
