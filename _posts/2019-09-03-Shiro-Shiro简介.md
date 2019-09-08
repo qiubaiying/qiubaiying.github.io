@@ -30,6 +30,7 @@ tags:
 
 ![shiro架构](https://github.com/Jokerboozp/Jokerboozp.github.io/raw/master/img/shiro-3.png)
 
-#### 搭建Shiro环境
+#### 搭建Shiro环境（与Spring集成）
 
-1.
+1.加入Spring和Shiro的jar包
+2.配置Spring和SpringMVC
