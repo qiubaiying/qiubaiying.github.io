@@ -15,6 +15,11 @@ tags:
 ## 因为是基础版本，所以学习先利用jar包的形式进行展示
 ## 实现的结果：用户只能够访问配置文件中允许的jsp文件，没有授权或登录的情况下访问其他jsp文件会跳转到登陆界面
 
+#### 项目结构
+
+![项目结构](https://github.com/Jokerboozp/Jokerboozp.github.io/raw/master/img/%E6%89%B9%E6%B3%A8%202019-09-12%20155842.png)
+
+
 #### 1.Spring环境搭建
 
 1.导入Spring所需的jar包（下图展示的是搭建shiro项目所需要的所有jar包）
