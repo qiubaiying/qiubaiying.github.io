@@ -10,5 +10,5 @@ tags:
     - Shiro
 ---
 
-# Shiro与Spring继承的过程
+# Shiro与Spring集成的过程
 
