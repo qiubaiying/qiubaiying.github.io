@@ -91,9 +91,11 @@ tags:
 </beans>
 
 ```
-5.导入shiro的jar包
+#### 2.Shiro与Spring整合
 
-6.在web.xml文件中写入shiro的配置文件
+1.导入shiro的jar包
+
+2.在web.xml文件中写入shiro的配置文件
 
 ```xml
 <!-- Shiro Filter is defined in the spring application context: -->
@@ -207,7 +209,7 @@ tags:
 </beans>
 ```
 
-8.创建ShiroRealm接口程序
+3.创建ShiroRealm接口程序
 
 ```java
 package com.sc.shiro.realms;
@@ -241,7 +243,7 @@ public class ShiroRealm implements Realm {
 
 ```
 
-9.导入ehcache.xml
+4.导入ehcache.xml
 
 ```xml
 <ehcache>
