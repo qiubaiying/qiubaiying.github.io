@@ -143,6 +143,7 @@ public class TestSocketClient{
 
 ```java
 import java.net.*;
+import java.io.*;
 public class TestUDPServer{
     public static void main(String[] args) throws Exception{
         byte buf[]=new byte[1024];
@@ -150,7 +151,9 @@ public class TestUDPServer{
         DatagramSocket ds=new DatagramSocket(5678);
         while(true){
             ds.receive(dp);
-            System.out.println(new String(buf,0,dp.getLength()));
+            ByteArrayInputStream bais=new ByteArrayInputStream(buf);
+            DataInputStream dis=new DataInputStream(bais);
+            System.out.println(dis.readLong());
         }
     }
 }
@@ -159,9 +162,14 @@ public class TestUDPServer{
 
 ```java
 import java.net.*;
+import java.io.*;
 public class TestUDPClient{
     public static void main(String[] args) throws Exception{
-        byte[] buf=(new String("hello")).getBytes();
+    long n=10000L;
+    ByteArrayOutputStream baos=new ByteArrayOutputStream();
+    DataOutputStream dos=new DataOutputStream(baos);
+    dos.writeLong(n);
+        byte[] buf=baos.toByteArray();
         DatagramPacket dp=new DatagramPacket(buf,buf.length,new InetSocketAddress("127.0.0.1",5678));
         DatagramSocket ds=new DatagramSocket(9999);
         ds.send(dp);
