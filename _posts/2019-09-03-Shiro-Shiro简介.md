@@ -29,8 +29,3 @@ tags:
 - Realms：Realms作为Shrio和你的应用程序的连接桥，当需要与安全数据交互的时候，像用户账户，或者访问控制，shiro就从一个或者多个Realms中查找。shiro提供了一些可以直接使用的Realms，如果默认的Realms不能满足你的要求，你也可以定制自己的Realms。
 
 ![shiro架构](https://github.com/Jokerboozp/Jokerboozp.github.io/raw/master/img/shiro-3.png)
-
-#### 搭建Shiro环境（与Spring集成）
-
-1.加入Spring和Shiro的jar包
-2.配置Spring和SpringMVC
