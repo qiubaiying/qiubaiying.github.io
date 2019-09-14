@@ -68,3 +68,15 @@ tags:
 
 #### shiro的认证
 
+- shiro认证的步骤
+   - 获取当前的Subject，调用SecurityUtils.getSubject();
+   - 测试当前的用户是否已经被认证（即是否已经登陆），调用Subject的isAuthenticated()方法
+   - 若没有被认证，则把用户名和密码封装为UsernamePasswordToken对象
+      - 创建一个表单页面
+      - 把请求提交到SpringMVC的Handler
+      - 获取用户名和密码
+   - 执行登陆：调用Subject的login(AuthenticationToken)方法
+   - 自定义Realm的方法，从数据库中获取对应的记录，返回给Shiro
+      - 继承org.apache.shiro.realm.AuthenticatingRealm类
+      - 实现doGetAuthenticationInfo(AuthenticationToken)方法
+   - 用Shiro完成密码比对
