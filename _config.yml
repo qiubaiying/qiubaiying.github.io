@@ -1,10 +1,10 @@
 # Site settings
-title: OldJii Blog
-SEOTitle: 老纪的博客 | OldJii Blog
-header-img: img/post-bg-desk.jpg
+title: OldJii
+SEOTitle: OldJii博客 | 纪官凯的技术博客
+header-img: img/pji.jpg
 email: mail@jiguankai.cn
 description: "Every failure is leading towards success."
-keyword: "OldJii, OldJii Blog, 老纪的博客, jiguankai, 纪官凯, Google, Android, iPhone"
+keyword: "纪官凯, OldJii, Android博客, jiguankai, OldJiiBlog, Google, Android"
 url: "http://oldjii.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/OldJii/OldJii.github.io.git" # you code repository
