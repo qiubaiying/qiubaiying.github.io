@@ -1,4 +1,4 @@
-## 博客网站：<http://jiguankai.com>
+## 博客网站：<http://jiguankai.cn>
 
 博文主要为Android方面的文章，有总结类的、源码类的、教程类的，目前还在学习中...
 
