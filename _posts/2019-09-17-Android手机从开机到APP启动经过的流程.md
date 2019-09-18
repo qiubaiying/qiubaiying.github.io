@@ -6,10 +6,9 @@ author:     OldJii
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
-    - Android
+    - 开机流程
     - App启动
-    - Android架构
-    - 开机
+    - Android
 ---
 > 版权声明：转载请务必注明作者与原文链接
 
@@ -17,11 +16,11 @@ tags:
 本文讲解从开机到app显示画面的流程，但不分析源码，如果想阅读源码请到参考文章中查阅。
 
 本文把这段流程分为三部分：
-- [从开机到显示应用列表](#one)
-- [从点击应用图标到Activity创建成功](#two)
-- [从Activity创建成功到显示画面](#three)
+- 从开机到显示应用列表
+- 从点击应用图标到Activity创建成功
+- 从Activity创建成功到显示画面
 
-## <span id="one">从开机到显示应用列表</span>
+## 从开机到显示应用列表
 
 先看流程图：
 ![](https://user-gold-cdn.xitu.io/2019/9/16/16d3acbbbba41520?w=1811&h=1588&f=jpeg&s=210189)
@@ -54,7 +53,7 @@ fork不允许存在多线程，而Binder通讯恰巧就是多线程；
 **Question 2：什么是窗口？**
 Android系统中的窗体是屏幕上的一块用于绘制各种UI元素并能够响应应用户输入的一个矩形区域，从原理上来讲，窗体的概念是独自占有一个Surface实例的显示区域，比如Dialog、Activity的界面、壁纸、状态栏以及Toast等都是窗体；
 
-## <span id="two">从点击应用图标到Activity创建成功</span>
+## 从点击应用图标到Activity创建成功
 先看流程图：
 ![](https://user-gold-cdn.xitu.io/2019/9/16/16d3acbc595b7401?w=960&h=720&f=jpeg&s=52448)
 
@@ -119,7 +118,7 @@ Android系统中的窗体是屏幕上的一块用于绘制各种UI元素并能�
 AMS会保存一个ProcessRecord信息，有两部分构成，“uid + process”，每个应用工程序都有自己的uid，而process就是AndroidManifest.xml中Application的process属性，默认为package名。每次在新建新进程前的时候会先判断这个 ProcessRecord 是否已存在，如果已经存在就不会新建进程了，这就属于应用内打开 Activity 的过程了。
 
 
-## <span id="three">从Activity创建成功到显示画面</span>
+## 从Activity创建成功到显示画面
 
 onCreate()方法中先执行setContentView()方法将对应的xml文件传入，之后会去调用window.setContentView()，最终会在这里创建**Decorview**并填充标题栏、状态栏，然后获取**contentParent**，然后调用LayoutInflater.inflate解析xml文件获取根root（ViewRootImpl），通过root.addView()将contentParent添加到**ViewRootImpl**中去，至此onCreate()结束。
 
