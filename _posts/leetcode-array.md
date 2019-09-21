@@ -10,15 +10,64 @@ tags:
     - leetcode
     - 数组
 ---
-27
+#从Array中remove系列
+###27 Remove Element
+```java
+class Solution {
+    public int removeElement(int[] nums, int val) {      
+        int count = 0;
+        int index = 0;
+        int tmp = 0;
+        for(int i = 0;i<nums.length;i++){            
+            if(nums[i] == val){                
+                count++;
+            }
+            else{
+                tmp = nums[index];//swap
+                nums[index] = nums[i];
+                nums[i] = tmp;
+                index++;
+            }
+        }
+        return nums.length - count;        
+    }
+}
+```
+给定一个数组，删除给定的元素并返回一个没有该元素的数字，但是要你返回这个数组的长度len，也就是说[0,..len]中间不能有val元素
+更新两个指针，一个遇到val就加1，一个遇到非val，swap然后加1.
 
-Remove Element
 
+###26 Remove Duplicates from Sorted Array
+```java
+/*
+ * @lc app=leetcode id=26 lang=java
+ *
+ * [26] Remove Duplicates from Sorted Array
+ */
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        //array duplicate系列
+        //two pointer
+        //如果i > i-1 i,j一起出发，如果i == i-1 i前进，j不动，等待下一个赋值
+        //
+        int j = 0;
+        for(int i = 0;i < nums.length;i++){
+            if( i < 1 || nums[i] > nums[i-1]){
+                nums[j] = nums[i];
+                j++;
+            }
+            else{
 
+                continue;
 
-26
+            }
+        }
+        return j;
+    }
+}
+```
+和27差不多，一样是要求删除元素，不过这里是重复元素，然后让我们返回删除后元素的长度，一样是更新两个指针，从i = 1开始，
 
-Remove Duplicates from Sorted Array
 
 
 
