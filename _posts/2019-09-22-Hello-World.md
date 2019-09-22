@@ -1,10 +1,3 @@
-<!--
- * @Author: Xun Zhao
- * @Date: 2019-09-22 21:00:27
- * @LastEditors: Xun Zhao
- * @LastEditTime: 2019-09-22 21:00:27
- * @Description: 
- -->
 ---
 layout:     post
 title:      Hello World!
