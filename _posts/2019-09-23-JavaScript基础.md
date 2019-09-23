@@ -21,3 +21,21 @@ tags:
 - 类似于C和Java的语言结构
 - 动态语言
 - 基于原型的面向对象
+
+#### JS编写的位置
+
+1. 可以将JS代码写到标签的onclick属性中
+
+```html
+<button onclick="alert('hello World');">按钮</button>
+```
+
+2. 可以将JS代码写到超链接的href属性中，当点击超链接时，会执行JS代码
+
+```html
+<a href="javascript:alert('hello world');">超链接</a>
+```
+
+3. 可以将JS写到script标签中
+4. 可以将JS写到js文件中，通过script标签的src属性引入
+
