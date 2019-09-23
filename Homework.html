@@ -54,6 +54,14 @@ header-img: "img/post-bg-rwd.jpg"
     <p>通过terminal(终端） cd 到.py文件所在的目录，再执行下一步。</p>
     
     <p>作业生成指令： python Student.py</p>
+    
+    <p>以下是部分mac 的terminal 指令 </p>
+    
+    <p>如果是放在桌面 -> cd desktop </p>
+    
+    <p>如果想查询下级菜单 -> ls </p>
+    
+    <p>返回上级菜单 -> cd .. </p>
 
 </div>
 
@@ -141,27 +149,3 @@ header-img: "img/post-bg-rwd.jpg"
 {% endif %}
 <!-- Gitalk end -->
 
- <!-- disqus 评论框 start  -->
-{% if site.disqus.enable %}
-
-<div class="comment">
-    <div id="disqus_thread" class="disqus-thread">
-    </div>
-</div>
-<!-- disqus 评论框 end -->
-
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "{{site.disqus.username}}";
-    var disqus_identifier = "{{site.disqus.username}}/{{page.url}}";
-    var disqus_url = "{{site.url}}{{page.url}}";
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<!-- disqus 公共JS代码 end -->
-{% endif %}
