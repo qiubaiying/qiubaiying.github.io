@@ -1,18 +1,18 @@
 # Site settings
-title: BY Blog
-SEOTitle: 凯明的博客 | BY Blog
+title: SkyMing Blog
+SEOTitle: 凯明的博客 | SkyMing Blog
 header-img: img/post-bg-desk.jpg
 email: 1054776982@qq.com
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 凯明的博客, shikaiming, 施凯明, iOS, Apple, iPhone"
-url: "http://shikaiming.github.io"          # your host, for absolute URL
+keyword: "SkyMing, SkyMing Blog, 凯明的博客, shikaiming, 施凯明, iOS, Apple, iPhone"
+url: "https://shikaiming.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/ShiKaiMing/shikaiming.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/avatar-g.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
