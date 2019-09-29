@@ -3,7 +3,7 @@ layout:     post
 title:      Outstanding Article Collection
 date:       2019-09-20
 author:     OldJii
-header-img: img/rxjavai.png
+header-img: img/outstandingcollection.jpg
 catalog: true
 tags:
     - 优秀文章收集
