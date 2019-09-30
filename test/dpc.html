@@ -1,0 +1,145 @@
+<html>
+<style type="text/css">
+    .divcss5 {
+        text-indent: 15px;
+        font-weight: bold
+    }
+    html, body {
+        height: 100%;
+        overflow: hidden;
+    }
+    iframe {
+        margin: 0;
+        /*border-style: none;*/
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<div>
+    <br>
+    <form action="/test_nodejs_api" method="get">
+        country(*): <input type="text" id="country" value="US"/>
+        language(*): <input type="text" id="language" value="en"/>
+        currency(*): <input type="text" id="currency" value="USD"/>
+        <br>
+        product code: <input type="text" id="code"/>
+        mode(*):
+        <select id="mode">
+            <option value="cto">cto</option>
+            <option value="lfo">lfo</option>
+            <option value="lfo-as-cto">lfo-as-cto</option>
+        </select>
+        <br>
+        env:
+        <select id="env_select">
+            <option value="us">us</option>
+            <option value="cn">cn</option>
+            <option value="tst">tst</option>
+            <option value="uat">uat</option>
+        </select>
+        site:
+        <select id="site_select">
+            <option value="非集成"></option>
+            <option value="ecomm">ecomm</option>
+            <option value="lbp">lbp</option>
+            <option value="crm">crm</option>
+            <option value="lms">lms</option>
+        </select>
+        role:
+        <input type="text" name="role" disabled="disabled" value="有空了加上"/>
+
+        <input class="divcss5" type="button" name="mock_integration" value="回车执行" id="partRefresh">
+
+        <input class="divcss5" type="button" name="mock_integration" value="redirect测试" id="redirect_test">
+
+    </form>
+    <p>
+        实际访问的地址: <input type="text" id="final_url" disabled="disabled" value="" size="130"/>
+    </p>
+</div>
+
+<iframe name="iframe_dcsc" id="iframe_dcsc_id" width="1200" height="500"
+        src='https://dcsc.lenovo.com/#/'
+        frameborder="1" allowfullscreen></iframe>
+
+<script src="../js/jquery.min.js "></script>
+
+<script>
+    $(function () {
+        $("#final_url").attr("value", $("#iframe_dcsc_id").attr("src"));
+    })
+
+    $(document).keyup(function (event) {
+        if (event.keyCode == 13) {
+            $("#partRefresh").trigger("click");
+        }
+    });
+</script>
+<script type="text/javascript">
+
+    const partRefreshBtn = document.getElementById("partRefresh");
+    partRefreshBtn.onclick = function () {
+        let code = $("#code").val();
+        let site = $("#site_select").val();
+        let country = $('#country').val();
+        let language = $('#language').val();
+        let currency = $('#currency').val();
+
+        const baseUrl = 'https://' + $("#env_select").val() + '-dcsc.lenovo.com/#/';
+        let finalUrl = "";
+
+        let param = '?time=' + new Date().getTime() + '&country=' + country + '&language=' + language + '&currency=' + currency;
+        if (site === 'ecomm') {
+            param += '&token=ecomm';
+        } else if (site === 'lms') {
+            param += '&token=LMS_BP';
+        } else if (site === 'lbp') {
+            param += '&token=LBP_T1_D_B';
+        } else if (site === 'crm') {
+            param += '&token=CRM';
+        }
+
+        if (code == null || code == '') {
+            finalUrl = baseUrl + param;
+        } else {
+            if ($("#mode").val() == 'lfo') {
+                finalUrl = baseUrl + 'configuration/lfo/' + code + param + '&mode=lfo';
+            } else {
+                finalUrl = baseUrl + 'configuration/' + $("#mode").val() + '/' + code + param;
+            }
+        }
+        // $("#iframe_dcsc_id").attr("src", finalUrl);
+        refreshIframeByCreateNew(finalUrl);
+        console.log(finalUrl);
+        $("#final_url").attr("value", finalUrl);
+    }
+
+
+    function refreshIframeByCreateNew(url) {
+        destroyIframe('iframe_dcsc_id')
+        let newIframe = document.createElement("iframe");
+        newIframe.id = 'iframe_dcsc_id';
+        newIframe.src = url;
+        document.body.appendChild(newIframe);
+        return newIframe;
+    }
+
+
+    function destroyIframe(iframeID) {
+        let iframe = $('#' + iframeID).prop('contentWindow');
+
+        $('#' + iframeID).attr('src', 'about:blank');
+
+        try {
+            iframe.document.write('');
+            iframe.document.clear();
+        } catch (e) {
+        }
+        $('#' + iframeID).remove();
+    }
+
+
+</script>
+
+</html>
