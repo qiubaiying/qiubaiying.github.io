@@ -12,7 +12,7 @@ tags:
 
 #### `==、===`关系运算符
 
-```JavaScript
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,7 +61,7 @@ tags:
 
 #### JS的逻辑结构和循环结构
 
-```JavaScript
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
