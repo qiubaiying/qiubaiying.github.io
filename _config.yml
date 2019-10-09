@@ -56,7 +56,4 @@ kramdown:
 featured-tags: true                   # 是否使用首页标签
 featured-condition-size: 0              # 相同标签数量大于这个数，才会出现在首页
 
-# Baidu Analytics
-ba_track_id: c40d52c6c8a1f3590f25663d756da1f4
-
 
