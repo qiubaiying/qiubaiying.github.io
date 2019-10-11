@@ -7,7 +7,7 @@ description: "Every failure is leading towards success."
 keyword: 
 url: "http://guokunjin.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/guokunjin/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/guokunjin/guokunjin.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -59,7 +59,7 @@ gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: Iv1.be5d2a5d57c4b798                            #生成的clientID
   clientSecret: 08e2bedfd292649e5965bedb8ed59512d88bf62a    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
+  repo: guokunjin.github.io    #仓库名称
   owner: guokunjin    #github用户名
   admin: guokunjin
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
