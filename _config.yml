@@ -2,9 +2,9 @@
 title: XiaoJun's  Blog
 SEOTitle: 小军的博客 | BY Blog
 header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
-description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, Xiaojun的博客, Hongxiaojun, 洪小军, iOS, Apple, iPhoneX"
+email: junqiaochen@gmail.com
+description: "Think Different."
+keyword: "BY, BY Blog, Xiaojun的博客, Hongxiaojun, 小军, iOS, Apple, iPhoneX"
 url: "http://hongxiaojun.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
@@ -18,12 +18,12 @@ sidebar-avatar:      # use absolute URL, seeing it's used in both `/` and `/abou
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
-#twitter_username:   qiubaiying
+# weibo_username:     小军Hong
+zhihu_username:     no 知乎
+github_username:    hongixaojun
+facebook_username:  junqiaochen
+jianshu_username:   nojianshu
+#twitter_username:   junqiaochen2
 
 
 
@@ -99,11 +99,11 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        title: "Pressone",
+        href: "https://press.one/main/p/b08913260da3750a91c187c54e91f7a5d7b3d2c7"
     },{
         title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
+        href: "http://www.jianshu.com/u/123"
     },{
         title: "Apple",
         href: "https://apple.com"
