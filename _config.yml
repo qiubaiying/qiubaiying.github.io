@@ -5,9 +5,9 @@ header-img: img/post-bg-desk.jpg
 email: junqiaochen@gmail.com
 description: "Think Different."
 keyword: "BY, BY Blog, Xiaojun的博客, Hongxiaojun, 小军, iOS, Apple, iPhoneX"
-url: "http://hongxiaojun.github.io"          # your host, for absolute URL
+url: "https://hongxiaojun.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/hongxiaojun/hongxiaojun.github.io.git" # you code repository
+github_repo: "https://github.com/hongxiaojun/hongxiaojun.github.io" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -62,11 +62,11 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  clientID:                             #生成的clientID
+  clientSecret:     #生成的clientSecret
+  repo: hongxiaojun.github.io    #仓库名称
+  owner: hongxiaojun    #github用户名
+  admin: hongxiaojun
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
@@ -102,13 +102,13 @@ friends: [
         title: "Pressone",
         href: "https://press.one/main/p/b08913260da3750a91c187c54e91f7a5d7b3d2c7"
     },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/123"
+        title: "简书·小军",
+        href: "http://www.jianshu.com/u/37e07b694e3d"
     },{
         title: "Apple",
         href: "https://apple.com"
     },{
-        title: "Apple Developer",
+        title: "WeiBo",
         href: "https://developer.apple.com/"
     }
 ]
