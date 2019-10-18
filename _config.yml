@@ -12,7 +12,7 @@ github_repo: "https://github.com/Jokerboozp/Jokerboozp.github.io.git" # you code
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "In that sleep,what dreams may come?"
-sidebar-avatar: /img/1.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/微信图片_20191018134816.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
