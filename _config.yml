@@ -1,5 +1,5 @@
 # Site settings
-title: 工作与技术心得
+title: 工作与学习心得
 SEOTitle: 唐平的博客 | BY Blog
 header-img: img/post-bg-desk.jpg
 email: 2388620155@qq.com
@@ -62,11 +62,11 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  clientID: d9b495b2420718383626                            #生成的clientID
+  clientSecret: 03d90ca93d7d4bdab7337c8cc783f1d57e4bad17    #生成的clientSecret
+  repo: tangpingl.github.io    #仓库名称
+  owner: tangpingl    #github用户名
+  admin: tangpingl
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
