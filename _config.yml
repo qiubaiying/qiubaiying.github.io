@@ -12,7 +12,7 @@ github_repo: "https://github.com/hetaoBackend/hetaoBackend.github.io.git" # you 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "No Golang, No Power!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/_DSC5045.JPG      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
