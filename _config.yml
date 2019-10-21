@@ -1,6 +1,6 @@
 # Site settings
-title: My Blog
-SEOTitle: 何涛的博客 | My Blog
+title: Walnut Blog
+SEOTitle: 何涛的博客 | Walnut Blog
 header-img: img/post-bg-desk.jpg
 email: hetao7@pku.edu.cn
 description: "Every failure is leading towards success."
@@ -85,7 +85,7 @@ gitalk:
 
 
 # Featured Tags
-featured-tags: true                     # 是否使用首页标签
+featured-tags: false                     # 是否使用首页标签
 featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
 
 
