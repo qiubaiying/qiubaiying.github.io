@@ -1,3 +1,4 @@
+---
 layout: post 
 title: The first blog on github 2019
 subtitle: blog
@@ -7,5 +8,5 @@ header-img:
 catalog: true
 tag:
   -blog
-  ---
+---
   Hey! I posted a bolg.
