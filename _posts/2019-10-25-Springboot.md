@@ -84,6 +84,12 @@ mybatis:
 #### 4.Springboot、Mybaits、Shiro的整合
 
 - 利用Shiro可以完成登陆以及拦截器功能，也可以实现更加复杂的动态权限加载，但是目前来说用不到，所以只进行拦截器和登录功能的讲解
+- **首先先说一下Shiro认证的过程**：
+   - 创建SecurityManager安全管理器 > 主体Subject提交认证信息 > SecurityManager安全管理器认证 > SecurityManager调用Authenticator认证器认证 >Realm验证
+   - 其中
+      - Subject：主体，代表了当前“用户”；所有Subject都绑定到SecurityManager，与Subject的所有交互都会委托给SecurityManager；可以把Subject认为是一个门面；SecurityManager才是实际的执行者；
+      - SecurityManager安全管理器：所有与安全有关的操作都会与SecurityManager交互；且它管理着所有Subject；负责与后边介绍的其他组件进行交互。（类似于SpringMVC中的DispatcherServlet控制器）
+      - Realm：域，Shiro从从Realm获取安全数据（如用户、角色、权限），就是说SecurityManager要验证用户身份，那么它需要从Realm获取相应的用户进行比较以确定用户身份是否合法；也需要从Realm得到用户相应的角色/权限进行验证用户是否能进行操作；可以把Realm看成DataSource，即安全数据源。
 - **步骤**
    - **注意：以下所有操作是在完成了Springboot与Mybatis的集成的基础上进行的**
    - 1.首先在数据库中创建一个user表，内容包含username、password。这里不再演示
@@ -257,4 +263,6 @@ filterFactoryBean.setSecurityManager(securityManager());
 ```
 
    - 10.项目目录：
-   - 
+   - ![img](https://github.com/Jokerboozp/Jokerboozp.github.io/raw/master/img/%E6%89%B9%E6%B3%A8%202019-10-28%20144102.png)
+   - 11.**注意！！**：这里省略了利用前端页面输入的username查找数据库中的user实体的方法，也就是Mapper层和Service层，这两个是SSM的基础，感觉不需要讲解；也木有前端模板，因为就一个form表单提交，没必要单独写出来。
+   - 12.最后实现的效果：成功登陆则跳转到success.html；验证未通过则显示密码错误或用户不存在；如果后台抛出AuthenticationException，则提示状态异常，这时候后台一般都是显示500错误
