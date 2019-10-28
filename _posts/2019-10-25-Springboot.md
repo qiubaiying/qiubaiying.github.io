@@ -16,8 +16,8 @@ tags:
 1. Springboot项目的搭建
 2. Springboot的文件结构
 3. Springboot和Mybatis的整合
-4. Springboot的前端页面Thymeleaf
-5. Springboot、Mybatis、Shiro的整合
+4. Springboot、Mybatis、Shiro的整合
+5. 一些遇到的错误信息总结
 
 #### 1.搭建一个简单的Springboot项目
 
@@ -57,6 +57,33 @@ tags:
 - **步骤**
    - 1.创建一个新项目，前几步是一样的，直到选择依赖的一步，需要做出一些改变，需要选择的依赖有如下图所示：
    - ![project](https://github.com/Jokerboozp/Jokerboozp.github.io/raw/master/img/%E6%89%B9%E6%B3%A8%202019-10-28%20140926.png)
-   - 2.创建成功之后，把application.properties更改为application.yml。在yml文件中配置Mybatis
-   - 
+   - 2.创建成功之后，把application.properties更改为application.yml。在yml文件中配置Mybatis（直接用已经建好的项目来演示了，懒得新建项目了）
+   - ![yml](https://github.com/Jokerboozp/Jokerboozp.github.io/raw/master/img/%E6%89%B9%E6%B3%A8%202019-10-28%20141308.png)
+   - 代码如下（application.yml）：
+
+```xml
+spring:
+  datasource:
+    url: jdbc:mysql:///market?useUnicode=true&characterEncoding=utf8&useSSL=false  //设置数据库地址
+    driver-class-name: com.mysql.jdbc.Driver   //设置数据库驱动
+    username: root   //数据库用户名
+    password: root   //数据库密码
+
+server:
+  port: 8080   //项目监听端口
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml   //配置mybatis扫描xml文件的路径，在这里是resources目录下的mapper文件夹里面所有的xml文件
+  type-aliases-package: com.sc.entity    //设置别名
+```
+
+- 配置完毕之后就完成了Springboot与Mybatis的整合
+- 测试请自行完成。。。如果SSM框架都不会的话，看这个可能会压力山大
+
+#### 4.Springboot、Mybaits、Shiro的整合
+
+- 利用Shiro可以完成登陆以及拦截器功能，也可以实现更加复杂的动态权限加载，但是目前来说用不到，所以只进行拦截器和登录功能的讲解
+- **步骤**
+   - 1.
 
