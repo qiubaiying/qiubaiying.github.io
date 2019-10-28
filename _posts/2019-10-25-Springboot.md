@@ -28,6 +28,7 @@ tags:
    - Idea 2018.3
    - JDK 8
    - Maven 3.6.0
+   - Mysql 5.7
 - 2.搭建步骤：
    - 1.打开Idea，选择create a new project
    - 2.左侧边栏选择Spring Initializr，右侧边栏保持默认，点击next
