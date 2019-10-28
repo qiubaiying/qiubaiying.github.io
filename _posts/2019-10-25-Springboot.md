@@ -12,6 +12,9 @@ tags:
 
 - ***利用SSM框架构建项目是毕业设计的主要方法，但是有一个很头疼的问题：各种配置文件和jar包的兼容问题。所以就出现了Maven，但是Maven还是需要你去配置各种SSM框架的配置文件，也是很麻烦。所以就出现了SpringBoot。我学习SpringBoot的原因主要是原本想要利用SSM框架+Shiro完成一个购物网站项目，但是在项目的构建过程中，Shiro和SSM的jar包之间总存在各种不兼容或者是框架的问题，所以就转向了SpringBoot，而且这样以后也方便进行Redis和Nginx的整合。***
 
+- 这是一篇Springboot的中级讲解博文，有些基础知识不再涉及，和SSM有关的不再举例和讲解。
+- 代码本就是意见枯燥无味的事情，只有静下心研究才能学到东西。全靠别人交给你是不存在的。但是如果你有SSM框架基础，并且可以利用SSM框架打出一个完整的项目，那么这篇文章对你来说就没有什么压力了。
+
 #### 本篇博客较长，所以在头部先声明一下会讲到的内容
 1. Springboot项目的搭建
 2. Springboot的文件结构
@@ -266,3 +269,30 @@ filterFactoryBean.setSecurityManager(securityManager());
    - ![img](https://github.com/Jokerboozp/Jokerboozp.github.io/raw/master/img/%E6%89%B9%E6%B3%A8%202019-10-28%20144102.png)
    - 11.**注意！！**：这里省略了利用前端页面输入的username查找数据库中的user实体的方法，也就是Mapper层和Service层，这两个是SSM的基础，感觉不需要讲解；也木有前端模板，因为就一个form表单提交，没必要单独写出来。
    - 12.最后实现的效果：成功登陆则跳转到success.html；验证未通过则显示密码错误或用户不存在；如果后台抛出AuthenticationException，则提示状态异常，这时候后台一般都是显示500错误
+
+#### 5.一些遇到的错误信息总结
+
+- 这里记录一些我遇到的错误信息，提供一些参考
+- 1.**shiro配置异常-org.springframework.beans.factory.BeanInitializationException: The security manager does not implement the WebSecurityManager interface.**
+   - ![error1](https://github.com/Jokerboozp/Jokerboozp.github.io/raw/master/img/1709597-20190706113831052-317869678.png)
+   - 错误原因：securitymanager应该使用的是DefaultWebSecurityManager。很容易就写成了DefaultSecurityManager
+   - 代码：
+
+```java
+@Bean
+    public SecurityManager securityManager(){
+        DefaultSecurityManager securityManager = new DefaultWebSecurityManager();
+        securityManager.setRealm(customRealm());
+        return securityManager;
+    }
+```
+
+- 2.**MYSQL:WARN: Establishing SSL connection without server's identity verification is not recommended.**
+   - 错误原因：在MYSQL5.5.45+, 5.6.26+ 和 5.7.6+版本中才有这个问题，提示警告不建议使用没有带服务器身份验证的SSL连接
+   - 解决办法：在application.yml中配置数据库连接的时候在后面加上useSSL=false
+
+- 3.**Spring Boot：Consider defining a bean of type '*.*.*' *in your configuration**
+   - 解决链接：https://www.cnblogs.com/JealousGirl/p/bean.html
+
+- 4.@AutoWired注解无法生效
+   - 生成原因以及解决方法已在上面说过，这里不再说明
