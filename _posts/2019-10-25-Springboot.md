@@ -35,5 +35,14 @@ tags:
    - ![img2](https://github.com/Jokerboozp/Jokerboozp.github.io/raw/master/img/%E6%89%B9%E6%B3%A8%202019-10-28%20133909.png)
    - 5.完成后项目目录如图所示
    - ![final](https://github.com/Jokerboozp/Jokerboozp.github.io/raw/master/img/%E6%89%B9%E6%B3%A8%202019-10-28%20134313.png)
-   - 6.一个简单的Springboot项目就创建好了
+   - 6.在resources目录下的static文件夹下创建一个index.html，并输入一段随意的内容，用来验证springboot是否启动成功
+   - 7.运行BlogApplication.java。成功后打开浏览器，地址栏输入http://localhost:8080/index.html。若成功显示html网页，则说明Springboot框架搭建成功
+   - ![run](https://github.com/Jokerboozp/Jokerboozp.github.io/raw/master/img/%E6%89%B9%E6%B3%A8%202019-10-28%20134555.png)
+   - ![result](https://github.com/Jokerboozp/Jokerboozp.github.io/raw/master/img/%E6%89%B9%E6%B3%A8%202019-10-28%20135545.png)
+
+#### 2.Springboot的文件结构
+
+![projectstructer](https://github.com/Jokerboozp/Jokerboozp.github.io/raw/master/img/%E6%89%B9%E6%B3%A8%202019-10-28%20134313.png)
+
+- 1.
 
