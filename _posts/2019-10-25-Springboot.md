@@ -44,5 +44,19 @@ tags:
 
 ![projectstructer](https://github.com/Jokerboozp/Jokerboozp.github.io/raw/master/img/%E6%89%B9%E6%B3%A8%202019-10-28%20134313.png)
 
-- 1.
+- 1.Java：存放Java源代码
+- 2.resources：资源文件目录
+- 3.static：静态资源文件
+- 4.templates：视图模板文件
+- 5.application.properties(后面会更改为application.yml)：核心配置文件
+- 6.pom.xml：和maven相同，用来存放相关依赖
+
+#### 3.Springboot和Mybatis的整合
+
+- Springboot与Mybaits的整合不同于利用maven创建SSM框架，因为Springboot已经集成了Spring、不需要去配置一系列复杂的文件。
+- **步骤**
+   - 1.创建一个新项目，前几步是一样的，直到选择依赖的一步，需要做出一些改变，需要选择的依赖有如下图所示：
+   - ![project](https://github.com/Jokerboozp/Jokerboozp.github.io/raw/master/img/%E6%89%B9%E6%B3%A8%202019-10-28%20140926.png)
+   - 2.创建成功之后，把application.properties更改为application.yml。在yml文件中配置Mybatis
+   - 
 
