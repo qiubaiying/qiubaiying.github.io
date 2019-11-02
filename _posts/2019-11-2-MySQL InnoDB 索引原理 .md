@@ -320,9 +320,4 @@ SELECT * FROM t1, t2 WHERE t1.key1=1 AND (t2.key1=t1.some_col OR t2.key2=t1.some
 
 MySQL慢日志功能分析及优化增强
 
-网易云：时序数据库（TSDB）－为万物互联插上一双翅膀
-
-
-
-此文已由作者授权网易云发布，谢绝转载。
 
