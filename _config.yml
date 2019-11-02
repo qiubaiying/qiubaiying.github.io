@@ -1,7 +1,7 @@
 # Site settings
 title: YueLe Blog
 SEOTitle: 鱼乐的博客 | YueLe Blog
-header-img: img/post-bg-coffee.jpeg
+header-img: img/post-bg-keybord.jpg
 email: yanwenguang0515@163.com
 description: "Every failure is leading towards success."
 keyword: "YuLe, YuLe Blog, 鱼乐的博客, java"
@@ -12,7 +12,7 @@ github_repo: "https://github.com/yanwenguang/yanwenguang.github.io.git" # you co
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/photo_head.jpeg     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
