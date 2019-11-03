@@ -1,6 +1,5 @@
 # Site settings
 title: PJ Blog
-subheading: "x"
 header-img: img/post-bg-desk.jpg
 email: pengjieux@gmail.com
 description: "good product design JD"
@@ -11,7 +10,7 @@ github_repo: "https://github.com/zhaopengjie/zhaopengjie.github.io.git" # you co
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: " "
+sidebar-about-description: "good product design JD"
 #sidebar-avatar: /img/      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
