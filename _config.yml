@@ -110,6 +110,9 @@ friends: [
     },{
         title: "Air(Flutter项目示例)",
         href: "https://pdliuw.github.io"
+    },{
+        title: "杨赞的博客",
+        href: "http://yangzan.top/"
     }
     
 ]
