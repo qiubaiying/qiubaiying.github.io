@@ -5,11 +5,11 @@
   "icons": [{
     "src": "icons/about-BY-gentle.jpeg",
     "sizes": "128x128",
-    "type": "image/jpeg"
+    "type": "image/png"
   }, {
     "src": "icons/about-BY-gentle.jpeg",
     "sizes": "512x512",
-    "type": "image/jpeg"
+    "type": "image/png"
   }],
   "background_color": "#fff",
   "theme_color": "#000",
