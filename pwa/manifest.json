@@ -1,15 +1,15 @@
 {
-  "name": "BY Blog",
-  "short_name": "BY Blog",
+  "name": "AhogeK Blog",
+  "short_name": "AhogeK Blog",
   "description": "A personal blog by engineer",
   "icons": [{
-    "src": "icons/pwa_icon_128.png",
+    "src": "icons/about-BY-gentle.jpeg",
     "sizes": "128x128",
-    "type": "image/png"
+    "type": "image/jpeg"
   }, {
-    "src": "icons/pwa_icon_512.png",
+    "src": "icons/about-BY-gentle.jpeg",
     "sizes": "512x512",
-    "type": "image/png"
+    "type": "image/jpeg"
   }],
   "background_color": "#fff",
   "theme_color": "#000",
