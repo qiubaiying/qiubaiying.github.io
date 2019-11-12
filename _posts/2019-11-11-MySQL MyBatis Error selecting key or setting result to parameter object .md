@@ -14,16 +14,22 @@ tags:
 
 
 
-Mybatis 新增单个实体出现异常信息  
+[TOC]
+
+
+
+## Mybatis 实体出现异常信息  
+
 Error selecting key or setting result to parameter object
 原因是你的实体类型,XML映射文件里的类型不一致导致报错
-实体类型:
+
+## 实体类型:
 
 ```java
 public class Entity{
 		// 表记录自增id
 		private long id;
-  	// 创建时间
+		// 创建时间
 		private Date createTime;
 		// 修改时间
 		private Date updateTime;
@@ -36,7 +42,7 @@ public class Entity{
 }
 ```
 
-Mybatis.xml文件配置
+## Mybatis.xml文件配置
 
 ```mysql
 <insert id="insertEntity" parameterType="Entity">
@@ -55,9 +61,21 @@ Mybatis.xml文件配置
 
 
 
-------
+## Mapper 类型映射错误日志
 
 Error selecting key or setting result to parameter object. Cause: 
 com.mysql.jdbc.exceptions.jdbc4.MySQLDataException: '2.14780149E9' in column '1' is outside valid range for the datatype INTEGER.\n; SQL []; '2.14780149E9' in column '1' is outside valid range for the datatype INTEGER.; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLDataException: '2.14780149E9' in column '1' is outside valid range for the datatype INTEGER.
 
+ 当主键自增Id值达到Integer类型最大值的时候  <u>**<selectKey resultType="java.lang.Integer" keyProperty="id"></u>**  ，就会报类型转换错误，如果是生产系统问题严重性就不说了。所以在使用mybatis 自定sql 时，一定要注意表字段属性和Mapper 类型转换的匹配以及长度问题。
 
+
+
+## Mysql 表属性
+
+
+
+| Field    | Type       | Null | Key  | Default | Extra          |
+| -------- | ---------- | ---- | ---- | ------- | :------------- |
+| id       | bigint(20) | NO   | PRI  | null    | auto_increment |
+| order_id | bigint(20) | NO   | MUL  | null    |                |
+| **       | **         | **   | **   | **      |                |
