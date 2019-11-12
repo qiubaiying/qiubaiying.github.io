@@ -61,9 +61,10 @@ public class Entity{
     1,now(),now(),#{createUser,jdbcType=VARCHAR},#{updateUser,jdbcType=VARCHAR},0
   )
 </insert>
-将实体中id属性 Long类型改为Integer
-或者将映射文件返回类型改为resultType="java.lang.Long"
 ```
+
+* 将实体中id属性 Long类型改为Integer
+* 或者将映射文件返回类型改为resultType="java.lang.Long"
 
 
 
