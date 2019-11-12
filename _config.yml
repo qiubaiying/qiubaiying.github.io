@@ -49,9 +49,10 @@ gems: [jekyll-paginate]
 # although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
 # document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
-# kramdown:
-#     input: GFM
-highlighter: rouge                           # use Github Flavored Markdown !important
+highlighter: rouge   
+kramdown:
+    input: GFM           # use Github Flavored Markdown !important
+                        
 
 
 
@@ -112,3 +113,8 @@ service-worker: true
 #        href: "https://developer.apple.com/"
 #    }
 #]
+
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
