@@ -51,21 +51,18 @@ gems: [jekyll-paginate]
 markdown: kramdown
 highlighter: rouge
 kramdown:
-  input: GFM
-  use_coderay: false
-  syntax_highlighter: rouge
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
+  use_coderay: true
   coderay:
     coderay_wrap: div
-    coderay_line_numbers: inline
-    coderay_line_numbers_start: 1
+    coderay_line_numbers: nil
     coderay_tab_width: 4
     coderay_bold_every: 10
-    coderay_css: style
+    coderay_css: class
 
 
 
