@@ -50,6 +50,8 @@ gems: [jekyll-paginate]
 # document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 highlighter: rouge
+markdown_ext:  markdown,mkd,mkdn,md
+textile_ext:   textile
 kramdown:
   auto_ids: true
   footnote_nr: 1
