@@ -59,7 +59,8 @@ kramdown:
   use_coderay: true
   syntax_highlighter: rouge
   coderay:
-    coderay_line_numbers:  nil
+    coderay_line_numbers: inline
+    coderay_line_numbers_start: 1
 
 
 
