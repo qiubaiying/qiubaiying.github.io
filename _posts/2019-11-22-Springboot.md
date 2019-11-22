@@ -873,3 +873,8 @@ Default value is authCacheKey or id, that means your principal object has a meth
 - 3.redis缓存没有加载进redis数据库
    - **解决方法**
    - 在启动类上加上注解@EnableCaching
+
+#### 8.总结
+
+- 到这里关于Springboot项目的所有相关知识基本已经介绍完毕了，除了md5加密，因为暂时用不到，所以这个只是暂时搁置。两篇总结文档基本可以帮助你打出一个完成度相当高的springboot项目，自己也提高了不少。
+- Stay Hungry!Stay Foolish!
