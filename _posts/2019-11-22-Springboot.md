@@ -1,7 +1,7 @@
 ---
 layout:     post 
 title:      Springboot
-subtitle:   Spring boot在线租车项目
+subtitle:   Spring boot项目
 date:       2019-11-22
 author:     张鹏
 header-img: img/home-bg.jpg
@@ -25,6 +25,7 @@ tags:
 5. Springboot项目中使用Shiro实现RememberMe（记住我）功能
 6. Springboot项目中使用Shiro来集成Kaptcha验证码
 7. 项目构建过程中遇到的错误
+8. 总结
 
 #### 首先把使用的工具的版本信息列出
 
