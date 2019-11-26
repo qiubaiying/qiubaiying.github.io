@@ -106,4 +106,4 @@ tags:
 - th:replace：引入子模块的所有，不保留父模块的tag。
    - 替换当前标签为模板中的标签，加载的节点会整个替换掉加载他的div。
 
-#### Stay Hungry.Stay Foolish。
+#### Stay Hungry.Stay Foolish.
