@@ -3,7 +3,7 @@ layout:     post
 title:      MySQL MyBatis 
 subtitle:   MySQL MyBatis selecting key or setting result to parameter object
 date:       2019-11-11
-author:     BY
+author:     YuLe
 header-img: img/post-bg-re-vs-ng2.jpg
 catalog: true
 tags:
