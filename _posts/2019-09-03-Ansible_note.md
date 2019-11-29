@@ -1,13 +1,4 @@
----
-layout:     post
-title:      Ansible
-subtitle:   Ansible
-date:       2019-09-03
-author:     zxll
-catalog: true
-tags:
-    - linux 
----
+
 
 
 ### Ansible 笔记
