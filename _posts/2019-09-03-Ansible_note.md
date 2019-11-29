@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      Ansible 笔记
-subtitle:   Ansible 笔记
+title:      Ansible
+subtitle:   Ansible
 date:       2019-09-03
 author:     zxll
 catalog: true
