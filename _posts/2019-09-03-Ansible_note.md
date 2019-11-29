@@ -1,4 +1,13 @@
-
+---
+layout:     post
+title:      Ansible
+subtitle:   Ansible
+date:       2019-09-03
+author:     zxll
+catalog: true
+tags:
+    - linux 
+---
 
 
 ### Ansible 笔记
@@ -1358,13 +1367,6 @@ nginx1:x:808:
   
   	[‘list’, ‘of’, ‘objects’]:
   	一对中括号括起来的东西是一个列表。列表用于存储和迭代序列化的数据。例如 你可以容易地在 'for' 循环中用列表和元组创建一个链接的列表:
-  
-  	<ul>
-  	{% for href, caption in [('index.html', 'Index'), ('about.html', 'About'),
-  	                         ('downloads.html', 'Downloads')] %}
-  	    <li><a href="{{ href }}">{{ caption }}</a></li>
-  	{% endfor %}
-  	</ul>
   
   	(‘tuple’, ‘of’, ‘values’):
   	元组与列表类似，只是你不能修改元组。如果元组中只有一个项，你需要以逗号 结尾它。元组通常用于表示两个或更多元素的项。更多细节见上面的例子。
