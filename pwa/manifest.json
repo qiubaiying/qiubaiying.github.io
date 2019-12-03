@@ -3,11 +3,11 @@
   "short_name": "AhogeK Blog",
   "description": "A personal blog by engineer",
   "icons": [{
-    "src": "icons/about-BY-gentle.jpeg",
+    "src": "icons/about-AhogeK-gentle-128.png.jpeg",
     "sizes": "128x128",
     "type": "image/png"
   }, {
-    "src": "icons/about-BY-gentle.jpeg",
+    "src": "icons/about-AhogeK-gentle-128.jpeg",
     "sizes": "512x512",
     "type": "image/png"
   }],
