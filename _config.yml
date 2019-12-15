@@ -55,7 +55,7 @@ redcarpet:
   extensions: []
 markdown: kramdown
 highlighter: rouge
-lsi:         false
+lsi:         true
 excerpt_separator: "\n\n"
 incremental: false
 markdown_ext:  markdown,mkd,mkdn,md
@@ -66,7 +66,7 @@ kramdown:
   entity_output:  as_char
   toc_levels:     1..6
   smart_quotes:   lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
+  enable_coderay: true
   coderay:
     coderay_wrap:              div
     coderay_line_numbers:      inline
