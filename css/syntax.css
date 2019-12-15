@@ -82,3 +82,15 @@
 .highlight .vi { color: teal; }
 .highlight .il { color: #009999; }
 .highlight .gc { color: #999; background-color: #EAF2F5; }
+.highlight .lineno {
+  color: #3D3C3C;
+
+  padding:0.7rem;
+  margin-left: -0.2rem;
+  border-right:1px solid #F9F1E5;
+
+  margin-top: -0.2rem;
+  margin-bottom: -0.2rem;
+  background-color: rgb(234, 236, 235);
+  font-family: "Courier";
+}
