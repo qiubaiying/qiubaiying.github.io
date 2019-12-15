@@ -55,6 +55,9 @@ redcarpet:
   extensions: []
 markdown: kramdown
 highlighter: rouge
+lsi:         false
+excerpt_separator: "\n\n"
+incremental: false
 markdown_ext:  markdown,mkd,mkdn,md
 textile_ext:   textile
 kramdown:
