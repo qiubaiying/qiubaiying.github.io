@@ -13,7 +13,7 @@ tags:                                   # 标签
 ### 在AOP切面类中获取请求响应对象
 
 ```java
-//获取 request
+// 获取 request
 HttpServletRequest request = ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder.getRequestAttributes())).getRequest();
 // 获取 response
 HttpServletResponse response = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getResponse();
