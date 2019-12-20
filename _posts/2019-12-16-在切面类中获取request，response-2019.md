@@ -4,7 +4,7 @@ title:      在切面类中获取request，response              # 标题
 subtitle:   HttpServletRequest/HttpServletResponse
 date:       2019-12-16                # 时间
 author:     AhogeK                      # 作者
-header-img: img/post-bg-coffee.jpeg     # 这篇文章标题背景图片
+header-img: https://ahogek.github.io/img/post-bg-coffee.jpeg     # 这篇文章标题背景图片
 catalog: true                           # 是否归档
 tags:                                   # 标签
     - 学习笔记
