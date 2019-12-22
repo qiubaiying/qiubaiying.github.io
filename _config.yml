@@ -1,10 +1,10 @@
 # Site settings
 title: XiaoJun's  Blog
 SEOTitle: 小军的博客 | Hong Xiaojun
-header-img: img/post-bg-desk.jpg
+header-img: img/blbcover.gif
 email: junqiaochen@gmail.com
 description: "Think Different."
-keyword: "BY, BY Blog, Xiaojun的博客, Hongxiaojun, 小军, iOS, Apple, iPhoneX"
+keyword: "JY, GITHUB Blog, Xiaojun的博客, Hongxiaojun, 小军, BOX, 定投, iPhoneX"
 url: "https://hongxiaojun.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/hongxiaojun/hongxiaojun.github.io" # you code repository
