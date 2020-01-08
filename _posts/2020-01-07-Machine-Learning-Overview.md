@@ -4,14 +4,14 @@
 
 - 机器学习是什么?
 
-  - 什么是“学习”？学习就是人类通过观察、积累经验，掌握某项技能或能力。就好像我们从小学 习识别字母、认识汉字，就是学习的过程。而机器学习（Machine Learning），顾名思义， 就是让机器（计算机）也能向人类一样，通过观察大量的数据和训练，发现事物规律，获得 某种分析问题、解决问题的能力。
+  - 什么是“学习”？学习就是人类通过观察、积累经验，掌握某项技能或能力。就好像我们从小学 习识别字母、认识汉字，就是学习的过程。而机器学习（Machine Learning），顾名思义， 就是让机器（计算机）也能向人类一样，通过观察大量的数据和训练，发现事物规律，获得某种分析问题、解决问题的能力。
 
   - Improving some performance measure with experence computed from data. 
 
-    也就是机器从数据中总结经验，从数据中找出某种规律或者模型，并用它来解决实 际问题。
-<p align="center">
-  <img src="https://github.com/Julian-young/LearningReview/raw/dev-jiale/image_0_ml_overview/image-20200106151549460.png" style="zoom:80%" />
-</p>
+    也就是机器从数据中总结经验，从数据中找出某种规律或者模型，并用它来解决实际问题。
+      <p align="center">
+        <img src="https://github.com/Julian-young/LearningReview/raw/dev-jiale/image_0_ml_overview/image-20200106151549460.png" style="zoom:80%" />
+      </p>
 
 - 为了解决什么问题
   
@@ -19,9 +19,9 @@
     - 事物本身存在某种潜在规律
     - 某些问题难以使用普通编程解决
     - 有大量的数据样本可供使用
-<p align="center">
-  <img src="https://github.com/Julian-young/LearningReview/raw/dev-jiale/image_0_ml_overview/image-20200106151620380.png" style="zoom:80%" />
-</p>
+      <p align="center">
+        <img src="https://github.com/Julian-young/LearningReview/raw/dev-jiale/image_0_ml_overview/image-20200106151620380.png" style="zoom:80%" />
+      </p>
 
 ## 机器学习分类
 
@@ -68,7 +68,9 @@
 
     - 生成模型是通过尝试知道（或者关注）数据是如何生成（就是去找到一个能够生成这些数据的分布，体现在数学上就是，找到的这个分布是一个联合分布），之后再对数据分类（体现在数学上就是用联合分算出属于某类别的条件概率，选条件概率最大的那个类别就是判断数据所属的类别）
 
-      ![img](https://pic2.zhimg.com/80/v2-a2e753542fc6384ee351cabdbe6dd523_hd.jpg)
+      <p align="center">
+        <img src="https://pic2.zhimg.com/80/v2-a2e753542fc6384ee351cabdbe6dd523_hd.jpg" style="zoom:100%" />
+      </p>
 
     - **二者目的都是在使后验概率最大化，判别式是直接对后验概率建模，但是生成模型通过贝叶斯定理这一“桥梁”使问题转化为求联合概率**
 
