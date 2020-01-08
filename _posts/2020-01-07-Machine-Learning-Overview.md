@@ -90,11 +90,13 @@
       - *0~1损失函数*
         <br>
         $$
+        \begin{align*}
         L(y,f(x)) =
         \begin{cases}
         0, & \text{y = f(x)}  \\
         1, & \text{y $\neq$ f(x)}
         \end{cases}
+        \end{align*}
         $$
       
       - *平方损失函数*
