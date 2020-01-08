@@ -73,6 +73,7 @@ tags:
     </p>
     
     ```python
+    
       def update_weights(m, b, X, Y, learning_rate):
           m_deriv = 0
           b_deriv = 0
