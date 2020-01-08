@@ -99,54 +99,73 @@
         </p>
       
       - *平方损失函数*
+        <p align="center">
         $$
         L(y,f(x))=|y-f(x)|
         $$
+        </p>
       
       - *绝对损失函数*
+        <p align="center">
         $$
         L(y,f(x))=(y-f(x))^2
         $$
+        </p>
       
       - *对数损失函数*
+        <p align="center"> 
         $$
         L(y,f(x))=log(1+e^{-yf(x)})
         $$
+        </p>
       - *指数损失函数*
+        <p align="center">
         $$
         L(y,f(x))=exp(-yf(x))
         $$
+        </p>
       - *Hinge损失函数*
+        <p align="center">
         $$
         L(w,b)=max\{0,1-yf(x)\}
         $$
+        </p>
     
   - **算法**
     
     - 是指学习模型时的具体计算方法,求解最优模型归结为一个最优化问题,统计学习的算法等价于求解最优化问题的算法,也就是求解析解或数值解
       - *批量梯度下降(BGD)*
+        <p align="center">
         $$
         \theta=\theta-\eta\nabla_\theta J(\theta)
         $$
+        </p>
       
       - *随机梯度下降法(SGD)*
+        <p align="center">
         $$
         \theta=\theta-\eta\nabla_\theta J(\theta;x^{(i)},y^{(i)})
         $$
+        </p>
       
       - *小批量梯度下降*
+        <p align="center">
         $$
         \theta=\theta-\eta\nabla_\theta J(\theta;x^{(i:i+n)},y^{(i:i+n)})
         $$
+        </p>
         
       - *引入动量的梯度下降*
+        <p align="center">
         $$
         \begin{cases}
         v_t=\gamma v_{t-1}+\eta \nabla_\theta J(\theta)  \\
         \theta=\theta-v_t
         \end{cases}
         $$
+        </p>
       - *自适应学习率的Adagrad算法*
+        <p align="center">
         $$
         \begin{cases}
         g_t= \nabla_\theta J(\theta)  \\
@@ -154,6 +173,7 @@
         {\sqrt{G_t+\varepsilon}} \cdot g_t
         \end{cases}
         $$
+        </p>
     
    - **模型评估指标**
 
@@ -199,17 +219,20 @@
       $$
       P=\frac{TP}{TP+FP}
       $$
+      </p>
       **召回率(Recall/TPR/Sensitivity)**
       Out of all the positive classes, how much we predicted correctly. It should be high as possible.
       $$
       R=\frac{TP}{TP+FN}
       $$
+      </p>
       **F1-Score**
       F-score helps to measure Recall and Precision at the same time. It uses Harmonic Mean in place of Arithmetic Mean by      punishing the extreme values more.
       
       $$
       \frac{2}{F_1}=\frac{1}{P}+\frac{1}{R}
       $$
+      </p>
       
       - Specificity
         $$
