@@ -209,50 +209,61 @@
         </p>
         
       - **Confusion Matrix**
+        <p align="center">
+          <img src="https://www.kdnuggets.com/images/precision-recall-relevant-selected.jpg" style="zoom:100%" />
+        </p>
 
-        <div align=center><img src ="https://www.kdnuggets.com/images/precision-recall-relevant-selected.jpg"/></div>
-      
         - 真正例(True Positive, TP):You predicted positive and it’s true
         - 假负例(False Negative, FN): You predicted negative and it’s false
         - 假正例(False Positive, FP): You predicted positive and it’s false 
-  - 真负例(True Negative, TN): You predicted negative and it’s true
+        - 真负例(True Negative, TN): You predicted negative and it’s true
       
-  - **准确率(Accuracy)**
+      - **准确率(Accuracy)**
+        <p align="center">
+        $$
+        ACC=\frac{TP+TN}{TP+FN+FP+TN}
+        $$
+        </p>
+        
+      - **精准率(Precision)**
+        Out of all the positive classes we have predicted, how many are actually positive
+        <p align="center">
+        $$
+        P=\frac{TP}{TP+FP}
+        $$
+        </p>
+        
+      - **召回率(Recall/TPR/Sensitivity)**
+        Out of all the positive classes, how much we predicted correctly. It should be high as possible.
+        <p align="center">
+        $$
+        R=\frac{TP}{TP+FN}
+        $$
+        </p>
       
-      $$
-      ACC=\frac{TP+TN}{TP+FN+FP+TN}
-      $$
-      **精准率(Precision)**
-      Out of all the positive classes we have predicted, how many are actually positive
-      $$
-      P=\frac{TP}{TP+FP}
-      $$
-      </p>
-      **召回率(Recall/TPR/Sensitivity)**
-      Out of all the positive classes, how much we predicted correctly. It should be high as possible.
-      $$
-      R=\frac{TP}{TP+FN}
-      $$
-      </p>
-      **F1-Score**
-      F-score helps to measure Recall and Precision at the same time. It uses Harmonic Mean in place of Arithmetic Mean by      punishing the extreme values more.
-      
-      $$
-      \frac{2}{F_1}=\frac{1}{P}+\frac{1}{R}
-      $$
-      </p>
+      - **F1-Score**
+        F-score helps to measure Recall and Precision at the same time. It uses Harmonic Mean in place of Arithmetic Mean by      punishing the extreme values more.
+        <p align="center">
+        $$
+        \frac{2}{F_1}=\frac{1}{P}+\frac{1}{R}
+        $$
+        </p>
       
       - Specificity
+        <p align="center">
         $$
       	Specificity=\frac{TN}{TN+FP}
       	$$
+        </p>
       - FPR = 1-Specificity
+        <p align="center">
         $$
       	FPR=\frac{FP}{TN+FP}
       	$$
+        </p>
       - **AUC - ROC Curve**
         
-          - AUC - ROC curve is a performance measurement for classification problem at various thresholds settings. ROC is a probability curve and AUC represents degree or measure of separability. It tells how much model is capable of distinguishing between classes. 
+        - AUC - ROC curve is a performance measurement for classification problem at various thresholds settings. ROC is a probability curve and AUC represents degree or measure of separability. It tells how much model is capable of distinguishing between classes. 
   
   <div align=center><img src ="https://miro.medium.com/max/361/1*pk05QGzoWhCgRiiFbz-oKQ.png"/></div>
   
