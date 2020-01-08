@@ -38,6 +38,7 @@ tags:
   <p align="center">
     <img src="https://ml-cheatsheet.readthedocs.io/en/latest/_images/gradient_descent.png" style="zoom:80%" />
   </p>
+  
   - The Point of GD
     <br>
     Minimizing any cost function means finding the deepest valley in that function. Keep in mind that, the cost function is used to monitor the error in predictions of an ML model. So, the whole point of GD is to **minimize the cost function**.
