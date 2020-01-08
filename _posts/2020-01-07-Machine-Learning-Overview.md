@@ -275,24 +275,10 @@
         
         AUC                        |  ROC
         :-------------------------:|:-------------------------:
-        <img src="https://miro.medium.com/max/528/1*Uu-t4pOotRQFoyrfqEvIEg.png" width="300"/> |  <img src="https://miro.medium.com/max/365/1*HmVIhSKznoW8tFsCLeQjRw.png" width="170"/>
-        <img src="https://miro.medium.com/max/528/1*Uu-t4pOotRQFoyrfqEvIEg.png" width="300"/> |  <img src="https://miro.medium.com/max/365/1*HmVIhSKznoW8tFsCLeQjRw.png" width="170"/>
-        
-        <p align="center">
-          <img src="https://miro.medium.com/max/528/1*Uu-t4pOotRQFoyrfqEvIEg.png" width="300"/><img src="https://miro.medium.com/max/365/1*HmVIhSKznoW8tFsCLeQjRw.png" width="170"/>
-        </p>
-        
-        <p align="center">
-          <img src="https://miro.medium.com/max/507/1*yF8hvKR9eNfqqej2JnVKzg.png" width="300"/><img src="https://miro.medium.com/max/365/1*-tPXUvvNIZDbqXP0qqYNuQ.png" width="170"/>
-        </p>
-        
-        <p align="center">
-          <img src="https://miro.medium.com/max/430/1*iLW_BrJZRI0UZSflfMrmZQ.png" width="300"/><img src="https://miro.medium.com/max/365/1*k_MPO2Q9bLNH9k4Wlk6v_g.png" width="170"/>
-        </p>
-        
-        <p align="center">
-          <img src="https://miro.medium.com/max/556/1*aUZ7H-Lw74KSucoLlj1pgw.png" width="300"/><img src="https://miro.medium.com/max/365/1*H7JGQbaa06BUab6tvGNZKg.png" width="170"/>
-        </p>
+        <img src="https://miro.medium.com/max/528/1*Uu-t4pOotRQFoyrfqEvIEg.png" width="300"/>|<img src="https://miro.medium.com/max/365/1*HmVIhSKznoW8tFsCLeQjRw.png" width="170"/>
+        <img src="https://miro.medium.com/max/507/1*yF8hvKR9eNfqqej2JnVKzg.png" width="300"/>|<img src="https://miro.medium.com/max/365/1*-tPXUvvNIZDbqXP0qqYNuQ.png" width="170"/>
+        <img src="https://miro.medium.com/max/430/1*iLW_BrJZRI0UZSflfMrmZQ.png" width="300"/>|<img src="https://miro.medium.com/max/365/1*k_MPO2Q9bLNH9k4Wlk6v_g.png" width="170"/>
+        <img src="https://miro.medium.com/max/556/1*aUZ7H-Lw74KSucoLlj1pgw.png" width="300"/>|<img src="https://miro.medium.com/max/365/1*H7JGQbaa06BUab6tvGNZKg.png" width="170"/>
   
   - **复杂度度量**
 
