@@ -370,8 +370,9 @@
           </p>
           
           - **L1正则为什么可以得到稀疏解？**
-        :-------------------------:|:-------------------------:
-        <img src="https://pic2.zhimg.com/80/v2-7431d8a79deec5d0ab3193b6a3611b95_hd.jpg" width="300"/>|<img src="https://pic1.zhimg.com/80/v2-592216faffaa338fc792430a538afefc_hd.jpg" width="300"/>
+             L2                        |  L1
+            :-------------------------:|:-------------------------:
+            <img src="https://pic2.zhimg.com/80/v2-7431d8a79deec5d0ab3193b6a3611b95_hd.jpg" width="300"/>|<img src="https://pic1.zhimg.com/80/v2-592216faffaa338fc792430a538afefc_hd.jpg" width="300"/>
         
     - **模型选择**
     
