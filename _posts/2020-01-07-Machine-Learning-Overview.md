@@ -181,27 +181,27 @@
         - 假正例(False Positive, FP): You predicted positive and it’s false 
   - 真负例(True Negative, TN): You predicted negative and it’s true
       
-- **准确率(Accuracy)**
+  - **准确率(Accuracy)**
       
       $$
       ACC=\frac{TP+TN}{TP+FN+FP+TN}
       $$
-      * **精准率(Precision)**
-        * Out of all the positive classes we have predicted, how many are actually positive
+      **精准率(Precision)**
+      Out of all the positive classes we have predicted, how many are actually positive
       $$
       P=\frac{TP}{TP+FP}
       $$
-      * **召回率(Recall/TPR/Sensitivity)**
-        * Out of all the positive classes, how much we predicted correctly. It should be high as possible.
+      **召回率(Recall/TPR/Sensitivity)**
+      Out of all the positive classes, how much we predicted correctly. It should be high as possible.
       $$
       R=\frac{TP}{TP+FN}
       $$
-      * **F1-Score**
-  * F-score helps to measure Recall and Precision at the same time. It uses Harmonic Mean in place of Arithmetic Mean by punishing the extreme values more.
+      **F1-Score**
+      F-score helps to measure Recall and Precision at the same time. It uses Harmonic Mean in place of Arithmetic Mean by      punishing the extreme values more.
       
       $$
       \frac{2}{F_1}=\frac{1}{P}+\frac{1}{R}
-$$
+      $$
       
       - Specificity
         $$
@@ -265,7 +265,7 @@ $$
       
             ​	7% > 2% -》高偏差（可避免偏差大于方差）
       
-              - **Scenario B:**
+        - **Scenario B:**
       
             ​	0.5% < 2% -》高方差（可避免偏差小于方差）
       
