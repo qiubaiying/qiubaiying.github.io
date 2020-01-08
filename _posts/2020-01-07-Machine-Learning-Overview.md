@@ -275,25 +275,24 @@
         <img src="https://miro.medium.com/max/430/1*iLW_BrJZRI0UZSflfMrmZQ.png" width="300"/>|<img src="https://miro.medium.com/max/365/1*k_MPO2Q9bLNH9k4Wlk6v_g.png" width="170"/>
         <img src="https://miro.medium.com/max/556/1*aUZ7H-Lw74KSucoLlj1pgw.png" width="300"/>|<img src="https://miro.medium.com/max/365/1*H7JGQbaa06BUab6tvGNZKg.png" width="170"/>
   
-  - **复杂度度量**
-
+    - **复杂度度量**
       - **偏差与方差**
-
-          - **What is bias?**
-              
-              - Bias is the difference between the average prediction of our model and the correct value which we are trying to predict
-              
-          - **What is variance?**
-              
-              - Variance is the variability of model prediction for a given data point or a value which tells us spread of our data
-              
-    - ![1*BtpFTBrGaQNE3TvU-0EVSQ](https://miro.medium.com/max/290/1*BtpFTBrGaQNE3TvU-0EVSQ.png)
+        - **What is bias?**
+          - Bias is the difference between the average prediction of our model and the correct value which we are trying to predict
+        - **What is variance?**
+          - Variance is the variability of model prediction for a given data point or a value which tells us spread of our data
+        <p align="center">
+          <img src="https://miro.medium.com/max/579/1*e7VaoBh5apjaM2p4afkFyg.png" style="zoom:100%" />
+        </p>
+        
+        <p align="center">
+          <img src="https://miro.medium.com/max/468/1*xwtSpR_zg7j7zusa4IDHNQ.png" style="zoom:100%" />
+        </p> 
+        
+        <p align="center">
+          <img src="https://miro.medium.com/max/830/1*9hPX9pAO3jqLrzt0IE3JzA.png" style="zoom:100%" />
+        </p> 
       
-    - ![1*e7VaoBh5apjaM2p4afkFyg](https://miro.medium.com/max/579/1*e7VaoBh5apjaM2p4afkFyg.png)
-      
-        <div align=center><img src ="https://miro.medium.com/max/468/1*xwtSpR_zg7j7zusa4IDHNQ.png"/></div>
-      
-        <div align=center><img src ="https://miro.medium.com/max/830/1*9hPX9pAO3jqLrzt0IE3JzA.png"/></div>
       
 - **可避免偏差&可避免方差**
       
