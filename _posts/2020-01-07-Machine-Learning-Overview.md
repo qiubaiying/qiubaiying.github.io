@@ -396,7 +396,12 @@
         <img src="https://pic1.zhimg.com/80/v2-8033d9fccb8282470908e6415c6a90df_hd.jpg" style="zoom:100%" />
       </p>
     
-      <ol><li>原始数据（Original）：未经过任何采样处理（ <img src="https://www.zhihu.com/equation?tex=%5CRe%5E%7B1831%5Ctimes21%7D" alt="[公式]" eeimg="1" data-formula="\Re^{1831\times21}"> ）</li><li>欠采样（Undersampling）：从反例中随机选择176个数据，与正例合并（ <img src="https://www.zhihu.com/equation?tex=%5CRe%5E%7B352%5Ctimes21%7D" alt="[公式]" eeimg="1" data-formula="\Re^{352\times21}"> ）</li><li>过采样（Oversampling）：从正例中反复抽取并生成1655个数据（势必会重复），并与反例合并（ <img src="https://www.zhihu.com/equation?tex=%5CRe%5E%7B3310%5Ctimes21%7D" alt="[公式]" eeimg="1" data-formula="\Re^{3310\times21}"> ）</li><li>SMOTE：也是一种过采样方法。SMOTE通过找到正例中数据的近邻，来合成新的1655-176=1479个“新正例”，并与原始数据合并（ <img src="https://www.zhihu.com/equation?tex=%5CRe%5E%7B3310%5Ctimes21%7D" alt="[公式]" eeimg="1" data-formula="\Re^{3310\times21}"> ）。此处应注意SMOTE并不是简单的重复，而是一种基于原始数据的生成。另外一个相似的算法是ADASYN，此处省略。</li></ol>
+      <ol>
+        <li>原始数据（Original）：未经过任何采样处理</li>
+        <li>欠采样（Undersampling）：从反例中随机选择176个数据，与正例合并</li>
+        <li>过采样（Oversampling）：从正例中反复抽取并生成1655个数据（势必会重复），并与反例合并</li>
+        <li>SMOTE：也是一种过采样方法。SMOTE通过找到正例中数据的近邻，来合成新的1655-176=1479个“新正例”，并与原始数据合并。此处应注意SMOTE并不是简单的重复，而是一种基于原始数据的生成。另外一个相似的算法是ADASYN，此处省略。</li>
+      </ol>
     
       <p>1.<b> 过采样（右上）只是单纯的重复了正例</b>，因此会过分强调已有的正例。如果其中部分点标记错误或者是噪音，那么错误也容易被成倍的放大。<b>因此最大的风险就是对正例过拟合</b>。</p>
       <p>2. <b>欠采样（左下）抛弃了大部分反例数据</b>，从而弱化了中间部分反例的影响，<b>可能会造成偏差很大的模型</b>。当然，如果数据不平衡但两个类别基数都很大，或许影响不大。同时，<b>数据总是宝贵的，抛弃数据是很奢侈的</b>，因此另一种常见的做法是反复做欠采样，生成 <img src="https://www.zhihu.com/equation?tex=1655%2F176%5Capprox9" alt="[公式]" eeimg="1" data-formula="1655/176\approx9"> 个新的子样本。其中每个样本的正例都使用这176个数据，而反例则从1655个数据中不重复采样。最终对这9个样本分别训练，并集成结果。这样数据达到了有效利用，但也存在风险：</p>
