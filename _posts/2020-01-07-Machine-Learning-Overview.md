@@ -268,10 +268,16 @@
           <img src="https://miro.medium.com/max/361/1*pk05QGzoWhCgRiiFbz-oKQ.png" style="zoom:100%" />
         </p>
         
-        <span class='gp-n'>
+        <p float="left">
           <img src="https://miro.medium.com/max/528/1*Uu-t4pOotRQFoyrfqEvIEg.png" width="300"/>
           <img src="https://miro.medium.com/max/365/1*HmVIhSKznoW8tFsCLeQjRw.png" width="170"/>
-        </span>
+        </p>
+        
+        Solarized dark             |  Solarized Ocean
+        :-------------------------:|:-------------------------:
+        <img src="https://miro.medium.com/max/528/1*Uu-t4pOotRQFoyrfqEvIEg.png" width="300"/> |  <img src="https://miro.medium.com/max/365/1*HmVIhSKznoW8tFsCLeQjRw.png" width="170"/>
+        
+        <img src="https://miro.medium.com/max/528/1*Uu-t4pOotRQFoyrfqEvIEg.png" width="300"/><img src="https://miro.medium.com/max/365/1*HmVIhSKznoW8tFsCLeQjRw.png" width="170"/>
         
         <p align="center">
           <img src="https://miro.medium.com/max/528/1*Uu-t4pOotRQFoyrfqEvIEg.png" width="300"/><img src="https://miro.medium.com/max/365/1*HmVIhSKznoW8tFsCLeQjRw.png" width="170"/>
