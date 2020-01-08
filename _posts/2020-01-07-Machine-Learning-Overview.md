@@ -1,3 +1,16 @@
+---
+layout:     post
+title:      Machine Learning Overview
+subtitle:   机器学习概览
+date:       2020-01-07
+author:     Young
+header-img: img/robot.jpg
+catalog: true
+tags:
+    - machine learning
+    - python
+---
+
 ## 机器学习介绍
 
 - 机器学习介绍：机器学习是什么，怎么来的，理论基础是什么，为了解决什么问题。
