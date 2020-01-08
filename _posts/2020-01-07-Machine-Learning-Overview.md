@@ -463,7 +463,7 @@
                              'min_child_samples': range(10, 30)}
 
                 GridSearch(regr , adj_params , train_X, train_y)
-            ```
+          ```
     
     - 随机搜索
     
@@ -510,7 +510,7 @@
                              'min_child_samples': range(10, 30)}
 
                 RandomSearch(regr , adj_params , train_X, train_y)
-            ```
+          ```
     
     - 贝叶斯优化
     
@@ -591,8 +591,11 @@
               BayesianSearch(GBM_evaluate, adj_params)
           ```
 
-  - **[machine learning algorithm cheat sheet]**
-
-  <div align=center><img src ="https://github.com/Julian-young/LearningReview/raw/dev-jiale/image_0_ml_overview/68747470733a2f2f626c6f672e6772696464796e616d6963732e636f6d2f636f6e74656e742f696d616765732f323031382f30342f6d616368696e656c6561726e696e67616c676f726974686d732e706e67.png"/></div>
-
-  <div align=center><img src =" https://github.com/Julian-young/LearningReview/raw/dev-jiale/image_0_ml_overview/68747470733a2f2f6e616e6a756e7869616f2e6769746875622e696f2f696d672f4125323066657725323075736566756c2532307468696e6773253230746f2532306b6e6f7725323061626f75742532306d616368696e652532306c6561726e696e672e6a7067.png"/></div>
+## **[machine learning algorithm cheat sheet]**
+  <p align="center">
+    <img src="https://github.com/Julian-young/LearningReview/raw/dev-jiale/image_0_ml_overview/68747470733a2f2f626c6f672e6772696464796e616d6963732e636f6d2f636f6e74656e742f696d616765732f323031382f30342f6d616368696e656c6561726e696e67616c676f726974686d732e706e67.png" style="zoom:100%" />
+  </p>
+  
+  <p align="center">
+    <img src="https://github.com/Julian-young/LearningReview/raw/dev-jiale/image_0_ml_overview/68747470733a2f2f6e616e6a756e7869616f2e6769746875622e696f2f696d672f4125323066657725323075736566756c2532307468696e6773253230746f2532306b6e6f7725323061626f75742532306d616368696e652532306c6561726e696e672e6a7067.png" style="zoom:100%" />
+  </p>
