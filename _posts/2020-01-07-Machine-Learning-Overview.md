@@ -317,12 +317,15 @@
       <p align="center">
         <img src="https://miro.medium.com/max/562/1*RQ6ICt_FBSx6mkAsGVwx8g.png" style="zoom:100%" />
       </p>
+      
       - **欠拟合**
         <br>
         一般表示模型对数据的表现能力不足，通常是模型的复杂度不够，并且Bias高，训练集的损失值高，测试集的损失值也高.
+        
       - **过拟合**
         <br>
         一般表示模型对数据的表现能力过好，通常是模型的复杂度过高，并且Variance高，训练集的损失值低，测试集的损失值高.
+        
       - **结构风险与经验风险**
         - *经验风险*：是对训练集中的所有样本点损失函数的平均最小化
           - 经验风险越小说明模型f(X)对训练集的拟合程度越好
@@ -340,24 +343,30 @@
         <p align="center">
           <img src="https://morvanzhou.github.io/static/results/ML-intro/L1l2regularization5.png" style="zoom:100%" />
         </p>
+        
         - **Lasso(L1)**
-              
-          - ![1*tHJ4sSPYV0bDr8xxEdiwXA](https://miro.medium.com/max/547/1*tHJ4sSPYV0bDr8xxEdiwXA.png)
-          -  for lasso, the equation becomes, |β1|+|β2|≤ s
+          <p align="center">
+            <img src="https://miro.medium.com/max/547/1*tHJ4sSPYV0bDr8xxEdiwXA.png" style="zoom:100%" />
+          </p>   
+          - for lasso, the equation becomes, |β1|+|β2|≤ s
               
         - **Ridge Regression(L2)**
-          - ![1*CiqZ8lhwxi5c4d1nV24w4g](https://miro.medium.com/max/553/1*CiqZ8lhwxi5c4d1nV24w4g.png)
+          <p align="center">
+            <img src="https://miro.medium.com/max/553/1*CiqZ8lhwxi5c4d1nV24w4g.png" style="zoom:100%" />
+          </p>  
           - ridge regression is expressed by β1² + β2² ≤ s
             
         - 想象现在只有两个参数 theta1 theta2 要学, **蓝色的圆心是误差最小的地方**, 而**每条蓝线上的误差都是一样的**. 正规化的方程是在黄线上产生的额外误差(也能理解为惩罚度), 在黄圈上的额外误差也是一样. 所以在**蓝线和黄线交点上的点能让两个误差的合最小**. 这就是 theta1 和 theta2 正规化后的解. 要提到另外一点是, 使用 L1 的方法, 我们很可能得到的结果是只有 theta1 的特征被保留, 所以很多人也用 l1 正规化来挑选对结果贡献最大的重要特征. 但是 l1 的结并不是稳定的. 比如用批数据训练, 每次批数据都会有稍稍不同的误差曲线。
+        <p align="center">
+          <img src="https://pic3.zhimg.com/80/v2-2e038f7a54e885714a7bf5ab9c5dda56_hd.jpg" style="zoom:100%" />
+        </p>
         
-        - ![v2-2e038f7a54e885714a7bf5ab9c5dda56_hd](https://pic3.zhimg.com/80/v2-2e038f7a54e885714a7bf5ab9c5dda56_hd.jpg)
-          
           - **如果不加L1和L2正则化的时候，对于线性回归这种目标函数凸函数的话，我们最终的结果就是最里边的紫色的小圈圈等高线上的点。**
           
         - 当加入L1正则化的时候，我们先画出 ![[公式]](https://www.zhihu.com/equation?tex=%7C%5Comega_%7B1%7D%7C+%2B+%7C%5Comega_%7B2%7D%7C+%3D+F) 的图像，也就是一个菱形，代表这些曲线上的点算出来的 1范数![[公式]](https://www.zhihu.com/equation?tex=%7C%5Comega_%7B1%7D%7C+%2B+%7C%5Comega_%7B2%7D%7C+) 都为F。**那我们现在的目标是不仅是原曲线算得值要小（越来越接近中心的紫色圈圈），还要使得这个菱形越小越好（F越小越好）**。那么还和原来一样的话，过中心紫色圈圈的那个菱形明显很大，因此我们要取到一个恰好的值。那么如何求值呢？
-          
-          <div align=center><img src ="https://pic2.zhimg.com/80/v2-3fef81c912c4ac0fd8e61a007139f855_hd.jpg"/></div>
+          <p align="center">
+            <img src="https://pic2.zhimg.com/80/v2-3fef81c912c4ac0fd8e61a007139f855_hd.jpg" style="zoom:100%" />
+          </p>
           
           - **L1正则为什么可以得到稀疏解？**
   
