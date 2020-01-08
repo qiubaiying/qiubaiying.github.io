@@ -9,7 +9,9 @@
   - Improving some performance measure with experence computed from data. 
 
     也就是机器从数据中总结经验，从数据中找出某种规律或者模型，并用它来解决实 际问题。
-    ![image-20200106151549460](https://github.com/Julian-young/LearningReview/raw/dev-jiale/image_0_ml_overview/image-20200106151549460.png)
+<p align="center">
+  <img width="" height="" src="https://github.com/Julian-young/LearningReview/raw/dev-jiale/image_0_ml_overview/image-20200106151549460.png">
+</p>
 
 - 为了解决什么问题
   
