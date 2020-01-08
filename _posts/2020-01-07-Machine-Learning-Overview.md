@@ -226,7 +226,7 @@
         </p>
         
       - **精准率(Precision)**
-        Out of all the positive classes we have predicted, how many are actually positive
+        - Out of all the positive classes we have predicted, how many are actually positive
         <p align="center">
         $$
         P=\frac{TP}{TP+FP}
@@ -234,7 +234,7 @@
         </p>
         
       - **召回率(Recall/TPR/Sensitivity)**
-        Out of all the positive classes, how much we predicted correctly. It should be high as possible.
+        - Out of all the positive classes, how much we predicted correctly. It should be high as possible.
         <p align="center">
         $$
         R=\frac{TP}{TP+FN}
@@ -242,7 +242,7 @@
         </p>
       
       - **F1-Score**
-        F-score helps to measure Recall and Precision at the same time. It uses Harmonic Mean in place of Arithmetic Mean by      punishing the extreme values more.
+        - F-score helps to measure Recall and Precision at the same time. It uses Harmonic Mean in place of Arithmetic Mean by      punishing the extreme values more.
         <p align="center">
         $$
         \frac{2}{F_1}=\frac{1}{P}+\frac{1}{R}
@@ -264,23 +264,26 @@
       - **AUC - ROC Curve**
         
         - AUC - ROC curve is a performance measurement for classification problem at various thresholds settings. ROC is a probability curve and AUC represents degree or measure of separability. It tells how much model is capable of distinguishing between classes. 
+        <p align="center">
+          <img src="https://miro.medium.com/max/361/1*pk05QGzoWhCgRiiFbz-oKQ.png" style="zoom:100%" />
+        </p>
+        
+        <p align="center">
+          <img src="https://miro.medium.com/max/528/1*Uu-t4pOotRQFoyrfqEvIEg.png" width="300"/><img src="https://miro.medium.com/max/365/1*HmVIhSKznoW8tFsCLeQjRw.png" width="170"/>
+        </p>
+        
+        <p align="center">
+          <img src="https://miro.medium.com/max/507/1*yF8hvKR9eNfqqej2JnVKzg.png" width="300"/><img src="https://miro.medium.com/max/365/1*-tPXUvvNIZDbqXP0qqYNuQ.png" width="170"/>
+        </p>
+        
+        <p align="center">
+          <img src="https://miro.medium.com/max/430/1*iLW_BrJZRI0UZSflfMrmZQ.png" width="300"/><img src="https://miro.medium.com/max/365/1*k_MPO2Q9bLNH9k4Wlk6v_g.png" width="170"/>
+        </p>
+        
+        <p align="center">
+          <img src="https://miro.medium.com/max/556/1*aUZ7H-Lw74KSucoLlj1pgw.png" width="300"/><img src="https://miro.medium.com/max/365/1*H7JGQbaa06BUab6tvGNZKg.png" width="170"/>
+        </p>
   
-  <div align=center><img src ="https://miro.medium.com/max/361/1*pk05QGzoWhCgRiiFbz-oKQ.png"/></div>
-  
-  <div align=center><img src="https://miro.medium.com/max/528/1*Uu-t4pOotRQFoyrfqEvIEg.png" width="300"/><img src="https://miro.medium.com/max/365/1*HmVIhSKznoW8tFsCLeQjRw.png" width="170"/></div>
-  
-- <div align=center>
-    <img src="https://miro.medium.com/max/507/1*yF8hvKR9eNfqqej2JnVKzg.png" width="300"/><img src="https://miro.medium.com/max/365/1*-tPXUvvNIZDbqXP0qqYNuQ.png" width="170"/>
-    </div>
-    
-- <div align=center>
-  <img src="https://miro.medium.com/max/430/1*iLW_BrJZRI0UZSflfMrmZQ.png" width="300"/><img src="https://miro.medium.com/max/365/1*k_MPO2Q9bLNH9k4Wlk6v_g.png" width="170"/>
-  </div>
-  
-- <div align=center>
-      <img src="https://miro.medium.com/max/556/1*aUZ7H-Lw74KSucoLlj1pgw.png" width="300"/><img src="https://miro.medium.com/max/365/1*H7JGQbaa06BUab6tvGNZKg.png" width="170"/>
-  </div>
-
   - **复杂度度量**
 
       - **偏差与方差**
