@@ -303,6 +303,7 @@
       <p align="center">
         <img src="https://miro.medium.com/max/439/1*SHjeJH4wFNjzxYjVVfh0fQ.png" style="zoom:100%" />
       </p>
+      
       - **Avoidable Bias = Difference (Training Error, Human-Level Performance)**
       - **Variance = Difference (Development Error, Training Error)**
         - **Scenario A:**
@@ -345,23 +346,23 @@
         </p>
         
         - **Lasso(L1)**
-          <p align="center">
-            <img src="https://miro.medium.com/max/547/1*tHJ4sSPYV0bDr8xxEdiwXA.png" style="zoom:100%" />
-          </p>   
           - for lasso, the equation becomes, |β1|+|β2|≤ s
+            <p align="center">
+              <img src="https://miro.medium.com/max/547/1*tHJ4sSPYV0bDr8xxEdiwXA.png" style="zoom:100%" />
+            </p>   
               
         - **Ridge Regression(L2)**
-          <p align="center">
-            <img src="https://miro.medium.com/max/553/1*CiqZ8lhwxi5c4d1nV24w4g.png" style="zoom:100%" />
-          </p>  
           - ridge regression is expressed by β1² + β2² ≤ s
+            <p align="center">
+              <img src="https://miro.medium.com/max/553/1*CiqZ8lhwxi5c4d1nV24w4g.png" style="zoom:100%" />
+            </p>  
             
         - 想象现在只有两个参数 theta1 theta2 要学, **蓝色的圆心是误差最小的地方**, 而**每条蓝线上的误差都是一样的**. 正规化的方程是在黄线上产生的额外误差(也能理解为惩罚度), 在黄圈上的额外误差也是一样. 所以在**蓝线和黄线交点上的点能让两个误差的合最小**. 这就是 theta1 和 theta2 正规化后的解. 要提到另外一点是, 使用 L1 的方法, 我们很可能得到的结果是只有 theta1 的特征被保留, 所以很多人也用 l1 正规化来挑选对结果贡献最大的重要特征. 但是 l1 的结并不是稳定的. 比如用批数据训练, 每次批数据都会有稍稍不同的误差曲线。
-        <p align="center">
-          <img src="https://pic3.zhimg.com/80/v2-2e038f7a54e885714a7bf5ab9c5dda56_hd.jpg" style="zoom:100%" />
-        </p>
+          <p align="center">
+            <img src="https://pic3.zhimg.com/80/v2-2e038f7a54e885714a7bf5ab9c5dda56_hd.jpg" style="zoom:100%" />
+          </p>
         
-          - **如果不加L1和L2正则化的时候，对于线性回归这种目标函数凸函数的话，我们最终的结果就是最里边的紫色的小圈圈等高线上的点。**
+        - **如果不加L1和L2正则化的时候，对于线性回归这种目标函数凸函数的话，我们最终的结果就是最里边的紫色的小圈圈等高线上的点。**
           
         - 当加入L1正则化的时候，我们先画出 ![[公式]](https://www.zhihu.com/equation?tex=%7C%5Comega_%7B1%7D%7C+%2B+%7C%5Comega_%7B2%7D%7C+%3D+F) 的图像，也就是一个菱形，代表这些曲线上的点算出来的 1范数![[公式]](https://www.zhihu.com/equation?tex=%7C%5Comega_%7B1%7D%7C+%2B+%7C%5Comega_%7B2%7D%7C+) 都为F。**那我们现在的目标是不仅是原曲线算得值要小（越来越接近中心的紫色圈圈），还要使得这个菱形越小越好（F越小越好）**。那么还和原来一样的话，过中心紫色圈圈的那个菱形明显很大，因此我们要取到一个恰好的值。那么如何求值呢？
           <p align="center">
