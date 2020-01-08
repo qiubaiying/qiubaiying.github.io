@@ -178,27 +178,35 @@
    - **模型评估指标**
 
       - **R方 R square**
-        
-        - ![v2-66f85f9a137197d57088cc71cb7ee23f_hd](https://pic4.zhimg.com/80/v2-66f85f9a137197d57088cc71cb7ee23f_hd.png)
-        - ![v2-6b255832b7b8cb2d31a9422f52f4480c_hd](https://pic1.zhimg.com/80/v2-6b255832b7b8cb2d31a9422f52f4480c_hd.jpg)
-        
+        <p align="center">
+          <img src="https://pic4.zhimg.com/80/v2-66f85f9a137197d57088cc71cb7ee23f_hd.png" style="zoom:100%" />
+        </p>
+        <p align="center">
+          <img src="https://pic1.zhimg.com/80/v2-6b255832b7b8cb2d31a9422f52f4480c_hd.jpg" style="zoom:100%" />
+        </p>
           - 上：y预测 - y真，our model，
           - 下：y真平均 - y真，baseline model
         
       - MSE(Mean Squared Error)
+        <p align="center">
         $$
         MSE(y,f(x))=\frac{1}{N}\sum_{i=1}^{N}(y-f(x))^2
         $$
+        </p>
         
       - MAE(Mean Absolute Error)
+        <p align="center">
         $$
         MAE(y,f(x))=\frac{1}{N}\sum_{i=1}^{N}|y-f(x)|
         $$
+        </p>
         
       - **RMSE(Root Mean Squard Error)**
+        <p align="center">
         $$
         RMSE(y,f(x))=\frac{1}{1+MSE(y,f(x))}
         $$
+        </p>
         
       - **Confusion Matrix**
 
