@@ -294,58 +294,58 @@
         </p> 
       
       
-- **可避免偏差&可避免方差**
-      
-    <div align=center><img src ="https://miro.medium.com/max/372/1*RQXgxVsrn406s7jBowyLkw.png"/></div>
-      
-    <div align=center><img src ="https://miro.medium.com/max/439/1*SHjeJH4wFNjzxYjVVfh0fQ.png"/></div>
-      
-    - **Difference (Training Error, Human-Level Performance) = Avoidable Bias**
-      
-    - **Difference (Development Error, Training Error) = Variance**
-      
+    - **可避免偏差&可避免方差**
+      <p align="center">
+        <img src="https://miro.medium.com/max/372/1*RQXgxVsrn406s7jBowyLkw.png" style="zoom:100%" />
+      </p>
+      <p align="center">
+        <img src="https://miro.medium.com/max/439/1*SHjeJH4wFNjzxYjVVfh0fQ.png" style="zoom:100%" />
+      </p>
+      - **Avoidable Bias = Difference (Training Error, Human-Level Performance)**
+      - **Variance = Difference (Development Error, Training Error)**
         - **Scenario A:**
-      
-            ​	7% > 2% -》高偏差（可避免偏差大于方差）
+          <br>
+          7% > 2% -》高偏差（可避免偏差大于方差）
       
         - **Scenario B:**
+          <br>
+          0.5% < 2% -》高方差（可避免偏差小于方差）
       
-            ​	0.5% < 2% -》高方差（可避免偏差小于方差）
-      
-- **过拟合与欠拟合**
-      
-          - ![1*RQ6ICt_FBSx6mkAsGVwx8g](https://miro.medium.com/max/562/1*RQ6ICt_FBSx6mkAsGVwx8g.png)
-              - **欠拟合**一般表示模型对数据的表现能力不足，通常是模型的复杂度不够，并且Bias高，训练集的损失值高，测试集的损失值也高.
-              - **过拟合**一般表示模型对数据的表现能力过好，通常是模型的复杂度过高，并且Variance高，训练集的损失值低，测试集的损失值高.
-      
+    - **过拟合与欠拟合**
+      <p align="center">
+        <img src="https://miro.medium.com/max/562/1*RQ6ICt_FBSx6mkAsGVwx8g.png" style="zoom:100%" />
+      </p>
+      - **欠拟合**
+        <br>
+        一般表示模型对数据的表现能力不足，通常是模型的复杂度不够，并且Bias高，训练集的损失值高，测试集的损失值也高.
+      - **过拟合**
+        <br>
+        一般表示模型对数据的表现能力过好，通常是模型的复杂度过高，并且Variance高，训练集的损失值低，测试集的损失值高.
       - **结构风险与经验风险**
-      
-          - *经验风险*：是对训练集中的所有样本点损失函数的平均最小化
-        - 经验风险越小说明模型f(X)对训练集的拟合程度越好
-          - *期望风险*：
-        - 未知的样本数据（<X,Y>）的数量是不容易确定的，所以就没有办法用所有样本损失函数的平均值的最小化这个方法，那么怎么来衡量这个模型对所有的样本（包含未知的样本和已知的训练样本）预测能力呢？熟悉概率论的很容易就想到了用期望。
-              - 经验风险是局部的，基于训练集所有样本点损失函数最小化的。
-              - 期望风险是全局的，是基于所有样本点的损失函数最小化的。
-    - *结构风险*：
-              - 只考虑经验风险的话，会出现过拟合的现象，过拟合的极端情况便是模型f(x)对训练集中所有的样本点都有最好的预测能力，但是对于非训练集中的样本数据，模型的预测能力非常不好。怎么办呢？这个时候就引出了结构风险。结构风险是对经验风险和期望风险的折中。在经验风险函数后面加一个正则化项（惩罚项）便是结构风险了。
+        - *经验风险*：是对训练集中的所有样本点损失函数的平均最小化
+          - 经验风险越小说明模型f(X)对训练集的拟合程度越好
+        - *期望风险*：
+          - 未知的样本数据（<X,Y>）的数量是不容易确定的，所以就没有办法用所有样本损失函数的平均值的最小化这个方法，那么怎么来衡量这个模型对所有的样本（包含未知的样本和已知的训练样本）预测能力呢？熟悉概率论的很容易就想到了用期望。
+            - 经验风险是局部的，基于训练集所有样本点损失函数最小化的。
+            - 期望风险是全局的，是基于所有样本点的损失函数最小化的。
+        - *结构风险*：
+          - 只考虑经验风险的话，会出现过拟合的现象，过拟合的极端情况便是模型f(x)对训练集中所有的样本点都有最好的预测能力，但是对于非训练集中的样本数据，模型的预测能力非常不好。怎么办呢？这个时候就引出了结构风险。结构风险是对经验风险和期望风险的折中。在经验风险函数后面加一个正则化项（惩罚项）便是结构风险了。
 
       - **泛化能力**
-      
-          - 泛化能力通俗来讲就是指学习到的模型对未知数据的预测能力
-          - 提高泛化能力的方式大致有三种：1.增加数据量。2.正则化。3.凸优化。
-      
+        - 泛化能力通俗来讲就是指学习到的模型对未知数据的预测能力
+        - 提高泛化能力的方式大致有三种：1.增加数据量。2.正则化。3.凸优化。
       - **正则化**
-      
-          <div align=center><img src ="https://morvanzhou.github.io/static/results/ML-intro/L1l2regularization5.png"/></div>
-          
-          - **Lasso(L1)**
+        <p align="center">
+          <img src="https://morvanzhou.github.io/static/results/ML-intro/L1l2regularization5.png" style="zoom:100%" />
+        </p>
+        - **Lasso(L1)**
               
-              - ![1*tHJ4sSPYV0bDr8xxEdiwXA](https://miro.medium.com/max/547/1*tHJ4sSPYV0bDr8xxEdiwXA.png)
-              -  for lasso, the equation becomes, |β1|+|β2|≤ s
+          - ![1*tHJ4sSPYV0bDr8xxEdiwXA](https://miro.medium.com/max/547/1*tHJ4sSPYV0bDr8xxEdiwXA.png)
+          -  for lasso, the equation becomes, |β1|+|β2|≤ s
               
-          - **Ridge Regression(L2)**
-            - ![1*CiqZ8lhwxi5c4d1nV24w4g](https://miro.medium.com/max/553/1*CiqZ8lhwxi5c4d1nV24w4g.png)
-            - ridge regression is expressed by β1² + β2² ≤ s
+        - **Ridge Regression(L2)**
+          - ![1*CiqZ8lhwxi5c4d1nV24w4g](https://miro.medium.com/max/553/1*CiqZ8lhwxi5c4d1nV24w4g.png)
+          - ridge regression is expressed by β1² + β2² ≤ s
             
         - 想象现在只有两个参数 theta1 theta2 要学, **蓝色的圆心是误差最小的地方**, 而**每条蓝线上的误差都是一样的**. 正规化的方程是在黄线上产生的额外误差(也能理解为惩罚度), 在黄圈上的额外误差也是一样. 所以在**蓝线和黄线交点上的点能让两个误差的合最小**. 这就是 theta1 和 theta2 正规化后的解. 要提到另外一点是, 使用 L1 的方法, 我们很可能得到的结果是只有 theta1 的特征被保留, 所以很多人也用 l1 正规化来挑选对结果贡献最大的重要特征. 但是 l1 的结并不是稳定的. 比如用批数据训练, 每次批数据都会有稍稍不同的误差曲线。
         
