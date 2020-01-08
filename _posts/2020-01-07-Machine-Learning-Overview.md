@@ -19,9 +19,9 @@
     - 事物本身存在某种潜在规律
     - 某些问题难以使用普通编程解决
     - 有大量的数据样本可供使用
-      <p align="center">
-        <img src="https://github.com/Julian-young/LearningReview/raw/dev-jiale/image_0_ml_overview/image-20200106151620380.png" style="zoom:80%" />
-      </p>
+    <p align="center">
+      <img src="https://github.com/Julian-young/LearningReview/raw/dev-jiale/image_0_ml_overview/image-20200106151620380.png" style="zoom:80%" />
+    </p>
 
 ## 机器学习分类
 
