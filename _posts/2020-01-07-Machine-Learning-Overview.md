@@ -412,186 +412,186 @@
         <img src="https://pic4.zhimg.com/80/v2-fe094d82f6eb870d730ccd5ddfa88e3f_hd.jpg" style="zoom:100%" />
       </p>  
     
-    - **特征处理**
+  - **特征处理**
     
-        - 归一化、标准化、离散化、one-hot编码
+    - 归一化、标准化、离散化、one-hot编码
     
-    - **模型调优**
+  - **模型调优**
     
-        - 网格搜索
+    - 网格搜索
     
-            - 网格搜索是应用最广泛的超参数搜索算法，网格搜索通过查找搜索范围内的所有的点，来确定最优值。一般通过给出较大的搜索范围以及较小的步长，网格搜索是一定可以找到全局最大值或最小值的。但是，网格搜索一个比较大的问题是，它十分消耗计算资源，特别是需要调优的超参数比较多的时候。在比赛中，需要调参的模型数量与对应的超参数比较多，而涉及的数据量又比较大，因此相当的耗费时间。此外，由于给出的超参数组合比较多，因此一般都会固定多数参数，分步对1~2个超参数进行调解，这样能够减少时间但是缺难以自动化进行，而且由于目标参数一般是非凸的，因此容易陷入局部最小值。
+      - 网格搜索是应用最广泛的超参数搜索算法，网格搜索通过查找搜索范围内的所有的点，来确定最优值。一般通过给出较大的搜索范围以及较小的步长，网格搜索是一定可以找到全局最大值或最小值的。但是，网格搜索一个比较大的问题是，它十分消耗计算资源，特别是需要调优的超参数比较多的时候。在比赛中，需要调参的模型数量与对应的超参数比较多，而涉及的数据量又比较大，因此相当的耗费时间。此外，由于给出的超参数组合比较多，因此一般都会固定多数参数，分步对1~2个超参数进行调解，这样能够减少时间但是缺难以自动化进行，而且由于目标参数一般是非凸的，因此容易陷入局部最小值。
     
-            - ```python
-                import lightgbm as lgb
-                from sklearn.model_selection import GridSearchCV
-                
-                
-                def GridSearch(clf, params, X, y):
-                    cscv = GridSearchCV(clf, params, scoring='neg_mean_squared_error', n_jobs=1, cv=5)
-                    cscv.fit(X, y)
-                
-                    print(cscv.cv_results_)
-                    print(cscv.best_params_)
-                
-                
-                if __name__ == '__main__':
-                    train_X, train_y = get_data()
-                
-                    param = {
-                        'objective': 'regression',
-                        'n_estimators': 275,
-                        'max_depth': 6,
-                        'min_child_samples': 20,
-                        'reg_lambd': 0.1,
-                        'reg_alpha': 0.1,
-                        'metric': 'rmse',
-                        'colsample_bytree': 1,
-                        'subsample': 0.8,
-                        'num_leaves' : 40,
-                        'random_state': 2018
-                        }
-                    regr = lgb.LGBMRegressor(**param)
-                
-                    adj_params = {'n_estimators': range(100, 400, 10),
-                                 'min_child_weight': range(3, 20, 2),
-                                 'colsample_bytree': np.arange(0.4, 1.0),
-                                 'max_depth': range(5, 15, 2),
-                                 'subsample': np.arange(0.5, 1.0, 0.1),
-                                 'reg_lambda': np.arange(0.1, 1.0, 0.2),
-                                 'reg_alpha': np.arange(0.1, 1.0, 0.2),
-                                 'min_child_samples': range(10, 30)}
-                
-                    GridSearch(regr , adj_params , train_X, train_y)
-                ```
-    
-        - 随机搜索
-    
-            - 与网格搜索相比，随机搜索并未尝试所有参数值，而是从指定的分布中采样固定数量的参数设置。它的理论依据是，如果随机样本点集足够大，那么也可以找到全局的最大或最小值，或它们的近似值。通过对搜索范围的随机取样，随机搜索一般会比网格搜索要快一些。但是和网格搜索的快速版（非自动版）相似，结果也是没法保证的。
-    
-            - ```python
-                import lightgbm as lgb
-                from sklearn.model_selection import  RandomizedSearchCV
-                
-                
-                def RandomSearch(clf, params, X, y):
-                    rscv = RandomizedSearchCV(clf, params, scoring='neg_mean_squared_error', n_jobs=1, cv=5)
-                    rscv.fit(X, y)
-                
-                    print(rscv.cv_results_)
-                    print(rscv.best_params_)
-                
-                
-                if __name__ == '__main__':
-                    train_X, train_y = get_data()
-                
-                    param = {
-                        'objective': 'regression',
-                        'n_estimators': 275,
-                        'max_depth': 6,
-                        'min_child_samples': 20,
-                        'reg_lambd': 0.1,
-                        'reg_alpha': 0.1,
-                        'metric': 'rmse',
-                        'colsample_bytree': 1,
-                        'subsample': 0.8,
-                        'num_leaves' : 40,
-                        'random_state': 2018
-                        }
-                    regr = lgb.LGBMRegressor(**param)
-                
-                    adj_params = {'n_estimators': range(100, 400, 10),
-                                 'min_child_weight': range(3, 20, 2),
-                                 'colsample_bytree': np.arange(0.4, 1.0),
-                                 'max_depth': range(5, 15, 2),
-                                 'subsample': np.arange(0.5, 1.0, 0.1),
-                                 'reg_lambda': np.arange(0.1, 1.0, 0.2),
-                                 'reg_alpha': np.arange(0.1, 1.0, 0.2),
-                                 'min_child_samples': range(10, 30)}
-                
-                    RandomSearch(regr , adj_params , train_X, train_y)
-                ```
-    
-        - 贝叶斯优化
-    
-            - 贝叶斯优化用于机器学习调参由J. Snoek(2012)提出，主要思想是，给定优化的目标函数(广义的函数，只需指定输入和输出即可，无需知道内部结构以及数学性质)，通过不断地添加样本点来更新目标函数的后验分布(高斯过程,直到后验分布基本贴合于真实分布。简单的说，就是考虑了上一次参数的信息，从而更好的调整当前的参数。
-    
-            - 贝叶斯优化与常规的网格搜索或者随机搜索的区别是：
-    
-                **1**.贝叶斯调参采用高斯过程，考虑之前的参数信息，不断地更新先验；网格搜索未考虑之前的参数信息。
-                 **2**.贝叶斯调参迭代次数少，速度快；网格搜索速度慢,参数多时易导致维度爆炸。
-                 **3**.贝叶斯调参针对非凸问题依然稳健；网格搜索针对非凸问题易得到局部优最。
-    
-            - ```undefined
-                pip install bayesian-optimization
-                ```
-    
-            - ```python
-                import lightgbm as lgb
-                from bayes_opt import BayesianOptimization
-                
-                train_X, train_y = None, None
-                
-                
-                def BayesianSearch(clf, params):
-                    """贝叶斯优化器"""
-                    # 迭代次数
-                    num_iter = 25
-                    init_points = 5
-                    # 创建一个贝叶斯优化对象，输入为自定义的模型评估函数与超参数的范围
-                    bayes = BayesianOptimization(clf, params)
-                    # 开始优化
-                    bayes.maximize(init_points=init_points, n_iter=num_iter)
-                    # 输出结果
-                    params = bayes.res['max']
-                    print(params['max_params'])
-                    
-                    return params
-                
-                
-                def GBM_evaluate(min_child_samples, min_child_weight, colsample_bytree, max_depth, subsample, reg_alpha, reg_lambda):
-                    """自定义的模型评估函数"""
-                
-                    # 模型固定的超参数
-                    param = {
-                        'objective': 'regression',
-                        'n_estimators': 275,
-                        'metric': 'rmse',
-                        'random_state': 2018}
-                
-                    # 贝叶斯优化器生成的超参数
-                    param['min_child_weight'] = int(min_child_weight)
-                    param['colsample_bytree'] = float(colsample_bytree),
-                    param['max_depth'] = int(max_depth),
-                    param['subsample'] = float(subsample),
-                    param['reg_lambda'] = float(reg_lambda),
-                    param['reg_alpha'] = float(reg_alpha),
-                    param['min_child_samples'] = int(min_child_samples)
-                
-                    # 5-flod 交叉检验，注意BayesianOptimization会向最大评估值的方向优化，因此对于回归任务需要取负数。
-                    # 这里的评估函数为neg_mean_squared_error，即负的MSE。
-                    val = cross_val_score(lgb.LGBMRegressor(**param),
-                        train_X, train_y ,scoring='neg_mean_squared_error', cv=5).mean()
-                
-                    return val
-                
-                
-                if __name__ == '__main__':
-                    # 获取数据，这里使用的是Kaggle比赛的数据
-                    train_X, train_y = get_data()
-                    # 调参范围
-                    adj_params = {'min_child_weight': (3, 20),
-                                 'colsample_bytree': (0.4, 1),
-                                 'max_depth': (5, 15),
-                                 'subsample': (0.5, 1),
-                                 'reg_lambda': (0.1, 1),
-                                 'reg_alpha': (0.1, 1),
-                                 'min_child_samples': (10, 30)}
-                    # 调用贝叶斯优化
-                    BayesianSearch(GBM_evaluate, adj_params)
-                ```
+        ```python
+            import lightgbm as lgb
+            from sklearn.model_selection import GridSearchCV
 
-- **[machine learning algorithm cheat sheet]**
+
+            def GridSearch(clf, params, X, y):
+                cscv = GridSearchCV(clf, params, scoring='neg_mean_squared_error', n_jobs=1, cv=5)
+                cscv.fit(X, y)
+
+                print(cscv.cv_results_)
+                print(cscv.best_params_)
+
+
+            if __name__ == '__main__':
+                train_X, train_y = get_data()
+
+                param = {
+                    'objective': 'regression',
+                    'n_estimators': 275,
+                    'max_depth': 6,
+                    'min_child_samples': 20,
+                    'reg_lambd': 0.1,
+                    'reg_alpha': 0.1,
+                    'metric': 'rmse',
+                    'colsample_bytree': 1,
+                    'subsample': 0.8,
+                    'num_leaves' : 40,
+                    'random_state': 2018
+                    }
+                regr = lgb.LGBMRegressor(**param)
+
+                adj_params = {'n_estimators': range(100, 400, 10),
+                             'min_child_weight': range(3, 20, 2),
+                             'colsample_bytree': np.arange(0.4, 1.0),
+                             'max_depth': range(5, 15, 2),
+                             'subsample': np.arange(0.5, 1.0, 0.1),
+                             'reg_lambda': np.arange(0.1, 1.0, 0.2),
+                             'reg_alpha': np.arange(0.1, 1.0, 0.2),
+                             'min_child_samples': range(10, 30)}
+
+                GridSearch(regr , adj_params , train_X, train_y)
+            ```
+    
+    - 随机搜索
+    
+      - 与网格搜索相比，随机搜索并未尝试所有参数值，而是从指定的分布中采样固定数量的参数设置。它的理论依据是，如果随机样本点集足够大，那么也可以找到全局的最大或最小值，或它们的近似值。通过对搜索范围的随机取样，随机搜索一般会比网格搜索要快一些。但是和网格搜索的快速版（非自动版）相似，结果也是没法保证的。
+    
+        ```python
+            import lightgbm as lgb
+            from sklearn.model_selection import  RandomizedSearchCV
+
+
+            def RandomSearch(clf, params, X, y):
+                rscv = RandomizedSearchCV(clf, params, scoring='neg_mean_squared_error', n_jobs=1, cv=5)
+                rscv.fit(X, y)
+
+                print(rscv.cv_results_)
+                print(rscv.best_params_)
+
+
+            if __name__ == '__main__':
+                train_X, train_y = get_data()
+
+                param = {
+                    'objective': 'regression',
+                    'n_estimators': 275,
+                    'max_depth': 6,
+                    'min_child_samples': 20,
+                    'reg_lambd': 0.1,
+                    'reg_alpha': 0.1,
+                    'metric': 'rmse',
+                    'colsample_bytree': 1,
+                    'subsample': 0.8,
+                    'num_leaves' : 40,
+                    'random_state': 2018
+                    }
+                regr = lgb.LGBMRegressor(**param)
+
+                adj_params = {'n_estimators': range(100, 400, 10),
+                             'min_child_weight': range(3, 20, 2),
+                             'colsample_bytree': np.arange(0.4, 1.0),
+                             'max_depth': range(5, 15, 2),
+                             'subsample': np.arange(0.5, 1.0, 0.1),
+                             'reg_lambda': np.arange(0.1, 1.0, 0.2),
+                             'reg_alpha': np.arange(0.1, 1.0, 0.2),
+                             'min_child_samples': range(10, 30)}
+
+                RandomSearch(regr , adj_params , train_X, train_y)
+            ```
+    
+    - 贝叶斯优化
+    
+      - 贝叶斯优化用于机器学习调参由J. Snoek(2012)提出，主要思想是，给定优化的目标函数(广义的函数，只需指定输入和输出即可，无需知道内部结构以及数学性质)，通过不断地添加样本点来更新目标函数的后验分布(高斯过程,直到后验分布基本贴合于真实分布。简单的说，就是考虑了上一次参数的信息，从而更好的调整当前的参数。
+    
+      - 贝叶斯优化与常规的网格搜索或者随机搜索的区别是：
+    
+        **1**.贝叶斯调参采用高斯过程，考虑之前的参数信息，不断地更新先验；网格搜索未考虑之前的参数信息。
+         **2**.贝叶斯调参迭代次数少，速度快；网格搜索速度慢,参数多时易导致维度爆炸。
+         **3**.贝叶斯调参针对非凸问题依然稳健；网格搜索针对非凸问题易得到局部优最。
+    
+        ```undefined
+          pip install bayesian-optimization
+        ```
+    
+        ```python
+          import lightgbm as lgb
+          from bayes_opt import BayesianOptimization
+
+          train_X, train_y = None, None
+
+
+          def BayesianSearch(clf, params):
+              """贝叶斯优化器"""
+              # 迭代次数
+              num_iter = 25
+              init_points = 5
+              # 创建一个贝叶斯优化对象，输入为自定义的模型评估函数与超参数的范围
+              bayes = BayesianOptimization(clf, params)
+              # 开始优化
+              bayes.maximize(init_points=init_points, n_iter=num_iter)
+              # 输出结果
+              params = bayes.res['max']
+              print(params['max_params'])
+
+              return params
+
+
+          def GBM_evaluate(min_child_samples, min_child_weight, colsample_bytree, max_depth, subsample, reg_alpha, reg_lambda):
+              """自定义的模型评估函数"""
+
+              # 模型固定的超参数
+              param = {
+                  'objective': 'regression',
+                  'n_estimators': 275,
+                  'metric': 'rmse',
+                  'random_state': 2018}
+
+              # 贝叶斯优化器生成的超参数
+              param['min_child_weight'] = int(min_child_weight)
+              param['colsample_bytree'] = float(colsample_bytree),
+              param['max_depth'] = int(max_depth),
+              param['subsample'] = float(subsample),
+              param['reg_lambda'] = float(reg_lambda),
+              param['reg_alpha'] = float(reg_alpha),
+              param['min_child_samples'] = int(min_child_samples)
+
+              # 5-flod 交叉检验，注意BayesianOptimization会向最大评估值的方向优化，因此对于回归任务需要取负数。
+              # 这里的评估函数为neg_mean_squared_error，即负的MSE。
+              val = cross_val_score(lgb.LGBMRegressor(**param),
+                  train_X, train_y ,scoring='neg_mean_squared_error', cv=5).mean()
+
+              return val
+
+
+          if __name__ == '__main__':
+              # 获取数据，这里使用的是Kaggle比赛的数据
+              train_X, train_y = get_data()
+              # 调参范围
+              adj_params = {'min_child_weight': (3, 20),
+                           'colsample_bytree': (0.4, 1),
+                           'max_depth': (5, 15),
+                           'subsample': (0.5, 1),
+                           'reg_lambda': (0.1, 1),
+                           'reg_alpha': (0.1, 1),
+                           'min_child_samples': (10, 30)}
+              # 调用贝叶斯优化
+              BayesianSearch(GBM_evaluate, adj_params)
+          ```
+
+  - **[machine learning algorithm cheat sheet]**
 
   <div align=center><img src ="https://github.com/Julian-young/LearningReview/raw/dev-jiale/image_0_ml_overview/68747470733a2f2f626c6f672e6772696464796e616d6963732e636f6d2f636f6e74656e742f696d616765732f323031382f30342f6d616368696e656c6561726e696e67616c676f726974686d732e706e67.png"/></div>
 
