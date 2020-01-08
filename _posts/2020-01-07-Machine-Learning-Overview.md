@@ -268,11 +268,6 @@
           <img src="https://miro.medium.com/max/361/1*pk05QGzoWhCgRiiFbz-oKQ.png" style="zoom:100%" />
         </p>
         
-        <p float="left">
-          <img src="https://miro.medium.com/max/528/1*Uu-t4pOotRQFoyrfqEvIEg.png" width="300"/>
-          <img src="https://miro.medium.com/max/365/1*HmVIhSKznoW8tFsCLeQjRw.png" width="170"/>
-        </p>
-        
         AUC                        |  ROC
         :-------------------------:|:-------------------------:
         <img src="https://miro.medium.com/max/528/1*Uu-t4pOotRQFoyrfqEvIEg.png" width="300"/>|<img src="https://miro.medium.com/max/365/1*HmVIhSKznoW8tFsCLeQjRw.png" width="170"/>
