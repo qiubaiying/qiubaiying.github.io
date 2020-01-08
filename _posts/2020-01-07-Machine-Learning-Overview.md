@@ -10,7 +10,7 @@
 
     也就是机器从数据中总结经验，从数据中找出某种规律或者模型，并用它来解决实 际问题。
 <p align="center">
-  <img style="zoom:50%" src="https://github.com/Julian-young/LearningReview/raw/dev-jiale/image_0_ml_overview/image-20200106151549460.png">
+  <img src="https://github.com/Julian-young/LearningReview/raw/dev-jiale/image_0_ml_overview/image-20200106151549460.png" style="zoom:50%" />
 </p>
 
 - 为了解决什么问题
