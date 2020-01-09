@@ -169,11 +169,11 @@ tags:
 - Two approaches to fit a linear regression model are:
   - Ordinary Least Squares (OLS) (**an analytical method**) 
     <br>
-    1.\ Normal Equations (**closed-form solution**): 
+    1.Normal Equations (**closed-form solution**): 
     <br>
-    2.\ **OLS is easy and fast if the data is not big.**
+    2.**OLS is easy and fast if the data is not big.**
     <br>
-    3.\ The closed-form solution may (should) be preferred for "**smaller" datasets** -- if computing (a "costly") matrix inverse is not a concern. For very **large datasets**, or datasets where the inverse of $X^TX$ may not exist (the matrix is non-invertible or singular, e.g., in case of perfect multicollinearity), the GD or SGD approaches are to be preferred.
+    3.The closed-form solution may (should) be preferred for "**smaller" datasets** -- if computing (a "costly") matrix inverse is not a concern. For very **large datasets**, or datasets where the inverse of $X^TX$ may not exist (the matrix is non-invertible or singular, e.g., in case of perfect multicollinearity), the GD or SGD approaches are to be preferred.
   - Gradient Descent (GD) (**a numerical method**)
     <br>
     **GD is beneficial when the data is big and memory is limited.**
