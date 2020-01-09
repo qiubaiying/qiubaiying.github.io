@@ -51,13 +51,12 @@ tags:
     The size of these steps is called the learning rate. **With a high learning rate we can cover more ground each step, but we risk overshooting the lowest point** since the slope of the hill is constantly changing. **With a very low learning rate, we can confidently move in the direction of the negative gradient** since we are recalculating it so frequently. **A low learning rate is more precise, but calculating the gradient is time-consuming**, so it will take us a very long time to get to the bottom.
   
   -  Now let’s run gradient descent using our new cost function. There are two parameters in our cost function we can control: *m* (weight) and *b* (bias). Since we need to consider the impact each one has on the final prediction, we need to use **partial derivatives**. We calculate the partial derivatives of the cost function with respect to each parameter and store the results in a gradient.
-    -  Given the cost function:
-    
-    <p align="center">
-    $$
-    f(m,b)=\frac{1}{N}\sum (y_i-(mx_i+b))^2
-    $$
-    </p>
+    - Given the cost function:
+      <p align="center">
+      $$
+      f(m,b)=\frac{1}{N}\sum (y_i-(mx_i+b))^2
+      $$
+      </p>
     
     - The gradient can be calculated as:
     
