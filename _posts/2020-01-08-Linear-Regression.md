@@ -144,9 +144,11 @@ tags:
 - **$\epsilon^T \epsilon$的图像像一个碗**
   
   - 如下图所示，这意味着存在一个全局最低点，这样的函数叫做凸函数，可以**使用梯度下降法来得到全局最低点对应的 w** ，这里不再赘述，只讲**用微积分直接求解（最小二乘法）**。
+  
   <p align="center">
-    <img src="https://iewaij.github.io/introDataScience/img/linRegContoursSSE.png" style="zoom:60%" />
+    <img src="https://iewaij.github.io/introDataScience/img/linRegContoursSSE.png" style="zoom:40%" />
   </p>
+  
   <p align="center">
     <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200109-155216@2x.png" style="zoom:80%" />
   </p>
