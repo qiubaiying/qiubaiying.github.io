@@ -184,8 +184,36 @@ tags:
 </p>
 
 - Suppose that we want to approximate the solution to $f(x)=0$ and $0=f\left(x_{0}\right)+f^{\prime}\left(x_{0}\right)\left(x_{1}-x_{0}\right)$, so we get $x_{1}=x_{0}-\frac{f\left(x_{0}\right)}{f^{\prime}\left(x_{0}\right)}$.
-
 - So, we can find the new approximation provided the derivative isn’t zero at the original approximation. If $x_{n}$ is an approximation a solution of $f(x)=0$ and if $f^{\prime}\left(x_{n}\right) \neq 0$ the next approximation is given by, $x_{n+1}=x_{n}-\frac{f\left(x_{n}\right)}{f^{\prime}\left(x_{n}\right)}$.
+- **Taylor series – approximating a function**
+  <br>
+  Taylor series is an approximation of a function using series expansion. Taylor series of function $f(x)$ around axis $x=a$ can be written below.
+$f(x) \approx f(a)+\frac{f^{\prime}(a)}{1 !}(x-a)+\frac{f^{\prime \prime}(a)}{2 !}(x-a)^{2}+\frac{f^{\prime \prime \prime}(a)}{3 !}(x-a)^{3}+\ldots$.
+- **[Newton’s method for optimization](https://ardianumam.wordpress.com/2017/09/27/newtons-method-optimization-derivation-and-how-it-works/)**
+  <br>
+  After we know how Newton’s method works for finding root, and Taylor series for approximating a function, we will try to expand our Newton’s method for optimization, finding the minimal value of a function.
+  - Newton’s method for finding root, it uses **first order method**.
+  - Newton’s method for optimization, it use **second order method**.
+    - Second approximation of f(x) around axis x=a is as follows.
+      <p align="center">
+        <img     src="https://cdn.mathpix.com/snip/images/Jkz6BQWQvUgWYBnBeFNt-gwXxgGHAdWUT-Pprh-2ajs.original.fullsize.png" style="zoom:100%" />
+      </p>
+      <br>
+      Then, in order to get the minimal value location of approximation above, we take the first differential, and make it equal to zero. Here we go.
+      <p align="center">
+        <img     src="https://cdn.mathpix.com/snip/images/lioUsagv4RU9GWm-V_Kqba4kl7UGWb5F2WKPhmuFf4E.original.fullsize.png" style="zoom:100%" />
+      </p>
+      <br>
+      Voila! We just derived our Newton’s method for optimization. To find minimal value of our cost function in machine learning, we can iterate using this equation
+      <p align="center">
+        <img     src="https://cdn.mathpix.com/snip/images/SqeOa3IgjToiMfPIIysOaujZN1uYyv2qsEy6p-ZWjhc.original.fullsize.png" style="zoom:100%" />
+      </p>
+  
+  <p align="center">
+    <img     src="https://ardianumam.files.wordpress.com/2017/09/newtonmethodforoptim1.jpg" style="zoom:100%" />
+  </p>
+  
+  
 
 [Why is Newton's method not widely used in machine learning?](https://stats.stackexchange.com/questions/253632/why-is-newtons-method-not-widely-used-in-machine-learning)
 <p align="center">
