@@ -53,9 +53,7 @@ tags:
   - **What is the objective of Gradient Descent?**
     <br>
     Gradient, in plain terms means slope or slant of a surface. So **gradient descent literally means descending a slope to reach the lowest point on that surface**. 
-
     <br>
-    
     **Gradient descent is an iterative algorithm, that starts from a random point on a function and travels down its slope in steps until it reaches the lowest point of that function.**
     
   - **The Point of GD**
@@ -119,12 +117,9 @@ tags:
   [Stochastic Gradient Descent (SGD)](https://towardsdatascience.com/stochastic-gradient-descent-clearly-explained-53d239905d31)
   
   - **Where can we potentially induce randomness in our gradient descent algorithm??**
-  
     <br>
-  
     Yes, you might have guessed it right !! **It is while selecting data points at each step to calculate the derivatives**. SGD **randomly picks one data point from the whole data set at each iteration** to reduce the computations enormously.
   
   - **Mini-batch gradient descent**
-  
     <br>
     It is also common to **sample a small number of data points instead of just one point at each step** and that is called “mini-batch” gradient descent. **Mini-batch tries to strike a balance between the goodness of gradient descent and speed of SGD**.
