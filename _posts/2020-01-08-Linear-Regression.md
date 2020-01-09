@@ -201,16 +201,16 @@ $f(x) \approx f(a)+\frac{f^{\prime}(a)}{1 !}(x-a)+\frac{f^{\prime \prime}(a)}{2 
       <br>
       Then, in order to get the minimal value location of approximation above, we take the first differential, and make it equal to zero. Here we go.
       <p align="center">
-        <img     src="https://cdn.mathpix.com/snip/images/lioUsagv4RU9GWm-V_Kqba4kl7UGWb5F2WKPhmuFf4E.original.fullsize.png" style="zoom:100%" />
+        <img     src="https://cdn.mathpix.com/snip/images/lioUsagv4RU9GWm-V_Kqba4kl7UGWb5F2WKPhmuFf4E.original.fullsize.png" style="zoom:60%" />
       </p>
       <br>
       Voila! We just derived our Newton’s method for optimization. To find minimal value of our cost function in machine learning, we can iterate using this equation
       <p align="center">
-        <img     src="https://cdn.mathpix.com/snip/images/SqeOa3IgjToiMfPIIysOaujZN1uYyv2qsEy6p-ZWjhc.original.fullsize.png" style="zoom:100%" />
+        <img     src="https://cdn.mathpix.com/snip/images/SqeOa3IgjToiMfPIIysOaujZN1uYyv2qsEy6p-ZWjhc.original.fullsize.png" style="zoom:60%" />
       </p>
   
   <p align="center">
-    <img     src="https://ardianumam.files.wordpress.com/2017/09/newtonmethodforoptim1.jpg" style="zoom:100%" />
+    <img     src="https://ardianumam.files.wordpress.com/2017/09/newtonmethodforoptim1.jpg" style="zoom:80%" />
   </p>
   
   
