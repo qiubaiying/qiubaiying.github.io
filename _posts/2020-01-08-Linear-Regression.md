@@ -15,7 +15,7 @@ tags:
 
 - **线性回归的原理**
 
-  - Why do we use the a **Mean-Squared Loss(MSE)**?
+  - Why do we use the **Mean-Squared Loss(MSE)**?
   
   <p align="center">
     <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200108-193842.png" style="zoom:80%" />
