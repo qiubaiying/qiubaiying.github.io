@@ -13,6 +13,18 @@ tags:
 
 
 ## 线性回归的原理
+  - 线性回归的一般形式
+    <p align="center">
+    $$
+    f(x)=\sum _{i=0}^{d}\theta_i x_i
+    $$
+    </p>
+    如何来确定 𝜃 的值，使得 𝑓(𝑥) 尽可能接近y的值呢？均方误差是回归中常用的性能度量，即：
+    <p align="center">
+    $$
+    J(\theta)=\frac{1}{2}\sum _{j=1}^{n}(h_{\theta}(x^{(i)})-y^{(i)})^2
+    $$
+    </p>
 
   - Why do we use the **Mean-Squared Loss(MSE)**?
 
@@ -38,9 +50,17 @@ tags:
     <img src="https://ml-cheatsheet.readthedocs.io/en/latest/_images/gradient_descent.png" style="zoom:80%" />
   </p>
 
+  - **What is the objective of Gradient Descent?**
+    <br>
+    Gradient, in plain terms means slope or slant of a surface. So **gradient descent literally means descending a slope to reach the lowest point on that surface**. 
+
+    <br>
+    
+    **Gradient descent is an iterative algorithm, that starts from a random point on a function and travels down its slope in steps until it reaches the lowest point of that function.**
+    
   - **The Point of GD**
     <br>
-    Minimizing any cost function means finding the deepest valley in that function. Keep in mind that, the cost function is used to monitor the error in predictions of an ML model. So, the whole point of GD is to **minimize the cost function**.
+    Minimizing any cost function means finding the deepest valley in that function. Keep in mind that, the cost function is used to monitor the error in predictions of an ML model. **So, the whole point of GD is to minimize the cost function**.
 
   <p align="center">
     <img src="https://miro.medium.com/max/1588/1*4VbVds8vD-CgAiOWTrs_Vw.png" style="zoom:80%" />
@@ -88,3 +108,23 @@ tags:
       return m, b
     ```
 
+- **开销分析**
+  <br>
+  Suppose we have 10,000 data points and 10 features. The sum of squared residuals consists of as many terms as there are data points, so 10000 terms in our case. We need to compute the derivative of this function with respect to each of the features, so in effect we will be doing **10000 * 10 = 100,000 computations per iteration**. It is common to **take 1000 iterations**, in effect we have **100,000 * 1000 = 100000000 computations** to complete the algorithm. **That is pretty much an overhead and hence gradient descent is slow on huge data**.
+
+  <p align="center">
+    <img src="https://suniljangirblog.files.wordpress.com/2018/12/descent.png" style="zoom:80%" />
+  </p>
+  
+  [Stochastic Gradient Descent (SGD)](https://towardsdatascience.com/stochastic-gradient-descent-clearly-explained-53d239905d31)
+  
+  - **Where can we potentially induce randomness in our gradient descent algorithm??**
+  
+    <br>
+  
+    Yes, you might have guessed it right !! **It is while selecting data points at each step to calculate the derivatives**. SGD **randomly picks one data point from the whole data set at each iteration** to reduce the computations enormously.
+  
+  - **Mini-batch gradient descent**
+  
+    <br>
+    It is also common to **sample a small number of data points instead of just one point at each step** and that is called “mini-batch” gradient descent. **Mini-batch tries to strike a balance between the goodness of gradient descent and speed of SGD**.
