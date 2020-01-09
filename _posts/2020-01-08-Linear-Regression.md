@@ -82,7 +82,7 @@ tags:
               m_deriv += -2*X[i] * (Y[i] - (m*X[i] + b))
               b_deriv += -2*(Y[i] - (m*X[i] + b))
 
-          /*We subtract because the derivatives point in direction of steepest ascent*/
+          //We subtract because the derivatives point in direction of steepest ascent
           m -= (m_deriv / float(N)) * learning_rate
           b -= (b_deriv / float(N)) * learning_rate
 
