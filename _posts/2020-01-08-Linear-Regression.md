@@ -143,7 +143,7 @@ tags:
   </p>
 - **$\epsilon^T \epsilon$的图像像一个碗**
   
-  - 如下图所示，这意味着存在一个全局最低点，这样的函数叫做凸函数，可以**使用梯度下降法来得到全局最低点对应的的 w** ，这里不再赘述，只讲**用微积分直接求解（最小二乘法）**。
+  - 如下图所示，这意味着存在一个全局最低点，这样的函数叫做凸函数，可以**使用梯度下降法来得到全局最低点对应的 w** ，这里不再赘述，只讲**用微积分直接求解（最小二乘法）**。
   <p align="center">
     <img src="https://iewaij.github.io/introDataScience/img/linRegContoursSSE.png" style="zoom:60%" />
   </p>
@@ -157,4 +157,4 @@ tags:
   </p>
   
   
-  - 当 $\nabla_w\epsilon^T \epsilon=0$时，得到位置$\widehat{w} = (X^TX)^{-1}X^Ty$
+  - 当 $\nabla_w\epsilon^T \epsilon=0$时，得到位置$\widehat{w} = (X^TX)^{-1}X^Ty$，即得到全局最低点对应的 w 。
