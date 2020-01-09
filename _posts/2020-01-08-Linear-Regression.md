@@ -127,10 +127,13 @@ tags:
 	<br>
   The Least Squares Regression Line is the line that **makes the vertical distance from the data points to the regression line as small as possible**. It’s called a “least squares” because the best line of fit is one that **minimizes the variance (the sum of squares of the errors)**. 
 <p align="center">
-<img src="https://www.statisticshowto.datasciencecentral.com/wp-content/uploads/2014/11/least-squares-regression-line.jpg" style="zoom:100%" />
+<img src="https://raw.githubusercontent.com/rasbt/python-machine-learning-book/master/faq/closed-form-vs-gd/simple_regression.png" style="zoom:100%" />
 </p>
 
-- 以估计房价为例，假设真实世界里房子的面积 x与房价 y 的关系是线性关系，且真实世界存在无法估计的误差 $\epsilon$，也就是 $y=w_0+w_1 x+\epsilon $，最小二乘法就是要找到使误差 $\epsilon$ 的平方和最小的 $w_0$，$w_1$即可。
+- **Goal: to find the line (or hyperplane) that minimizes the vertical offsets**
+  <br>
+  以估计房价为例，假设真实世界里房子的面积 x与房价 y 的关系是线性关系，且真实世界存在无法估计的误差 $\epsilon$，也就是 $y=w_0+w_1 x+\epsilon $，最小二乘法就是要找到使误差 $\epsilon$ 的平方和最小的 $w_0$，$w_1$即可。
+  
   <p align="center">
     $$
     y=Xw+\epsilon
@@ -141,14 +144,13 @@ tags:
     \underset{w}{min} \ \epsilon^T \epsilon
     $$
   </p>
+  
 - **$\epsilon^T \epsilon$的图像像一个碗**
   
-  - 如下图所示，这意味着存在一个全局最低点，这样的函数叫做凸函数，可以**使用梯度下降法来得到全局最低点对应的 w** ，这里不再赘述，只讲**用微积分直接求解（最小二乘法）**。
-  
+  - 如下图所示，这意味着存在一个全局最低点，这样的函数叫做凸函数，可以**使用梯度下降法来得到全局最低点对应的的 w** ，这里不再赘述，只讲**用微积分直接求解（最小二乘法）**。
   <p align="center">
-    <img src="https://iewaij.github.io/introDataScience/img/linRegContoursSSE.png" style="zoom:40%" />
+    <img src="https://iewaij.github.io/introDataScience/img/linRegContoursSSE.png" style="zoom:60%" />
   </p>
-  
   <p align="center">
     <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200109-155216@2x.png" style="zoom:80%" />
   </p>
@@ -159,4 +161,18 @@ tags:
   </p>
   
   
-  - 当 $\nabla_w\epsilon^T \epsilon=0$时，得到位置$\widehat{w} = (X^TX)^{-1}X^Ty$，即得到全局最低点对应的 w 。
+  - 当 $\nabla_w\epsilon^T \epsilon=0$时，得到位置$\widehat{w} = (X^TX)^{-1}X^Ty$
+
+### OLS与GD的关联
+[Simple Linear Regression — OLS vs Mini-batch Gradient Descent (Python)](https://www.kdnuggets.com/2016/05/concise-overview-model-fitting-methods.html)
+
+- Two approaches to fit a linear regression model are:
+  - Ordinary Least Squares (OLS) (**an analytical method**) 
+    - Normal Equations (**closed-form solution**): 
+      <br>
+      **OLS is easy and fast if the data is not big.**
+      <br>
+      The closed-form solution may (should) be preferred for "**smaller" datasets** -- if computing (a "costly") matrix inverse is not a concern. For very **large datasets**, or datasets where the inverse of $X^TX$ may not exist (the matrix is non-invertible or singular, e.g., in case of perfect multicollinearity), the GD or SGD approaches are to be preferred.
+  - Gradient Descent (GD) (**a numerical method**)
+    <br>
+    **GD is beneficial when the data is big and memory is limited.**
