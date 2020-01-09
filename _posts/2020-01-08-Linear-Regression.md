@@ -177,3 +177,21 @@ tags:
   - Gradient Descent (GD) (**a numerical method**)
     <br>
     **GD is beneficial when the data is big and memory is limited.**
+
+### 牛顿法
+<p align="center">
+  <img src="http://tutorial.math.lamar.edu/Classes/CalcI/NewtonsMethod_Files/image001.png" style="zoom:100%" />
+</p>
+
+- Suppose that we want to approximate the solution to $f(x)=0$ and $0=f\left(x_{0}\right)+f^{\prime}\left(x_{0}\right)\left(x_{1}-x_{0}\right)$, so we get $x_{1}=x_{0}-\frac{f\left(x_{0}\right)}{f^{\prime}\left(x_{0}\right)}$.
+
+- So, we can find the new approximation provided the derivative isn’t zero at the original approximation. If $x_{n}$ is an approximation a solution of $f(x)=0$ and if $f^{\prime}\left(x_{n}\right) \neq 0$ the next approximation is given by, $x_{n+1}=x_{n}-\frac{f\left(x_{n}\right)}{f^{\prime}\left(x_{n}\right)}$.
+
+[Why is Newton's method not widely used in machine learning?](https://stats.stackexchange.com/questions/253632/why-is-newtons-method-not-widely-used-in-machine-learning)
+<p align="center">
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200109-220007@2x.png" style="zoom:80%" />
+</p>
+<p align="center">
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WechatIMG892.png" style="zoom:100%" />
+</p>
+
