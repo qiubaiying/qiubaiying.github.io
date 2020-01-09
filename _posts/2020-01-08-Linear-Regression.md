@@ -157,4 +157,4 @@ tags:
   </p>
   
   
-  - 当 $\nabla_w\epsilon^T \epsilon=0$时，得到位置$w=\widehat{w} = (X^TX)^{-1}X^Ty$
+  - 当 $\nabla_w\epsilon^T \epsilon=0$时，得到位置$\widehat{w} = (X^TX)^{-1}X^Ty$
