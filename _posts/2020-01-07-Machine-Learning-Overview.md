@@ -188,20 +188,7 @@ tags:
         $$
         </p>
     
-    - **模型评估指标**
-
-      - **R方 R square**
-        <p align="center">
-          <img src="https://pic4.zhimg.com/80/v2-66f85f9a137197d57088cc71cb7ee23f_hd.png" style="zoom:100%" />
-        </p>
-        <p align="center">
-          <img src="https://pic1.zhimg.com/80/v2-6b255832b7b8cb2d31a9422f52f4480c_hd.jpg" style="zoom:100%" />
-        </p>
-        
-        - 上：y预测 - y真，our model
-        
-        - 下：y真平均 - y真，baseline model
-        
+    - **模型评估指标**  
       - MSE(Mean Squared Error)
         <p align="center">
         $$
@@ -222,6 +209,20 @@ tags:
         RMSE(y,f(x))=\frac{1}{1+MSE(y,f(x))}
         $$
         </p>
+        
+      - **R方 R square**
+        - **以上评价指标都无法消除量纲不一致而导致的误差值差别大的问题，最常用的指标是$R^2$,可以避免量纲不一致问题**
+        <p align="center">
+          <img src="https://pic4.zhimg.com/80/v2-66f85f9a137197d57088cc71cb7ee23f_hd.png" style="zoom:100%" />
+        </p>
+        <p align="center">
+          <img src="https://pic1.zhimg.com/80/v2-6b255832b7b8cb2d31a9422f52f4480c_hd.jpg" style="zoom:100%" />
+        </p>
+        
+        - 上：y预测 - y真，our model
+        
+        - 下：y真平均 - y真，baseline model
+        - 我们可以把 $R^2$ 理解为，回归模型可以成功解释的数据方差部分在数据固有方差中所占的比例， $R^2$ 越接近1，表示可解释力度越大，模型拟合的效果越好。
         
       - **Confusion Matrix**
         <p align="center">
