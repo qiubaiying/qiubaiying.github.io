@@ -12,7 +12,7 @@ tags:
 会有如图所示的三种设置参数的地方：**VM Options**,**Program Arguments**和**Environment Variables**
 ![](https://yabaowang.github.io/img/tech/java_variable.jpg)
 
-看完这个文章就稳了 o(*￣︶￣*)o
+看完这个文章就稳了
 
 ### VM Options + System.getProperties + -D参数
 VM Options表示JVM参数，**设置**使用 java -D参数，**读取**使用System.getProperties()方法。
