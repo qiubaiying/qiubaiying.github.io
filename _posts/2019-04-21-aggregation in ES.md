@@ -119,5 +119,5 @@ GET /megacorp/employee/_search
 suggestions、geolocation、percolation、fuzzy 与 partial matching 等特性均被省略，后面添加。
 作为基础，掌握了ES的kibana view、index、search、aggregation就可以了。
 
-### 微信扫一下，最新最全最好看的电影都有，谢谢了~
+### 微信扫一下
  ![](https://open.weixin.qq.com/qr/code?username=zhihuishangye)

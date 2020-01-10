@@ -98,5 +98,5 @@ doSomethingwithconfig(context);
 
 　　也就是说，要想并发程序正确地执行，必须要保证原子性、可见性以及有序性。只要有一个没有被保证，就有可能会导致程序运行不正确。
 
-### 微信扫一下，最新最全最好看的电影都有，谢谢了~
+### 微信扫一下
  ![](https://open.weixin.qq.com/qr/code?username=zhihuishangye)

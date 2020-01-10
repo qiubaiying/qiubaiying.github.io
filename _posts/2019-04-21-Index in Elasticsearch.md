@@ -46,5 +46,5 @@ PUT /megacorp/employee/1
 ```
 而员工的属性，比如first_name，本身存在一个倒排索引，才能根据first_name被搜索到
 
-### 微信扫一下，最新最全最好看的电影都有，谢谢了~
+### 微信扫一下
  ![](https://open.weixin.qq.com/qr/code?username=zhihuishangye)

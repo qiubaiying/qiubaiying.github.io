@@ -312,5 +312,5 @@ GET /megacorp/employee/_search
 ```
 关于高亮搜索片段，可以在 [highlighting reference documentation](https://www.elastic.co/guide/en/elasticsearch/reference/master/search-request-highlighting.html) 了解更多信息。
 
-### 微信扫一下，最新最全最好看的电影都有，谢谢了~
+### 微信扫一下
  ![](https://open.weixin.qq.com/qr/code?username=zhihuishangye)

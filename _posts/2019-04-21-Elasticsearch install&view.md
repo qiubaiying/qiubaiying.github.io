@@ -150,5 +150,5 @@ BODY|一个 JSON 格式的请求体 (如果请求需要的话)
  }
  ```
  
-### 微信扫一下，最新最全最好看的电影都有，谢谢了~
+### 微信扫一下
  ![](https://open.weixin.qq.com/qr/code?username=zhihuishangye)

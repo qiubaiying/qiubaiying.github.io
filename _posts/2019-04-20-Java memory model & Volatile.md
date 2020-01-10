@@ -445,5 +445,5 @@ class Singleton{
 
 　　<http://www.cnblogs.com/Mainz/p/3556430.html>
 
-### 微信扫一下，最新最全最好看的电影都有，谢谢了~
+### 微信扫一下
  ![](https://open.weixin.qq.com/qr/code?username=zhihuishangye)
