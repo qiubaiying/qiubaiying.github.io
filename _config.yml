@@ -1,55 +1,36 @@
 # Site settings
-title: 丁丁小屋
-SEOTitle: 看电影 | 博客
+title: zsh
+SEOTitle: zsh
 header-img: img/post-bg-desk.jpg
 email: 838472987@qq.com
-description: "Every failure is leading towards success."
-keyword: "博客, 看电影"
-url: "http://yabaowang.github.io"          # your host, for absolute URL
-baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+description: "zsh"
+keyword: "zsh"
+url: "http://yabaowang.github.io"
+baseurl: ""   # for example, '/blog' if you hosted on 'host/blog'
 github_repo: "https://github.com/yabaowang/yabaowang.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "网站制作,软件定制<br>QQ 838472987
-                                      <br>好看视频公众号 丁丁带你看电影"
-#sidebar-avatar: /img/zjy.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
-sidebar-avatar: /img/avatar.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
-
-
+sidebar-about-description: "TEL 18101022446 <br>微信同号"
+sidebar-avatar: /img/avatar.jpg
 
 # SNS settings
 RSS: false
 weibo_username:     3841168827
-#zhihu_username:     qiubaiying
 github_username:    yabaowang
-#facebook_username:  baiying.qiu.7
-#jianshu_username:   e71990ada2fd
-#twitter_username:   qiubaiying
-
-
-
 
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 permalink: pretty
 paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
-anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
-
-
+anchorjs: true # if you want to customize anchor. check out line:181 of `post.html`
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
 gems: [jekyll-paginate]
 
 
-
-
-# Markdown settings
-# replace redcarpet to kramdown,
-# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
-# document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 highlighter: rouge
 kramdown:
@@ -63,7 +44,7 @@ kramdown:
 
 # Gitalk
 gitalk:
-  enable: true    #是否开启Gitalk评论
+  enable: false    #是否开启Gitalk评论
   clientID: bb295be577347842d0ec                            #生成的clientID
   clientSecret: d1df9583af13ee4da166d16970fa069e8d634276    #生成的clientSecret
   repo: yabaowang.github.io    #仓库名称
@@ -96,15 +77,12 @@ featured-condition-size: 3              # 相同标签数量大于这个数，�
 chrome-tab-theme-color: "#000000"
 service-worker: true
 
-
-
-# Friends
 friends: [
     {
-        title: "公司",
-        href: "http://www.cnooc.com.cn/"
+        title: "google",
+        href: "https://www.google.com/"
     },{
-        title: "软件定制",
-        href: "http://95hou.club"
+        title: "淘宝",
+        href: "https://www.taobao.com"
     }
 ]

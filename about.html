@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About
-description: "人生路漫漫，边走边记录"
+title: 联系我
+description: "扫描下面微信二维码"
 header-img: "img/post-bg-rwd.jpg"
 ---
 
@@ -14,66 +14,64 @@ header-img: "img/post-bg-rwd.jpg"
 <!-- Chinese Version -->
 <div class="zh post-container">
 
-    <!--copied from markdown -->
-    <blockquote><p>冰冻三尺 非一日之寒<br>
-    积土成山 非斯须之作</p></blockquote>
+  <blockquote>
+    <p>冰冻三尺 非一日之寒<br>积土成山 非斯须之作</p>
+  </blockquote>
 
-    <p>嗨，我是<strong>丁丁(DD)</strong>，一个财务工作者，现在北京工作。</p>
+  <p><strong>Hi</strong>，陌生人。</p>
 
-    <p>工作、学习之余，我还是一个绘画爱好者，同时也非常喜欢电影和美食。</p>
+  <p>路过加个好友</p>
 
-    <p>这是我的 <a href="https://yabaowang.github.io/">博客</a>。如果有什么问题，欢迎留言~</p>
+  <p>这是我尝尝维护的网址 <a href="https://yabaowang.github.io/">个人主页</a>。</p>
 
-    <p></p>
+  <p></p>
 
-    <h5>我常去的地方</h5>
+  <h5>其它</h5>
 
-    <ul>
-        <li><a href="https://github.com">GitHub</a></li>
-        <li><a href="http://www.cnooc.com.cn/">公司主页</a></li>
-        <li><a href="https://tongji.baidu.com/web/27293143/overview/index?siteId=13053705">百度统计</a></li>
-    </ul>
+  <ul>
+    <li><a href="https://github.com">GitHub</a></li>
+  </ul>
 </div>
 
 
 <!-- Handle Language Change -->
 <script type="text/javascript">
-    // get nodes
-    var $zh = document.querySelector(".zh");
-    var $en = document.querySelector(".en");
-    var $select = document.querySelector("select");
+  // get nodes
+  var $zh = document.querySelector(".zh");
+  var $en = document.querySelector(".en");
+  var $select = document.querySelector("select");
 
-    // bind hashchange event
-    window.addEventListener('hashchange', _render);
+  // bind hashchange event
+  window.addEventListener('hashchange', _render);
 
-    // handle render
-    function _render(){
-        var _hash = window.location.hash;
-        // en
-        if(_hash == "#en"){
-            $select.selectedIndex = 1;
-            $en.style.display = "block";
-            $zh.style.display = "none";
-        // zh by default
-        }else{
-            // not trigger onChange, otherwise cause a loop call.
-            $select.selectedIndex = 0;
-            $zh.style.display = "block";
-            $en.style.display = "none";
-        }
+  // handle render
+  function _render() {
+    var _hash = window.location.hash;
+    // en
+    if (_hash == "#en") {
+      $select.selectedIndex = 1;
+      $en.style.display = "block";
+      $zh.style.display = "none";
+      // zh by default
+    } else {
+      // not trigger onChange, otherwise cause a loop call.
+      $select.selectedIndex = 0;
+      $zh.style.display = "block";
+      $en.style.display = "none";
     }
+  }
 
-    // handle select change
-    function onLanChange(index){
-        if(index == 0){
-            window.location.hash = "#zh"
-        }else{
-            window.location.hash = "#en"
-        }
+  // handle select change
+  function onLanChange(index) {
+    if (index == 0) {
+      window.location.hash = "#zh"
+    } else {
+      window.location.hash = "#en"
     }
+  }
 
-    // init
-    _render();
+  // init
+  _render();
 </script>
 
 
@@ -84,8 +82,8 @@ header-img: "img/post-bg-rwd.jpg"
 <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
 
 <div id="gitalk-container"></div>
-    <script type="text/javascript">
-    var gitalk = new Gitalk({
+<script type="text/javascript">
+  var gitalk = new Gitalk({
     clientID: '{{site.gitalk.clientID}}',
     clientSecret: '{{site.gitalk.clientSecret}}',
     repo: '{{site.gitalk.repo}}',
@@ -93,9 +91,9 @@ header-img: "img/post-bg-rwd.jpg"
     admin: ['{{site.gitalk.admin}}'],
     // distractionFreeMode: {{site.gitalk.distractionFreeMode}},
     id: 'about',
-    });
-    gitalk.render('gitalk-container');
-    </script>
+  });
+  gitalk.render('gitalk-container');
+</script>
 {% endif %}
 <!-- Gitalk end -->
 
