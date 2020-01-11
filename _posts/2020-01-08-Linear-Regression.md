@@ -15,7 +15,8 @@ tags:
 ## 线性回归的原理
   - 线性回归的一般形式 
     <br>
-    LinearRegression fits a linear model with coefficients $w = (w1, …, wp)$ to minimize the residual sum of squares between the observed targets in the dataset, and the targets predicted by the linear approximation.
+    **LinearRegression fits a linear model with coefficients $w = (w1, …, wp)$ to minimize the residual sum of squares between the observed targets in the dataset, and the targets predicted by the linear approximation.**
+    
   - Why do we use the **Mean-Squared Loss(MSE)**?
 
   <p align="center">
