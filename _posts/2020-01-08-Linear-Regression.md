@@ -229,7 +229,7 @@ $f(x) \approx f(a)+\frac{f^{\prime}(a)}{1 !}(x-a)+\frac{f^{\prime \prime}(a)}{2 
   - 常用的求解拟牛顿的算法有DFP算法、BFGS算法、Broyden类算法。
   
 
-### [python实现](https://github.com/Julian-young/Julian-young.github.io/blob/dev-jiale/ipynb/Task2_Linear_regression.ipynb)
+### [python实现(代码链接)](https://github.com/Julian-young/Julian-young.github.io/blob/dev-jiale/ipynb/Task2_Linear_regression.ipynb)
 - 1、首先尝试调用sklearn的线性回归函数进行训练
 - 2、用最小二乘法的矩阵求解法训练数据
 - 3、梯度下降法
