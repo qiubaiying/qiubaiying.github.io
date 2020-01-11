@@ -223,3 +223,22 @@ $f(x) \approx f(a)+\frac{f^{\prime}(a)}{1 !}(x-a)+\frac{f^{\prime \prime}(a)}{2 
   <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WechatIMG892.png" style="zoom:100%" />
 </p>
 
+### 拟牛顿法
+
+- 在牛顿法的迭代中，需要计算 Hessian 矩阵的逆矩阵，计算过程较复杂，考虑采用一个 n 阶矩阵 $G_{k}=G\left(x_{k}\right)$ 近似替代 $H_{k}^{-1}=H^{-1}\left(x_{k}\right)$，这就是拟牛顿法的基本思想。
+- **拟牛顿条件**
+  <p align="center">
+  $$
+  \begin{aligned} & \nabla f\left(x_{k+1}\right)=\nabla
+  f\left(x_{k}\right)+H_{k}\left(x_{k+1}-x_{k}\right) \\ \Rightarrow &
+  H_{k}^{-1} \cdot\left(\nabla f\left(x_{k+1}\right)-\nabla
+  f\left(x_{k}\right)\right)=x_{k+1}-x_{k} \end{aligned}
+  $$
+  </p>
+  - 常用的求解拟牛顿的算法有DFP算法、BFGS算法、Broyden类算法。
+  
+
+### [python实现](https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/ipynb/Task2_Linear_regression.ipynb)
+- 1、首先尝试调用sklearn的线性回归函数进行训练
+- 2、用最小二乘法的矩阵求解法训练数据
+- 3、梯度下降法
