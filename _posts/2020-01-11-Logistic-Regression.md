@@ -62,35 +62,36 @@ tags:
 
 ### Theory
 
-- A solution for classification is logistic regression. **Instead of fitting a straight line or hyperplane, the logistic regression model uses the logistic function to squeeze the output of a linear equation between 0 and 1**. The **logistic function** is defined as: $logistic(\eta)=\frac{1}{1+\exp (-\eta)}$
-
-- The step from linear regression to logistic regression is **kind of straightforward**. In the linear regression model, we have modelled the relationship between outcome and features with a linear equation: $\hat{y}^{(i)}=\beta_{0}+\beta_{1} x_{1}^{(i)}+\ldots+\beta_{p} x_{p}^{(i)}$
-- For classification, we prefer probabilities between 0 and 1, so we **wrap the right side of the equation into the logistic function**. This forces the output to assume values between 0 and 1.
-  <p align="center">
-  $$
-  P\left(y^{(i)}=1\right)=\frac{1}{1+\exp \left(-\left(\beta_{0}+\beta_{1} 
-  x_{1}^{(i)}+\ldots+\beta_{p} x_{p}^{(i)}\right)\right)}
-  $$
-  </p>
-  
 - **Decision boundary**
-  
   <p align="center">
     <img src="https://ml-cheatsheet.readthedocs.io/en/latest/_images/logistic_regression_sigmoid_w_threshold.png" style="zoom:80%" />
   </p>
+  
+  - Suppose we have a generic training set $\left\{\left(x^{(1)}, y^{(1)}\right),\left(x^{(2)}, y^{(2)}\right), \ldots,\left(x^{(m)}, y^{(m)}\right)\right\}$, where $𝑥(𝑚)$  is the input variable of the 𝑚-th example, while $𝑦(𝑚)$ is its output variable, ranging from 0 to 1. Finally we have the hypothesis function for logistic regression, $h_{\theta}(x)=\frac{1}{1+e^{\theta^{\top} x}}$.
 
 ### Interpretation
 
-- **Cost function**
-  <br>
-  Unfortunately we can’t (or at least shouldn’t) use the same cost function MSE (L2) as we did for linear regression. Why? There is a great math explanation in chapter 3 of Michael Neilson’s deep learning book [[5]](http://neuralnetworksanddeeplearning.com/chap3.html
-) , but for now I’ll **simply say it’s because our prediction function is non-linear (due to sigmoid transform)**. Squaring this prediction as we do in MSE **results in a non-convex function with many local minimums**. If our cost function has many local minimums, gradient descent may not find the optimal global minimum.
+**[The cost function used in linear regression won't work here](https://www.internalpointers.com/post/cost-function-logistic-regression)**
+
+- If we try to use the cost function of the linear regression in ‘Logistic Regression’ then it would be of no use as it would **end up being a non-convex function with many local minimums**, in which it would be very **difficult to minimize the cost value and find the global minimum**.
+  <p align="center">
+    <img src="https://miro.medium.com/max/2096/1*dPXwswig8RTCAjstnUZNGQ.png" style="zoom:80%" />
+  </p>
+
+- Logistic regression cost function
   <p align="center">
   $$
-  J(\theta)=-\frac{1}{m} \sum_{i=1}^{m}\left[y^{(i)} \log   
-  \left(h_{\theta}\left(x^{(i)}\right)\right)+\left(1-y^{(i)}\right) \log \left(1-
-  h_{\theta}\left(x^{(i)}\right)\right)\right]
+  cost\left(h_{\theta}(x), y\right)=\left\{\begin{array}{ll}{-\log \left(h_{\theta}  
+(x)\right)} & {\text { if } y=1} \\ {-\log \left(1-h_{\theta}(x)\right)} & {\text { if } y=0}\end{array}\right.
+  $$
+  </p>
+  即，$cost\left(h_{\theta}(x), y\right)=-y \log \left(h_{\theta}(x)\right)-(1-y) \log \left(1-h_{\theta}(x)\right)$
+  
+- With the optimization in place, the logistic regression cost function can be rewritten as:
+  <p align="center">
+  $$
+\begin{aligned} J(\theta) &=\frac{1}{m} \sum_{i=1}^{m} 
+cost\left(h_{\theta}\left(x^{(i)}\right), y^{(i)}\right) \\ &=-\frac{1}{m}\left[\sum_{i=1}^{m} y^{(i)} \log \left(h_{\theta}\left(x^{(i)}\right)\right)+\left(1-y^{(i)}\right) \log \left(1-h_{\theta}\left(x^{(i)}\right)\right)\right] \end{aligned}
   $$
   </p>
 
-- **The key thing to note is the cost function penalizes confident and wrong predictions more than it rewards confident and right predictions**! The corollary is increasing prediction accuracy (closer to 0 or 1) has diminishing returns on reducing cost due to the logistic nature of our cost function.
