@@ -106,3 +106,15 @@ tags:
   <img src="https://cdn.mathpix.com/snip/images/aBPya8ZqTGWzuwbbIlYXBRGakE3Bum2JPUtiik-dUAM.original.fullsize.png" style="zoom:80%" />
 </p>
 
+### [逻辑回归的分布式实现](https://blog.csdn.net/qq_32742009/article/details/81839071)
+
+- **按行并行**
+  <br>
+  **即将样本拆分到不同的机器上去，把数据集打散**（注：即“划分”，要满足不重、不漏两个条件）成 C 块，$\frac{\partial J}{\partial w}=\frac{1}{N} \sum_{k=1}^{K} \sum_{i \in C_{k}}\left(h_{\theta}\left(x^{(i)}\right)-y^{(i)}\right) \times x^{(i)}$， 然后将这 C 块分配到不同的机器上去，则分布式的计算梯度，只不过是**每台机器都计算出各自的梯度，然后归并求和再求其平均**。
+  - **为什么可以这么做呢？**
+  <br>
+  **梯度下降公式只与上一个更新批次的$\theta$及当前样本有关**
+
+- **按列并行**
+  <br>
+  按列并行的意思就是**将同一样本的特征也分布到不同的机器中去**。上面的公式为针对整个$\theta$，如果我们只是针对某个分量$\theta_{j}$，可得到对应的梯度计算公式 $\frac{\partial J}{\partial w}=\frac{1}{N} \sum_{i=1}^{N}\left(h_{\theta_j}\left(x_{j}^{(i)}\right)-y^{(i)}\right) \times x _{j}^{(i)}$，即不再是乘以整个$x_n$，而是乘以$x_n$对应的分量$x_{n,j}$，此时可以发现，**梯度计算公式仅与$x_n$中的特征有关系**，我们就可以**将特征分布到不同的计算上，分别计算$\theta_{j}$对应的梯度，最后归并为整体的$\theta$，再按行归并到整体的梯度更新。**
