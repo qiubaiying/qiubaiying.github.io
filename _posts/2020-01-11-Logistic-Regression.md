@@ -96,3 +96,13 @@ tags:
   $$
   </p>
 
+- **$\frac{\partial}{\partial \theta_{j}} J(\theta)=\frac{1}{m} \sum_{i=1}^{m}\left(h_{\theta}\left(x^{(i)}\right)-y^{(i)}\right) x_{j}^{(i)}$[推导过程](https://stats.stackexchange.com/questions/278771/how-is-the-cost-function-from-logistic-regression-derivated)**
+<p align="center">
+  <img src="https://cdn.mathpix.com/snip/images/bx-W2Eom_W9ksP6UlnL9Cwl5nmbjv56GmoO-xdg1gZ8.original.fullsize.png" style="zoom:80%" />
+</p>
+
+- **$\frac{d}{d x} \sigma(x)=\sigma(x)(1-\sigma(x))$[推导过程](https://stats.stackexchange.com/questions/278771/how-is-the-cost-function-from-logistic-regression-derivated)**
+<p align="center">
+  <img src="https://cdn.mathpix.com/snip/images/aBPya8ZqTGWzuwbbIlYXBRGakE3Bum2JPUtiik-dUAM.original.fullsize.png" style="zoom:80%" />
+</p>
+
