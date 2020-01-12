@@ -118,3 +118,34 @@ tags:
 - **按列并行**
   <br>
   按列并行的意思就是**将同一样本的特征也分布到不同的机器中去**。上面的公式为针对整个$\theta$，如果我们只是针对某个分量$\theta_{j}$，可得到对应的梯度计算公式 $ \frac{\partial J}{\partial w}=\frac{1}{N} \sum_{i=1}^{N}\left(h_{\theta_j}\left(x_{j}^{(i)}\right)-y^{(i)}\right) \times x_{j}^{(i)} $ ，即不再是乘以整个 $x_n$，而是乘以 $x_n$ 对应的分量 $x_{n,j}$，此时可以发现，**梯度计算公式仅与$x_n$中的特征有关系**，我们就可以**将特征分布到不同的计算上，分别计算$\theta_{j}$对应的梯度，最后归并为整体的$\theta$，再按行归并到整体的梯度更新。**
+
+### [逻辑回归的优缺点](http://theprofessionalspoint.blogspot.com/2019/03/advantages-and-disadvantages-of.html)
+
+- Advantages of Logistic Regression
+  - 1. Logistic Regression **performs well when the dataset is linearly separable**.（**对于非线性的数据集适应性弱**）
+  - 2. Logistic regression is less prone to over-fitting but it can overfit in high dimensional datasets. You should consider Regularization (L1 and L2) techniques to avoid over-fitting in these scenarios.
+  - 3. Logistic Regression not only gives a measure of how relevant a predictor (coefficient size) is, but also its direction of association (positive or negative).
+  - 4. Logistic regression is **easier to implement, interpret and very efficient to train**. 
+
+- Disadvantages of Logistic Regression
+  - 1. Main limitation of Logistic Regression is **the assumption of linearity** between the dependent variable and the independent variables. In the real world, the data is rarely linearly separable. Most of the time data would be a jumbled mess.
+  - 2. If the number of observations are lesser than the number of features, Logistic Regression should not be used, otherwise it may lead to overfit.（**当特征空间很大，性能欠佳**）
+  - 3. Logistic Regression can only be **used to predict discrete functions**. Therefore, the dependent variable of Logistic Regression is restricted to the discrete number set. This restriction itself is problematic, as it is prohibitive to the prediction of continuous data.
+  - 4. 因为预测结果呈Z字型（或反Z字型），因此**当数据集中在中间区域时，对概率的变化会很敏感，可能使得预测结果缺乏区分度**。 
+
+### [Handling Imbalanced Classes In Logistic Regression](https://chrisalbon.com/machine_learning/logistic_regression/handling_imbalanced_classes_in_logistic_regression/)
+
+- Like many other learning algorithms in scikit-learn, LogisticRegression comes with a **built-in method of handling imbalanced classes**. If we have highly imbalanced classes and have no addressed it during preprocessing, we have the option of using the **class_weight parameter** to weight the classes to make certain we have a balanced mix of each class. Specifically, the balanced argument will automatically weigh classes inversely proportional to their frequency: $w_{j}=\frac{n}{k n_{j}}$, **where $w_j$ is the weight to class $j$, $n$ is the number of observations, $n_j$ is the number of observations in class $j$, and $k$ is the total number of classes**.
+
+### [sklearn.linear_model.LogisticRegression部分参数解析](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
+
+Parameters            | detail
+:-------------------------:|:-------------------------:
+penalty: {‘l1’, ‘l2’, ‘elasticnet’, ‘none’}, default=’l2’| 
+dual: bool, default=False|Dual or primal formulation. Dual formulation is only implemented for l2 penalty with liblinear solver. Prefer dual=False when n_samples > n_features.
+tolfloat:  default=1e-4|迭代终止判断的误差范围
+C: float, default=1.0|其值等于正则化强度的倒数，为正的浮点数。数值越小表示正则化越强。
+fit_intercept: bool, default=True|指定是否应该向决策函数添加常量(即偏差或截距)
+intercept_scaling: float, default=1|仅仅当solver是”liblinear”时有用
+class_weight: dict or ‘balanced’, default=None|调整样本不均衡问题
+
