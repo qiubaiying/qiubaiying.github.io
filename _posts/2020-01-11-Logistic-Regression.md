@@ -36,7 +36,7 @@ tags:
   </tr>
   <tr>
     <td>In Linear regression, we predict the value of <b>continuous variables</b>.</td>
-    <td>In logistic Regression, we predict the values of <b>categorical variables</tb>.</td>
+    <td>In logistic Regression, we predict the values of <b>categorical variables</b>.</td>
   </tr>
   <tr>
     <td>In linear regression, we find <b>the best fit line</b>, by which we can easily predict the output.</td>
