@@ -73,7 +73,7 @@ tags:
 
 **[The cost function used in linear regression won't work here](https://www.internalpointers.com/post/cost-function-logistic-regression)**
 
-- If we try to use the cost function of the linear regression in Logistic Regression, $\sum^m_{i=1}(y^{(i)}-\frac{1}{1+e^{-\theta^T x}})^2$  then it would be of no use as it would **end up being a non-convex function with many local minimums**, in which it would be very **difficult to minimize the cost value and find the global minimum**.
+- If we try to use the cost function of the linear regression in Logistic Regression $\sum^m_{i=1}(y^{(i)}-\frac{1}{1+e^{-\theta^T x}})^2$, then it would be of no use as it would **end up being a non-convex function with many local minimums**, in which it would be very **difficult to minimize the cost value and find the global minimum**.
   <p align="center">
     <img src="https://miro.medium.com/max/2096/1*dPXwswig8RTCAjstnUZNGQ.png" style="zoom:80%" />
   </p>
