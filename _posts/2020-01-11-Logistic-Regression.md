@@ -149,3 +149,7 @@ fit_intercept: bool, default=True|指定是否应该向决策函数添加常量(
 intercept_scaling: float, default=1|仅仅当solver是”liblinear”时有用
 class_weight: dict or ‘balanced’, default=None|调整样本不均衡问题
 
+### [python实现(代码链接)](https://github.com/Julian-young/Julian-young.github.io/blob/dev-jiale/ipynb/Task3_logistic_regression.ipynb)
+- 1、先尝试调用sklearn的线性回归模型训练数据，尝试以下代码，画图查看分类的结果
+- 2、用梯度下降法将相同的数据分类，画图和sklearn的结果相比较
+- 3、用牛顿法实现结果，画图和sklearn的结果相比较，并比较牛顿法和梯度下降法迭代收敛的次数
