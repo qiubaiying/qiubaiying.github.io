@@ -122,16 +122,16 @@ tags:
 ### [逻辑回归的优缺点](http://theprofessionalspoint.blogspot.com/2019/03/advantages-and-disadvantages-of.html)
 
 - Advantages of Logistic Regression
-  - $1.$ Logistic Regression **performs well when the dataset is linearly separable**.（**对于非线性的数据集适应性弱**）
-  - $2.$ Logistic regression is less prone to over-fitting but it can overfit in high dimensional datasets. You should consider Regularization (L1 and L2) techniques to avoid over-fitting in these scenarios.
-  - $3.$ Logistic Regression not only gives a measure of how relevant a predictor (coefficient size) is, but also its direction of association (positive or negative).
-  - $4.$ Logistic regression is **easier to implement, interpret and very efficient to train**. 
+  - 1. Logistic Regression **performs well when the dataset is linearly separable**.（**对于非线性的数据集适应性弱**）
+  - 2. Logistic regression is less prone to over-fitting but it can overfit in high dimensional datasets. You should consider Regularization (L1 and L2) techniques to avoid over-fitting in these scenarios.
+  - 3. Logistic Regression not only gives a measure of how relevant a predictor (coefficient size) is, but also its direction of association (positive or negative).
+  - 4. Logistic regression is **easier to implement, interpret and very efficient to train**. 
 
 - Disadvantages of Logistic Regression
-  - $1.$ Main limitation of Logistic Regression is **the assumption of linearity** between the dependent variable and the independent variables. In the real world, the data is rarely linearly separable. Most of the time data would be a jumbled mess.
-  - $2.$ If the number of observations are lesser than the number of features, Logistic Regression should not be used, otherwise it may lead to overfit.（**当特征空间很大，性能欠佳**）
-  - $3.$ Logistic Regression can only be **used to predict discrete functions**. Therefore, the dependent variable of Logistic Regression is restricted to the discrete number set. This restriction itself is problematic, as it is prohibitive to the prediction of continuous data.
-  - $4.$ 因为预测结果呈Z字型（或反Z字型），因此**当数据集中在中间区域时，对概率的变化会很敏感，可能使得预测结果缺乏区分度**。 
+  - 1. Main limitation of Logistic Regression is **the assumption of linearity** between the dependent variable and the independent variables. In the real world, the data is rarely linearly separable. Most of the time data would be a jumbled mess.
+  - 2. If the number of observations are lesser than the number of features, Logistic Regression should not be used, otherwise it may lead to overfit.（**当特征空间很大，性能欠佳**）
+  - 3. Logistic Regression can only be **used to predict discrete functions**. Therefore, the dependent variable of Logistic Regression is restricted to the discrete number set. This restriction itself is problematic, as it is prohibitive to the prediction of continuous data.
+  - 4. 因为预测结果呈Z字型（或反Z字型），因此**当数据集中在中间区域时，对概率的变化会很敏感，可能使得预测结果缺乏区分度**。 
 
 ### [Handling Imbalanced Classes In Logistic Regression](https://chrisalbon.com/machine_learning/logistic_regression/handling_imbalanced_classes_in_logistic_regression/)
 
@@ -148,6 +148,25 @@ C: float, default=1.0|其值等于正则化强度的倒数，为正的浮点数�
 fit_intercept: bool, default=True|指定是否应该向决策函数添加常量(即偏差或截距)
 intercept_scaling: float, default=1|仅仅当solver是”liblinear”时有用
 class_weight: dict or ‘balanced’, default=None|调整样本不均衡问题
+
+### 逻辑回归+牛顿法+梯度下降讲义补充
+
+
+<p align="center">
+    <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200114-100706@2x.png" style="zoom:80%" />
+</p>
+<p align="center">
+    <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200114-101417@2x.png" style="zoom:80%" />
+</p>
+<p align="center">
+    <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200114-101434@2x.png" style="zoom:80%" />
+</p>
+<p align="center">
+    <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200114-101519@2x.png" style="zoom:80%" />
+</p>
+<p align="center">
+    <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200114-101458@2x.png" style="zoom:80%" />
+</p>
 
 ### [python实现(代码链接)](https://github.com/Julian-young/Julian-young.github.io/blob/dev-jiale/ipynb/Task3_logistic_regression.ipynb)
 - 1、先尝试调用sklearn的线性回归模型训练数据，尝试以下代码，画图查看分类的结果
