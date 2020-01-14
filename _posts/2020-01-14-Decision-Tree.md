@@ -106,7 +106,7 @@ TreeGenerate(D, A){
   - **增益率 Gain_ratio(D,a)**
     <br>
     为减少信息增益准则的偏好影响，因此提出了使用“增益率”来选择最优化分。Gain_ratio $(\mathrm{D}, \mathrm{a})=\frac{Gain(D, a)}{I V(a)}$，其中 IV 称为属性 a 的“固有值”，$I V(a)=-\sum_{v=1}^{V} \frac{\left|D^{v}\right|}{|D|} \log_{2} \frac{\left|D^{v}\right|}{|D|}$。属性a的可能取值数目越多，则IV(a)的值越大，这样通过引入约束项，可以从一定程度上削弱“对取值多的属性”的偏好。
-  - 基尼指数 Gini_index(D,a)
+  - **基尼指数 Gini_index(D,a)**
     <br>
     CART决策树使用“基尼指数”(Gini index)来选择划分属性，数据集D的纯度可以用基尼值来度量：$Gini(D)=\sum_{k=1}^{|y|} \sum_{k^{\prime} \neq k} p_{k} p_{k^{\prime}}=1-\sum_{k=1}^{|y|} p_{k}^{2}$。直观上的理解为，Gini(D)反映了从数据集D中随机抽取两个样本，其类别标记不一致的概率。因此，Gini(D)越小，则数据集D纯度越高。于是产生了基尼指数(Gini index)：Gini $index(\mathrm{D}, \mathrm{a})=\sum_{v=1}^{V} \frac{\left|D^{v}\right|}{|D|} Gini\left(D^{v}\right)$。于是可以选择使得基尼指数最小的属性作为最优化分属性。
 
