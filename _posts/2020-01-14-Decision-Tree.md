@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Logistic Regression
+title:      Decision Tree
 subtitle:     决策树
 date:       2020-01-14
 author:     Young
@@ -10,8 +10,6 @@ tags:
     - machine learning
     - python
 ---
-
-
 
 ### 信息论基础
 <p align="center">
@@ -94,7 +92,7 @@ TreeGenerate(D, A){
   
   - **信息增益 Gain(D,a)**
     <br>
-    假定离散属性 a 有 V 个可能取值 ${a^1,a^2,a^3,...,a^V}$，若使用 a 对样本 D 进行划分，则会产生 V 个分支节点，其中第 v 个分支结点包含了 D 中所有在属性 a 上取值为 $a^v$ 的样本，记为 $D^v$ 。信息增益就是**通过度量不同分支结点所包含的样本数不同，给分支结点赋予权重|$D^v$|/|D|，即样本数越多的分支结点影响越大**。$Gain(D, a)=\operatorname{Ent}(D)-\sum_{v=1}^{V} \frac{\left|D^{v}\right|}{|D|} Ent\left(D^{v}\right)$。
+    假定离散属性 a 有 V 个可能取值 $\lbrace a^1,a^2,a^3,...,a^V \rbrace$，若使用 a 对样本 D 进行划分，则会产生 V 个分支节点，其中第 v 个分支结点包含了 D 中所有在属性 a 上取值为 $a^v$ 的样本，记为 $D^v$ 。信息增益就是**通过度量不同分支结点所包含的样本数不同，给分支结点赋予权重|$D^v$|/|$D$|，即样本数越多的分支结点影响越大**。$Gain(D, a)=Ent(D)-\sum_{v=1}^{V} \frac{\left|D^{v}\right|}{|D|} Ent\left(D^{v}\right)$。
     <br>
     一般来说，**信息增益越大说明使用属性 a 进行划分所获得的“纯度提升”越大**，因此我们可以用信息增益作为一种属性划分的选择。(选择属性 a 进行划分后，将不再作为候选的划分属性，即每个属性参与划分后就将其从候选集中移除)。
   
