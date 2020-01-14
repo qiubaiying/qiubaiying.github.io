@@ -33,9 +33,8 @@ tags:
     <img src="https://miro.medium.com/max/4000/1*bVGWGETTor7bSnhr7sXEVw.png" style="zoom:80%" />
   </p>
   
-
-Information gain (IG) **measures how much “information” a feature gives us about the class.**
-
+  Information gain (IG) **measures how much “information” a feature gives us about the class.**
+  
   - **Why it matter ?**
     - Information gain is **the main key** that is used by Decision Tree Algorithms to construct a Decision Tree.
     - **Decision Trees algorithm will always tries to maximize Information gain**.
