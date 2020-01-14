@@ -27,7 +27,7 @@ tags:
     <img src="https://miro.medium.com/max/1130/1*M15RZMSk8nGEyOnD8haF-A.png" style="zoom:80%" />
   </p>
   
-- **Information gain (IG): $I G(Y, X)=E(Y)-E(Y | X)$** 
+- **Information gain (IG): $I G(Y, X)=E(Y)-E(Y \mid X)$** 
   
   <p align="center">
     <img src="https://miro.medium.com/max/4000/1*bVGWGETTor7bSnhr7sXEVw.png" style="zoom:80%" />
