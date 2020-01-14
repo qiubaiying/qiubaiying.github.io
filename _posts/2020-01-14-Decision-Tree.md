@@ -52,7 +52,7 @@ tags:
 ### Decision Tree algorithms
 
 <p align="center">
-  <img src="https://upload-images.jianshu.io/upload_images/3777066-960dcf8c1b4541ce.png" style="zoom:60%" />
+  <img src="https://upload-images.jianshu.io/upload_images/3777066-960dcf8c1b4541ce.png" style="zoom:100%" />
 </p>
 
 ```ruby
@@ -137,6 +137,13 @@ TreeGenerate(D, A){
     </p>
     
     这时损失函数变为：$C_{\alpha}(T)=C(\mathrm{T})+\alpha|T|$。
+    
+    <p align="center">
+    $$
+    模型损失=经验风险最小化+正则项=结构风险最小化
+    $$
+    </p>
+    
     <br>
     较大的α促使树的结构更简单，较小的α促使树的结构更复杂，α=0意味着不考虑树的复杂度（α|T|就是正则项，加入约束，使得模型简单，避免过拟合）。
 
@@ -156,4 +163,26 @@ end if
 3: 返回第2步，直至不能继续为止，得到损失函数最小的子树T’
 ```
 
+### Regerssion Tree& Classification Tree
 
+<p align="center">
+    <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200114-164538.png" style="zoom:80%" />
+</p>
+
+<p align="center">
+    <img src="https://www.digitalvidya.com/wp-content/uploads/2019/01/Image-4-2.png" style="zoom:100%" />
+</p>
+
+- **Classification trees** are designed for dependent variables that take **a finite number**
+**of unordered values**, with prediction error measured in terms of misclassification cost. **Regression trees** are for dependent variables that take **continuous or ordered discrete values**, with prediction error typically measured by the squared difference between the observed and predicted values.
+  - The first published classification tree algorithm is THAID
+  - C4.5 and CART are two later classification tree algorithms 
+  <p align="center">
+    <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200114-173858@2x.png" style="zoom:80%" />
+  </p>
+  -  Historically, the first regression tree algorithm is AID
+  -  M5, an adaptation of a regression tree algorithm by Quinlan
+  <p align="center">
+    <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200114-175831@2x.png" style="zoom:80%" />
+  </p>
+  
