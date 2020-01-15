@@ -187,3 +187,19 @@ end if
     <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200114-175831@2x.png" style="zoom:80%" />
   </p>
   
+### [sklearn.tree.DecisionTreeClassifier部分参数解析](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.htmll)
+
+Parameters            | detail
+:-------------------------:|:-------------------------:
+criterion：{“gini”, “entropy”}, default=”gini”|The function to measure the quality of a split. 
+splitter：{“best”, “random”}, default=”best”|The strategy used to choose the split at each node
+max_depth：int, default=None|The maximum depth of the tree. If None, then nodes are expanded until all leaves are pure or until all leaves contain less than min_samples_split samples.
+min_samples_split：int or float, default=2|The minimum number o r fractions of samples required to split an internal node
+min_samples_leaf：int or float, default=1|The minimum number of samples required to be at a leaf node
+min_weight_fraction_leaf：float, default=0.0|The minimum weighted fraction of the sum total of weights (of all the input samples) required to be at a leaf node
+max_features：int, float or {“auto”, “sqrt”, “log2”}, default=None|The number of features to consider when looking for the best split
+
+### [python实现(代码链接)](https://github.com/Julian-young/Julian-young.github.io/blob/dev-jiale/ipynb/Task4_decision_tree.ipynb)
+
+实现自定义CART树
+
