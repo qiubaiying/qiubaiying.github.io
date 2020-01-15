@@ -113,7 +113,7 @@ tags:
     $$
     </p>
     
-    这时损失函数变为：$C_{\alpha}(T)=C(\mathrm{T})+\alpha|T|$。
+    这时损失函数变为：$C_{\alpha}(T)=C(\mathrm{T})+\alpha \mid T \mid$。
     
     <p align="center">
     $$
