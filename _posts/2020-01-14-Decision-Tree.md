@@ -68,24 +68,24 @@ tags:
     设随机标量X是一个离散随机变量，其概率分布为：$P(X=x_i)=p_i, i=1,2,...,n$，则随机变量X的熵定义为：$Ent(D)=-\sum_{i=1}^{n}p_ilog{p_i}$。**Ent(D)值越小，则D的纯度越高**。
   
   - **信息增益 Gain(D,a)**
-    <br>
-    假定离散属性 a 有 V 个可能取值 $\lbrace a^1,a^2,a^3,...,a^V \rbrace$，若使用 a 对样本 D 进行划分，则会产生 V 个分支节点，其中第 v 个分支结点包含了 D 中所有在属性 a 上取值为 $a^v$ 的样本，记为 $D^v$ 。信息增益就是**通过度量不同分支结点所包含的样本数不同，给分支结点赋予权重$\mid D^v \mid / \mid D \mid$，即样本数越多的分支结点影响越大**。
-    
     <p align="center">
-    $$
-    Gain(D, a)=Ent(D)-\sum_{v=1}^{V} \frac{\left|D^{v}\right|}{|D|} Ent\left(D^{v}\right)
-    $$
+      <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-154400@2x.png" style="zoom:40%" />
     </p>
     
     一般来说，**信息增益越大说明使用属性 a 进行划分所获得的“纯度提升”越大**，因此我们可以用信息增益作为一种属性划分的选择。(选择属性 a 进行划分后，将不再作为候选的划分属性，即每个属性参与划分后就将其从候选集中移除)。
   
   - **增益率 Gain_ratio(D,a)**
-    <br>
-    为减少信息增益准则的偏好影响，因此提出了使用“增益率”来选择最优化分。Gain_ratio $(\mathrm{D}, \mathrm{a})=\frac{Gain(D, a)}{I V(a)}$，其中 IV 称为属性 a 的“固有值”，$I V(a)=-\sum_{v=1}^{V} \frac{\left|D^{v}\right|}{|D|} \log_{2} \frac{\left|D^{v}\right|}{|D|}$。属性a的可能取值数目越多，则IV(a)的值越大，这样通过引入约束项，可以从一定程度上削弱“对取值多的属性”的偏好。
+    <p align="center">
+      <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-154439@2x.png" style="zoom:40%" />
+    </p>
     
   - **基尼指数 Gini_index(D,a)**
-    <br>
-    CART决策树使用“基尼指数”(Gini index)来选择划分属性，数据集D的纯度可以用基尼值来度量：$Gini(D)=\sum_{k=1}^{|y|} \sum_{k^{\prime} \neq k} p_{k} p_{k^{\prime}}=1-\sum_{k=1}^{|y|} p_{k}^{2}$。直观上的理解为，Gini(D)反映了从数据集D中随机抽取两个样本，其类别标记不一致的概率。因此，Gini(D)越小，则数据集D纯度越高。于是产生了基尼指数(Gini index)：Gini $index(\mathrm{D}, \mathrm{a})=\sum_{v=1}^{V} \frac{\left|D^{v}\right|}{|D|} Gini\left(D^{v}\right)$。于是可以选择使得基尼指数最小的属性作为最优化分属性。
+    
+    <p align="center">
+      <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-154534@2x.png" style="zoom:40%" />
+    </p>
+    
+    直观上的理解为，Gini(D)反映了从数据集D中随机抽取两个样本，其类别标记不一致的概率。因此，Gini(D)越小，则数据集D纯度越高。
   
 - **剪枝处理**
   <br>
@@ -154,15 +154,8 @@ end if
 **of unordered values**, with prediction error measured in terms of misclassification cost. **Regression trees** are for dependent variables that take **continuous or ordered discrete values**, with prediction error typically measured by the squared difference between the observed and predicted values.
   - The first published classification tree algorithm is THAID
   - C4.5 and CART are two later classification tree algorithms 
-  <p align="center">
-    <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200114-173858@2x.png" style="zoom:80%" />
-  </p>
-  
   -  Historically, the first regression tree algorithm is AID
   -  M5, an adaptation of a regression tree algorithm by Quinlan
-  <p align="center">
-    <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200114-175831@2x.png" style="zoom:80%" />
-  </p>
   
 ### [sklearn.tree.DecisionTreeClassifier部分参数解析](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.htmll)
 
