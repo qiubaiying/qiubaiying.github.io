@@ -50,10 +50,10 @@ tags:
 - **特征选择**
 
 <p align="center">
-  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-143128@2x.png" style="zoom:60%" />
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-143128@2x.png" style="zoom:40%" />
 </p>
 <p align="center">
-  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-143351@2x.png" style="zoom:60%" />
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-143351@2x.png" style="zoom:40%" />
 </p>
 
 - **划分选择**
