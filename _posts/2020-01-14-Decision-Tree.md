@@ -11,34 +11,6 @@ tags:
     - python
 ---
 
-### 信息论基础
-<p align="center">
-  <img src="https://miro.medium.com/max/2040/1*S6zcbdAzUvIOKBaWBKp9MA.png" style="zoom:50%" />
-</p>
-
-
-- **Entropy**
-  <br>
-  In the most layman terms, Entropy is nothing but **the measure of disorder(Purity)**.
-  
-  <p align="center">
-    <img src="https://miro.medium.com/max/1130/1*M15RZMSk8nGEyOnD8haF-A.png" style="zoom:80%" />
-  </p>
-  
-- **Information gain (IG): $I G(Y, X)=E(Y)-E(Y \mid X)$** 
-  
-  <p align="center">
-    <img src="https://miro.medium.com/max/4000/1*bVGWGETTor7bSnhr7sXEVw.png" style="zoom:80%" />
-  </p>
-  
-  Information gain (IG) **measures how much “information” a feature gives us about the class.**
-  
-  - **Why it matter ?**
-    - Information gain is **the main key** that is used by Decision Tree Algorithms to construct a Decision Tree.
-    - **Decision Trees algorithm will always tries to maximize Information gain**.
-    - **An attribute with highest Information gain will tested/split first**.
-
-
 
 ### What is Decision Tree
 
@@ -55,38 +27,43 @@ tags:
   <img src="https://upload-images.jianshu.io/upload_images/3777066-960dcf8c1b4541ce.png" style="zoom:100%" />
 </p>
 
-```ruby
-Input:  训练集D={(x1, y1), (x2, y2), ..., (xm, ym)};
-        属性集A={a1, a2, ..., ad}.
-Output: 以node为根节点的一个决策树
+<p align="center">
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150150@2x.png" style="zoom:80%" />
+</p>
+<p align="center">
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150231@2x.png" style="zoom:80%" />
+</p>
+<p align="center">
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150249@2x.png" style="zoom:80%" />
+</p>
+<p align="center">
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150302@2x.png" style="zoom:80%" />
+</p>
+<p align="center">
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150459@2x.png" style="zoom:80%" />
+</p>
+<p align="center">
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-143351@2x.png" style="zoom:80%" />
+</p>
 
-Process:
-## 通过给定样本集D和属性集A构建决策树
-TreeGenerate(D, A){
-    1: 生成结点node;
-    2: if D 中样本全属于同一类别C then
-    3:      将node标记为 C类 叶节点; return
-    4: end if
-    5: if A = ∅ OR D中样本在A上取值相同 then
-    6:      将node标记为叶节点，其类别标记为D中样本数最多的类; return 
-    7: end if
-    8: 从 A 中选择最优化分属性 a*
-    9: for a* 的每一值a[i] do
-   10:      为node生成一个分支; 令Dv表示D中在 a* 上取值为 a[i] 的样本子集;
-   11:      if Dv is empty then
-   12:          将分支结点标记为叶节点，其类别为D中样本最多的类; return
-   13:      else
-   14:          以 TreeGenerate(Dv, A\{a*}) 为分支结点;
-   15:      end if
-   16: end for
-}
-```
+
+- **特征选择**
+
+<p align="center">
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-143128@2x.png" style="zoom:80%" />
+</p>
+<p align="center">
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-143351@2x.png" style="zoom:80%" />
+</p>
 
 - **划分选择**
-  <br>
-  从伪代码中可以看到，**决策树的关键在于伪代码第8行**，即**选择能产生最优划分的属性a***。那么我们应该以什么准则来度量“划分最优”？
-  
+
   - **信息熵 Ent(D)**
+  <br>
+  In the most layman terms, Entropy is nothing but **the measure of disorder(Purity)**.
+  <p align="center">
+    <img src="https://miro.medium.com/max/1130/1*M15RZMSk8nGEyOnD8haF-A.png" style="zoom:80%" />
+  </p>
   <br>
   设随机标量X是一个离散随机变量，其概率分布为：$P(X=x_i)=p_i, i=1,2,...,n$，则随机变量X的熵定义为：$Ent(D)=-\sum_{i=1}^{n}p_ilog{p_i}$。**Ent(D)值越小，则D的纯度越高**。
   
