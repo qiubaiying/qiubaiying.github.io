@@ -28,22 +28,22 @@ tags:
 </p>
 
 <p align="center">
-  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150150@2x.png" style="zoom:60%" />
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150150@2x.png" style="zoom:40%" />
 </p>
 <p align="center">
-  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150231@2x.png" style="zoom:60%" />
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150231@2x.png" style="zoom:40%" />
 </p>
 <p align="center">
-  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150249@2x.png" style="zoom:60%" />
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150249@2x.png" style="zoom:40%" />
 </p>
 <p align="center">
-  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150302@2x.png" style="zoom:60%" />
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150302@2x.png" style="zoom:40%" />
 </p>
 <p align="center">
-  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150459@2x.png" style="zoom:60%" />
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150459@2x.png" style="zoom:40%" />
 </p>
 <p align="center">
-  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-143351@2x.png" style="zoom:60%" />
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-143351@2x.png" style="zoom:40%" />
 </p>
 
 
