@@ -18,7 +18,7 @@ tags:
   - A decision tree is a tree where **each node represents a feature(attribute)**, **each link(branch) represents a decision(rule)** and **each leaf represents an outcome(categorical or continues value)**. 
 
 <p align="center">
-  <img src="https://miro.medium.com/max/2000/1*DUYbuD8el6Pkkj8-sw5LYw.png" style="zoom:60%" />
+  <img src="https://miro.medium.com/max/2000/1*DUYbuD8el6Pkkj8-sw5LYw.png" style="zoom:40%" />
 </p>
 
 ### Decision Tree algorithms
@@ -28,44 +28,44 @@ tags:
 </p>
 
 <p align="center">
-  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150150@2x.png" style="zoom:80%" />
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150150@2x.png" style="zoom:40%" />
 </p>
 <p align="center">
-  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150231@2x.png" style="zoom:80%" />
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150231@2x.png" style="zoom:40%" />
 </p>
 <p align="center">
-  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150249@2x.png" style="zoom:80%" />
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150249@2x.png" style="zoom:40%" />
 </p>
 <p align="center">
-  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150302@2x.png" style="zoom:80%" />
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150302@2x.png" style="zoom:40%" />
 </p>
 <p align="center">
-  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150459@2x.png" style="zoom:80%" />
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-150459@2x.png" style="zoom:40%" />
 </p>
 <p align="center">
-  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-143351@2x.png" style="zoom:80%" />
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-143351@2x.png" style="zoom:40%" />
 </p>
 
 
 - **特征选择**
 
 <p align="center">
-  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-143128@2x.png" style="zoom:80%" />
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-143128@2x.png" style="zoom:40%" />
 </p>
 <p align="center">
-  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-143351@2x.png" style="zoom:80%" />
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-143351@2x.png" style="zoom:40%" />
 </p>
 
 - **划分选择**
 
   - **信息熵 Ent(D)**
-  <br>
-  In the most layman terms, Entropy is nothing but **the measure of disorder(Purity)**.
-  <p align="center">
-    <img src="https://miro.medium.com/max/1130/1*M15RZMSk8nGEyOnD8haF-A.png" style="zoom:80%" />
-  </p>
-  <br>
-  设随机标量X是一个离散随机变量，其概率分布为：$P(X=x_i)=p_i, i=1,2,...,n$，则随机变量X的熵定义为：$Ent(D)=-\sum_{i=1}^{n}p_ilog{p_i}$。**Ent(D)值越小，则D的纯度越高**。
+    <br>
+    In the most layman terms, Entropy is nothing but **the measure of disorder(Purity)**.
+    <p align="center">
+      <img src="https://miro.medium.com/max/1130/1*M15RZMSk8nGEyOnD8haF-A.png" style="zoom:80%" />
+    </p>
+  
+    设随机标量X是一个离散随机变量，其概率分布为：$P(X=x_i)=p_i, i=1,2,...,n$，则随机变量X的熵定义为：$Ent(D)=-\sum_{i=1}^{n}p_ilog{p_i}$。**Ent(D)值越小，则D的纯度越高**。
   
   - **信息增益 Gain(D,a)**
     <br>
