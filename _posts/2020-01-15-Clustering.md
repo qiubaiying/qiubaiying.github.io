@@ -43,7 +43,7 @@ tags:
 ### Distance Measures
 
 <p align="center">
-  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-224253@2x.png" style="zoom:40%" />
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-224253@2x.png" style="zoom:30%" />
 </p>
 
 - Minkowski metric
@@ -78,7 +78,7 @@ tags:
   <br>
   Manhattan distance is called Hamming distance when all features are binary.
   <p align="center">
-    <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-225620@2x.png" style="zoom:40%" />
+    <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200115-225620@2x.png" style="zoom:30%" />
   </p>
 
 - Pearson correlation coefficient
