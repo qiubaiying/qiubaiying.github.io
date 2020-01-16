@@ -18,12 +18,12 @@ sidebar-avatar: /img/about-DR-gentle.jpg      # use absolute URL, seeing it's us
 
 # SNS settings
 RSS: true
-# weibo_username:     qiubaiying
+weibo_username:     destinyenvoy
 #zhihu_username:     qiubaiying
 github_username:    DestinyEnvoy
 facebook_username: kodunull
 jianshu_username:   e2e751690722
-twitter_username:   DestinyEnvoy
+#twitter_username:   DestinyEnvoy
 
 #替换默认的Markdown引擎为kramdown
 #markdown: kramdown
@@ -40,7 +40,7 @@ anchorjs: true                          # if you want to customize anchor. check
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 
 
 
