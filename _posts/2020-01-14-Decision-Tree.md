@@ -18,7 +18,7 @@ tags:
   - A decision tree is a tree where **each node represents a feature(attribute)**, **each link(branch) represents a decision(rule)** and **each leaf represents an outcome(categorical or continues value)**. 
 
 <p align="center">
-  <img src="https://miro.medium.com/max/2000/1*DUYbuD8el6Pkkj8-sw5LYw.png" style="zoom:40%" />
+  <img src="https://miro.medium.com/max/2000/1*DUYbuD8el6Pkkj8-sw5LYw.png" style="zoom:50%" />
 </p>
 
 ### Decision Tree algorithms
