@@ -4,7 +4,7 @@ title:      Clustering
 subtitle:     聚类
 date:       2020-01-15
 author:     Young
-header-img: img/1*ff6FquwFWnrFeZJWfvsiag.png
+header-img: img/kmeansMath.png
 catalog: true
 tags:
     - machine learning
@@ -216,9 +216,9 @@ class Kmeans:
 ```
 
 - *single-linkage*
-  - 最小距离：$d_{min}(C_i,C_j)=\min_{p\in C_i,q\in C_j}|p-q|.$  
+  - 最小距离：$d_{min}(C_i,C_j)=\min_{p\in C_i,q\in C_j}\mid p-q \mid .$  
 - *complete-linkage*
-  - 最大距离：$d_{max}(C_i,C_j)=\max_{p\in C_i,q\in C_j}|p-q|.$  
+  - 最大距离：$d_{max}(C_i,C_j)=\max_{p\in C_i,q\in C_j}\mid p-q \mid .$  
 - *average-linkage*
-  - 平均距离：$d_{avg}(C_i,C_j)=\frac{1}{|C_i||C_j|}\sum_{p\in C_i}\sum_{q\in C_j}|p-q|.$  
+  - 平均距离：$d_{avg}(C_i,C_j)=\frac{1}{|C_i||C_j|}\sum_{p\in C_i}\sum_{q\in C_j}\mid p-q \mid .$  
 
