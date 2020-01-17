@@ -14,7 +14,6 @@ tags:
  
 
 4. 原型聚类  
-    K均值  
     LVQ  
     高斯混合聚类  
 5. 层次聚类  
@@ -171,3 +170,55 @@ class Kmeans:
         distance = self.compute_distance(X, old_centroids)
         return self.find_closest_cluster(distance)
 ```
+
+- Issues with K means: 
+  - K-means often doesn’t work **when clusters are not round shaped** because of it uses some kind of distance function and distance is measured from cluster center. 	
+  - Another major problem with K-Means clustering is that Data point is deterministically assigned to one and only one cluster, but in reality there may be **overlapping between the cluster** for example picture shown below
+  <p align="center">
+    <img src="https://miro.medium.com/max/1826/0*uQTamSp8hAcnJPl0." style="zoom:100%" />
+  </p>
+
+### **[Gaussian Mixture Models(GMM)](https://home.deib.polimi.it/matteucc/Clustering/tutorial_html/mixture.html)**
+
+- In practice, **each cluster can be mathematically represented by a parametric distribution**, like a Gaussian (continuous) or a Poisson (discrete). The entire data set is therefore modelled by **a mixture of these distributions**. An individual distribution used to model a specific cluster is often referred to as a component distribution.
+
+- In this approach we describe each cluster by its **centroid (mean), covariance , and the size of the cluster(Weight)**.
+
+<p align="center">
+  <img src="https://miro.medium.com/max/1864/0*W7QWSZOJm-l-_m96." style="zoom:100%" />
+</p>
+
+- 相对于k均值聚类算法使用 k 个原型向量来表达聚类结构，高斯混合聚类使用 k 个高斯概率密度函数混合来表达聚类结构
+  <p align="center">
+  $$
+  P(x_{i}|y_{k}) = \frac{1}{\sqrt{2\pi\sigma_{y_{k}}^{2}}}exp( -\frac{(x_{i}-\mu_{y_{k}})^2}  {2\sigma_{y_{k}}^{2}})
+  $$
+  </p>
+
+- 于是迭代更新 k 个簇原型向量的工作转换为了迭代更新 k 个高斯概率密度函数的任务。每个高斯概率密度函数代表一个簇，当一个新的样本进来时，我们可以通过这 k 的函数的值来为新样本分类
+  ```python
+  高斯混合模型聚类算法EM步骤如下：
+  
+  1. 猜测有几个类别，既有几个高斯分布。
+  2. 针对每一个高斯分布，随机给其均值和方差进行赋值。
+  3. 针对每一个样本，计算其在各个高斯分布下的概率。
+  4. 针对每一个高斯分布，每一个样本对该高斯分布的贡献可以由其下的概率表示，如概率大则表示贡献大，反之亦然。这样把样本对该高斯分布的贡献作为权重来计算加权的均值和方差。之后替代其原本的均值和方差。
+  5. 重复3~4直到每一个高斯分布的均值和方差收敛。
+  ```
+
+### [Hierarchical Clustering](https://home.deib.polimi.it/matteucc/Clustering/tutorial_html/hierarchical.html)
+
+```
+1. Compute the proximity matrix
+2. Let each data point be a cluster
+3. Repeat: Merge the two closest clusters and update the proximity matrix
+4. Until only a single cluster remains
+```
+
+- *single-linkage*
+  - 最小距离：$d_{min}(C_i,C_j)=\min_{p\in C_i,q\in C_j}|p-q|.$  
+- *complete-linkage*
+  - 最大距离：$d_{max}(C_i,C_j)=\max_{p\in C_i,q\in C_j}|p-q|.$  
+- *average-linkage*
+  - 平均距离：$d_{avg}(C_i,C_j)=\frac{1}{|C_i||C_j|}\sum_{p\in C_i}\sum_{q\in C_j}|p-q|.$  
+
