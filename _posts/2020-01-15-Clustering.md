@@ -213,3 +213,141 @@ class Kmeans:
 <p align="center">
   <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200117-211658@2x.png" style="zoom:100%" />
 </p>
+
+
+### [DBSCAN implementation](https://raw.githubusercontent.com/SgtDaJim/DBSCAN/master/dbscan.py)
+
+- e-邻域:对xj∈D,其∈邻域包含样本集D中与xj的距离不大于e的样本,即N(xj)= {xi∈D | dist(xi,xj)≤e};  
+- 核心对象(core object): 若xj的E-邻域至少包含MinPts个样本，即|Ne(xj)|≥MinPts,则xj是-一个核心对象;  
+- 密度直达(directly density- reachable):若xj位于xi的e-邻域中,且xi是核心对象,则称x;由xi密度直达;  
+- 密度可达(density. reachable): 对xi与xj,若存在样本序列P1,P2,... ,Pn,其中p1=xi,Pn=xj且pi+1由pi密度直达,则称xj由xi密度可达;  
+- 密度相连(density-conected): 对xi与xj,若存在xk使得xi与xj均由xk密度可达,则称xi与xj密度相连.
+
+```
+首先将数据集D中的所有对象标记为未处理状态  
+for（数据集D中每个对象p） do  
+    if （p已经归入某个簇或标记为噪声） then  
+         continue;  
+    else  
+         检查对象p的Eps邻域 NEps(p) ；  
+         if (NEps(p)包含的对象数小于MinPts) then  
+             标记对象p为边界点或噪声点；  
+         else  
+             标记对象p为核心点，并建立新簇C, 并将p邻域内所有点加入C  
+             for (NEps(p)中所有尚未被处理的对象q)  do  
+                 检查其Eps邻域NEps(q)，若NEps(q)包含至少MinPts个对象，则将NEps(q)中未归入任何一个簇的对象加入C；  
+             end for  
+        end if  
+    end if  
+ end for
+```
+
+```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# @File       : dbscan.py
+# @Time       : 2016/11/13 15:19
+# @Author     : Jim
+# @GitHub     : https://github.com/SgtDaJim
+
+
+import cluster
+
+class DBSCAN(object):
+    '''
+    DBSCAN算法类
+    '''
+    data_set = []       # 数据集
+    clusters = []       # 簇
+    Eps = 0             # 对象半径Eps
+    MinPts = 0          # 给定邻域N-Eps(p)包含的点的最小数目
+    visited_points = [] # 已访问点
+    num = 0             # 簇的序号
+
+    def __init__(self, data_set, Eps, MinPts):
+        self.data_set = data_set
+        self.Eps = Eps
+        self.MinPts = MinPts
+
+    def run(self):
+        '''
+        执行算法
+        :return: 聚类处理好的簇
+        '''
+        noise = cluster.Cluster("Noise") # 这里将所有噪声点也当作一个簇来对待。创建噪声点簇。
+        for point in self.data_set:
+            if point not in self.visited_points: # 判断点是否已经被处理过
+                self.visited_points.append(point)
+                neighbors = self.find_neighbors(point) # 检查邻域
+                if len(neighbors) < self.MinPts: # 若邻域中包含的对象数少于Minpts则标记为噪
+                    noise.add_point(point)
+                else:
+                    new_cluster = cluster.Cluster("Cluster " + str(self.num)) # 创建新的簇
+                    self.num += 1 # 簇的序号加一
+                    new_cluster.add_point(point) # 将点放入新簇中
+                    self.form_cluster(neighbors, new_cluster) # 将符合条件的点加入新簇
+        self.clusters.append(noise) # 噪声簇也加入簇列表中
+
+        return self.clusters
+
+    def find_neighbors(self, point):
+        '''
+        查询邻域
+        :param point: 需要查询邻域的对象（点）
+        :return: 该点的邻域
+        '''
+        neighbors = [] # 邻域点列表
+        for p in self.data_set:
+            temp = ((point[0] - p[0])**2 + (point[1] - p[1])**2)**0.5 # 计算距离(使用两点间的直线距离公式)
+            if temp <= self.Eps: # 若距离小于Eps，则为邻域中的点
+                neighbors.append(p)
+        return neighbors
+
+    def form_cluster(self, neighbors, new_cluster):
+        '''
+        将符合要求的点归入簇
+        :param neighbors: 某个点的邻域
+        :param new_cluster: 新建的簇
+        :return: None
+        '''
+        for n in neighbors: # 检查邻域中的点
+            if n not in self.visited_points: # 检查该点是否已经被标记过
+                self.visited_points.append(n)
+                n_neighbors = self.find_neighbors(n) # 找出该点邻域
+                if len(n_neighbors) >= self.MinPts:
+                    for nn in n_neighbors:
+                        neighbors.append(nn)
+            #将未归入任何一个簇的对象加入簇中
+            if len(self.clusters) == 0:
+                if not new_cluster.has_point(n):
+                    new_cluster.add_point(n)
+            else:
+                cflag = False
+                for c in self.clusters:
+                    if c.has_point(n):
+                        cflag = True
+                if cflag is False:
+                    if not new_cluster.has_point(n):
+                        new_cluster.add_point(n)
+        self.clusters.append(new_cluster) # 在簇列表中加入新簇
+```
+
+- **优点**
+
+  - 相比 K-平均算法，DBSCAN 不需要预先声明聚类数量。
+  - DBSCAN 可以找出任何形状的聚类，甚至能找出一个聚类，它包围但不连接另一个聚类，另外，由于 MinPts 参数，single-link effect （不同聚类以一点或极幼的线相连而被当成一个聚类）能有效地被避免。
+  - DBSCAN 能分辨噪音（局外点）。
+  - DBSCAN 只需两个参数，且对数据库内的点的次序几乎不敏感（两个聚类之间边缘的点有机会受次序的影响被分到不同的聚类，另外聚类的次序会受点的次序的影响）。
+  - DBSCAN 被设计成能配合可加速范围访问的数据库结构，例如 R*树。
+  - 如果对资料有足够的了解，可以选择适当的参数以获得最佳的分类。
+
+- **缺点**
+  - DBSCAN 不是完全决定性的：在两个聚类交界边缘的点会视乎它在数据库的次序决定加入哪个聚类，幸运地，这种情况并不常见，而且对整体的聚类结果影响不大——DBSCAN 对核心点和噪音都是决定性的。DBSCAN* 是一种变化了的算法，把交界点视为噪音，达到完全决定性的结果。
+  - DBSCAN 聚类分析的质素受函数 regionQuery(P,ε) 里所使用的度量影响，最常用的度量是欧几里得距离，尤其在高维度资料中，由于受所谓“维数灾难”影响，很难找出一个合适的 ε ，但事实上所有使用欧几里得距离的算法都受维数灾难影响。
+  - 如果数据库里的点有不同的密度，而该差异很大，DBSCAN 将不能提供一个好的聚类结果，因为不能选择一个适用于所有聚类的 minPts-ε 参数组合。
+  - 如果没有对资料和比例的足够理解，将很难选择适合的 ε 参数。
+
+### [python实现(代码链接)](https://github.com/Julian-young/Julian-young.github.io/blob/dev-jiale/ipynb/Task5_cluster_plus.ipynb)
+
+实现KMeans
