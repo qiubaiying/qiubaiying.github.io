@@ -223,7 +223,7 @@ class Kmeans:
 - 密度可达(density. reachable): 对xi与xj,若存在样本序列P1,P2,... ,Pn,其中p1=xi,Pn=xj且pi+1由pi密度直达,则称xj由xi密度可达;  
 - 密度相连(density-conected): 对xi与xj,若存在xk使得xi与xj均由xk密度可达,则称xi与xj密度相连.
 
-```
+```python
 首先将数据集D中的所有对象标记为未处理状态  
 for（数据集D中每个对象p） do  
     if （p已经归入某个簇或标记为噪声） then  
@@ -242,7 +242,7 @@ for（数据集D中每个对象p） do
  end for
 ```
 
-```python
+```
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
