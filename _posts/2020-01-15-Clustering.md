@@ -222,3 +222,6 @@ class Kmeans:
 - *average-linkage*
   - 平均距离：$d_{avg}(C_i,C_j)=\frac{1}{\mid C_i \mid \mid C_j \mid }\sum_{p\in C_i}\sum_{q\in C_j}\mid p-q \mid .$  
 
+- 自顶向下、自底向上
+
+### 
