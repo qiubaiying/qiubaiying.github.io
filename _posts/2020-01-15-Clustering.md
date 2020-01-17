@@ -4,7 +4,7 @@ title:      Clustering
 subtitle:     聚类
 date:       2020-01-15
 author:     Young
-header-img: img/clustering.png
+header-img: img/photo-1442436575481-b94af86bd2cd.jpg
 catalog: true
 tags:
     - machine learning
