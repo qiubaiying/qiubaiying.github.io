@@ -217,8 +217,8 @@ class Kmeans:
 
 ### [DBSCAN implementation](https://raw.githubusercontent.com/SgtDaJim/DBSCAN/master/dbscan.py)
 
-- e-邻域:对xj∈D,其∈邻域包含样本集D中与xj的距离不大于e的样本,即N(xj)= {xi∈D | dist(xi,xj)≤e};  
-- 核心对象(core object): 若xj的E-邻域至少包含MinPts个样本，即|Ne(xj)|≥MinPts,则xj是-一个核心对象;  
+- e-邻域:对xj∈D,其∈邻域包含样本集D中与xj的距离不大于e的样本,即 $N(xj)= {xi∈D \mid dist(xi,xj)≤e}$;  
+- 核心对象(core object): 若xj的E-邻域至少包含MinPts个样本，即$ \mid Ne(xj)\mid ≥MinPts$,则xj是-一个核心对象;  
 - 密度直达(directly density- reachable):若xj位于xi的e-邻域中,且xi是核心对象,则称x;由xi密度直达;  
 - 密度可达(density. reachable): 对xi与xj,若存在样本序列P1,P2,... ,Pn,其中p1=xi,Pn=xj且pi+1由pi密度直达,则称xj由xi密度可达;  
 - 密度相连(density-conected): 对xi与xj,若存在xk使得xi与xj均由xk密度可达,则称xi与xj密度相连.
