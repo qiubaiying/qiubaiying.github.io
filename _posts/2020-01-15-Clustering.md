@@ -207,4 +207,9 @@ class Kmeans:
 
 - 自顶向下、自底向上
 
-### 
+
+### [A comparison of the clustering algorithms in scikit-learn](https://scikit-learn.org/stable/modules/clustering.html#k-means)
+
+<p align="center">
+  <img src="https://github.com/Julian-young/Julian-young.github.io/raw/dev-jiale/img/WX20200117-211658@2x.png" style="zoom:30%" />
+</p>
