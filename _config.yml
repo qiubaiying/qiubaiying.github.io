@@ -103,15 +103,15 @@ service-worker: true
 friends: [
     {
         title: "WX",
-        href: "https:destinyenvoy.github.io"
+        href: "https://destinyenvoy.github.io"
    },{
         title: "简书·DE",
-        href: "https:www.jianshu.com/u/e2e751690722"
+        href: "https://www.jianshu.com/u/e2e751690722"
     },{
         title: "Apple",
-        href: "https:destinyenvoy.github.io"
+        href: "https://destinyenvoy.github.io"
    },{
         title: "Apple Developer",
-        href: "https:destinyenvoy.github.io"
+        href: "https://destinyenvoy.github.io"
    }
 ]
