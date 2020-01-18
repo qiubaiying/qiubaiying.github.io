@@ -83,7 +83,27 @@ layout: default
                 </ul>
 
 
-
+                <!-- 添加打赏 -->
+<link href="/css/reward.css?v=6.2.0" rel="stylesheet" type="text/css" />
+                <!-- 打赏功能 -->
+    <div>
+            <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+                    <div>☛喜欢我，就请我喝coffee吧☚</div>
+                        <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+                            <span>打 赏</span>
+                        </button>
+                        <div id="QR" style="display: none;">
+                            <div id="wechat" style="display: inline-block">
+                                <img id="wechat_qr" src="/img/payimg/weipay.png" alt="c 微信支付"/>
+                                    <p>微信支付</p>
+                            </div>
+                            <div id="alipay" style="display: inline-block">
+                                <img id="alipay_qr" src="/img/payimg/alipay.jpg" alt=" 支付宝"/>
+                                <p>支付宝</p>
+                            </div>                        
+                        </div>
+                </div>         
+        </div>
 
                 <!--Gitalk评论start  -->
                 {% if site.gitalk.enable %}
@@ -118,6 +138,7 @@ layout: default
                 {% endif %}
 
             </div>  
+
 
     <!-- Side Catalog Container -->
         {% if page.catalog %}
@@ -158,6 +179,7 @@ layout: default
         			</div>
                 </section>
                 {% endif %}
+                
 
                 <!-- Friends Blog -->
                 {% if site.friends %}
@@ -173,29 +195,10 @@ layout: default
         </div>
     </div>
 </article>
-<!-- 添加打赏 -->
-<link href="/css/reward.css?v=6.2.0" rel="stylesheet" type="text/css" />
-                <!-- 打赏功能 -->
-                <div>
-                   <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-                   <div>☛喜欢我，就请我喝coffee吧☚</div>
-                   <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-                       <span>打 赏</span>
-                   </button>
-                   <div id="QR" style="display: none;">
-                        
-                   <div id="wechat" style="display: inline-block">
-                   <img id="wechat_qr" src="/img/payimg/weipay.png" alt="c 微信支付"/>
-                   <p>微信支付</p>
-                   </div>
-                   <div id="alipay" style="display: inline-block">
-                   <img id="alipay_qr" src="/img/payimg/alipay.jpg" alt=" 支付宝"/>
-                   <p>支付宝</p>
-                   </div>                        
-                </div>
-                </div>         
-</div>
+
+
 {% if site.disqus_username %}
+
 <!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
