@@ -154,7 +154,7 @@ class Kmeans:
         return self.find_closest_cluster(distance)
 ```
 
-- Issues with K means: 
+- Issues with Kmeans: 
   - K-means often doesn’t work **when clusters are not round shaped** because of it uses some kind of distance function and distance is measured from cluster center. 	
   - Another major problem with K-Means clustering is that Data point is deterministically assigned to one and only one cluster, but in reality there may be **overlapping between the cluster** for example picture shown below
   <p align="center">
@@ -350,4 +350,4 @@ class DBSCAN(object):
 
 ### [python实现(代码链接)](https://github.com/Julian-young/Julian-young.github.io/blob/dev-jiale/ipynb/Task5_cluster_plus.ipynb)
 
-实现KMeans
+实现Kmeans
