@@ -154,7 +154,7 @@ class Kmeans:
         return self.find_closest_cluster(distance)
 ```
 
-- Issues with K means: 
+- Issues with Kmeans: 
   - K-means often doesn’t work **when clusters are not round shaped** because of it uses some kind of distance function and distance is measured from cluster center. 	
   - Another major problem with K-Means clustering is that Data point is deterministically assigned to one and only one cluster, but in reality there may be **overlapping between the cluster** for example picture shown below
   <p align="center">
@@ -217,13 +217,13 @@ class Kmeans:
 
 ### [DBSCAN implementation](https://raw.githubusercontent.com/SgtDaJim/DBSCAN/master/dbscan.py)
 
-- e-邻域:对xj∈D,其∈邻域包含样本集D中与xj的距离不大于e的样本,即N(xj)= {xi∈D | dist(xi,xj)≤e};  
-- 核心对象(core object): 若xj的E-邻域至少包含MinPts个样本，即|Ne(xj)|≥MinPts,则xj是-一个核心对象;  
+- e-邻域:对xj∈D,其∈邻域包含样本集D中与xj的距离不大于e的样本,即 $N(xj)= {xi∈D \mid dist(xi,xj)≤e}$;  
+- 核心对象(core object): 若xj的E-邻域至少包含MinPts个样本，即$ \mid Ne(xj)\mid ≥MinPts$,则xj是-一个核心对象;  
 - 密度直达(directly density- reachable):若xj位于xi的e-邻域中,且xi是核心对象,则称x;由xi密度直达;  
 - 密度可达(density. reachable): 对xi与xj,若存在样本序列P1,P2,... ,Pn,其中p1=xi,Pn=xj且pi+1由pi密度直达,则称xj由xi密度可达;  
 - 密度相连(density-conected): 对xi与xj,若存在xk使得xi与xj均由xk密度可达,则称xi与xj密度相连.
 
-```
+```python
 首先将数据集D中的所有对象标记为未处理状态  
 for（数据集D中每个对象p） do  
     if （p已经归入某个簇或标记为噪声） then  
@@ -242,7 +242,7 @@ for（数据集D中每个对象p） do
  end for
 ```
 
-```python
+```
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
@@ -350,4 +350,4 @@ class DBSCAN(object):
 
 ### [python实现(代码链接)](https://github.com/Julian-young/Julian-young.github.io/blob/dev-jiale/ipynb/Task5_cluster_plus.ipynb)
 
-实现KMeans
+实现Kmeans
