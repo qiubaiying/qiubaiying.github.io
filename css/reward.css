@@ -1,0 +1,56 @@
+/*本文件来源于 https://github.com/caojiele/caojiele.github.io/blob/master/css/reward.css
+
+/* normalize.css v3.0.2 | MIT License | git.io/normalize */
+
+
+#rewardButton {
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    padding: 0;
+    margin: 0;
+    letter-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+  }
+  #rewardButton span {
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+    font-stretch: normal;
+    font-size: 18px;
+    font-family: "KaiTi";
+    background: #f44336;
+  }
+  #rewardButton span:hover {
+    background: #f7877f;
+  }
+  #QR {
+    padding-top: 20px;
+  }
+  #QR a {
+    border: 0;
+  }
+  #QR img {
+    width: 180px;
+    max-width: 100%;
+    display: inline-block;
+    margin: 0.8em 2em 0 2em;
+  }
+  #wechat:hover p {
+    animation: roll 0.1s infinite linear;
+    -webkit-animation: roll 0.1s infinite linear;
+    -moz-animation: roll 0.1s infinite linear;
+  }
+  #alipay:hover p {
+    animation: roll 0.1s infinite linear;
+    -webkit-animation: roll 0.1s infinite linear;
+    -moz-animation: roll 0.1s infinite linear;
+  }
