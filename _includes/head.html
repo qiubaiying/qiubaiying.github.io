@@ -40,7 +40,7 @@
      word-wrap: break-word;
    }
 </script>
- 
+
  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
  </script>
 
@@ -74,12 +74,28 @@
 
     <!-- Pygments Github CSS -->
     <link rel="stylesheet" href="{{ "/css/syntax.css" | prepend: site.baseurl }}">
+  
+
+  <input type="hidden" id="baseurl" value="">
+<div class="waifu">
+    <div class="waifu-tips"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+</div>
+
+<script async src="/js/jquery.min.js"></script>
+<script async src="/js/waifu-tips.js"></script>
+<script src="/js/live2d.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d","/js/model.json");
+</script>
+
+
+ 
 
     <!-- Custom Fonts -->
     <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
     <!-- Hux change font-awesome CDN to qiniu -->
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
 
     <!-- Hux Delete, sad but pending in China
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -96,5 +112,6 @@
     <![endif]-->
   
     <!-- ga & ba script hoook -->
+    
     <script></script>
 </head>

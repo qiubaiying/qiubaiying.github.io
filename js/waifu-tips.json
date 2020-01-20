@@ -1,0 +1,111 @@
+//关于看板娘提示语的配置文件
+{
+    "mouseover": [
+        {
+            "selector": ".container a[href^='http']",
+            "text": ["要看看 <span style=\"color:#0099cc;\">{text}</span> 么？"]
+        },
+        {
+            "selector": ".fui-home",
+            "text": ["点击前往首页，想回到上一页可以使用浏览器的后退功能哦"]
+        },
+        {
+            "selector": "#tor_show",
+            "text": ["翻页比较麻烦吗，点击可以显示这篇文章的目录呢"]
+        },
+        {
+            "selector": "#comment_go,.fui-chat",
+            "text": ["想要去评论些什么吗？"]
+        },
+        {
+            "selector": "#night_mode",
+            "text": ["深夜时要爱护眼睛呀"]
+        },
+        {
+            "selector": "#qrcode",
+            "text": ["手机扫一下就能继续看，很方便呢"]
+        },
+        {
+            "selector": ".comment_reply",
+            "text": ["要吐槽些什么呢"]
+        },
+        {
+            "selector": "#back-to-top",
+            "text": ["回到开始的地方吧"]
+        },
+        {
+            "selector": "#author",
+            "text": ["该怎么称呼你呢"]
+        },
+        {
+            "selector": "#mail",
+            "text": ["留下你的邮箱，不然就是无头像人士了"]
+        },
+        {
+            "selector": "#url",
+            "text": ["你的家在哪里呢，好让我去参观参观"]
+        },
+        {
+            "selector": "#textarea",
+            "text": ["认真填写哦，垃圾评论是禁止事项"]
+        },
+        {
+            "selector": ".OwO-logo",
+            "text": ["要插入一个表情吗"]
+        },
+        {
+            "selector": "#csubmit",
+            "text": "要[提交了吗，首次评论需要审核，请耐心等待~"]
+        },
+        {
+            "selector": ".ImageBox",
+            "text": ["点击图片可以放大呢"]
+        },
+        {
+            "selector": "input[name=s]",
+            "text": ["找不到想看的内容？搜索看看吧"]
+        },
+        {
+            "selector": ".previous",
+            "text": ["去上一页看看吧"]
+        },
+        {
+            "selector": ".next",
+            "text": ["去下一页看看吧"]
+        },
+        {
+            "selector": ".dropdown-toggle",
+            "text": ["这里是菜单"]
+        },
+        {
+            "selector": "c-player a.play-icon",
+            "text": ["想要听点音乐吗"]
+        },
+        {
+            "selector": "c-player div.time",
+            "text": ["在这里可以调整<span style=\"color:#0099cc;\">播放进度</span>呢"]
+        },
+        {
+            "selector": "c-player div.volume",
+            "text": ["在这里可以调整<span style=\"color:#0099cc;\">音量</span>呢"]
+        },
+        {
+            "selector": "c-player div.list-button",
+            "text": ["<span style=\"color:#0099cc;\">播放列表</span>里都有什么呢"]
+        },
+        {
+            "selector": "c-player div.lyric-button",
+            "text": ["有<span style=\"color:#0099cc;\">歌词</span>的话就能跟着一起唱呢"]
+        },
+        {
+            "selector": ".waifu #live2d",
+            "text": ["干嘛呢你，快把手拿开", "鼠…鼠标放错地方了！"]
+        }
+    ],
+    "click": [
+        {
+            "selector": ".waifu #live2d",
+            "text": ["是…是不小心碰到了吧", "萝莉控是什么呀", "你看到我的小熊了吗", "再摸的话我可要报警了！⌇●﹏●⌇", "110吗，这里有个变态一直在摸我(ó﹏ò｡)"]
+        }
+    ]
+}
