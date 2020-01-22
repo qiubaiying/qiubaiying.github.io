@@ -1,0 +1,652 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- saved from url=(0088)https://nlp.stanford.edu/IR-book/html/htmledition/naive-bayes-text-classification-1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Naive Bayes text classification</title>
+<meta name="description" content="Naive Bayes text classification">
+<meta name="keywords" content="irbook">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2002-2-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="./Naive Bayes text classification_files/irbook.css">
+
+<link rel="next" href="https://nlp.stanford.edu/IR-book/html/htmledition/the-bernoulli-model-1.html">
+<link rel="previous" href="https://nlp.stanford.edu/IR-book/html/htmledition/the-text-classification-problem-1.html">
+<link rel="up" href="https://nlp.stanford.edu/IR-book/html/htmledition/text-classification-and-naive-bayes-1.html">
+<link rel="next" href="https://nlp.stanford.edu/IR-book/html/htmledition/relation-to-multinomial-unigram-language-model-1.html">
+</head>
+
+<body>
+<!--Navigation Panel-->
+<a name="tex2html3461" href="https://nlp.stanford.edu/IR-book/html/htmledition/relation-to-multinomial-unigram-language-model-1.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="./Naive Bayes text classification_files/next.png"></a> 
+<a name="tex2html3455" href="https://nlp.stanford.edu/IR-book/html/htmledition/text-classification-and-naive-bayes-1.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="./Naive Bayes text classification_files/up.png"></a> 
+<a name="tex2html3449" href="https://nlp.stanford.edu/IR-book/html/htmledition/the-text-classification-problem-1.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="./Naive Bayes text classification_files/prev.png"></a> 
+<a name="tex2html3457" href="https://nlp.stanford.edu/IR-book/html/htmledition/contents-1.html">
+<img width="65" height="24" align="BOTTOM" border="0" alt="contents" src="./Naive Bayes text classification_files/contents.png"></a> 
+<a name="tex2html3459" href="https://nlp.stanford.edu/IR-book/html/htmledition/index-1.html">
+<img width="43" height="24" align="BOTTOM" border="0" alt="index" src="./Naive Bayes text classification_files/index.png"></a> 
+<br>
+<b> Next:</b> <a name="tex2html3462" href="https://nlp.stanford.edu/IR-book/html/htmledition/relation-to-multinomial-unigram-language-model-1.html">Relation to multinomial unigram</a>
+<b> Up:</b> <a name="tex2html3456" href="https://nlp.stanford.edu/IR-book/html/htmledition/text-classification-and-naive-bayes-1.html">Text classification and Naive</a>
+<b> Previous:</b> <a name="tex2html3450" href="https://nlp.stanford.edu/IR-book/html/htmledition/the-text-classification-problem-1.html">The text classification problem</a>
+ &nbsp; <b>  <a name="tex2html3458" href="https://nlp.stanford.edu/IR-book/html/htmledition/contents-1.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html3460" href="https://nlp.stanford.edu/IR-book/html/htmledition/index-1.html">Index</a></b> 
+<br>
+<br>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION001820000000000000000"></a>
+<a name="16262"></a><a name="sec:naivebayes"></a> <a name="p:naivebayes"></a>
+<br>
+Naive Bayes text classification
+</h1>  The first supervised learning method
+we introduce is  the <a name="16265"></a> <i>multinomial Naive Bayes</i> 
+or 
+<a name="17761"></a> <i>multinomial NB</i> 
+model, a probabilistic learning method. The probability of a document <img width="12" height="31" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img354.png" alt="$d$"> being in
+class <img width="11" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img252.png" alt="$c$"> is computed as
+<br>
+<div align="CENTER"><a name="eqn:multinomial3"></a>
+<!-- MATH
+ \begin{eqnarray}
+P(c|d) \propto P(c) \prod_{1 \leq \tcposindex \leq n_d} P(\tcword_\tcposindex|c)
+\end{eqnarray}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="197" height="52" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img865.png" alt="$\displaystyle P(c\vert d) \propto P(c) \prod_{1 \leq \tcposindex \leq n_d} P(\tcword_\tcposindex\vert c)$"></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td width="10" align="RIGHT">
+(113)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+where <!-- MATH
+ $P(\tcword_\tcposindex|c)$
+ -->
+<img width="52" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img866.png" alt="$P(\tcword_\tcposindex\vert c)$"> is the conditional probability of
+term <!-- MATH
+ $\tcword_\tcposindex$
+ -->
+<img width="16" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img867.png" alt="$\tcword_\tcposindex$"> occurring in a document of class
+<img width="11" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img252.png" alt="$c$">.<a name="tex2html123" href="https://nlp.stanford.edu/IR-book/html/htmledition/footnode.html#foot16273"><sup><img align="BOTTOM" border="1" alt="[*]" src="./Naive Bayes text classification_files/footnote.png"></sup></a>We interpret 
+<!-- MATH
+ $P(\tcword_\tcposindex|c)$
+ -->
+<img width="52" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img866.png" alt="$P(\tcword_\tcposindex\vert c)$"> as a measure of how much evidence
+<!-- MATH
+ $\tcword_\tcposindex$
+ -->
+<img width="16" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img867.png" alt="$\tcword_\tcposindex$"> contributes that <img width="11" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img252.png" alt="$c$"> is the correct class.
+<img width="35" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img870.png" alt="$P(c)$"> is the prior probability of a document occurring in
+class <img width="11" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img252.png" alt="$c$">. If a document's terms do not provide clear
+evidence for one class versus another, we choose the one that
+has a higher prior probability.
+<!-- MATH
+ $\langle
+\tcword_1,\tcword_2,\ldots,\tcword_{n_d}\rangle$
+ -->
+<img width="103" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img871.png" alt="$\langle
+\tcword_1,\tcword_2,\ldots,\tcword_{n_d}\rangle$"> are the
+tokens in <img width="12" height="31" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img354.png" alt="$d$"> that are part of the vocabulary we use for
+classification and <img width="20" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img872.png" alt="$n_d$"> is the number of such tokens in <img width="12" height="31" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img354.png" alt="$d$">. For example, <!-- MATH
+ $\langle
+\tcword_1,\tcword_2,\ldots,\tcword_{n_d}\rangle$
+ -->
+<img width="103" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img871.png" alt="$\langle
+\tcword_1,\tcword_2,\ldots,\tcword_{n_d}\rangle$"> for the
+one-sentence document Beijing and Taipei join
+the WTO might be <!-- MATH
+ $\langle \term{Beijing}, \term{Taipei},
+\term{join}, \term {WTO}\rangle$
+ -->
+<img width="171" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img873.png" alt="$\langle \term{Beijing}, \term{Taipei},
+\term{join}, \term {WTO}\rangle $">, with <img width="50" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img874.png" alt="$n_d=4$">, if
+we treat the terms and and the as stop words.
+
+<p>
+In text classification, our goal is to find the <i>best</i>
+class for the document. The best class in NB classification
+is the
+most likely or 
+<a name="16284"></a><a name="16285"></a> <i>maximum a posteriori</i> 
+(<a name="16287"></a> <i>MAP</i> ) class <img width="34" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img875.png" alt="$c_{map}$">:
+<br>
+</p><div align="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+c_{map}  = 
+\argmax_{\tcjclass \in \mathbb{C}} \hat{P}(\tcjclass|d) =
+\argmax_{\tcjclass \in \mathbb{C}} \ \hat{P}(\tcjclass) \prod_{1 \leq \tcposindex \leq n_d}
+\hat{P}(\tcword_\tcposindex|\tcjclass).
+\end{equation}
+ -->
+<table width="100%" align="CENTER">
+<tbody><tr valign="MIDDLE"><td align="CENTER" nowrap=""><a name="naivebayeseqword"></a><a name="eqn:multinomial5"></a><img width="435" height="51" border="0" src="./Naive Bayes text classification_files/img876.png" alt="\begin{displaymath}c_{map} =
+\argmax_{\tcjclass \in \mathbb{C}} \hat{P}(\tcjc...
+...posindex \leq n_d}
+\hat{P}(\tcword_\tcposindex\vert\tcjclass).
+\end{displaymath}"></td>
+<td width="10" align="RIGHT">
+(114)</td></tr>
+</tbody></table>
+<br clear="ALL"></div><p></p>
+We write <img width="14" height="38" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img877.png" alt="$\hat{P}$"> for <img width="14" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img115.png" alt="$P$"> because we do not know the true
+values of the parameters
+<img width="35" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img878.png" alt="$P(\tcjclass)$"> and
+<!-- MATH
+ $P(\tcword_\tcposindex|\tcjclass)$
+ -->
+<img width="52" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img879.png" alt="$P(\tcword_\tcposindex\vert\tcjclass)$">, but estimate them from the
+training set as we will see in a moment.
+
+<p>
+In Equation&nbsp;<a href="https://nlp.stanford.edu/IR-book/html/htmledition/naive-bayes-text-classification-1.html#eqn:multinomial5">114</a>,<a name="p:use-log-probabilities"></a> 
+many conditional probabilities are
+multiplied, one for each position <!-- MATH
+ $1 \leq \tcposindex \leq n_d$
+ -->
+<img width="80" height="31" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img880.png" alt="$1 \leq \tcposindex \leq n_d$">.
+This can result in a floating point underflow. It
+is therefore better to perform the computation by adding
+logarithms of probabilities instead of multiplying
+probabilities. The class with the highest log probability
+score is still the most probable; <!-- MATH
+ $\log (xy) = \log (x)
++ \log (y)$
+ -->
+<img width="187" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img881.png" alt="$\log (xy) = \log (x)
++ \log (y)$"> and the logarithm function is monotonic. Hence,
+the maximization that is actually done in most
+implementations of NB is:
+<br>
+</p><div align="CENTER"><a name="eqn:multinomial6"></a>
+<!-- MATH
+ \begin{eqnarray}
+c_{map} = \argmax_{\tcjclass \in \mathbb{C}} \ [ \log \hat{P}(\tcjclass) +
+\sum_{1 \leq \tcposindex \leq n_d}
+\log \hat{P}(\tcword_\tcposindex|\tcjclass)].
+\end{eqnarray}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="325" height="52" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img882.png" alt="$\displaystyle c_{map} = \argmax_{\tcjclass \in \mathbb{C}} \ [ \log \hat{P}(\tc...
+...{1 \leq \tcposindex \leq n_d}
+\log \hat{P}(\tcword_\tcposindex\vert\tcjclass)].$"></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td width="10" align="RIGHT">
+(115)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+
+<p>
+Equation&nbsp;<a href="https://nlp.stanford.edu/IR-book/html/htmledition/naive-bayes-text-classification-1.html#eqn:multinomial6">115</a> has a simple interpretation.  Each
+conditional parameter <!-- MATH
+ $\log
+\hat{P}(\tcword_\tcposindex|\tcjclass)$
+ -->
+<img width="77" height="38" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img883.png" alt="$\log
+\hat{P}(\tcword_\tcposindex\vert\tcjclass)$"> is a weight that
+indicates how good an indicator <!-- MATH
+ $\tcword_\tcposindex$
+ -->
+<img width="16" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img867.png" alt="$\tcword_\tcposindex$"> is for
+<img width="11" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img884.png" alt="$\tcjclass$">. Similarly, the prior <!-- MATH
+ $\log \hat{P}(\tcjclass)$
+ -->
+<img width="60" height="38" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img885.png" alt="$\log \hat{P}(\tcjclass)$">
+is a weight that indicates the relative frequency of
+<img width="11" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img884.png" alt="$\tcjclass$">. More frequent classes are more likely to be the
+correct class than infrequent
+classes. 
+The
+sum of log prior and term weights is then a measure of how
+much evidence there is for the document being in the class, and
+Equation <a href="https://nlp.stanford.edu/IR-book/html/htmledition/naive-bayes-text-classification-1.html#eqn:multinomial6">115</a>  selects the class for which we have
+the most evidence.
+
+</p><p>
+We will initially work with this intuitive interpretation of
+the multinomial NB model and defer a formal derivation to
+Section <a href="https://nlp.stanford.edu/IR-book/html/htmledition/properties-of-naive-bayes-1.html#sec:generativemodel2">13.4</a> .
+
+</p><p>
+How do we estimate the parameters
+<!-- MATH
+ $\hat{P}(\tcjclass)$
+ -->
+<img width="35" height="38" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img886.png" alt="$\hat{P}(\tcjclass)$"> and
+<!-- MATH
+ $\hat{P}(\tcword_\tcposindex|\tcjclass)$
+ -->
+<img width="52" height="38" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img887.png" alt="$ \hat{P}(\tcword_\tcposindex\vert\tcjclass)$">?
+We first try
+the <a name="16319"></a> <a name="16320"></a> <i>maximum likelihood estimate</i>  (MLE; probtheory), which
+is simply the relative frequency and
+corresponds to the most likely value of each parameter given
+the training data. For the priors this estimate is:
+<br>
+</p><div align="CENTER"><a name="eqn:documentprior"></a>
+<!-- MATH
+ \begin{eqnarray}
+\hat{P}(\tcjclass) = \frac{N_c}{N},
+\end{eqnarray}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="83" height="53" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img888.png" alt="$\displaystyle \hat{P}(\tcjclass) = \frac{N_c}{N},$"></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td width="10" align="RIGHT">
+(116)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+where <img width="23" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img889.png" alt="$N_c$"><a name="Nj-notation"></a> is the number of documents in class <img width="11" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img884.png" alt="$\tcjclass$"> and
+<img width="17" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img62.png" alt="$N$"> is the total number of documents.
+
+<p>
+We estimate the conditional probability 
+<!-- MATH
+ $\hat{P}(\tcword|c)$
+ -->
+<img width="45" height="38" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img890.png" alt="$\hat{P}(\tcword\vert c)$"> as the relative frequency
+of term <img width="10" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img891.png" alt="$\tcword$"> in
+documents belonging to class <img width="11" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img252.png" alt="$c$">:
+<a name="p:tjknotation"></a> 
+<br>
+</p><div align="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\hat{P}(\tcword|c) = \frac{T_{c\tcword}}{\sum_{\tcword'
+    \in V} T_{c\tcword'}},
+\end{equation}
+ -->
+<table width="100%" align="CENTER">
+<tbody><tr valign="MIDDLE"><td align="CENTER" nowrap=""><a name="eqn:condfirststab"></a><img width="136" height="43" border="0" src="./Naive Bayes text classification_files/img892.png" alt="\begin{displaymath}
+\hat{P}(\tcword\vert c) = \frac{T_{c\tcword}}{\sum_{\tcword&#39;
+\in V} T_{c\tcword&#39;}},
+\end{displaymath}"></td>
+<td width="10" align="RIGHT">
+(117)</td></tr>
+</tbody></table>
+<br clear="ALL"></div><p></p>
+where <img width="23" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img893.png" alt="$T_{c\tcword}$"> is the number of occurrences of <img width="10" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img891.png" alt="$\tcword$"> in
+training documents from class <img width="11" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img252.png" alt="$c$">,
+including multiple
+occurrences of a term in a document. We have made the
+<a name="16340"></a> <i>positional independence assumption</i> here,
+which we will discuss in more detail in the next section: 
+<img width="23" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img893.png" alt="$T_{c\tcword}$"> is a count of occurrences
+in all positions <img width="11" height="31" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img20.png" alt="$k$"> in the documents in the training set.
+Thus, we do not compute different estimates for different
+positions and, for example, if a word occurs twice in a document, in positions
+<img width="18" height="31" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img774.png" alt="$k_1$"> and <img width="18" height="31" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img894.png" alt="$k_2$">, then 
+<!-- MATH
+ $\hat{P}(\tcword_{k_1}|c) 
+= 
+\hat{P}(\tcword_{k_2}|c)$
+ -->
+<img width="134" height="38" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img895.png" alt="$
+\hat{P}(\tcword_{k_1}\vert c)
+=
+\hat{P}(\tcword_{k_2}\vert c)
+$">.
+
+<p>
+The problem with the MLE estimate is that it is zero for a
+term-class combination that did not occur in the training
+data. If
+the term WTO in the training data only
+occurred in China documents, then the MLE estimates
+for the other classes, for example UK, will be
+zero:
+<br>
+</p><div align="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\hat{P}(\mbox{\term{WTO}}|\mbox{\class{UK}}) = 0.
+\end{equation}
+ -->
+<table width="100%" align="CENTER">
+<tbody><tr valign="MIDDLE"><td align="CENTER" nowrap=""><img width="118" height="28" border="0" src="./Naive Bayes text classification_files/img896.png" alt="\begin{displaymath}
+\hat{P}(\mbox{\term{WTO}}\vert\mbox{\class{UK}}) = 0.
+\end{displaymath}"></td>
+<td width="10" align="RIGHT">
+(118)</td></tr>
+</tbody></table>
+<br clear="ALL"></div><p></p>
+Now, the one-sentence document Britain is a
+member of the WTO
+will get a conditional probability of
+zero for UK because we are multiplying the conditional
+probabilities for all terms in
+Equation&nbsp;<a href="https://nlp.stanford.edu/IR-book/html/htmledition/naive-bayes-text-classification-1.html#eqn:multinomial3">113</a>. 
+Clearly, the model should
+assign a high probability to the UK class because
+the term Britain
+occurs. The problem is that the zero probability
+for WTO cannot be ``conditioned away,'' no
+matter how strong the evidence for the class UK
+from other features. 
+The estimate is 0 because of
+<a name="16362"></a> <a name="p:sparseness"></a> <a name="16364"></a> <i>sparseness</i> : The training data are never large enough
+to represent the frequency of rare events adequately, for
+example, 
+the frequency of WTO occurring in
+UK documents.
+
+<p>
+
+</p><div align="CENTER"><a name="fig:multinomialalg"></a><a name="p:multinomialalg"></a><a name="16404"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 13.2:</strong>
+Naive Bayes algorithm (multinomial model):
+Training and testing.</caption>
+<tbody><tr><td><img width="459" height="386" border="0" src="./Naive Bayes text classification_files/img897.png" alt="\begin{figure}\begin{algorithm}{TrainMultinomialNB}{\mathbb{C},\docsetlabeled}
+V...
+...OR}\\
+\RETURN{\argmax_{c \in \mathbb{C}} score[c]}
+\end{algorithm}
+\end{figure}"></td></tr>
+</tbody></table>
+</div>
+
+<p>
+To eliminate zeros, we use
+<a name="16408"></a> <a name="16409"></a> <i>add-one</i> 
+or <a name="16411"></a> <i>Laplace</i> 
+<em>smoothing</em>, which simply
+adds one to each count (cf.&nbsp;Section <a href="https://nlp.stanford.edu/IR-book/html/htmledition/probability-estimates-in-theory-1.html#sec:probtheory">11.3.2</a> ):
+<br>
+</p><div align="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\hat{P}(\tcword|c) = \frac{T_{c\tcword}+1}{\sum_{\tcword' \in
+  V}(T_{c\tcword'} + 1)}
+= \frac{T_{c\tcword}+1}{(\sum_{\tcword' \in V} T_{c\tcword'})+B},
+\end{equation}
+ -->
+<table width="100%" align="CENTER">
+<tbody><tr valign="MIDDLE"><td align="CENTER" nowrap=""><a name="laplace"></a><img width="310" height="44" border="0" src="./Naive Bayes text classification_files/img898.png" alt="\begin{displaymath}
+\hat{P}(\tcword\vert c) = \frac{T_{c\tcword}+1}{\sum_{\tcwor...
+...frac{T_{c\tcword}+1}{(\sum_{\tcword&#39; \in V} T_{c\tcword&#39;})+B},
+\end{displaymath}"></td>
+<td width="10" align="RIGHT">
+(119)</td></tr>
+</tbody></table>
+<br clear="ALL"></div><p></p>
+where <img width="59" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img899.png" alt="$B=\vert V\vert$"> is the number of terms in the vocabulary.
+Add-one smoothing
+can be interpreted as a uniform prior (each term occurs once
+for each class) that is then updated as evidence
+from the training data comes in. Note that this is
+a prior probability for the occurrence of a <i>term</i> as opposed
+to the prior probability of a <i>class</i> which we estimate in
+Equation&nbsp;<a href="https://nlp.stanford.edu/IR-book/html/htmledition/naive-bayes-text-classification-1.html#eqn:documentprior">116</a> on the document level.
+
+<p>
+We have now introduced all the elements we need for training
+and applying an NB classifier. The complete
+algorithm is described in
+Figure <a href="https://nlp.stanford.edu/IR-book/html/htmledition/naive-bayes-text-classification-1.html#fig:multinomialalg">13.2</a> .
+
+</p><p>
+<br></p><p></p>
+<div align="CENTER">
+
+<a name="17780"></a>
+<table cellpadding="3" border="1">
+<caption><strong>Table 13.1:</strong>
+Data for parameter
+estimation examples.  </caption>
+<tbody><tr><td align="LEFT">&nbsp;</td><td align="LEFT">&nbsp;</td>
+<td align="LEFT">docID</td>
+<td align="LEFT">words in document</td>
+<td align="LEFT">in <img width="11" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img252.png" alt="$c$"> <img width="17" height="16" align="BOTTOM" border="0" src="./Naive Bayes text classification_files/img176.png" alt="$=$"> China?</td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT">training set</td>
+<td align="LEFT">1</td>
+<td align="LEFT">Chinese Beijing Chinese</td>
+<td align="LEFT">yes</td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT">&nbsp;</td>
+<td align="LEFT">2</td>
+<td align="LEFT">Chinese Chinese Shanghai</td>
+<td align="LEFT">yes</td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT">&nbsp;</td>
+<td align="LEFT">3</td>
+<td align="LEFT">Chinese Macao</td>
+<td align="LEFT">yes</td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT">&nbsp;</td>
+<td align="LEFT">4</td>
+<td align="LEFT">Tokyo Japan Chinese</td>
+<td align="LEFT">no</td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT">test set</td>
+<td align="LEFT">5</td>
+<td align="LEFT">Chinese Chinese Chinese Tokyo Japan</td>
+<td align="LEFT">?</td>
+<td align="LEFT">&nbsp;</td></tr>
+</tbody></table>
+</div>
+<br>
+
+<p>
+<b>Worked example.</b>
+For the example in Table <a href="https://nlp.stanford.edu/IR-book/html/htmledition/naive-bayes-text-classification-1.html#tab:nbtoy">13.1</a> , the multinomial
+parameters we need to classify the test document are the
+priors <!-- MATH
+ $\hat{P}(c) = 3/4$
+ -->
+<img width="83" height="38" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img900.png" alt="$\hat{P}(c) = 3/4$"> and <!-- MATH
+ $\hat{P}(\overline{c}) = 1/4$
+ -->
+<img width="83" height="38" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img901.png" alt="$\hat{P}(\overline{c}) = 1/4$"> and the
+following conditional probabilities:
+</p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+\hat{P}(\term{Chinese}|c) &=& (5+1)/(8+6) = 6/14=3/7 \\
+\hat{P}(\term{Tokyo}|c) = \hat{P}(\term{Japan}|c) &=& (0+1)/(8+6) = 1/14 \\
+\hat{P}(\term{Chinese}|\overline{c}) &=& (1+1)/(3+6) = 2/9 \\
+\hat{P}(\term{Tokyo}|\overline{c}) = 
+\hat{P}(\term{Japan}|\overline{c}) &=& (1+1)/(3+6)= 2/9
+\end{eqnarray*}
+ -->
+<img width="426" height="100" border="0" src="./Naive Bayes text classification_files/img902.png" alt="\begin{eqnarray*}
+\hat{P}(\term{Chinese}\vert c) &amp;=&amp; (5+1)/(8+6) = 6/14=3/7 \\
+...
+...) =
+\hat{P}(\term{Japan}\vert\overline{c}) &amp;=&amp; (1+1)/(3+6)= 2/9
+\end{eqnarray*}"></div>
+<br clear="ALL"><p></p>
+The denominators are <img width="53" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img903.png" alt="$(8+6)$"> and <img width="53" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img904.png" alt="$(3+6)$"> because 
+the lengths of <img width="37" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img905.png" alt="$text_c$"> and <!-- MATH
+ $text_{\overline{c}}$
+ -->
+<img width="36" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img906.png" alt="$text_{\overline{c}}$"> are 
+8 and 3, respectively, and because 
+the constant <img width="14" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img168.png" alt="$B$"> in
+Equation&nbsp;<a href="https://nlp.stanford.edu/IR-book/html/htmledition/naive-bayes-text-classification-1.html#laplace">119</a> is 6 as the vocabulary consists of six
+terms.
+
+<p>
+We then get:
+</p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+\hat{P}(c|d_5) &\propto& 3/4 \cdot (3/7)^3 
+\cdot 1/14 \cdot 1/14 \approx 0.0003 .\\
+\hat{P}(\overline{c}|d_5) &\propto& 1/4 \cdot (2/9)^3
+\cdot 2/9 \cdot 2/9 \approx 0.0001.
+\end{eqnarray*}
+ -->
+<img width="337" height="52" border="0" src="./Naive Bayes text classification_files/img907.png" alt="\begin{eqnarray*}
+\hat{P}(c\vert d_5) &amp;\propto&amp; 3/4 \cdot (3/7)^3
+\cdot 1/14 \c...
+... &amp;\propto&amp; 1/4 \cdot (2/9)^3
+\cdot 2/9 \cdot 2/9 \approx 0.0001.
+\end{eqnarray*}"></div>
+<br clear="ALL"><p></p>
+Thus, the classifier assigns
+the test document to <img width="11" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img252.png" alt="$c$"> = China. The reason for
+this classification decision is that
+the three occurrences of the positive
+indicator Chinese in <img width="19" height="31" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img908.png" alt="$d_5$"> outweigh the occurrences of
+the two negative indicators Japan and Tokyo. <b>End worked example.</b>
+
+<p>
+<br></p><p></p>
+<div align="CENTER">
+
+<a name="17783"></a>
+<table cellpadding="3" border="1">
+<caption><strong>Table 13.2:</strong>
+Training and test times for
+NB.  
+</caption>
+<tbody><tr><td align="LEFT">&nbsp;</td><td align="LEFT">mode</td>
+<td align="LEFT">time complexity</td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT">training</td>
+<td align="LEFT"><!-- MATH
+ $\Theta(|\docsetlabeled| L_{ave}+|\mathbb{C}||V|)$
+ -->
+<img width="147" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img909.png" alt="$\Theta(\vert\docsetlabeled\vert L_{ave}+\vert\mathbb{C}\vert\vert V\vert)$"></td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT">testing</td>
+<td align="LEFT"><!-- MATH
+ $\Theta( L_{a}+|\mathbb{C}| M_{a})= \Theta(|\mathbb{C}| M_{a})$
+ -->
+<img width="203" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img910.png" alt="$\Theta( L_{a}+\vert\mathbb{C}\vert M_{a})= \Theta(\vert\mathbb{C}\vert M_{a})$"></td>
+<td align="LEFT">&nbsp;</td></tr>
+</tbody></table>
+</div>
+<br>
+What is the time complexity of NB?  The complexity
+of computing the parameters is <!-- MATH
+ $\Theta(|\mathbb{C}||V|)$
+ -->
+<img width="75" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img911.png" alt="$\Theta(\vert\mathbb{C}\vert\vert V\vert)$"> because
+the set of parameters consists of <!-- MATH
+ $|\mathbb{C}||V|$
+ -->
+<img width="48" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img912.png" alt="$\vert\mathbb{C}\vert\vert V\vert$">
+conditional probabilities and <img width="26" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img913.png" alt="$\vert\mathbb{C}\vert$"> priors. The
+preprocessing necessary for computing the parameters
+(extracting the vocabulary, counting terms, etc.)  can be
+done in one pass through the training data. The time
+complexity of this component is therefore <!-- MATH
+ $\Theta(|\docsetlabeled| L_{ave})$
+ -->
+<img width="83" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img914.png" alt="$\Theta(\vert\docsetlabeled\vert L_{ave})$">,
+where <!-- MATH
+ $|\docsetlabeled|$
+ -->
+<img width="29" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img915.png" alt="$\vert\docsetlabeled\vert$"> is the number of documents and <img width="32" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img185.png" alt="$ L_{ave}$"> is
+the average length of a document.  
+
+<p>
+<a name="p:dlenavetheta"></a> We use <!-- MATH
+ $\Theta(|\docsetlabeled| L_{ave})$
+ -->
+<img width="83" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img914.png" alt="$\Theta(\vert\docsetlabeled\vert L_{ave})$">
+as a notation for <img width="41" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img124.png" alt="$\Theta(T)$"> here, where <img width="15" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img123.png" alt="$T$"> is the length of the
+training collection. 
+This is 
+nonstandard;
+<img width="34" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img916.png" alt="$\Theta(.)$"> is not defined for an average. 
+We prefer expressing the time
+complexity in terms of <!-- MATH
+ $\docsetlabeled$
+ -->
+<img width="18" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img856.png" alt="$\docsetlabeled$"> and <img width="32" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img185.png" alt="$ L_{ave}$"> 
+because these are the primary statistics used to
+characterize training collections.
+
+</p><p>
+The time complexity of
+A<small>PPLY</small>M<small>ULTINOMIAL</small>NB in
+Figure <a href="https://nlp.stanford.edu/IR-book/html/htmledition/naive-bayes-text-classification-1.html#fig:multinomialalg">13.2</a>  is
+<!-- MATH
+ $\Theta(|\mathbb{C}| L_{a})$
+ -->
+<img width="69" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img917.png" alt="$\Theta(\vert\mathbb{C}\vert L_{a})$">.
+<img width="20" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img918.png" alt="$ L_{a}$"> and <img width="27" height="32" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img919.png" alt="$ M_{a}$"> are the numbers of
+tokens and types, respectively, in the test
+document<a name="p:dlentest-notation"></a> .
+A<small>PPLY</small>M<small>ULTINOMIAL</small>NB can be modified to be
+<!-- MATH
+ $\Theta( L_{a}+|\mathbb{C}| M_{a})$
+ -->
+<img width="110" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img920.png" alt="$\Theta( L_{a}+\vert\mathbb{C}\vert M_{a})$">
+(Exercise <a href="https://nlp.stanford.edu/IR-book/html/htmledition/evaluation-of-text-classification-1.html#ex:multinomialtimecomplexity">13.6</a> ).
+Finally, assuming
+that the length of test documents is bounded,
+<a name="p:dlentestdvoctestsimplification"></a> <!-- MATH
+ $\Theta( L_{a}+|\mathbb{C}| M_{a})=
+\Theta(|\mathbb{C}| M_{a})$
+ -->
+<img width="203" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img910.png" alt="$\Theta( L_{a}+\vert\mathbb{C}\vert M_{a})= \Theta(\vert\mathbb{C}\vert M_{a})$"> because 
+<!-- MATH
+ $L_{a} < b |C| M_{a}$
+ -->
+<img width="94" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img921.png" alt="$ L_{a} &lt; b \vert C\vert M_{a}$"> for a fixed constant <img width="12" height="31" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img137.png" alt="$b$">.<a name="tex2html127" href="https://nlp.stanford.edu/IR-book/html/htmledition/footnode.html#foot17785"><sup><img align="BOTTOM" border="1" alt="[*]" src="./Naive Bayes text classification_files/footnote.png"></sup></a>
+</p><p>
+Table <a href="https://nlp.stanford.edu/IR-book/html/htmledition/naive-bayes-text-classification-1.html#tab:nbtimecomplexity">13.2</a>  summarizes the time complexities.
+In general, we have <!-- MATH
+ $|\mathbb{C}||V| < |\docsetlabeled| L_{ave}$
+ -->
+<img width="123" height="33" align="MIDDLE" border="0" src="./Naive Bayes text classification_files/img923.png" alt="$\vert\mathbb{C}\vert\vert V\vert &lt; \vert\docsetlabeled\vert L_{ave}$">, so both training
+and testing complexity are linear in the time it takes
+to scan the data. Because we have to look at the data at
+least once, NB can be said to have optimal time
+complexity. Its efficiency is one reason why NB
+is a popular text classification method.
+
+</p><p>
+<br></p><hr>
+<!--Table of Child-Links-->
+<a name="CHILD_LINKS"><strong>Subsections</strong></a>
+
+<ul>
+<li><a name="tex2html3463" href="https://nlp.stanford.edu/IR-book/html/htmledition/relation-to-multinomial-unigram-language-model-1.html">Relation to multinomial unigram language model</a>
+</li></ul>
+<!--End of Table of Child-Links-->
+<hr>
+<!--Navigation Panel-->
+<a name="tex2html3461" href="https://nlp.stanford.edu/IR-book/html/htmledition/relation-to-multinomial-unigram-language-model-1.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="./Naive Bayes text classification_files/next.png"></a> 
+<a name="tex2html3455" href="https://nlp.stanford.edu/IR-book/html/htmledition/text-classification-and-naive-bayes-1.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="./Naive Bayes text classification_files/up.png"></a> 
+<a name="tex2html3449" href="https://nlp.stanford.edu/IR-book/html/htmledition/the-text-classification-problem-1.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="./Naive Bayes text classification_files/prev.png"></a> 
+<a name="tex2html3457" href="https://nlp.stanford.edu/IR-book/html/htmledition/contents-1.html">
+<img width="65" height="24" align="BOTTOM" border="0" alt="contents" src="./Naive Bayes text classification_files/contents.png"></a> 
+<a name="tex2html3459" href="https://nlp.stanford.edu/IR-book/html/htmledition/index-1.html">
+<img width="43" height="24" align="BOTTOM" border="0" alt="index" src="./Naive Bayes text classification_files/index.png"></a> 
+<br>
+<b> Next:</b> <a name="tex2html3462" href="https://nlp.stanford.edu/IR-book/html/htmledition/relation-to-multinomial-unigram-language-model-1.html">Relation to multinomial unigram</a>
+<b> Up:</b> <a name="tex2html3456" href="https://nlp.stanford.edu/IR-book/html/htmledition/text-classification-and-naive-bayes-1.html">Text classification and Naive</a>
+<b> Previous:</b> <a name="tex2html3450" href="https://nlp.stanford.edu/IR-book/html/htmledition/the-text-classification-problem-1.html">The text classification problem</a>
+ &nbsp; <b>  <a name="tex2html3458" href="https://nlp.stanford.edu/IR-book/html/htmledition/contents-1.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html3460" href="https://nlp.stanford.edu/IR-book/html/htmledition/index-1.html">Index</a></b> 
+<!--End of Navigation Panel-->
+<address>
+© 2008 Cambridge University Press<br>This is an automatically generated page. In case of formatting errors you may want to look at the <a href="http://informationretrieval.org/">PDF edition</a> of the book.<br>
+2009-04-07
+</address>
+
+
+</body></html>
