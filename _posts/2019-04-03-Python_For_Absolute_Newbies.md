@@ -10,7 +10,7 @@ tags:
     - Python
     - Data Science
 ---
-这篇文章的初衷是为了给我亲爱的女朋友学习 Python 的动力。她没接触过编程也 Python，我会安装 Python3.7 开始讲起。
+这篇文章会从安装 Python3.7 开始讲起。
 接下来的主题会渐渐集中讲一些 Data Science 的一些应用和建模方法。
 使用 macOS Mojave.
 
