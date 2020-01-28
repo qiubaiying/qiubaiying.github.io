@@ -34,6 +34,8 @@ svd就是大名鼎鼎的奇异值分解，公式如下：
  - 左奇异向量U是矩阵M×MT(维度m×m)的特征向量，表示用户的embedding表示；而右奇异向量V是
 MT×M(维度n×n)的特征向量，因此表示item的embedding表示  
 
+ - MT×M的特征值与奇异值的关系：特征值=奇异值的平方
+
 虽然公式简单，易于理解，但是奇异值分解存在很多缺点，难以应用
 
  - 矩阵必须是稠密的，即矩阵里的元素要非空，否则就不能运用SVD分解。因此要现对矩阵进行粗糙的填充（例如均值填充），之后才能进行SVD分解。
@@ -94,17 +96,20 @@ Word2Vec主要提出了两种方法Hierarchical Softmax和 Negative Sampling，�
 3. 负采样：专门增加一个负采样的逻辑，就是从与central listing相同城市的集合中采样
 4. 聚合成listing_type和user_type：为了解决数据稀疏问题，将listing和用户根据固定的属性(用户年龄、身高等；房子尺寸、位置等)进行聚合
 5. user和item向量在同一空间：在同一向量空间下的user_type和listing_type embedding，这一点很有意思，这样user和listing就可以直接计算距离了。
-- [Real-time Personalization using Embeddings for Search Ranking at Airbnb](https://dl.acm.org/doi/abs/10.1145/3219819.3219885)
+
+[Real-time Personalization using Embeddings for Search Ranking at Airbnb](https://dl.acm.org/doi/abs/10.1145/3219819.3219885)
 
 ## 三、Graph Embedding
-word2vec相关的方法本质上就是一种sequence embedding，主要对sequence序列的共现进行建模。但是随着业务场景的复杂，word2vec就无法满足了。Graph Embedding作为一种解决方案，在研究和工程领域的应用都越来越多了。
+word2vec相关的方法本质上就是一种sequence embedding，主要对sequence序列的共现进行建模。而Graph Embedding作为另一种embeddig方案，在研究和工程领域的应用都越来越多了。
 
 ### [DeepWalk] DeepWalk- Online Learning of Social Representations
 
 DeepWalk是一种简单的Graph Embedding，根据随机游走策略在图中采样得到序列，之后直接套用word2vec即可。
  - random walk：沿着给定节点深度优先搜索，可以访问已经访问过的节点，直到满足序列长度要求
  - 套用word2vec
- - 采样策略random walk代码可以参考：[python代码](https://github.com/imsheridan/CogDL-TensorFlow/blob/master/cogdl/models/emb/deepwalk.py#L65)
+ - 采样策略random walk代码可以参考：[python代码](https://github.com/imsheridan/CogDL-TensorFlow/blob/master/cogdl/models/emb/deepwalk.py#L65)  
+
+[DeepWalk Python 代码](https://github.com/phanein/deepwalk)
 
 ### [Node2vec] Node2vec - Scalable Feature Learning for Networks (Stanford 2016)
 Node2Vec与deepwalk相比，只是采样策略不同，Node2Vec是对deepwalk的改进，其游走方式结合了深度优先搜索和广度优先搜索。采样得到序列后，依旧采用word2vec训练即可。  
@@ -217,15 +222,22 @@ Node2Vec与deepwalk相比，只是采样策略不同，Node2Vec是对deepwalk的
 <p align="center">
  <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/embedding/eges_w.png?raw=ture" alt="eges_w"  width="550" height="350">
 </p>
- - 并没有直接用α加权，而是套了一层softmax
- - α随着网络进行更新学习
- - side information可以缓解冷启动问题
+
+ - - 并没有直接用α加权，而是套了一层softmax
+ - - α随着网络进行更新学习
+ - - side information可以缓解冷启动问题
 
 
 ## 四、深度网络
 ### DSSM
+1. 模型结构：两侧分别对user和item特征通过DNN输出向量，并在最后一层计算二个输出向量的内积
+2. 损失函数可以采用：negative sample
+3. 一种通用框架，源于搜索领域
+<p align="center">
+ <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/embedding/dssm_frame.png?raw=ture" alt="dssm_frame"  width="550" height="350">
+</p>
 
-### Youtoube
+### [Youtoube Deep] Neural Network for YouTube Recommendation
 
 <p align="center">
  <img src="https://github.com/Demmon-tju/Demmon-tju.github.io/blob/master/img/embedding/youtube.png?raw=ture" alt="youtube"  width="550" height="350">
@@ -239,7 +251,11 @@ Node2Vec与deepwalk相比，只是采样策略不同，Node2Vec是对deepwalk的
 3. 关键点：利用最后的网络参数作为item embedding，很巧妙
 
 ### Multi-Interest Network with Dynamic Routing模型
-与Youtube类似，user embedding不再是一个，而是多个，代表多方面兴趣，最后利用label-aware attention，Q是item embedding，K和V是user embedding。item embedding和每个user embedding计算sore，之后对多个user embedding加权得到最后的user embedding向量，并于item embedding点乘后softmax
+
+1. training  
+与Youtube类似，user embedding不再是一个，而是多个，代表多方面兴趣，最后利用label-aware attention，Q是item embedding，K和V是user embedding。item embedding和每个user embedding计算sore，之后对多个user embedding加权得到最后的user embedding向量，并与item embedding点乘后softmax  
+2. serving  
+每个兴趣向量embedding都可以与item embedding计算距离，我觉得可以自己根据业务场景和效果来自己决定加权计算的方式，比如mean或者max
 
 ## 五、Graph Neural Networks
 GCN
