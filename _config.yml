@@ -1,29 +1,29 @@
 # Site settings
-title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
+title: BY ZhangWenxiang
+SEOTitle: 张文翔的博客 | BY ZhangWenxiang
 header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
-description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+email: zhangwenxiang0302@gmail.com  1007201991@qq.com
+description: "关于机器学习、智能算法、统计分析相关的总结和思考，尤其是计算广告和推荐系统相关领域."
+keyword: "计算广告、推荐系统、机器学习、人工智能"
+url: "http://Demmon-tju.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/Demmon-tju/Demmon-tju.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "Nothing is difficult,everything is a challenge. Through adversity to the stars. To the last man, to the last second, to the last minute . We fight! We fight! We fight!"
+sidebar-avatar: /img/wade.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
 RSS: false
 # weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
-#twitter_username:   qiubaiying
+zhihu_username:     龙翔天翼
+github_username:    Demmon-tju
+facebook_username:  None
+jianshu_username:   None
+csdn_username:   我叫龙翔天翼
 
 
 
@@ -62,11 +62,11 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  clientID: c1662352f7c2cc5f6def                           #生成的clientID
+  clientSecret: 60a508afae5bd28705822722fb2414ce7492b6e1    #生成的clientSecret
+  repo: Demmon-tju.github.io    #仓库名称
+  owner: Demmon-tju    #github用户名
+  admin: Demmon-tju
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
@@ -78,7 +78,7 @@ ba_track_id: b50bf2b12b5338a1845e33832976fd68
 
 # Google Analytics
 ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_domain: auto               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 

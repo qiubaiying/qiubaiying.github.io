@@ -1,0 +1,732 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- saved from url=(0082)https://nlp.stanford.edu/IR-book/html/htmledition/properties-of-naive-bayes-1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Properties of Naive Bayes</title>
+<meta name="description" content="Properties of Naive Bayes">
+<meta name="keywords" content="irbook">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2002-2-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="./Properties of Naive Bayes_files/irbook.css">
+
+<link rel="next" href="https://nlp.stanford.edu/IR-book/html/htmledition/feature-selection-1.html">
+<link rel="previous" href="https://nlp.stanford.edu/IR-book/html/htmledition/the-bernoulli-model-1.html">
+<link rel="up" href="https://nlp.stanford.edu/IR-book/html/htmledition/text-classification-and-naive-bayes-1.html">
+<link rel="next" href="https://nlp.stanford.edu/IR-book/html/htmledition/a-variant-of-the-multinomial-model-1.html">
+</head>
+
+<body>
+<!--Navigation Panel-->
+<a name="tex2html3502" href="https://nlp.stanford.edu/IR-book/html/htmledition/a-variant-of-the-multinomial-model-1.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="./Properties of Naive Bayes_files/next.png"></a> 
+<a name="tex2html3496" href="https://nlp.stanford.edu/IR-book/html/htmledition/text-classification-and-naive-bayes-1.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="./Properties of Naive Bayes_files/up.png"></a> 
+<a name="tex2html3490" href="https://nlp.stanford.edu/IR-book/html/htmledition/the-bernoulli-model-1.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="./Properties of Naive Bayes_files/prev.png"></a> 
+<a name="tex2html3498" href="https://nlp.stanford.edu/IR-book/html/htmledition/contents-1.html">
+<img width="65" height="24" align="BOTTOM" border="0" alt="contents" src="./Properties of Naive Bayes_files/contents.png"></a> 
+<a name="tex2html3500" href="https://nlp.stanford.edu/IR-book/html/htmledition/index-1.html">
+<img width="43" height="24" align="BOTTOM" border="0" alt="index" src="./Properties of Naive Bayes_files/index.png"></a> 
+<br>
+<b> Next:</b> <a name="tex2html3503" href="https://nlp.stanford.edu/IR-book/html/htmledition/a-variant-of-the-multinomial-model-1.html">A variant of the</a>
+<b> Up:</b> <a name="tex2html3497" href="https://nlp.stanford.edu/IR-book/html/htmledition/text-classification-and-naive-bayes-1.html">Text classification and Naive</a>
+<b> Previous:</b> <a name="tex2html3491" href="https://nlp.stanford.edu/IR-book/html/htmledition/the-bernoulli-model-1.html">The Bernoulli model</a>
+ &nbsp; <b>  <a name="tex2html3499" href="https://nlp.stanford.edu/IR-book/html/htmledition/contents-1.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html3501" href="https://nlp.stanford.edu/IR-book/html/htmledition/index-1.html">Index</a></b> 
+<br>
+<br>
+<!--End of Navigation Panel-->
+
+<h1><a name="SECTION001840000000000000000"></a>
+<a name="16688"></a> <a name="sec:generativemodel2"></a> <a name="p:generativemodel2"></a>
+<br>
+Properties of Naive Bayes
+</h1> 
+To gain a better understanding of the two models and the assumptions they make, let
+us go back and examine how we derived their classification
+rules in Chapters <a href="https://nlp.stanford.edu/IR-book/html/htmledition/probabilistic-information-retrieval-1.html#ch:probir">11</a> <a href="https://nlp.stanford.edu/IR-book/html/htmledition/language-models-for-information-retrieval-1.html#ch:lmodels">12</a> .
+We decide class membership of a document
+by assigning it to the class with the
+<a name="16693"></a>   probability
+(cf. probtheory), which we compute as
+follows:
+<br>
+<div align="CENTER"><a name="naivebayeseq8"></a><a name="naivebayeseq1"></a>
+<!-- MATH
+ \begin{eqnarray}
+c_{map} & = & \argmax_{\tcjclass \in \mathbb{C}} \ P( \tcjclass|d)\\
+&=&\argmax_{\tcjclass \in \mathbb{C}} \ \frac{P(d|\tcjclass) P(\tcjclass)}{P(d)}\\
+&=&\argmax_{\tcjclass \in \mathbb{C}} \ P(d|\tcjclass) P(\tcjclass),
+\end{eqnarray}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="34" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img936.png" alt="$\displaystyle c_{map}$"></td>
+<td align="CENTER" nowrap=""><img width="17" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img313.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="111" height="44" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img937.png" alt="$\displaystyle \argmax_{\tcjclass \in \mathbb{C}} \ P( \tcjclass\vert d)$"></td>
+<td width="10" align="RIGHT">
+(121)</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT">&nbsp;</td>
+<td align="CENTER" nowrap=""><img width="17" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img313.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="145" height="56" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img938.png" alt="$\displaystyle \argmax_{\tcjclass \in \mathbb{C}} \ \frac{P(d\vert\tcjclass) P(\tcjclass)}{P(d)}$"></td>
+<td width="10" align="RIGHT">
+(122)</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT">&nbsp;</td>
+<td align="CENTER" nowrap=""><img width="17" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img313.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="146" height="44" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img939.png" alt="$\displaystyle \argmax_{\tcjclass \in \mathbb{C}} \ P(d\vert\tcjclass) P(\tcjclass),$"></td>
+<td width="10" align="RIGHT">
+(123)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+where Bayes' rule (Equation&nbsp;<a href="https://nlp.stanford.edu/IR-book/html/htmledition/review-of-basic-probability-theory-1.html#eqn:bayesrule">59</a>, page <a href="https://nlp.stanford.edu/IR-book/html/htmledition/review-of-basic-probability-theory-1.html#p:bayesrule">59</a> ) is applied in
+(<a href="https://nlp.stanford.edu/IR-book/html/htmledition/properties-of-naive-bayes-1.html#naivebayeseq8">122</a>) and
+we drop the denominator in the last step because <img width="36" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img815.png" alt="$P(d)$"> is
+the same for all classes and does not affect the argmax.
+
+<p>
+We can interpret
+Equation <a href="https://nlp.stanford.edu/IR-book/html/htmledition/properties-of-naive-bayes-1.html#naivebayeseq1">123</a>  as a  description of the
+generative process we assume in Bayesian text
+classification. To generate a document, we first choose 
+class <img width="11" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img884.png" alt="$\tcjclass$"> with probability <img width="35" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img878.png" alt="$P(\tcjclass)$"> (top nodes in
+ and <a href="https://nlp.stanford.edu/IR-book/html/htmledition/properties-of-naive-bayes-1.html#fig:bernoulligraph">13.5</a> ).
+The two models 
+differ in the formalization of the second step, the
+generation of the document given the class, corresponding to
+the conditional distribution
+<!-- MATH
+ $P(d|\tcjclass)$
+ -->
+<img width="48" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img940.png" alt="$P(d\vert\tcjclass)$">:
+<br>
+</p><div align="CENTER"><a name="naivebayeseq9"></a><a name="naivebayeseq9b"></a>
+<!-- MATH
+ \begin{eqnarray}
+{\bf Multinomial} \quad
+P(d|\tcjclass) &= &P(\langle \tcword_1,\ldots,\tcword_\tcposindex,\ldots,\tcword_{n_d}\rangle |\tcjclass)\\
+{\bf Bernoulli} \quad
+P(d|\tcjclass) &= &P(\langle  e_1,\ldots,e_i,\ldots,e_M \rangle |\tcjclass),
+\end{eqnarray}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="161" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img941.png" alt="$\displaystyle {\bf Multinomial} \quad
+P(d\vert\tcjclass)$"></td>
+<td align="CENTER" nowrap=""><img width="17" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img313.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="166" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img942.png" alt="$\displaystyle P(\langle \tcword_1,\ldots,\tcword_\tcposindex,\ldots,\tcword_{n_d}\rangle \vert\tcjclass)$"></td>
+<td width="10" align="RIGHT">
+(124)</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="137" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img943.png" alt="$\displaystyle {\bf Bernoulli} \quad
+P(d\vert\tcjclass)$"></td>
+<td align="CENTER" nowrap=""><img width="17" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img313.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="170" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img944.png" alt="$\displaystyle P(\langle e_1,\ldots,e_i,\ldots,e_M \rangle \vert\tcjclass),$"></td>
+<td width="10" align="RIGHT">
+(125)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+where <!-- MATH
+ $\langle \tcword_1,\ldots,\tcword_{n_d}\rangle$
+ -->
+<img width="84" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img945.png" alt="$\langle \tcword_1,\ldots,\tcword_{n_d}\rangle $"> is the sequence of terms as it
+occurs in <img width="12" height="31" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img354.png" alt="$d$"> (minus terms that were excluded from the vocabulary)
+and <!-- MATH
+ $\langle  e_1,\ldots,
+e_i, \ldots,e_M \rangle$
+ -->
+<img width="130" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img946.png" alt="$\langle e_1,\ldots,
+e_i, \ldots,e_M \rangle $"> is a binary vector of
+dimensionality <img width="20" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img186.png" alt="$M$"> that indicates for each term whether it
+occurs in <img width="12" height="31" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img354.png" alt="$d$"> or not.
+
+<p>
+It should now be clearer why we introduced the
+ document space
+<img width="17" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img854.png" alt="$\mathbb{X}$"> in Equation&nbsp;<a href="https://nlp.stanford.edu/IR-book/html/htmledition/the-text-classification-problem-1.html#eqn:gammadef">112</a> when we defined the classification problem.
+A critical step
+in solving a text classification problem
+is to choose the document
+representation. 
+<!-- MATH
+ $\langle \tcword_1,\ldots,\tcword_{n_d}\rangle$
+ -->
+<img width="84" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img945.png" alt="$\langle \tcword_1,\ldots,\tcword_{n_d}\rangle $"> and
+<!-- MATH
+ $\langle  e_1,\ldots,e_M \rangle$
+ -->
+<img width="85" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img947.png" alt="$\langle e_1,\ldots,e_M \rangle $"> are two different
+ document representations.
+In the first case, 
+<img width="17" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img854.png" alt="$\mathbb{X}$"> is the set of all term sequences (or, more
+precisely, sequences of term tokens).
+In the second case, 
+<img width="17" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img854.png" alt="$\mathbb{X}$"> is
+<img width="57" height="38" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img948.png" alt="$\{0,1\}^M$">.
+
+</p><p>
+We cannot use
+ and <a href="https://nlp.stanford.edu/IR-book/html/htmledition/properties-of-naive-bayes-1.html#naivebayeseq9b">125</a>  for text
+classification directly.
+For the Bernoulli model,
+we would have to estimate <!-- MATH
+ $2^M |\mathbb{C}|$
+ -->
+<img width="47" height="38" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img949.png" alt="$2^M \vert\mathbb{C}\vert$"> different
+parameters, one for each possible combination of <img width="20" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img186.png" alt="$M$">
+values <img width="15" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img950.png" alt="$e_i$"> and a class. The number of parameters
+in the
+multinomial case has the same order of
+magnitude.<a name="tex2html128" href="https://nlp.stanford.edu/IR-book/html/htmledition/footnode.html#foot16726"><sup><img align="BOTTOM" border="1" alt="[*]" src="./Properties of Naive Bayes_files/footnote.png"></sup></a>This being a very large
+quantity, estimating these parameters reliably is
+infeasible.
+
+</p><p>
+To reduce the number of parameters,
+we make 
+the Naive Bayes <a name="16727"></a> <a name="16728"></a> <i>conditional independence
+assumption</i> . We assume that attribute values are independent of
+each other given the class:
+<br>
+</p><div align="CENTER"><a name="condindep"></a>
+<!-- MATH
+ \begin{eqnarray}
+{\bf Multinomial} \quad
+P(d|\tcjclass) &=& P(\langle \tcword_1,\ldots,\tcword_{n_d}\rangle |\tcjclass) = \prod_{1 \leq \tcposindex \leq n_d} P(X_\tcposindex=\tcword_\tcposindex|\tcjclass)\\
+{\bf Bernoulli} \quad
+P(d|\tcjclass) &=& P(\langle  e_1,\ldots,e_M \rangle |\tcjclass) =
+\prod_{1 \leq i \leq M} P(U_i=e_i|c).
+\end{eqnarray}
+ -->
+<table align="CENTER" cellpadding="0" width="100%">
+<tbody><tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="161" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img941.png" alt="$\displaystyle {\bf Multinomial} \quad
+P(d\vert\tcjclass)$"></td>
+<td align="CENTER" nowrap=""><img width="17" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img313.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="278" height="52" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img951.png" alt="$\displaystyle P(\langle \tcword_1,\ldots,\tcword_{n_d}\rangle \vert\tcjclass) =...
+...1 \leq \tcposindex \leq n_d} P(X_\tcposindex=\tcword_\tcposindex\vert\tcjclass)$"></td>
+<td width="10" align="RIGHT">
+(126)</td></tr>
+<tr valign="MIDDLE"><td nowrap="" align="RIGHT"><img width="137" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img943.png" alt="$\displaystyle {\bf Bernoulli} \quad
+P(d\vert\tcjclass)$"></td>
+<td align="CENTER" nowrap=""><img width="17" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img313.png" alt="$\textstyle =$"></td>
+<td align="LEFT" nowrap=""><img width="277" height="49" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img952.png" alt="$\displaystyle P(\langle e_1,\ldots,e_M \rangle \vert\tcjclass) =
+\prod_{1 \leq i \leq M} P(U_i=e_i\vert c).$"></td>
+<td width="10" align="RIGHT">
+(127)</td></tr>
+</tbody></table></div>
+<br clear="ALL"><p></p>
+We <a name="16738"></a>
+have introduced two random variables here to make the
+two different generative models explicit.
+<a name="p:xvar"></a> 
+<a name="16740"></a> <i><!-- MATH
+ $\xvar_\tcposindex$
+ -->
+<img width="22" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img954.png" alt="$\xvar_\tcposindex$"></i>  is the random variable for position
+<img width="12" height="31" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img955.png" alt="$\tcposindex$"> in the document and takes as values terms from the
+vocabulary. 
+<!-- MATH
+ $P(\xvar_\tcposindex=\tcword|\tcjclass)$
+ -->
+<img width="86" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img956.png" alt="$P(\xvar_\tcposindex=\tcword\vert\tcjclass)$"> is the probability that in a document of
+class <img width="11" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img884.png" alt="$\tcjclass$"> the term <img width="10" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img891.png" alt="$\tcword$"> will occur in position <img width="12" height="31" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img955.png" alt="$\tcposindex$">.
+<a name="p:wvar"></a> 
+<a name="16743"></a> <i><img width="20" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img958.png" alt="$\wvar_i$"></i>  is the random variable for
+vocabulary term
+<img width="8" height="31" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img8.png" alt="$i$"> and takes as values 0 (absence) and 1 (presence). 
+<!-- MATH
+ $\hat{P}(\wvar_i=1|\tcjclass)$
+ -->
+<img width="87" height="38" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img959.png" alt="$\hat{P}(\wvar_i=1\vert\tcjclass)$"> 
+is the probability that in a document of
+class <img width="11" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img884.png" alt="$\tcjclass$"> the term <img width="14" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img960.png" alt="$\tcword_i$"> will occur - in any position and possibly
+multiple times.
+
+<p>
+
+</p><div align="CENTER"><a name="fig:graphclassmodel"></a><a name="p:graphclassmodel"></a><a name="16761"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 13.4:</strong>
+The multinomial NB model.</caption>
+<tbody><tr><td><img width="470" height="117" border="0" src="./Properties of Naive Bayes_files/img961.png" alt="\begin{figure}\psset{unit=0.75cm}
+\begin{pspicture}(-0.5,0.5)(14.5,5)
+\psellipse...
+...(7,2)
+\psline{-&gt;}(7,4)(10,2)
+\psline{-&gt;}(7,4)(13,2)
+\end{pspicture}
+\end{figure}"></td></tr>
+</tbody></table>
+</div>
+
+<p>
+
+</p><div align="CENTER"><a name="fig:bernoulligraph"></a><a name="p:bernoulligraph"></a><a name="16782"></a>
+<table>
+<caption align="BOTTOM"><strong>Figure 13.5:</strong>
+The Bernoulli NB model.</caption>
+<tbody><tr><td><img width="572" height="119" border="0" src="./Properties of Naive Bayes_files/img962.png" alt="\begin{figure}\psset{unit=0.75cm}
+\begin{pspicture}(-2,0.5)(16,5)
+\psellipse(-0....
+...)
+\psline{-&gt;}(7,4)(11.5,2)
+\psline{-&gt;}(7,4)(14.5,2)
+\end{pspicture}
+\end{figure}"></td></tr>
+</tbody></table>
+</div>
+
+<p>
+We illustrate
+the conditional
+independence assumption in
+ and <a href="https://nlp.stanford.edu/IR-book/html/htmledition/properties-of-naive-bayes-1.html#fig:bernoulligraph">13.5</a> . The class
+China
+generates values for each of the five term attributes (multinomial) or
+six binary attributes (Bernoulli) with a certain
+probability, independent of the values of the other attributes.
+The fact that a document in the class
+China contains the term Taipei does not
+make it more likely or less likely that it also contains
+Beijing. 
+
+</p><p>
+In reality, the conditional independence assumption does not
+hold for text data. Terms <i>are</i> conditionally dependent
+on each other. But as we will discuss shortly, NB models
+perform well despite the conditional independence
+assumption.
+
+</p><p>
+Even when assuming conditional independence, we still have
+too many parameters for the multinomial model if
+we assume a different probability distribution
+for each position <img width="12" height="31" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img955.png" alt="$\tcposindex$"> in the
+document. The position of a term in a document by itself
+does not carry information about the class. Although there is a
+difference between China sues France and France
+sues China, the occurrence of China in position 1
+versus position 3 of the document is not useful in NB
+classification because we look at each term separately. 
+The conditional independence assumption commits
+us to this way of processing the evidence.
+
+</p><p>
+Also, if we assumed different term distributions for each
+position <img width="12" height="31" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img955.png" alt="$\tcposindex$">, we would have to estimate a different set of
+parameters for each <img width="12" height="31" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img955.png" alt="$\tcposindex$">. The probability of bean
+appearing as the first term of a coffee document
+could be different from it appearing as the second term, and
+so on.
+This again causes problems in estimation owing to
+data sparseness.
+
+</p><p>
+For these reasons, we make a second
+independence assumption for the multinomial model,
+<a name="16797"></a> 
+<a name="16798"></a> <i>positional independence</i> :
+The conditional probabilities for a term are the same
+independent of position in the document.
+<br>
+</p><div align="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+P(\xvar_{\tcposindex_1}=\tcword | \tcjclass) = P(\xvar_{\tcposindex_2} = \tcword| \tcjclass)
+\end{equation}
+ -->
+<table width="100%" align="CENTER">
+<tbody><tr valign="MIDDLE"><td align="CENTER" nowrap=""><img width="196" height="30" border="0" src="./Properties of Naive Bayes_files/img963.png" alt="\begin{displaymath}
+P(\xvar_{\tcposindex_1}=\tcword \vert \tcjclass) = P(\xvar_{\tcposindex_2} = \tcword\vert \tcjclass)
+\end{displaymath}"></td>
+<td width="10" align="RIGHT">
+(128)</td></tr>
+</tbody></table>
+<br clear="ALL"></div><p></p>
+for all positions <!-- MATH
+ $\tcposindex_1, \tcposindex_2$
+ -->
+<img width="39" height="31" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img964.png" alt="$\tcposindex_1, \tcposindex_2$">, terms <img width="10" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img891.png" alt="$\tcword$"> and classes
+<img width="11" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img884.png" alt="$\tcjclass$">. Thus, we have a single distribution of
+terms that is valid for all positions <img width="16" height="31" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img965.png" alt="$\tcposindex_i$"> and we can use
+<img width="16" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img953.png" alt="$\xvar$"> as its symbol.<a name="tex2html131" href="https://nlp.stanford.edu/IR-book/html/htmledition/footnode.html#foot17810"><sup><img align="BOTTOM" border="1" alt="[*]" src="./Properties of Naive Bayes_files/footnote.png"></sup></a>Positional
+independence is equivalent to adopting the <a name="16808"></a> <i>bag of
+words</i>  model, which we introduced in the context of ad hoc
+retrieval in Chapter <a href="https://nlp.stanford.edu/IR-book/html/htmledition/scoring-term-weighting-and-the-vector-space-model-1.html#ch:termvspace">6</a>  (page <a href="https://nlp.stanford.edu/IR-book/html/htmledition/term-frequency-and-weighting-1.html#p:bagofwords">6.2</a> ).
+
+<p>
+With conditional and positional independence assumptions, we only need to estimate
+<!-- MATH
+ $\Theta(M |\mathbb{C}|)$
+ -->
+<img width="68" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img966.png" alt="$\Theta(M \vert\mathbb{C}\vert)$"> parameters <!-- MATH
+ $P(\tcword_\tcposindex|\tcjclass)$
+ -->
+<img width="52" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img879.png" alt="$P(\tcword_\tcposindex\vert\tcjclass)$"> (multinomial model) or
+<!-- MATH
+ $P(e_i|\tcjclass)$
+ -->
+<img width="51" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img967.png" alt="$P(e_i\vert\tcjclass)$"> (Bernoulli model), one for each term-class
+combination, rather than a number that is at least exponential in
+<img width="20" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img186.png" alt="$M$">, the size of the vocabulary.
+The independence
+assumptions reduce the number of parameters to be estimated
+by several orders of magnitude.
+
+</p><p>
+To summarize, we generate a document in the multinomial
+model (Figure <a href="https://nlp.stanford.edu/IR-book/html/htmledition/properties-of-naive-bayes-1.html#fig:graphclassmodel">13.4</a> ) by first picking a class <img width="44" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img968.png" alt="$C=\tcjclass$">
+with <img width="35" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img878.png" alt="$P(\tcjclass)$"> where <a name="16814"></a> <a name="p:crandomvar"></a> <img width="15" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img616.png" alt="$C$"> is a
+<a name="16816"></a>  random variable taking values
+from <img width="16" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img969.png" alt="$\mathbb{C}$"> as values. Next we generate term <!-- MATH
+ $\tcword_\tcposindex$
+ -->
+<img width="16" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img867.png" alt="$\tcword_\tcposindex$"> in position <img width="12" height="31" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img955.png" alt="$\tcposindex$">
+with <!-- MATH
+ $P(X_\tcposindex=\tcword_\tcposindex|\tcjclass)$
+ -->
+<img width="92" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img970.png" alt="$P(X_\tcposindex=\tcword_\tcposindex\vert\tcjclass)$"> for each of the <img width="20" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img872.png" alt="$n_d$"> positions of the
+document. The <img width="22" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img971.png" alt="$X_\tcposindex$"> all have the same 
+distribution over terms for a given <img width="11" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img884.png" alt="$\tcjclass$">. In the example in
+Figure <a href="https://nlp.stanford.edu/IR-book/html/htmledition/properties-of-naive-bayes-1.html#fig:graphclassmodel">13.4</a> , we show the generation
+of <!-- MATH
+ $\langle \tcword_1,\tcword_2,\tcword_3,\tcword_4,\tcword_5\rangle  = 
+\langle \term{Beijing}, \term{and},
+\term{Taipei}, \term{join}, \term {WTO}\rangle$
+ -->
+<img width="326" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img972.png" alt="$\langle \tcword_1,\tcword_2,\tcword_3,\tcword_4,\tcword_5\rangle =
+\langle \term{Beijing}, \term{and},
+\term{Taipei}, \term{join}, \term {WTO}\rangle $">, corresponding to
+the one-sentence document
+Beijing and Taipei join WTO.
+
+</p><p>
+For a completely specified document generation model, we
+would also have to define a distribution <!-- MATH
+ $P(n_d|\tcjclass)$
+ -->
+<img width="56" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img973.png" alt="$P(n_d\vert\tcjclass)$"> over
+lengths. Without it, the multinomial model is 
+a token generation model rather than a document
+generation model.
+
+</p><p>
+We generate a document in the Bernoulli model
+(Figure <a href="https://nlp.stanford.edu/IR-book/html/htmledition/properties-of-naive-bayes-1.html#fig:bernoulligraph">13.5</a> ) by first picking a class <img width="44" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img968.png" alt="$C=\tcjclass$"> with
+<img width="35" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img878.png" alt="$P(\tcjclass)$"> and then generating a binary indicator <img width="15" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img950.png" alt="$e_i$"> for
+each term <img width="14" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img960.png" alt="$\tcword_i$"> of the vocabulary
+(<!-- MATH
+ $1 \leq i \leq M$
+ -->
+<img width="77" height="31" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img974.png" alt="$1 \leq i \leq M$">).
+In the example in
+Figure <a href="https://nlp.stanford.edu/IR-book/html/htmledition/properties-of-naive-bayes-1.html#fig:bernoulligraph">13.5</a> , we show the generation
+of <!-- MATH
+ $\langle e_1,e_2,e_3,e_4,e_5,e_6\rangle =
+\langle 0,1,0,1,1,1\rangle$
+ -->
+<img width="248" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img975.png" alt="$\langle e_1,e_2,e_3,e_4,e_5,e_6\rangle =
+\langle 0,1,0,1,1,1\rangle $">, corresponding, again, to the one-sentence document
+Beijing and Taipei join WTO where we have
+assumed that
+and is a stop word.
+
+</p><p>
+<br></p><p></p>
+<div align="CENTER">
+
+<a name="17811"></a>
+<table cellpadding="3" border="1">
+<caption><strong>Table 13.3:</strong>
+Multinomial versus Bernoulli model.  
+</caption>
+<tbody><tr><td align="LEFT">&nbsp;</td><td align="LEFT">&nbsp;</td>
+<td align="LEFT">multinomial model</td>
+<td align="LEFT">Bernoulli model</td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT">event model</td>
+<td align="LEFT">generation of token</td>
+<td align="LEFT">generation of document</td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT">random variable(s)</td>
+<td align="LEFT"><img width="44" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img976.png" alt="$\xvar=\tcword$"> iff <img width="10" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img891.png" alt="$\tcword$"> occurs at given pos</td>
+<td align="LEFT"><!-- MATH
+ $\wvar_\tcword=1$
+ -->
+<img width="51" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img977.png" alt="$\wvar_\tcword=1$"> iff <img width="10" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img891.png" alt="$\tcword$"> occurs in doc</td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT">document representation</td>
+<td align="LEFT"><!-- MATH
+ $\onedoc=\langle  \tcword_1,\ldots,\tcword_\tcposindex,\ldots,\tcword_{n_d} \rangle , \tcword_\tcposindex \in V$
+ -->
+<img width="212" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img978.png" alt="$\onedoc=\langle \tcword_1,\ldots,\tcword_\tcposindex,\ldots,\tcword_{n_d} \rangle , \tcword_\tcposindex \in V$"></td>
+<td align="LEFT"><!-- MATH
+ $\onedoc=\langle  e_1,\ldots,e_i,\ldots,e_M \rangle ,$
+ -->
+<img width="165" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img979.png" alt="$\onedoc=\langle e_1,\ldots,e_i,\ldots,e_M \rangle ,$"></td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT">&nbsp;</td>
+<td align="LEFT">&nbsp;</td>
+<td align="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;<!-- MATH
+ $e_i \in \{ 0,1\}$
+ -->
+<img width="75" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img980.png" alt="$e_i \in \{ 0,1\}$"></td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT">parameter estimation</td>
+<td align="LEFT"><!-- MATH
+ $\hat{P}(\xvar=\tcword|\tcjclass)$
+ -->
+<img width="80" height="38" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img981.png" alt="$\hat{P}(\xvar=\tcword\vert\tcjclass)$"></td>
+<td align="LEFT"><!-- MATH
+ $\hat{P}(\wvar_i=e|\tcjclass)$
+ -->
+<img width="85" height="38" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img982.png" alt="$\hat{P}(\wvar_i=e\vert\tcjclass)$"> </td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT">decision rule: maximize</td>
+<td align="LEFT"><!-- MATH
+ $\hat{P}(\tcjclass) \prod_{1 \leq \tcposindex \leq n_d} \hat{P}(\xvar=\tcword_\tcposindex|\tcjclass)$
+ -->
+<img width="183" height="38" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img983.png" alt="$\hat{P}(\tcjclass) \prod_{1 \leq \tcposindex \leq n_d} \hat{P}(\xvar=\tcword_\tcposindex\vert\tcjclass)$"></td>
+<td align="LEFT"><!-- MATH
+ $\hat{P}(\tcjclass) \prod_{\tcword_i \in V} \hat{P}(\wvar_{i}=e_i|\tcjclass)$
+ -->
+<img width="167" height="38" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img984.png" alt="$\hat{P}(\tcjclass) \prod_{\tcword_i \in V} \hat{P}(\wvar_{i}=e_i\vert\tcjclass)$"></td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT">multiple occurrences</td>
+<td align="LEFT">taken into account</td>
+<td align="LEFT">ignored</td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT">length of docs</td>
+<td align="LEFT">can handle
+longer docs</td>
+<td align="LEFT">works best for short docs</td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT"># features</td>
+<td align="LEFT">can handle more</td>
+<td align="LEFT">works best with fewer</td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT">estimate for term the</td>
+<td align="LEFT"><!-- MATH
+ $\hat{P}(\xvar=\mbox{the}|\tcjclass) \approx 0.05$
+ -->
+<img width="147" height="38" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img985.png" alt="$\hat{P}(\xvar=\mbox{the}\vert\tcjclass) \approx 0.05$"></td>
+<td align="LEFT"><!-- MATH
+ $\hat{P}(\wvar_{the}=1|\tcjclass) \approx 1.0$
+ -->
+<img width="140" height="38" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img986.png" alt="$\hat{P}(\wvar_{the}=1\vert\tcjclass) \approx 1.0 $"></td>
+<td align="LEFT">&nbsp;</td></tr>
+</tbody></table>
+</div>
+<br>
+
+<p>
+We compare the two
+models in Table <a href="https://nlp.stanford.edu/IR-book/html/htmledition/properties-of-naive-bayes-1.html#tab:nbmodelcomparison">13.3</a> , including estimation
+equations and decision rules.
+
+</p><p>
+<a name="sec:nbproperties"></a> <a name="p:nbproperties"></a>  Naive Bayes is so called because the
+independence assumptions we have just made are indeed very
+naive for a model of natural language. The conditional
+independence assumption states that features are independent
+of each other given the class. This is hardly ever true for
+terms in documents. In many cases, the opposite is true.
+The pairs hong and kong or london and
+english in Figure <a href="https://nlp.stanford.edu/IR-book/html/htmledition/mutual-information-1.html#fig:mifeatures">13.7</a>  are examples of highly
+dependent terms. In addition, the multinomial model makes an
+assumption of positional independence. The Bernoulli model
+ignores positions in documents altogether because it only
+cares about absence or presence.  This <a name="16861"></a> <i>bag-of-words</i> 
+model discards all information that is communicated by the
+order of words in natural language sentences.  
+How can NB be a good text classifier when its model of natural
+language is so oversimplified?
+
+</p><p>
+<br></p><p></p>
+<div align="CENTER">
+
+<a name="17813"></a>
+<table cellpadding="3" border="1">
+<caption><strong>Table 13.4:</strong>
+  
+Correct estimation implies accurate prediction, but accurate
+prediction does not imply correct estimation.</caption>
+<tbody><tr><td align="LEFT">&nbsp;</td><td align="LEFT">&nbsp;</td>
+<td align="LEFT"><img width="18" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img657.png" alt="$c_1$"></td>
+<td align="LEFT"><img width="18" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img987.png" alt="$c_2$"></td>
+<td align="LEFT">class selected</td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT">true probability <img width="48" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img868.png" alt="$P(c\vert d)$"></td>
+<td align="LEFT">0.6</td>
+<td align="LEFT">0.4</td>
+<td align="LEFT"><img width="18" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img657.png" alt="$c_1$"></td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT"><!-- MATH
+ $\hat{P}(c)\prod_{1 \leq \tcposindex \leq n_d} \hat{P}(\tcword_\tcposindex|\tcjclass)$
+ -->
+<img width="148" height="38" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img988.png" alt="$\hat{P}(c)\prod_{1 \leq \tcposindex \leq n_d} \hat{P}(\tcword_\tcposindex\vert\tcjclass)$">
+ (Equation&nbsp;<a href="https://nlp.stanford.edu/IR-book/html/htmledition/properties-of-naive-bayes-1.html#condindep">126</a>)</td>
+<td align="LEFT">0.00099</td>
+<td align="LEFT">0.00001</td>
+<td align="LEFT">&nbsp;</td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT">NB estimate <img width="48" height="38" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img989.png" alt="$\hat{P}(c\vert d)$"></td>
+<td align="LEFT">0.99</td>
+<td align="LEFT">0.01</td>
+<td align="LEFT"><img width="18" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img657.png" alt="$c_1$"></td>
+<td align="LEFT">&nbsp;</td></tr>
+</tbody></table>
+</div>
+<br>
+
+<p>
+<a name="p:badprobabilities"></a>  The answer is that
+even though the <i>probability estimates</i> of
+NB are of low quality, its <i>classification
+decisions</i> are surprisingly good.  Consider a document <img width="12" height="31" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img354.png" alt="$d$">
+with true probabilities
+<img width="97" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img990.png" alt="$P(c_1\vert d)= 0.6$"> and
+<img width="97" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img991.png" alt="$P(c_2\vert d)= 0.4$"> as shown in Table <a href="https://nlp.stanford.edu/IR-book/html/htmledition/properties-of-naive-bayes-1.html#tab:badnbprobs">13.4</a> .
+Assume that <img width="12" height="31" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img354.png" alt="$d$"> contains
+many terms that are positive indicators for <img width="18" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img657.png" alt="$c_1$">
+and many terms that are negative indicators for <img width="18" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img987.png" alt="$c_2$">. 
+Thus, when using the
+multinomial model in Equation&nbsp;<a href="https://nlp.stanford.edu/IR-book/html/htmledition/properties-of-naive-bayes-1.html#condindep">126</a>,
+<!-- MATH
+ $\hat{P}(c_1)\prod_{1 \leq \tcposindex \leq n_d} \hat{P}(\tcword_\tcposindex|c_1)$
+ -->
+<img width="162" height="38" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img992.png" alt="$\hat{P}(c_1)\prod_{1 \leq \tcposindex \leq n_d} \hat{P}(\tcword_\tcposindex\vert c_1)$">
+will be much larger than 
+<!-- MATH
+ $\hat{P}(c_2)\prod_{1 \leq \tcposindex \leq n_d}
+\hat{P}(\tcword_\tcposindex|c_2)$
+ -->
+<img width="162" height="38" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img993.png" alt="$\hat{P}(c_2)\prod_{1 \leq \tcposindex \leq n_d}
+\hat{P}(\tcword_\tcposindex\vert c_2)$"> (0.00099 vs. 0.00001 in the table).
+After division by 0.001 to get well-formed probabilities
+for <img width="48" height="33" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img868.png" alt="$P(c\vert d)$">, we end up with one estimate that is close to
+1.0 and one that is close to 0.0. This is common:
+The winning class in NB classification
+usually has a much larger probability than the other
+classes and the estimates diverge very significantly from
+the true probabilities. But the
+classification decision is based on which class gets the
+highest score. It does not matter how accurate the
+estimates are. Despite the bad estimates, NB 
+estimates a
+higher probability for <img width="18" height="32" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img657.png" alt="$c_1$"> and therefore assigns <img width="12" height="31" align="MIDDLE" border="0" src="./Properties of Naive Bayes_files/img994.png" alt="$\onedoc$">
+to the correct class in Table <a href="https://nlp.stanford.edu/IR-book/html/htmledition/properties-of-naive-bayes-1.html#tab:badnbprobs">13.4</a> .  <i>Correct estimation implies
+accurate prediction, but accurate prediction does not imply
+correct estimation.</i> NB classifiers estimate badly,
+but often classify well.
+
+</p><p>
+Even if it is not the method with the highest accuracy for
+text, NB has many virtues that make it a strong
+contender for text classification. It excels if there are
+many equally important features that jointly contribute to
+the classification decision. It is also somewhat robust to
+<a name="16889"></a>noise features (as defined in the next
+section) and <a name="16890"></a><a name="16891"></a> <i>concept
+drift</i> <a name="p:concept-drift"></a>  - the gradual change over
+time of the concept underlying a class like US
+president from Bill Clinton to George W. Bush (see
+Section <a href="https://nlp.stanford.edu/IR-book/html/htmledition/references-and-further-reading-13.html#sec:further2">13.7</a> ). Classifiers like
+<a name="17815"></a> kNN 
+knn
+can be carefully tuned to idiosyncratic properties of a
+particular time period. This will then hurt them when
+documents in the following time period have slightly
+different properties.
+
+</p><p>
+The Bernoulli model is particularly robust with respect to
+concept drift.
+We will see in Figure <a href="https://nlp.stanford.edu/IR-book/html/htmledition/mutual-information-1.html#fig:mccallum">13.8</a>  that it can
+have decent performance when using fewer than a dozen
+terms. The most important indicators for a class are less
+likely to change. Thus, a model that only relies on these
+features is more likely to maintain a certain level of
+accuracy in concept drift.
+
+</p><p>
+NB's main strength is its efficiency:
+Training and classification can be accomplished with one
+pass over the data. Because it combines efficiency with good
+accuracy it is often used as a baseline in text
+classification research. It is often the method of choice if
+(i) squeezing out a few extra percentage points of
+accuracy is not worth the trouble in a text classification
+application, (ii) a very large amount of training data is
+available and there is more to be gained from training on a
+lot of data than using a better classifier on a smaller
+training set, or (iii) if its robustness to concept drift
+can be exploited.
+
+</p><p>
+<br></p><p></p>
+<div align="CENTER">
+
+<a name="17816"></a>
+<table cellpadding="3">
+<caption><strong>Table 13.5:</strong>
+   A set of documents for which
+the NB independence assumptions are problematic.</caption>
+<tbody><tr><td align="LEFT">&nbsp;</td><td align="LEFT">(1)</td>
+<td align="LEFT">He moved from London, Ontario, to London, England.</td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT">(2)</td>
+<td align="LEFT">He moved from London, England, to London, Ontario.</td>
+<td align="LEFT">&nbsp;</td></tr>
+<tr><td align="LEFT">&nbsp;</td><td align="LEFT">(3)</td>
+<td align="LEFT">He moved from England to London, Ontario.</td>
+<td align="LEFT">&nbsp;</td></tr>
+</tbody></table>
+</div>
+<br>
+
+<p>
+In this book, we discuss NB as a classifier for
+text. The independence assumptions do not hold for
+text. However, it can be shown that NB is an
+<a name="16907"></a> <i>optimal classifier</i>  <a name="16909"></a>
+(in the sense of minimal error rate on
+new data) for data where the independence
+assumptions do hold.
+
+</p><p>
+<br></p><hr>
+<!--Table of Child-Links-->
+<a name="CHILD_LINKS"><strong>Subsections</strong></a>
+
+<ul>
+<li><a name="tex2html3504" href="https://nlp.stanford.edu/IR-book/html/htmledition/a-variant-of-the-multinomial-model-1.html">A variant of the multinomial model</a>
+</li></ul>
+<!--End of Table of Child-Links-->
+<hr>
+<!--Navigation Panel-->
+<a name="tex2html3502" href="https://nlp.stanford.edu/IR-book/html/htmledition/a-variant-of-the-multinomial-model-1.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="./Properties of Naive Bayes_files/next.png"></a> 
+<a name="tex2html3496" href="https://nlp.stanford.edu/IR-book/html/htmledition/text-classification-and-naive-bayes-1.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="./Properties of Naive Bayes_files/up.png"></a> 
+<a name="tex2html3490" href="https://nlp.stanford.edu/IR-book/html/htmledition/the-bernoulli-model-1.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="./Properties of Naive Bayes_files/prev.png"></a> 
+<a name="tex2html3498" href="https://nlp.stanford.edu/IR-book/html/htmledition/contents-1.html">
+<img width="65" height="24" align="BOTTOM" border="0" alt="contents" src="./Properties of Naive Bayes_files/contents.png"></a> 
+<a name="tex2html3500" href="https://nlp.stanford.edu/IR-book/html/htmledition/index-1.html">
+<img width="43" height="24" align="BOTTOM" border="0" alt="index" src="./Properties of Naive Bayes_files/index.png"></a> 
+<br>
+<b> Next:</b> <a name="tex2html3503" href="https://nlp.stanford.edu/IR-book/html/htmledition/a-variant-of-the-multinomial-model-1.html">A variant of the</a>
+<b> Up:</b> <a name="tex2html3497" href="https://nlp.stanford.edu/IR-book/html/htmledition/text-classification-and-naive-bayes-1.html">Text classification and Naive</a>
+<b> Previous:</b> <a name="tex2html3491" href="https://nlp.stanford.edu/IR-book/html/htmledition/the-bernoulli-model-1.html">The Bernoulli model</a>
+ &nbsp; <b>  <a name="tex2html3499" href="https://nlp.stanford.edu/IR-book/html/htmledition/contents-1.html">Contents</a></b> 
+ &nbsp; <b>  <a name="tex2html3501" href="https://nlp.stanford.edu/IR-book/html/htmledition/index-1.html">Index</a></b> 
+<!--End of Navigation Panel-->
+<address>
+© 2008 Cambridge University Press<br>This is an automatically generated page. In case of formatting errors you may want to look at the <a href="http://informationretrieval.org/">PDF edition</a> of the book.<br>
+2009-04-07
+</address>
+
+
+</body></html>
