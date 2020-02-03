@@ -17,7 +17,7 @@ tags:
 
 [LeakCancry中文使用说明](https://www.liaohuqiu.net/cn/posts/leak-canary-read-me/)
 
-
+[Android 屏幕刷新机制](https://www.jianshu.com/p/0d00cb85fdf3)
 
 
 
