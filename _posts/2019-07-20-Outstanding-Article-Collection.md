@@ -19,5 +19,7 @@ tags:
 
 [Android 屏幕刷新机制](https://www.jianshu.com/p/0d00cb85fdf3)
 
+[RxJava与Retrofit相结合的正确体位](https://tough1985.github.io/2016/03/15/how-to-use-Retrofit-with-Rxjava.html#rxjavaretrofit)
 
+[给 Android 开发者的 RxJava 详解](http://gank.io/post/560e15be2dca930e00da1083)
 
