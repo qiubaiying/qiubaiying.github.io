@@ -99,17 +99,17 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "风起闲云",
-        href: "http://kunjz.cn"
-    },{
-        title: "Datai's Blog",
-        href: "http://whoami.ink"
-    },{
         title: "Dayu",
         href: "https://dayu.ink"
     },{
+        title: "阳光沙滩",
+        href: "https://www.sunofbeach.net"
+    },{
         title: "Air(Flutter项目示例)",
         href: "https://pdliuw.github.io"
+    },{
+        title: "Datai's Blog",
+        href: "http://whoami.ink"
     },{
         title: "杨赞的博客",
         href: "http://yangzan.top/"
