@@ -26,3 +26,9 @@ tags:
 [OKio - 重新定义了“短小精悍”的IO框架](https://juejin.im/post/5856680c8e450a006c6474bd#heading-3)
 
 [Android布局优化，看这3点就够了！](https://mp.weixin.qq.com/s/43ijAppswfr4tx3zCy0WvQ)
+
+[跟着动画来学习TCP三次握手和四次挥手](https://juejin.im/post/5b29d2c4e51d4558b80b1d8c)
+
+[为什么阿里巴巴要求程序员谨慎修改serialVersionUID 字段的值](https://mp.weixin.qq.com/s/5xcDDtsVYdgzUebF3_Mg4g)
+
+[如何正确实现Java中的hashCode方法](https://mp.weixin.qq.com/s?__biz=MzA4MjA0MTc4NQ==&mid=504090072&idx=1&sn=019cb899777174518e1e49d0fd0bd2a5#rd)
