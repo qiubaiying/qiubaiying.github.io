@@ -4,7 +4,7 @@ SEOTitle: 小军的博客 | Hong Xiaojun
 header-img: img/blbcover.gif
 email: junqiaochen@gmail.com
 description: "Think Different."
-keyword: "JY, GITHUB Blog, Xiaojun的博客, Hongxiaojun, 小军, BOX, 定投, iPhoneX"
+keyword: "洪小军, GITHUB Blog, Xiaojun的博客, Hongxiaojun, 小军, BOX, 定投, iPhoneX"
 url: "https://hongxiaojun.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/hongxiaojun/hongxiaojun.github.io" # you code repository
@@ -23,7 +23,7 @@ zhihu_username:     no 知乎
 github_username:    hongixaojun
 facebook_username:  junqiaochen
 jianshu_username:   nojianshu
-#twitter_username:   junqiaochen2
+twitter_username:   junqiaochen2
 
 
 
@@ -106,7 +106,7 @@ friends: [
         href: "http://www.jianshu.com/u/37e07b694e3d"
     },{
         title: "Mixin Messenger",
-        href: "mixin ID 34855"
+        href: "https://ohmy.xin/circles/5416143/posts/234"
     },{
         title: "微博",
         href: "https://developer.apple.com/"
