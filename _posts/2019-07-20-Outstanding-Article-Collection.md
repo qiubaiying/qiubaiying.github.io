@@ -34,3 +34,11 @@ tags:
 [如何正确实现Java中的hashCode方法](https://mp.weixin.qq.com/s?__biz=MzA4MjA0MTc4NQ==&mid=504090072&idx=1&sn=019cb899777174518e1e49d0fd0bd2a5#rd)
 
 [Glide 系列](https://mrfu.me/2016/02/28/Glide_Series_Roundup/)
+
+[JetPack-LifeCycle](http://blog.chengyunfeng.com/?p=1065)
+
+[JetPack-LiveData](http://blog.chengyunfeng.com/?p=1066)
+
+[JetPack-ViewModel](http://blog.chengyunfeng.com/?p=1067)
+
+[JetPack-Room](http://blog.chengyunfeng.com/?p=1068)
