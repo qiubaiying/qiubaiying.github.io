@@ -1,29 +1,29 @@
 # Site settings
-title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
-header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
-description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+title: XiaoJun's  Blog
+SEOTitle: 小军的博客 | Hong Xiaojun
+header-img: img/blbcover.gif
+email: junqiaochen@gmail.com
+description: "Think Different."
+keyword: "洪小军, GITHUB Blog, Xiaojun的博客, Hongxiaojun, 小军, BOX, 定投, iPhoneX"
+url: "https://hongxiaojun.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/hongxiaojun/hongxiaojun.github.io" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "BOX定投践行者，和你一起慢慢变富"
+sidebar-avatar:      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
-#twitter_username:   qiubaiying
+# weibo_username:     小军Hong
+zhihu_username:     no 知乎
+github_username:    hongixaojun
+facebook_username:  junqiaochen
+jianshu_username:   nojianshu
+twitter_username:   junqiaochen2
 
 
 
@@ -62,11 +62,11 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  clientID:                             #生成的clientID
+  clientSecret:     #生成的clientSecret
+  repo: hongxiaojun.github.io    #仓库名称
+  owner: hongxiaojun    #github用户名
+  admin: hongxiaojun
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
@@ -74,11 +74,11 @@ gitalk:
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: b50bf2b12b5338a1845e33832976fd68
+ba_track_id: 111
 
 # Google Analytics
-ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_track_id: '444'            # Format: UA-xxxxxx-xx
+ga_domain:   1122             # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
@@ -99,16 +99,16 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        title: "Pressone",
+        href: "https://press.one/main/p/b08913260da3750a91c187c54e91f7a5d7b3d2c7"
     },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
+        title: "简书·小军",
+        href: "http://www.jianshu.com/u/37e07b694e3d"
     },{
-        title: "Apple",
-        href: "https://apple.com"
+        title: "Mixin Messenger",
+        href: "https://ohmy.xin/circles/5416143/posts/234"
     },{
-        title: "Apple Developer",
+        title: "微博",
         href: "https://developer.apple.com/"
     }
 ]
