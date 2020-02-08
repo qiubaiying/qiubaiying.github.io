@@ -42,3 +42,5 @@ tags:
 [JetPack-ViewModel](http://blog.chengyunfeng.com/?p=1067)
 
 [JetPack-Room](http://blog.chengyunfeng.com/?p=1068)
+
+[JetPack-整合](http://littlecurl.xyz:8080/articles/2020/01/12/1578831362377.html#b3_solo_h2_11)
