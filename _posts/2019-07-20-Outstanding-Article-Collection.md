@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Outstanding Article Collection
-date:       2019-09-20
+date:       2020-02-11
 author:     OldJii
 header-img: img/outstandingcollection.jpg
 catalog: true
@@ -42,6 +42,10 @@ tags:
 [OKio - 重新定义了“短小精悍”的IO框架](https://juejin.im/post/5856680c8e450a006c6474bd#heading-3)
 
 [Glide 系列](https://mrfu.me/2016/02/28/Glide_Series_Roundup/)
+
+---
+### Flutter
+[Flutter如何和Native通信-Android视角](https://juejin.im/post/5b4c3c9a5188251ac446d915#heading-7)
 
 ---
 ### 内存泄漏
