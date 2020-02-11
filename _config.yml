@@ -5,7 +5,7 @@ header-img: img/post-bg-desk.jpg
 email: xzhangxmu@gmail.com
 description: "Every failure is leading towards success."
 keyword: "Bioinformatics"
-url: "http://xuanzhang.github.io"          # your host, for absolute URL
+url: "http://XuanrZhang.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/XuanrZhang/xuanzhang.github.io.git" # you code repository
 
