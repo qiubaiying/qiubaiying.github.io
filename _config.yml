@@ -7,7 +7,7 @@ description: "有一说一，武嘉CP真是好吃呀~"
 keyword: "武嘉, 岳光, 数码宝贝, 同好"
 url: "http://takarifansclub.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: " " # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
