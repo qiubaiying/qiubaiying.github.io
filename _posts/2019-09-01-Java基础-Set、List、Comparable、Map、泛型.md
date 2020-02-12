@@ -1,0 +1,356 @@
+---
+layout:     post 
+title:      Java基础0901
+subtitle:   Set、List、Comparable、Map、泛型
+date:       2019-09-1
+author:     张鹏
+header-img: img/post-bg-debug.png
+catalog: true   
+tags:                         
+    - Java
+---
+
+# Java基础
+
+### 容器
+
+#### Set接口
+
+- Set接口是Cllection的子接口，Set接口没有提供额外的方法，但实现Set接口的容器类中的元素是没有顺序的，且不可以重复
+- Set容器与数学中“集合“的概念项对应
+- JDK API中所提供的Set容器类有HashSet、TreeSet等
+- 例1：
+
+```java
+public class Test{
+    public static void main(String[] args){
+        Set s=new HashSet();
+        s.add("hello");
+        s.add("world");
+        s.add(new Name("f1","f2"));
+        s.add(new Integer(100));
+        s.add(new Name("f1","f2"));//相同元素不会被加入
+        s.add("hello");//相同元素不会被加入
+        System.out.println(s);
+    }
+}
+运行结果:
+[100,helolo,world,f1 f2]
+```
+- 例2：
+
+```java
+public class Test{
+    public static void main(String[] args){
+        Set s1=new HashSet();
+        Set s2=new HashSet();
+        s1.add("a");
+        s1.add("b");
+        s1.add("c");
+        s2.add("d");
+        s2.add("a");
+        s2.add("b");
+        //Set和List容器类都具有Constructor(Collection c)
+        //构造方法用以初始化容器类
+        Set sn=new HashSet(s1);
+        sn.retainAll(s2);//s1,s2求交集
+        Set su=new HashSet(s1);
+        su.addAll(s2);//s1、s2添加到一起
+        System.out.println(sn);
+        System.out.println(su);
+    }
+}
+运行结果：
+[a,b]
+[d,a,c,b]
+```
+
+------
+
+#### List接口
+
+- List接口是Collection接口的子接口，实现List接口的容器类中的元素是有顺序的，而且可重复
+- List容器中的元素都对应一个整数型的序号记载其在其容器中的位置，可以根据序号存取容器中的元素
+- JDK所提供的LIst容器类有ArrayList(底层是以数组实现的)、LinkedList(底层是以链表实现的)等
+
+```java
+Object get(int index);
+Object set(int index,Object element);
+void add(int index,Object element);
+Object remove(int index);
+int indexOf(Object o);
+int lastIndexOf(Object o);
+```
+- 例子：
+
+```java
+public class Test{
+    public static void main(String[] args){
+        List l1=new LinkedList();
+        for(int i=0;i<=5;i++){
+            l1.add("a"+i);
+        }
+        System.out.println(l1);
+        l1.add(3,"a100");
+        System.out.println(l1);
+        l1.set(6,"a200");
+        System.out.println(l1);
+        System.out.print((String)l1.get(2)+" ");
+        System.out.println(l1.indexOf("a3"));
+        l1.remove(1);
+        System.out,println(l1);
+    }
+}
+运行结果：
+[a0,a1,a2,a3,a4,a5]
+[a0,a1,a2,a100,a3,a4,a5]
+[a0,a1,a2,a100,a3,a4,a200]
+a2 4
+[a0,a2,a100,a3,a4,a200]
+```
+
+- List常用算法
+   - 类***java.util.Collections***提供了一些静态方法实现了基于List容器的一些常用算法
+
+```java
+void sort(List);//对List容器内的元素排序
+void shuffle(List);//对List容器内的对象进行随机排列
+void reverse(List);//对List容器内的对象进行逆序排列
+void fill(List,Object);//用一个特定的对象重写整个List容器
+void copy(List dest,List src);//将src List容器内的内容拷贝到dest List容器中
+int binarySearch(List,Object);//对于顺序的List容器，采用折半查找的方法查找特定对象
+```
+
+- 例子：
+
+```java
+public class Test{
+    public static void main(String[] args){
+        List l1=new LinkedList();
+        List l2=new LinkedList();
+        for(int i=0;i<=9;i++){
+            System.out.println(l1);
+            Collections.shuffle(l1);//随机排列
+            System.out.println(l1);
+            Collections.reverse(l1);//逆序
+            System.out.println(l1);
+            Collections.sort(l1);//排序
+            System.out.println(l1);
+            System.out.println(Collections.binarySearch(l1,"a5"));//折半查找
+        }
+    }
+}
+输出结果：
+[a0,a1,a2,a3,a4,a5,a6,a7,a8,a9]
+[a0,a3,a8,a9,a4,a6,a5,a2,a0,a7]
+[a7,a0,a2,a5,a6,a4,a9,a8,a3,a1]
+[a0,a1,a2,a3,a4,a5,a6,a7,a8,a9]
+5
+```
+
+#### Comparable接口
+
+- 所有可以”排序“的类都实现了java.lang.Comparable接口，Comparable接口中只有一个方法：`public int compareTo(Object obj);`
+- 该方法：
+   - 返回0表示**this==obj**
+   - 返回正数表示**this>obj**
+   - 返回负数表示**this<obj**
+
+- 实现了Comparable接口的类通过实现compareTo方法从而确定该类对象的排序方式
+- Comparable定义了一个类的两个对象怎么比较
+- 例子：
+
+```java
+public class Test{
+    public static void main(String[] args){
+        List l1=new LinkedList();
+        l1.add(new Name("Karl","M"));
+        l1.add(new Name("Steven","Lee"));
+        l1.add(new Name("John","O"));
+        l1.add(new Name("Tom","M"));
+        System.out.println(l1);
+        Collections.sort(l1);
+        System.out.println(l1);
+    }
+}
+class Name implements Comparable{
+	private String firstName,lastName;
+    public Name(String firstName,String lastName){
+        this.firstName=firstName;
+        this.lastName=lastName;
+    }
+    public String getFirstName(){
+        return firstName;
+    }
+    public String getLastName(){
+        return lastName;
+    }
+    public String toString(){
+        return firstName+" "+lastName;
+    }
+}
+public boolean equals(Object obj){
+    if(obj instanceof Name){
+        Name name=(Name)obj;
+        return (firstName.equals(name.firstName))
+        && (lastName.equals(name.lastName));
+    }
+    return super.equals(obj);
+}
+public int hashCode(){
+    return firstName.hashCode();
+}
+public int compareTo(Object o){
+    Name n=(Name)o;
+    int lastCmp=lastName.compareTo(n.lastName);
+    return
+    (lastCmp!=0 ? lastCmp:
+    firstName.compareTo(n.firstName));
+}
+输出结果：
+[Karl M,Steven Lee,John O,Tom M]
+[Steven Lee,Karl M,Tom M,John O]
+```
+
+#### 如何选择数据结构
+
+- 衡量标准：读和改的效率
+   - **Array读快改慢**
+   - **Linked改快读慢**
+   - **Hash在两者之间**
+
+
+#### Map接口
+
+- 实现Map接口的类用来存储键-值对
+- Map接口的实现类有HashMap和TreeMap等
+- Map类中存储的键-值对通过键来标识，所以键值不能重复
+- Map接口常用方法：
+
+```java
+Object put(Object key,Object value);
+Object get(Object key);
+Object remove(Object key);
+boolean containsKey(Object key);//是否包含键
+boolean containsValue(Object value);//是否包含值
+int size();
+boolean isEmpty();
+void putAll(Map t);
+void clear();
+```
+- 自动打包（**Auto-boxing/unboxing**）
+   - 在合适的时机自动打包、解包
+      - 自动将基础类型转换为对象
+      - 自动将对象转换为基础类型
+- 例1：
+
+```java
+import java.util.*;
+public class Test{
+    public static void main(String args[]){
+        Map m1=new HashMap();
+        Map m2=new TreeMap();
+        m1.put("one",new Integer(1));
+        //m1.put("one",1);自动打包
+        m1.put("two",new Integer(2));
+        //m1.put("two",2);
+        m1.put("three",new Integer(3));
+        //m1.put("three",3);
+        m2.put("A",new Integer(1));
+        //m2.put("A",1);
+        m2.put("B",new Integer(2));
+        //m2.put("B",2);
+        System.out.println(m1.size());
+        System.out.println(m1.containsKey("one"));
+        System.out.println(m2.containsValue(new Integer(1)));
+        //m2.containsValue(1);
+        if(m1.containsKey("two")){
+            int i=((Integer)m1.get("two")).intValue();
+            //int i=(Integer)m1.get("two");
+            System.out.println(i);
+        }
+        Map m3=new HashMap(m1);
+        m3.putAll(m2);
+        System.out.println(m3);
+    }
+}
+运行结果：
+3
+true
+true
+2
+{A=1, B=2, two=2, three=3, one=1}
+```
+- 例2：
+
+```java
+import java.util.*;
+public class Test{
+    public static final Integer ONE=new Integer(1);
+    //public static final int ONE=1;自动打包
+    public static void main(String args[]){
+        Map m=new HashMap();
+        for(int i=0;i<args.length;i++){
+            *Integer freq=(Integer)m.get(args[i]);//freq为空
+            m.put(args[i],(freq == null ? ONE :new Integer(freq.intValue() + 1)));*
+            //int freq=(Integer)m.get(args[i] == null ? 0 : (Integer)m.get(args[i]));自动打包
+            //m.put(args[i],freq==0?ONE:freq+1);自动打包
+        }
+        System.out.println(m.size() + " distinct words detected:");
+        System.out.println(m);
+    }
+}
+运行结果：
+java Test aaa bbb AAA ccc AAA
+4 distinct words detected:
+{aaa=1, AAA=2, ccc=1, bbb=1}
+```
+
+#### 泛型
+
+- 例子：
+
+```java
+import java.util.*;
+public class Test{
+    public static void main(String[] args){
+        List<String> c=new ArrayList<String>();//在List中只能够装String
+        c.add("aaa");
+        c.add("bbb");
+        c.add("ccc");
+        for(int i=0;i<c.size();i++){
+            String s=c.get(i);
+            System.out.println(s);
+        }
+        Collection<String> c2=new HashSet<String>();
+        c2.add("aaa");
+        c2.add("bbb");
+        c2.add("ccc");
+        for(Iterator<String> it=c2.iterator();it.hasNext();){
+            String s=it.next();
+            System.out.println(s);
+        }
+    }
+}
+class MyName implements Comparable<MyName>{
+//只和MyName进行比较
+    int age;
+    public int compareTo(MyName mn){
+        if(this.age>mn.age)return 1;
+        else if(this.age<mn.age)return -1;
+        else return 0;
+    }
+}
+运行结果：
+aaa
+bbb
+ccc
+aaa
+ccc
+bbb
+```
+- 在定义集合的时候同时定义集合里面对象的类型
+   - 可以在定义Collection时指定
+   - 也可以在循环时使用Iterator指定
+
+- 好处是增强了程序的可读性和稳定性

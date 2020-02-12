@@ -1,0 +1,185 @@
+---
+layout:     post 
+title:      Java基础0831
+subtitle:   Collection、Iterator
+date:       2019-08-31
+author:     张鹏
+header-img: img/post-bg-debug.png
+catalog: true   
+tags:                         
+    - Java
+---
+
+# Java基础
+
+### 容器
+
+#### Collection
+
+- 概念：Java API所提供的一系列类的实例，用于在程序中存放对象
+- jdk所提供的容器API都位于java.util包内
+![Aaron Swartz](https://github.com/Jokerboozp/Jokerboozp.github.io/raw/master/img/%E6%89%B9%E6%B3%A8%202019-08-31%20093107.png)
+- Collection接口定义了存取一组对象的方法，其子接口Set和List分别定义了存储方式
+   - Set中的数据对象没有顺序且不可以重复
+   - List中的数据对象有顺序且可以重复
+- Map接口定义了存储“键（key）——值（value）映射对”的方法
+- Collection接口中所定义的方法：
+   ```java
+   int size();//装了个多少个元素
+   boolean isEmpty();//是否为空
+   void clear();//清空
+   boolean contains(Object element);//是否包含某一个对象
+   boolean add(Object element);//添加进去某一个元素
+   boolean remove(Object element);//去除某一个元素
+   Iterator iterator();
+   boolean containsAll(Collection c);//是不是包含另一个集合里所有的元素
+   boolean addAll(Collection c);//添加
+   boolean removeAll(Collection);//删除
+   boolean retainAll(Collection c);//当前集合类和c的交集
+   Object[] toArray();//全部转换为对象类型数组
+   ```
+   - 例1：
+   ```java
+   import java.util.*;
+   public class Test{
+       public static void main(Stirng[] args){
+           Collection c=new ArrayList();
+           //父类引用指向子类对象
+           //通过父类引用访问一个子类对象，但是不能访问子类对象特有的方法
+           //可以放入不同类型的对象
+           //这样写最大程度保证了灵活性
+           c.add("hello");
+           c.add(new Name("f1","l1"));
+           c.add(new Integer(100));
+           System.out.println(c.size());
+           System.out.println(c);
+       }
+   }
+   class Name{
+       public Name(String firstName,String lastName){
+           this.firstName=firstName;
+           this.lastName=lastName;
+       }
+       public String getFirstName(){
+           return firstName;
+       }
+       public String getLastName(){
+           return lastName;
+       }
+       public String toString(){
+           return firstName+" "+lastName;
+       }
+   }
+   运行结果：
+   3
+   [hello,f1 l1,100]
+   ```
+   - 例2：
+   ```java
+   import java.util.*;
+   public class Test{
+       public static void main(String[] args){
+           Collection c=new HashSet();
+           c.add("hello");
+           c.add(new Name("f1","l1"));
+           c.add(new Integer(100));
+           c.remove("hello");//会挨个比较内容是否equals，而不是==
+           c.remove(new Integer(100));
+           System.out.println(c.remove(new Name("f1","l1")));
+           System.out.println(c);
+       }
+   }
+   class Name{
+       public Name(String firstName,String lastName){
+           this.firstName=firstName;
+           this.lastName=lastName;
+       }
+       public String getFirstName(){
+           return firstName;
+       }
+       public String getLastName(){
+           return lastName;
+       }
+       public String toString(){
+           return firstName+" "+lastName;
+       }
+   }
+   运行结果：
+   false
+   [f1 l1]
+   ```
+   
+   - 容器类对象在调用remove、contains等方法时需要比较对象是否相等，这会涉及到对象类型的equals方法和hashCode方法(当一个类的某个对象被当作键值或索引来使用时，会用到他的hashCode方法)；对于自定义的类型，需要重写equals和hashCode方法以实现自定义的对象相等规则。
+      - 注意：相等的对象应具有相等的hashCode
+      - 重写equals方法时必须重写hashCode方法
+   - 增加name类的equals和hashCode方法如下：
+   ```java
+   public boolean equals(Object obj){
+       if(obj instanceof Name){
+           Name name=(Name)obj;
+           return (firstName.equals(name.firstName))
+           && (lastName.equals(name.lastName));
+       }
+       return super.equals(obj);
+   }
+   public int hashCode(){
+       return firstName.hashCode();
+   }
+   运行结果：
+   true
+   []
+   ```
+   
+#### Iterator接口
+
+- 所有实现了Collection接口的容器类都有一个iterator方法用以返回一个实现了Iterator接口的对象
+- Iterator对象称作迭代器，用以方便的实现对容器内元素的遍历操作
+- Iterator接口定义了如下方法：
+```java
+boolean hasNext();//判断游标左边是否有元素
+Object next();//返回游标右边的元素并将游标移动到下一个位置
+void remove();//删除游标左边的元素，在执行完next之后该操作只能执行一次
+```
+![Aaron Swartz](https://github.com/Jokerboozp/Jokerboozp.github.io/raw/master/img/%E6%89%B9%E6%B3%A8%202019-08-31%20110725.png)
+Iterator实际上就是一个统一的用来遍历collection里面的所有元素的接口
+```java
+import java.util.*;
+public class Test{
+    public static void main(String[] args){
+        Collection c=new HashSet();
+        c.add(new Name("f1","l1"));
+        c.add(new Name("f2","l2"));
+        c.add(new Name("f3","l3"));
+        Iterator i=c.iterator();
+        while(i.hasNext()){
+            //next()的返回值为Object类型，需要转换为相应类型
+            Name n=(Name)i.next();
+            System.out.println(n.getFirstName()+" ");
+        }
+    }
+}
+   输出结果：
+   f2 f1 f3
+```
+- Iterator对象的remove方法是在迭代过程中删除元素的唯一的安全方法
+- 例1：
+```java
+public class Test{
+    public static void main(String[] args){
+        Collection c=new HashSet();
+        c.add(new Name("fff1","llll"));
+        c.add(new Name("f2","l2"));
+        c.add(new Name("fff3","lll3"));
+        for(Iterator i=c.iterator();i.hasNext();){
+            Name name=(Name)i.next();
+            if(name.getFirstName().length()<3){
+                i.remove();
+                //如果换成c.remove(name)会产生例外
+            }
+        }
+        System.out.println(c);
+    }
+}
+运行结果：
+[fff3 lll3,fff1 lll1]
+```
