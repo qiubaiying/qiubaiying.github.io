@@ -1,0 +1,688 @@
+I"x<h1 id="前言">前言</h1>
+
+<blockquote>
+  <p>在上一篇文章<a href="http://www.jianshu.com/p/a36bfc976b8e">《Objective-C Runtime详解》</a>中我们探讨了Runtime的基本原理，这篇文章我们将总结一下Runtime的一些基本使用</p>
+</blockquote>
+
+<h1 id="使用方法">使用方法</h1>
+
+<ul>
+  <li>查询方法</li>
+  <li>给分类添加属性</li>
+  <li>更换代码的实现方法</li>
+  <li>动态添加方法</li>
+  <li>字典转属性</li>
+</ul>
+
+<h1 id="准备">准备</h1>
+
+<p>先创建两个类</p>
+
+<p><code class="highlighter-rouge">ClassA.h</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#import &lt;Foundation/Foundation.h&gt;
+
+@interface ClassA : NSObject {
+    // 公有变量
+    NSString *_publicVar1;
+    NSString *_publicVar2;
+
+}
+// 公有属性
+@property(nonatomic,copy) NSString *publicProperty1;
+@property(nonatomic,copy) NSString *publicProperty2;
+
+/* 公有方法 */
+-(void)methodAOfClassAWithArg:(NSString *)arg;
+
+@end
+
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">ClassA.m</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#import "ClassA.h"
+
+@interface ClassA()
+// 私有属性
+@property(nonatomic,copy) NSString *privateProperty1;
+@property(nonatomic,copy) NSString *privateProperty2;
+
+@end
+
+@implementation ClassA {
+    // 私有变量
+    NSString *_privateVar1;
+    NSString *_privateVar2;
+}
+
+/* 公有方法 */
+-(void)methodAOfClassAWithArg:(NSString *)arg {
+    NSLog(@" methodAOfClassA arg = %@", arg);
+}
+
+/* 私有方法 */
+-(void)MethodBOfClassAWithArg:(NSString *)arg {
+    NSLog(@" methodBOfClassA arg = %@", arg);
+}
+@end
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">ClassB.h</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#import &lt;Foundation/Foundation.h&gt;
+
+@interface ClassB : NSObject
+
+/* 公有方法 */
+-(void)methodAOfClassBWithArg:(NSString *)arg;
+
+@end
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">ClassB.m</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#import "ClassB.h"
+
+@implementation ClassB
+- (void)methodAOfClassBWithArg:(NSString *)arg {
+    NSLog(@" methodAOfClassB arg = %@", arg);
+}
+
+-(void)methodBOfClassBWithArg:(NSString *)arg {
+    NSLog(@" methodBOfClassB arg = %@", arg);
+}
+
+@end
+</code></pre></div></div>
+
+<h2 id="查询方法">查询方法</h2>
+<hr />
+
+<p>在Objective-C Runtime下没有真正意义上的私有变量和方法，因为这些私有变量和方法都可以通过Runtime方法获取，这当然包括系统的私有API。接下来我们来一一介绍获取类中属性和方法的方法。当然不要忘了<code class="highlighter-rouge">#import &lt;objc/runtime.h&gt;</code>.</p>
+
+<h4 id="获取类的名称">获取类的名称</h4>
+
+<p>方法：<code class="highlighter-rouge">const char *object_getClassName(id obj)</code>，使用比较简单，传入对象即可得到对应分类名。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ClassA *classA = [[ClassA alloc] init];
+const char *className = object_getClassName(classA);
+NSLog(@"className = %@", [NSString stringWithUTF8String:className]);
+
+//输出
+className = ClassA
+</code></pre></div></div>
+
+<h4 id="获取类中的方法">获取类中的方法</h4>
+
+<p>方法：<code class="highlighter-rouge">Method *class_copyMethodList(Class cls, unsigned int *outCount) </code></p>
+
+<p>上代码：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>UInt32 count;
+char dst;
+Method *methods = class_copyMethodList([classA class], &amp;count);//获取方法列表
+for (int i = 0; i &lt; count; i++) {
+    Method method = methods[i];// 获取方法
+    SEL methodName = method_getName(method);// 获取方法名
+    method_getReturnType(method, &amp;dst, sizeof(char));// 获取方法返回类型
+    const char *methodType = method_getTypeEncoding(method);// 获取方法参数类型和返回类型
+    NSLog(@"methodName = %@",NSStringFromSelector(methodName));
+    NSLog(@"dst = %c", dst);
+}
+    
+ // 输出
+ methodName = methodAOfClassAWithArg:
+ dst = v
+ methodType = v24@0:8@16
+ methodName = MethodBOfClassAWithArg:
+ dst = v
+ methodType = v24@0:8@16
+ methodName = publicProperty1
+ dst = @
+ methodType = @16@0:8
+ methodName = setPublicProperty1:
+ dst = v
+ methodType = v24@0:8@16
+ methodName = publicProperty2
+ dst = @
+ methodType = @16@0:8
+ methodName = setPublicProperty2:
+ dst = v
+ methodType = v24@0:8@16
+ methodName = privateProperty1
+ dst = @
+ methodType = @16@0:8
+ methodName = setPrivateProperty1:
+ dst = v
+ methodType = v24@0:8@16
+ methodName = privateProperty2
+ dst = @
+ methodType = @16@0:8
+ methodName = setPrivateProperty2:
+ dst = v
+ methodType = v24@0:8@16
+ methodName = .cxx_destruct
+ dst = v
+ methodType = v16@0:8
+
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">class_copyMethodList([classA class], &amp;count)</code> 传入元类和计数器地址，返回方法列表。这里注意，返回的是<code class="highlighter-rouge">Method</code>结构体类型的C数组，<code class="highlighter-rouge">Method</code>类型我们在<a href="http://www.jianshu.com/p/a36bfc976b8e">上篇文章</a>中已经详细说明，</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>typedef struct objc_method *Method;
+
+struct objc_method {
+    SEL method_name                                          OBJC2_UNAVAILABLE;
+    char *method_types                                       OBJC2_UNAVAILABLE;
+    IMP method_imp                                           OBJC2_UNAVAILABLE;
+} 
+</code></pre></div></div>
+
+<p>但要区分<code class="highlighter-rouge">Method *methods</code>与<code class="highlighter-rouge">Method method</code>的区别，这是比较基础C语言知识。还有<code class="highlighter-rouge">Uint32</code>是OC定义的<code class="highlighter-rouge">unsigned int</code>类型<code class="highlighter-rouge">typedef unsigned int UInt32;</code></p>
+
+<p>这里我们来看看 <code class="highlighter-rouge">method_getReturnType(method, &amp;dst, sizeof(char))</code> 方法简单输出返回值类型，输出为 <code class="highlighter-rouge">v</code> 和 <code class="highlighter-rouge">@</code> ,参考Apple文档可知道返回类型为 <code class="highlighter-rouge">void</code> 和 <code class="highlighter-rouge">id</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A void v
+A method selector (SEL)  ：
+An object (whether statically typed or typed id) @ 
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">method_getTypeEncoding(method)</code>方法可以输出返回值，参数类型以及接收器类型。我们看输出的<code class="highlighter-rouge">v24@0:8@16</code>，分析上面的说明就可以知道： <code class="highlighter-rouge">v24</code>返回类型为<code class="highlighter-rouge">viod</code>,<code class="highlighter-rouge">@0</code>接收器类型为<code class="highlighter-rouge">id</code>,<code class="highlighter-rouge">@16</code>参数类型为<code class="highlighter-rouge">id</code></p>
+
+<p>至于类型后面的值观察可以发现都是相差8，我认为是在method中的位置，分别以8bit存储不同类型的数据。</p>
+
+<p>若有两个参数返回值为 <code class="highlighter-rouge">v32@0:8@16@24</code> ,对比可以猜测，在method中各个成员的排列是这样的： <code class="highlighter-rouge">接收器|SEl标识|参数1|参数2|...|返回值</code>，然后由 <code class="highlighter-rouge">method_getTypeEncoding(method)</code> 输出的顺序为: <code class="highlighter-rouge">返回值类型|接收器类型|SEL标识|参数1|参数2|...</code> 此处为个人见解，如有错误或不同意见欢迎提出探讨。</p>
+
+<p>最后发现了一个奇怪的方法 <code class="highlighter-rouge">.cxx_destruct</code> ,在中<a href="http://my.safaribooksonline.com/book/programming/objective-c/9780132908641/3dot-memory-management/ch03">这篇文章</a>中：</p>
+<blockquote>
+  <p>ARC actually creates a -.cxx_destruct method to handle freeing instance variables. This method was originally created for calling C++ destructors automatically when an object was destroyed.</p>
+</blockquote>
+
+<p>和《Effective Objective-C 2.0》中提到的：</p>
+<blockquote>
+  <p>When the compiler saw that an object contained C++ objects, it would generate a method called .cxx_destruct. ARC piggybacks on this method and emits the required cleanup code within it.</p>
+</blockquote>
+
+<p>可以了解到，<code class="highlighter-rouge">.cxx_destruct</code> 方法原本是为了C++对象析构的，ARC借用了这个方法插入代码实现了自动内存释放的工作</p>
+
+<p>关于 <code class="highlighter-rouge">.cxx_destruct</code> 可以参考这篇文章:<a href="http://blog.jobbole.com/65028/">ARC下dealloc过程及.cxx_destruct的探究</a></p>
+
+<h4 id="获取类中的属性">获取类中的属性</h4>
+
+<p>在 <a href="http://www.jianshu.com/p/a36bfc976b8e">上篇文章</a> 的 <code class="highlighter-rouge">Property</code> 中我们也提到了获取类中的属性的方法，如下：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>id LenderClass = objc_getClass("ClassA");//获取classA 的元类同[ClassA class]
+unsigned int outCount;//属性数量
+// 获取属性列表
+objc_property_t *properties = class_copyPropertyList(LenderClass, &amp;outCount);
+
+// 遍历
+for (int i = 0; i &lt; outCount; i++) {
+
+    objc_property_t property = properties[i];
+    
+    const char *propertyName = property_getName(property);// 获取属性名
+    const char *propertyAttributes = property_getAttributes(property);// 获取属性描述
+    
+    printf("propertyName：%s \n", propertyName);
+    printf("propertyAttributes:%s\n--------\n", propertyAttributes);//属性名及描述
+}
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 输出
+propertyName：privateProperty1 
+propertyAttributes:T@"NSString",C,N,V_privateProperty1
+--------
+propertyName：privateProperty2 
+propertyAttributes:T@"NSString",C,N,V_privateProperty2
+--------
+propertyName：publicProperty1 
+propertyAttributes:T@"NSString",C,N,V_publicProperty1
+--------
+propertyName：publicProperty2 
+propertyAttributes:T@"NSString",C,N,V_publicProperty2
+--------
+</code></pre></div></div>
+<p>发现会输出公有属性以及私有属性。</p>
+
+<h4 id="获取类中的成员变量">获取类中的成员变量</h4>
+
+<p>我们可以发现获取类中的方法，属性过程基本一致：通过元类获取方法列表或属性列表，然后在进行遍历。获取成员变量也一样：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>id selfClass = [Calss class];
+unsigned int numIvars = 0;
+Ivar *ivars = class_copyIvarList(selfClass, &amp;numIvars);
+for(int i = 0; i &lt; numIvars; i++) {
+    Ivar ivar = ivars[i];
+    const char *ivarName = ivar_getName(ivar);
+    const char *ivarType = ivar_getTypeEncoding(ivar);// 获取类型
+    
+    printf("ivarName:%s\n", ivarName);
+    printf("ivarType:%s\n------\n", ivarType);
+}
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 输出
+ivarName:_publicVar1
+ivarType:@"NSString"
+------
+ivarName:_publicVar2
+ivarType:@"NSString"
+------
+ivarName:_privateVar1
+ivarType:@"NSString"
+------
+ivarName:_privateVar2
+ivarType:@"NSString"
+------
+ivarName:_publicProperty1
+ivarType:@"NSString"
+------
+ivarName:_publicProperty2
+ivarType:@"NSString"
+------
+ivarName:_privateProperty1
+ivarType:@"NSString"
+------
+ivarName:_privateProperty2
+ivarType:@
+</code></pre></div></div>
+<p>可以发现输出了所有的成员变量，包括属性声明的 <code class="highlighter-rouge">_+属性名</code> 变量。</p>
+
+<h2 id="给分类添加属性">给分类添加属性</h2>
+<hr />
+
+<p>众所周知，分类中是不能声明属性的。</p>
+
+<p>我们创建一个 <code class="highlighter-rouge">CalssA</code> 的分类 <code class="highlighter-rouge">ClassA+CategoryA</code> ,在 <code class="highlighter-rouge">ClassA+CategoryA</code> 中添加一个属性 <code class="highlighter-rouge">name</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#import "ClassA.h"
+
+@interface ClassA (CategoryA)
+
+@property (nonatomic, strong) NSString *name;
+
+@end
+
+</code></pre></div></div>
+
+<p>若在我们调用<code class="highlighter-rouge">CalssA</code>分类的<code class="highlighter-rouge">name</code> 将会crash，原因是分类中使用 <code class="highlighter-rouge">@property</code> 声明属性并不会生成<code class="highlighter-rouge">setter</code>和<code class="highlighter-rouge">getter</code>方法,但是我们会想，我们可以自己实现呀，没错，看下面的代码</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#import "ClassA+CategoryA.h"
+#import &lt;objc/runtime.h&gt;
+
+@implementation ClassA (CategoryA)
+
+- (NSString *)name {
+    return name;
+}
+
+- (void)setName:(NSString *)name {
+    _name = name;
+}
+
+@end
+</code></pre></div></div>
+<p>这里会报编译错误，因为分类中使用 <code class="highlighter-rouge">@property</code> 声明属性也不会生成成员变量 _name，并且手动声明也不行</p>
+
+<p><img src="http://ww1.sinaimg.cn/large/7853084cgw1f9zsknx42yj20fw033gm0.jpg" alt="" /></p>
+
+<p>编译错误，提示实例变量无法添加到分类中，用正常的方法确实无法在分类中添加属性。</p>
+
+<p>但是可以通过Runtim机制进行“添加”。其本质是给这个类添加属性关联，而非把这个属性添加到类中。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#import "ClassA+CategoryA.h"
+#import &lt;objc/runtime.h&gt;
+
+
+@implementation ClassA (CategoryA)
+
+- (NSString *)name {
+    return objc_getAssociatedObject(self, @selector(name));
+}
+
+- (void)setName:(NSString *)name {
+    objc_setAssociatedObject(self, @selector(name), name, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+@end
+</code></pre></div></div>
+
+<p>调用：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>classA.name = @"邱帅";
+NSLog(@"%@",classA.name);
+
+// 输出
+2016-11-21 16:18:48.084 UseRuntime[4392:1325037] 邱帅
+</code></pre></div></div>
+<p>可以看出添加属性成功！</p>
+
+<p>我们来看看关联属性的这几个方法：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OBJC_EXPORT void objc_setAssociatedObject(id object, const void *key, id value, objc_AssociationPolicy policy)
+    OBJC_AVAILABLE(10.6, 3.1, 9.0, 1.0);
+    
+OBJC_EXPORT id objc_getAssociatedObject(id object, const void *key)
+    OBJC_AVAILABLE(10.6, 3.1, 9.0, 1.0);
+    
+OBJC_EXPORT void objc_removeAssociatedObjects(id object)
+    OBJC_AVAILABLE(10.6, 3.1, 9.0, 1.0);
+
+</code></pre></div></div>
+<p><code class="highlighter-rouge">objc_setAssociatedObject()</code> 方法为关联属性，参数如下：</p>
+
+<ul>
+  <li><code class="highlighter-rouge">object</code>：属性关联的源对象，这里使用了<code class="highlighter-rouge">self</code>，代表关联本类的对象</li>
+  <li><code class="highlighter-rouge">key</code>:区分属性的唯一标识，因为关联的属性可能不止一个，我们使用了<code class="highlighter-rouge">- (NSString *)name</code>方法的<code class="highlighter-rouge">SEL</code> <code class="highlighter-rouge">@selector(name)</code>作为唯一标示，当然也可以用下面的方法来生成Key :</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//利用静态变量地址唯一不变的特性
+1、static void *strKey = &amp;strKey;
+
+2、static NSString *strKey = @"strKey"; 
+
+3、static char strKey;
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">value</code>：关联的属性值</li>
+  <li><code class="highlighter-rouge">policy</code>：设置关联对象的<code class="highlighter-rouge">copy</code>、<code class="highlighter-rouge">story</code>、<code class="highlighter-rouge">nonatomic</code>等参数:</li>
+</ul>
+
+<p>这些常量对应着引用关联值的政策，也就是 Objc 内存管理的引用计数机制。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>typedef OBJC_ENUM(uintptr_t, objc_AssociationPolicy) {
+    OBJC_ASSOCIATION_ASSIGN = 0,           
+    OBJC_ASSOCIATION_RETAIN_NONATOMIC = 1,              
+    OBJC_ASSOCIATION_COPY_NONATOMIC = 3,                                                  
+    OBJC_ASSOCIATION_RETAIN = 01401,       
+    OBJC_ASSOCIATION_COPY = 01403                                               
+};
+</code></pre></div></div>
+<p><code class="highlighter-rouge">objc_getAssociatedObject()</code> 方法通过 <code class="highlighter-rouge">object</code> 与 <code class="highlighter-rouge">Key</code> 直接获取关联的属性值</p>
+
+<p><code class="highlighter-rouge">objc_removeAssociatedObjects()</code> 移除关联</p>
+
+<p>我们使用上面的获取类中属性和成员变量的方法，发现输出：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 有属性输出
+propertyName：name 
+propertyAttributes:T@"NSString",&amp;,N
+</code></pre></div></div>
+<p>没有成员变量 <code class="highlighter-rouge">_name</code>，进一步说明分类中不能添加成员变量！其本质是添加属性与分类之间关联。</p>
+
+<h2 id="更换代码实现方法method-swizzling">更换代码实现方法（Method Swizzling）</h2>
+<hr />
+<p>在<a href="http://www.jianshu.com/p/a36bfc976b8e">上篇</a>中详细介绍了<code class="highlighter-rouge">Method Swizzling</code>的原理，其本质是更换了 <code class="highlighter-rouge">selector</code> 的 <code class="highlighter-rouge">IMP</code> 。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#import "ViewController.h"
+#import &lt;objc/runtime.h&gt;
+#import "ClassA.h"
+#import "ClassB.h"
+
+@interface ViewController ()
+
+@end
+
+@implementation ViewController
+
++ (void)load {
+    Method classA_method = class_getInstanceMethod([ClassA class], @selector(methodAOfClassAWithArg:));
+    Method classB_method = class_getInstanceMethod([ClassB class], @selector(methodAOfClassBWithArg:));
+    method_exchangeImplementations(classA_method, classB_method);
+}
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [classA methodAOfClassAWithArg:@"classA 发出的 A方法"];
+    [classB methodAOfClassBWithArg:@"classB 发出的 A方法"];
+}    
+
+// 输出
+
+2016-11-22 13:07:15.151 UseRuntime[1015:533335]  methodAOfClassB arg = classA 发出的 A方法
+2016-11-22 13:07:15.151 UseRuntime[1015:533335]  methodAOfClassA arg = classB 发出的 A方法
+</code></pre></div></div>
+
+<p>首先交换方法写在 <code class="highlighter-rouge">+(void)load</code>,在程序的一开始就调用执行，你将不会碰到并发问题。</p>
+
+<p>我们可以发现两个方法的实现过程以及对换。</p>
+
+<p>当然，平时使用我们并不会这么做，当我们要在系统提供的方法上再扩充功能时(不能重写系统方法)，就可以使用<code class="highlighter-rouge">Method Swizzling</code>.</p>
+
+<p>我们给<code class="highlighter-rouge">NSArray</code>添加一个分类<code class="highlighter-rouge">AddLog</code>,给 <code class="highlighter-rouge">arrayByAddingObject:</code>方法添加一个输出方法：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#import "NSArray+AddLog.h"
+#import &lt;objc/runtime.h&gt;
+
+@implementation NSArray (AddLog)
+
++ (void)load {
+
+    SEL ori_selector = @selector(arrayByAddingObject:);
+    SEL my_selector = @selector(my_arrayByAddingObject:);
+    
+    Method ori_method = class_getInstanceMethod([NSArray class], ori_selector);
+    Method my_method  = class_getInstanceMethod([NSArray class], my_selector);
+    
+    if (([NSArray class], ori_selector, method_getImplementation(my_method), method_getTypeEncoding(my_method))) {
+        
+        class_replaceMethod([NSArray class], my_selector, method_getImplementation(ori_method), method_getTypeEncoding(ori_method));
+        
+    } else {
+        method_exchangeImplementations(ori_method, my_method);
+    }
+
+}
+
+- (NSArray *)my_arrayByAddingObject:(id)anObject {
+
+    NSArray *array = [self my_arrayByAddingObject:anObject];
+    NSLog(@"添加了一个元素 %@", anObject);
+    return array;
+}
+
+@end
+
+</code></pre></div></div>
+<p>我们来看看这三个方法：</p>
+
+<ul>
+  <li><code class="highlighter-rouge">class_addMethod()</code>：给一个方法添加新的方法和实现</li>
+  <li><code class="highlighter-rouge">class_replaceMethod(）</code>：取代了对于一个给定的类的实现方法</li>
+  <li><code class="highlighter-rouge">method_exchangeImplementations(）</code>：交换两个类的实现方法</li>
+</ul>
+
+<p>这里我们先使用 <code class="highlighter-rouge">class_addMethod()</code> 在类中添加方法，若返回Yes说明类中没有该方法，然后再使用 <code class="highlighter-rouge">class_replaceMethod()</code> 方法进行取代;若返回NO，说明类中有该方法，使用<code class="highlighter-rouge">method_exchangeImplementations()</code>直接交换两者的 <code class="highlighter-rouge">IMP</code>.</p>
+
+<p>其实在这里直接使用<code class="highlighter-rouge">method_exchangeImplementations()</code>进行交换就可以了。因为类中必定有<code class="highlighter-rouge">arrayByAddingObject：</code>方法。</p>
+
+<p>我给我们自己的方法命名为<code class="highlighter-rouge">my_arrayByAddingObject:</code>,在原来的方法名上加上前缀，既可以防止命名冲突，又方便阅读，在我们<code class="highlighter-rouge">my_arrayByAddingObject:</code>方法中调用本身</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NSArray *array = [self my_arrayByAddingObject:anObject];
+</code></pre></div></div>
+
+<p>看似会陷入递归调用，其实则不会，因为我们已经在<code class="highlighter-rouge">+ (void)load </code>方法中更换了<code class="highlighter-rouge">IMP</code>,他会调用<code class="highlighter-rouge">arrayByAddingObject:</code>方法，然后在后面添加我们需要添加的功能。</p>
+
+<p><code class="highlighter-rouge">arrayByAddingObject:</code>方法的调用不变；</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NSArray *arr1 = @[@"one", @"two"];
+NSArray *arr2 = [arr1 arrayByAddingObject:@"three"];
+NSLog(@"arr2 = %@", arr2);
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 输出
+2016-11-22 13:57:00.021 UseRuntime[1147:743449] 添加了一个元素 three
+2016-11-22 13:57:00.021 UseRuntime[1147:743449] arr2 = (
+    one,
+    two,
+    three
+)
+</code></pre></div></div>
+
+<h2 id="动态添加方法">动态添加方法</h2>
+
+<p>动态添加方法就是在消息转发前在<code class="highlighter-rouge">+ (BOOL)resolveInstanceMethod:(SEL)sel</code>方法中使用<code class="highlighter-rouge">class_addMethod()</code> 添加方法。</p>
+
+<p>下面我面添加一个名为<code class="highlighter-rouge">resolveThisMethodDynamically</code>的方法：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void dynamicMethodIMP(id self, SEL _cmd) {
+    // implementation ....
+    printf("执行了dynamicMethodIMP!!!!");
+}
+
++ (BOOL)resolveInstanceMethod:(SEL)sel {
+    
+    if (sel == @selector(resolveThisMethodDynamically)) {
+        class_addMethod([self class], sel, (IMP) dynamicMethodIMP, "v@:");
+        return YES;
+    }
+    return [super resolveInstanceMethod:sel];
+}
+</code></pre></div></div>
+<p>调用：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>performSelector:@selector(resolveThisMethodDynamically)];
+
+// 输出
+执行了dynamicMethodIMP!!!!
+</code></pre></div></div>
+<p>对于上面添加的的方法 <code class="highlighter-rouge">resolveThisMethodDynamically</code> ，使用 <code class="highlighter-rouge">[self performSelector:@selector(resolveThisMethodDynamically)]</code> 进行调用，不能使用<code class="highlighter-rouge">[self resolveThisMethodDynamically]</code>,因为压根就没有声明 <code class="highlighter-rouge">-(void)resolveThisMethodDynamically</code>,会报编译错误。</p>
+
+<p>整个过程就是，<code class="highlighter-rouge">performSelector:</code>调用<code class="highlighter-rouge">resolveThisMethodDynamically</code>方法，然后在列表中找不到（因为类中根本就没有注册该方法），然后跳入 <code class="highlighter-rouge">+ (BOOL)resolveInstanceMethod:</code> 中，我们再为<code class="highlighter-rouge">resolveThisMethodDynamically</code>方法添加具体实现。</p>
+
+<h2 id="字典转属性">字典转属性</h2>
+
+<p>将字典转化为模型，是在我们iOS开发中最为常用的技能。iOS的模型框架如<code class="highlighter-rouge">JSONModel</code>,<code class="highlighter-rouge">MJExtension</code>,<code class="highlighter-rouge">MJExtension</code>等皆是利用了runtime，将字典转为模型，不过兼顾的细节更多。下面我们来实现一个简易的字典转模型框架。</p>
+
+<p>先上代码：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#import "NSObject+BYModel.h"
+#import &lt;objc/runtime.h&gt;
+#import &lt;objc/message.h&gt;
+
+@implementation NSObject (BYModel)
+
+- (void)by_modelSetDictionary:(NSDictionary *)dic {
+
+    Class cls = [self class];
+    
+    // 遍历本类和父类的变量
+    while (cls) {
+        //获取所有成员变量
+        unsigned int outCount = 0;
+        Ivar *ivars = class_copyIvarList(cls, &amp;outCount);
+        
+        for (int i = 0; i &lt; outCount; i++) {
+            Ivar ivar = ivars[i];
+            
+            // 获取变量名
+            NSMutableString *ivar_Name = [NSMutableString stringWithUTF8String:ivar_getName(ivar)];
+        
+            [ivar_Name replaceCharactersInRange:NSMakeRange(0, 1) withString:@""];// _ivar -&gt; ivar
+            
+            //
+            NSString *key = [ivar_Name copy];
+            if ([key isEqualToString:@"dece"]) {
+                key = @"description";
+            }
+            if ([key isEqualToString:@"ID"]) {
+                key = @"id";
+            }
+            
+            id value = dic[key];
+            if (!value) continue;
+            
+            // 拼接SEL    ivar -&gt; setIvar:
+            
+            NSString *cap = [ivar_Name substringToIndex:1];
+            cap = cap.uppercaseString; // a-&gt;A
+            [ivar_Name replaceCharactersInRange:NSMakeRange(0, 1) withString:cap];
+            [ivar_Name insertString:@"set" atIndex:0];
+            [ivar_Name appendString:@":"];
+            
+            SEL selector = NSSelectorFromString(ivar_Name);
+            
+            // 判断类型并发送消息
+            NSString *type = [NSString stringWithUTF8String:ivar_getTypeEncoding(ivar)];
+            
+            if ([type hasPrefix:@"@"]) { // 对象类型
+                objc_msgSend(self, selector, value);
+            } else { // 非对象类型
+                if ([type isEqualToString:@"d"]) {
+                    objc_msgSend(self, selector, [value doubleValue]);
+                } else if ([type isEqualToString:@"f"]) {
+                    objc_msgSend(self, selector, [value floatValue]);
+                } else if ([type isEqualToString:@"i"]) {
+                    objc_msgSend(self, selector, [value intValue]);
+                } else {
+                    objc_msgSend(self, selector, [value longLongValue]);
+                }
+            }
+            
+            
+        }
+        // 获取父类进行遍历变量
+        cls = class_getSuperclass(cls);
+    }
+    
+}
+
+</code></pre></div></div>
+
+<p>这个这个段代码可能出现编译错误：</p>
+
+<p><img src="http://ww3.sinaimg.cn/large/7853084cgw1fa3b5fbvsqj20k001fjrn.jpg" alt="" /></p>
+
+<p>解决办法很简单：</p>
+
+<p>将项目 Project -&gt; Build Settings -&gt; Enable strct checking of objc_msgSend Calls 设置为 <strong>NO</strong> 即可</p>
+
+<p><img src="http://ww1.sinaimg.cn/large/7853084cgw1fa3b6mm9h7j20oh0aj0v8.jpg" alt="" /></p>
+
+<p>接下来我们创建一个模型类<code class="highlighter-rouge">Student</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#import &lt;Foundation/Foundation.h&gt;
+
+@interface Student : NSObject
+
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, assign) int age;
+@property (nonatomic, assign) int idNumber;
+
+@end
+
+
+</code></pre></div></div>
+
+<p>使用我们的转模型方法：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NSDictionary *dic = @{ @"name":@"邱帅", @"age": @(23), @"idNumber":@(1234567)};
+
+Student *stu = [Student new];
+[stu by_modelSetDictionary:dic];
+
+NSLog(@"%@", [NSString stringWithFormat:@"%@, %d, %d", stu.name, stu.age, stu.idNumber]);
+
+// 输出
+2016-11-24 15:32:46.351 Demo_字典转模型（Runtime）[2131:884627] 邱帅, 23, 1234567
+</code></pre></div></div>
+
+<p>该方法先利用我们上面介绍的<code class="highlighter-rouge">class_copyIvarList()</code>获取类中的成员变量列表，然后进行遍历，拼接字符串<code class="highlighter-rouge">setIvar:</code>，最后调用<code class="highlighter-rouge">objc_msgSend()</code>直接发送设置变量的消息，完成属性的赋值。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while (cls) {
+
+	//code..
+	
+ cls = class_getSuperclass(cls);
+}
+</code></pre></div></div>
+<p>这个循环是则获取父类中的属性：当前类的属性遍历结束之后，指向父类，若父类存在则在继续遍历属性，否则就退出循环。</p>
+
+<p>当然，这个方法只是介绍了利用runtime进行字典转模型的原理,实际中还有很多需要考虑的细节，项目中我还是推荐使用像<a href="https://github.com/ibireme/YYModel">YYModel</a>这些比较成熟而且安全的模型框架。</p>
+
+<p>关于快速字典转模型可以参考我写的一篇<a href="http://www.jianshu.com/p/b7d8cf650722">《快速完成JSON\字典转模型 For YYModel》</a>。</p>
+
+:ET

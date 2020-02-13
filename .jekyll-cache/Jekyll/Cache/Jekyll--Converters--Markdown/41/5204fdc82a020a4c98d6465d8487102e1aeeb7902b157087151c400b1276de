@@ -1,0 +1,156 @@
+I"�<blockquote>
+  <p>利用xcode的命令行工具 <code class="highlighter-rouge">xcdeobulid</code> 进行项目的编译打包，生成ipa包，并上传到fir</p>
+</blockquote>
+
+<h1 id="前言">前言</h1>
+<p>现在网上的自动打包教程几乎都还是<code class="highlighter-rouge">xcodebuild + xcrun</code>的方式先生成<code class="highlighter-rouge">.app</code>包 再生成<code class="highlighter-rouge">.ipa</code>包,结果弄了一整天硬是没成功~</p>
+
+<p>后来发现<code class="highlighter-rouge">PackageApplication is deprecated</code>，悲剧。然后手动压缩的 <code class="highlighter-rouge">.ipa</code>包因为签名问题无法装到手机上。</p>
+
+<p>后来用了<code class="highlighter-rouge">archive + -exportArchive</code>终于可以了~</p>
+
+<h1 id="正文">正文</h1>
+
+<h2 id="xcodebuild">Xcodebuild</h2>
+
+<p><strong>xcodebuild</strong> 的使用可以用 <code class="highlighter-rouge">man xcodebuild</code>查看。</p>
+
+<p>查看项目详情</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># cd 项目主目录
+xcodebuild -list
+</code></pre></div></div>
+
+<p>输出项目的信息</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Information about project "StackGameSceneKit":
+    Targets:
+        StackGameSceneKit
+        StackGameSceneKitTests
+
+    Build Configurations:
+        Debug
+        Release
+
+    If no build configuration is specified and -scheme is not passed then "Release" is used.
+
+    Schemes:
+        StackGameSceneKit
+</code></pre></div></div>
+
+<p>要留意 <code class="highlighter-rouge">Configurations</code>，<code class="highlighter-rouge">Schemes</code>这两个属性。</p>
+
+<h2 id="自动打包流程">自动打包流程</h2>
+
+<h3 id="生成-archive">生成 archive</h3>
+
+<p>生成archive的命令是 <code class="highlighter-rouge">xcodebuild archive</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xcodebuild archive -workspace ${project_name}.xcworkspace \
+               -scheme ${scheme_name} \
+               -configuration ${build_configuration} \
+               -archivePath ${export_archive_path}
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>参数一：项目类型，，如果是混合项目 workspace 就用 <code class="highlighter-rouge">-workspace</code>，如果是 project 就用 <code class="highlighter-rouge">-project</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">-scheme</code>：项目名，上面<code class="highlighter-rouge">xcodebuild -list</code>中的 <code class="highlighter-rouge">Schemes</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">-configuration </code>：编译类型，在<code class="highlighter-rouge">configuration</code>选择, <code class="highlighter-rouge">Debug</code> 或者 <code class="highlighter-rouge">Release</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">-archivePath</code>：生成 archive 包的路径，需要精确到 <code class="highlighter-rouge">xx/xx.archive</code></p>
+  </li>
+</ul>
+
+<p>首先需要创建一个<code class="highlighter-rouge">AdHocExportOptions.plist</code>文件</p>
+
+<h3 id="导出ipa包">导出ipa包</h3>
+
+<p>导出<code class="highlighter-rouge">.ipa</code>包经常会出现错误，<del>在ruby2.4.0版本中会报错，所以请使用其他版本的ruby</del>,最初的原因是使用了 ruby2.4.0 进行编译时出现的错误。</p>
+
+<p>解决方法是低版本的 ruby 进行编译，如使用系统版本：<code class="highlighter-rouge">rvm use system</code>。后面升级macOS系统（10.12.5）后发现 ruby2.4.0 能成功 导出ipa包了。</p>
+
+<p>导出ipa包使用命令：<code class="highlighter-rouge">xcodebuild  -exportArchive</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xcodebuild  -exportArchive \
+            -archivePath ${export_archive_path} \
+            -exportPath ${export_ipa_path} \
+            -exportOptionsPlist ${ExportOptionsPlistPath}
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">archivePath</code>：上面生成 archive 的路径</li>
+  <li><code class="highlighter-rouge">-exportPath</code>：导出 ipa包 的路径</li>
+  <li><code class="highlighter-rouge">exportOptionsPlist</code>：导出 ipa包 类型，需要指定格式的<code class="highlighter-rouge">plist</code>文件，分别是<code class="highlighter-rouge">AppStroe</code>、<code class="highlighter-rouge">AdHoc</code>、<code class="highlighter-rouge">Enterprise</code>,如下图</li>
+</ul>
+
+<p><img src="https://ww3.sinaimg.cn/large/006tNc79gy1ff1bcz534ij30g609uq48.jpg" alt="" /></p>
+
+<p>选择这三个类别需要分别创建三个<code class="highlighter-rouge">plist</code>文件：</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">AdHocExportOptionsPlist.plist</code></p>
+
+    <p><img src="https://ww3.sinaimg.cn/large/006tNc79gy1ff1bhmwvxfj30ax01pdfu.jpg" alt="" /></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">AppStoreExportOptionsPlist.plist</code></p>
+
+    <p><img src="https://ww3.sinaimg.cn/large/006tNc79gy1ff1bijdlsgj30bh01st8q.jpg" alt="" /></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">EnterpriseExportOptionsPlist.plist</code></p>
+
+    <p><img src="https://ww4.sinaimg.cn/large/006tNc79gy1ff1bishpk8j30be01sglm.jpg" alt="" /></p>
+  </li>
+</ul>
+
+<h3 id="上传到-fir">上传到 Fir</h3>
+
+<p>将项目上传到 <a href="https://fir.im">Fir</a></p>
+
+<p>下载 <a href="https://github.com/FIRHQ/fir-cli/blob/master/doc/install.md">fir 命令行工具</a></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install fir-cli
+</code></pre></div></div>
+
+<p>获取 fir 的 API Token（右上角）</p>
+
+<p><img src="https://ww3.sinaimg.cn/large/006tNc79gy1ff28ccsqhyj304t07bwei.jpg" alt="" /></p>
+
+<p>上传</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fir publish "ipa_Path" -T "firApiToken"
+</code></pre></div></div>
+
+<h2 id="自动打包脚本">自动打包脚本</h2>
+
+<p><del>再次提醒，请不要使用 ruby 2.4.0 运行该脚本！</del>，若在 ruby 2.4.0 下编译失败，请切换低版本的ruby。</p>
+
+<p>切换完毕记得重新安装 fir 命令行工具。</p>
+
+<p>脚本我fork了 <a href="https://github.com/jkpang/PPAutoPackageScript">jkpang</a> 的脚本进行修改，添加了自动上传到 fir 的功能。</p>
+
+<p>使用方法在Github上有详细介绍。</p>
+
+<p>GitHub：<a href="https://github.com/qiubaiying/iOSAutoArchiveScript">https://github.com/qiubaiying/iOSAutoArchiveScript</a></p>
+
+<h3 id="利用-自定义终端指令-简化打包过程">利用 自定义终端指令 简化打包过程</h3>
+
+<p>以zsh为例:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>open ~/.zshrc 添加自定义命令 cd + sh
+
+alias mybuild='cd 项目地址/iOSAutoArchiveScript/ &amp;&amp;  sh 项目地址/iOSAutoArchiveScript/iOSAutoArchiveScript.sh' 这样打开终端输入`mybuild`，就可以轻松实现一键打包上传了
+</code></pre></div></div>
+
+<blockquote>
+  <p>本文首次发布于 <a href="http://qiubaiying.github.io">BY Blog</a>, 作者 <a href="http://github.com/qiubaiying">@柏荧(BY)</a> ,转载请保留原文链接.</p>
+</blockquote>
+:ET

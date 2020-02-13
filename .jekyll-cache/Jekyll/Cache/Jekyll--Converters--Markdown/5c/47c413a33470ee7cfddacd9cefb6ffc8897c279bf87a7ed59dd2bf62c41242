@@ -1,0 +1,92 @@
+I"<h2 id="前言">前言</h2>
+
+<p>这篇博客九月就想写了，因为赶项目拖了到现在，抓住17年尾巴写吧~</p>
+
+<h2 id="正文">正文</h2>
+
+<p>上次看了一篇 <a href="https://www.jianshu.com/p/cec2a41aa0e7">《从一道网易面试题浅谈OC线程安全》</a> 的博客，主要内容是：</p>
+
+<p>作者去网易面试，面试官出了一道面试题：下面代码会发生什么问题？</p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">target</span><span class="p">;</span>
+<span class="c1">//....</span>
+<span class="n">dispatch_queue_t</span> <span class="n">queue</span> <span class="o">=</span> <span class="n">dispatch_queue_create</span><span class="p">(</span><span class="s">"parallel"</span><span class="p">,</span> <span class="n">DISPATCH_QUEUE_CONCURRENT</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000000</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">dispatch_async</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="o">^</span><span class="p">{</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">target</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSString</span> <span class="nf">stringWithFormat</span><span class="p">:</span><span class="s">@"ksddkjalkjd%d"</span><span class="p">,</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>答案是：会 crash。</p>
+
+<p>我们来看看对<code class="highlighter-rouge">target</code>属性（<code class="highlighter-rouge">strong</code>修饰）进行赋值，相当与 MRC 中的</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- (void)setTarget:(NSString *)target {
+    if (target == _target) return;
+    id pre = _target;
+    [target retain];//1.先保留新值
+    _target = target;//2.再进行赋值
+    [pre release];//3.释放旧值
+}
+</code></pre></div></div>
+
+<p>因为在 <em>并行队列</em> <code class="highlighter-rouge">DISPATCH_QUEUE_CONCURRENT</code> 中<em>异步</em> <code class="highlighter-rouge">dispatch_async</code> 对 <code class="highlighter-rouge">target</code>属性进行赋值，就会导致 target 已经被 <code class="highlighter-rouge">release</code>了，还会执行 <code class="highlighter-rouge">release</code>。这就是向已释放内存对象发送消息而发生 crash 。</p>
+
+<h3 id="但是">但是</h3>
+
+<p>我敲了这段代码，执行的时候发现并不会 crash~</p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">target</span><span class="p">;</span>
+<span class="n">dispatch_queue_t</span> <span class="n">queue</span> <span class="o">=</span> <span class="n">dispatch_queue_create</span><span class="p">(</span><span class="s">"parallel"</span><span class="p">,</span> <span class="n">DISPATCH_QUEUE_CONCURRENT</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000000</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">dispatch_async</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="o">^</span><span class="p">{</span>
+    	<span class="c1">// ‘ksddkjalkjd’删除了</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">target</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSString</span> <span class="nf">stringWithFormat</span><span class="p">:</span><span class="s">@"%d"</span><span class="p">,</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>原因就出在对 <code class="highlighter-rouge">self.target</code> 赋值的字符串上。博客的最后也提到了 - <em>‘上述代码的字符串改短一些，就不会崩溃’</em>，还有 <code class="highlighter-rouge">Tagged Pointer</code> 这个东西。</p>
+
+<p>我们将上面的代码修改下：</p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">NSString</span> <span class="o">*</span><span class="n">str</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSString</span> <span class="nf">stringWithFormat</span><span class="p">:</span><span class="s">@"%d"</span><span class="p">,</span> <span class="n">i</span><span class="p">];</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%d, %s, %p"</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">object_getClassName</span><span class="p">(</span><span class="n">str</span><span class="p">),</span> <span class="n">str</span><span class="p">);</span>
+<span class="n">self</span><span class="p">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">str</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>输出：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0, NSTaggedPointerString, 0x3015
+</code></pre></div></div>
+
+<p>发现这个字符串类型是 <code class="highlighter-rouge">NSTaggedPointerString</code>，那我们来看看 Tagged Pointer 是什么？</p>
+
+<h3 id="tagged-pointer">Tagged Pointer</h3>
+
+<p>Tagged Pointer 详细的内容可以看这里 <a href="http://www.infoq.com/cn/articles/deep-understanding-of-tagged-pointer">深入理解Tagged Pointer</a>。</p>
+
+<p>Tagged Pointer 是一个能够提升性能、节省内存的有趣的技术。</p>
+
+<ul>
+  <li>Tagged Pointer 专门用来存储小的对象，例如 <strong>NSNumber</strong> 和 <strong>NSDate</strong>（后来可以存储小字符串）</li>
+  <li>Tagged Pointer 指针的值不再是地址了，而是真正的值。所以，实际上它不再是一个对象了，它只是一个披着对象皮的普通变量而已。</li>
+  <li>它的内存并不存储在堆中，也不需要 malloc 和 free，所以拥有极快的读取和创建速度。</li>
+</ul>
+
+<h3 id="参考">参考：</h3>
+
+<ul>
+  <li>
+    <p><a href="https://www.jianshu.com/p/cec2a41aa0e7">从一道网易面试题浅谈OC线程安全</a></p>
+  </li>
+  <li>
+    <p><a href="http://www.infoq.com/cn/articles/deep-understanding-of-tagged-pointer">深入理解Tagged Pointer</a></p>
+  </li>
+  <li>
+    <p><a href="http://www.cocoachina.com/ios/20150918/13449.html">【译】采用Tagged Pointer的字符串</a></p>
+  </li>
+</ul>
+
+:ET

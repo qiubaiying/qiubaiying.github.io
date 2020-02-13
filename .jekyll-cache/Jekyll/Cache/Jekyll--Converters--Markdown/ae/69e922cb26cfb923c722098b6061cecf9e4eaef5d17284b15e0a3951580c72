@@ -1,0 +1,967 @@
+I"݅<h1 id="reactivecocoa基础">ReactiveCocoa基础</h1>
+<blockquote>
+  <p>本文修改自<a href="http://www.jianshu.com/p/87ef6720a096">最快让你上手ReactiveCocoa之基础篇</a></p>
+
+  <p>有关对 <strong>ReactiveCocoa</strong> 的看法可以看一下唐巧的这篇<a href="https://gold.xitu.io/entry/568bd2ae60b2e57ba2cd2c7b">ReactiveCocoa 讨论会</a></p>
+</blockquote>
+
+<p><img src="http://ww2.sinaimg.cn/large/006y8lVagw1fb7g0gukk8j30m90rl78j.jpg" alt="ReactiveCocoa思维导图" /></p>
+
+<h1 id="reactivecocoa简介">ReactiveCocoa简介</h1>
+
+<p><a href="https://github.com/ReactiveCocoa/ReactiveCocoa"><img src="http://ww1.sinaimg.cn/large/006y8lVagw1fb7g6on3iwj30c2029q2z.jpg" alt="" /></a></p>
+
+<p>ReactiveCocoa（简称为RAC）,是由Github开源的一个应用于iOS和OS开发的新框架,Cocoa是苹果整套框架的简称，因此很多苹果框架喜欢以Cocoa结尾。</p>
+
+<p>在我们iOS开发过程中，当某些事件响应的时候，需要处理某些业务逻辑,这些事件都用不同的方式来处理。</p>
+
+<p>比如按钮的点击使用action，ScrollView滚动使用delegate，属性值改变使用KVO等系统提供的方式。其实这些事件，都可以通过RAC处理</p>
+
+<p>ReactiveCocoa为事件提供了很多处理方法，而且利用RAC处理事件很方便，可以把要处理的事情，和监听的事情的代码放在一起，这样非常方便我们管理，就不需要跳到对应的方法里。</p>
+
+<p>非常符合我们开发中高聚合，低耦合的思想。</p>
+
+<h1 id="reactivecocoa编程思想">ReactiveCocoa编程思想</h1>
+
+<p>在开发中我们也不能太依赖于某个框架，否则这个框架不更新了，导致项目后期没办法维护，比如之前Facebook提供的 <code class="highlighter-rouge">Three20</code> 框架，在当时也是神器，但是后来不更新了，也就没什么人用了。因此我感觉学习一个框架，还是有必要了解它的编程思想。</p>
+
+<p>先简单介绍下目前咱们已知的编程思想:</p>
+
+<h4 id="响应式编程思想">响应式编程思想</h4>
+
+<p><strong>响应式编程思想</strong>：不需要考虑调用顺序，只需要知道考虑结果，类似于蝴蝶效应，产生一个事件，会影响很多东西，这些事件像流一样的传播出去，然后影响结果，借用面向对象的一句话，万物皆是流。</p>
+
+<p><code class="highlighter-rouge">代表</code>：KVO</p>
+
+<h4 id="链式编程思想">链式编程思想</h4>
+
+<p><strong>链式编程</strong> 是将多个操作（多行代码）通过点号(.)链接在一起成为一句代码,使代码可读性好。如:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make.add(1).add(2).sub(5).muilt(-4).divide(4);
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">特点</code>：方法的返回值是block,block必须有返回值（本身对象），block参数（需要操作的值）</p>
+
+<p><code class="highlighter-rouge">代表</code>：masonry框架。</p>
+
+<p><code class="highlighter-rouge">实现</code>：模仿masonry，写一个加法计算器，练习链式编程思想。</p>
+
+<p>NSObject+Caculator.h</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># import &lt;Foundation/Foundation.h&gt;
+
+@class CaculatorMaker;
+
+@interface NSObject (Caculator)
+
+// 计算
++ (int)makeCaculators:(void (^)(CaculatorMaker *))block;
+                       
+@end
+</code></pre></div></div>
+
+<p>NSObject+Caculator.m</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@implementation NSObject (Caculator)
+
++ (int)makeCaculators:(void (^)(CaculatorMaker *))block {
+    
+    CaculatorMaker *mgr = [[CaculatorMaker alloc] init];
+    
+    block(mgr);
+    
+    return (mgr.result);
+}
+
+@end
+</code></pre></div></div>
+
+<p>CaculatorMaker.h</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># import &lt;Foundation/Foundation.h&gt;
+
+@class CaculatorMaker;
+
+typedef CaculatorMaker *(^CasulatorBlock)(int);
+
+@interface CaculatorMaker : NSObject
+
+@property (nonatomic, assign) int result;
+
+// 算数方法
+- (CaculatorMaker *(^)(int))add;
+- (CasulatorBlock)sub;
+- (CasulatorBlock)muilt;
+- (CasulatorBlock)divide;
+
+
+@end
+</code></pre></div></div>
+
+<p>CaculatorMaker.m</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># import "CaculatorMaker.h"
+
+@implementation CaculatorMaker
+
+- (CaculatorMaker *(^)(int))add {
+
+    return ^CaculatorMaker *(int value) {
+        
+        _result += value;
+        
+        return self;
+    };
+}
+
+- (CasulatorBlock)sub {
+    
+    return ^CaculatorMaker *(int value) {
+        
+        _result -= value;
+        
+        return self;
+    };
+}
+
+- (CasulatorBlock)muilt {
+
+    return ^CaculatorMaker *(int value) {
+        
+        _result *= value;
+        
+        return self;
+    };
+}
+
+- (CasulatorBlock)divide {
+    
+    return ^CaculatorMaker *(int value) {
+        
+        _result /= value;
+        
+        return self;
+    };
+}
+
+@end
+</code></pre></div></div>
+
+<p>使用：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int result = [NSObject makeCaculators:^(CaculatorMaker *make) {
+        
+        // ( 1 + 2 - 5 ) * (-4) / 4
+        make.add(1).add(2).sub(5).muilt(-4).divide(4);
+
+    }];
+    
+    NSLog(@"%d", result);
+</code></pre></div></div>
+
+<h4 id="函数式编程思想">函数式编程思想</h4>
+
+<p><strong>函数式编程思想</strong>：是把操作尽量写成一系列嵌套的函数或者方法调用。</p>
+
+<p><code class="highlighter-rouge">特点</code>：每个方法必须有返回值（本身对象）,把函数或者Block当做参数,block参数（需要操作的值）block返回值（操作结果）</p>
+
+<p><code class="highlighter-rouge">代表</code>：<strong>ReactiveCocoa</strong></p>
+
+<p><code class="highlighter-rouge">实现</code>：用函数式编程实现，写一个加法计算器,并且加法计算器自带判断是否等于某个值.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    Calculator *caculator = [[Calculator alloc] init];
+    
+    BOOL isqule = [[[caculator caculator:^int(int result) {
+        
+        result += 2;
+        result *= 5;
+        return result;
+        
+    }] equle:^BOOL(int result) {
+        
+        return result == 10;
+        
+    }] isEqule];
+    
+    NSLog(@"%d", isqule);
+</code></pre></div></div>
+
+<p>Calculator.h</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#import &lt;Foundation/Foundation.h&gt;
+
+@interface Calculator : NSObject
+
+@property (nonatomic, assign) BOOL isEqule;
+
+@property (nonatomic, assign) int result;
+
+- (Calculator *)caculator:(int (^)(int result))caculator;
+
+- (Calculator *)equle:(BOOL (^)(int result))operation;
+
+@end
+</code></pre></div></div>
+
+<p>Calculator.m</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#import "Calculator.h"
+
+@implementation Calculator
+
+- (Calculator *)caculator:(int (^)(int))caculator {
+
+    _result = caculator(_result);
+    
+    return self;
+    
+}
+
+
+- (Calculator *)equle:(BOOL (^)(int))operation {
+
+    _isEqule = operation(_result);
+    
+    return self;
+}
+
+@end
+</code></pre></div></div>
+<p><strong>ReactiveCocoa</strong> 结合了这两种种编程风格：</p>
+
+<ul>
+  <li>
+    <p><strong>函数式编程</strong>（Functional Programming）</p>
+  </li>
+  <li>
+    <p><strong>响应式编程</strong>（Reactive Programming）</p>
+  </li>
+</ul>
+
+<p>所以，你可能听说过 <strong>ReactiveCocoa</strong> 被描述为函数响应式编程（FRP）框架。</p>
+
+<p>以后使用RAC解决问题，就不需要考虑调用顺序，直接考虑结果，把每一次操作都写成一系列嵌套的方法中，使代码高聚合，方便管理。</p>
+
+<h1 id="导入reactivecocoa">导入ReactiveCocoa</h1>
+<hr />
+
+<blockquote>
+  <p>ReactiveCocoa的<a href="https://github.com/ReactiveCocoa/ReactiveCocoa">GitHub地址</a></p>
+</blockquote>
+
+<h4 id="objective-c">Objective-C</h4>
+
+<p><strong>ReactiveCocoa 2.5</strong>版本以后改用了<strong>Swift</strong>，所以<strong>Objective-C</strong>项目需要导入<strong>2.5版本</strong></p>
+
+<p><code class="highlighter-rouge">CocoaPods</code>集成：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>platform :ios, '8.0'
+
+target 'YouProjectName' do
+
+use_frameworks!
+pod 'ReactiveCocoa', '~&gt; 2.5'
+
+end
+</code></pre></div></div>
+<p>PS:新版本的<code class="highlighter-rouge">CocoaPods</code>需要加入</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>target 'YouProjectName' do 
+... 
+end
+</code></pre></div></div>
+<p>这句话来限定项目，否则导入失败。</p>
+
+<h4 id="swift">Swift</h4>
+
+<p><strong>Swift</strong>项目导入2.5后的版本</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>platform :ios, '8.0'
+
+target 'YouProjectName' do
+
+use_frameworks!
+pod 'ReactiveCocoa'
+
+end
+
+</code></pre></div></div>
+<p>使用时在<a href="http://www.jianshu.com/p/587b83b6665c">全局头文件</a>导入头文件即可</p>
+
+<p><code class="highlighter-rouge">PrefixHeader.pch</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import &lt;ReactiveCocoa/ReactiveCocoa.h&gt;
+
+#endif
+</code></pre></div></div>
+
+<h1 id="reactivecocoa常见类">ReactiveCocoa常见类</h1>
+
+<h4 id="racsiganl-信号类">RACSiganl 信号类</h4>
+
+<blockquote>
+  <p>信号类,一般表示将来有数据传递，只要有数据改变，信号内部接收到数据，就会马上发出数据。</p>
+</blockquote>
+
+<p>注意：</p>
+
+<ul>
+  <li>信号类(RACSiganl)，只是表示当数据改变时，信号内部会发出数据，它本身不具备发送信号的能力，而是交给内部一个订阅者去发出。</li>
+  <li>默认一个信号都是冷信号，也就是值改变了，也不会触发，只有订阅了这个信号，这个信号才会变为热信号，值改变了才会触发。</li>
+  <li>如何订阅信号：调用信号RACSignal的subscribeNext就能订阅</li>
+</ul>
+
+<p>使用：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// RACSignal使用步骤：
+    // 1.创建信号 + (RACSignal *)createSignal:(RACDisposable * (^)(id&lt;RACSubscriber&gt; subscriber))didSubscribe
+    // 2.订阅信号,才会激活信号. - (RACDisposable *)subscribeNext:(void (^)(id x))nextBlock
+    // 3.发送信号 - (void)sendNext:(id)value
+
+
+    // RACSignal底层实现：
+    // 1.创建信号，首先把didSubscribe保存到信号中，还不会触发。
+    // 2.当信号被订阅，也就是调用signal的subscribeNext:nextBlock
+    // 2.2 subscribeNext内部会创建订阅者subscriber，并且把nextBlock保存到subscriber中。
+    // 2.1 subscribeNext内部会调用siganl的didSubscribe
+    // 3.siganl的didSubscribe中调用[subscriber sendNext:@1];
+    // 3.1 sendNext底层其实就是执行subscriber的nextBlock
+
+    // 1.创建信号
+    RACSignal *siganl = [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) {
+
+        // block调用时刻：每当有订阅者订阅信号，就会调用block。
+
+        // 2.发送信号
+        [subscriber sendNext:@1];
+
+        // 如果不在发送数据，最好发送信号完成，内部会自动调用[RACDisposable disposable]取消订阅信号。
+        [subscriber sendCompleted];
+
+        return [RACDisposable disposableWithBlock:^{
+
+            // block调用时刻：当信号发送完成或者发送错误，就会自动执行这个block,取消订阅信号。
+
+            // 执行完Block后，当前信号就不在被订阅了。
+
+            NSLog(@"信号被销毁");
+
+        }];
+    }];
+
+    // 3.订阅信号,才会激活信号.
+    [siganl subscribeNext:^(id x) {
+        // block调用时刻：每当有信号发出数据，就会调用block.
+        NSLog(@"接收到数据:%@",x);
+    }];
+</code></pre></div></div>
+
+<h4 id="racsubscriber">RACSubscriber</h4>
+<blockquote>
+  <p>表示订阅者的意思，用于发送信号，这是一个协议，不是一个类，只要遵守这个协议，并且实现方法才能成为订阅者。通过create创建的信号，都有一个订阅者，帮助他发送数据。</p>
+</blockquote>
+
+<h4 id="racdisposable">RACDisposable</h4>
+
+<blockquote>
+  <p>用于取消订阅或者清理资源，当信号发送完成或者发送错误的时候，就会自动触发它。</p>
+</blockquote>
+
+<p><strong>使用场景</strong>：不想监听某个信号时，可以通过它主动取消订阅信号。</p>
+
+<h4 id="racsubject">RACSubject</h4>
+<blockquote>
+  <p>RACSubject:信号提供者，自己可以充当信号，又能发送信号。</p>
+</blockquote>
+
+<p><strong>使用场景</strong>:通常用来代替代理，有了它，就不必要定义代理了。</p>
+
+<h4 id="racreplaysubject"><strong>RACReplaySubject</strong></h4>
+
+<blockquote>
+  <p>重复提供信号类，RACSubject的子类。</p>
+</blockquote>
+
+<p><code class="highlighter-rouge">RACReplaySubject</code>与<code class="highlighter-rouge">RACSubject</code>区别:</p>
+
+<p><code class="highlighter-rouge">RACReplaySubject</code>可以先发送信号，在订阅信号，<code class="highlighter-rouge">RACSubject</code>就不可以。</p>
+
+<p><strong>使用场景一</strong>:如果一个信号每被订阅一次，就需要把之前的值重复发送一遍，使用重复提供信号类。</p>
+
+<p><strong>使用场景二</strong>:可以设置capacity数量来限制缓存的value的数量,即只缓充最新的几个值。</p>
+
+<p><strong>ACSubject</strong> 和 <strong>RACReplaySubject</strong> 简单使用：</p>
+
+<p><strong>ACSubject</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     // RACSubject使用步骤
+    // 1.创建信号 [RACSubject subject]，跟RACSiganl不一样，创建信号时没有block。
+    // 2.订阅信号 - (RACDisposable *)subscribeNext:(void (^)(id x))nextBlock
+    // 3.发送信号 sendNext:(id)value
+    
+    // RACSubject:底层实现和RACSignal不一样。
+    // 1.调用subscribeNext订阅信号，只是把订阅者保存起来，并且订阅者的nextBlock已经赋值了。
+    // 2.调用sendNext发送信号，遍历刚刚保存的所有订阅者，一个一个调用订阅者的nextBlock。
+    
+    
+    // 1. 创建信号
+    RACSubject *subject = [RACSubject subject];
+    
+    // 2.订阅信号
+    [subject subscribeNext:^(id x) {
+       
+        // block调用时机：当信号发出新值，就会调用
+        NSLog(@"收到信号");
+        
+    }];
+    
+    // 3.发送信号
+    NSLog(@"发送信号");
+    [subject sendNext:@"1"];
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     // RACReplaySubject使用步骤:
+    // 1.创建信号 [RACSubject subject]，跟RACSiganl不一样，创建信号时没有block。
+    // 2.可以先订阅信号，也可以先发送信号。
+    // 2.1 订阅信号 - (RACDisposable *)subscribeNext:(void (^)(id x))nextBlock
+    // 2.2 发送信号 sendNext:(id)value
+    
+    // RACReplaySubject:底层实现和RACSubject不一样。
+    // 1.调用sendNext发送信号，把值保存起来，然后遍历刚刚保存的所有订阅者，一个一个调用订阅者的nextBlock。
+    // 2.调用subscribeNext订阅信号，遍历保存的所有值，一个一个调用订阅者的nextBlock
+    
+    // 如果想当一个信号被订阅，就重复播放之前所有值，需要先发送信号，在订阅信号。
+    // 也就是先保存值，在订阅值。
+    
+    
+    // 1.创建信号
+    RACReplaySubject *replaySubject = [RACReplaySubject subject];
+    
+
+    
+    // 3.先订阅信号
+    [replaySubject subscribeNext:^(id x) {
+        
+        NSLog(@"第一个订阅者接受到的数据%@", x);
+    }];
+    
+    // 2.发送信号
+    [replaySubject sendNext:@1];
+    [replaySubject sendNext:@2];
+    
+    // 后订阅信号
+    [replaySubject subscribeNext:^(id x) {
+        
+        NSLog(@"第二个订阅者接收到的数据%@",x);
+    }];
+</code></pre></div></div>
+
+<p><strong>RACSubject</strong>替换代理（与block类似）</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 需求:
+    // 1.给当前控制器添加一个按钮，modal到另一个控制器界面
+    // 2.另一个控制器view中有个按钮，点击按钮，通知当前控制器
+
+步骤一：在第二个控制器.h，添加一个RACSubject代替代理。
+@interface TwoViewController : UIViewController
+
+@property (nonatomic, strong) RACSubject *delegateSignal;
+
+@end
+
+步骤二：监听第二个控制器按钮点击
+@implementation TwoViewController
+- (IBAction)notice:(id)sender {
+    // 通知第一个控制器，告诉它，按钮被点了
+
+     // 通知代理
+     // 判断代理信号是否有值
+    if (self.delegateSignal) {
+        // 有值，才需要通知
+        [self.delegateSignal sendNext:nil];
+    }
+}
+@end
+
+步骤三：在第一个控制器中，监听跳转按钮，给第二个控制器的代理信号赋值，并且监听.
+@implementation OneViewController 
+- (IBAction)btnClick:(id)sender {
+
+    // 创建第二个控制器
+    TwoViewController *twoVc = [[TwoViewController alloc] init];
+
+    // 设置代理信号
+    twoVc.delegateSignal = [RACSubject subject];
+
+    // 订阅代理信号
+    [twoVc.delegateSignal subscribeNext:^(id x) {
+
+        NSLog(@"点击了通知按钮 %@", x);
+    }];
+
+    // 跳转到第二个控制器
+    [self presentViewController:twoVc animated:YES completion:@"hi"];
+
+}
+@end
+</code></pre></div></div>
+
+<h4 id="ractuple">RACTuple</h4>
+
+<blockquote>
+  <p>元组类,类似NSArray,用来包装值.(<code class="highlighter-rouge">@[key, value]</code>)</p>
+</blockquote>
+
+<h4 id="racsequence">RACSequence</h4>
+
+<blockquote>
+  <p>RAC中的集合类，用于代替NSArray,NSDictionary,可以使用它来快速遍历数组和字典。</p>
+</blockquote>
+
+<p>使用场景：字典转模型</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    // 1.遍历数组
+    NSArray *numbers = @[@1,@2,@3,@4];
+    
+    // 这里其实是三步
+    // 第一步: 把数组转换成集合RACSequence numbers.rac_sequence
+    // 第二步: 把集合RACSequence转换RACSignal信号类,numbers.rac_sequence.signal
+    // 第三步: 订阅信号，激活信号，会自动把集合中的所有值，遍历出来。
+    
+    [numbers.rac_sequence.signal subscribeNext:^(id x) {
+        
+        NSLog(@"%@", x);
+    }];
+    
+    
+    
+    // 2.遍历字典,遍历出来的键值对 都会包装成 RACTuple(元组对象) @[key, value]
+    NSDictionary *dic = @{@"name": @"BYqiu", @"age": @18};
+    
+    [dic.rac_sequence.signal subscribeNext:^(RACTuple *x) {
+        
+        // 解元组包，会把元组的值，按顺序给参数里的变量赋值
+        // 写法相当与
+        // NSString *key = x[0];
+        // NSString *value = x[1];
+        RACTupleUnpack(NSString *key, NSString *value) = x;
+        
+        NSLog(@"key:%@, value:%@", key, value);
+        
+    }];
+    
+    // 3.字典转模型
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"flags.plist" ofType:nil];
+    
+    NSArray *dicArray = [NSArray arrayWithContentsOfFile:filePath];
+    
+    NSMutableArray *items = [NSMutableArray array];
+    
+    // OC写法
+    for (NSDictionary *dic in dicArray) {
+        
+        //FlagItem *item = [FlagItem flagWithDict:dict];
+        //[items addObject:item];
+    }
+    
+    
+    // RAC写法
+    [dicArray.rac_sequence.signal subscribeNext:^(id x) {
+        // 利用RAC遍历， x：字典
+        
+        //FlagItem *item = [FlagItem flagWithDict:x];
+        //[items addObject:item];
+    }];
+    
+    // RAC高级用法（函数式编程）
+    NSArray *flags = [[dicArray.rac_sequence map:^id(id value) {
+        
+        return  [FlagItem flagWithDict:value];
+        
+    }] array];
+
+</code></pre></div></div>
+
+<h4 id="raccommand">RACCommand</h4>
+
+<blockquote>
+  <p>RAC中用于处理事件的类，可以把事件如何处理,事件中的数据如何传递，包装到这个类中，他可以很方便的监控事件的执行过程。</p>
+</blockquote>
+
+<p>一、RACCommand使用步骤:</p>
+
+<ol>
+  <li>创建命令 initWithSignalBlock:(RACSignal * (^)(id input))signalBlock</li>
+  <li>在signalBlock中，创建RACSignal，并且作为signalBlock的返回值</li>
+  <li>执行命令 - (RACSignal *)execute:(id)input</li>
+</ol>
+
+<p>二、RACCommand使用注意:</p>
+
+<ol>
+  <li>signalBlock必须要返回一个信号，不能传nil.</li>
+  <li>如果不想要传递信号，直接创建空的信号[RACSignal empty];</li>
+  <li>RACCommand中信号如果数据传递完，必须调用[subscriber sendCompleted]，这时命令才会执行完毕，否则永远处于执行中。</li>
+  <li>RACCommand需要被强引用，否则接收不到RACCommand中的信号，因此RACCommand中的信号是延迟发送的。</li>
+</ol>
+
+<p>三、RACCommand设计思想：</p>
+
+<p>内部signalBlock为什么要返回一个信号，这个信号有什么用。</p>
+
+<ol>
+  <li>在RAC开发中，通常会把网络请求封装到RACCommand，直接执行某个RACCommand就能发送请求。</li>
+  <li>当RACCommand内部请求到数据的时候，需要把请求的数据传递给外界，这时候就需要通过signalBlock返回的信号传递了。</li>
+</ol>
+
+<p>四、如何拿到RACCommand中返回信号发出的数据。</p>
+
+<ol>
+  <li>RACCommand有个执行信号源executionSignals，这个是signal of signals(信号的信号),意思是信号发出的数据是信号，不是普通的类型。</li>
+  <li>订阅executionSignals就能拿到RACCommand中返回的信号，然后订阅signalBlock返回的信号，就能获取发出的值。</li>
+</ol>
+
+<p>五、监听当前命令是否正在执行executing</p>
+
+<p>六、使用场景,监听按钮点击，网络请求</p>
+
+<p>使用:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 1.创建命令
+    RACCommand *command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        NSLog(@"执行命令");
+        
+        // 返回空信号
+        //return [RACSignal empty];
+        
+        // 2.创建信号 传递数据
+        return [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) {
+            
+            [subscriber sendNext:@"请求数据"];
+            
+            // 注意：数据传递完，最好调用sendCompleted,这时命令才执行完毕
+            [subscriber sendCompleted];
+            
+            return nil;
+        }];
+    }];
+    
+    // 强引用命令，不要被销毁，否则接收不到数据
+    _command = command;
+    
+    // 3.订阅RACCommand的信号
+    [command.executionSignals subscribeNext:^(id x) {
+        [x subscribeNext:^(id x) {
+            
+            NSLog(@"订阅RACCommand的信号: %@", x);
+        }];
+    }];
+
+    // RAC高级用法
+    // switchToLatest:用于signal of signals，获取signal of signals发出的最新信号,也就是可以直接拿到RACCommand中的信号
+    [command.executionSignals.switchToLatest subscribeNext:^(id x) {
+       
+        NSLog(@"RAC高级用法: %@", x);
+    }];
+    
+    // 4.监听命令是否执行完毕,默认会来一次，可以直接跳过，skip表示跳过第一次信号。
+    [[command.executing skip:1] subscribeNext:^(id x) {
+       
+        if ([x boolValue] == YES) {
+            
+            // 正在执行
+            NSLog(@"正在执行");
+            
+        } else {
+            
+            // 执行完毕
+            NSLog(@"执行完成");
+        }
+    }];
+    
+    // 5.执行命名
+    [self.command execute:@1];
+</code></pre></div></div>
+
+<h4 id="racmulticastconnection">RACMulticastConnection</h4>
+<blockquote>
+  <p>用于当一个信号，被多次订阅时，为了保证创建信号时，避免多次调用创建信号中的block，造成副作用，可以使用这个类处理。</p>
+</blockquote>
+
+<p>注意：RACMulticastConnection通过RACSignal的-publish或者-muticast:方法创建.</p>
+
+<p>RACMulticastConnection使用步骤:</p>
+
+<ol>
+  <li>创建信号 + (RACSignal *)createSignal:(RACDisposable * (^)(id<RACSubscriber> subscriber))didSubscribe</RACSubscriber></li>
+  <li>创建连接 RACMulticastConnection *connect = [signal publish];</li>
+  <li>订阅信号,注意：订阅的不在是之前的信号，而是连接的信号。 [connect.signal subscribeNext:nextBlock]</li>
+  <li>连接 [connect connect]</li>
+</ol>
+
+<p>RACMulticastConnection底层原理:</p>
+
+<ol>
+  <li>创建connect，connect.sourceSignal -&gt; RACSignal(原始信号)  connect.signal -&gt; RACSubject</li>
+  <li>订阅connect.signal，会调用RACSubject的subscribeNext，创建订阅者，而且把订阅者保存起来，不会执行block。</li>
+  <li>[connect connect]内部会订阅RACSignal(原始信号)，并且订阅者是RACSubject
+    <ol>
+      <li>订阅原始信号，就会调用原始信号中的didSubscribe</li>
+      <li>didSubscribe，拿到订阅者调用sendNext，其实是调用RACSubject的sendNext</li>
+    </ol>
+  </li>
+  <li>RACSubject的sendNext,会遍历RACSubject所有订阅者发送信号。
+    <ul>
+      <li>因为刚刚第二步，都是在订阅RACSubject，因此会拿到第二步所有的订阅者，调用他们的nextBlock</li>
+    </ul>
+  </li>
+</ol>
+
+<p>需求：假设在一个信号中发送请求，每次订阅一次都会发送请求，这样就会导致多次请求。</p>
+
+<p>解决：使用RACMulticastConnection就能解决.</p>
+
+<p>问题：每次订阅一次都会发送请求</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 创建请求信号
+RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) {
+    
+    NSLog(@"发送请求");
+    [subscriber sendNext:@1];
+    
+    return nil;
+}];
+
+// 订阅信号
+[signal subscribeNext:^(id x) {
+    
+    NSLog(@"接受数据: %@", x);
+}];
+
+// 再次订阅信号，会再次执行发送请求，也就是每次订阅都会发送一次请求
+[signal subscribeNext:^(id x) {
+    
+    NSLog(@"接受数据: %@", x);
+}];
+</code></pre></div></div>
+
+<p>输出：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2016-12-28 11:37:04.397 ReactiveCacoa[1505:340573] 发送请求
+2016-12-28 11:37:04.398 ReactiveCacoa[1505:340573] 接受数据: 1
+2016-12-28 11:37:04.398 ReactiveCacoa[1505:340573] 发送请求
+2016-12-28 11:37:04.398 ReactiveCacoa[1505:340573] 接受数据: 1
+</code></pre></div></div>
+<p>可以发现每次订阅都会重新发送请求.</p>
+
+<p>下面我们使用RACMulticastConnection：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) {
+    
+    NSLog(@"发送请求");
+    [subscriber sendNext:@1];
+    
+    return nil;
+}];
+
+// 创建连接
+RACMulticastConnection *connect = [signal publish];
+
+// 订阅信号
+// 注意：订阅信号，也不能激活信号，只是保存订阅者到数组，必须通过连接，当调用连接，就会一次性调用所有订阅者的SendNext
+[connect.signal subscribeNext:^(id x) {
+    
+    NSLog(@"订阅者1信号: %@", x);
+}];
+
+[connect.signal subscribeNext:^(id x) {
+    
+    NSLog(@"订阅者2信号: %@", x);
+}];
+
+// 连接、激活信号
+[connect connect];
+
+</code></pre></div></div>
+
+<p>输出：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2016-12-28 11:37:04.399 ReactiveCacoa[1505:340573] 发送请求
+2016-12-28 11:37:04.399 ReactiveCacoa[1505:340573] 订阅者1信号: 1
+2016-12-28 11:37:04.399 ReactiveCacoa[1505:340573] 订阅者2信号: 1
+</code></pre></div></div>
+<h4 id="racscheduler">RACScheduler</h4>
+<blockquote>
+  <p>RAC中的队列，用GCD封装的。</p>
+</blockquote>
+
+<h4 id="racunit">RACUnit</h4>
+<blockquote>
+  <p>表⽰stream不包含有意义的值,也就是看到这个，可以直接理解为nil.</p>
+</blockquote>
+
+<h4 id="raceven">RACEven</h4>
+<blockquote>
+  <p>把数据包装成信号事件(signal event)。它主要通过RACSignal的-materialize来使用，然并卵。</p>
+</blockquote>
+
+<h1 id="reactivecocoa开发中常见用法">ReactiveCocoa开发中常见用法</h1>
+
+<ol>
+  <li>替换代理</li>
+  <li>替换KVO</li>
+  <li>监听事件</li>
+  <li>替换通知</li>
+  <li>监听文本框文字改变</li>
+  <li>统一处理多个网络请求</li>
+</ol>
+
+<h4 id="替换代理">替换代理：</h4>
+
+<p><strong>rac_signalForSelector:</strong></p>
+
+<p><code class="highlighter-rouge">rac_signalForSelector:</code> 直接监听 <code class="highlighter-rouge">Selector</code> 事件的调用</p>
+
+<p>应用场景：监听 <code class="highlighter-rouge">RedViewController</code> 中按钮的点击事件 <code class="highlighter-rouge">btnTap:</code></p>
+
+<p>跳转到<code class="highlighter-rouge">RedViewController</code>前，先使用<code class="highlighter-rouge">rac_signalForSelector</code>订阅rvc中的 <code class="highlighter-rouge">btnTap:</code> 点击事件</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 使用segue跳转
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- 
+    if ([segue.identifier isEqualToString:@"goRedVC"]) {
+        
+        RedViewController *rvc = segue.destinationViewController;
+        
+        // 订阅rvc中的 btnTap: 点击事件
+        [[rvc rac_signalForSelector:@selector(btnTap:)] subscribeNext:^(id x) {
+        
+            NSLog(@"RedVC btnTap！");
+        }];
+    }
+}
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">RedViewController.m</code> 中的按钮事件</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- (IBAction)btnTap:(id)sender {
+    
+    NSLog(@"!");
+}
+</code></pre></div></div>
+
+<h4 id="替换kvo">替换KVO</h4>
+
+<p><strong>rac_valuesForKeyPath:</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// KVO
+// 监听 slider 的 value 变化
+[[self.slider rac_valuesForKeyPath:@"value" observer:nil] subscribeNext:^(id x) {
+
+    NSLog(@"slider value Change：%@", x);
+}];
+</code></pre></div></div>
+
+<h4 id="替换通知">替换通知</h4>
+
+<p><strong>rac_addObserverForName</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 原生的订阅通知
+[[NSNotificationCenter defaultCenter] addObserver:self
+                                         selector:@selector(userDidChange:)
+                                             name:kTTCurrentUserLoggedOffNotification
+                                           object:nil];
+                                           
+// 使用RAC订阅通知 ，takeUntil限定信号的声明周期                                  
+[[[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIApplicationDidEnterBackgroundNotification object:nil]
+  takeUntil:[self rac_willDeallocSignal]]
+  subscribeNext:^(id x) {
+     NSLog(@"Notification received");
+}];
+</code></pre></div></div>
+
+<h4 id="监听事件">监听事件</h4>
+
+<p><strong>rac_signalForControlEvents:</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 监听 btn 的 UIControlEventTouchUpInside 点击事件
+[[self.btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+    
+    NSLog(@"btnTap");
+}];
+</code></pre></div></div>
+
+<h4 id="监听-textfield-文字变化">监听 textField 文字变化</h4>
+
+<p><strong>rac_textSignal</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[self.textField rac_textSignal] subscribeNext:^(id x) {
+        
+	NSLog(@"textField change: %@", x);
+}];
+</code></pre></div></div>
+
+<h4 id="统一处理多个网络请求">统一处理多个网络请求</h4>
+
+<p><strong>rac_liftSelector:</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+	// 处理多个请求都返回结果的时候，统一处理
+    // 如同时进行多个网络请求，每个请求都正确返回时，再去刷新页面
+    
+    RACSignal *signalOne = [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) {
+        
+        // 网络请求1
+        // ...
+        
+        // 返回成功
+        [subscriber sendNext:@"网络请求1 data"];
+        
+        return nil;
+    }];
+    
+    RACSignal *signalTwo = [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) {
+        
+        // 网络请求2
+        // ...
+        
+        // 返回成功
+        [subscriber sendNext:@"网络请求2 data"];
+        
+        return nil;
+    }];
+    
+    [self rac_liftSelector:@selector(updateWithR1:R2:) withSignalsFromArray:@[signalOne, signalTwo]];
+    
+}
+
+// 更新界面
+- (void)updateWithR1:(id)r1 R2:(id)r2 {
+
+    NSLog(@"R1:%@, R2：%@ 完成！", r1, r2);
+    
+}
+</code></pre></div></div>
+
+<h4 id="注意"><strong>注意</strong>：</h4>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">替换KVO</code>和 <code class="highlighter-rouge">监听文本框文字改变</code> 方法在创建监听方法时就会执行一次。</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2016-12-28 16:53:50.746 ReactiveCacoa[4956:1246592] slider value Change：0.5
+2016-12-28 16:53:50.748 ReactiveCacoa[4956:1246592] textField change:
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>使用<code class="highlighter-rouge">rac_liftSelector</code>时 <code class="highlighter-rouge">@selector(updateWithR1:R2:) </code>中的方 <strong>参数个数</strong> 要与 <strong>signal个数</strong> 相同，否则会被断言Crash！</p>
+  </li>
+</ul>
+
+:ET
