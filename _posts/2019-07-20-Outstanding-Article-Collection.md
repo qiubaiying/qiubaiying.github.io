@@ -8,7 +8,8 @@ catalog: true
 tags:
     - 优秀文章收集
 ---
-> 持续更新
+> 持续更新 
+> 最近更新：2020年2月15日 凌晨00:27
 
 学习路途中会把喜欢的文章 / 网站收录至此
 
@@ -46,6 +47,12 @@ tags:
 ---
 ### Flutter
 [Flutter如何和Native通信-Android视角](https://juejin.im/post/5b4c3c9a5188251ac446d915#heading-7)
+
+[Flutter状态管理-ScopedModel](https://juejin.im/post/5ca2c0266fb9a05e345bcdd4)
+
+[Flutter状态管理-Bloc](https://juejin.im/post/5ca5c603f265da30a3303d00)
+
+[Flutter状态管理-Redux](https://juejin.im/post/5ca5f9406fb9a05e1636a295#heading-5)
 
 ---
 ### 内存泄漏
