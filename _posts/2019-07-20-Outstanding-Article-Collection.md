@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Outstanding Article Collection
+title:      【Top】Outstanding Article Collection
 date:       2020-02-11
 author:     OldJii
 header-img: img/outstandingcollection.jpg
