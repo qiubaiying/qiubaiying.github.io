@@ -94,7 +94,7 @@ tags:
             return out, state
     ```
   
-- **<font color=red>Softmax屏蔽｜损失函数</font>**：只用有效长度
+- **<font color=red>Softmax屏蔽｜损失函数</font>** ：只用有效长度
 
   ```
   def SequenceMask(X, X_len,value=0):
@@ -139,7 +139,7 @@ tags:
 
 ### python知识点
 
-- **<font color=red>魔术方法</font>**之`__getitem__`
+- **<font color=red>魔术方法</font>** 之`__getitem__`
 
   - **当实例对象通过[] 运算符取值时，会调用它的方法`__getitem__`**
 
@@ -149,7 +149,7 @@ tags:
 
     **一般如果想使用索引访问元素时，就可以在类中定义这个方法`（__getitem__(self, key) ）`。**
 
-- **<font color=red>Python编程中NotImplementedError的使用</font>**
+- **<font color=red>Python编程中NotImplementedError的使用</font>** 
 
   - Python编程中raise可以实现报出错误的功能，而报错的条件可以由程序员自己去定制。**在面向对象编程中，可以先预留一个方法接口不实现，在其子类中实现。如果要求其子类一定要实现，不实现的时候会导致问题，那么采用raise的方式就很好。而此时产生的问题分类是NotImplementedError**。
 
