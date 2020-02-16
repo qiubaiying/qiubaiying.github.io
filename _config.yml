@@ -2,7 +2,7 @@
 title: 武嘉同好交流站
 SEOTitle: 武嘉同好交流站 | TakariFansClub
 header-img: img/index.JPG
-email: takarifansclub@proton.com
+email: takarifansclub@protonmail.com
 description: "有一说一，武嘉CP真是好吃呀~"
 keyword: "武嘉, 岳光, 数码宝贝, 同好"
 url: "http://takarifansclub.github.io"          # your host, for absolute URL
@@ -66,7 +66,7 @@ ba_track_id: b50bf2b12b5338a1845e33832976fd68
 
 # 火热标签
 featured-tags: true                     # 是否使用首页标签
-featured-condition-size: 3              # 相同标签数量大于这个数，才会出现在首页
+featured-condition-size: 2              # 相同标签数量大于这个数，才会出现在首页
 
 
 
