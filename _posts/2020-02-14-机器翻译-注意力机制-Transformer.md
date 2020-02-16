@@ -1,5 +1,5 @@
 ---
-https://github.com/Julian-young/Julian-young.github.io/blob/master/uPic/soS4oy.pnglayout:     post
+layout:     post
 title:      PyTorch系列之机器翻译｜注意力机制｜Transformer
 subtitle:   机器翻译｜注意力机制｜Transformer
 date:       2020-02-14
