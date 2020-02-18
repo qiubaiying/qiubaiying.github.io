@@ -4,7 +4,7 @@ title:      论文分享-‘Batch Effect Correction’
 subtitle:   A review of k-mer counting methods
 date:       2020-02-18
 author:     Xuan
-header-img: img/post-bg-2.jpg
+header-img: img/post-bg-2.png
 catalog: true
 tags:
     - Paper
@@ -36,4 +36,12 @@ papar info: 2020; published in Bioinformatics
 
 3.Limitation of linear methods: require the knowledge of biological groups for each observation, which is hardly feasible.
 
-4. spike-in genes?
+4.spike-in genes?
+
+5.workflow
+- input： gene expression counts matrix
+
+6.Dataset
+- simulated data
+- real data
+
