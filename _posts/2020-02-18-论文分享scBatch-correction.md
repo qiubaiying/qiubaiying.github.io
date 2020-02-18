@@ -40,6 +40,8 @@ papar info: 2020; published in Bioinformatics
 3.Limitation of linear methods: require the knowledge of biological groups for each observation, which is hardly feasible.
 
 4.spike-in genes?
+> spike-in方法，指在RNA-seq建库过程中参入一些预先知道序列信息以及序列绝对数量的内参，这样在进行RNA-Seq测序的时候就可以通过不同样本之间内参（spike-in）的量来做一条标准曲线，就可以非常准确地对不同样本之间的表达量进行矫正。  
+常用的spike-in类型：ERCC Control RNA （External RNA Controls Consortium）.
 
 5.workflow
 - input： gene expression counts matrix
