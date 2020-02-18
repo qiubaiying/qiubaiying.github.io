@@ -4,7 +4,7 @@ title:      ‘Batch Effect Correction of RNA-seq Data through Sample Distance M
 subtitle:   Paper sharing
 date:       2020-02-18
 author:     Xuan
-header-img: img/post-bg-2.png
+header-img: img/post-bg-1.png
 catalog: true
 tags:
     - Paper_share
@@ -16,12 +16,12 @@ tags:
 
 papar info: 2020; published in Bioinformatics
 
-##Novelty
+## Novelty
 
 - unfinish
 - not seq error correction, it is the correction for **gene expression counts** 
 
-##Brief introduction
+## Brief introduction
 
 1.Batch effect: _batch_ means a number of the factors (including different laboratories, different sample preparation batches, different sequencing...)
 
