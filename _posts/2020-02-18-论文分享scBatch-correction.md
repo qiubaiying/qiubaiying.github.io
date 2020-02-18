@@ -18,6 +18,9 @@ papar info: 2020; published in Bioinformatics
 
 ##Novelty
 
+- unfinish
+- not seq error correction, it is the correction for **gene expression counts** 
+
 ##Brief introduction
 
 1.Batch effect: _batch_ means a number of the factors (including different laboratories, different sample preparation batches, different sequencing...)
@@ -42,6 +45,6 @@ papar info: 2020; published in Bioinformatics
 - input： gene expression counts matrix
 
 6.Dataset
-- simulated data
+- simulated data : (PROPER for data simulation)
 - real data
 
