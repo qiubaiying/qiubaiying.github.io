@@ -1,18 +1,19 @@
 ---
 layout:     post
-title:      你不知道的JavaScript(上卷)笔记01
-subtitle:   
+title:      你不知道的JavaScript(上卷)-笔记01
+subtitle:   作用域是什么
 date:       2020-02-17
 author:     CHM
 header-img: img/home-bg-o.jpg
 catalog: true
 tags:
     - JS
+    - 你不知道的JavaScript
 ---
 
 
 ## 前言
-你不知道的JavaScript[上卷]主要分为两部分。第一部分是:作用域与闭包；第二部分是:this与对象原型。这里主要讲的是第一部分的第一章。作用域是什么。
+你不知道的JavaScript[上卷]主要分为两部分。第一部分是:作用域与闭包；第二部分是:this与对象原型。这里主要讲的是第一部分的第一章。**作用域是什么**。
 
 ## 作用域
 首先，一个编程语言，都有变量这个基本元素，用来存储数据，并且可以通过修改变量。通常是通过状态来记录变量的变化。那么，不同状态的变量都存储到哪里呢？我们就需要对变量的存储制定一个规则。在js中，这个规则就是作用域。
