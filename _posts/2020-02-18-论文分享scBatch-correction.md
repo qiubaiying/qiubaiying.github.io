@@ -1,13 +1,13 @@
 ---
 layout:     post
-title:      论文分享-‘Batch Effect Correction’
-subtitle:   A review of k-mer counting methods
+title:      ‘Batch Effect Correction of RNA-seq Data through Sample Distance Matrix Adjustment’
+subtitle:   Paper sharing
 date:       2020-02-18
 author:     Xuan
 header-img: img/post-bg-2.png
 catalog: true
 tags:
-    - Paper
+    - Paper_share
 ---
 
 # Paper sharing
