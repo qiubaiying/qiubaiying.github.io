@@ -59,8 +59,8 @@ gitalk:
   clientID: 3fd9ff82cb34791eb5a4                            #生成的clientID
   clientSecret: bcdd3edf418e666f190cf16b980a21aa7b7edcc5    #生成的clientSecret
   repo: takarifansclub.github.io    #仓库名称
-  owner: takarifansclub    #github用户名
-  admin: 武嘉同好交流站
+  owner: TakariFansClub    #github用户名
+  admin: TakariFansClub
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 # 统计
