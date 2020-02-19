@@ -7,7 +7,7 @@ description: "Every failure is leading towards success."
 keyword: "SYL, SYL Blog, iko070's Blog, shiyunlong, BigData, DeepLearning, Data Science, Python"
 url: "http://iko070.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/iko070/iko070.github.io" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
