@@ -7,7 +7,7 @@ description: "有一说一，武嘉CP真是好吃呀~"
 keyword: "武嘉, 岳光, 数码宝贝, 同好"
 url: "http://takarifansclub.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: " " # you code repository
+github_repo: takarifansclub.github.io # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -17,7 +17,7 @@ sidebar-about-description: "希望永伴光明"
 
 
 # SNS settings
-RSS: false
+RSS: true
 # weibo_username:     
 # github_username:    
 
@@ -58,7 +58,7 @@ gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: 3fd9ff82cb34791eb5a4                            #生成的clientID
   clientSecret: bcdd3edf418e666f190cf16b980a21aa7b7edcc5    #生成的clientSecret
-  repo: takarifansclub.github.io/    #仓库名称
+  repo: takarifansclub.github.io    #仓库名称
   owner: takarifansclub    #github用户名
   admin: 武嘉同好交流站
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
