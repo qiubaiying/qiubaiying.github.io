@@ -39,6 +39,12 @@ tags:
 
 [RxJava与Retrofit相结合的正确体位](https://tough1985.github.io/2016/03/15/how-to-use-Retrofit-with-Rxjava.html#rxjavaretrofit)
 
+[RxJava - Flowable 1](https://mp.weixin.qq.com/s/wNjsZY7onRS_HjVJFuAq1g)
+
+[RxJava - Flowable 2](https://mp.weixin.qq.com/s/mjl56nRl1DIc61QEy8cQiA)
+
+[RxJava - Flowable 3](https://mp.weixin.qq.com/s/RMuhwriNhSvKfDg5VDIpwg)
+
 ---
 ### 其他开源库
 
