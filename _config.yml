@@ -7,7 +7,7 @@ description: "Every failure is leading towards success."
 keyword: "BY, BY Blog, think and study,郑邦玉, Android, p30"
 url: "https://double666-del.github.io/"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/double666-del/double666-del.github.io.git" # you code repository
+github_repo: "https://github.com/double666-del/double666-del.github.io" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
