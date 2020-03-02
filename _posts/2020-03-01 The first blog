@@ -1,4 +1,17 @@
-# 2020-03-01 The first blog
+---
+layout:     post
+title:      第一篇博客
+subtitle:   iOS定时器详解
+date:       2016-12-13
+author:     BY
+header-img: img/post-bg-ios9-web.jpg
+catalog: 	 true
+tags:
+    - iOS
+    - 定时器
+---
+
+#2020-03-01 The first blog
 
 **虽然根据教程搭建了博客，基本没有遇到什么困难，但是还是挺好玩的**
 
