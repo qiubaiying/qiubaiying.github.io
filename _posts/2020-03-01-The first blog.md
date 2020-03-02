@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      第一篇博客
-subtitle:   iOS定时器详解
-date:       2016-12-13
+subtitle:   尝试
+date:       2020-03-01
 author:     BY
 header-img: img/post-bg-ios9-web.jpg
 catalog: 	 true
