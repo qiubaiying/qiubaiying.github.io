@@ -1,7 +1,7 @@
 # Site settings
 title: BY Blog
 SEOTitle: think and study | BY Blog
-header-img: img/post-bg-desk.jpg
+header-img: img/desktop.jpg
 email: bangyuzheng777@163.com
 description: "Every failure is leading towards success."
 keyword: "BY, BY Blog, think and study,郑邦玉, Android, p30"
@@ -20,7 +20,7 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 RSS: false
 #weibo_username:     qiubaiying
 #zhihu_username:     qiubaiying
-github_username:    double666-del
+github_username:    double666.
 #facebook_username:  baiying.qiu.7
 #jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
