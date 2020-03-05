@@ -3,12 +3,12 @@ layout:     post
 title:      第一篇博客
 subtitle:   尝试
 date:       2020-03-01
-author:     BY
+author:     2BY
 header-img: img/post-bg-ios9-web.jpg
 catalog: 	 true
 tags:
-    - iOS
-    - 定时器
+    - python
+    - 随笔
 ---
 
 #2020-03-01 The first blog
