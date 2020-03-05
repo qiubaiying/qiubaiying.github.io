@@ -1,10 +1,10 @@
 # Site settings
-title: BY Blog
-SEOTitle: think and study | BY Blog
+title: 2BY Blog
+SEOTitle: think and study | 2BY Blog
 header-img: img/desktop.jpg
 email: bangyuzheng777@163.com
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, think and study,郑邦玉, Android, p30"
+keyword: "2BY, 2BY Blog, think and study,郑邦玉, Android, p30"
 url: "https://double666-del.github.io/"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/double666-del/double666-del.github.io" # you code repository
