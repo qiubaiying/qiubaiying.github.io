@@ -26,7 +26,6 @@ RSS: false
 #twitter_username:   qiubaiying
 
 
-post_asset_folder:true
 
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
