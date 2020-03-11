@@ -22,7 +22,7 @@ XSS攻击(Cross Site Scripting)通常指的是通过利用网页开发时留下�
 
 如果你的cookie值被窃取，那么攻击者很可能能够直接利用你的这张令牌不用密码就登录你的账户。如果想要通过script脚本获得当前页面的cookie值，通常会用到document.cookie。
 
-> https://zhuanlan.zhihu.com/p/26177815>(浅谈XSS攻击的那些事)
+> <https://zhuanlan.zhihu.com/p/26177815>(浅谈XSS攻击的那些事)
 
 这篇文章讲了很多，但是我没看懂多少，以后再回来看看
 
