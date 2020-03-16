@@ -11,7 +11,7 @@
 
 
 博客的搭建教程修改自 [Hux](https://github.com/Huxpro/huxpro.github.io) 
- 
+
 更为详细的教程戳这 [《利用 GitHub Pages 快速搭建个人博客》](http://www.jianshu.com/p/e68fba58f75c) 或 [wiki](https://github.com/qiubaiying/qiubaiying.github.io/wiki/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B)
 
 >
@@ -122,7 +122,7 @@ featured-condition-size: 1     # A tag will be featured if the size of it is mor
 ```
 
 唯一需要注意的是`featured-condition-size`: 如果一个标签的 SIZE，也就是使用该标签的文章数大于上面设定的条件值，这个标签就会在首页上被推荐。
- 
+
 内部有一个条件模板 `{% if tag[1].size > {{site.featured-condition-size}} %}` 是用来做筛选过滤的.
 
 ### Social-media Account
@@ -136,8 +136,9 @@ featured-condition-size: 1     # A tag will be featured if the size of it is mor
 	facebook_username:  username
 	github_username:    username
 	# weibo_username:   username
-	
-	
+
+
+​	
 
 ![](http://ww4.sinaimg.cn/large/006tKfTcgy1fgrgbgf77aj308i02v748.jpg)
 
@@ -239,7 +240,7 @@ ga_domain: huangxuan.me			# 默认的是 auto, 这里我是自定义了的域名
 ### Header Image
 
 博客每页的标题底图是可以自己选的，看看几篇示例post你就知道如何设置了。
-  
+
 标题底图的选取完全是看个人的审美了。每一篇文章可以有不同的底图，你想放什么就放什么，最后宽度要够，大小不要太大，否则加载慢啊。
 
 > 上传的图片最好先压缩，这里推荐 imageOptim 图片压缩软件，让你的博客起飞。
@@ -251,6 +252,16 @@ ga_domain: huangxuan.me			# 默认的是 auto, 这里我是自定义了的域名
 我的博客标题是 **“BY Blog”** 但是我想要在搜索的时候显示 **“柏荧的博客 | BY Blog”** ，这个就需要 SEO Title 来定义了。
 
 其实这个 SEO Title 就是定义了<head><title>标题</title></head>这个里面的东西和多说分享的标题，你可以自行修改的。
+
+### Docker运行本地服务
+
+在git仓库路径下执行以下命令将开启jekyll的服务，访问[localhost:4000](http://localhost:4000/)即可查看博客主页
+
+```bash
+docker run --mount type=bind,source=$(pwd),target=/srv/jekyll -p 4000:4000  --rm --name blog -it jekyll/jekyll:3.0 jekyll serve
+```
+
+
 
 ### 关于收到"Page Build Warning"的 Email
 
