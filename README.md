@@ -247,11 +247,25 @@ ga_domain: huangxuan.me			# 默认的是 auto, 这里我是自定义了的域名
 
 但是需要注意的是本模板的标题是**白色**的，所以背景色要设置为**灰色**或者**黑色**，总之深色系就对了。当然你还可以自定义修改字体颜色，总之，用github pages就是可以完全的个性定制自己的博客。
 
-### SEO Title
+### SEO
+#### Title
 
 我的博客标题是 **“BY Blog”** 但是我想要在搜索的时候显示 **“柏荧的博客 | BY Blog”** ，这个就需要 SEO Title 来定义了。
 
 其实这个 SEO Title 就是定义了<head><title>标题</title></head>这个里面的东西和多说分享的标题，你可以自行修改的。
+#### SiteMap
+将网站提交给搜索引擎才能被搜索到
+各个搜索引擎提交个人站点的入口：
+
+* 百度 ： https://ziyuan.baidu.com/site/index
+* 谷歌 ： https://www.google.com/webmasters/tools/home?hl=en
+* 搜狗 ： http://zhanzhang.sogou.com/index.php/dashboard/index
+* 360　： http://info.so.360.cn/site_submit.html
+* Bing ： https://www.bing.com/toolbox/webmaster/
+
+SiteMap地址为`CName/whatever.xml`，`CName`为你自己的博客域名
+
+参考：[各个搜索引擎的提交个人网站地址的入口](https://www.oukohou.wang/2018/11/01/sereral_search_engines_urls/)
 
 ### Docker运行本地服务
 
