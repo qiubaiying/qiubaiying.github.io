@@ -2,7 +2,7 @@
 title: CINDY
 SEOTitle: 王蛋子的博客 | You Blog
 header-img: img/post-bg-desk.jpg
-email: nuozi221179@@gmail.com
+email: nuozi221179@gmail.com
 description: "Every failure is leading towards success."
 keyword: "BY, BY Blog, 王蛋子的博客, wangbanzi,  iOS, Apple, iPhone"
 url: "http://wangdanzi.github.io"          # your host, for absolute URL
@@ -94,6 +94,7 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 chrome-tab-theme-color: "#000000"
 service-worker: true
 
+timezone: Asia/Shanghai
 
 
 # Friends
