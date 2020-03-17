@@ -37,3 +37,14 @@ tags:								#标签
 aGEgaGE/IHlvdSB3YW50IGZsYWc/IGZsYWcgaXMgaGVyZTw/cGhwDQovLyB0cnkgdG8gcmVhZCB0aGlzIHNvdXJjZSBjb2RlDQovLyRmbGFnID0gJ2ZsYWd7cmVhbGx5X2Jhc2ljX3NraWxsX3dlYl9kb2dfc2hvdWxkX2tub3d9JzsNCj8+LCBidXQgZG9uJ3QgbGV0IHlvdSBzZWUhDQo=
 
 于是我拿到网页上的base64在线解码，拿到flag。
+
+# XSS1
+
+今天晚上还看了一下XSS1这道题，尝试用下面的符号来替换掉",<和>,但是仍然不能注入，尝试了几次都收不到消息，过两天再想想
+
+![E2FA6B598A0149F096826B90C1971460.jpg](http://ww1.sinaimg.cn/large/005KQQDely1gcxbrihe2ej30kx00jq2w.jpg)
+
+我的payload，但是不行= =
+
+![屏幕截2.jpg](http://ww1.sinaimg.cn/large/005KQQDely1gcxbnax5pdj30zb0ijgnf.jpg)
+
