@@ -10,11 +10,36 @@ tags:								#标签
     - 基础知识
 ---
 
-今天没做出题来，本来想做一下pwn的题，发现要配环境，无奈在安装pwntools的时候碰到了各种error，到现在也没安装好，于是今天就看了一些关于pwn的基础知识。
+今天没做出题来，本来想做一下pwn的题，发现要配环境，无奈在安装pwntools的时候碰到了各种error，到现在也没安装好，中途Ubuntu升级还黑屏了，还好我有快照恢复了一下。于是今天就看了一些关于pwn的基础知识。
 
 关于pwn，i春秋有一系列文章写得很好：[Linux pwn入门教程系列](https://bbs.ichunqiu.com/forum.php?mod=collection&action=view&ctid=157)
 
 我没来得及看完，只看了前两篇文章。
+
+睡前更新--------
+
+害 原来安装pwn这么简单的事呀，之前我遇到的问题归根结底应该是同一个原因，就是下载源的问题。
+
+ReadTimeoutError: HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Read
+
+在我报这个错误的时候有个帖子说这个容易被墙，所以要更改pip源，直接指定下载源
+
+`pip install -i https://pypi.douban.com/simple <需要安装的包>`
+
+所以我就是
+
+`pip install -i https://pypi.douban.com/simple pwntools`
+
+ 然后。飞一般的感觉，就安好了！
+
+在终端输入python进入其交互模式后，输入import pwn回车后没报错
+
+这时候再尝试pwntools的asm功能
+
+`pwn.asm("xor eax,eax")`
+`'1\xc0'`
+
+OKK!
 
 ##补课！
 
