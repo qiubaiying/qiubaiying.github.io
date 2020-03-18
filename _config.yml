@@ -11,8 +11,8 @@ github_repo: "https://github.com/zhangzhaorui/zhangzhaorui.github.io.git" # you 
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "We all make our choices. The hard part is living with them"
+sidebar-avatar: /img/zhangzhaorui.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -96,16 +96,10 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        title: "宋净超",
+        href: "https://jimmysong.io/"
     },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
-    },{
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "张馆长",
+        href: "https://zhangguanzhang.github.io/"
     }
 ]
