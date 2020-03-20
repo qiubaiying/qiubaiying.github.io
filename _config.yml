@@ -54,18 +54,15 @@ kramdown:
 
 
 
-# 评论系统
-# Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
 
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  clientID: 1e7553b726b73849ff30                           #生成的clientID
+  clientSecret: 40593618e71a9ffee63caa2d6fe73678ee8d8774    #生成的clientSecret
+  repo: ruiyushen.github.io    #仓库名称
+  owner: ruiyushen    #github用户名
+  admin: ruiyushen
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
@@ -75,8 +72,7 @@ gitalk:
 # Baidu Analytics
 ba_track_id: f993b1532ab643fabf4ff90606a2ac6a
 
-           # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
-
+          
 
 
 
@@ -96,16 +92,13 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        title: "Instagram",
+        href: "https://www.instagram.com/ruiyushen"
     },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
+        title: "Bilibili",
+        href: "https://space.bilibili.com/223258962"
     },{
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "Wikipedia",
+        href: "https://zh.wikipedia.org/wiki/User:RuiyuShen"
     }
 ]
