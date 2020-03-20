@@ -98,26 +98,6 @@ header-img: "img/post-bg-rwd.jpg"
 </script>
 
 
-<!-- Gitalk 评论 start  -->
-{% if site.gitalk.enable %}
-<!-- Gitalk link  -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-
-var gitalk = new Gitalk({
-  clientID: '8be59df92caee6c7d0f5',
-  clientSecret: '279a7708810337639460908838e8b3b776ec9b7b',
-  repo: 'ruiyushen/ruiyushen.github.io',
-  owner: 'ruiyushen',
-  admin: ['ruiyushen'],
-  id: gitalk.ruiyushen,      // Ensure uniqueness and length less than 50
-  distractionFreeMode: false  // Facebook-like distraction free mode
-})
-
-gitalk.render('gitalk-container')
-</script>
-{% endif %}
-<!-- Gitalk end -->
 
 
 
