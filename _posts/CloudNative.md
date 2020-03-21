@@ -9,7 +9,6 @@ tags:
     - CloudNative
 ---
 
-<font face="黑体">-------我------是-------分-------割-------线</font>
 ## 请对生产环境保持敬畏之心！！！！
 ### 什么是CloudNative？
 &emsp;&emsp;Cloud Native是一个思想的集合，包括DevOps、持续交付、微服务、敏捷基础设施、康威定律等，以及根据商业能力对公司进行重组。可以说Cloud Native即包含技术（微服务，敏捷基础设施），也包含管理（DevOps，持续交付，康威定律，重组等）。Cloud Native也可以说是一系列Cloud技术、企业管理方法的集合。
