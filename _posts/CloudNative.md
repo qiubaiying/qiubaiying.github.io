@@ -1,8 +1,14 @@
 ---
-title: Cloud Native
-date: 2018-11-27 21:30:50
-tags: k8s
+layout:     post
+title:      Cloud Native
+subtitle:   学习学习什么事Cloud Native
+date:       2018-11-27 21:30:50
+author:     zhangzhaorui
+catalog: true
+tags:
+    - CloudNative
 ---
+
 <font face="黑体">-------我------是-------分-------割-------线</font>
 ## 请对生产环境保持敬畏之心！！！！
 ### 什么是CloudNative？
