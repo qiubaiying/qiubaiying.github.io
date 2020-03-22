@@ -22,7 +22,7 @@ Cloud Native的技术部分是建筑在传统Cloud的三层（IaaS、PaaS、SaaS
 - 敏捷基础设施对应IaaS部分。
 - 微服务则可以对应PaaS和SaaS部分。
 
-![cn.png](img/cn.png)
+![cn.png](CloudNative/cn.png)
 
 ### Cloud Native的五个层面
 
