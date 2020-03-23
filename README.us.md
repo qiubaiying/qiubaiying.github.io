@@ -41,7 +41,7 @@ Releases
 - Merged #333, #336 from @JinsYin.
 - Add `Gemfile` due to increasing Bundler using.
 - TODO: `multilingual` could be more automative via configurations and convention.
-- Drop the entire `portfolio` page until a big rewrite of a better `project` page.
+- Drop the entire `portfolio` page until a big rewrite of a better `project` page. 
 
 #### V1.8.1
 
