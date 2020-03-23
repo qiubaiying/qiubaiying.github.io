@@ -10,7 +10,7 @@ tags:
     - k8s
 ---
 
-### 图片来源网络
+### Pod的创建流程如下图所示(图片来源于网络)`
 
 ![createpod.png](http://q7mj5531m.bkt.clouddn.com/createpod.png)
 
