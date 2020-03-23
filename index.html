@@ -1,6 +1,6 @@
 ---
 layout: page
-description: "Thinking will not overcome fear but action will."
+description: "The best way to create value is to act."
 ---
 
 {% for post in paginator.posts %}
@@ -19,7 +19,8 @@ description: "Thinking will not overcome fear but action will."
         </div>
     </a>
     <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on
+        {{ post.date | date: "%B %-d, %Y" }}
     </p>
 </div>
 <hr>
