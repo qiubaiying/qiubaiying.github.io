@@ -3,17 +3,13 @@ layout: page
 title: "About"
 description: "Hey, this is Chris."
 header-img: "img/post-bg-rwd.jpg"
+multilingual: true
 ---
 
-<!-- Language Selector -->
-<!-- <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected> 中文 Chinese </option>
-    <option value="1"> 英文 English </option>
-</select> -->
+{% include multilingual-sel.html %}
 
 <!-- Chinese Version -->
 <div class="zh post-container">
-
     <!--copied from markdown -->
     <blockquote>
         <p>冰冻三尺 非一日之寒<br>
@@ -99,7 +95,6 @@ header-img: "img/post-bg-rwd.jpg"
     // init
     _render();
 </script>
-
 
 <!-- Gitalk 评论 start  -->
 {% if site.gitalk.enable %}

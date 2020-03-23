@@ -1,13 +1,13 @@
 {
-  "name": "BY Blog",
-  "short_name": "BY Blog",
-  "description": "A personal blog by engineer",
+  "name": "Hux Blog",
+  "short_name": "Hux Blog",
+  "description": "About an engineer & designer who loves web.",
   "icons": [{
-    "src": "icons/pwa_icon_128.png",
+    "src": "icons/128.png",
     "sizes": "128x128",
     "type": "image/png"
   }, {
-    "src": "icons/pwa_icon_512.png",
+    "src": "icons/512.png",
     "sizes": "512x512",
     "type": "image/png"
   }],
