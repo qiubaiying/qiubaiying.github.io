@@ -41,6 +41,7 @@ anchorjs: true                          # if you want to customize anchor. check
 # from PR#40, to support local preview for Jekyll 3.0
 # make sure you have this gem installed
 # `$ gem install jekyll-paginate`
+gems: [jekyll-paginate]
 plugins: [jekyll-paginate]
 
 
@@ -118,7 +119,7 @@ page-mathjax: false
 friends: [
     {
         title: "JasonCao",
-        href: "https://jasoncaocjx.github.io/"
+        href: "https://jasoncaocjx.github.io"
     },{
         title: "Apple",
         href: "https://apple.com"
