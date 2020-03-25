@@ -52,6 +52,7 @@ vim /usr/lib/systemd/system/docker.service
 ```
 
 3. 添加daemon.json（我的这个内容包括镜像加速，存储驱动，日志格式，日志轮转等还可以添加的有很多）
+
 ```
 mkdir /etc/docker && vim /etc/docker/daemon.json
 
@@ -68,6 +69,7 @@ mkdir /etc/docker && vim /etc/docker/daemon.json
     "max-file": "3"
   }
 }
+```
 
 4. 重启docker
 
@@ -75,16 +77,12 @@ mkdir /etc/docker && vim /etc/docker/daemon.json
 systemctl daemon-reload && systemctl  restart docker
 ```
 
-5. 安装docker-compose
-```
-yum install zip unzip gcc gcc-c++ python-devel && pip install docker-compose
-```
+### 五、后续优化动作
 
-
-5. docker及docker-compose命令补全功能
+docker及docker-compose命令补全功能
 
 ```
-yum install -y bash-completion
+yum install -y bash-completion zip unzip gcc gcc-c++ python-devel && pip install docker-compose
 
 curl -L https://raw.githubusercontent.com/docker/docker/v$(docker version -f "{{.Client.Version}}")/contrib/completion/bash/docker -o /etc/bash_completion.d/docker
 
