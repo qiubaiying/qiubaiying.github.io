@@ -36,14 +36,14 @@ yum -y install docker-ce
 
 ![docker-overlay.png](http://q7mj5531m.bkt.clouddn.com/docker-overlay.png)
 
-1. 创建数据盘并格式化成ext4格式或者xfs格式。（需要注意格式化为xfs格式时需要添加ftype=1）
+#### 创建数据盘并格式化成ext4格式或者xfs格式。（需要注意格式化为xfs格式时需要添加ftype=1）
 
 ```
 mkfs.xfs -n ftype=1 /dev/sdb
 mkfs.ext4 /dev/sdb
 ```
 
-2. 修改docker默认存储目录
+#### 修改docker默认存储目录
 
 ```
 vim /usr/lib/systemd/system/docker.service
@@ -51,7 +51,7 @@ vim /usr/lib/systemd/system/docker.service
 在ExecStart此行添加--graph 目录名称 指定docker存储挂载目录
 ```
 
-3. 添加daemon.json（我的这个内容包括镜像加速，存储驱动，日志格式，日志轮转等还可以添加的有很多）
+#### 添加daemon.json（我的这个内容包括镜像加速，存储驱动，日志格式，日志轮转等还可以添加的有很多）
 
 ```
 mkdir /etc/docker && vim /etc/docker/daemon.json
@@ -71,7 +71,7 @@ mkdir /etc/docker && vim /etc/docker/daemon.json
 }
 ```
 
-4. 重启docker
+#### 重启docker
 
 ```
 systemctl daemon-reload && systemctl  restart docker
@@ -79,7 +79,7 @@ systemctl daemon-reload && systemctl  restart docker
 
 ### 五、后续优化动作
 
-docker及docker-compose命令补全功能
+#### docker及docker-compose命令补全
 
 ```
 yum install -y bash-completion zip unzip gcc gcc-c++ python-devel && pip install docker-compose
