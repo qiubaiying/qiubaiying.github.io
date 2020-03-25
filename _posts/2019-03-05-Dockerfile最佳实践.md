@@ -1,9 +1,14 @@
 ---
-title: Dockerfile实践中体会
-date: 2018-11-20 01:20:50
-tags: docker
+layout:     post
+title:      Dockerfile实践中体会
+subtitle:   其实还有很多这个就是简单写写记录一下
+date:       2019-03-05
+author:     zhangzhaorui
+header-img: img/123.jpg
+catalog: true
+tags:
+    - Docker
 ---
-<font face="黑体">-------我------是-------分-------割-------线</font>
 
 ### Dockerfile中常见指令
 - FROM指定一个基础镜像，一般情况下一个可用的Dockerfile FROM是第一个指令。image可以是任何合理存在的image镜像。FROM可以在一个Dockerfile中出现多次，如果没有指定镜像tag，将会使用latest镜像版本。
@@ -190,5 +195,3 @@ FROM node:7-alpine
 LABEL maintainer "nianshenlovelily@gmail.com"  
 ...
 ```
-&nbsp;
-
