@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Dockerfile实践中体会
+title:      Dockerfile最佳实践
 subtitle:   其实还有很多这个就是简单写写记录一下
 date:       2019-03-05
 author:     zhangzhaorui
