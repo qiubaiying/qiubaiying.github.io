@@ -19,7 +19,7 @@ sidebar-avatar: /img/zhangzhaorui.jpg      # use absolute URL, seeing it's used 
 # SNS settings
 RSS: false
 # weibo_username:     qiubaiying
-zhihu_username:     zhangzhaorui
+#zhihu_username:     zhangzhaorui
 github_username:    zhangzhaorui
 
 
