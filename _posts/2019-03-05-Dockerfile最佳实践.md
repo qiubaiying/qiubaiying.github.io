@@ -6,8 +6,7 @@ date:       2019-03-05
 author:     zhangzhaorui
 header-img: img/123.jpg
 catalog: true
-tags:
-    - Docker
+
 ---
 
 ### Dockerfile中常见指令
