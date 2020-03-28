@@ -27,7 +27,7 @@ bridge模式是docker的默认网络模式，不写--net参数，就是bridge模
 ![dnat.png](http://q7mj5531m.bkt.clouddn.com/dnat.png)
 
 bridge模式如下图：
-![docker-netework-bridge.jpeg.png](http://q7mj5531m.bkt.clouddn.com/docker-netework-bridge.jpeg.png)
+![docker-netework-bridge.jpeg](http://q7mj5531m.bkt.clouddn.com/docker-netework-bridge.jpeg)
 
 
 
