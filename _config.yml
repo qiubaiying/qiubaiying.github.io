@@ -4,7 +4,7 @@ SEOTitle: Hening的博客
 header-img: img/post-bg-desk.jpg
 email: hening.wang0615@gmail.com
 description: "Every failure is leading towards success."
-keyword: "德语，语言学，语言哲学，话语分析，生成句法学，事件语义学"
+keyword: "德语，心理语言学，语言哲学，话语分析，生成句法学，事件语义学"
 url: "https://untertan.github.io/"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
@@ -19,10 +19,8 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 # SNS settings
 RSS: false
 # weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
+zhihu_username:     Versinkung
+github_username:    Untertan
 #twitter_username:   qiubaiying
 
 
@@ -57,7 +55,7 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
+# disqus_username: Hening
 
 # Gitalk
 gitalk:
