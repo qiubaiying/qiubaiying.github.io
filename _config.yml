@@ -1,11 +1,11 @@
 # Site settings
-title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
+title: 流浪者夜歌
+SEOTitle: Hening的博客
 header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
+email: hening.wang0615@gmail.com
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+keyword: "德语，语言学，语言哲学，话语分析，生成句法学，事件语义学"
+url: "https://untertan.github.io/"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
 
