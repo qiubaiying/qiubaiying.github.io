@@ -39,7 +39,7 @@ bridge模式如下图：
 * 默认网桥网络上的链接容器共享环境变量。
 详细信息可以参考Docker官方文档：https://docs.docker.com/network/bridge/
 
-###### overlay网络（不过多叙述，个人感觉用的并不多）
+###### overlay网络
 俗称隧道网络，它是基于VxLAN协议来将二层数据包封装到UDP中进行传输的，目的是扩展二层网段，因为 VLAN 使用12bit标记VLANID，最多支持4094个 这对于大型云网络会成为瓶颈，而VxLANID使用24bit来标记，支持16777216个二层网段，所以VxLAN是扩展了的VLAN，也叫做大二层网络。
 
 在早期的docker版本中，是不支持跨主机通信网络驱动的，也就是说如果容器部署在不同的节点上面，只能通过暴露端口到宿主机上，再通过宿主机之间进行通信。随着docker swarm集群的推广，docker也有了自家的跨主机通信网络驱动，名叫overlay，overlay网络模型是swarm集群容器间通信的载体，将服务加入到同一个网段上的Overlay网络上，服务与服务之间就能够通信。官方文档里使用Docker Swarm来完成Docker跨主机网络的搭建。Docker Swarm并不是必须的，只要有key-value存储服务器（比如consul、etcd、zookeeper）和运行了Docker的主机就能完成搭建。
@@ -65,29 +65,35 @@ none网络是一个完全隔离的自治网络，甚至与Docker宿主机的网�
 加入到该网络的容器实例，往往要在后续设置中加入到其他的第三方网络。
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #### 四、Kubernetes的网络
 在Kubernetes网络中存在两种IP（Pod IP和Service Cluster IP），Pod IP 地址是实际存在于某个网卡(可以是虚拟设备)上的，Service Cluster IP它是一个虚拟IP，是由kube-proxy使用Iptables规则重新定向到其本地端口，再均衡到后端Pod的。
 * 基本原则：每个pod都有自己的独立的IP地址，而且pod的网络在一个扁平的可以直连的网络空间中。
 * 设计理念：用户创建pod后不需要关心如何建立pod之间的连接，也不需要考虑通过什么样的方式把容器的端口映射到宿主机上。
-* 网络要求：互通，pod和pod之间，pod和node之间，不同node上的不同pod。
+* 网络要求：互通，pod和pod之间，pod和node之间，不同node上的不同pod，Pod与Service之间的网络，Internet与Service之间的网络
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
