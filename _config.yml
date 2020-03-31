@@ -76,7 +76,7 @@ ba_track_id: 1c0dbf5f72d6c848a29127782b0a8a79
 
 
 # Google Analytics
-ga_track_id: 'UA-162209554-1'            # Format: UA-xxxxxx-xx
+ga_track_id: UA-162209554-1            # Format: UA-xxxxxx-xx
 ga_domain: auto               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
