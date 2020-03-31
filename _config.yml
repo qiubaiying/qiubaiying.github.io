@@ -54,8 +54,8 @@ kramdown:
 
 
 # 评论系统
-Disqus（https://disqus.com/）
-disqus_username: Hening
+#Disqus（https://disqus.com/）
+#disqus_username: Hening
 
 # Gitalk
 #gitalk:
