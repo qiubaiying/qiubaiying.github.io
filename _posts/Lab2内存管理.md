@@ -1,3 +1,15 @@
+---
+layout:     post   				    # 使用的布局（不需要改）
+title:      828-lab2-part1		# 标题 
+#subtitle:   脚本，xss #副标题
+date:       2020-04-01 				# 时间
+author:     s-seven 						# 作者
+header-img: img/post-bg-2015.jpg 	#这篇文章标题背景图片
+catalog: true 						# 是否归档
+tags:								#标签
+    - 6828
+---
+
 # Lab2:内存管理
 
 在这个实验中，我们将为操作系统编写内存管理代码。内存管理有两个组件。
