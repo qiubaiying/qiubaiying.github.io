@@ -1,10 +1,10 @@
 # Site settings
 title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
+SEOTitle: 相得益张的博客 | BY xinagdeyizhang
 header-img: img/post-bg-desk.jpg
 email: 778930960@qq.com
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
+keyword: "BY, BY xinagdeyizhang, 相得益张的博客, zhanghoajie, 张豪杰, node, redis, mongodb, pm2"
 url: "http://zhj778930960.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/zhj778930960/zhj778930960.github.io.git" # you code repository
@@ -18,12 +18,12 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
+# weibo_username:     xiangdeyizhang
 zhihu_username:     zhj778930960
 github_username:    zhj778930960
 # facebook_username:  baiying.qiu.7
 # jianshu_username:   e71990ada2fd
-#twitter_username:   qiubaiying
+#twitter_username:   xiangdeyizhang
 
 
 
