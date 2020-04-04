@@ -3,13 +3,13 @@
   "short_name": "YM Blog",
   "description": "A personal blog by engineer",
   "icons": [{
-    "src": "icons/pwa.jpg",
-    "sizes": "959x959",
-    "type": "image/jpg"
+    "src": "icons/pwa_icon_128.png",
+    "sizes": "128x128",
+    "type": "image/png"
   }, {
-    "src": "icons/pwa.jpg",
-    "sizes": "5959x959",
-    "type": "image/jpg"
+    "src": "icons/pwa_icon_512.png",
+    "sizes": "512x512",
+    "type": "image/png"
   }],
   "background_color": "#fff",
   "theme_color": "#000",
