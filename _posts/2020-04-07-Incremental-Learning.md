@@ -2,7 +2,7 @@
 layout:     post   				    # 使用的布局（不需要改）
 title:      学习的过程，应该是增量学习的过程 				# 标题
 subtitle:   增量学习与批量学习 #副标题
-date:       2020-03-25 				# 时间
+date:       2020-04-07 				# 时间
 author:     Liu 						# 作者
 header-img: img/post-bg-2015.jpg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
