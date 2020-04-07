@@ -14,7 +14,7 @@ github_repo: "https://github.com/JJJasonKing/JJJasonKing.github.io.git" # you co
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/avatar-g.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -23,7 +23,7 @@ RSS: false
 # weibo_username:     qiubaiying
 # zhihu_username:     qiubaiying
 github_username:    JJJasonKing
-facebook_username:  baiying.qiu.7
+facebook_username:  JasonKing
 #jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
 
