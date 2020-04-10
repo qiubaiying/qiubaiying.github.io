@@ -4,7 +4,7 @@ title:      阿里云与picgo的配置（解决typora的图片存储）
 subtitle:   
 date:       2020-04-10
 author:     YM
-header-img: img/post-bg-kuaidi.jpg
+header-img: img/3.jpg
 catalog: true
 tags:
     - 阿里云
