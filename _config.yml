@@ -1,10 +1,10 @@
 # Site settings
 title: 华歌的博客
-SEOTitle: 华歌的博客 | BY Blog
+SEOTitle: 华歌的博客 | Humbert Blog
 header-img: img/post-bg-desk.jpg
 email: humbert.z@gmail.com
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 华歌的博客, huabao1860, humbert, iOS, Apple, iPhone"
+keyword: "Humbert Blog, 华歌的博客, huabao1860, humbert, iOS, Apple, iPhone"
 url: "http://huabao1860.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/huabao1860/huabao1860.github.io.git" # you code repository
@@ -12,7 +12,7 @@ github_repo: "https://github.com/huabao1860/huabao1860.github.io.git" # you code
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/avatar-m.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
