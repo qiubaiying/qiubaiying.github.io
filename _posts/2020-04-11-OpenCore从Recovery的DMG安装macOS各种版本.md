@@ -7,22 +7,24 @@ author:     Humbert
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
-    - 黑苹果教程与技巧
+    - Hackintosh
+    - 教程技巧
 ---
 
-OpenCore从Recovery的DMG安装macOS各种版本
 
-优点
+## OpenCore从Recovery的DMG安装macOS各种版本
+
+## 优点
 * 无需从App Store下载macOS安装文件
 * 对操作平台没有要求, 只要能运行 python 命令就可以, 所以可以在Linux/Windows/macOS 甚至在Linux服务器上操作.
 * 下载量非常小, Recovery只有400~500M, 所以 1GB 的 U盘
 * 支持各种版本的macOS的安装,解决了旧版本macOS很难获取的问题
 
-缺点
+## 缺点
 * 需要知道如何配置OpenCore, 要提前配置好. 其实不算缺点, 因为就算是用制作启动盘的方法, 依然是要配置好OpenCore才可以启动电脑.
 * 进入到了安装界面之后, 需要联网, 后面的安装过程需要从Apple的服务器获取所需文件, 通常都会跑满你的带宽, 所以其实并不算一个缺点.
 
-步骤
+### 步骤
 1. 配置好OpenCore的EFI
 2. 下载Recovery的DMG
     * 获取 python 脚本: curl -OL https://raw.githubusercontent.com/acidanthera/MacInfoPkg/master/macrecovery/macrecovery.py 
@@ -46,3 +48,4 @@ OpenCore从Recovery的DMG安装macOS各种版本
 14.     └── .contentDetails
 15. 
 16. 用U盘启动电脑选择 Mojave Boot From Recovery, 接下来就进入正常的安装界面
+
