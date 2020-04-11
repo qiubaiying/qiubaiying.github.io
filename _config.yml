@@ -61,9 +61,9 @@ kramdown:
 
 # Gitalk
 gitalk:
-  enable: false    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
+  enable: true    #是否开启Gitalk评论
+  clientID: 7e6cbad38bfd9fde689b                            #生成的clientID
+  clientSecret: cf83b45cc1cb7708fd91ee8c1d0db0f92c65aed8    #生成的clientSecret
   repo: ihumbert.github.io    #仓库名称
   owner: ihumbert    #github用户名
   admin: ihumbert
@@ -98,10 +98,7 @@ service-worker: true
 
 # Friends
 friends: [
-    {
-        title: "简书·BY",
-      //  href: "http://www.jianshu.com/u/e71990ada2fd"
-    },{
+   {
         title: "Apple",
         href: "https://apple.com"
     },{
