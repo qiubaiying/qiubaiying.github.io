@@ -49,3 +49,4 @@ tags:
 15. 
 16. 用U盘启动电脑选择 Mojave Boot From Recovery, 接下来就进入正常的安装界面
 
+
