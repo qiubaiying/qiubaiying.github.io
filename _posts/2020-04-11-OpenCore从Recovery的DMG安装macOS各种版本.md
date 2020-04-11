@@ -7,8 +7,7 @@ author:     Humbert
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
-    - MacOS
-    - 黑苹果
+    - 黑苹果教程与技巧
 ---
 
 OpenCore从Recovery的DMG安装macOS各种版本
