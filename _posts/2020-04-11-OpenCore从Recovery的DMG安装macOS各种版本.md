@@ -9,6 +9,7 @@ catalog: true
 tags:
     - Hackintosh
     - 教程技巧
+    - OpenCore
 ---
 
 
