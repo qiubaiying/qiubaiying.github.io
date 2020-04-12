@@ -4,7 +4,7 @@ title:      MacOS系统安装
 subtitle:   OpenCore从Recovery的DMG安装macOS各种版本
 date:       2020-04-11
 author:     Humbert
-header-img: img/post-bg-ios9-web.jpg
+header-img: img/post-bg-rwd.jpg
 catalog: true
 tags:
     - Hackintosh
