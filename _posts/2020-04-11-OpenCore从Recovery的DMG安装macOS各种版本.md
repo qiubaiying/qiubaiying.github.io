@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      MacOS系统安装
+title:      MacOS系统安装之OpenCore
 subtitle:   OpenCore从Recovery的DMG安装macOS各种版本
 date:       2020-04-11
 author:     Humbert
@@ -46,9 +46,8 @@ tags:
         ├── BOOT
         ├── OC
         com.apple.recovery.boot
-        ├── BaseSystem.chunklist
-        └── BaseSystem.dmg
-        └── .contentDetails
+         ├── BaseSystem.chunklist
+         └── BaseSystem.dmg
+         └── .contentDetails
  
-9. 用U盘启动电脑选择 Catalina   Boot From Recovery, 接下来就进入正常的安装界面
-
+9. 用U盘启动电脑选择 Catalina   Boot From Recovery, 接下来就进入正常的安装界面.
