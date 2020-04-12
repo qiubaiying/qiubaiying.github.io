@@ -12,7 +12,7 @@ github_repo: "https://github.com/ihumbert/ihumbert.github.io.git" # you code rep
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/logo.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/logo.JPG      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
