@@ -39,15 +39,16 @@ tags:
 6. 将 BaseSystem.chunklist 和 BaseSystem.dmg 复制到 com.apple.recovery.boot 里面
 7. 给启动文件命名
     * 在文件夹 com.apple.recovery.boot 下面新建一个隐藏文件 .contentDetails
-    * 内容可以随便写, 比如 Mojave Boot From Recovery, 这个名字会出现在OpenCore的启动菜单上.
-8. 最终U盘上的文件结构看起来像这样: EFI
-9.     ├── BOOT
-10.     ├── OC
-11. com.apple.recovery.boot
-12.     ├── BaseSystem.chunklist
-13.     └── BaseSystem.dmg
-14.     └── .contentDetails
-15. 
-16. 用U盘启动电脑选择 Mojave Boot From Recovery, 接下来就进入正常的安装界面
-
+    * 内容可以随便写, 比如 Catalina Boot From Recovery, 这个名字会出现在OpenCore的启动菜单上.
+8. 最终U盘上的文件结构看起来像这样:
+ > EFI
+ 
+        ├── BOOT
+        ├── OC
+        com.apple.recovery.boot
+        ├── BaseSystem.chunklist
+        └── BaseSystem.dmg
+        └── .contentDetails
+ 
+9. 用U盘启动电脑选择 Catalina   Boot From Recovery, 接下来就进入正常的安装界面
 
