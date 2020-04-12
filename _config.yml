@@ -18,12 +18,12 @@ sidebar-avatar: /img/logo.jpg      # use absolute URL, seeing it's used in both 
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
-#zhihu_username:     qiubaiying
+# weibo_username:     ihumbert
+#zhihu_username:     ihumbert
 github_username:    ihumbert
-#facebook_username:  baiying.qiu.7
-#jianshu_username:   e71990ada2fd
-#twitter_username:   qiubaiying
+#facebook_username:  ihumbert
+#jianshu_username:   ihumbert
+#twitter_username:   ihumbert
 
 
 
