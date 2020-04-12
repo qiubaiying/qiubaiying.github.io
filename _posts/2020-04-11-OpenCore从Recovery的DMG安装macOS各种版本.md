@@ -28,10 +28,12 @@ tags:
 #### 步骤
 1. 配置好OpenCore的EFI
 2. 下载Recovery的DMG
-    * 获取 python 脚本: curl -OL https://raw.githubusercontent.com/acidanthera/MacInfoPkg/master/macrecovery/macrecovery.py 
-    * 下载最新的 macOS Recovery: /usr/bin/python macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000 download 
-    * 下载其他 macOS 版本的 Recovery 的命令请参考 recovery_urls.txt, 命令最后需要加一个 download, 如上.
-    * 更多的控制参数请参考 /usr/bin/python macrecovery.py --help
+    * 获取 python 脚本:
+     `curl -OL https://raw.githubusercontent.com/acidanthera/MacInfoPkg/master/macrecovery/macrecovery.py `
+    * 下载最新的 macOS Recovery: `/usr/bin/python macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000 download` 
+    * 下载其他 macOS 版本的 Recovery 的命令请参考 [recovery_urls.txt](
+_posts/recovery_urls.txt), 命令最后需要加一个 download, 如上.
+    * 更多的控制参数请参考 `/usr/bin/python macrecovery.py --help`
     * 会下载2个文件, 分别为 BaseSystem.chunklist 和 BaseSystem.dmg
 3. 准备好一个容量1GB以上的U盘, 格式化成 Fat32 格式.
 4. 将OpenCore的EFI复制到U盘的 根目录
@@ -50,4 +52,4 @@ tags:
          └── BaseSystem.dmg
          └── .contentDetails
  
-9. 用U盘启动电脑选择 Catalina   Boot From Recovery, 接下来就进入正常的安装界面.
+9. 用U盘启动电脑选择 Catalina   Boot From Recovery, 接下来就进入正常的安装界面
