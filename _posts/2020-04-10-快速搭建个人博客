@@ -1,11 +1,11 @@
 ---
-layout:     post
+layout:     postold
 title:      快速搭建个人博客
 subtitle:   手把手教你在半小时内搭建自己的个人博)
 date:       2020-04-10
 author:     humbert
 header-img: img/post-bg-re-vs-ng2.jpg
-catalog: true
+catalog: false
 tags:
     - Blog
 ---
