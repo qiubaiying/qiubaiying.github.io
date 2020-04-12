@@ -53,12 +53,6 @@ highlighter: rouge
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
 
-
-
-# 评论系统
-# Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
-
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
