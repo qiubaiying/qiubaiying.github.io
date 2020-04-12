@@ -61,6 +61,7 @@ gitalk:
   repo: ihumbert.github.io    #仓库名称
   owner: ihumbert    #github用户名
   admin: ihumbert
+  githubID: ihumbert
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
