@@ -92,7 +92,7 @@ tags:
 ### 侧边栏
 
 看右边:
-![](https://raw.githubusercontent.com/ihumbert/ihumbert.github.io/master/img/readme-side.png)
+![](https://raw.githubusercontent.com/ihumbert/Imageshack/master/img/humbertblog.png)
 
 设置是在 `_config.yml`文件里面的`Sidebar settings`那块。
 
