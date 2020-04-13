@@ -1,3 +1,18 @@
+---
+layout:     post
+title:      MacOS各版本Recovery下载
+subtitle:   MacOS各版本Recovery终端方式下载命令
+date:       2020-04-11
+author:     Humbert
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - Hackintosh
+    - 教程技巧
+---
+
+
+
 ## Lion：
 
 ./macrecovery.py -b Mac-2E6FAB96566FE58C -m 00000000000F25Y00
