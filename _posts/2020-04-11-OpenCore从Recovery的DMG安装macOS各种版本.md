@@ -23,14 +23,17 @@ tags:
 
 #### 缺点
 * 需要知道如何配置OpenCore, 要提前配置好. 其实不算缺点, 因为就算是用制作启动盘的方法, 依然是要配置好OpenCore才可以启动电脑.
-* 进入到了安装界面之后, 需要联网, 后面的安装过程需要从Apple的服务器获取所需文件, 通常都会跑满你的带宽, 所以其实并不算一个缺点.
+* 进入到了安装界面之后, 需要联网, 后面的安装过程需要从Apple的服务器获取所需文件, 但通常都会跑满你的带宽.
 
 #### 步骤
 1. 配置好OpenCore的EFI
 2. 下载Recovery的DMG
     * 获取 python 脚本:
-     `curl -OL https://raw.githubusercontent.com/acidanthera/MacInfoPkg/master/macrecovery/macrecovery.py `
-    * 下载最新的 macOS Recovery: `/usr/bin/python macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000 download` 
+    
+    `curl -OL https://raw.githubusercontent.com/acidanthera/MacInfoPkg/master/macrecovery/macrecovery.py`
+    * 下载最新的 macOS Recovery:
+    
+    `/usr/bin/python macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000 download`
     * 下载其他 macOS 版本的 Recovery 的命令请参考 [2020-04-11-recovery_urls.md](https://ihumbert.github.io/2020/04/11/recovery_urls/), 命令最后需要加一个 download, 如上.
     * 更多的控制参数请参考 `/usr/bin/python macrecovery.py --help`
     * 会下载2个文件, 分别为 BaseSystem.chunklist 和 BaseSystem.dmg
@@ -51,4 +54,4 @@ tags:
          └── BaseSystem.dmg
          └── .contentDetails
  
-9. 用U盘启动电脑选择 Catalina   Boot From Recovery, 接下来就进入正常的安装界面
+9. 用U盘启动电脑选择 Catalina Boot From Recovery, 接下来就进入正常的安装界面.
