@@ -1,6 +1,6 @@
 
 
-![](https://raw.githubusercontent.com/qiubaiying/qiubaiying.github.io/master/img/readme-home.png)
+![](https://raw.githubusercontent.com/ihumbert/Imageshack/master/img/humbertblog.png)
 
 [![Build Status](https://travis-ci.org/qiubaiying/qiubaiying.github.io.svg?branch=master)](https://travis-ci.org/qiubaiying/qiubaiying.github.io)
 [![codebeat badge](https://codebeat.co/badges/5f031df3-f6c1-4ec0-911a-ff6617ca50b9)](https://codebeat.co/projects/github-com-qiubaiying-qiubaiying-github-io-master)
@@ -92,7 +92,7 @@ tags:
 ### 侧边栏
 
 看右边:
-![](https://raw.githubusercontent.com/qiubaiying/qiubaiying.github.io/master/img/readme-side.png)
+![](https://raw.githubusercontent.com/ihumbert/ihumbert.github.io/master/img/readme-side.png)
 
 设置是在 `_config.yml`文件里面的`Sidebar settings`那块。
 
@@ -151,8 +151,8 @@ featured-condition-size: 1     # A tag will be featured if the size of it is mor
 # Friends
 friends: [
     {
-        title: "BY Blog",
-        href: "https://qiubaiying.github.io/"
+        title: "humbert Blog",
+        href: "https://ihumbert.github.io/"
     },
     {
         title: "Apple",
@@ -186,25 +186,6 @@ iframe在不同的设备中，将会自动的调整大小。保留内边距是�
 
 博客不仅支持 [Disqus](http://disqus.com) 评论系统,还加入了 [Gitalk](https://gitalk.github.io/) 评论系统，[支持 Markdwon 语法](https://guides.github.com/features/mastering-markdown/)，cool~
 
-#### Disqus
-
-优点：国际比较流行，界面也很大气、简洁，如果有人评论，还能实时通知，直接回复通知的邮件就行了；
-
-缺点：评论必须要去注册一个disqus账号，分享一般只有Facebook和Twitter，另外在墙内加载速度略慢了一点。想要知道长啥样，可以看以前的版本点[这里](http://brucezhaor.github.io/about.html) 最下面就可以看到。
-
-> Node：有很多人反映 Disqus 插件加载不出来，可能墙又架高了，有条件的话翻个墙就好了~
-
-**使用：**
-
-**首先**，你需要去注册一个Disqus帐号。**不要直接使用我的啊！**
-
-**其次**，你只需要在下面的 yaml 头文件中设置一下就可以了。
-
-```
-# 评论系统
-# Disqus（https://disqus.com/）
-disqus_username: qiubaiying
-```
 
 #### Gitalk
 
@@ -212,9 +193,6 @@ disqus_username: qiubaiying
 
 缺点：配置比较繁琐，每篇文章的评论都需要初始化。
 
-**使用：**
-
-参考我的这篇文章：[《为博客添加 Gitalk 评论插件》](http://qiubaiying.top/2017/12/19/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-Gitalk-%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6/)
 
 
 ### Analytics
@@ -278,5 +256,5 @@ ga_domain: huangxuan.me			# 默认的是 auto, 这里我是自定义了的域名
 
 ## License
 
-遵循 MIT 许可证。有关详细,请参阅 [LICENSE](https://github.com/qiubaiying/qiubaiying.github.io/blob/master/LICENSE)。
+遵循 MIT 许可证。有关详细,请参阅 [LICENSE](https://github.com/ihumbert/ihumbert.github.io/blob/master/LICENSE)。
 
