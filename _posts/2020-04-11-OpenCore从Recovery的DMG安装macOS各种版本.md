@@ -34,15 +34,15 @@ tags:
     * 下载最新的 macOS Recovery:
     
     `/usr/bin/python macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000 download`
-    * 下载其他 macOS 版本的 Recovery 的命令请参考 [2020-04-11-recovery_urls.md](https://ihumbert.github.io/2020/04/11/recovery_urls/), 命令最后需要加一个 download, 如上.
+    * 下载其他 macOS 版本的 Recovery 的命令请参考 [这里](https://ihumbert.github.io/2020/04/11/recovery_urls/), 注意命令最后需要加  download, 对比上面的命令格式.
     * 更多的控制参数请参考 `/usr/bin/python macrecovery.py --help`
     * 会下载2个文件, 分别为 BaseSystem.chunklist 和 BaseSystem.dmg
 3. 准备好一个容量1GB以上的U盘, 格式化成 Fat32 格式.
 4. 将OpenCore的EFI复制到U盘的 根目录
-5. 在U盘的 根目录 创建一个文件夹名字叫做: com.apple.recovery.boot
+5. 在U盘根目录创建一个文件夹名字并命名: com.apple.recovery.boot
 6. 将 BaseSystem.chunklist 和 BaseSystem.dmg 复制到 com.apple.recovery.boot 里面
 7. 给启动文件命名
-    * 在文件夹 com.apple.recovery.boot 下面新建一个隐藏文件 .contentDetails
+    * 在文件夹 com.apple.recovery.boot 下面新建一个隐藏文件，注意前面的“.”号不要忽略 .contentDetails
     * 内容可以随便写, 比如 Catalina Boot From Recovery, 这个名字会出现在OpenCore的启动菜单上.
 8. 最终U盘上的文件结构看起来像这样:
  > EFI
