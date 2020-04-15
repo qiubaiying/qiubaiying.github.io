@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      使用本地浏览器打开远程服务器上的Jupyter Notebook
+title:      用本地浏览器打开远程服务器上的Jupyter Notebook
 subtitle:   Jupyter Notebook的一个小技巧
 date:       2020-04-15
 author:     YM
