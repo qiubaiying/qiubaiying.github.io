@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      使用本地浏览器打开远程服务器上的Jupyter Notebook
-subtitle:   
+subtitle:   Jupyter Notebook的一个小技巧
 date:       2020-04-15
 author:     YM
 header-img: img/4.jpg
