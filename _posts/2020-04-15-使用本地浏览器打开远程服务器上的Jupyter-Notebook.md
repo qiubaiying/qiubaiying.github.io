@@ -8,7 +8,7 @@ header-img: img/4.jpg
 catalog: true
 tags:
     - 服务器
-	- Jupyter Notebook
+    - Jupyter Notebook
 ---
 
 网络上有好多好多的相关解答，但是都太繁琐，我也没有尝试成功。
