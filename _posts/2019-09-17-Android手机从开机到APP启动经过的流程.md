@@ -27,7 +27,7 @@ tags:
 
 开机加电后，CPU先执行**预设代码**、加载ROM中的引导程序**Bootloader**和Linux内核到RAM内存中去，然后初始化各种软硬件环境、加载驱动程序、挂载根文件系统，执行**init进程**。
 
-init进程会启动各种系统本地服务，如**SM**（ServiceManager）、MS（Media Server）、bootanim（开机动画）等，然后init进程会在解析init.rc文件后fork()出**Zygoto进程**。
+init进程会启动各种系统本地服务，如**SM**（ServiceManager）、MS（Media Server）、bootanim（开机动画）等，然后init进程会在解析init.rc文件后fork()出**Zygote进程**。
 
 Zygote会启动Java虚拟机，通过jni进入Zygote的java代码中，并创建**socket**实现IPC进程通讯，然后启动**SS**（SystemServer）进程。
 
@@ -38,9 +38,9 @@ AMS通过Intent隐式启动的方式启动**Launcher**，Launcher根据已安装
 ### 解释
 - **预设代码**：cpu制造厂商会预设一个地址，这个地址是各厂家约定统一的，Android手机会将固态存储设备ROM预先映射到该地址上；
 - **Bootloader**：类似BIOS，在系统加载前，用以初始化硬件设备，建立内存空间的映像图，为最终调用系统内核准备好环境；
-- **init进程**：init进程时Android系统中用户进程的鼻祖进程，主要作用是启动系统本地服务、fork出Zygoto进程；
+- **init进程**：init进程时Android系统中用户进程的鼻祖进程，主要作用是启动系统本地服务、fork出Zygote进程；
 - **SM**：ServiceManager是一个守护进程，它维护着系统服务和客户端的binder通信；
-- **Zygoto进程**：Zygoto进程是所有Java进程的父进程，我们的APP都是由Zygoto进程fork出来的；
+- **Zygote进程**：Zygote进程是所有Java进程的父进程，我们的APP都是由Zygote进程fork出来的；
 - **socket**：一种独立于协议用于两个应用程序之间的数据传输的网络编程接口，是IPC中的一种；（但是在Android中一般使用Binder来实现IPC，这里使用socket的原因后面有写到）
 - **SS**：Framework两大重要进程之一（另一个是Zygote），载着framework的核心服务，系统里面重要的服务都是SS开启的；
 - **AMS**：服务端对象，负责系统中所有Activity的生命周期，打开App、Activity的开启、暂停、关闭都需要AMS来控制；
