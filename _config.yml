@@ -12,7 +12,7 @@ github_repo: "https://github.com/qijieli/qijieli.github.io.git" # you code repos
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "There is a will, there is a way!" #"Goals determine what you going to be!"
-sidebar-avatar: /img/avatar-m #about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/avatar-m.jpg #about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
