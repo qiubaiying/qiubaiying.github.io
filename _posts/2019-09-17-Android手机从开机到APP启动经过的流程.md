@@ -33,7 +33,7 @@ Zygote会启动Java虚拟机，通过jni进入Zygote的java代码中，并创建
 
 SS进程负责启动和管理整个framework，包括**AMS**（ActivityManagerService）、**WMS**（WindowManagerService）、PMS（PowerManagerService）等服务、同时启动binder线程池，当SS进程将系统服务启动就绪以后，就会通知AMS启动Home。
 
-AMS通过Intent隐式启动的方式启动**Launcher**，Launcher根据已安装应用解析对应的xml、通过findBiewById()获得一个RecycleView、加载应用图标、最后成功展示App列表。
+AMS通过Intent隐式启动的方式启动**Launcher**，Launcher根据已安装应用解析对应的xml、通过findViewById()获得一个RecycleView、加载应用图标、最后成功展示App列表。
 
 ### 解释
 - **预设代码**：cpu制造厂商会预设一个地址，这个地址是各厂家约定统一的，Android手机会将固态存储设备ROM预先映射到该地址上；
