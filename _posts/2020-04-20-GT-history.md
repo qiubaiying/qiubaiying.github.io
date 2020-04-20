@@ -7,7 +7,7 @@ author:      BY
 header-img:  img/post-GS01.jpg
 catalog:     true
 tags:
-    - Blog
+    - Teaching
 ---
 
 ## Hey, welcome to Qijie's Teaching Blog!
