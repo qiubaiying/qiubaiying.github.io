@@ -1,28 +1,28 @@
 # Site settings
-title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
+title: Whyosta's Blog
+SEOTitle: 冯定巍的博客 | Whyosta's Blog
 header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
+email: hzaufengdingwei@163.com
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+keyword: "Whyosta's Blog, 冯定巍的博客, Python, Go, Java"
+url: "http://f3ngdw.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/F3ngdw/F3ngdw.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/avatar_m.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
 RSS: false
 # weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
+# zhihu_username:     qiubaiying
+github_username:    F3ngdw
+# facebook_username:  baiying.qiu.7
+# jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
 
 
@@ -52,21 +52,25 @@ markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
+  
+paginate: 10
+paginate_path: "blog/page:num"
+baseurl: ""
 
 
 
 # 评论系统
 # Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
+disqus_username: ouwen feng
 
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  clientID: 51327616b791ead0cc2c                          #生成的clientID
+  clientSecret: 749d84f43302935283805e72d6c61a8511a8b9a9 #生成的clientSecret
+  repo: F3ngdw.github.io    #仓库名称
+  owner: F3ngdw    #github用户名
+  admin: F3ngdw
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
@@ -74,11 +78,11 @@ gitalk:
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: b50bf2b12b5338a1845e33832976fd68
+ba_track_id: 9fd08b92328c504d81595e3a0cb0a4ed
 
 # Google Analytics
-ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_track_id: 'UA-147096421-1'            # Format: UA-xxxxxx-xx
+ga_domain: auto               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
@@ -97,18 +101,20 @@ service-worker: true
 
 
 # Friends
-friends: [
-    {
-        title: "WY",
-        href: "http://zhengwuyang.com"
-    },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
-    },{
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
-    }
-]
+#friends: [
+ #   {
+  #      title: "WY",
+   #     href: "http://zhengwuyang.com"
+    #},{
+     #   title: "简书·BY",
+      #  href: "http://www.jianshu.com/u/e71990ada2fd"
+    #},{
+     #   title: "Apple",
+      #  href: "https://apple.com"
+    #},{
+     #   title: "Apple Developer",
+      #  href: "https://developer.apple.com/"
+    #}
+#]
+
+theme: jekyll-theme-slate
