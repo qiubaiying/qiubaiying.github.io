@@ -1,5 +1,5 @@
 # Site settings
-title: 如何快速的挣一个亿！！！
+title: 欢迎您！
 SEOTitle: 杨Yang的博客 | BY Blog
 header-img: img/post-bg-desk.jpg
 email: by2607921383@gmail.com
@@ -61,8 +61,8 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
+  clientID: 33e99df7969c239d748c                            #生成的clientID
+  clientSecret: 9f439613b4c1e311f0ad6f6ca141cc151605a0cc    #生成的clientSecret
   repo: Yang-y-good.github.io    #仓库名称
   owner: Yang-y-good    #github用户名
   admin: Yang-y-good
