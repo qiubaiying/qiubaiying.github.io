@@ -99,16 +99,16 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        title: "Kumoteri",
+        href: "https://kumoteri.xyz"
     },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
+        title: "GitHub",
+        href: "https://github.com"
     },{
         title: "Apple",
         href: "https://apple.com"
     },{
-        title: "本地磁盘姬的小站",
+        title: "本地磁盘姬",
         href: "http://ohayou.aimo.moe"
     }
 ]
