@@ -99,16 +99,16 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        title: "CSDN",
+        href: "#"
     },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
+        title: "简书",
+        href: "#"
     },{
-        title: "Apple",
-        href: "https://apple.com"
+        title: "KAT",
+        href: "https://www.cnblogs.com/kat-sec"
     },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "Yang34",
+        href: "https://www.cnblogs.com/Yang34/"
     }
 ]
