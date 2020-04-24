@@ -128,6 +128,12 @@ friends: [
     },{
         title: "SEC-IN",
         href: "https://sec-in.com/"
+    },{
+        title: "SeeBug",
+        href: "https://www.seebug.org/"
+    },{
+        title: "VirusTotal",
+        href: "https://www.virustotal.com/"
     }
 ]
 
