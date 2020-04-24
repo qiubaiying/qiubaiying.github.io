@@ -11,8 +11,8 @@ github_repo: "https://github.com/8gm/8gm.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "要努力使每一天都开心而有意义，不为别人，为自己."
+sidebar-avatar: /img/bugman-header.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
