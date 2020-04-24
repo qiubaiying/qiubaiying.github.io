@@ -1,0 +1,124 @@
+---
+layout:     post
+title:      CVE-2020-0668
+subtitle:   CVE-2020-0668-Windows服务跟踪中的普通特权升级错误
+date:       2019-04-26
+author:     BugMan
+header-img: img/post-bg-hacker.jpg
+catalog: true
+tags:
+    - CVE
+    - POC
+---
+
+# CVE-2020-0668-Windows服务跟踪中的普通特权升级错误
+
+在本文中，我将讨论在*Windows Service Tracing中*发现的任意文件移动漏洞。从我的测试来看，它影响了从Vista到10的所有Windows版本，但它可能更旧，因为XP中已经存在此功能。
+
+>*服务跟踪*是一项旧功能，我可以追溯到Windows XP，但它可能已存在于以前的OS版本中。它旨在提供有关正在运行的服务和模块的一些基本调试信息。任何本地用户都可以配置它，只需在下编辑一些注册表项和值即可`HKLM\SOFTWARE\Microsoft\Tracing`。
+>
+>服务或模块与注册表项关联。每个键包含6个值（即设置）。我们将关注的3个值是：（`EnableFileTracing`启用/禁用“跟踪”），`FileDirectory`（设置输出日志文件的位置）和`MaxFileSize`（设置日志文件的最大文件大小）。
+>
+>一旦`EnableFileTracing`被启用，目标服务将开始在写入其日志文件**指定目录**。一旦输出文件的大小超过`MaxFileSize`，它将被**移动**（`.LOG`扩展名被替换`.OLD`）并创建一个新的日志文件。
+>
+>感谢James Forshaw的[符号链接测试工具](https://github.com/googleprojectzero/symboliclink-testing-tools)，该攻击非常简单。您需要做的就是将目标目录设置为对象目录的挂载点`\RPC Control`，然后创建两个符号链接：
+>
+>- 指向`MODULE.LOG`您所拥有文件的符号链接（其大小必须大于`MaxFileSize`）。
+>- 从`MODULE.OLD`到文件系统上任何文件的符号链接（例如：）`C:\Windows\System32\WindowsCoreDeviceInfo.dll`。
+>
+>最后，可以通过针对以身份运行的服务触发文件移动`NT AUTHORITY\SYSTEM`，然后可以利用Update Session Orchestrator服务获取任意代码执行。
+
+
+
+## 服务的跟踪功能
+
+如前所述，任何本地用户都可以配置*Service Tracing*功能，只需在中编辑一些注册表项和值即可`HKLM\SOFTWARE\Microsoft\Tracing`。
+
+通过使用`AccessChk`Windows Sysinternals工具套件，我们可以看到常规对几乎所有子键都`Users`具有`Read`/ `Write`权限。
+
+![img](https://itm4n.github.io/assets/2020-02-14-cve-2020-0668-windows-service-tracing-eop/01_accesschk-reg-tracing.png)
+
+在本文的其余部分中，我将以该`RASTAPI`模块为例，因为它是我利用漏洞利用的模块。IKEEXT服务使用此模块。因此，可以通过启动虚拟VPN连接轻松触发日志事件。以下屏幕快照显示了注册表项的默认内容。为其他服务和模块配置了完全相同的值。
+
+![img](https://itm4n.github.io/assets/2020-02-14-cve-2020-0668-windows-service-tracing-eop/02_reg-tracing-rastapi.png)
+
+从本地攻击者的角度来看，这是最有趣的值：
+
+|       名称        |       可能的值        |           描述           |
+| :---------------: | :-------------------: | :----------------------: |
+| EnableFileTracing |          0-1          | 开始/停止写入日志文件。  |
+|     文件目录      |        一个弦         |     目录的绝对路径。     |
+|   最大文件大小    | 0x00000000-0xffffffff | 输出日志文件的最大大小。 |
+
+通过设置这些值，我们可以：
+
+- 通过设置为或，强制特定的服务或模块**开始或停止将**调试信息**写入**日志文件。`EnableFileTracing``0``1`
+- 通过设置指定日志文件的**位置**`FileDirectory`。
+- 通过设置指定输出文件的**最大大小**`MaxFileSize`。
+
+唯一需要注意的是，我们无法选择输出文件的名称，因为它基于调试的服务或模块的名称。使用符号链接可以轻松解决此问题。
+
+## 任意文件移动漏洞
+
+考虑到上下文的所有先前元素，可以轻松地解释此漏洞。
+
+### 情况1：MaxFileSize-默认值
+
+对于第一个测试用例，我只是将其设置`C:\LOGS`为输出目录并启用了*File Tracing*。
+
+![img](https://itm4n.github.io/assets/2020-02-14-cve-2020-0668-windows-service-tracing-eop/03_reg-set-values.png)
+
+现在，如果我们希望目标服务开始写入此文件，则必须生成一些事件。一种非常简单的方法是使用`rasdial`命令和PBK文件启动虚拟VPN连接。
+
+![img](https://itm4n.github.io/assets/2020-02-14-cve-2020-0668-windows-service-tracing-eop/04_rasdial.png)
+
+有效！日志文件由编写`NT AUTHORITY\SYSTEM`。它的大小现在约为24KB。
+
+![img](https://itm4n.github.io/assets/2020-02-14-cve-2020-0668-windows-service-tracing-eop/05_log-file-content.png)
+
+### 情况2：MaxFileSize-自定义值
+
+在先前的测试中，我们看到输出日志文件的最终大小约为24KB。因此，这次，我们将设置`MaxFileSize `为`0x4000`（16,384字节）并重新开始测试。
+
+![img](https://itm4n.github.io/assets/2020-02-14-cve-2020-0668-windows-service-tracing-eop/06_reg-maxfilesize.png)
+
+“过程监视器”捕获的事件可以总结如下：
+
+1. 该服务将获取有关日志文件的基本信息。我们可以看到，`EndOfFile`在**偏移23906**，这是在这一刻文件的大小。问题是我们指定**的最大文件大小为16,384字节，**因此，系统将认为没有更多的可用空间。
+2. `SetRenameInformationFile`被称为`FileName=C:\LOGS\RASTAPI.OLD`。换句话说，由于现有文件被视为已满，因此将其从`C:\LOGS\RASTAPI.LOG`移到`C:\LOGS\RASTAPI.OLD`。
+3. 该服务将创建一个新`C:\LOGS\RASTAPI.LOG`文件并开始对其进行写入。
+
+![img](https://itm4n.github.io/assets/2020-02-14-cve-2020-0668-windows-service-tracing-eop/07_procmon-movefile.png)
+
+“移动”操作按进行`NT AUTHORITY\SYSTEM`。因此，可以利用它将用户拥有的文件移动到文件系统上的任何位置，例如`C:\Windows\System32\`。
+
+## 漏洞利用
+
+该漏洞利用很简单，可以总结如下：
+
+1. 创建（或复制）一个大小大于`0x8000`（32,768）字节的文件。
+
+2. 创建一个新目录（`C:\EXPLOIT\mountpoint\`例如）并将其设置为的挂载点`\RPC Control`。
+
+3. 创建以下符号链接：
+
+   ```txt
+   \RPC Control\RASTAPI.LOG -> \??\C:\EXPLOIT\FakeDll.dll (owner = current user)
+   \RPC Control\RASTAPI.OLD -> \??\C:\Windows\System32\WindowsCoreDeviceInfo.dll
+   ```
+
+4. 在注册表中配置以下值：
+
+   ```txt
+   FileDirectory = C:\EXPLOIT\mountpoint
+   MaxFileSize = 0x8000 (32,768‬ bytes)
+   EnableFileTracing = 1
+   ```
+
+5. 使用`RasDial`Windows API中的函数触发与RASTAPI相关的事件。
+
+6. 触发Update Session Orchestrator服务以在的上下文中加载DLL `NT AUTHORITY\SYSTEM`。
+
+## 演示版
+
+![img](https://itm4n.github.io/assets/2020-02-14-cve-2020-0668-windows-service-tracing-eop/00_demo.gif)
