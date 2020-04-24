@@ -1,6 +1,6 @@
 # Site settings
 title: BugMan
-SEOTitle: BugMan | Pentest
+SEOTitle: BugMan | Pentest | 渗透测试
 header-img: img/post-bg-desk.jpg
 email: bugman.apt@gmail.com
 description: "Every failure is leading towards success."
@@ -119,5 +119,12 @@ friends: [
     },{
         title: "Cnnb",
         href: "https://www.cnblogs.com/CNnb/"
+    },{
+        title: "简书",
+        href: "https://www.jianshu.com/"
+    },{
+        title: "先知",
+        href: "https://xz.aliyun.com/"
     }
 ]
+
