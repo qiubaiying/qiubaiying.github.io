@@ -99,16 +99,25 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "CSDN",
-        href: "#"
+        title: "安全师",
+        href: "https://www.secshi.com/"
     },{
-        title: "简书",
-        href: "#"
+        title: "lionking",
+        href: "https://lionking.top/"
     },{
         title: "KAT",
         href: "https://www.cnblogs.com/kat-sec"
     },{
         title: "Yang34",
         href: "https://www.cnblogs.com/Yang34/"
+    },{
+        title: "彭楷模",
+        href: "https://kaimopeng.github.io/"
+    },{
+        title: "hxcc",
+        href: "https://hxcc.github.io/"
+    },{
+        title: "悄悄的进村打枪的不要",
+        href: "https://www.cnblogs.com/CNnb/"
     }
 ]
