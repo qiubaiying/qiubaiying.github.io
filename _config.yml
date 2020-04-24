@@ -96,7 +96,7 @@ service-worker: true
 
 
 
-# Friends
+# 友情链接
 friends: [
     {
         title: "安全师",
