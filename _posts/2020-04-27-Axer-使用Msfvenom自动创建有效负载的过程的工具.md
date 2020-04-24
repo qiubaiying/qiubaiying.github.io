@@ -7,7 +7,7 @@ author:     BugMan
 header-img: img/post-bg-hacker.jpg
 catalog: true
 tags:
-    - 提权
+    - msf
     - 渗透测试
 ---
 
