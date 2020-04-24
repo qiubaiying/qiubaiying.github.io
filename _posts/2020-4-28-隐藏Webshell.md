@@ -7,8 +7,8 @@ author:     BugMan
 header-img: img/post-bg-hacker.jpg
 catalog: true
 tags:
-    - msf
-    - 渗透测试
+    - Webshell
+    - PHP
 ---
 # 隐藏Webshell
 
