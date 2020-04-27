@@ -17,12 +17,12 @@ sidebar-avatar: /img/bugman-header.jpg     # use absolute URL, seeing it's used 
 
 
 # SNS settings
-RSS: false
+RSS: true
 # weibo_username:     qiubaiying
 zhihu_username:     
 github_username:    
 facebook_username:  
-jianshu_username:   
+jianshu_username:   bugman
 #twitter_username:   qiubaiying
 
 
