@@ -106,8 +106,8 @@ friends: [
         title: "彭楷模",
         href: "https://kaimopeng.github.io/"
     },{
-        title: "hxcc",
-        href: "https://hxcc.github.io/"
+        title: "Noaccess",
+        href: "https://noaccess.cn/"
     },{
         title: "Cnnb",
         href: "https://www.cnblogs.com/CNnb/"
@@ -126,6 +126,9 @@ friends: [
     },{
         title: "VirusTotal",
         href: "https://www.virustotal.com/"
+    },{
+        title: "CVE",
+        href: "https://cve.mitre.org/"
     }
 ]
 
