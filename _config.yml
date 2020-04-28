@@ -58,7 +58,7 @@ kramdown:
 # Disqus 
 disqus:
   enable: true
-  shortname: 8gm    #your name
+  shortname: https-8gm-github-io    #your name
   count: true
 
 
