@@ -55,19 +55,14 @@ kramdown:
 
 
 
-# 评论系统
-# Disqus（https://disqus.com/）
-# disqus_username: manbug
+# Disqus 
+disqus:
+  enable: true
+  shortname: 8gm    #your name
+  count: true
+
 
 # Gitalk
-gitalk:
-  enable: true    #是否开启Gitalk评论
-  clientID: 6d17d8a78910ea058c3c                            #生成的clientID
-  clientSecret: 3316f885eeb683893d9b59c7b9effee432a664ac    #生成的clientSecret
-  repo: 8gm.github.io    #仓库名称
-  owner: 8gm    #github用户名
-  admin: 8gm
-#  distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
 # 统计
