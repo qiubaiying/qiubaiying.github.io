@@ -126,9 +126,6 @@ friends: [
     },{
         title: "VirusTotal",
         href: "https://www.virustotal.com/"
-    },{
-        title: "CVE",
-        href: "https://cve.mitre.org/"
     }
 ]
 
