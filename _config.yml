@@ -54,12 +54,9 @@ kramdown:
   input: GFM                            # use Github Flavored Markdown !important
 
 
-
-# Disqus 
-disqus:
-  enable: true
-  shortname: https-8gm-github-io    #your name
-  count: true
+# 评论系统
+# Disqus（https://disqus.com/）
+disqus_username: https-8gm-github-io
 
 
 # Gitalk
