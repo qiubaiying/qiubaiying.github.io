@@ -136,6 +136,9 @@ friends: [
     },{
         title: "CVE",
         href: "https://cve.mitre.org/"
+    },{
+        title: "CxSecurity",
+        href: "https://cxsecurity.com/"
     }
 ]
 
