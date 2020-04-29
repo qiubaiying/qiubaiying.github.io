@@ -2,13 +2,13 @@
 layout:     post
 title:      Python-json处理
 subtitle:   处理json数据
-date:       2019-04-26
+date:       2020-04-26
 author:     BugMan
 header-img: img/post-bg-hacker.jpg
 catalog: true
 tags:
-    - msf
-    - 渗透测试
+    - Python
+    - 编程
 ---
 首先放一段代码
 
