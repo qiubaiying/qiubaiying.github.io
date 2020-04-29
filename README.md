@@ -15,7 +15,7 @@
 更为详细的教程戳这 [《利用 GitHub Pages 快速搭建个人博客》](http://www.jianshu.com/p/e68fba58f75c) 或 [wiki](https://github.com/qiubaiying/qiubaiying.github.io/wiki/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B)
 
 >
-### [查看博客戳这里 👆](http://qiubaiying.github.io)
+### [查看博客戳这里 👆](http://qiaoyu113.github.io)
 
 
 
@@ -53,13 +53,12 @@
 
 ```
 # Site settings
-title: BY Blog                    # 你的博客网站标题
-SEOTitle: 柏荧的博客 | BY Blog		# SEO 标题
+title: Joey Blog                    # 你的博客网站标题
+SEOTitle: Joey的博客 | Joey Blog		# SEO 标题
 description: "Hey"	   	   # 随便说点，描述一下
 
 # SNS settings      
-github_username: qiubaiying     # 你的github账号
-jianshu_username: e71990ada2fd  # 你的简书ID。
+github_username: qiaoyu113     # 你的github账号
 
 # Build settings
 # paginate: 10              # 一页你准备放几篇文章
@@ -278,5 +277,5 @@ ga_domain: huangxuan.me			# 默认的是 auto, 这里我是自定义了的域名
 
 ## License
 
-遵循 MIT 许可证。有关详细,请参阅 [LICENSE](https://github.com/qiubaiying/qiubaiying.github.io/blob/master/LICENSE)。
+遵循 MIT 许可证。有关详细,请参阅 [LICENSE](https://github.com/qiaoyu113/qiaoyu113.github.io/blob/master/LICENSE)。
 
