@@ -193,17 +193,6 @@ iframe在不同的设备中，将会自动的调整大小。保留内边距是�
 disqus_username: qiubaiying
 ```
 
-#### Gitalk
-
-优点：界面干净简洁，利用 Github issue API 做的评论插件，使用 Github 帐号进行登录和评论，最喜欢的支持 Markdown 语法，对于程序员来说真是太 cool 了。
-
-缺点：配置比较繁琐，每篇文章的评论都需要初始化。
-
-**使用：**
-
-参考我的这篇文章：[《为博客添加 Gitalk 评论插件》](http://qiaoyu113.top/2017/12/19/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-Gitalk-%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6/)
-
-
 ### Analytics
 
 网站分析，现在支持百度统计和Google Analytics。需要去官方网站注册一下，然后将返回的code贴在下面：
