@@ -259,6 +259,10 @@
         });
     });
 </script>
-
+<!-- MetingJS音乐播放器 不能放到 head 导致系统功能加载异常-->
+<link rel="stylesheet" href="//cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css">
+<script src="//cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<meting-js server="netease" type="playlist" id="4902606135"  autoplay="false" fixed ="true" </meting-js>
 {% endif %}
 
