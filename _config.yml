@@ -1,7 +1,7 @@
 # Site settings
 title: Joey Blog
 SEOTitle: Joey的博客 | Joey Blog
-header-img: img/post-bg-desk.jpg
+header-img: img/home-bg-art.jpg
 email: 527324363@qq.com
 description: "Every failure is leading towards success."
 keyword: "Joey, Joey Blog, Joey的博客, qiaoyu, 乔宇, HTML, Vue, React, NodeJs..."
@@ -54,7 +54,7 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
+# disqus_username: qiaoyu113
 
 # Gitalk
 # gitalk:
