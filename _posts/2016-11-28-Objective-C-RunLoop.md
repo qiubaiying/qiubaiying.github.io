@@ -3,7 +3,7 @@ layout:     post
 title:      Objective-C：RunLoop
 subtitle:   深入理解RunLoop
 date:       2016-11-28
-author:     BY
+author:     Joey
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:

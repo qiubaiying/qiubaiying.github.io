@@ -3,7 +3,7 @@ layout:     post
 title:      AsyncDisplayKit 2.0 教程:入门「译」
 subtitle:   AsyncDisplayKit Tutorial:Getting Started
 date:       2017-03-23
-author:     BY
+author:     Joey
 header-img: img/post-bg-iWatch.jpg
 catalog: true
 tags:
@@ -480,4 +480,4 @@ pagerNode 是 `ASCollectionNode` 的子类，使用方法与 `UIPageViewControll
 
 本文译自 [AsyncDisplayKit 2.0 Tutorial: Getting Started](https://www.raywenderlich.com/124311/asyncdisplaykit-2-0-tutorial-getting-started) .
 
-由[@柏荧(BY)](http://github.com/qiubaiying)进行翻译,首次发布于 [BY Blog](http://qiubaiying.github.io)，转载请保留原文链接.
+> 本文首次发布于 [Joey Blog](http://qiaoyu113.github.io), 作者 [@乔宇(Joey)](http://github.com/qiaoyu113) ,转载请保留原文链接.
