@@ -4,7 +4,7 @@ title:      vue 服务器端渲染 nuxt.js
 subtitle:   nuxt.js 是一个基于 Vue.js 的通用应用框架
 date:       2018-12-21
 author:     Joey
-header-img: img/post-bg-ios9-web.jpg
+header-img: img/post-bg-timg.jpg
 catalog: true
 tags:
     - Web
@@ -37,7 +37,7 @@ tags:
 值得一提的是，nuxt是基于node.js的，后端如果是其他语言时，是否考虑到再加一层node.js的合理性
 
 ```
->链接地址[《nuxt.js](https://zh.nuxtjs.org/guide/installation)
+>链接地址[《nuxt.js》](https://zh.nuxtjs.org/guide/installation)
 
 ##  利用npx脚手架创建项目
 
