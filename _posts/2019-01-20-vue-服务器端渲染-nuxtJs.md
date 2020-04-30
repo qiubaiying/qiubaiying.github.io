@@ -4,7 +4,7 @@ title:      vue 服务器端渲染 nuxt.js
 subtitle:   nuxt.js 是一个基于 Vue.js 的通用应用框架
 date:       2019-01-20
 author:     Joey
-header-img: img/post-bg-timg.jpg
+header-img: img/post-bg-timg.jpeg
 catalog: true
 tags:
     - Web
