@@ -2,7 +2,7 @@
 layout:     post
 title:      vue 服务器端渲染 nuxt.js
 subtitle:   nuxt.js 是一个基于 Vue.js 的通用应用框架
-date:       2018-12-21
+date:       2019-01-20
 author:     Joey
 header-img: img/post-bg-timg.jpg
 catalog: true
