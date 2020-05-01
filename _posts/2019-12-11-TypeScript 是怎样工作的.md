@@ -4,7 +4,7 @@ title:      TypeScript 是怎样工作的
 subtitle:   TypeScript的工作原理
 date:       2019-12-11
 author:     Joey
-header-img: img/post-bg-kuaidi.jpg
+header-img: img/type.jpg
 tags:
     - Web
     - TypeScript
