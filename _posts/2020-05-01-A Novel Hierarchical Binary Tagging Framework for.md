@@ -87,8 +87,6 @@ tags:
 
 - 那么对于未参与的关系，文中提出了"null object"的概念，也就是说，在这种情况下函数会将subject映射到一个空的尾实体上(对应公式3的右端部分)，表示subject并不参与该关系，也就无法抽取出有效的三元组。
 
-> 我们通过学习p（s|xj）和pr（o|s，xj）这两个tagger来提取出subject和object
-
 对上式取对数，则损失函数如下
 
 ![image-20200501195347110](https://testxiaoming.oss-cn-shanghai.aliyuncs.com/img/image-20200501195347110.png)
