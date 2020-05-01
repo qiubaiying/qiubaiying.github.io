@@ -4,7 +4,7 @@ title:      为Vue.js 单页应用提速
 subtitle:   以下介绍了有关如何缓解此类问题的几种方法，以及在响应性和性能方面进一步改进 Vue.js 应用的其他方法。
 date:       2019-06-20
 author:     Joey
-header-img: img/post-bg-hacker.png
+header-img: img/post-bg-timg.jpeg
 catalog: true
 tags:
     - Web
