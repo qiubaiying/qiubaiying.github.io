@@ -7,6 +7,7 @@ author:     Joey
 header-img: img/post-bg-hacker.jpg
 catalog: true
 tags:
+    - 前端
     - iOS
     - Xcode
     - Cocopods

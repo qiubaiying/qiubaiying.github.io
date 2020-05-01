@@ -7,7 +7,6 @@ author:     Joey
 header-img: img/post-bg-iWatch.jpg
 catalog: true
 tags:
-    - iOS
     - Objective-C
     - AsyncDisplayKit
     - 开源库

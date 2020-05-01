@@ -7,7 +7,10 @@ author:     Joey
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
-    - iOS
+    - Web
+    - Vue
+    - JavaScript
+    - 前端
     - 开发技巧
     - Debug
 ---
