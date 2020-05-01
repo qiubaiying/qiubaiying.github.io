@@ -50,14 +50,11 @@ tags:
 - 然而这种Formulation在多个关系三元组有重叠的情况下会有如下问题：
   - 在所有提取的实体对中，很多都不形成有效关系，从而产生了太多的negative examples
   - 当同一实体参与多个关系时，分类器可能会感到困惑。 没有足够的训练样例的情况下，分类器就很难准确指出实体参与的关系
-
 - 这篇文章中提出了一个新的Formulation，实现了一个不受重叠三元组问题困扰的HBT标注框架(Hierarchical Binary Tagging Framework)来解决RTE任务。HBT框架最核心思想是，**<u>把关系(Relation)建模为将头实体(Subject)映射到尾实体(Object)的函数，而不是将其视为实体对上的标签</u>**。
 
-> 这篇文章中不再去学习关系分类器 ![[公式]](https://www.zhihu.com/equation?tex=f(s%2C+o)+\rightarrow+r) ，而是学习关系特定的尾实体标注器 ![[公式]](https://www.zhihu.com/equation?tex=f_{r}(s)+\rightarrow+o) ，
+![image-20200501195517437](https://testxiaoming.oss-cn-shanghai.aliyuncs.com/img/image-20200501195517437.png)
 
-- **这里关系特定的尾实体标注器** ![[公式]](https://www.zhihu.com/equation?tex=f_%7Br%7D%28s%29+%5Crightarrow+o)将在**给定关系和头实体（subject）的条件下**识别出所有可能的尾实体（object），或不返回任何object，表示给定的主题和关系没有三元组
-
-  > 关系是给定的，比如两个常用的公开数据集，会有给好的几十个，和几百个关系。
+- > 关系是给定的，比如两个常用的公开数据集，会有给好的几十个，和几百个关系。
 
 - 总结一下，在这种框架下，关系三元组抽取问题就被分解为如下的两步过程：
 
@@ -67,7 +64,7 @@ tags:
   
 
   > 然后根据之前描述的两部任务，我们可以大致看到这个模型的构成是这样的，主要分为encoder和decode两部分，decoder主要分为提取subject的subject tagger和特定关系下提取object的的 object taggers
->
+  >
   > 然后的话，具体的细节会在后面去讲
   >
   > 我们首先来看一下根据这篇文章的想法，这个任务的损失函数是什么样的
@@ -80,11 +77,11 @@ tags:
 
 <img src="https://testxiaoming.oss-cn-shanghai.aliyuncs.com/img/image-20200427133724481.png" alt="image-20200427133724481" style="zoom:67%;" />
 
-- 对于training set D上的sentence xj和xj中可能存在的三元组的集合![[公式]](https://www.zhihu.com/equation?tex=T_%7Bj%7D)，我们希望去最大化data likelihood，也就是第一个式子。
+- 对于training set D上的sentence xj和xj中可能存在的三元组的集合 Tj，我们希望去最大化data likelihood，也就是第一个式子。
 
 - 根据链式法则，可以把第一个式子转化为第二个式子。
 
-  > 右边部分下角标的 表示 ![[公式]](https://www.zhihu.com/equation?tex=T_%7Bj%7D) 中指定s的三元组集合，集合中的ro对来计算后面这个部分
+  > 右边部分下角标的 表示 Tj中指定s的三元组集合，集合中的ro对来计算后面这个部分
 
 - **<u>公式2到公式3其实是"将relation建模为函数"这一思想的关键一步。对于给定的一个subject，其在句子中所参与的关系个数一般来说是有限的，因此只有部分relation能够将其映射到相应的object上去(对应公式3的中间部分)，最终得到一个有效的三元组。</u>**
 
@@ -94,12 +91,9 @@ tags:
 
 对上式取对数，则损失函数如下
 
-![[公式]](https://www.zhihu.com/equation?tex=J(\theta)%3D\sum_{j%3D1}^{D}{[+\sum_{s\in+T_{j}}log\+p_{\theta}(s|x_{j})+%2B+\sum_{r\in+T_{j}|s}log\+p_{\phi_{r}}(o|s%2Cx_{j})+%2B+\sum_{r\notin+T_{j}|s}log\+p_{\phi_{r}}(o_{\oslash}|s%2Cx_{j})+]})
+![image-20200501195347110](https://testxiaoming.oss-cn-shanghai.aliyuncs.com/img/image-20200501195347110.png)
 
-> 这里面的下角标符号有些复杂
-> ![[公式]](https://www.zhihu.com/equation?tex=s%5Cin+T_%7Bj%7D) 表示subject出现在 ![[公式]](https://www.zhihu.com/equation?tex=T_%7Bj%7D) 的三元组中； 
-> ![[公式]](https://www.zhihu.com/equation?tex=T_%7Bj%7D%7Cs) 表示 ![[公式]](https://www.zhihu.com/equation?tex=T_%7Bj%7D) 中以s为首的三元组集合，即 ![[公式]](https://www.zhihu.com/equation?tex=%5C%7B+%28s%2C+r_%7Bk%7D%2C+o_%7Bl%7D%29+%5C%7D) ； ![[公式]](https://www.zhihu.com/equation?tex=%28r%2Co%29+%5Cin+T_%7Bj%7D%7C+s) 表示 ![[公式]](https://www.zhihu.com/equation?tex=%28r%2Co%29) 对出现在以s为首的三元组中，即 ![[公式]](https://www.zhihu.com/equation?tex=%28s%2Cr%2Co%29) 为真实三元组标签；
->  ![[公式]](https://www.zhihu.com/equation?tex=o_%7B%5Coslash%7D) 表示以s为头实体，在关系r下，句子中没有对应的尾实体。
+![image-20200501195417713](https://testxiaoming.oss-cn-shanghai.aliyuncs.com/img/image-20200501195417713.png)
 
 #### BERT Encoder层： 
 
@@ -159,8 +153,6 @@ tags:
 对于每个关系r对应的tagger，需要优化的似然函数如下来获得更好的W（weight）和b（bias）这个公式等号右边和之前是完全一样的：
 
 ![[公式]](https://www.zhihu.com/equation?tex=p_%7B%5Cphi_%7Br%7D%7D%28o%7Cs%2CX%29%3D%5Cprod_%7Bt%5Cin+%5C%7Bstart%5C_o%2Cstart%5C_e+%5C%7D%7D%5E%7B%7D%5Cprod_%7Bi%3D1%7D%5E%7BL%7D%28p_%7Bi%7D%5E%7Bt%7D%29%5E%7BI%5C%7By_%7Bi%7D%5E%7Bt%7D%3D1%5C%7D%7D%281-p_%7Bi%7D%5E%7Bt%7D%29%5E%7BI%5C%7By_%7Bi%7D%5E%7Bt%7D%3D0%5C%7D%7D)
-
-> 对于objext为null的 ![[公式]](https://www.zhihu.com/equation?tex=o_%7B%5Coslash%7D) 的情况，对于所有token来说， ![[公式]](https://www.zhihu.com/equation?tex=y_%7Bi%7D%5E%7Bend%5C_o_%7B%5Coslash%7D%7D%3Dy_%7Bi%7D%5E%7Bend%5C_o_%7B%5Coslash%7D%7D%3D0)
 
 
 
@@ -230,6 +222,4 @@ NYT：我们还发现（E1，E2）和（E1，R，E2）的F1分数之间只有很
 ### **Something Else**
 
 - 模型输入句子的最大长度设置为100个单词
-
-
 
