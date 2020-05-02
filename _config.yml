@@ -62,8 +62,8 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: 66b8d0008e5615ef401f                           #生成的clientID
-  clientSecret: bc98d5a0e500254e842b2c0625c97335acfa2fcd   #生成的clientSecret
+  clientID: c553003b9c7b22905440                           #生成的clientID
+  clientSecret: 74cde4bd7012956dd16f4d9bb76847f2e7cd3f93   #生成的clientSecret
   repo: double666-del.github.io    #仓库名称
   owner: double666-del    #github用户名
   admin: double666-del
