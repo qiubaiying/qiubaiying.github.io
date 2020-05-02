@@ -100,60 +100,22 @@ header-img: "img/kantoku-mori.png"
 
 
 <!-- Gitalk 评论 start  -->
-{% if site.gitalk.enable %}
-<!-- Gitalk link  -->
+
+<!-- Link Gitalk 的支持文件  -->
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
-<div id="gitalk-container"></div> <script type="text/javascript">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+<div id="gitalk-container"></div>     <script type="text/javascript">
     var gitalk = new Gitalk({
 
-
-    clientID: 'db5def7852fb327ea1ba',
-    clientSecret: 'abb9e6d6f3fbefbf2dd7f2d3c2af7d2d98a70672',
-    repo: 'ac137sch.github.io',
-    owner: 'ac137sch',
-    admin: ['ac137sch'],
-    distractionFreeMode: {{site.gitalk.distractionFreeMode}},
-    id: 'about',
-    );
+    // gitalk的主要参数
+        clientID: `db5def7852fb327ea1ba`,
+        clientSecret: `abb9e6d6f3fbefbf2dd7f2d3c2af7d2d98a70672`,
+        repo: `ac137sch.github.io`,
+        owner: 'ac137sch',
+        admin: ['ac137sch'],
+        id: 'about.html',
+    
+    });
     gitalk.render('gitalk-container');
-</script>
-{% endif %}
+</script> 
 <!-- Gitalk end -->
-
- <!-- disqus 评论框 start  -->
-{% if site.disqus.enable %}
-
-<div class="comment">
-    <div id="disqus_thread" class="disqus-thread">
-    </div>
-</div>
-<!-- disqus 评论框 end -->
-
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "{{site.disqus.username}}";
-    var disqus_identifier = "{{site.disqus.username}}/{{page.url}}";
-    var disqus_url = "{{site.url}}{{page.url}}";
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<!-- disqus 公共JS代码 end -->
-{% endif %}
-
-=======
-
-Talks
-GitHub
-jekyll
-Hux
-Google Analytics
-{% if site.gitalk.enable %}
-{% endif %} {% if site.disqus.enable %}
-{% endif %}
->>>>>>> 9b2fe59684852a4b1cde947fcb61953ddb9b7a71
