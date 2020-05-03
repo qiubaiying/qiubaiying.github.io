@@ -2,17 +2,17 @@
 layout:     post
 title:      Hello World
 subtitle:   世界，你好
-date:       2014-05-19
-author:     Pockies
-header-img: img/post-bg-001.jpg
+date:       2020/5/3
+author:     awe
+header-img: img/HelloWorld.svg.png
 catalog: true
 tags:
-    - 测试
+    - Test
 ---
 
 ## Hello
 
-这是一个`markdown`测试页面。
+     这是一个`markdown`测试页面。
 
 ------
 
@@ -20,29 +20,25 @@ tags:
 
 > # /home
 
-***公式***
-
-$$ fun^10xint^40=Ir2 $$
-
 ***代码***
 
 ```html
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Pockies</title>
+		<title>awe</title>
 	</head>
 	<body>
-      <p>fuck you</p>
+      <p>-？-</p>
 	</body>
 </html>
 ```
 
 ***图片***
 
-[島風ちゃんが本体です](http://zh.pixiv.com/works/43588035)
-![島風ちゃんが本体です](https://raw.githubusercontent.com/Pockies/pic/master/741f9461gw1egj6n459n0j20fy0frtab.jpg)
+[hello world](https://zh.m.wikipedia.org/wiki/File:HelloWorld.svg)
+![hello world](https://upload.wikimedia.org/wikipedia/commons/2/28/HelloWorld.svg)
 
 ------
 
-/back
+/end
