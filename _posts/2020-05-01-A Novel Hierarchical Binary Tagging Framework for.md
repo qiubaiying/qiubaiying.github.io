@@ -4,7 +4,7 @@ title:      A Novel Hierarchical Binary Tagging Framework for Relational Triple 
 subtitle:   
 date:       2020-05-01
 author:     YM
-header-img: img/3.jpg
+header-img: img/7.jpg
 catalog: true
 tags:
     - 关系抽取
