@@ -99,8 +99,8 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "Kumoteri",
-        href: "https://kumoteri.xyz"
+        title: "Caetrix",
+        href: "https://yuukocae.xyz"
     },{
         title: "LostAccount",
         href: "http://453224.xyz/"
