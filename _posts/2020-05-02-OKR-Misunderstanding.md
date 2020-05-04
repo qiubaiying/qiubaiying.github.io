@@ -9,11 +9,12 @@ catalog: true
 tags:
     - OKR
 ---
+<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@muratodr?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Murat Onder"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Murat Onder</span></a><br/>
 ## 前言
 
 最近一个月在做公司内部OKR培训推广工作，总结一些遇到的使用误区做一个记录和分享。对自己是个总结过程，希望对你也有参考借鉴的作用。  
-![OKR](http://5b0988e595225.cdn.sohucs.com/images/20171005/1218d8729e9d459c85d53af524cd932d.jpeg)
-
+![OKR](/img/okr/okr1.jpg)
+(Photo by Marc from Pexels)
 ## 正文
 
 OKR是两个单词的组合：Objective(目标)；KeyResult(关键指标)。OKR是一个目标管理框架，他的原理和他的名字一样简单直白，但是就像众所周知的一句话“Less is more”，真正应用好OKR其实需要很多实践活动，当然也有很多坑要避免。本文并不是OKR的入门介绍，如果想了解基本OKR概念请参考下面参考链接中的"Google OKR 使用手册"。  
@@ -21,15 +22,11 @@ OKR是两个单词的组合：Objective(目标)；KeyResult(关键指标)。OKR�
 
 ### OKR是新的绩效考核？
 
-答案是肯定的“不是”。KPI是绩效考核中的经典方法论之一，如果你希望简单直接的拿到一个提升绩效考核方案，那你会失望的。
-![KPI](https://www.virtualclarity.com/assets/img/uploads/KPI-01.png)
+答案是肯定的“不是”。KPI是绩效考核中的经典方法论之一，如果你希望简单直接的拿到一个提升绩效考核方案，那你会失望的。![KPI](/img/okr/kpi.jpg)
+<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@adeolueletu?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Adeolu Eletu"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Adeolu Eletu</span></a><br/><br/>
 OKR关注的是过程和结果，KPI关注的只是结果。KPI并不是不好，而是被大家误用导致，对于结果我们可以有很多方式让指标达成但是并无法达到你想要的目标，这就是KPI最为被诟病的地方。而OKR希望在你达到指标的过程中，始终有一个为之奋斗的目标在前方。让驱动力从完成指标变成达成目标。
 我比较喜欢下面的两者对比：
-|KPI   |   OKR|
-|------|------|
-|对事物零容忍导致不惜一切代价去避免发错|鼓励适度冒险|
-|掩盖错误和过失|开诚布公的讨论“失误”|
-|互相指责|提出改进|
+![](/img/okr/kpi_vs_okr.png)
 
 ### 目标不能是随便的说说的。
 
@@ -37,24 +34,20 @@ OKR的灵魂我认为是Objective(目标)。好的目标要符合SMART原则，�
 目标可以分为承诺型目标和挑战型目标，后者更具有挑战。
 
 看下面几个目标：
-|改之前   |   改之后|说明|
-|------|------|----------|
-|今年让HR的工作全面、高效、专业、提高满意度|成为最职业的HR团队|目标要有煽动性，一些细节可以成为KR，无需加入目标描述中|
-|5月15日之前X模块的UAT Case通过率需要达到较高标准|让X模块成为Y项目中最稳定的模块|Case通过率作为目标是否过于低标准了，难道不应该都通过吗？它可以作为一个KR为某一个目标服务。|
-|项目XXX Full Test期间QA 提bug需要清晰|就不是个目标|这就不是一个目标，可能是一个工作要求。|
-|项目XXX二期的 QQQ 功能顺利上线|让QQQ功能成为XXX项目二期中用户价值的核心体现|功能上线如果作为一个承诺型目标体现了必须要做的事情，而上线时能否体现出用户价值，让这个目标更具有成就感从而增加内驱力，这个目标的作用可就不一样了。尽量使用挑战型目标让目标更加鼓舞人心。|
+![](/img/okr/objective_changed.png)
 
 ### KR的信心指数越多越好吗？
 
 有的时候大家会说为了实现某个目标，我们对于他的若干个KR是有80%~90%的信心达到的。这证明我们有达成目标的信心。但是信心指数真的是越多越好吗？
-![信心指数](http://lerablog.org/wp-content/uploads/2015/09/self-confidence.jpg)
-
+![信心指数](/img/okr/confidence.jpg)
+<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@mrthetrain?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Joshua Hoehne"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Joshua Hoehne</span></a><br/>
 正如上面说到的，目标分为两类：承诺型目标和挑战型目标。如果是挑战型目标我们有90%或者100%的信心实现，那还是挑战型目标吗？当你胸有成足的去做某件事请的时候创新的可能性也就会降低，因为你会惯性的按照设定好的路径走到目的地。而当你可能成功也可能失败的时候(50%信心指数)，你就会去想办法思考各种可能的方式，尝试并确保目标能够达成，而这个过程中自然也会给你带来很多意想不到的成长和收获。这可能就是OKR的奇妙之处，他给企业，组织和我们个人都带来了不确定性，而在不确定的过程中成长。
 
 ### KR和Task有什么区别？
 
 KR是作为目标达成的关键衡量项目存在的，他是否最后达成直接关系到目标是否实现。而每一个KR可以延伸出若干具体Task来实现。而这些任务是更具体实现KR的步骤。实际应用中，我发现很多Team在设定KR的时候都设置成了Task。
-![Task](https://smallbusinessbc.ca/wp-content/uploads/2012/07/CompletedTask.jpg)
+![Photo by Kelly Sikkema on Unsplash](/img/okr/tasks.jpg)
+<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@kellysikkema?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Kelly Sikkema"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Kelly Sikkema</span></a>
 
 例如下面这几个KR：
    1. 对于功能报错的，须上传Log，标记好URL，User及操作的时间点。
