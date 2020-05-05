@@ -108,15 +108,13 @@ Efficient GAN-Based Anomaly Detection (2018-02)
 >
 > ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD7.png)
 >
-> $$A(x)=\alpha L_{G}(x)+(1-\alpha) L_{D}(x)$$ 
+> 异常分数：$$A(x)=\alpha L_{G}(x)+(1-\alpha) L_{D}(x)$$ 
 >
-> 
->
-> - $$L_{G}(x)=\|x-G(E(x))\|_{1}$$
+> - 生成器：$$L_{G}(x)=\|x-G(E(x))\|_{1}$$
 >
 >   
 >
-> - $$L_D(x)=\sigma(D(x, E(x)), 1)$  or $L_D(x)=\left\|f_{D}(x, E(x))-f_{D}(G(E(x)), E(x))\right\|_{1}$$
+> - 判别器：$$L_D(x)=\sigma(D(x, E(x)), 1)$$  or  $$L_D(x)=\left\|f_{D}(x, E(x))-f_{D}(G(E(x)), E(x))\right\|_{1}$$
 >
 > *测试时不需要将 x编码成 z这一步耗时的部分*
 
@@ -132,22 +130,19 @@ Adversarially Learned One-Class Classifier for Novelty Detection (2018-05)
 >
 > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD3.png" alt="img" style="zoom:50%;" />
 >
-> 损失函数：
-> $$
-> \mathcal{L}=\mathcal{L}_{\mathcal{R}+\mathcal{D}}+\lambda \mathcal{L}_{\mathcal{R}}
-> $$
+> 损失函数：$$\mathcal{L}=\mathcal{L}_{\mathcal{R}+\mathcal{D}}+\lambda \mathcal{L}_{\mathcal{R}}$$
 >
-> - $\mathcal{L}_{R+D}=\min _{\mathcal{R}} \max _{\mathcal{D}}\left(\mathbb{E}_{X \sim p_{t}}[\log (\mathcal{D}(X))]\right.+\left.+\mathbb{E}_{\tilde{X} \sim p_{t}+\mathcal{N}_{\sigma}}[\log (1-\mathcal{D}(\mathcal{R}(\tilde{X})))]\right)$
-> - $\mathcal{L}_{\mathcal{R}}=\left\|X-X^{\prime}\right\|^{2}$ (增强原始数据，抑制异常数据)
+> - $$L _{R+D}=\min _{ R } \max _{ D }\left( E _{X \sim p_{t}}[\log ( D (X))]++ E _{\tilde{X} \sim p_{t}+ N _{\sigma}}[\log (1- D ( R (\tilde{X})))]\right)$$
+> - $$L _{ R }=\left\|X-X^{\prime}\right\|^{2}$$ (增强原始数据，抑制异常数据)
 >
 > 
 >
 > 测试阶段：
 >
-> $\mathrm{OCC}(X)=\left.\{\begin{array}{ll}
-> \text { Target Class } & \text { if } \mathcal{D}(\mathcal{R}(X))>\tau \\
+> $$\operatorname{OCC}(X)=\left\{\begin{array}{ll}
+> \text { Target Class } & \text { if } D ( R (X))>\tau \\
 > \text { Novelty (Outlier) } & \text { otherwise }
-> \end{array}\right.$
+> \end{array}\right.$$
 
 
 
@@ -180,12 +175,12 @@ Anomaly Detection for Skin Disease Images Using Variational Autoencoder (2018-07
 ```
 
 > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD8.png" alt="img" style="zoom:50%;" />
-> $Anomaly \ score =s_{i w a e}^{k l}(x)+s_{i w a e}^{r e c o n s t}(x)$
+> $$Anomaly \ score =s_{i w a e}^{k l}(x)+s_{i w a e}^{r e c o n s t}(x)$$
 > 
-> $\begin{aligned}
+> $$\begin{aligned}
 > &s_{i w a e}^{k l}(x)=-\log \left(\frac{1}{L} \sum_{i=1}^{L} \frac{p\left(z_{i}\right)}{q\left(z_{i} | x\right)}\right)\\
 >&s_{i w a e}^{r e c o n s t}(x)=-\log \left(\frac{1}{L} \sum_{i=1}^{L} p\left(x | z_{i}\right)\right)
-> \end{aligned}$ 
+> \end{aligned}$$
 
 
 
@@ -195,9 +190,11 @@ Anomaly Detection for Skin Disease Images Using Variational Autoencoder (2018-07
 Ganomaly: Semi-supervised anomaly detection via adversarial training (2018-11)
 ```
 > ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD4.png)
-> $\mathcal{L}=w_{adv}\mathcal{L}_{adv}+w_{con}\mathcal{L}_{con}+w_{enc} \mathcal{L}_{enc}$
+> 损失函数：$$\mathcal{L}=w_{adv}\mathcal{L}_{adv}+w_{con}\mathcal{L}_{con}+w_{enc} \mathcal{L}_{enc}$$
 >
-> $\mathcal{A}(\hat{x})=\left\|G_{E}(\hat{x})-E(G(\hat{x}))\right\|_{1}$
+> 
+>
+> 异常分数：$$\mathcal{A}(\hat{x})=\left\|G_{E}(\hat{x})-E(G(\hat{x}))\right\|_{1}$$
 
 
 
@@ -227,9 +224,11 @@ Skip-ganomaly: Skip connected and adversarially trained encoder-decoder anomaly 
 
 > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD5.png" alt="img" style="zoom:50%;" />
 > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD6.png" alt="img" style="zoom:40%;" />
-> $\mathcal{L}=\lambda_{a d v} \mathcal{L}_{a d v}+\lambda_{c o n} \mathcal{L}_{c o n}+\lambda_{l a t} \mathcal{L}_{l a t}$
+> 损失函数：$$\mathcal{L}=\lambda_{a d v} \mathcal{L}_{a d v}+\lambda_{c o n} \mathcal{L}_{c o n}+\lambda_{l a t} \mathcal{L}_{l a t}$$
 >
-> $\mathcal{A}(\dot{x})=\lambda R(\dot{x})+(1-\lambda) L(\dot{x})$
+> 
+>
+> 异常分数：$$\mathcal{A}(\dot{x})=\lambda R(\dot{x})+(1-\lambda) L(\dot{x})$$
 
 
 
@@ -243,12 +242,12 @@ Anomaly Detection with Adversarial Dual Autoencoders (2019-02)
 >
 > 训练过程：
 >
-> - $\mathcal{L}_{D}=\|X-D(X)\|_{1}-\|G(X)-D(G(X))\|_{1}$ (重建实际输入，但不重建生成输入)
-> - $\mathcal{L}_{G}=\|X-G(X)\|_{1}+\|G(X)-D(G(X))\|_{1}$ (生成器除了重建实际输入之外，还重建生成的数据)
+> - $${L}_{D}=\|X-D(X)\|_{1}-\|G(X)-D(G(X))\|_{1}$$ (重建实际输入，但不重建生成输入)
+> - $${L}_{G}=\|X-G(X)\|_{1}+\|G(X)-D(G(X))\|_{1}$$ (生成器除了重建实际输入之外，还重建生成的数据)
 >
 > 测试过程
 >
-> - 异常分数：$\mathcal{A}(\hat{x})=\|\hat{x}-\mathrm{D}(\mathrm{G}(\hat{x}))\|_{2}$
+> - 异常分数：$${A}(\hat{x})=\|\hat{x}-{D}({G}(\hat{x}))\|_{2}$$
 >
 > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD14.png" alt="img" style="zoom:50%;" />
 
@@ -270,7 +269,7 @@ Discriminative Reconstruction Constrained Generative Adversarial Network for Hyp
 >
 > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD17.png" alt="img" style="zoom:50%;" />
 >
-> 测试时利用Residual image计算得到$D_{spatial}$和$D_{spectral}$，最终得到$D_{SS}=\lambda_1D_{spatial}+(1-\lambda_1)D_spectral$
+> 测试时利用Residual image计算得到$D_{spatial}$和$D_{spectral}$，最终得到$$D_{SS}=\lambda_1D_{spatial}+(1-\lambda_1)D_spectral$$
 
 
 
@@ -291,13 +290,13 @@ Attention Guided Anomaly Localization in Images (v1: 2019-11 v2:2020-05)
 > >
 > > - Attention Expansion Loss损失使从卷积潜变量中生成的attention map覆盖正常图像的全图
 >
-> > 损失函数：$L_{\text {final}}=w_{r} L+w_{a d v} L_{a d v}+w_{a e} L_{a e}$
+> > 损失函数：$$L_{\text {final}}=w_{r} L+w_{a d v} L_{a d v}+w_{a e} L_{a e}$$
 > >
-> > - $L=L_{R}(x, \hat{x})+K L\left(q_{\phi}(z | x) \| p_{\theta}(z | x)\right)$
+> > - $$L=L_{R}(x, \hat{x})+K L\left(q_{\phi}(z | x) \| p_{\theta}(z | x)\right)$$
 > >
-> > - $L_{a d v}=-\frac{1}{N} \sum_{i=1}^{N} \log \left(D\left(x_{i}\right)\right)+\log \left(1-D\left(\hat{x}_{i}\right)\right)$
+> > - $$L_{a d v}=-\frac{1}{N} \sum_{i=1}^{N} \log \left(D\left(x_{i}\right)\right)+\log \left(1-D\left(\hat{x}_{i}\right)\right)$$
 > >
-> > - $L_{a e, 1}=\frac{1}{|A|} \sum_{i, j}\left(1-A_{i, j}\right)$
+> > - $$L_{a e, 1}=\frac{1}{|A|} \sum_{i, j}\left(1-A_{i, j}\right)$$
 > >
 > >   > 使用Grad-CAM计算A并使用Sigmoid进行归一化，$A_{i,j}\in[0,1]$
 > >   >
@@ -316,12 +315,12 @@ Attention Guided Anomaly Localization in Images (v1: 2019-11 v2:2020-05)
 > > - $L_{cga}$使异常attention map注意的区域最小化，同时正常attention map尽可能覆盖全图
 > > - 仅在$p=y=c_n$即正常图像分类正确的时候计算互补引导注意损失项
 >
-> > 损失函数：$L_{\text {final}}=w_{r} L+w_{\text {adv}} L_{a d v}+w_{c} L_{b c e}+w_{\text {cga}} L_{\text {cga}}$
+> > 损失函数：$$L_{\text {final}}=w_{r} L+w_{\text {adv}} L_{a d v}+w_{c} L_{b c e}+w_{\text {cga}} L_{\text {cga}}$$
 > >
-> > - $L=L_{R}(x, \hat{x})+K L\left(q_{\phi}(z | x) \| p_{\theta}(z | x)\right)$
-> > - $L_{bce}=-\left[y_{i} \log x_{i}+\left(1-y_{i}\right) \log \left(1-x_{i}\right)\right]$
-> > - $L_{a d v}=-\frac{1}{N} \sum_{i=1}^{N} \log \left(D\left(x_{i}\right)\right)+\log \left(1-D\left(\hat{x}_{i}\right)\right)$
-> > - $L_{c g a, 1}=\frac{\mathbb{1}\left(p=y=c_{n}\right)}{\left|A_{x}^{c_{n}}\right|} \sum_{i, j}\left(1-\left(A_{x}^{c_{n}}\right)_{i, j}+\left(A_{x}^{c_{a}}\right)_{i, j}\right)$
+> > - $$L=L_{R}(x, \hat{x})+K L\left(q_{\phi}(z | x) \| p_{\theta}(z | x)\right)$$
+> > - $$L_{bce}=-\left[y_{i} \log x_{i}+\left(1-y_{i}\right) \log \left(1-x_{i}\right)\right]$$
+> > - $$L_{a d v}=-\frac{1}{N} \sum_{i=1}^{N} \log \left(D\left(x_{i}\right)\right)+\log \left(1-D\left(\hat{x}_{i}\right)\right)$$
+> > - $$L_{c g a, 1}=\frac{\mathbb{1}\left(p=y=c_{n}\right)}{\left|A_{x}^{c_{n}}\right|} \sum_{i, j}\left(1-\left(A_{x}^{c_{n}}\right)_{i, j}+\left(A_{x}^{c_{a}}\right)_{i, j}\right)$$
 
 
 
