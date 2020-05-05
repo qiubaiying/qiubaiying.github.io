@@ -79,9 +79,9 @@ f-AnoGAN: Fast unsupervised anomaly detection with generative adversarial networ
 > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD1.png" alt="img" style="zoom:50%;" />
 > 三种训练方式：
 >
-> - ziz：$\left.L_{z i z}(z)=\frac{1}{d} \| z-\hat{z}\right) \|^{2}$
-> - izi：$L_{i z i}(x)=\frac{1}{n}\|x-G(\hat{z})\|^{2}$
-> - izif：$L_{i z i f}(x)=\frac{1}{n}\|x-G(\hat{z})\|^{2}+\lambda \frac{1}{n_{d}}\|f(x)-f(G(\hat{z}))\|^{2}$
+> - ziz：$$\left.L_{z i z}(z)=\frac{1}{d} \| z-\hat{z}\right) \|^{2}$$
+> - izi：$$L_{i z i}(x)=\frac{1}{n}\|x-G(\hat{z})\|^{2}$$
+> - izif：$$L_{i z i f}(x)=\frac{1}{n}\|x-G(\hat{z})\|^{2}+\lambda \frac{1}{n_{d}}\|f(x)-f(G(\hat{z}))\|^{2}$$
 >
 > 对比的baseline：
 >
