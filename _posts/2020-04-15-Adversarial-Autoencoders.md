@@ -64,15 +64,25 @@ p(x) 模型分布
 
    > - 两个对抗网络，第一个对抗网络用于约束标签类别分布$p(y)$，第二个对抗网络用于约束潜变量z的先验分布$$p(z)$$
    >
-   > - 自编码器的编码层$$q(z,y|x)$$用于预测标签y、潜变量z，解码器$$p(x|z,y)$$输入预测标签y,z用于重构样本
+   > - 自编码器的编码层$$\begin{equation}
+   >   q(z, y | x)
+   >   \end{equation}$$用于预测标签y、潜变量z，解码器输$$\begin{equation}
+   >   p(x|y,z)
+   >   \end{equation}$$入预测标签y,z用于重构样本
    >
    > - 训练分为三个阶段
    >
-   >   > 无监督重构阶段：更新自编码层q(z,y|x)和解码层p(x|y,z)
+   >   > 无监督重构阶段：更新自编码层$$\begin{equation}
+   >   > q(z, y | x)
+   >   > \end{equation}$$和解码层$$\begin{equation}
+   >   > p(x|y,z)
+   >   > \end{equation}$$
    >   >
    >   > 对抗正则化阶段：首先分别更新标签判别网络和潜变量判别网络参数，然后更新生成网络参数（自编码器编码层）
    >   >
-   >   > 半监督分类阶段：更新$q(y|x)$以此最小化有标签数据交叉熵损失
+   >   > 半监督分类阶段：更新$$\begin{equation}
+   >   > q(y|x)
+   >   > \end{equation}$$以此最小化有标签数据交叉熵损失
    >
    > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/AAE3.png" alt="img" style="zoom:30%;" />
    >
@@ -80,7 +90,9 @@ p(x) 模型分布
 
  - Unsupervised Clustering with AAE  
 
-   > 无监督聚类的架构与半监督的相似，但删除了半监督中的分类阶段，推理网络$q(y|x)$预测一个单矢量，其维数指定的聚类数
+   > 无监督聚类的架构与半监督的相似，但删除了半监督中的分类阶段，推理网络$$\begin{equation}
+   > q(y|x)
+   > \end{equation}$$预测一个单矢量，其维数指定的聚类数
 
  - Dimensionality Reduction with AAE 
 
