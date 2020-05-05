@@ -293,7 +293,9 @@ Attention Guided Anomaly Localization in Images (v1: 2019-11 v2:2020-05)
 >
 > > 损失函数：$$L_{\text {final}}=w_{r} L+w_{a d v} L_{a d v}+w_{a e} L_{a e}$$
 > >
-> > - 重构损失：$$L=L_{R}(x, \hat{x})+K L\left(q_{\phi}(z | x) \| p_{\theta}(z | x)\right)$$
+> > - 重构损失：$$\begin{equation}
+> >   L_{a e, 1}=\frac{1}{|A|} \sum_{i, j}\left(1-A_{i, j}\right)
+> >   \end{equation}$$
 > >
 > > - 对抗损失：$$L_{a d v}=-\frac{1}{N} \sum_{i=1}^{N} \log \left(D\left(x_{i}\right)\right)+\log \left(1-D\left(\hat{x}_{i}\right)\right)$$
 > >
