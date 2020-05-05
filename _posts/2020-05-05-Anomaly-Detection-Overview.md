@@ -14,8 +14,7 @@ tags:
 **Model**
 
 > - [Anogan](#Anogan)
->
-> - [f-Anogan](#f-Anogan)
+>- [f-Anogan](#f-Anogan)
 > - [EGBAD](#EGBAD)
 > - [ALOCC](#ALOCC)
 > - [AAE](#AAE)
@@ -24,6 +23,7 @@ tags:
 > - [ALAD](#ALAD)
 > - [Skip-GANomaly](#Skip-GANomaly)
 > - [ADAE](#ADAE)
+> - [adVAE](#adVAE)
 > - [HADGAN](#HADGAN)
 > - [CAVGA](#CAVGA)
 > - [ALAE](#ALAE)
@@ -254,10 +254,24 @@ Anomaly Detection with Adversarial Dual Autoencoders (2019-02)
 
 
 
+#### adVAE
+
+```
+adVAE: A self-adversarial variational autoencoder with Gaussian anomaly prior knowledge for anomaly detection (2019-11)
+```
+
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD19.png" alt="img" style="zoom:50%;" />
+>
+> 
+>
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD19.png" alt="img" style="zoom:50%;" />
+
+
+
 #### HADGAN
 
 ```
-Discriminative Reconstruction Constrained Generative Adversarial Network for Hyperspectral Anomaly Detection (2020=01)
+Discriminative Reconstruction Constrained Generative Adversarial Network for Hyperspectral Anomaly Detection (2020-01)
 ```
 
 > > HADGAN的应用对象为高光谱图像
