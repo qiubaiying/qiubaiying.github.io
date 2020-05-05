@@ -14,7 +14,8 @@ tags:
 
 **Model**
 
-> -[Anogan](#Anogan)
+> - [Anogan](#Anogan)
+>
 > - [f-Anogan](#f-Anogan)
 > - [EGBAD](#EGBAD)
 > - [ALOCC](#ALOCC)
@@ -32,7 +33,8 @@ tags:
 
 **Paper**
 
-> -[One Class (Anomaly) Classification target](#Anomaly-Classification-Target)
+> - [One Class (Anomaly) Classification target](#Anomaly-Classification-Target)
+>
 > - [Out-of-Distribution (OOD) Detction target](#OOD-Detction-Target)
 > - [One Class (Anomaly) Segmentation target](#Anomaly-Segmentation-Target)
 
@@ -403,6 +405,3 @@ Attention Guided Anomaly Localization in Images (v1: 2019-11 v2:2020-05)
 - Uninformed Students: Student-Teacher Anomaly Detection with Discriminative Latent Embeddings | **[arXiv' 19]** | [`[pdf]`](https://arxiv.org/pdf/1911.02357.pdf)
 - Attention Guided Anomaly Detection and Localization in Images | **[arXiv' 19]** | [`[pdf]`](https://arxiv.org/pdf/1911.08616v1.pdf)
 
-
-
-### 
