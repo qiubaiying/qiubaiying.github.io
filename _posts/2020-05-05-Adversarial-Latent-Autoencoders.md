@@ -7,7 +7,7 @@ author:     JY
 header-img: img/post-bg.jpg
 catalog: true
 tags:
-    - ALAE
+    - paper
 ---
 
 ### Adversarial Latent Autoencoders
