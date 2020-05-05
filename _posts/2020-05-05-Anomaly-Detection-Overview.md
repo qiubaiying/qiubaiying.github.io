@@ -301,7 +301,7 @@ Attention Guided Anomaly Localization in Images (v1: 2019-11 v2:2020-05)
 > >
 > > - 对抗损失：$$L_{a d v}=-\frac{1}{N} \sum_{i=1}^{N} \log \left(D\left(x_{i}\right)\right)+\log \left(1-D\left(\hat{x}_{i}\right)\right)$$
 > >
-> > ​     
+> > ​       
 > >
 > > - 注意力分布损失:$$\begin{equation}
 > > L_{a e, 1}=\frac{1}{|A|} \sum_{i, j}\left(1-A_{i, j}\right)
