@@ -2,7 +2,7 @@
 title: ZJU_CVs Blog
 SEOTitle: ZJU_CVs Blog
 header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
+email: 1067087283@qq.com
 description: "Paper Reading Record."
 keyword: "Paper. Model, Idea, Summary"
 url: "https://zju-cvs.github.io"          # your host, for absolute URL
@@ -11,7 +11,7 @@ github_repo: "https://github.com/ZJU-CVs/zju-cvs.github.io.git" # you code repos
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
+sidebar-about-description: ""
 sidebar-avatar: /img/about-BY-gentle.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
