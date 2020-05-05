@@ -76,7 +76,7 @@ f-AnoGAN: Fast unsupervised anomaly detection with generative adversarial networ
 
 > Anogan的完善（会议->期刊）
 >
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/blob/master/img/Anomaly-Detection/AD1.png" alt="img" style="zoom:50%;" />
+> <img src="https://https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD1.png" alt="img" style="zoom:50%;" />
 > 三种训练方式：
 >
 > - ziz：$\left.L_{z i z}(z)=\frac{1}{d} \| z-\hat{z}\right) \|^{2}$
@@ -85,7 +85,7 @@ f-AnoGAN: Fast unsupervised anomaly detection with generative adversarial networ
 >
 > 对比的baseline：
 >
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/blob/master/img/Anomaly-Detection/AD2.png" alt="img" style="zoom:40%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD2.png" alt="img" style="zoom:40%;" />
 
 
 
@@ -99,7 +99,7 @@ Efficient GAN-Based Anomaly Detection (2018-02)
 >
 > 训练时生成器将潜在表示z映射到$\hat x$，编码器E将输入样本x映射到潜在表示$\hat z$，判别器不仅考虑实际和生成图像的差异，还考虑了潜在表示的差异
 >
-> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/blob/master/img/Anomaly-Detection/AD7.png)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD7.png)
 >
 > $A(x)=\alpha L_{G}(x)+(1-\alpha) L_{D}(x)$ 
 >
@@ -118,7 +118,7 @@ Adversarially Learned One-Class Classifier for Novelty Detection (2018-05)
 
 > 模型由R和D两个网络组成，其中R部分包括了一个自动编码和自动译码器，而D部分则是一个CNN网络，用于对经过R重新生成的数据进行一分类，从而实现异常检测
 >
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/blob/master/img/Anomaly-Detection/AD3.png" alt="img" style="zoom:50%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD3.png" alt="img" style="zoom:50%;" />
 >
 > 损失函数：$\mathcal{L}=\mathcal{L}_{\mathcal{R}+\mathcal{D}}+\lambda \mathcal{L}_{\mathcal{R}}$
 >
@@ -144,7 +144,7 @@ Unsupervised Detection of Lesions in Brain MRI using constrained adversarial aut
 
 > 用AAE来学习建模正常数据分布
 >
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/blob/master/img/Anomaly-Detection/AD11.png" alt="img" style="zoom:50%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD11.png" alt="img" style="zoom:50%;" />
 >
 > - 对于在正常分布的的两个数据之间的距离，有时比一个正常和一个异常之间的距离还大，所以提出在隐空间也加一个约束
 >
@@ -154,7 +154,7 @@ Unsupervised Detection of Lesions in Brain MRI using constrained adversarial aut
 >
 > 实验：
 >
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/blob/master/img/Anomaly-Detection/AD9.png" alt="img" style="zoom:50%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD9.png" alt="img" style="zoom:50%;" />
 
 
 
@@ -164,7 +164,7 @@ Unsupervised Detection of Lesions in Brain MRI using constrained adversarial aut
 Anomaly Detection for Skin Disease Images Using Variational Autoencoder (2018-07)
 ```
 
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/blob/master/img/Anomaly-Detection/AD8.png" alt="img" style="zoom:50%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD8.png" alt="img" style="zoom:50%;" />
 > $Anomaly \ score =s_{i w a e}^{k l}(x)+s_{i w a e}^{r e c o n s t}(x)$
 > 
 > $\begin{aligned}
@@ -179,7 +179,7 @@ Anomaly Detection for Skin Disease Images Using Variational Autoencoder (2018-07
 ```
 Ganomaly: Semi-supervised anomaly detection via adversarial training (2018-11)
 ```
-> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/blob/master/img/Anomaly-Detection/AD4.png)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD4.png)
 > $\mathcal{L}=w_{adv}\mathcal{L}_{adv}+w_{con}\mathcal{L}_{con}+w_{enc} \mathcal{L}_{enc}$
 >
 > $\mathcal{A}(\hat{x})=\left\|G_{E}(\hat{x})-E(G(\hat{x}))\right\|_{1}$
@@ -194,11 +194,11 @@ Adversarially Learned Anomaly Detection (2018-12)
 
 > Efficient GAN的升级版
 >
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/blob/master/img/Anomaly-Detection/AD12.png" alt="img" style="zoom:40%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD12.png" alt="img" style="zoom:40%;" />
 >
 > 训练过程：
 >
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/blob/master/img/Anomaly-Detection/AD13.png" alt="img" style="zoom:67%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD13.png" alt="img" style="zoom:67%;" />
 >
 > 异常分数：$A(x)=\left\|f_{x x}(x, x)-f_{x x}(x, G(E(x)))\right\|_{1}$
 
@@ -210,8 +210,8 @@ Adversarially Learned Anomaly Detection (2018-12)
 Skip-ganomaly: Skip connected and adversarially trained encoder-decoder anomaly detection (2019-01)
 ```
 
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/blob/master/img/Anomaly-Detection/AD5.png" alt="img" style="zoom:50%;" />
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/blob/master/img/Anomaly-Detection/AD6.png" alt="img" style="zoom:40%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD5.png" alt="img" style="zoom:50%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD6.png" alt="img" style="zoom:40%;" />
 > $\mathcal{L}=\lambda_{a d v} \mathcal{L}_{a d v}+\lambda_{c o n} \mathcal{L}_{c o n}+\lambda_{l a t} \mathcal{L}_{l a t}$
 >
 > $\mathcal{A}(\dot{x})=\lambda R(\dot{x})+(1-\lambda) L(\dot{x})$
@@ -224,7 +224,7 @@ Skip-ganomaly: Skip connected and adversarially trained encoder-decoder anomaly 
 Anomaly Detection with Adversarial Dual Autoencoders (2019-02)
 ```
 
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/blob/master/img/Anomaly-Detection/AD10.png" alt="img" style="zoom:50%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD10.png" alt="img" style="zoom:50%;" />
 >
 > 训练过程：
 >
@@ -235,7 +235,7 @@ Anomaly Detection with Adversarial Dual Autoencoders (2019-02)
 >
 > - 异常分数：$\mathcal{A}(\hat{x})=\|\hat{x}-\mathrm{D}(\mathrm{G}(\hat{x}))\|_{2}$
 >
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/blob/master/img/Anomaly-Detection/AD14.png" alt="img" style="zoom:50%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD14.png" alt="img" style="zoom:50%;" />
 
 
 
@@ -251,9 +251,9 @@ Discriminative Reconstruction Constrained Generative Adversarial Network for Hyp
 >
 > 训练模型在f-Anogan的基础上加入了类似于AAE中的隐空间分布约束
 >
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/blob/master/img/Anomaly-Detection/AD18.png" alt="img" style="zoom:50%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD18.png" alt="img" style="zoom:50%;" />
 >
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/blob/master/img/Anomaly-Detection/AD17.png" alt="img" style="zoom:50%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD17.png" alt="img" style="zoom:50%;" />
 >
 > 测试时利用Residual image计算得到$D_{spatial}$和$D_{spectral}$，最终得到$D_{SS}=\lambda_1D_{spatial}+(1-\lambda_1)D_spectral$
 
@@ -267,7 +267,7 @@ Discriminative Reconstruction Constrained Generative Adversarial Network for Hyp
 Attention Guided Anomaly Localization in Images (v1: 2019-11 v2:2020-05)
 ```
 
-> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/blob/master/img/Anomaly-Detection/AD15.png)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD15.png)
 >
 > > 无监督$CAVGA_u$：
 > >
@@ -290,7 +290,7 @@ Attention Guided Anomaly Localization in Images (v1: 2019-11 v2:2020-05)
 >
 > 
 >
-> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/blob/master/img/Anomaly-Detection/AD16.png)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD16.png)
 >
 > > 弱监督$CAVGA_w$：在训练集中加入少量的异常图片来提高模型的检测和定位效果
 >
