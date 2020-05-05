@@ -132,7 +132,7 @@ Adversarially Learned One-Class Classifier for Novelty Detection (2018-05)
 >
 > 损失函数：$$\mathcal{L}=\mathcal{L}_{\mathcal{R}+\mathcal{D}}+\lambda \mathcal{L}_{\mathcal{R}}$$
 >
-> - $$L _{R+D}=\min _{ R } \max _{ D }\left( E _{X \sim p_{t}}[\log ( D (X))]++ E _{\tilde{X} \sim p_{t}+ N _{\sigma}}[\log (1- D ( R (\tilde{X})))]\right)$$
+> -  $$L _{R+D}=\min _{ R } \max _{ D }\left( E _{X \sim p_{t}}[\log ( D (X))]++ E _{\tilde{X} \sim p_{t}+ N _{\sigma}}[\log (1- D ( R (\tilde{X})))]\right)$$ 
 > - $$L _{ R }=\left\|X-X^{\prime}\right\|^{2}$$ (增强原始数据，抑制异常数据)
 >
 > 
@@ -175,9 +175,9 @@ Anomaly Detection for Skin Disease Images Using Variational Autoencoder (2018-07
 ```
 
 > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD8.png" alt="img" style="zoom:50%;" />
-> $$Anomaly \ score =s_{i w a e}^{k l}(x)+s_{i w a e}^{r e c o n s t}(x)$$
+>  $$Anomaly \ score =s_{i w a e}^{k l}(x)+s_{i w a e}^{r e c o n s t}(x)$$
 > 
-> $$\begin{aligned}
+>  $$\begin{aligned}
 > &s_{i w a e}^{k l}(x)=-\log \left(\frac{1}{L} \sum_{i=1}^{L} \frac{p\left(z_{i}\right)}{q\left(z_{i} | x\right)}\right)\\
 >&s_{i w a e}^{r e c o n s t}(x)=-\log \left(\frac{1}{L} \sum_{i=1}^{L} p\left(x | z_{i}\right)\right)
 > \end{aligned}$$
@@ -224,6 +224,7 @@ Skip-ganomaly: Skip connected and adversarially trained encoder-decoder anomaly 
 
 > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD5.png" alt="img" style="zoom:50%;" />
 > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD6.png" alt="img" style="zoom:40%;" />
+>
 > 损失函数：$$\mathcal{L}=\lambda_{a d v} \mathcal{L}_{a d v}+\lambda_{c o n} \mathcal{L}_{c o n}+\lambda_{l a t} \mathcal{L}_{l a t}$$
 >
 > 
@@ -242,8 +243,8 @@ Anomaly Detection with Adversarial Dual Autoencoders (2019-02)
 >
 > 训练过程：
 >
-> - $${L}_{D}=\|X-D(X)\|_{1}-\|G(X)-D(G(X))\|_{1}$$ (重建实际输入，但不重建生成输入)
-> - $${L}_{G}=\|X-G(X)\|_{1}+\|G(X)-D(G(X))\|_{1}$$ (生成器除了重建实际输入之外，还重建生成的数据)
+> -  $${L}_{D}=\|X-D(X)\|_{1}-\|G(X)-D(G(X))\|_{1}$$ (重建实际输入，但不重建生成输入)
+> -  $${L}_{G}=\|X-G(X)\|_{1}+\|G(X)-D(G(X))\|_{1}$$ (生成器除了重建实际输入之外，还重建生成的数据)
 >
 > 测试过程
 >
@@ -292,11 +293,11 @@ Attention Guided Anomaly Localization in Images (v1: 2019-11 v2:2020-05)
 >
 > > 损失函数：$$L_{\text {final}}=w_{r} L+w_{a d v} L_{a d v}+w_{a e} L_{a e}$$
 > >
-> > - $$L=L_{R}(x, \hat{x})+K L\left(q_{\phi}(z | x) \| p_{\theta}(z | x)\right)$$
+> > - 重构损失：$$L=L_{R}(x, \hat{x})+K L\left(q_{\phi}(z | x) \| p_{\theta}(z | x)\right)$$
 > >
-> > - $$L_{a d v}=-\frac{1}{N} \sum_{i=1}^{N} \log \left(D\left(x_{i}\right)\right)+\log \left(1-D\left(\hat{x}_{i}\right)\right)$$
+> > - 对抗损失：$$L_{a d v}=-\frac{1}{N} \sum_{i=1}^{N} \log \left(D\left(x_{i}\right)\right)+\log \left(1-D\left(\hat{x}_{i}\right)\right)$$
 > >
-> > - $$L_{a e, 1}=\frac{1}{|A|} \sum_{i, j}\left(1-A_{i, j}\right)$$
+> > - 注意力分布损失:$$L_{a e, 1}=\frac{1}{|A|} \sum_{i, j}\left(1-A_{i, j}\right)$$
 > >
 > >   > 使用Grad-CAM计算A并使用Sigmoid进行归一化，$A_{i,j}\in[0,1]$
 > >   >
@@ -317,10 +318,10 @@ Attention Guided Anomaly Localization in Images (v1: 2019-11 v2:2020-05)
 >
 > > 损失函数：$$L_{\text {final}}=w_{r} L+w_{\text {adv}} L_{a d v}+w_{c} L_{b c e}+w_{\text {cga}} L_{\text {cga}}$$
 > >
-> > - $$L=L_{R}(x, \hat{x})+K L\left(q_{\phi}(z | x) \| p_{\theta}(z | x)\right)$$
-> > - $$L_{bce}=-\left[y_{i} \log x_{i}+\left(1-y_{i}\right) \log \left(1-x_{i}\right)\right]$$
-> > - $$L_{a d v}=-\frac{1}{N} \sum_{i=1}^{N} \log \left(D\left(x_{i}\right)\right)+\log \left(1-D\left(\hat{x}_{i}\right)\right)$$
-> > - $$L_{c g a, 1}=\frac{\mathbb{1}\left(p=y=c_{n}\right)}{\left|A_{x}^{c_{n}}\right|} \sum_{i, j}\left(1-\left(A_{x}^{c_{n}}\right)_{i, j}+\left(A_{x}^{c_{a}}\right)_{i, j}\right)$$
+> > -  $$L=L_{R}(x, \hat{x})+K L\left(q_{\phi}(z | x) \| p_{\theta}(z | x)\right)$$
+> > -  $$L_{bce}=-\left[y_{i} \log x_{i}+\left(1-y_{i}\right) \log \left(1-x_{i}\right)\right]$$
+> > -  $$L_{a d v}=-\frac{1}{N} \sum_{i=1}^{N} \log \left(D\left(x_{i}\right)\right)+\log \left(1-D\left(\hat{x}_{i}\right)\right)$$
+> > -  $$L_{c g a, 1}=\frac{\mathbb{1}\left(p=y=c_{n}\right)}{\left|A_{x}^{c_{n}}\right|} \sum_{i, j}\left(1-\left(A_{x}^{c_{n}}\right)_{i, j}+\left(A_{x}^{c_{a}}\right)_{i, j}\right)$$
 
 
 
