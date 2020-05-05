@@ -342,8 +342,8 @@ Attention Guided Anomaly Localization in Images (v1: 2019-11 v2:2020-05)
 
 > 基于一分类的异常分类方法
 
-- Estimating the Support of a High- Dimensional Distribution [**OC-SVM**] | **[Journal of Neural Computation' 01]** | [`[pdf]`](http://users.cecs.anu.edu.au/~williams/papers/P132.pdf)
-- A Survey of Recent Trends in One Class Classification | **[AICS' 09]** | [`[pdf]`](https://aran.library.nuigalway.ie/xmlui/bitstream/handle/10379/1472/camera_ready_occ_lnai.pdf?sequence=1)
+- Estimating the Support of a High- Dimensional Distribution [**OC-SVM**]| **[Journal of Neural Computation' 01]** | [`[pdf]`](http://users.cecs.anu.edu.au/~williams/papers/P132.pdf)
+- A Survey of Recent Trends in One Class Classification| **[AICS' 09]** | [`[pdf]`](https://aran.library.nuigalway.ie/xmlui/bitstream/handle/10379/1472/camera_ready_occ_lnai.pdf?sequence=1)
 - Anomaly detection using autoencoders with nonlinear dimensionality reduction | **[MLSDA Workshop' 14]** | [`[link]`](https://dl.acm.org/citation.cfm?id=2689747)
 - A review of novelty detection | **[Signal Processing' 14]** | [`[link]`](https://www.sciencedirect.com/science/article/pii/S016516841300515X)
 - Variational Autoencoder based Anomaly Detection using Reconstruction Probability | **[SNU DMC Tech' 15]** | [`[pdf]`](http://dm.snu.ac.kr/static/docs/TR/SNUDM-TR-2015-03.pdf)
