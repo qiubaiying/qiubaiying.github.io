@@ -4,7 +4,7 @@ title:      Anomaly Detection
 subtitle:   Anomaly Detection论文及模型总结
 date:       2020-05-05
 author:     JY
-header-img: img/post-bg-AD.jpg
+header-img: img/post-bg.jpg
 catalog: true
 tags:
     - Overview
