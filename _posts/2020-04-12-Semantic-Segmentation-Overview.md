@@ -352,8 +352,10 @@ https://blog.csdn.net/m0_37477175/article/details/83004746
 ### Dice Coefficient Loss
 
 > $$\begin{equation}
-> \text {Dice}=\frac{2\|A \cap B\|}{\|A\|+\|B\|}
-> \end{equation}$$，该指标范围从0到1，其中1表示完整的重叠，loss=1-dice
+> \text {Dice}=\frac{2|A \cap B|}{|A\|+|B|}
+> \end{equation}$$
+>
+> 该指标范围从0到1，其中1表示完整的重叠，loss=1-dice
 >
 > dice loss比较适用于样本极度不均的情况
 
