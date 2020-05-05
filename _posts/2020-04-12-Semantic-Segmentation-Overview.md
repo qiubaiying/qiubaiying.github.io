@@ -301,7 +301,7 @@ LADDERNET: Multi-Path Networks Based on U-Net for Medical Image Segmentation [[p
 
 [[paper](http://xxx.itp.ac.cn/pdf/1909.10360v1)]: RA-UNet: Residual Attention U-Net for Semantic Segmentation of Cataract Surgical Instruments 
 
-> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Semantic-Segmentation/RA-unet.png)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Semantic-Segmentation/RA-Unet.png)
 
 
 
