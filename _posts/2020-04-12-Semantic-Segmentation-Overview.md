@@ -227,7 +227,7 @@ LADDERNET: Multi-Path Networks Based on U-Net for Medical Image Segmentation [[p
 
 ### Graph U-Net
 
-Graph U-Net [[paper](https://openreview.net/pdf?id=HJePRoAct7)]
+[[paper](https://openreview.net/pdf?id=HJePRoAct7)]: Graph U-Net 
 
 > ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Semantic-Segmentation/Graph U-Net.png)
 
@@ -235,7 +235,7 @@ Graph U-Net [[paper](https://openreview.net/pdf?id=HJePRoAct7)]
 
 ### CSA U-NET
 
-Connection Sensitive Attention U-NET for Accurate Retinal Vessel Segmentation [[paper](https://arxiv.org/pdf/1903.05558.pdf)]
+[[paper](https://arxiv.org/pdf/1903.05558.pdf)]: Connection Sensitive Attention U-NET for Accurate Retinal Vessel Segmentation 
 
 > ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Semantic-Segmentation/CSA U-NET.png)
 >
@@ -349,13 +349,13 @@ https://blog.csdn.net/m0_37477175/article/details/83004746
 
 ### Dice Coefficient Loss
 
-> $Dice=\frac{2|A \cap B|}{|A|+|B|}$，该指标范围从0到1，其中1表示完整的重叠，loss=1-dice
+> $$Dice=\frac{2|A \cap B|}{|A|+|B|}$$，该指标范围从0到1，其中1表示完整的重叠，loss=1-dice
 >
 > dice loss比较适用于样本极度不均的情况
 
 ### IOU Loss
 
-> $I O U=\frac{|A \cap B|}{|A|+|B|-|A \cap B|}$
+> $$I O U=\frac{|A \cap B|}{|A|+|B|-|A \cap B|}$$
 >
 > loss=1-IOU
 
@@ -373,7 +373,7 @@ https://blog.csdn.net/m0_37477175/article/details/83004746
 
 ### Tversky loss
 
-> $T(A, B)=\frac{|A \cap B|}{|A \cap B|+\alpha|A-B|+\beta|B-A|}$
+> $$T(A, B)=\frac{|A \cap B|}{|A \cap B|+\alpha|A-B|+\beta|B-A|}$$
 >
 > 是dice系数和jaccard系数的一种广义系数
 
