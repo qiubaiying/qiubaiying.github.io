@@ -297,7 +297,11 @@ Attention Guided Anomaly Localization in Images (v1: 2019-11 v2:2020-05)
 > >   L_{a e, 1}=\frac{1}{|A|} \sum_{i, j}\left(1-A_{i, j}\right)
 > >   \end{equation}$$
 > >
+> >   
+> >
 > > - 对抗损失：$$L_{a d v}=-\frac{1}{N} \sum_{i=1}^{N} \log \left(D\left(x_{i}\right)\right)+\log \left(1-D\left(\hat{x}_{i}\right)\right)$$
+> >
+> > 
 > >
 > > - 注意力分布损失:$$\begin{equation}
 > > L_{a e, 1}=\frac{1}{|A|} \sum_{i, j}\left(1-A_{i, j}\right)
@@ -326,9 +330,15 @@ Attention Guided Anomaly Localization in Images (v1: 2019-11 v2:2020-05)
 > > L=L_{R}(x, \hat{x})+K L\left(q_{\phi}(z | x) \| p_{\theta}(z | x)\right)
 > > \end{equation}$$
 > >
+> > 
+> >
 > > (2) $$L_{bce}=-\left[y_{i} \log x_{i}+\left(1-y_{i}\right) \log \left(1-x_{i}\right)\right]$$
 > >
+> > 
+> >
 > > (3) $$L_{a d v}=-\frac{1}{N} \sum_{i=1}^{N} \log \left(D\left(x_{i}\right)\right)+\log \left(1-D\left(\hat{x}_{i}\right)\right)$$
+> >
+> > 
 > >
 > > (4) $$
 > > L_{c g a, 1}=\frac{1\left(p=y=c_{n}\right)}{\left|A_{x}^{c_{n}}\right|} \sum_{i, j}\left(1-\left(A_{x}^{c_{n}}\right)_{i, j}+\left(A_{x}^{c_{a}}\right)_{i, j}\right)
