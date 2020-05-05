@@ -50,7 +50,7 @@ tags:
 >     q(x)=\int_{w} \int_{\eta} q_{G}(x | w, \eta) q_{F}(w) p_{\eta}(\eta) \mathrm{d} \eta \mathrm{d} w
 >     $$
 >
->   - E将生成的图像进行编码，$q_{E}(w)=\int_{x} q_{E}(w | x) q(x) \mathrm{d} x$
+>   - E将生成的图像进行编码，$$q_{E}(w)=\int_{x} q_{E}(w | x) q(x){d} x$$
 >
 >   - **约束为使F生成的分布与由E生成的分布尽可能相近**
 >
