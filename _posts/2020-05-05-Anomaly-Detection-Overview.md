@@ -260,11 +260,11 @@ Anomaly Detection with Adversarial Dual Autoencoders (2019-02)
 adVAE: A self-adversarial variational autoencoder with Gaussian anomaly prior knowledge for anomaly detection (2019-11)
 ```
 
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD19.png" alt="img" style="zoom:50%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD19.png" alt="img" style="zoom:30%;" />
 >
 > 
 >
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD19.png" alt="img" style="zoom:50%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD20.png" alt="img" style="zoom:50%;" />
 
 
 
