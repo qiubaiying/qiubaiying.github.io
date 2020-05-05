@@ -1,0 +1,64 @@
+---
+layout:     post
+title:      f-AnoGAN: Fast unsupervised anomaly detection with generative adversarial networks 
+subtitle:   论文阅读
+date:       2020-04-05
+author:     JY
+header-img: img/post-bg.jpg
+catalog: true
+tags:
+    - paper
+---
+
+
+
+#### 1. Introduction
+
+> 模型分为两个阶段：
+>
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/f-Anogan.png)
+>
+> - 阶段一：训练WGAN
+>
+>   - 输入随机噪声，通过生成对抗训练生成器G和鉴别器D
+> - 阶段二：训练Encoder
+>
+>   - 在WGAN训练完毕后，**不再改变**，由生成器作为decoder，与Encoder一起构成auto-encoder。Encoder负责将训练图片映射为隐空间中的Z，再由生成器将Z映射为图片
+
+#### 2. Method
+
+> - **Encoder存在三种训练方式**
+>
+>   - $izi$
+>
+>     > 1) Encoder将图片x映射为隐空间中的点$\hat z $
+>     > 2)生成器将$\hat z$ 映射为图片$G(\hat z)$ 
+>     > 3)损失函数：$$L_{i z i}(x)=\frac{1}{n}\|x-G(\hat{z})\|^{2}$$，n为像素个数
+>>
+>     > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/izi.png" alt="img" style="zoom:80%;" />
+>
+>   - $ziz$
+>   
+>     > 1) 在隐空间中随机选取一个点$z$,生成器将$z$映射为图片$G(z)
+>     > $
+>     >
+>     > 2) Encoder将$G(z)$映射为隐空间中的点$\hat z$
+>     >
+>     > 3) 损失函数：$$\left.L_{z i z}(z)=\frac{1}{d} \| z-\hat{z}\right) \|^{2}$$
+>  >
+>     >   <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/ziz.png" alt="img" style="zoom:50%;" />
+>   - $izi_f$
+>   
+>     > 1) Encoder将图片x映射为隐空间中的点$\hat z$
+>     >
+>     > 2) 生成器将$\hat z$映射为图片$G(\hat z)$
+>     >
+>     > 3) 将$G(\hat z)$与$x$输入到鉴别器中，得到$$L_{D}=\frac{1}{n_{d}}\|f(x)-f(G(\hat{z}))\|^{2}$$，f(x)为鉴别器中间某一层的特征图，该特征图被认为含有输入图像的统计信息，$L_D$用于比较图像之间统计信息的差异，$n_d$为特征 图的维数
+>     >
+>     > 4) 损失函数为：$$
+>     > L_{i z i f}(x)=\frac{1}{n}\|x-G(\hat{z})\|^{2}+\lambda \frac{1}{n_{d}}\|f(x)-f(G(\hat{z}))\|^{2}
+>     > $$，其中$\lambda$为超参数
+>     >
+>     > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/izif.png" alt="img" style="zoom:50%;" />
+>     
+
