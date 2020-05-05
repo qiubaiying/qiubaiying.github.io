@@ -221,7 +221,7 @@ LADDERNET: Multi-Path Networks Based on U-Net for Medical Image Segmentation [[p
 
 > 
 >
-> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Semantic-Segmentation/CE-Net.png)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Semantic-Segmentation/CE-net.png)
 
 
 
@@ -229,7 +229,7 @@ LADDERNET: Multi-Path Networks Based on U-Net for Medical Image Segmentation [[p
 
 [[paper](https://openreview.net/pdf?id=HJePRoAct7)]: Graph U-Net 
 
-> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Semantic-Segmentation/Graph U-Net.png)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Semantic-Segmentation/Graph U-net.png)
 
 
 
@@ -301,7 +301,7 @@ LADDERNET: Multi-Path Networks Based on U-Net for Medical Image Segmentation [[p
 
 [[paper](http://xxx.itp.ac.cn/pdf/1909.10360v1)]: RA-UNet: Residual Attention U-Net for Semantic Segmentation of Cataract Surgical Instruments 
 
-> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Semantic-Segmentation/RA-Unet.png)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Semantic-Segmentation/RA-unet.png)
 
 
 
@@ -351,7 +351,9 @@ https://blog.csdn.net/m0_37477175/article/details/83004746
 
 ### Dice Coefficient Loss
 
-> $$Dice=\frac{2|A \cap B|}{|A|+|B|}$$，该指标范围从0到1，其中1表示完整的重叠，loss=1-dice
+> $$\begin{equation}
+> \text {Dice}=\frac{2|A \cap B|}{|A|+|B|}
+> \end{equation}$$，该指标范围从0到1，其中1表示完整的重叠，loss=1-dice
 >
 > dice loss比较适用于样本极度不均的情况
 
