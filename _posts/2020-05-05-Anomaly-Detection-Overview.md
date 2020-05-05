@@ -8,7 +8,6 @@ header-img: img/post-bg-AD.jpg
 catalog: true
 tags:
     - Overview
-    - Anomaly Detection
 ---
 ## Anomaly Detection
 
