@@ -120,7 +120,10 @@ Adversarially Learned One-Class Classifier for Novelty Detection (2018-05)
 >
 > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD3.png" alt="img" style="zoom:50%;" />
 >
-> 损失函数：$\mathcal{L}=\mathcal{L}_{\mathcal{R}+\mathcal{D}}+\lambda \mathcal{L}_{\mathcal{R}}$
+> 损失函数：
+> $$
+> \mathcal{L}=\mathcal{L}_{\mathcal{R}+\mathcal{D}}+\lambda \mathcal{L}_{\mathcal{R}}
+> $$
 >
 > - $\mathcal{L}_{R+D}=\min _{\mathcal{R}} \max _{\mathcal{D}}\left(\mathbb{E}_{X \sim p_{t}}[\log (\mathcal{D}(X))]\right.+\left.+\mathbb{E}_{\tilde{X} \sim p_{t}+\mathcal{N}_{\sigma}}[\log (1-\mathcal{D}(\mathcal{R}(\tilde{X})))]\right)$
 > - $\mathcal{L}_{\mathcal{R}}=\left\|X-X^{\prime}\right\|^{2}$ (增强原始数据，抑制异常数据)
