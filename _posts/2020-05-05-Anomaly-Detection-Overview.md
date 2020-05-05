@@ -62,9 +62,10 @@ Unsupervised Anomaly Detection with Generative Adversarial Networks to Guide Mar
 > AnoGAN运用DCGAN学习normal data的latent space，并假设这个latent space无法重构出anomaly，重构误差高的地方被检测为anomaly
 >
 > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD.png" alt="img" style="zoom:50%;" />
-> $$
-> A(\mathbf{x})=(1-\lambda) \cdot R(\mathbf{x})+\lambda \cdot D(\mathbf{x})
-> $$
+>
+> 异常分数：
+>
+> $A(\mathbf{x})=(1-\lambda) \cdot R(\mathbf{x})+\lambda \cdot D(\mathbf{x})$
 
 
 
