@@ -26,7 +26,7 @@ tags:
 
 > 在由编码器网络和解码器(生成器)网络组成的AAE体系结构中：
 >
-> <img src="picture/AAE.png" alt="img" style="zoom:50%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/AAE.png" alt="img" style="zoom:50%;" />
 >
 > - 编码器的任务是将输入数据映射到具有潜在分布特征的空间(先验概率分布)
 > - 生成器的任务是将潜在编码分布映射到由数据分布描述的空间
@@ -71,7 +71,7 @@ tags:
 >
 > 
 >
-> ![img](picture/ALAE.png)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/ALAE.png)
 
 
 
@@ -83,7 +83,7 @@ tags:
 >
 > Step III：更新潜在空间自编码器（网络G和E）
 
-<img src="picture/ALAE3.png" alt="img" style="zoom:50%;" />
+<img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/ALAE3.png" alt="img" style="zoom:50%;" />
 
 优势：
 
@@ -99,11 +99,11 @@ tags:
 
 **StyleGAN**
 
-> <img src="picture/StyleGAN.png" alt="img" style="zoom:50%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/StyleGAN.png" alt="img" style="zoom:50%;" />
 
 **StyleALAE**
 
-> <img src="picture/StyleALAE.png" alt="img" style="zoom:50%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/StyleALAE.png" alt="img" style="zoom:50%;" />
 
 
 
