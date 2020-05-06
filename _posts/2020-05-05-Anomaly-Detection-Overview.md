@@ -14,7 +14,7 @@ tags:
 **Model**
 
 > - [Anogan](#Anogan)
->- [f-Anogan](#f-Anogan)
+> - [f-Anogan](#f-Anogan)
 > - [EGBAD](#EGBAD)
 > - [ALOCC](#ALOCC)
 > - [AAE](#AAE)
@@ -23,6 +23,7 @@ tags:
 > - [ALAD](#ALAD)
 > - [Skip-GANomaly](#Skip-GANomaly)
 > - [ADAE](#ADAE)
+> - [RSRAE](RSRAE)
 > - [adVAE](#adVAE)
 > - [HADGAN](#HADGAN)
 > - [CAVGA](#CAVGA)
@@ -262,6 +263,37 @@ Anomaly Detection with Adversarial Dual Autoencoders (2019-02)
 
 
 
+#### RSRAE
+
+> $$\begin{equation}
+> x \stackrel{\mathscr{E}}{\longrightarrow} Z \stackrel{ A }{\longrightarrow} \tilde{ Z } \stackrel{\mathscr{D}}{\longrightarrow} \tilde{ X }
+> \end{equation}$$，引入RSR layer，将隐编码嵌入到$$R ^{D}$$空间
+>
+> 
+>
+> 损失函数：
+>
+> $$\begin{equation}
+> L_{ AE }^{p}(\mathscr{E}, A , \mathscr{D})=\sum_{t=1}^{N}\left\| x ^{(t)}-\tilde{ x }^{(t)}\right\|_{2}^{p}
+> \end{equation}$$
+>
+> $$L_{ RSR }^{q}( A )=L_{ RSR _{1}}( A )+L_{ RSR _{2}}( A )=\lambda_{1} \sum_{t=1}^{N}\| z ^{(t)}- A ^{ T } \underbrace{ A z ^{(t)}}_{ Z ^{(t)}}\|_{2}^{q}+\lambda_{2}\left\| A A ^{ T }- I _{d}\right\|_{ F }$$
+>
+> > $P$为恢复子空间上的正交投影（$$\begin{equation}
+> > x^{(t)} \stackrel{\mathscr{E}}{\longrightarrow} \tilde{ x }^{(t)} \end{equation}$$）
+> >
+> > $q$为$$\begin{equation}
+> > L( P )=\sum_{t=1}^{N}\left\|( I - P ) y ^{(t)}\right\|_{2}^{ q }
+> > \end{equation}$$的幂次
+>
+> 
+>
+> $$\begin{equation}
+> L_{\text {RSRAE }}( E , A , \mathscr{D})=L_{\text {AK }}^{1}( E , A , \mathscr{D})+L_{\text {TSR }}^{1}( A )
+> \end{equation}$$  ($p = 1,q = 1$)
+
+
+
 #### adVAE
 
 ```
@@ -280,7 +312,7 @@ adVAE: A self-adversarial variational autoencoder with Gaussian anomaly prior kn
 >
 > 
 >
-> - Training Step1：**
+> - **Training Step1:**
 >
 >   > 通过T和G之间的对抗训练，将有效的正则化引入生成器，合成了潜变量，并使生成器将异常与正常的潜编码区分开（普通VAE的生成器很难区分正常和异常隐编码因为它们在潜空间中有重叠）
 >   >
