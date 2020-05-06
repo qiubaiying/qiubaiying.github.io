@@ -270,11 +270,17 @@ adVAE: A self-adversarial variational autoencoder with Gaussian anomaly prior kn
 
 > 深度生成模型存在过度拟合训练样本的风险，因此adVAE提出了一种具有高斯异常先验（Gaussian anomaly prior）的**自对抗**变分自编码器
 >
+> 
+>
+> **Training Process**
+>
 > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD19.png" alt="img" style="zoom:30%;" />
 >
 > 模型包括三个模块: 编码器网络E，生成网络G 和 Gaussian transformer网络T
 >
-> - **Training Step1：**
+> 
+>
+> - Training Step1：**
 >
 >   > 通过T和G之间的对抗训练，将有效的正则化引入生成器，合成了潜变量，并使生成器将异常与正常的潜编码区分开（普通VAE的生成器很难区分正常和异常隐编码因为它们在潜空间中有重叠）
 >   >
@@ -292,11 +298,13 @@ adVAE: A self-adversarial variational autoencoder with Gaussian anomaly prior kn
 >
 > 上述两个训练步骤交替进行，adVAE的训练过程如下：
 >
-> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD21.png)
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD22.png" alt="img" style="zoom:50%;" />
 >
 > ---
 >
 > ---
+>
+> **Testing Process**
 >
 > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD20.png" alt="img" style="zoom:50%;" />
 >
