@@ -32,7 +32,7 @@
 
 #### 2. Domains 迁移学习的研究领域
 
-![img](picture/transfer-learning.png)
+![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/transfer-learning.png)
 - 按目标域标签分类
   - 监督迁移学习 (Supervised Transfer Learning)
   - 半监督迁移学习 (Semi-Supervised Transfer Learning)
@@ -55,7 +55,7 @@
     - 源域和目标域的特征空间和标签空间相同 
   - 异构迁移学习 (Heterogeneous Transfer Learning)：
     - 源域和目标域的特征空间和/或标签空间不同
-![img](picture/transfer5.png)
+![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/transfer5.png)
 
 - 按离线与在线形式分类
   - 离线迁移学习 (Offline Transfer Learning)：
@@ -114,7 +114,7 @@
 (1). 基于样本迁移(Instance based Transfer Learning)
 > - 根据一定的权重生成规则，对数据样本进行重用，来进行迁移学习。   
 > - 如下图：源域中存在不同种类的动物，如狗、鸟、猫等，目标域只有狗这一种类别。在迁移时，为了最大限度地和目标域相似，可以人为地提高源域中属于狗这个类别的样本权重。
-> ![img](picture/Instance-based.jpg)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Instance-based.jpg)
 > - 根据特征的同构和异构性，又可以分为<u>同构和异构</u>迁移学习。
 > 
 (2). 基于特征迁移(Feature based Transfer Learning) 
@@ -122,13 +122,13 @@
 > - 可以分为<u>有监督和无监督</u>两种情况：
 >   - 有监督特征构造的基本思想是学习一个低维的特征表示，使得特征可以在相关的国歌> 任务中共享，同时也要使分类回归的误差最小。
 >   - 无监督特征构造的基本思想：第一步通过在源域上学习一个基向量；第二步在目标域> 上基于基向量学习更高维特征；最后在目标域上，将判别算法应用于具有相应标签的更高> 维特征，以训练分类和回归模型应用到目标域。
-> ![img](picture/Feature-based.jpg)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Feature-based.jpg)
 
 (3). 基于参数/模型迁移(Parameter/Model based Transfer Learning)
 > - 从源域和目标域中找到两者之间共享的参数信息。
 > - 该迁移方式要求的假设条件是：源域中的数据与目标域中的数据可以共享一些模型的参数
 > - 目前绝大多数基于模型的迁移学习方法都与<u>深度神经网络</u>进行结合。
-> ![img](picture/Model-feature.jpg)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Model-feature.jpg)
 
 (4). 基于关系迁移(Relation Based Transfer Learning)
 > - 关注源域和目标域的样本之间的关系。它不假设每一个域的数据都是独立同分布的，而是将数据之间的联系从源域迁移到目标域。
@@ -145,24 +145,24 @@
      - 使用特定的权重调整策略，在源域中选择实例设定适当的权重值，将其作为目标域中训练集的补充。
      - 此方法假设:虽然在两个域之间有两个域,但源域中的部分实例可以通过适当的权重从而利用到目标域中。
    
-     ![img](picture/transfer1.png)
+     ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/transfer1.png)
 
    - Mapping-based deep transfer learning
      - 将实例从源域和目标域映射到一个新的数据空间。在新的数据空间，来自两个域的实例相似，适合于联合深度神经网络
      - 此方法假设：虽然两个源域之间存在差异，但在一个精心设计的新数据空间中，它们可能更相似
      
-     ![img](picture/transfer2.png)
+     ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/transfer2.png)
 
    - Network-based deep transfer learning
      - 对源域预先训练的部分网络进行重用，包括其网络结构和连接参数，将其迁移为目标域中深度神经网络的一部分。
      - 此方法假设：神经网络类似于人脑的处理机制，是一个迭代的、连续的抽象过程。该网络的前端可以看作是一个特征提取器，所提取的特征具有通用性。
      
-     ![img](picture/transfer3.png)
+     ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/transfer3.png)
 
    - Adversarial-based deep transfer learning
      - 引入生成对抗网络（GAN）中的对抗性技术，以找到适用于源域和目标域的可迁移表示
      - 此方法假设：对于有效的迁移，良好的表示应该是在主要学习任务有差异性，而在源域与目标域之间无差异。
    
-     ![img](picture/transfer4.png)
+     ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/transfer4.png)
      
 
