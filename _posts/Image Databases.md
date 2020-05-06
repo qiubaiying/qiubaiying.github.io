@@ -1,3 +1,15 @@
+---
+layout:     post
+title:      Image Databases
+subtitle:   数据集收集
+date:       2020-04-20
+author:     JY
+header-img: img/post-bg.jpg
+catalog: true
+tags:
+    - Dataset
+---
+
 ## Image Databases
 
 `图像数据库`

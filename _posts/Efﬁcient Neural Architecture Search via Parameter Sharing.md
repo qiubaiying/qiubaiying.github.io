@@ -1,4 +1,14 @@
-### Efﬁcient Neural Architecture Search via Parameter Sharing
+---
+layout:     post
+title:      Efﬁcient Neural Architecture Search via Parameter Sharing
+subtitle:   论文阅读
+date:       2020-04-14
+author:     JY
+header-img: img/post-bg.jpg
+catalog: true
+tags:
+    - paper
+---
 
 #### 1. Introduction
 
@@ -18,7 +28,7 @@
   >
   > - 若ENAS使用节点数为12的搜索空间，计算类型为tanh，relu，identity和sigmoid四种激活函数，则搜索空间有$4^N\times N!$
   >
-  >   <img src="picture/Nas6.png" alt="img" style="zoom:50%;" />
+  >   <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Nas6.png" alt="img" style="zoom:50%;" />
   >
   >   
 
@@ -28,7 +38,7 @@
 
 - controller工作流程（以节点数为4的搜索空间为例）：
 
-  > ![img](picture/Nas7.png)
+  > ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Nas7.png)
   >
   > - controller选择节点1的计算类型为tanh（节点1的前置节点是输入）；选择节点2的前置节点为1，计算类型为ReLU；选择节点3的前置节点为2，计算类型为ReLU；选择节点4的前置节点为1，计算类型为tanh
   > - 可得RNN神经网络架构：节点3和节点4是叶子节点，他们输出的平均值作为RNN神经网络架构的输出。该神经网络架构的参数由$w^{1,2},w^{2,4},w^{2,3},w^{3,4}$组成（$w^{i,j}$是节点i和节点j之间的参数）
@@ -87,9 +97,9 @@
 >
 > 2）使用什么计算操作
 
-<img src="picture/Nas8.png" alt="img" style="zoom:80%;" />
+<img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Nas8.png" alt="img" style="zoom:80%;" />
 
-![img](picture/Nas1.gif)
+![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Nas1.gif)
 
 ---
 
@@ -97,7 +107,7 @@
 
 > 与其设计整个卷积网络，不如设计更小的模块，然后将它们连接在一起形成网络
 
-<img src="picture/Nas9.png" alt="img" style="zoom:80%;" />
+<img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Nas9.png" alt="img" style="zoom:80%;" />
 
 > 利用带有B个节点的ENAS计算DAG来表示cell中局部发生的计算。在这个DAG中，前两个node1和node2被视为cell的输入，对于剩余的B-2节点中的每一个，要求RNN controller作出两组决策：
 >
@@ -108,7 +118,7 @@
 
 Convolutional Cells（以B=4为例）：
 
-> <img src="picture/Nas10.png" alt="img" style="zoom:80%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Nas10.png" alt="img" style="zoom:80%;" />
 >- 节点1、2是输入节点，因此不需要对它们进行决策，$h_1,h_2$为这些节点的输出
 > 
 > - 在节点3：控制器采样两个之前的节点和两个操作。它采样node 2、node 2、separable_conv_5x5和identity（虚线箭头表示skip）
@@ -118,11 +128,11 @@ Convolutional Cells（以B=4为例）：
 > - 在节点4：控制器采样node 3、node 1、avg_pool_3x3和sep_conv_3x3。这意味着
 >  $h 4=\operatorname{avg}_{-} \operatorname{pool}_{-} 3 \times 3\left(h_{3}\right)+sep\_conv_{3\times 3}(h1)$
 > 
-> ![img](picture/Nas11.png)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Nas11.png)
 >
 > - 由于除了$h_4$的所有节点都被用作至少另一个节点的输入，因此唯一的松散端$h_4$被视为单元的输出。如果有多个松散的端点，它们将沿着深度维度concat起来，以形成cell的输出。
 >
-> ![img](picture/Nas2.gif)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Nas2.gif)
 
 
 
@@ -131,4 +141,4 @@ Reduction Cells
 > - 从搜索空间采样计算图
 > - 以步长为2应用所有操作，将输入空间的维度减少2倍
 
-<img src="picture/Nas17.png" alt="img" style="zoom:50%;" /> <img src="picture/Nas18.png" alt="img" style="zoom:50%;" />
+<img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Nas17.png" alt="img" style="zoom:50%;" /> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Nas18.png" alt="img" style="zoom:50%;" />

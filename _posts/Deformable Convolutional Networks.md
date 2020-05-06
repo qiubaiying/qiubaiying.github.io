@@ -1,4 +1,16 @@
-#### Deformable Convolutional Networks
+---
+layout:     post
+title:      Deformable Convolutional Networks
+subtitle:   论文阅读
+date:       2020-04-12
+author:     JY
+header-img: img/post-bg.jpg
+catalog: true
+tags:
+    - paper
+---
+
+#### 
 
 #### 1、Introduction
 
@@ -10,7 +22,7 @@
 
 - 可形变卷积的优势：无论物体怎么形变，卷积区域始终覆盖在物体形状的周围，如下图所示，叠加偏移量的过程可以模拟出目标移动、尺寸缩放、旋转等各种形变。
 
-  <img src="picture/DCN.png" alt="img" style="zoom:50%;" />
+  <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/DCN.png" alt="img" style="zoom:50%;" />
 
 #### 2、Method
 
@@ -41,11 +53,11 @@
   > \begin{array}{l}{x(\mathrm{p})=\sum_{q} G(\mathrm{q}, \mathrm{p}) \cdot x(\mathrm{q})} \\ {=\sum_{q} \mathrm{g}\left(\mathrm{q}_{\mathrm{x}}, \mathrm{p} \mathrm{x}\right) \cdot g\left(\mathrm{q}_{\mathrm{y}}, \mathrm{p}_{\mathrm{y}}\right) \cdot x(\mathrm{q})} \\ {=\sum_{q} \max \left(0,1-\left|\mathrm{q}_{\mathrm{x}}-\mathrm{p}_{\mathrm{x}}\right|\right) \cdot \max \left(0,1-\left|\mathrm{q}_{\mathrm{y}}-\mathrm{p}_{\mathrm{y}}\right|\right) \cdot x(\mathrm{q})}\end{array}
   > $$
   >
-  > <img src="picture/DCN4.png" alt="img" style="zoom:50%;" />
+  > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/DCN4.png" alt="img" style="zoom:50%;" />
   >
   > - 完整的可变形卷积的结构如下图所示，上方的卷积用于输出偏移量，该输出的长宽和输入特征图的长宽一致，维度是输入的两倍（因为同时输出 x方向和 y方向的偏移量，用两个维度分开存储）
   >
-  > <img src="picture/DCN1.png" alt="img" style="zoom:50%;" />
+  > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/DCN1.png" alt="img" style="zoom:50%;" />
   
 - 可变形的ROI Pooling
 
@@ -65,7 +77,7 @@
   > \mathbf{y}(i, j)=\sum_{\mathbf{p} \in \operatorname{bin}(i, j)} \mathbf{x}\left(\mathbf{p}_{0}+\mathbf{p}+\Delta p_{n_{ij}}\right) / n_{i j}
   > $$
   > - 需要做ROI Pooling处理的区域首先完成没有偏移下的pooling过程，输出$k*k*channel$个数据，再用一个全连接层 full connect layer输出$k*k*channel*2$个点表示在 x和 y方向上的偏移$\Delta{\hat{p}_{ij}}$，再按$\Delta \mathbf{p}_{i j}=\gamma \cdot \Delta \widehat{\mathbf{p}}_{i j} \circ(w, h)$获得真正的偏移量$\Delta \mathbf{p}_{i j}$，其中 $\gamma$是一个增益，与(w,h)进行点乘是**为了让偏移量的调整幅度能适配 ROI的尺寸**。（$\Delta{\hat{p}_{ij}}$也是一个小数，需要通过双线性插值来得到真正的值）
-  >   <img src="picture/DCN2.png" alt="img" style="zoom:67%;" />
+  >   <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/DCN2.png" alt="img" style="zoom:67%;" />
   
 - Position-Sensitive(PS) ROI Pooling 
 
@@ -78,7 +90,7 @@
   >  · 池化每个ROI时，各个点（共k^2个）均由上一层中对应分组的对应位置区域通过平均池化获得，由此得到一组C+1张特征图，这些特征图经过全局平均池化，得到C+1维的向量，计算分类损失函数。
   >  ```
   >
-  >  <img src="picture/DCN5.png" alt="img" style="zoom:100%;" />
+  >  <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/DCN5.png" alt="img" style="zoom:100%;" />
   >
   >- 与ROI Pooling相比，通用特征映射x被特定的位置敏感的分数映射$x_{i,j}$所取代。
   > $$
@@ -86,7 +98,7 @@
   > $$
   > 
   >
-  ><img src="picture/DCN3.png" alt="img" style="zoom:50%;" />
+  ><img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/DCN3.png" alt="img" style="zoom:50%;" />
 
 #### 3、Application
 

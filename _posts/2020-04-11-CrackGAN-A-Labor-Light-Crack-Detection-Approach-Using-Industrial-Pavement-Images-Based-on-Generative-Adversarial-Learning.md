@@ -1,6 +1,18 @@
-### CrackGAN: A Labor-Light Crack Detection Approach Using Industrial Pavement Images Based on Generative Adversarial Learning
+---
+layout:     post
+title:      CrackGAN: A Labor-Light Crack Detection Approach Using Industrial Pavement Images Based on Generative Adversarial Learning
+subtitle:   论文阅读
+date:       2020-04-11
+author:     JY
+header-img: img/post-bg.jpg
+catalog: true
+tags:
+    - paper
+---
 
-1、简介
+
+
+#### 1、简介
 
 - 问题提出：
 
@@ -14,7 +26,9 @@
 
   > 同时通过将更大尺寸的裂痕图像输入一个非对称的U型生成器，保留裂缝和Background图像的平移性来克服”“All Black”问题
 
-2、相关工作
+
+
+#### 2、相关工作
 
 - 一些方法在裂痕很细并很难获得精确的像素级Ground Trusts的工业路面图像上，很容易failed
 - 由于深度学习是一种数据驱动的方法，非常依赖于精确的Ground Trusts数据。当有新的数据(不同路段或不同时段）时，训练好的网络性能可能降低，需要手工标记新的数据集重新训练模型
@@ -23,11 +37,11 @@
 
 
 
-3、模型介绍
+#### 3、模型介绍
 
 > 本文提出了CrackGAN模型用于路面裂痕检测，解决了深度学习裂痕检测方法中存在的“All black”问题，提出了crack-patch-only(CPO) 监督和生成对抗学习来处理数据失衡，同时网络能够使用labor-light Ground Trusts图像(裂缝标记为1像素曲线)进行训练，减少人工标注的工作量
 
-![img](picture/CrackGAN.png)
+![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/CrackGAN.png)
 
 - **Loss定义**
 
@@ -65,7 +79,7 @@
   >
   > - 训练好的判别器D能够将crack-GT patch判定为真，All black patch判定为假
   
-  ![img](picture/CrackGAN3.png)
+  ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/CrackGAN3.png)
   
 - **非对称U-net引入**
 
@@ -79,7 +93,7 @@
   > $$
   > *其中$I$是仅包含裂痕patch的训练集*
 
-	> ![img](picture/CrackGAN1.png)
+	> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/CrackGAN1.png)
 
 	> **Receptive field analysis under larger field of view**
 	>
@@ -114,7 +128,7 @@
 
 
 
-![img](picture/CrackGAN2.png)
+![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/CrackGAN2.png)
 
 
 

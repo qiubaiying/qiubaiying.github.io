@@ -1,4 +1,14 @@
-### Libra R-CNN: Towards Balanced Learning for Object Detection
+---
+layout:     post
+title:      Libra R-CNN: Towards Balanced Learning for Object Detection
+subtitle:   论文阅读
+date:       2020-04-14
+author:     JY
+header-img: img/post-bg.jpg
+catalog: true
+tags:
+    - paper
+---
 
 #### 1. Introduction
 
@@ -8,7 +18,7 @@
   > - 提取的 visual feature 是否充分利用
   > - 设计的目标函数是否最优
 
-  <img src="picture/oc7.png" alt="img" style="zoom:67%;" />
+  <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/oc7.png" alt="img" style="zoom:67%;" />
 
   
 
@@ -30,7 +40,7 @@
 
 #### 2. Method
 
-<img src="picture/oc6.png" alt="img" style="zoom:70%;" />
+<img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/oc6.png" alt="img" style="zoom:70%;" />
 
 ##### IoU-balanced
 
@@ -56,9 +66,9 @@
 >   >
 >   > - non-local借鉴传统图像去噪算法，整合了全局信息，计算量少，并且输入输出维度相同
 >   >
->   > <img src="picture/oc8.png" alt="img" style="zoom:50%;" />
+>   > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/oc8.png" alt="img" style="zoom:50%;" />
 
-<img src="picture/oc5.png" alt="img" style="zoom:70%;" />
+<img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/oc5.png" alt="img" style="zoom:70%;" />
 
 
 

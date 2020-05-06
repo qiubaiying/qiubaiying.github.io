@@ -1,17 +1,29 @@
-### CBAM: Convolutional Block Attention Module
+---
+layout:     post
+title:      CBAM: Convolutional Block Attention Module
+subtitle:   论文阅读
+date:       2020-04-10
+author:     JY
+header-img: img/post-bg.jpg
+catalog: true
+tags:
+    - paper
+---
 
 
 
-1、简介
+#### 1、简介
 
 - SENet方法是在feature map的通道上进行attention生成，然后与原来的feature map相乘。
 - 本文所提的attention只关注了通道层面上哪些层面上哪些会具有更强的反馈能力，但是在空间维度上并不能体现出attention
 
-<img src="picture/CBAM1.png" alt="img" style="zoom:50%;" />
+<img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/CBAM1.png" alt="img" style="zoom:50%;" />
 
-2、方法介绍
 
-**Channel attention module**
+
+#### 2、方法介绍
+
+##### **Channel attention module**
 
 - 首先将feature map在spatial(空间)维度上进行压缩，得到一个一维矢量以后再进行操作
 
@@ -26,11 +38,11 @@ $$
 
 
 
-![img](picture/CBAM2.png)
+![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/CBAM2.png)
 
 
 
-**Spatial attention module**
+##### **Spatial attention module**
 
 - 在spatial层面上也需要网络能明白feature map中哪些部分应该有更高的响应。
 
@@ -42,7 +54,7 @@ $$
   \begin{aligned} \mathbf{M}_{\mathbf{s}}(\mathbf{F}) &=\sigma\left(f^{7 \times 7}([A v g P o o l(\mathbf{F}) ; M a x P o o l(\mathbf{F})])\right) \\ &=\sigma\left(f^{7 \times 7}\left(\left[\mathbf{F}_{\mathbf{a v g}}^{\mathbf{s}} ; \mathbf{F}_{\max }^{\mathbf{s}}\right]\right)\right) \end{aligned}
   $$
 
-![img](picture/CBAM3.png)
+![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/CBAM3.png)
 
-![img](picture/CBAM4.png)
+![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/CBAM4.png)
 

@@ -1,4 +1,14 @@
-#### Distilling the Knowledge in a Neural Network
+---
+layout:     post
+title:      Distilling the Knowledge in a Neural Network
+subtitle:   论文阅读
+date:       2020-04-13
+author:     JY
+header-img: img/post-bg.jpg
+catalog: true
+tags:
+    - paper
+---
 
 
 
@@ -34,7 +44,7 @@
 >   3. 训练在小模型的基础上再加一个额外的soft target的loss function，通过$\lambda$来调节两个loss functions的比重。
 >   4. 预测时，将训练好的小模型按常规方式使用
 >
-> ![img](picture/KD.jpg)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/KD.jpg)
 > 
 
 
