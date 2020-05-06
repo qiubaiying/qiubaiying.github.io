@@ -370,7 +370,7 @@ Attention Guided Anomaly Localization in Images (v1: 2019-11 v2:2020-05)
 
 #### ALAE
 
-> 
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD21.png)
 
 ---
 
