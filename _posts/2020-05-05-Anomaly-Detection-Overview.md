@@ -268,7 +268,11 @@ Anomaly Detection with Adversarial Dual Autoencoders (2019-02)
 adVAE: A self-adversarial variational autoencoder with Gaussian anomaly prior knowledge for anomaly detection (2019-11)
 ```
 
+> 深度生成模型存在过度拟合训练样本的风险，因此adVAE提出了一种具有高斯异常先验（Gaussian anomaly prior）的**自对抗**变分自编码器
+>
 > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD19.png" alt="img" style="zoom:30%;" />
+>
+> 模型包括三个模块
 >
 > 
 >
@@ -371,6 +375,8 @@ Attention Guided Anomaly Localization in Images (v1: 2019-11 v2:2020-05)
 #### ALAE
 
 > ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD21.png)
+>
+> 融合了AAE和GAN的最新架构，还未应用到Anomaly Detection中
 >
 > 
 
