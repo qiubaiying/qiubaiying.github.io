@@ -42,7 +42,7 @@ tags: Classification Deep-Learning
   *数据集特性：*   
      
   -  Supervised/Unsupervised Classification Model 有监督/无监督分类模型
-     ![img](picture/classification.jpg)  
+     ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/classification.jpg)  
 
 ​    
 
@@ -91,19 +91,19 @@ tags: Classification Deep-Learning
   > **(2). ResNet**
   >> 随着模型深度加深到一定程度，错误率反而增加，其原因归根于优化难题 ，即模型越复杂，随机梯度下降（SGD）优化越难。
   >> - ResNet提出了“残差结构”理论，即输入$X$经过$N$层网络之后输出$Y$,然后再将$X$和$Y$作对应元素相加，这样就结合了原始$X$的信息，形成一个`残差块`。*这个操作不会增加网络的参数和计算量，但可以加速训练和提高训练的效果，且当模型加深后，能很好地解决**退化**问题。*    
-  >>![img](picture/ResNet.png)       
+  >>![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/ResNet.png)       
   >> - 对于模型，针对不同的数据集进行调参，包括学习率learning rate，epochs大小，优化算法，加入BatchNormalization、Dropout或Early Stopping等操作，或者调整后面基层的网络类型与神经元数量，或者调整基础网络base。当训练模型达到满意的效果，且无明显的过拟合现象，就可以保存模型，以供后期预测或推断（Inference）使用。
   >
   > **(3). Inception**   
   >> Inception与VGG和ResNet相比，从宽度方面着手。其核心思想是使用多尺寸卷积核去观察输入数据，然后由计算机选择使用哪种尺寸或更加关注哪种尺寸。    
   >> - Inception V1吸纳了Network in Network的思想，使用1 $\times$ 1的卷积和来进行*降维和升维*，同时使用不同的卷积核（1 $\times$ 1、3 $\times$ 3、5 $\times$ 5卷积）来设置不同的感受野，让网络看到不同层面和大小的电脑关系，最后将所有看到的东西串联起来形成该层的输出。然后利用多个这样的结构，形成一个大的网络。       
-  >> ![img](picture/InceptionV1.png)   
+  >> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/InceptionV1.png)   
   >> - Inception V2使用小卷积核来替换大卷积核（使用两个3 $\times$ 3卷积代替5 $\times$ 5），使得卷积参数大大减少；同时提出了非对称卷积操作（将3 $\times$ 3卷积转换为1 $times$ 3和3 $\times$ 1两个卷积效果的叠加），使得参数进一步减小。另外还使用了Batch Normalization（BN）结构使得整个网络更容易训练。     
-  >> ![img](picture/InceptionV2.png)   
+  >> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/InceptionV2.png)   
   >> - Inception V3对下采样过程中的特征提取作了组合，*常规的操作一般是卷积再池化或池化后再卷积，Inception V3则将这一步作了分支，使得网络变宽*  
-  >>![img](picture/InceptionV3.png)         
+  >>![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/InceptionV3.png)         
   >> - Inception V4吸收了ResNet的思想，传统ResNet过程中使用的是CNN结构，`将CNN结构换成Inception的基本结构`，得到了Inception-ResNet混合结构。 
-  >    
+  > 
   >> *Inception 系列论文:*  
   >> - Inception V1: [Going Deeper with Convolutions](https://arxiv.org/pdf/1409.4842.pdf)           
   >> - Inception V2: [Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift](http://de.arxiv.org/pdf/1502.03167)          
