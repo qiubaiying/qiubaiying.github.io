@@ -36,17 +36,17 @@ tags:
 
 >传统卷积：
 >
-><img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/conv-std.jpg" alt="img" style="zoom:50%;" />
+><img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/conv-std.jpg" alt="img" style="zoom:50%;" />
 >
 >深度可分离卷积：
 >
 >- **step1**
 >
-><img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/depthwise-conv.jpg" alt="img" style="zoom:48%;" />
+><img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/depthwise-conv.jpg" alt="img" style="zoom:48%;" />
 >
 >- **step2**
 >
-><img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/pointwise-conv.jpg" alt="img" style="zoom:48%;" />
+><img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/pointwise-conv.jpg" alt="img" style="zoom:48%;" />
 
 ### 轻量化模型：
 
@@ -64,9 +64,9 @@ paper: 《SQUEEZENET: ALEXNET-LEVEL ACCURACY WITH 50X FEWER PARAMETERS AND <0.5M
 
 ###### **Fire Module**
 
-> > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Fire module.png" alt="img" style="zoom:30%;" />
+> > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/Fire module.png" alt="img" style="zoom:30%;" />
 > >
-> > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/fire_module.png" alt="img" style="zoom: 50%;" />
+> > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/fire_module.png" alt="img" style="zoom: 50%;" />
 > >
 > > - Fire Module主要包含两层卷积操作：第一层squeeze层由一组连续的$1\times 1$卷积核组成；第二层expand层是由一组连续的$1\times 1$卷积核和一组连续的 $3\times 3$卷积核concatenate
 > > - trick：为了尽量降低$3\times 3$的输入通道数，让squeeze中的filter个数小于expand中的filter个数
@@ -77,7 +77,7 @@ paper: 《SQUEEZENET: ALEXNET-LEVEL ACCURACY WITH 50X FEWER PARAMETERS AND <0.5M
 > >
 > > 其中穿插着stride=2的maxpool层，其主要作用是下采样
 > >
-> > ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/squeezeNet.png)
+> > ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/squeezeNet.png)
 
 ###### **Deep Compression**
 
@@ -97,31 +97,31 @@ paper:《Xception: Deep Learning with Depthwise Separable Convolutions》
 
 > $1\times1$卷积，主要用于数据降维或升维，减少参数量
 >
-> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Pointwise Convolution.png)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/Pointwise Convolution.png)
 
 ###### Convolution kernel replacement
 
 >  使用多个小卷积核替代大卷积核 (使用两个$3\times 3$卷积核代替$5\times 5$卷积)
 >
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/2.png" alt="img" style="zoom:50%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/2.png" alt="img" style="zoom:50%;" />
 
 ###### Bottleneck
 
 > 先使用pointwise convolution对数据进行降维，再进行常规卷积核的卷积，最后 再使用pointwise convolution对数据进行升维
 >
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/3.png" alt="img" style="zoom:30%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/3.png" alt="img" style="zoom: 30%;" />
 
 ###### Depthwise Separable Convolution
 
-> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Separable Convolution.png)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/Separable Convolution.png)
 >
 > - 将通道之间的相关性与空间相关性分开处理。采用 Depthwise Separable Convolution来替换原来 Inception-v3中的卷积操作。
 >
->   Standard Convolution：$2*3*3*3=54$
+>   Standard Convolution：$$2*3*3*3=54$$
 >
->   Depthwise Separate Convolution：$2*3*3+2*1*1*3=24$
+>   Depthwise Separate Convolution：$$2*3*3+2*1*1*3=24$$
 >
->   ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/1.png)
+>   <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/1.png" alt="img" style="zoom:70%;" />
 >
 >   
 
@@ -137,7 +137,7 @@ paper: 《MobileNets: Efficient Convolutional Neural Networks for Mobile Vision 
 
 > **深度可分离卷积**：将常规卷积分为两部分，一是深度卷积，n 个卷积核和 n 个输入特征图分别卷积；二是 1x1 卷积，将第一步的卷积结果融合起来。
 >
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Convolution.png" alt="img" style="zoom:50%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/Convolution.png" alt="img" style="zoom:50%;" />
 
 
 
@@ -161,7 +161,7 @@ paper: 《MobileNetV2: Inverted Residuals and Linear Bottlenecks》
 
 ###### Compare with MobileNet v1
 
-> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/MobileNet v2.svg)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/MobileNet v2.svg)
 >
 > 相同点：
 >
@@ -181,7 +181,7 @@ paper: 《MobileNetV2: Inverted Residuals and Linear Bottlenecks》
 
 ###### Compare with ResNet
 
-> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/mobilenetv2.svg)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/mobilenetv2.svg)
 >
 > 相同点：
 >
@@ -216,7 +216,7 @@ paper: 《ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mo
 >
 > **深度可分离卷积的第一步就是分组卷积的一个特例，分组数等于输入通道数**，因此可以把 pointwise convolution（1x1）用 pointwise group convolution 代替，将卷积运算限制在每个Group内来降低计算量。
 >
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/group convolution.png" alt="img" style="zoom:60%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/group convolution.png" alt="img" style="zoom:60%;" />
 
 ###### channel shuffle
 
@@ -226,7 +226,7 @@ paper: 《ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mo
 >
 > **group卷积能够获得不同group中的输入数据，输入特征和输出特征就能很好的关联起来**
 >
-> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/channel shuffle.png)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/channel-shuffle.png)
 
 
 
@@ -258,7 +258,7 @@ paper: 《ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Des
 
 ###### channel split
 
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/ShuffleNet-V2.png" alt="img" style="zoom:30%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/ShuffleNet-V2.png" alt="img" style="zoom:30%;" />
 >
 > - 在**ShuffleNetv1**的模块中，大量使用了1x1组卷积，这违背了**G2**原则，另外采用了类似ResNet中的bottleneck layer，输入和输出通道数不同，这违背了**G1**原则。同时使用过多的Group，违背了**G3**原则。短路连接中存在大量的元素级Add运算，这违背了**G4**原则
 >
@@ -276,7 +276,7 @@ paper: 《GhostNet: More Features from Cheap Operations》
 
 > ​         通过训练好的网络输出特征图发现，其中存在大量冗余信息。一些特征图可以由其他特征图经过一些简单的变化得到，如输入图像经过ResNet50产生的特征图中，里面有许多成对的相似特征图。
 >
-> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/ghost.png" alt="img" style="zoom:50%;" />
+> <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/ghost.png" alt="img" style="zoom:50%;" />
 >
 > 本文提出了能用更少参数提取更多特征的 **Ghost模块**
 >
@@ -300,7 +300,7 @@ paper: 《GhostNet: More Features from Cheap Operations》
 > >
 >>   
 > >
-> > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/ghost%20module.png" alt="img" style="zoom:40%;" />
+> > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/ghost%20module.png" alt="img" style="zoom:40%;" />
 > >
 > > Comparation:
 > >
@@ -312,7 +312,7 @@ paper: 《GhostNet: More Features from Cheap Operations》
 
 ###### **ghost bottleneck**
 
-> > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/ghost%20bottleneck.png" alt="img" style="zoom:25%;" />
+> > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/ghost%20bottleneck.png" alt="img" style="zoom:25%;" />
 >
 
 
