@@ -272,7 +272,25 @@ adVAE: A self-adversarial variational autoencoder with Gaussian anomaly prior kn
 >
 > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD19.png" alt="img" style="zoom:30%;" />
 >
-> 模型包括三个模块
+> 模型包括三个模块: 编码器网络E，生成网络G 和 Gaussian transformer网络T
+>
+> - **Training Step1：**
+>
+>   > 通过T和G之间的对抗训练，将有效的正则化引入生成器，合成了潜变量，并使生成器将异常与正常的潜编码区分开（普通VAE的生成器很难区分正常和异常隐编码因为它们在潜空间中有重叠）
+>   >
+>   > - 冻结E网络中的权重并更新G和T
+>   > - Gaussian transformer T接收从正常训练样本编码的正常高斯潜变量z作为输入，并将z转换为具有不同均值$\mu_T$和标准差$\sigma_{T}$的异常高斯潜变量$z_T$
+>   > - T的作用是减少$\{z;\mu,\sigma\}$和$\{z_T;\mu_T,\sigma_T\}$的KL距离
+>   > - G从两个相似的潜编码$z$和$z_T$尽可能生成不同的样本
+>   > - T希望$z_T$接近$z$，而G希望$z_T$远离$z$，最终达到平衡（T将生成接近正常潜变量的异常潜变量，并且生成器将通过不同的重构误差来区分）
+>
+> - **Training Step2：**
+>
+>   > 冻结T和G，训练编码器E作为判别器
+>   >
+>   > - 编码器将数据样本映射到高斯潜变量z进行正常和异常的判别
+>
+> 上述两个训练步骤交替进行，
 >
 > 
 >
