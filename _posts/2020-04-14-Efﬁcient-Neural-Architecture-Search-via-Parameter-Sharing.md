@@ -112,7 +112,7 @@ tags:
 > 利用带有B个节点的ENAS计算DAG来表示cell中局部发生的计算。在这个DAG中，前两个node1和node2被视为cell的输入，对于剩余的B-2节点中的每一个，要求RNN controller作出两组决策：
 >
 > - 将两个之前的节点当作当前节点的输入
-> - 将两个操作应用于两个采样节点（可用的操作包括 identity、$3\times 3$和$5\times5$可分离卷积、$3\times3$平均池化和最大池化），在对先前节点及其对应的操作进行采样之后，将这些操作应用于先前的节点，并将其结果加起来
+> - 将两个操作应用于两个采样节点（可用的操作包括 identity、$3\times 3$和 $5\times5$可分离卷积、$3\times3$平均池化和最大池化），在对先前节点及其对应的操作进行采样之后，将这些操作应用于先前的节点，并将其结果加起来
 
 
 
@@ -123,10 +123,10 @@ Convolutional Cells（以B=4为例）：
 > 
 > - 在节点3：控制器采样两个之前的节点和两个操作。它采样node 2、node 2、separable_conv_5x5和identity（虚线箭头表示skip）
 >
->   $h 3=\operatorname{sep}_{-} \operatorname{con} v_{ 5 \times 5}\left(h_{2}\right)+i d\left(h_{2}\right)$
+>   $$h 3=\operatorname{sep}_{-} \operatorname{con} v_{ 5 \times 5}\left(h_{2}\right)+i d\left(h_{2}\right)$$
 >
 > - 在节点4：控制器采样node 3、node 1、avg_pool_3x3和sep_conv_3x3。这意味着
->  $h 4=\operatorname{avg}_{-} \operatorname{pool}_{-} 3 \times 3\left(h_{3}\right)+sep\_conv_{3\times 3}(h1)$
+>  $$h 4=\operatorname{avg}_{-} \operatorname{pool}_{-} 3 \times 3\left(h_{3}\right)+sep\_conv_{3\times 3}(h1)$$
 > 
 > ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Nas11.png)
 >
