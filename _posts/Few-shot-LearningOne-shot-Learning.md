@@ -25,7 +25,7 @@ Few-shot Learning 算法大致可分为三类：
 - Mode Based：旨在通过模型结构的的设计快速在少量样本上更新参数，直接建立输入x和预测值P的映射函数
 - Metric Based：通过度量batch集中的样本和support集中样本的距离，借助最邻近的思想完成分类
 - Optimization Based：普通的梯度下降方法难以在few-shot场景下拟合，因此需要通过调整优化方法来完成小样本分类的任务    
-![img](picture/Few-shot.png)
+![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Few-shot.png)
 
 
 
@@ -60,17 +60,17 @@ Ref: [A Survey of Zero-Shot Learning: Settings, Methods, and Applications](https
 
 (2).定义 Definition    
   - 在zero-shot learning中，特征空间(feature space)中存在一些标记的训练实例，这些训练实例所涵盖的类称为seen classes；同时在特征空间中，还存在一些属于另一些类的未标记的测试实例，这些类称为unseen classes。特征空间通常是实数空间，通常假定每个实例都属于一个类，则每个实例都可以表示为特征空间中的一个向量(Vector)。    
-    ![img](picture/ZS1.png)
+    ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/ZS1.png)
     - 用$S=\{c_{i}^{S} | i=1, \ldots, N_{s}\}$表示所有seen的类别的集合其中每个$c_{\dot{i}}^{S}$表示一个seen类别
     - 用$\mathcal{U}=\{c_{i}^{u} | i=1, \ldots, N_{u}\}$表示所有unseen别的集合，其中每个$c_{i}^{u}$表示一个unseen类别。其中$S \cap \mathcal{U}=\varnothing$  
     - 用$\mathcal{X}$表示特征空间，是一个D维的实数空间$\mathbb{R}^{D}$
     - 用$D^{t r}=\left\{\left(\mathrm{x}_{i}^{t r}, y_{i}^{t r}\right)\in X \times \mathcal{S}\right\}_{i=1}^{N_{t r}}$表示所属类别为seenclassesd的的训练标签实例集合。每个标签实例$\left(\mathrm{x}_{i}^{t r} y_{i}^{t r}\right)$，$\mathrm{x}_{i}^{t r}$是特征空间中的实例，$y{i}^{t r}$是对应的类标签
     - 用$X^{t e}=\left\{\mathbf{x}_{i}^{t e} \in X\right\}_{i=1}^{N_{te}}$表示测试实例集合，每个$\mathbf{x}_{i}^{t e}$是特征空间中的测试例，用$Y^{t e}=\left\{y_{i}^{t e} \in \mathcal{U}\right\}_{i=1}^{N{t e}}$表示需要被预测的$X^{t e}$对应的类标签。
-    ![img](picture/ZS2.png)   
+    ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/ZS2.png)   
   - **Definition 1.1**：对于给定所属类别在seen classes集合$S$中的训练标签实例$D^{t r}$，zero-shot learning的目标是学习一个分类器$f^{u}(\cdot) : X \rightarrow \mathcal{U}$，能够对所述类别在unseen classes集合$\mathcal{U}$的测试实例$X^{t e}$进行分类。
     - 从Definition 1.1可以看出，zero-shot learning的一般思想是将训练实$D^{t r}$中包含的知识转移到测试实例的分类任务中。
     - zero-shot learning中，有相同的特征空间，但由于训练和测试实例所涵盖标签空间是不相交的，因此zero-shot learning其本质属于transfer learnin中的heterogeneous(异构) transfer learning。（迁移学习相关内容详见[Transfer-Learning.md](https://github.com/jyniki/Learn2019/blobmaster/research/Transfer-Learning.md)）     
-    ![img](picture/ZS3.png)
+    ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/ZS3.png)
     - 与HTL-DLS(heterogeneous transfer learning with different labelspaces)方法比较：HTL-DLS方法中，存在一些标签实例所属的类在目标标签空中，而zero-shot learning中，不存在所属的类在在目标标签空间（unseenclasses）中的已标记实例。
   
   - **Auxiliary information 辅助信息**：由于zero-shot learning中不存属于unseen classes的已标记实例，因此在解决zero-shot learning问题中需一些辅助信息。
@@ -87,14 +87,14 @@ Ref: [A Survey of Zero-Shot Learning: Settings, Methods, and Applications](https
       - $T^{s}=\left\{\mathbf{t}_{i}^{s}\right\}_{i=1}^{N_{s}}$表seen classes的类原型集，$T^{u}=\left\{t_{i}^{u}\right\}_{i=1}{N_{u}}$表示unseen classes的类原型集
       - 用$\pi(\cdot) : \mathcal{S} \cup \mathcal{U} \rightarrow\mathcal{T}$表示类原型函数，输入类标签，输出相应的类原型
   - 在zero-shot learning中，除了训练实例$D^{t r}$，类原型$T^{s}$和$T^{u}$也参与zero-shot 分类器$f^{u}(\cdot)$的学习获取。
-      ![img](picture/ZS4.png)
+      ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/ZS4.png)
 
   - Zero-shot classifier **learning setting**：   
     - **Definition 1.2**：(Class-Inductive Instance-Inductive Setting, CIII):模型学习只使用标记的训练实例集$D^{t r}$和seen class类原型集$T^{s}$
     - **Definition 1.3**：(Class-Transductive Instance-Inductive Setting, CTII):模型学习使用了训练实例集$D^{t r}$、seen class类原型集$T^{s}$和unseen class类原型集$T^{u}$
     - **Definition 1.4**：(Class-Transductive Instance-Transductive Setting, CTIT):模型学习使用了训练实例集$D^{t r}$、seen class类原型集$T^{s}$、unseen class类原型集$T^{u}$和未标签的测试实例   
       - `从CIII到CTIT，分类器模型学习了越来越多测试实例的信息`
-      ![img](picture/ZS5.png)
+      ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/ZS5.png)
       - `在CIII设置下(one-order transformation)，由于模型学习不涉及测试实例的信息，因此在该设置下的一些方法中，域偏移的问题比较严重。但是由于该设置下的模型没有针对特定的unseen classes和测试实例进行优化，当需要对新的unseen class或测试实例进行分类时，模型的泛化能力通常要优于CTII或CTIT设置下学习的模型`      
       - `在CTII设置下(two-order transformation)，由于模型涉及到unseen class类原型，因此域偏移问题不那么严重，然而此学习设置下的模型泛化到新的unseen classes的能力有限`
       - `在CTIT设置下(high-order transformation)，由于模型对特定的unseen classes和测试实例进行了优化，领域偏移问题最不严重，但模型泛化能力最有限 `    
@@ -103,7 +103,7 @@ Ref: [A Survey of Zero-Shot Learning: Settings, Methods, and Applications](https
 
 #### 3. Methods 方法     
 
-![img](picture/ZS6.png)  
+![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/ZS6.png)  
 
 **I. Classifier-Based Methods**       
 `focus:直接学习一个能分类unseen classes的分类器`        
@@ -157,7 +157,7 @@ Ref: [A Survey of Zero-Shot Learning: Settings, Methods, and Applications](https
       - 合成方法1：估计每个seen class实例的分布参数，并利用语义空间中的类原型，计算出seen classes和unseen classes之间的关系。根据分布参数和seen & unseen classes之间的关系，为每个unseen class合成为伪实例
       - 合成方法2：生成模型利用seen class学习从属性（attribute）到特征的转换。然后对每一个unseen class，将对应的类原型和一些噪声作为生成模型的输入，合成相应的伪实例   
     - step3：利用所有unseen class的伪实例，学习unseen classes分类器，实现对测试实例的分类
-![img](picture/ZS7.png)
+![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/ZS7.png)
 
 
 
