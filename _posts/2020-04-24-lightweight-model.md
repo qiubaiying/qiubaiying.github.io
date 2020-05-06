@@ -226,7 +226,7 @@ paper: 《ShuffleNet: An Extremely Efficient Convolutional Neural Network for Mo
 >
 > **group卷积能够获得不同group中的输入数据，输入特征和输出特征就能很好的关联起来**
 >
-> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/channel-shuffle.png)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/4.png)
 
 
 

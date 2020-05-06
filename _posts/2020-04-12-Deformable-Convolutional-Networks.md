@@ -10,7 +10,7 @@ tags:
     - paper
 ---
 
-#### 
+
 
 #### 1、Introduction
 
@@ -45,10 +45,14 @@ tags:
   >
   >   - **由于**$\Delta p_{n}$很有可能是小数，而feature map x上都是整数位置，需要**双线性插值**。
   >
-  > ```markdown
-  > 双线性插值：
-  > x的浮点坐标为(i+u,j+v),其中i，j为浮点坐标的整数部分，u，v为浮点坐标的小数部分，这个点的可由x(q1):(i,j)、x(q2):(i+1,j)、x(q3):(i,j+1)、x(q4):(i+1,j+1)四个点表示
-  > ```
+  > ---
+  >
+  > > 双线性插值：
+  > > x的浮点坐标为(i+u,j+v),其中i，j为浮点坐标的整数部分，u，v为浮点坐标的小数部分，这个点的可由x(q1):(i,j)、x(q2):(i+1,j)、x(q3):(i,j+1)、x(q4):(i+1,j+1)四个点表示
+  >
+  > ---
+  >
+  > 
   > $$
   > \begin{array}{l}{x(\mathrm{p})=\sum_{q} G(\mathrm{q}, \mathrm{p}) \cdot x(\mathrm{q})} \\ {=\sum_{q} \mathrm{g}\left(\mathrm{q}_{\mathrm{x}}, \mathrm{p} \mathrm{x}\right) \cdot g\left(\mathrm{q}_{\mathrm{y}}, \mathrm{p}_{\mathrm{y}}\right) \cdot x(\mathrm{q})} \\ {=\sum_{q} \max \left(0,1-\left|\mathrm{q}_{\mathrm{x}}-\mathrm{p}_{\mathrm{x}}\right|\right) \cdot \max \left(0,1-\left|\mathrm{q}_{\mathrm{y}}-\mathrm{p}_{\mathrm{y}}\right|\right) \cdot x(\mathrm{q})}\end{array}
   > $$
@@ -65,10 +69,15 @@ tags:
   > $$
   > \mathbf{y}(i, j)=\sum_{\mathbf{p} \in \operatorname{bin}(i, j)} \mathbf{x}\left(\mathbf{p}_{0}+\mathbf{p}\right) / n_{i j}
   > $$
-  > ```
-  > ROI Pooling:
-  > 是池化的一种方式，其目的是将不同大小的ROI（Regions of Interest）调整到固定的尺寸
-  > ```
+  > 
+  >
+  > ---
+  >
+  > > ROI Pooling:
+  > >
+  > > 是池化的一种方式，其目的是将不同大小的ROI（Regions of Interest）调整到固定的尺寸
+  >
+  > ---
   >
   > 
   >
@@ -83,20 +92,27 @@ tags:
 
   >- PS ROI Pooling 不同于ROI Pooling，通过一个卷积层，所有的输入特征映射首先被转换为每个目标类的$k^2$个分数映射（对于 C个目标类，总共 C+1个），分数映射被表示为{$x_{i,j}$}，其中(i, j)枚举所有的组块，池化是在这些分数映射上进行的。第(i,j)个组块的输出值是通过对分数映射$x_{i,j}$对应的组块求和得到的。
   >
-  >  ```markdown
-  >  PS ROI Pooling:
-  >  · 由R-FCN提出，引入位置敏感得分图。每个候选区域(ROI)被平均分割成k^2个矩形单元，先通过一层1*1的卷积核生成通道数为k^2*(C+1)的特征图，其中k^2代表一个ROI里所有矩形单元的数量，C+1代表所有的类别数加上背景，k^2*(C+1)张特征图每C+1张组成一组，共包含k^2组，每组负责向对应的矩形单元进行响应。
   >  
-  >  · 池化每个ROI时，各个点（共k^2个）均由上一层中对应分组的对应位置区域通过平均池化获得，由此得到一组C+1张特征图，这些特征图经过全局平均池化，得到C+1维的向量，计算分类损失函数。
-  >  ```
   >
-  >  <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/DCN5.png" alt="img" style="zoom:100%;" />
+  >---
+  >
+  >> PS ROI Pooling:
+  >>
+  >> - 由R-FCN提出，引入位置敏感得分图。每个候选区域(ROI)被平均分割成k^2个矩形单元，先通过一层1*1的卷积核生成通道数为k^2*(C+1)的特征图，其中k^2代表一个ROI里所有矩形单元的数量，C+1代表所有的类别数加上背景，k^2*(C+1)张特征图每C+1张组成一组，共包含k^2组，每组负责向对应的矩形单元进行响应
+  >>
+  >> - 池化每个ROI时，各个点（共k^2个）均由上一层中对应分组的对应位置区域通过平均池化获得，由此得到一组C+1张特征图，这些特征图经过全局平均池化，得到C+1维的向量，计算分类损失函数
+  >
+  >---
+  >
+  >
+  >
+  > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/DCN5.png" alt="img" style="zoom:100%;" />
   >
   >- 与ROI Pooling相比，通用特征映射x被特定的位置敏感的分数映射$x_{i,j}$所取代。
-  > $$
-  >  \mathbf{y}(i, j)=\sum_{\mathbf{p} \in \operatorname{bin}(i, j)} \mathbf{x_{i,j}}\left(\mathbf{p}_{0}+\mathbf{p}+\Delta p_{n_{ij}}\right) / n_{i j}
-  > $$
-  > 
+  >$$
+  > \mathbf{y}(i, j)=\sum_{\mathbf{p} \in \operatorname{bin}(i, j)} \mathbf{x_{i,j}}\left(\mathbf{p}_{0}+\mathbf{p}+\Delta p_{n_{ij}}\right) / n_{i j}
+  >$$
+  >
   >
   ><img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/DCN3.png" alt="img" style="zoom:50%;" />
 
