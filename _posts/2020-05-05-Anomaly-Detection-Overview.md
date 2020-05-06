@@ -290,11 +290,17 @@ adVAE: A self-adversarial variational autoencoder with Gaussian anomaly prior kn
 >   >
 >   > - 编码器将数据样本映射到高斯潜变量z进行正常和异常的判别
 >
-> 上述两个训练步骤交替进行，
+> 上述两个训练步骤交替进行，adVAE的训练过程如下：
 >
-> 
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD21.png)
+>
+> ---
+>
+> ---
 >
 > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/Anomaly-Detection/AD20.png" alt="img" style="zoom:50%;" />
+>
+> > 测试阶段应用训练好的E和G，首先通过训练数据集得到异常分数的阈值（通过重构误差的核密度估计KDE）；对于测试图片，若重构误差超过阈值则判别为异常，否则为正常。
 
 
 
