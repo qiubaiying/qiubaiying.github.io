@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      CBAM: Convolutional Block Attention Module
+title:      CBAM Convolutional Block Attention Module
 subtitle:   论文阅读
 date:       2020-04-10
 author:     JY

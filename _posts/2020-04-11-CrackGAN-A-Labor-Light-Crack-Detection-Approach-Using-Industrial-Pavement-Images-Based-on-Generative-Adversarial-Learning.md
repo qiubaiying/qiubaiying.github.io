@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      CrackGAN: A Labor-Light Crack Detection Approach Using Industrial Pavement Images Based on Generative Adversarial Learning
+title:      CrackGAN A Labor-Light Crack Detection Approach Using Industrial Pavement Images Based on Generative Adversarial Learning
 subtitle:   论文阅读
 date:       2020-04-11
 author:     JY
