@@ -121,18 +121,23 @@
 > > 反向传播过程：
 > > > 通过Minimax博弈公式联合训练生成器和判别器两个网络          
 > > > $$\begin{equation}
-> > > \min _{\theta_{g}} \max _{\theta_{d}}\left[E_{x \sim p_{\text {data}}} \log D_{\theta_{d}}(x)+E_{z \sim p_{(z)}} \log \left(1-D_{\theta_{d}}\left(G_{\theta_{g}}(z)\right)\right)\right]
+> > > \tilde{ V }_{D}=\max _{\theta}\left[E_{x \sim p_{\text {data }}} \log D_{\theta_{d}}(x)+E_{z \sim p_{(z)}} \log \left(1-D_{\theta_{d}}\left(G_{\theta_{g}}(z)\right)\right)\right]
 > > > \end{equation}$$
 > > >
 > > > - 第一部分是训练判别器D，先从真实数据分布$p_{data}(x)$中抽样$x$,然后从先验分布中抽样z，并通过确定的生成器产生仿造数据$\tilde{\mathcal{x}}=G_{\theta_g}(z)$，然后把$x$和$\tilde{\mathcal{x}}$输入判别器中训练，使得目标函数$\tilde{\mathcal{V}}_D$最大。 
 > > >   `使用梯度上升法(Gradient ascent on discriminator):`
-> > >   $$\tilde{\mathcal{V}}_D=\mathop{\max}\limits_{\theta_d}[E_{x{\sim}p_{data}}logD_{\theta_d}(x)+E_{{z}{\sim}p_{(z)}}log(1-D_{\theta_d}(G_{\theta_g}(z)))] $$
+> > >   $$\begin{equation}
+> > > \tilde{ V }_{D}=\max _{\theta}\left[E_{x \sim p_{\text {data }}} \log D_{\theta_{d}}(x)+E_{z \sim p_{(z)}} \log \left(1-D_{\theta_{d}}\left(G_{\theta_{g}}(z)\right)\right)\right]
+> > > \end{equation}$$
 > > >   （其实最大化$\tilde{\mathcal{V}}_D$问题的求解实际上是在求解$p_{data}$与$p_G$之间的**JS散度**，推导过程略）
 > > >
 > > > - 第二部分是训练生成器（此时判别器已经确定），先从先验分布中抽样新的z，然后将z输入生成器中训练，使得目标函数$\tilde{\mathcal{V}}_G$最小。    
 > > >
 > > >   `使用梯度下降法(Gradient descent on generator):`
-> > >   $$\tilde{\mathcal{V}}_G=\mathop{\min}\limits_{\theta_g}{[E_{{z}{\sim}p_{(z)}}log(1-D_{\theta_d}(G_{\theta_g}(z)))]}$$
+> > >
+> > >   $$\begin{equation}
+> > >   \tilde{ V }_{G}=\min _{\theta_{g}}\left[E_{z \sim p_{(z)}} \log \left(1-D_{\theta_{d}}\left(G_{\theta_{g}}(z)\right)\right)\right]
+> > >   \end{equation}$$
 > > >   这样循环交替，最终生成器产生的数据$\tilde{\mathcal{x}}$就会越来越接近真实数据$x$
 > > >
 > > > - **生成过程：**  
