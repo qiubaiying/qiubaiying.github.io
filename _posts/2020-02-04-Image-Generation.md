@@ -1,8 +1,9 @@
 ## Image Generation 图像生成
 
 ### 1. Introduction 介绍
-(1). 判别模型 vs 生成模型     
+(1). 判别模型 vs 生成模型 
 `以图像数据为例`
+
 - **判别模型**的形式主要是根据原始图像推测图像<u>具备的一些性质</u>（例如根据数字图像推测数字的名称、根据自然场景图像推测物体边界
 - **生成模型**通常给出的输入是图像具备的性质，而输出是性质对应的图像。生成模型相当于构建了图像的分布，因此利用生成模型，可以完成<u>图像自动生成（采样）、图像信息补全</u>等工作。
 
@@ -19,27 +20,28 @@
 
 ### 2. Generative Models 生成模型
 
-生成模型：对于给定训练数据，这些训练数据从某种分布$p_{data}$中生成，目标是从中学习到一个模型$p_{model}$，来以相同的数据分布生成新的样本`   
+`生成模型：对于给定训练数据，这些训练数据从某种分布$p_{data}$中生成，目标是从中学习到一个模型$p_{model}$，来以相同的数据分布生成新的样本` 
 **Taxonomy of Generative Models**
-![img](picture/Generative-model.png)     
+![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Generative-model.png)     
 
-> ![img](picture/generate-model.png) 
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/generate-model.png) 
 
 #### (1). 自回归模型（Autoregressive model）   
-> `以PixelRNN和PixelCNN为例`      
->        
+> `以PixelRNN和PixelCNN为例` 
+>
 > PixelRNN和PixelCNN都属于全可见信念网络(Fully visible belief network)，对一个密度分布<u>显示建模</u>(Explicit density model)    
+>
 > - 根据图像数据x，对图像的概率分布或者似然p(x)建模。
-> - 方法：通过使用链式法则(chain rule)将似然分解为一维分布的乘积。在给定所有下标小于i的像素($x_1$到$x_{i-1}$)的条件下，有每个像素$x_i$的条件概率，这时图像中所有像素(n{\times}n)的联合概率(图像的似然)就是所有这些像素点<u>似然的乘积</u>，是一个易处理的密度函数（tractable density function）      
+> - 方法：通过使用链式法则(chain rule)将似然分解为一维分布的乘积。在给定所有下标小于i的像素($x_1$到$x_{i-1}$)的条件下，有每个像素$x_i$的条件概率，这时图像中所有像素(n{\times}n)的联合概率(图像的似然)就是所有这些像素点<u>似然的乘积</u>，是一个易处理的密度函数（tractable density function）
 > $$p_{\theta}(x)=\prod_{i=1}^{n^2}{p_{\theta}(x_i|x_1,...x_{i-1}})$$  
 > - 在训练过程中，需要最大化训练样本图像的似然p(x)来训练模型    
-> 
+>
 > **PixelRNN:** 从左上角一个一个生成像素，每一个对之前像素依赖的关系都通过RNN(LSTM)来建模。
-> 
+>
 > **PixelCNN:** 逐行扫描，取待生成像素点周围的像素（上面和左边的所有像素），传递给CNN来生成该像素值。每一个像素位置都有一个神经网络输出，该输出将会是像素的softmax损失值   
-> 
+>
 > **优点**：GAN只善于处理连续数据，pixelCNN对连续数据和非连续数据都能很好perform；且通过链式显示计算likehood，使得训练稳定；给出了很好的评估度量，通过所能计算的数据的似然来度量样本的质量。
-> 
+>
 > **缺点**：由于PixelRNN和PixelCNN是按照像素点去生成图像，导致计算成本高，生成速度慢；且PixelRNN和PixelCNN目前还没有成功做出unsupervised/semi-supervised feature learning
 
 
@@ -49,8 +51,8 @@
 > **Basic Knowledge: 自编码器 AutoEncoder**：
 > - 自编码器的主要目的是将高维矩阵$x$经过Encoder压缩到低维矩阵$z$，然后再经过Decoder将$z$还原成$\widehat{x}$，尽量使得$x=\widehat{x}$，即<u>无损</u> 。
 > - 在训练过程中，损失函数常常为像素级别的MSE操作（对比输入输出的每个像素点的差异，然后累加求和再求平均），获取损失函数值对模型参数的变化，利用梯度下降法更新参数，以达到降低损失函数值的需求，从而完成训练，得到Encoder和Decoder。  
-> - 编码器和解码器可以有多种形式，最先提出的是非线性层的线性组合，又有了深层的全连接网络，目前常用的是CNN。           
->![img](picture/Autoencoder.png)
+> - 编码器和解码器可以有多种形式，最先提出的是非线性层的线性组合，又有了深层的全连接网络，目前常用的是CNN。
+>![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Autoencoder.png)
 > - AutoEncoder能够重构数据，学习数据特征（这些学习到的特征具有捕捉训练数据中蕴含的变化因素的能力，即获得一个含有训练数据中变化因子的隐变量z），初始化监督学习模型。
 > 
 > **VAE(Variational Autoencoders)**： 
@@ -62,16 +64,16 @@
 > - 对于给定z的x的条件概率分布p(x|z)是复杂的（使用神经网络来表示），得到了一个带有隐函数z的难解的密度函数：
 > $$p_{\theta}(x)={\int}p_{\theta}(z)p_{\theta}(x|z)dz$$ 
 > - 该密度函数无法直接优化，需要通过推导出似然函数的下界然后对该下界进行优化
-> - 推导过程：   
->   Data likelihood: $p_{\theta}(x)={\int}p_{\theta}(z)p_{\theta}(x|z)dz$      
-> Posterior density: $p_{\theta}(z|x)=p_{\theta}(z)p_{\theta}(x|z)/p_{\theta}(x)$     
-> 利用编码器网络$q_{\phi}(z|x)$估计出$p_{\theta}(z|x)$   
-> 使用对数似然：  ![img](picture/VAE_function.png)
+> - 推导过程： 
+>   Data likelihood: $p_{\theta}(x)={\int}p_{\theta}(z)p_{\theta}(x|z)dz$ 
+> Posterior density: $p_{\theta}(z|x)=p_{\theta}(z)p_{\theta}(x|z)/p_{\theta}(x)$ 
+> 利用编码器网络$q_{\phi}(z|x)$估计出$p_{\theta}(z|x)$ 
+> 使用对数似然：  ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/VAE_function.png)
 > - 由上推导可以看到，真正的损失函数$\mathcal{L}$由两部分构成:输入输出差异与分布差异，其中分布差异用的是KL散度。要让似然变大，需要让p(x|z)变大（最大限度地重构数据），同时让KL散度值变小（让后验概率与前验概率分布相似），在训练过程中根据损失函数，使用优化算法进行参数更新
 > 
 > - **优点：** 就生成模型来说，是一种有据可循的方法，使得查询推断成为可能
-> - **缺点：** 只能推断真实分布的近似值，而隐变量分布和真实分布之间的gap不可度量，因此导致VAE存在着生成图像模糊的问题。   
-![img](picture/VAE.png)      
+> - **缺点：** 只能推断真实分布的近似值，而隐变量分布和真实分布之间的gap不可度量，因此导致VAE存在着生成图像模糊的问题。 
+![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/VAE.png)      
 
 
 
@@ -80,14 +82,14 @@
 >`基于流的生成模型通过寻找可逆的双射来实现输入和潜在空间的相互转换`
 >
 > 对输入的复杂的高维数据进行一个非线性变换，通过这个变换将输入的高维数据映射到潜在空间，产生独立的潜在变量。同时这个变换是可逆的，反之亦然。
-> - 假设定义x是一个高维的随机向量，并且x的真实分布p(x)未知，模型为$p_{\theta}(x)$，则需要最小化的对数似然函数为：      
+> - 假设定义x是一个高维的随机向量，并且x的真实分布p(x)未知，模型为$p_{\theta}(x)$，则需要最小化的对数似然函数为： 
 > $$\frac{1}{N}\sum^N_{i=1}{-logp_\theta(x_i)}$$
 > - 为了实现空间之间的映射，可以找一个可逆的映射函数，使得$z=f_\theta(x)$，同时$x=g_\theta(z)$，$g_{\theta}^-1=f_\theta$
-> - Glow采用分层变换的思想， 将映射$f$函数变换为$f_1{\odot}f_2{\odot}...{\odot}f_k$    
-> 可以将其想象成一个flow: 
-> ![img](picture/flow.png)
-> - Glow网络框架：整个flow需要分K次单步flow完成，一个单步flow模块包括三个部分（第一部分actnorm即把激活神经元归一化，可以理解为将输入数据做预处理；第二部分可逆$1{\times}1$卷积，简化整体的计算量；第三部分Affine Transformation，是实现可逆转换的关键）      
-> ![img](picture/Glow.png)
+> - Glow采用分层变换的思想， 将映射$f$函数变换为$f_1{\odot}f_2{\odot}...{\odot}f_k$   
+> - 可以将其想象成一个flow: 
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/flow.png)
+> - Glow网络框架：整个flow需要分K次单步flow完成，一个单步flow模块包括三个部分（第一部分actnorm即把激活神经元归一化，可以理解为将输入数据做预处理；第二部分可逆$1{\times}1$卷积，简化整体的计算量；第三部分Affine Transformation，是实现可逆转换的关键）
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Glow.png)
 > 
 > **优点：**
 > - **精确的潜在变量推断和对数似然评估。** 在VAE中编码后只能推理出对应于潜在变量的真实分布近似值（隐变量分布与真实分布之间的gap不可度量），GAN是一种学习范式，没有编码器进行潜在变量的推断，且由于其存在G和D两个模型互相博弈的特点，理论的近似极限无法确定。在Glow可逆生成模型中，可以在没有近似的情况下实现潜在变量的精确的推理(精确建模真实数据的分布)，还可以优化数据的精确对数似然。
@@ -112,28 +114,35 @@
 >       - 然而理论上并不知道$P_G(x)$和$P_data(x)$是什么，因此Divergence往往无法计算，因此**新建了一个神经网络D专门用来衡量$P_G(x)$和$P_data(x)$之间的Divergence**，该神经网络即为判别网络
 >
 > - **训练过程:**
->> 前向传播过程：
->>> - 模型输入：随机产生一个随机向量作为生成模型的数据，然后经过生成模型后产生一个新的向量，作为Fake Image；同时，从数据集中随机选择一张图片，将图片转化成向量，作为Real Image
->>> - 模型输出：将Fake Image和Real Image两个向量分别输入判别网络，分别输出一个0~1之间的数，用于表示输入向量为Real Image的概率，使用得到两个输出值计算损失函数。  
->>
->> 反向传播过程：
->>> 通过Minimax博弈公式联合训练生成器和判别器两个网络          
-$$\mathop{\min}\limits_{\theta_g}\mathop{\max}\limits_{\theta_d}[E_{x{\sim}p_{data}}logD_{\theta_d}(x)+E_{{z}{\sim}p_{(z)}}log(1-D_{\theta_d}(G_{\theta_g}(z)))] $$
->>> - 第一部分是训练判别器D，先从真实数据分布$p_{data}(x)$中抽样$x$,然后从先验分布中抽样z，并通过确定的生成器产生仿造数据$\tilde{\mathcal{x}}=G_{\theta_g}(z)$，然后把$x$和$\tilde{\mathcal{x}}$输入判别器中训练，使得目标函数$\tilde{\mathcal{V}}_D$最大。    
->>> `使用梯度上升法(Gradient ascent on discriminator):`
-$$\tilde{\mathcal{V}}_D=\mathop{\max}\limits_{\theta_d}[E_{x{\sim}p_{data}}logD_{\theta_d}(x)+E_{{z}{\sim}p_{(z)}}log(1-D_{\theta_d}(G_{\theta_g}(z)))] $$
->>> （其实最大化$\tilde{\mathcal{V}}_D$问题的求解实际上是在求解$p_{data}$与$p_G$之间的**JS散度**，推导过程略）
->>> - 第二部分是训练生成器（此时判别器已经确定），先从先验分布中抽样新的z，然后将z输入生成器中训练，使得目标函数$\tilde{\mathcal{V}}_G$最小。    
->>> `使用梯度下降法(Gradient descent on generator):`
-$$\tilde{\mathcal{V}}_G=\mathop{\min}\limits_{\theta_g}{[E_{{z}{\sim}p_{(z)}}log(1-D_{\theta_d}(G_{\theta_g}(z)))]}$$
->>> 这样循环交替，最终生成器产生的数据$\tilde{\mathcal{x}}$就会越来越接近真实数据$x$
-> - **生成过程：**  
-> 指定维度的噪声向量作为输入生成器网络,从训练分布中采样并将结果直接作为输出
-> ![img](picture/GAN.png)  
-> 
+> > 前向传播过程：
+> > > - 模型输入：随机产生一个随机向量作为生成模型的数据，然后经过生成模型后产生一个新的向量，作为Fake Image；同时，从数据集中随机选择一张图片，将图片转化成向量，作为Real Image
+> > > - 模型输出：将Fake Image和Real Image两个向量分别输入判别网络，分别输出一个0~1之间的数，用于表示输入向量为Real Image的概率，使用得到两个输出值计算损失函数。  
+> >
+> > 反向传播过程：
+> > > 通过Minimax博弈公式联合训练生成器和判别器两个网络          
+> > > $$
+> > > \mathop{\min}\limits_{\theta_g}\mathop{\max}\limits_{\theta_d}[E_{x{\sim}p_{data}}logD_{\theta_d}(x)+E_{{z}{\sim}p_{(z)}}log(1-D_{\theta_d}(G_{\theta_g}(z)))]
+> > > $$
+> > >
+> > > - 第一部分是训练判别器D，先从真实数据分布$p_{data}(x)$中抽样$x$,然后从先验分布中抽样z，并通过确定的生成器产生仿造数据$\tilde{\mathcal{x}}=G_{\theta_g}(z)$，然后把$x$和$\tilde{\mathcal{x}}$输入判别器中训练，使得目标函数$\tilde{\mathcal{V}}_D$最大。 
+> > >   `使用梯度上升法(Gradient ascent on discriminator):`
+> > >   $$\tilde{\mathcal{V}}_D=\mathop{\max}\limits_{\theta_d}[E_{x{\sim}p_{data}}logD_{\theta_d}(x)+E_{{z}{\sim}p_{(z)}}log(1-D_{\theta_d}(G_{\theta_g}(z)))] $$
+> > >   （其实最大化$\tilde{\mathcal{V}}_D$问题的求解实际上是在求解$p_{data}$与$p_G$之间的**JS散度**，推导过程略）
+> > >
+> > > - 第二部分是训练生成器（此时判别器已经确定），先从先验分布中抽样新的z，然后将z输入生成器中训练，使得目标函数$\tilde{\mathcal{V}}_G$最小。    
+> > >
+> > >   `使用梯度下降法(Gradient descent on generator):`
+> > >   $$\tilde{\mathcal{V}}_G=\mathop{\min}\limits_{\theta_g}{[E_{{z}{\sim}p_{(z)}}log(1-D_{\theta_d}(G_{\theta_g}(z)))]}$$
+> > >   这样循环交替，最终生成器产生的数据$\tilde{\mathcal{x}}$就会越来越接近真实数据$x$
+> > >
+> > > - **生成过程：**  
+> > >
+> > > - 指定维度的噪声向量作为输入生成器网络,从训练分布中采样并将结果直接作为输出
+> > > ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/gan7.png)  
+>
 > **优点：**
 > - GAN生成的图像比较清晰，在很多GAN的拓展工作中也取得了很大的提高。     
-> 
+>
 > **缺点：** 
 > - GAN生成的多样性不足
 > - 训练过程不稳定，容易发生模式坍塌    
@@ -145,7 +154,7 @@ $$\tilde{\mathcal{V}}_G=\mathop{\min}\limits_{\theta_g}{[E_{{z}{\sim}p_{(z)}}log
 
 > GAN系列算法发展
 > 
-> ![img](picture/GAN-development.png)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/GAN-development.png)
 > 
 > | 发表时间  | 名称          | 中文名称               | 论文地址                       |
 > | -------- | ------------- | ---------------------- | ------------------------------------ |
@@ -190,7 +199,7 @@ $$\tilde{\mathcal{V}}_G=\mathop{\min}\limits_{\theta_g}{[E_{{z}{\sim}p_{(z)}}log
 >
 > (I). LSGAN
 > - 将判别器最后的sigmoid激活层变为linear激活层，即将二分类问题转换为回归问题。
-> ![img](picture/LSGAN.png)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/LSGAN.png)
 > - 使用了最小二乘损失函数代替了GAN的损失函数:
 > $$V(D)=\min _{D}\{\frac{1}{2} E_{x \sim P_{data}}[D(x)-a]^{2}+\frac{1}{2} E_{z \sim P_{z}}[D(G(z))-b]^{2}\}$$
 > $$V(G)=\min _{G}\{\frac{1}{2} E_{z \sim P_{z}}[D(G(z))-c) ]^{2}\}$$
@@ -198,13 +207,13 @@ $$\tilde{\mathcal{V}}_G=\mathop{\min}\limits_{\theta_g}{[E_{{z}{\sim}p_{(z)}}log
 > >
 > > - 交叉熵虽然会使分类正确，但导致那些在决策边界被分类为真的、但是仍远离真实数据的生成样本不会继续迭代；而最小二乘损失函数会对处于判别为真但仍然远离决策边界的样本进行惩罚，把远离决策边界的假样本迭代进入决策边界，从而提高生成图像的质量。   
 > - sigmoid交叉熵损失很容易达到饱和状态（梯度为0），而最小二乘损失只在一点达到饱和,因此使用最小二乘损失使得GAN训练更稳定。
-> ![img](picture/LSGAN(1).png)    
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/LSGAN(1).png)    
 >
 > (II). WGAN
 > - WGAN计算损失函数时使用**Wasserstein距离**去衡量生成数据分布和真实数据分布之间的距离，其生成器和判别器的目标表达式为：
 > $$V(G)=\min _{D \in 1-L i p s c h i t z}\left\{-E_{\tilde{\mathcal{x}} \sim P_{G}}[D(x)]\right\}$$
 > $$V(D)=\max _{D \in 1-L i p s c h i t z}\left\{E_{x \sim P_{d a t a}}[D(x)]-E_{\tilde{\mathcal{x}} \sim P_{G}}[D(x)]\right\}$$
-> > 该判别器目标表达式的求解结果就是$P_G$与$P_data$之间的wasserstein距离，目标函数没有log项；   
+> > 该判别器目标表达式的求解结果就是$P_G$与$P_data$之间的wasserstein距离，目标函数没有log项； 
 > > 其中 $D \in 1-L i p s c h i t z$等价于$\left\|\nabla_{x} D(x)\right\| \leq 1$ for all $x$
 > - 传统GAN的判别器输出的结果是在(0,1)区间内，但在WGAN中输出的结果是Wasserstein距离，没有上下界，因此随着训练的进行，$P_G$的Wasserstein值会越来越小，$P_{data}$的Wasserstein值会越来越大，使得判别器永远无法收敛。
 >   - 为了解决上述问题，需要给判别器加上限制，让$P_G$不会持续地一直降低，$P_{data}$也不会持续地一直升高（让D函数变得更平滑）。
@@ -257,7 +266,7 @@ $$\tilde{\mathcal{V}}_G=\mathop{\min}\limits_{\theta_g}{[E_{{z}{\sim}p_{(z)}}log
 >   - 虚拟批次正态化（virtual batch normalizaiton）：在训练前提取一个batch，根据这个batch做normalize。（由于该方法计算成本很高，所以仅仅被用在生成器当中）
 >
 > **优点：**
-> - 能够让模型在**生成高分辨率图像**时表现得更好。  
+> - 能够让模型在**生成高分辨率图像**时表现得更好。 
 >       
 >
 > (III).SAGAN    
@@ -266,7 +275,7 @@ $$\tilde{\mathcal{V}}_G=\mathop{\min}\limits_{\theta_g}{[E_{{z}{\sim}p_{(z)}}log
 >   - 首先，f(x),g(x),h(x)都是普通的$1{\times}1$卷积，其作用是减少图像中的通道数量。差别只在于输出通道大小不同
 >   - 将f(x)的输出转置并和g(x)的输出相乘，再经过softmax归一化得到一个attention map
 >   - 将得到的attention map和h(x)逐像素点相乘，得到自适应注意力的特征图
-> ![img](picture/SAGAN.png) 
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/SAGAN.png) 
 > - SAGAN的优化：
 >   - Spectral Normalization：稳定了训练和生成过程
 >   - TTUR：平衡了判别器D和生成器G的训练速度
@@ -284,8 +293,8 @@ $$\tilde{\mathcal{V}}_G=\mathop{\min}\limits_{\theta_g}{[E_{{z}{\sim}p_{(z)}}log
 > (II).EBGAN    
 > - EBGAN改动了判别器，使其不再去鉴别输入图像是来自于$P_{data}$还是$P_g$，而是去鉴别输入图像的重构性高不高
 > - AutoEncoder是提前用真实图片训练好的，如果输入是来自真实数据集的图片，这个autoencoder就能产生和输入非常相似的图片，但如果输入的是其他图片，autoencoder的输出就不会和输入相似。
-> - 把这个autoencoder放入判别器中，每当判别器输入x，通过这个autoencoder得到重构图像x’,通过x与x'的差值作为评判输入图像x质量好坏的标准，当差值越低的时候，意味着输入图片越符合真实图片的特征。   
-> ![img](picture/EBGAN.png)  
+> - 把这个autoencoder放入判别器中，每当判别器输入x，通过这个autoencoder得到重构图像x’,通过x与x'的差值作为评判输入图像x质量好坏的标准，当差值越低的时候，意味着输入图片越符合真实图片的特征。 
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/EBGAN.png)  
 > - EBGAN的最大特点就是discriminator一开始就非常强（因为有pretrain），因此generator在一开始就能获得比较大的“能量驱动”（energy based），使得在一开始generator就进步非常快，能够在短期内获得一个比较不错的generator。
 > 
 > (VII). BEGAN
@@ -295,25 +304,25 @@ $$\tilde{\mathcal{V}}_G=\mathop{\min}\limits_{\theta_g}{[E_{{z}{\sim}p_{(z)}}log
 > - Discriminator使用的是AutoEncoder结构，判别器的目标是通过优化**自编码器损失**分布之间的Wasserstein距离下限
 > - Generator使用与判别器中解码器相同的网络结构。
 > - 在训练中添加额外的均衡过程来平衡生成器和判别器
-> ![img](picture/BEGAN.png)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/BEGAN.png)
 
 - **基于应用(application)的改进**   
 > <u>在图像生成上的应用:</u>    
 >
 > (I). CGAN
 > - GAN中输出仅依赖随机噪声，无法控制生成内容；但CGAN将条件输入c添加到随机噪声中，条件c可以是任何信息，如图像标注、对象的属性、文本描述甚至是图片。<u>判别器需要判断$x$是否是真实图片，同时要判断$x$和$c$是否匹配。</u>
-> ![img](picture/CGAN.png)    
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/CGAN.png)    
 > - CGAN是有监督学习，如引入图像作为监督信息，CGAN就可以完成一些**paired data**才能完成的任务：如把轮廓图转化为真实图片，把mask转化成真实图，把黑白图转化为真实图等。其中 最具代表性的工作为pix2pix：
 >   - pix2pix提出将CGAN的损失与L1正则化损失相结合（L1相比L2产生比较少的模糊图像），使得生成器不仅被训练以欺骗判别器，而且还生成尽可能接近真实标注的图像。 
-> ![img](picture/Pix2Pix.png) 
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Pix2Pix.png) 
 >   
 >
-> (II). TripleGAN    
-> ![img](picture/TripleGAN.jpg)
-> (III). StackGAN    
-> (IV). LapGAN       
-> (V). ProGAN    
-> (VI). StyleGAN     
+> (II). TripleGAN 
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/TripleGAN.jpg)
+> (III). StackGAN 
+> (IV). LapGAN 
+> (V). ProGAN 
+> (VI). StyleGAN 
 > (VII). SRGAN
 
 ​        
@@ -327,15 +336,15 @@ $$\tilde{\mathcal{V}}_G=\mathop{\min}\limits_{\theta_g}{[E_{{z}{\sim}p_{(z)}}log
 >
 > <u>在特征提取上的应用:</u>
 > (I). InfoGAN
-> ![img](picture/InfoGAN.png)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/InfoGAN.png)
 > (II). VAEGAN
 > - VAE中的解码器可以单独被提取出来作为生成器使用。
 >   - 但是VAE解码产生的图片往往比较模糊，因为
-> ![img](picture/VAEGAN.png)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/VAEGAN.png)
 >
 > (III). BiGAN    
 >
 > - BiGAN的提出，将encoder与decoder的训练可以分开进行
 > - 学习了生成器$E=G^{-1}$的逆，在训练过程中允许学习从潜在空间到数据的映射
-> ![img](picture/BiGAN.jpg)      
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/BiGAN.jpg)      
 >
