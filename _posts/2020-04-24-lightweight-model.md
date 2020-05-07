@@ -296,9 +296,12 @@ paper: 《GhostNet: More Features from Cheap Operations》
 > >
 > > - (b) 输入数据 ，卷积层的操作为，其中为输出的m维特征图，mn。为获得原来的n维特征，对 Y'的内在特征分别使用一系列简单线性操作来产生s维 ghost特征。
 > >
-> >   $$\begin{equation}
-> > y_{i j}=\Phi_{i, j}\left(y_{i}^{\prime}\right), \quad \forall i=1, \ldots, m, \quad j=1, \ldots, s
-> >   \end{equation}$$
+> >   $$
+> > \begin{equation}
+> >   y_{i j}=\Phi_{i, j}\left(y_{i}^{\prime}\right), \quad \forall i=1, \ldots, m, \quad j=1, \ldots, s
+> >   \end{equation}
+> >   $$
+> >   
 > >   
 > >   其中为生成y' 的 j-th ghost特征图的线性变换函数，n=m*s，Y=[$y_{11},y_{12},\dots,y_{ms}$]
 > >   
