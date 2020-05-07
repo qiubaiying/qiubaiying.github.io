@@ -36,7 +36,9 @@ tags:
 
 #### (1). *自回归模型 Autoregressive model*
 > [PixelCNN](https://github.com/jyniki/Learn2019/blob/master/research/Image-Generation.md#1-%E8%87%AA%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8Bautoregressive-model)       
-> [PixelRNN](https://github.com/jyniki/Learn2019/blob/master/research/Image-Generation.md#1-%E8%87%AA%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8Bautoregressive-model)          
+> [PixelRNN](https://github.com/jyniki/Learn2019/blob/master/research/Image-Generation.md#1-%E8%87%AA%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8Bautoregressive-model)           
+
+
 
 #### (2). *特征学习 Representation Learning*   
 > **I. 自编码器 AutoEncoder**
@@ -94,9 +96,9 @@ tags:
 ---
 
 #### (3). *对抗学习 Adversarial Learning*   
-> [生成对抗网络 GAN](https://github.com/jyniki/Learn2019/blob/master/research/Image-Generation.md#4-%E7%94%9F%E6%88%90%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9Cgan)   
+> [生成对抗网络 GAN](https://github.com/jyniki/Learn2019/blob/master/research/Image-Generation.md#4-%E7%94%9F%E6%88%90%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9Cgan)      
 > 
-> [基于GAN的衍生模型](https://github.com/jyniki/Learn2019/blob/master/research/Image-Generation.md#5-gan%E7%9A%84%E6%94%B9%E8%BF%9B%E5%92%8C%E4%BC%98%E5%8C%96)
+> [基于GAN的衍生模型](https://github.com/jyniki/Learn2019/blob/master/research/Image-Generation.md#5-gan%E7%9A%84%E6%94%B9%E8%BF%9B%E5%92%8C%E4%BC%98%E5%8C%96)      
 
 
 
