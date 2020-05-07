@@ -30,13 +30,14 @@ tags:
 
 - 可变形卷积（Deformable Convolution）
 
-  > - 传统的卷积结构可以定义为以下公式，其中$p_n$是卷积输出每一个点相对感受野上每一个点的偏移量，取**整数**。**($3\times3$卷积核为例，对于每个输出$y(p_0)$，都要从x上采样9个位置，这九个位置在中心位置$x(p_0)$向四周扩散得到的grid形状上，$\mathcal{R}=\{(-1,-1),(-1,0), \ldots,(0,1),(1,1)\}$)**
+  > - 传统的卷积结构可以定义为以下公式，其中$p_n$是卷积输出每一个点相对感受野上每一个点的偏移量，取**整数**。
   >
-  > 
+  >   > **$3\times3$卷积核为例，对于每个输出$y(p_0)$，都要从x上采样9个位置，这九个位置在中心位置$x(p_0)$向四周扩散得到的grid形状上，$\mathcal{R}=\{(-1,-1),(-1,0), \ldots,(0,1),(1,1)\}$**
   >
   > $$
 	> \mathbf{y}\left(\mathbf{p}_{0}\right)=\sum_{\mathbf{p}_{n} \in \mathcal{R}} \mathbf{w}\left(\mathbf{p}_{n}\right) \cdot \mathbf{x}\left(\mathbf{p}_{0}+\mathbf{p}_{n}\right)
   > $$
+  >
   > - 全新的可变形卷积在上述公式的基础上，给每个点增加了一个偏移量$\Delta p_{n}$，这个新的偏移量是由另一个卷积的出的，一般是**小数**。
   >   $$
   >   \mathbf{y}\left(\mathbf{p}_{0}\right)=\sum_{\mathbf{p}_{n} \in \mathcal{R}} \mathbf{w}\left(\mathbf{p}_{n}\right) \cdot \mathbf{x}\left(\mathbf{p}_{0}+\mathbf{p}_{n}+\Delta p_{n}\right)
@@ -52,7 +53,7 @@ tags:
   >
   > ---
   >
-  > 
+  >
   > $$
   > \begin{array}{l}{x(\mathrm{p})=\sum_{q} G(\mathrm{q}, \mathrm{p}) \cdot x(\mathrm{q})} \\ {=\sum_{q} \mathrm{g}\left(\mathrm{q}_{\mathrm{x}}, \mathrm{p} \mathrm{x}\right) \cdot g\left(\mathrm{q}_{\mathrm{y}}, \mathrm{p}_{\mathrm{y}}\right) \cdot x(\mathrm{q})} \\ {=\sum_{q} \max \left(0,1-\left|\mathrm{q}_{\mathrm{x}}-\mathrm{p}_{\mathrm{x}}\right|\right) \cdot \max \left(0,1-\left|\mathrm{q}_{\mathrm{y}}-\mathrm{p}_{\mathrm{y}}\right|\right) \cdot x(\mathrm{q})}\end{array}
   > $$
@@ -70,18 +71,17 @@ tags:
   > \mathbf{y}(i, j)=\sum_{\mathbf{p} \in \operatorname{bin}(i, j)} \mathbf{x}\left(\mathbf{p}_{0}+\mathbf{p}\right) / n_{i j}
   > $$
   > 
-  >
-  > ---
-  >
-  > > ROI Pooling:
+  >---
+  > 
+  >> ROI Pooling:
   > >
   > > 是池化的一种方式，其目的是将不同大小的ROI（Regions of Interest）调整到固定的尺寸
-  >
-  > ---
-  >
+  > 
+  >---
   > 
   >
-  > - 可形变的卷积可以定义为以下公式，其中$\Delta p_{n_{ij}}$是每个bin的偏移量，这个偏移量是针对整个bin的，一个bin中的每一个点该值都相同
+  > 
+  >- 可形变的卷积可以定义为以下公式，其中$\Delta p_{n_{ij}}$是每个bin的偏移量，这个偏移量是针对整个bin的，一个bin中的每一个点该值都相同
   > $$
   > \mathbf{y}(i, j)=\sum_{\mathbf{p} \in \operatorname{bin}(i, j)} \mathbf{x}\left(\mathbf{p}_{0}+\mathbf{p}+\Delta p_{n_{ij}}\right) / n_{i j}
   > $$
