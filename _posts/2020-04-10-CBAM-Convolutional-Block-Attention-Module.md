@@ -10,8 +10,6 @@ tags:
     - paper
 ---
 
-
-
 #### 1、简介
 
 - SENet方法是在feature map的通道上进行attention生成，然后与原来的feature map相乘。
