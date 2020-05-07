@@ -52,28 +52,38 @@
 > - 自编码器的主要目的是将高维矩阵$x$经过Encoder压缩到低维矩阵$z$，然后再经过Decoder将$z$还原成$\widehat{x}$，尽量使得$x=\widehat{x}$，即<u>无损</u> 。
 > - 在训练过程中，损失函数常常为像素级别的MSE操作（对比输入输出的每个像素点的差异，然后累加求和再求平均），获取损失函数值对模型参数的变化，利用梯度下降法更新参数，以达到降低损失函数值的需求，从而完成训练，得到Encoder和Decoder。  
 > - 编码器和解码器可以有多种形式，最先提出的是非线性层的线性组合，又有了深层的全连接网络，目前常用的是CNN。
->![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Autoencoder.png)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/Autoencoder.png)
 > - AutoEncoder能够重构数据，学习数据特征（这些学习到的特征具有捕捉训练数据中蕴含的变化因素的能力，即获得一个含有训练数据中变化因子的隐变量z），初始化监督学习模型。
-> 
+>
 > **VAE(Variational Autoencoders)**： 
 > - 编码-解码过程解析：        
 >   - 输入数据x，经过编码器得到特征z
->   - 将隐向量z限制为一个近似的正态分布(先验假设)，在编码器网络$q_{\phi}(z|x)$中，会输出一个关于z的均值和对角协方差矩阵。 
->   - 在解码器网络$p_{\theta}x|z)$中，同样会输出一个关于x的均值和的对角协方差矩阵，这里的x维度和输入的x维度相同       
->   - 为了真正得到z（给定x下的z和给定z下的x），将会从上述分布$q_{\phi}(z|x)$和$p_{\theta}x|z)$中采样。
+>   - 将隐向量z限制为一个近似的正态分布(先验假设)，在编码器网络$$\begin{equation}
+>     q_{\phi}(z | x)
+>     \end{equation}$$中，会输出一个关于z的均值和对角协方差矩阵。 
+>   - 在解码器网络$$p_{\theta}(x|z)$$中，同样会输出一个关于x的均值和的对角协方差矩阵，这里的x维度和输入的x维度相同       
+>   - 为了真正得到z（给定x下的z和给定z下的x），将会从上述分布$$q_{\phi}(z|x)$$和$$p_{\theta}(x|z)$$中采样。
+>   
 > - 对于给定z的x的条件概率分布p(x|z)是复杂的（使用神经网络来表示），得到了一个带有隐函数z的难解的密度函数：
-> $$p_{\theta}(x)={\int}p_{\theta}(z)p_{\theta}(x|z)dz$$ 
+>   $$
+>   p_{\theta}(x)={\int}p_{\theta}(z)p_{\theta}(x|z)dz
+>   $$
+>   
+>
 > - 该密度函数无法直接优化，需要通过推导出似然函数的下界然后对该下界进行优化
+>
 > - 推导过程： 
->   Data likelihood: $p_{\theta}(x)={\int}p_{\theta}(z)p_{\theta}(x|z)dz$ 
-> Posterior density: $p_{\theta}(z|x)=p_{\theta}(z)p_{\theta}(x|z)/p_{\theta}(x)$ 
-> 利用编码器网络$q_{\phi}(z|x)$估计出$p_{\theta}(z|x)$ 
+>   Data likelihood: $p_{\theta}(x)={\int}p_{\theta}(z)p_{\theta}(x|z)dz$      
+> Posterior density: $p_{\theta}(z|x)=p_{\theta}(z)p_{\theta}(x|z)/p_{\theta}(x)$        
+> 利用编码器网络$q_{\phi}(z|x)$估计出$p_{\theta}(z|x)$     
 > 使用对数似然：  ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/VAE_function.png)
-> - 由上推导可以看到，真正的损失函数$\mathcal{L}$由两部分构成:输入输出差异与分布差异，其中分布差异用的是KL散度。要让似然变大，需要让p(x|z)变大（最大限度地重构数据），同时让KL散度值变小（让后验概率与前验概率分布相似），在训练过程中根据损失函数，使用优化算法进行参数更新
-> 
+>   
+> - 由上推导可以看到，真正的损失函数$\mathcal{L}$由两部分构成:输入输出差异与分布差异，其中分布差异用的是KL散度。要让似然变大，需要让$$p(x|z)$$变大（最大限度地重构数据），同时让KL散度值变小（让后验概率与前验概率分布相似），在训练过程中根据损失函数，使用优化算法进行参数更新
+>
 > - **优点：** 就生成模型来说，是一种有据可循的方法，使得查询推断成为可能
+>
 > - **缺点：** 只能推断真实分布的近似值，而隐变量分布和真实分布之间的gap不可度量，因此导致VAE存在着生成图像模糊的问题。 
-![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/VAE.png)      
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/VAE.png)      
 
 
 
@@ -108,9 +118,9 @@
 > - GAN的思想提出过程:
 >   - 采用**Maximum Likelihood Estimation**训练生成器学习分布规律：首先有一个生成器$P_G$和一组参数$\theta$，以及从真实分布$P_data(x)$中采样出来的数据${x^1,x^2,...x^m}$
 >   - 希望通过不断地调整$P_G$和$\theta$，让$P_G(x;\theta)$越接近$P_{data}(x)$越好。具体做法如下：
->       - 找到一个最佳的参数组${\theta}^*$，使生成器的结果最接近$P_{data}(x)$，即对于每个真实抽样$x^i$的likelihood都最大，等价于所有真实抽样$x^i$的likelihood的乘积最大：$L=\prod_{i=1}^{m} P_{G}\left(x^{i} ; \theta\right)$
->       - 上述求解${\theta}^*$以最大化likelihood问题等价于求解${\theta}^*$以最小化KL Divergence问题（证明过程略）${\theta}^*=\arg \max _{\theta} \prod_{i=1}^{m} P_{G}\left(x^{i} ; \theta\right)=\arg \min _{\theta} KL\left(P_{d a t a} \| P_{G}\right)$
->       - **对于KL Divergence的最小化问题，引入神经网络G进行求解**。$G^{*}=\arg \min _{G} \operatorname{Div}\left(P_{G}, P_{d a t a}\right)$，该神经网络即为生成网络（能够实现对于已知分布的数据z，可以把数据z转化成一个未知分布的数据x，并希望这个未知分布$P_G(x)$与$P_{data}(x)$之间的散度距离Divergence越小越好）
+>       - 找到一个最佳的参数组$${\theta}^*$$，使生成器的结果最接近$P_{data}(x)$，即对于每个真实抽样$x^i$的likelihood都最大，等价于所有真实抽样$x^i$的likelihood的乘积最大：$L=\prod_{i=1}^{m} P_{G}\left(x^{i} ; \theta\right)$
+>       - 上述求解${\theta}^*$以最大化likelihood问题等价于求解$${\theta}^*$$以最小化KL Divergence问题（证明过程略）$${\theta}^*=\arg \max _{\theta} \prod_{i=1}^{m} P_{G}\left(x^{i} ; \theta\right)=\arg \min _{\theta} KL\left(P_{d a t a} \| P_{G}\right)$$
+>       - **对于KL Divergence的最小化问题，引入神经网络G进行求解**。$$G^{*}=\arg \min _{G} \operatorname{Div}\left(P_{G}, P_{d a t a}\right)$$，该神经网络即为生成网络（能够实现对于已知分布的数据z，可以把数据z转化成一个未知分布的数据x，并希望这个未知分布$P_G(x)$与$P_{data}(x)$之间的散度距离Divergence越小越好）
 >       - 然而理论上并不知道$P_G(x)$和$P_data(x)$是什么，因此Divergence往往无法计算，因此**新建了一个神经网络D专门用来衡量$P_G(x)$和$P_data(x)$之间的Divergence**，该神经网络即为判别网络
 >
 > - **训练过程:**
@@ -252,6 +262,8 @@
 > (IV).SNGAN
 >
 > - SNGAN(频谱归一化GAN)提出了用谱范数标准化神经网络的参数矩阵W，从而让神经网络的梯度被限制在一个范围内。
+>
+>   
 ---
 - **基于网络(Network)的改进**
 > (I). DCGAN
@@ -287,7 +299,9 @@
 > **优点：**
 > - 可以很好的处理长范围、多层次的依赖
 > - 生成图像时每一个位置的细节和远端的细节协调好
-> - 判别器还可以更准确地对全局图像结构实施复杂的几何约束                 
+> - 判别器还可以更准确地对全局图像结构实施复杂的几何约束  
+>
+> 
 ---
 
 - **基于生成器(Generator)和判别器(Discriminator)的改进**
@@ -341,7 +355,7 @@
 >
 > <u>在特征提取上的应用:</u>
 > (I). InfoGAN
-> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/InfoGAN.png)
+> ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/infogan.png)
 > (II). VAEGAN
 > - VAE中的解码器可以单独被提取出来作为生成器使用。
 >   - 但是VAE解码产生的图片往往比较模糊，因为
