@@ -288,27 +288,31 @@ paper: 《GhostNet: More Features from Cheap Operations》
 ###### **ghost module**
 
 > > - 将普通的卷积层分解为两部分，第一部分包含正常的卷积，但是卷积的数量被严格控制。
->> - 在给定第一部分的固有特征图后，应用一系列简单的**线性运算**以生成更多的特征图
+> > - 在给定第一部分的固有特征图后，应用一系列简单的**线性运算**以生成更多的特征图
 > >
->> Details:
+> > Details:
 > >
->> - (a) 输入数据 ，卷积层的操作为，其中为输出的 n维特征图，为该层的卷积核，可得该层的计算量为。通常n和c很大，使得卷积操作计算量大切大量冗余。
+> > - (a) 输入数据 ，卷积层的操作为，其中为输出的 n维特征图，为该层的卷积核，可得该层的计算量为。通常n和c很大，使得卷积操作计算量大切大量冗余。
 > >
->> - (b) 输入数据 ，卷积层的操作为，其中为输出的m维特征图，mn。为获得原来的n维特征，对 Y'的内在特征分别使用一系列简单线性操作来产生s维 ghost特征。
+> > - (b) 输入数据 ，卷积层的操作为，其中为输出的m维特征图，mn。为获得原来的n维特征，对 Y'的内在特征分别使用一系列简单线性操作来产生s维 ghost特征。
 > >
->>   ，其中为生成y' 的 j-th ghost特征图的线性变换函数，n=m*s，Y=[$y_{11},y_{12},\dots,y_{ms}$]
-> >
->>   
+> >   $$\begin{equation}
+> > y_{i j}=\Phi_{i, j}\left(y_{i}^{\prime}\right), \quad \forall i=1, \ldots, m, \quad j=1, \ldots, s
+> >   \end{equation}$$
+> >   
+> >   其中为生成y' 的 j-th ghost特征图的线性变换函数，n=m*s，Y=[$y_{11},y_{12},\dots,y_{ms}$]
+> >   
+> >   
 > >
 > > <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/lightweight-model/ghost%20module.png" alt="img" style="zoom:40%;" />
 > >
 > > Comparation:
 > >
 > > - 对比Mobilenet、Squeezenet和Shufflenet中大量使用 pointwise卷积，Ghost模块的原始卷积可以自定义卷积核数量
-> >- 目前大多数方法都是先做pointwise卷积降维，再用depthwise卷积进行特征提取，而Ghost则是先做原始卷积，再用简单的线性变换来获取更多特征
+> > - 目前大多数方法都是先做pointwise卷积降维，再用depthwise卷积进行特征提取，而Ghost则是先做原始卷积，再用简单的线性变换来获取更多特征
 > > - 目前的方法中处理每个特征图大都使用depthwise卷积或shift操作，而Ghost模块使用线性变换，可以有很大的多样性
 > > - Ghost模块同时使用identity mapping来保持原有特征
-> 
+>
 
 ###### **ghost bottleneck**
 
