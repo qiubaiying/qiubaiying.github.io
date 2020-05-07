@@ -10,7 +10,7 @@ tags:
     - Introduction
 ---
 
-##  
+
 
 在迁移学习中，由于传统深度学习的学习能力弱，往往需要海量数据和反复训练才能具有泛化能力。
 
@@ -24,8 +24,8 @@ Ref: [Few-shot Learning: A Survey](https://github.com/jyniki/Learn2019/blob/mast
   - 同时适合应用于一些难以获取受监督信息的任务，目标任务只有少量样本，通过FSL为少见的情况学习合适的模型。
 
 (2). 定义 Definition   
-- 考虑一个监督学习任务T，FSL处理的数据集$D=\left\{D^{\text { train }}, D^{\text { test }}\right\}$中包括训练集$D^{\mathrm{train}}=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{I}$和测试集$D^{\text { test }}=\left\{x^{\text { test }}\right\}$
-- 通常考虑N类K-shot分类任务，其中$D^{train}$包括N个类，每个类有K个示例，I=KN。$p(x, y)$表示输入$x$和输出$y$之间的真实联合分布。FSL通过拟合$D^{train}$学习从$x$到$y$发现最优解$o^*$，并且在$D_{test}$应用上有良好表现。为了近似$o^*$，Model
+- 考虑一个监督学习任务T，FSL处理的数据集$$D=\left\{D^{\text { train }}, D^{\text { test }}\right\}$$中包括训练集$$D^{\mathrm{train}}=\left\{\left(x^{(i)}, y^{(i)}\right)\right\}_{i=1}^{I}$$和测试集$$D^{\text { test }}=\left\{x^{\text { test }}\right\}$$
+- 通常考虑N类K-shot分类任务，其中$D^{train}$包括N个类，每个类有K个示例，I=KN。$p(x, y)$表示输入$x$和输出$y$之间的真实联合分布。FSL通过拟合$D^{train}$学习从$x$到$y$发现最优解$o^*$，并且在$D_{test}$应用上有良好表现。为了近似$$o^*$$，Model
 
   
 
@@ -74,11 +74,11 @@ Ref: [A Survey of Zero-Shot Learning: Settings, Methods, and Applications](https
 (2).定义 Definition    
   - 在zero-shot learning中，特征空间(feature space)中存在一些标记的训练实例，这些训练实例所涵盖的类称为seen classes；同时在特征空间中，还存在一些属于另一些类的未标记的测试实例，这些类称为unseen classes。特征空间通常是实数空间，通常假定每个实例都属于一个类，则每个实例都可以表示为特征空间中的一个向量(Vector)。    
     ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/ZS1.png)
-    - 用$S=\{c_{i}^{S} | i=1, \ldots, N_{s}\}$表示所有seen的类别的集合其中每个$c_{\dot{i}}^{S}$表示一个seen类别
-    - 用$\mathcal{U}=\{c_{i}^{u} | i=1, \ldots, N_{u}\}$表示所有unseen别的集合，其中每个$c_{i}^{u}$表示一个unseen类别。其中$S \cap \mathcal{U}=\varnothing$  
+    - 用$$S=\{c_{i}^{S} | i=1, \ldots, N_{s}\}$$表示所有seen的类别的集合其中每个$c_{\dot{i}}^{S}$表示一个seen类别
+    - 用$$\mathcal{U}=\{c_{i}^{u} | i=1, \ldots, N_{u}\}$$表示所有unseen别的集合，其中每个$c_{i}^{u}$表示一个unseen类别。其中$S \cap \mathcal{U}=\varnothing$  
     - 用$\mathcal{X}$表示特征空间，是一个D维的实数空间$\mathbb{R}^{D}$
-    - 用$D^{t r}=\left\{\left(\mathrm{x}_{i}^{t r}, y_{i}^{t r}\right)\in X \times \mathcal{S}\right\}_{i=1}^{N_{t r}}$表示所属类别为seenclassesd的的训练标签实例集合。每个标签实例$\left(\mathrm{x}_{i}^{t r} y_{i}^{t r}\right)$，$\mathrm{x}_{i}^{t r}$是特征空间中的实例，$y{i}^{t r}$是对应的类标签
-    - 用$X^{t e}=\left\{\mathbf{x}_{i}^{t e} \in X\right\}_{i=1}^{N_{te}}$表示测试实例集合，每个$\mathbf{x}_{i}^{t e}$是特征空间中的测试例，用$Y^{t e}=\left\{y_{i}^{t e} \in \mathcal{U}\right\}_{i=1}^{N{t e}}$表示需要被预测的$X^{t e}$对应的类标签。
+    - 用$$D^{t r}=\left\{\left(\mathrm{x}_{i}^{t r}, y_{i}^{t r}\right)\in X \times \mathcal{S}\right\}_{i=1}^{N_{t r}}$$表示所属类别为seenclassesd的的训练标签实例集合。每个标签实例$$\left(\mathrm{x}_{i}^{t r} y_{i}^{t r}\right)$$，$$\mathrm{x}_{i}^{t r}$$是特征空间中的实例，$$y{i}^{t r}$$是对应的类标签
+    - 用$$X^{t e}=\left\{\mathbf{x}_{i}^{t e} \in X\right\}_{i=1}^{N_{te}}$表示测试实例集合，每个$\mathbf{x}_{i}^{t e}$$是特征空间中的测试例，用$$Y^{t e}=\left\{y_{i}^{t e} \in \mathcal{U}\right\}_{i=1}^{N{t e}}$$表示需要被预测的$X^{t e}$对应的类标签。
     ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/ZS2.png)   
   - **Definition 1.1**：对于给定所属类别在seen classes集合$S$中的训练标签实例$D^{t r}$，zero-shot learning的目标是学习一个分类器$f^{u}(\cdot) : X \rightarrow \mathcal{U}$，能够对所述类别在unseen classes集合$\mathcal{U}$的测试实例$X^{t e}$进行分类。
     - 从Definition 1.1可以看出，zero-shot learning的一般思想是将训练实$D^{t r}$中包含的知识转移到测试实例的分类任务中。
@@ -95,9 +95,10 @@ Ref: [A Survey of Zero-Shot Learning: Settings, Methods, and Applications](https
       - 与特征空间相似，语义空间通常也是实数空间。
       - 在语义空间中，每个类都有一个相应的向量表示，被称为这个类的类原(class prototype)
       - 用$\mathcal{T}$表示语义空间，是一个M维的实数空间$\mathbb{R}^{M}$
-      - $\mathbf{t}_{i}^{s} \in \mathcal{T}$是seen类别$\mathcal{c}{i}^{s}$的类原型
-      - $\mathfrak{t}_{i}^{u} \in \mathcal{T}$是unseen类别$\mathcal{c}_{i}^{u}$的类原型
-      - $T^{s}=\left\{\mathbf{t}_{i}^{s}\right\}_{i=1}^{N_{s}}$表seen classes的类原型集，$T^{u}=\left\{t_{i}^{u}\right\}_{i=1}{N_{u}}$表示unseen classes的类原型集
+
+        $$\mathbf{t}_{i}^{s} \in \mathcal{T}$$是seen类别$\mathcal{c}{i}^{s}$的类原型
+      - $$\mathfrak{t}_{i}^{u} \in \mathcal{T}$$是unseen类别$\mathcal{c}_{i}^{u}$的类原型
+      - $T^{s}=\left\{\mathbf{t}_{i}^{s}\right\}_{i=1}^{N_{s}}$表示seen classes的类原型集，$T^{u}=\left\{t_{i}^{u}\right\}_{i=1}{N_{u}}$表示unseen classes的类原型集
       - 用$\pi(\cdot) : \mathcal{S} \cup \mathcal{U} \rightarrow\mathcal{T}$表示类原型函数，输入类标签，输出相应的类原型
   - 在zero-shot learning中，除了训练实例$D^{t r}$，类原型$T^{s}$和$T^{u}$也参与zero-shot 分类器$f^{u}(\cdot)$的学习获取。
       ![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/ZS4.png)
@@ -120,7 +121,7 @@ Ref: [A Survey of Zero-Shot Learning: Settings, Methods, and Applications](https
 
 **I. Classifier-Based Methods**       
 `focus:直接学习一个能分类unseen classes的分类器`        
-- 现有的基于分类器的方法通常采用一种one-versus-rest(一对多)的解决方案来学习多类zero-shot分类器。对于每个unseen class，都学习一个binary one-versus-rest(二元一对多)分类器$f_{i}^{u}(\cdot) : \mathbb{R}^{D} \rightarrow\{0,1\}$。 最终得到zero-shot分类器由$N_u$个binary one-versus-rest分类器组成$\left\{f_{i}^{u}(\cdot) | i=1, \ldots, N_{u}\right\}$
+- 现有的基于分类器的方法通常采用一种one-versus-rest(一对多)的解决方案来学习多类zero-shot分类器。对于每个unseen class，都学习一个binary one-versus-rest(二元一对多)分类器$f_{i}^{u}(\cdot) : \mathbb{R}^{D} \rightarrow\{0,1\}$。 最终得到zero-shot分类器由$N_u$个binary one-versus-rest分类器组成$$\left\{f_{i}^{u}(\cdot) | i=1, \ldots, N_{u}\right\}$$
   - **correspondence methods**：通过对unseen每个类binary one-versus-rest分类器与对应类原型的相对关系来构造unseen classes分类器
     - 在语义空间中，每个类只有一个对应的原型，可以将原型看作这个类的表示；同时在特征空间中，对于每个类都有对应的binary one-versus-rest分类器，也可以看作是这个类的表示。
     - Aim：学习这两种表示形式之间的对应函数（correspondence function）
@@ -130,19 +131,19 @@ Ref: [A Survey of Zero-Shot Learning: Settings, Methods, and Applications](https
       - step3：；利用得到的这些二元分类器$\left\{f_{i}^{u}(\cdot)\right\}_{i=1}^{N_{u}}$，实现对测试实例的分类       
 
   - **relationship methods**：根据类之间的关系构造unseen classes分类器     
-    - 在特征空间中，可以利用可用数据（根据不同的学习设置，可用数据是不同的）学习seen classes的binary one-versus-rest分类器$\left\{f_{i}^{s}(\cdot)\right\}_{i=1}^{N_{s}}$；同时通过计算相应原型之间的关系或通过其他方法获得seen classes和unseen classes之间的关系
+    - 在特征空间中，可以利用可用数据（根据不同的学习设置，可用数据是不同的）学习seen classes的binary one-versus-rest分类器$$\left\{f_{i}^{s}(\cdot)\right\}_{i=1}^{N_{s}}$$；同时通过计算相应原型之间的关系或通过其他方法获得seen classes和unseen classes之间的关系
     - Aim：学习seen classes这些binary one-versus-rest分类器和这些类的关系   
     - General procedure：
-      - step1：利用可用数据学习seen classes的这些二元分类器$\left\{f_{i}^{s}(\cdot)\right\}_{i=1}^{N_{s}}$    
+      - step1：利用可用数据学习seen classes的这些二元分类器$$\left\{f_{i}^{s}(\cdot)\right\}_{i=1}^{N_{s}}$$    
       - step2：通过计算相应原型之间的关系或通过其他方法获得seen classes和unseen classes之间的关系$\delta$
-      - step3：利用得到的seen classes分类器$\left\{f_{i}^{s}(\cdot)\right\}_{i=1}^{N_{s}}$和关系$\delta$，构建unseen classes的分类器$f^{u}(\cdot)=\left\{f_{i}^{u}(\cdot)\right\}_{i=1}^{N_{u}}$，实现对测试实例的分类  
+      - step3：利用得到的seen classes分类器$$\left\{f_{i}^{s}(\cdot)\right\}_{i=1}^{N_{s}}$$和关系$\delta$，构建unseen classes的分类器$$f^{u}(\cdot)=\left\{f_{i}^{u}(\cdot)\right\}_{i=1}^{N_{u}}$$，实现对测试实例的分类  
     
   - **combination methods**：通过对“用于构成类的基本元素”的分类器进行组合，为unseen classes构造分类器   
     - 在特征空间，认为有一组<u>基本元素</u>用于组成类，每个seen class和unseen class都是这些基本元素的组合。对应的映射到语义空间，每个维度代表一个基本元素，每个类原型代表对应类的这些基本元素的组合。 因此该方法主要使用于语义空间，其中类原型中的每个维度取1或0，表示类是否具有相应的元素。
-    - 由于该方法目前是基于二元属性空间（binary attribute spaces）发展的，因此基本元素在该空间中称为属性(attribute)。在binary attribute spaces中，seen classes 和unseen classes的类原型由属性组成，每个维度都是一个属性。因此对于类$c_i$对应的类原型$t_i$，使用$a_i$表示类原型由属性组成。将seen classes对应的类原型集表示为 $A^{s}=\left\{\mathbf{a}_{i}^{s}\right\}_{i=1}^{\dot{N}_{s}}$，将unseen classes对应的类原型集表示为$A^{u}=\left\{\mathbf{a}_{i}^{u}\right\}_{i=1}^{N_{u}}$                
+    - 由于该方法目前是基于二元属性空间（binary attribute spaces）发展的，因此基本元素在该空间中称为属性(attribute)。在binary attribute spaces中，seen classes 和unseen classes的类原型由属性组成，每个维度都是一个属性。因此对于类$c_i$对应的类原型$t_i$，使用$a_i$表示类原型由属性组成。将seen classes对应的类原型集表示为$$A^{s}=\left\{\mathbf{a}_{i}^{s}\right\}_{i=1}^{\dot{N}_{s}}$$，将unseen classes对应的类原型集表示为$$A^{u}=\left\{\mathbf{a}_{i}^{u}\right\}_{i=1}^{N_{u}}$$                
     - General procedure：
-      - step1：利用可用数据（根据不同的学习设置，可用数据是不同的），首先学习属性(attributes)的分类器$\left\{f_{i}^{a}(\cdot)\right\}_{i=1}^{M}$        
-      - step2：根据学习得到的属性分类器，通过一些推理模型（inference model）得到unseen classes的分类器$f^{u}(\cdot)=\left\{f_{i}^{u}(\cdot)\right\}_{i=1}^{N_{u}}$        
+      - step1：利用可用数据（根据不同的学习设置，可用数据是不同的），首先学习属性(attributes)的分类器$$\left\{f_{i}^{a}(\cdot)\right\}_{i=1}^{M}$$        
+      - step2：根据学习得到的属性分类器，通过一些推理模型（inference model）得到unseen classes的分类器$$f^{u}(\cdot)=\left\{f_{i}^{u}(\cdot)\right\}_{i=1}^{N_{u}}$$        
   
 
 **II. Instance-Based Methods**    
@@ -154,7 +155,7 @@ Ref: [A Survey of Zero-Shot Learning: Settings, Methods, and Applications](https
     - 对于每个unseen class，在特征空间没有带标签的实例，它在语义空间的类原型是该类唯一的标签实例。因此对于每个unseen class，只有一个带标签的实例可用。
     - General procedure:
       - step1：通过映射函数$\theta(\cdot)$和$\xi(\cdot)$将在特征空间$\mathcal(X)$的实例$x_i$和在语义空间$\mathcal(T)$的类原型$t_j$映射到公共空间$\mathcal{P}$
-     $X \rightarrow \mathcal{P} : \mathbf{z}_{i}=\theta\left(\mathbf{x}_{i}\right)$,$\mathcal{T} \rightarrow \mathcal{P} : \mathbf{b}_{j}=\xi\left(\mathbf{t}_{j}\right)$
+     $$X \rightarrow \mathcal{P} : \mathbf{z}_{i}=\theta\left(\mathbf{x}_{i}\right)$$,$$\mathcal{T} \rightarrow \mathcal{P} : \mathbf{b}_{j}=\xi\left(\mathbf{t}_{j}\right)$$
        - step2：由于unseen classes只有很少的标签实例，通常使用最邻近分类（1NN）或其他类似方法进行分类，1NN方法能够对只带一个标签的实例进行分类。最终得到在公共空间实现unseen classes分类的分类器。     
   
   - **instance-borrowing methods**：通过借用训练实例，为unseen classes获取带标签的实例，从而学习unseen classes分类器实现分类
