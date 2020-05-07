@@ -35,8 +35,8 @@ tags:
 ### 2. Methods 方法
 
 #### (1). *自回归模型 Autoregressive model*
-> [PixelCNN](https://github.com/jyniki/Learn2019/blob/master/research/Image-Generation.md#1-%E8%87%AA%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8Bautoregressive-model)
-> [PixelRNN](https://github.com/jyniki/Learn2019/blob/master/research/Image-Generation.md#1-%E8%87%AA%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8Bautoregressive-model)
+> [PixelCNN](https://github.com/jyniki/Learn2019/blob/master/research/Image-Generation.md#1-%E8%87%AA%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8Bautoregressive-model)       
+> [PixelRNN](https://github.com/jyniki/Learn2019/blob/master/research/Image-Generation.md#1-%E8%87%AA%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8Bautoregressive-model)          
 
 #### (2). *特征学习 Representation Learning*   
 > **I. 自编码器 AutoEncoder**
