@@ -10,8 +10,6 @@ tags:
     - Overviews
 ---
 
-
-
 `Attention Model在Image Caption、Machine Translation、Speech Recognition等领域有着不错的结果。`
 
 ### 一、简介
