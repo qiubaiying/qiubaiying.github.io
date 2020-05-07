@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Libra R-CNN: Towards Balanced Learning for Object Detection
+title:      Libra R-CNN Towards Balanced Learning for Object Detection
 subtitle:   论文阅读
 date:       2020-04-18
 author:     JY
