@@ -1,4 +1,14 @@
-##  Unsupervised Learning 无监督学习
+---
+layout:     post
+title:      Unsupervised Learning  
+subtitle:   无监督学习介绍
+date:       2020-02-07
+author:     JY
+header-img: img/post-bg.jpg
+catalog: true
+tags:
+    - Introduction
+---
 
 ### 1. Introduction 介绍
 (1). Supervised Learning VS Unsupervised Learning     

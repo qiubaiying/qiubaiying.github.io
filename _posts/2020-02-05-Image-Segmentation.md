@@ -1,4 +1,16 @@
-## Image Segmentation 图像分割
+---
+layout:     post
+title:      Image Segmentation 
+subtitle:   图像分割介绍
+date:       2020-02-05
+author:     JY
+header-img: img/post-bg.jpg
+catalog: true
+tags:
+    - Introduction
+---
+
+
 
 #### **1. Introduction 介绍**
 - 图像分割是将图像细分为多个图像子区域的过程，使得图像更加易于理解和分析。

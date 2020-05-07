@@ -1,10 +1,14 @@
 ---
-layout: post          
-title: Image Classification 图像分类               
-categories: CV          
-tags: Classification Deep-Learning
+layout:     post
+title:      Image Classification 
+subtitle:   图像分类介绍
+date:       2020-02-03
+author:     JY
+header-img: img/post-bg.jpg
+catalog: true
+tags:
+    - Introduction
 ---
-## Image Classification 图像分类
 
 #### 1.  Introduction 介绍：
   - 图像分类主要解决如何将图像按视觉特点分为不同类别的问题。其是计算机视觉中的基础任务，也是图像检测、图像分割、图像搜索等高级任务的根本。

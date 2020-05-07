@@ -1,4 +1,17 @@
- ##  Transfer Learning 迁移学习
+---
+layout:     post
+title:      Transfer Learning 
+subtitle:   迁移学习介绍
+date:       2020-02-06
+author:     JY
+header-img: img/post-bg.jpg
+catalog: true
+tags:
+    - Introduction
+---
+
+**Ref**
+
  > Book:《迁移学习简明手册》王晋东   
  > Ref:    
  [1]. [Understanding How Feature Structure Transfers in Transfer Learning](https://github.com/jyniki/Learn2019/blob/master/research/tutorials/Understanding%20How%20Feature%20Structure%20Transfers%20in%20Transfer%20Learning.pdf)   
