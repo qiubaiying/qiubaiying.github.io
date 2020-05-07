@@ -120,9 +120,9 @@
 > >
 > > 反向传播过程：
 > > > 通过Minimax博弈公式联合训练生成器和判别器两个网络          
-> > > $$
-> > > \mathop{\min}\limits_{\theta_g}\mathop{\max}\limits_{\theta_d}[E_{x{\sim}p_{data}}logD_{\theta_d}(x)+E_{{z}{\sim}p_{(z)}}log(1-D_{\theta_d}(G_{\theta_g}(z)))]
-> > > $$
+> > > $$\begin{equation}
+> > > \min _{\theta_{g}} \max _{\theta_{d}}\left[E_{x \sim p_{\text {data}}} \log D_{\theta_{d}}(x)+E_{z \sim p_{(z)}} \log \left(1-D_{\theta_{d}}\left(G_{\theta_{g}}(z)\right)\right)\right]
+> > > \end{equation}$$
 > > >
 > > > - 第一部分是训练判别器D，先从真实数据分布$p_{data}(x)$中抽样$x$,然后从先验分布中抽样z，并通过确定的生成器产生仿造数据$\tilde{\mathcal{x}}=G_{\theta_g}(z)$，然后把$x$和$\tilde{\mathcal{x}}$输入判别器中训练，使得目标函数$\tilde{\mathcal{V}}_D$最大。 
 > > >   `使用梯度上升法(Gradient ascent on discriminator):`
