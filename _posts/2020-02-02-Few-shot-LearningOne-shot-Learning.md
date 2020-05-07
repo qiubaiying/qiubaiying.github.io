@@ -1,4 +1,17 @@
-##  Few-shot/One-shot/Zero-shot Learning 少样本/零样本学习
+---
+layout:     post
+title:      Few-shot/One-shot/Zero-shot Learning 
+subtitle:   少样本/零样本学习介绍
+date:       2020-02-02
+author:     JY
+header-img: img/post-bg.jpg
+catalog: true
+tags:
+    - Introduction
+---
+
+##  
+
 在迁移学习中，由于传统深度学习的学习能力弱，往往需要海量数据和反复训练才能具有泛化能力。
 
 #### 1. Few-shot learning and One-shot learning

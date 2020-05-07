@@ -1,4 +1,17 @@
-## Attention Model 注意力模型
+---
+layout:     post
+title:      Attention Models
+subtitle:   基于注意力机制的模型总结
+date:       2020-04-10
+author:     JY
+header-img: img/post-bg.jpg
+catalog: true
+tags:
+    - Overviews
+---
+
+
+
 `Attention Model在Image Caption、Machine Translation、Speech Recognition等领域有着不错的结果。`
 
 ### 一、简介
@@ -19,7 +32,8 @@ $Attention (Query, Source) =\sum_{i=1}^{L_{x}}Similarity (Query,Key_{i} )*Value_
 
 ### 二、 分类
 
-1. ##### 注意力分类
+##### 1、注意力分类
+
 - Hard-attention： 
   - 0/1问题，哪些区域是被 attentioned，哪些区域不关注。
   - 硬注意力（强注意力）与软注意力不同点在于，首先强注意力是更加关注点，也就是图像中的每个点都有可能延伸出注意力，同时强注意力是一个随机的预测过程，更强调动态变化。
@@ -61,11 +75,13 @@ $Attention (Query, Source) =\sum_{i=1}^{L_{x}}Similarity (Query,Key_{i} )*Value_
 
 https://mp.weixin.qq.com/s/7ETHeN2xV_hEwkDxrhJyNg
 
-> TODO
+###### TODO
+
 
 
 ### 三、模型
-1、Unet-Attention
+
+##### 1、Unet-Attention
 
 ref: [Attention U-Net:Learning Where to Look for the Pancreas](reference/Attention U-Net-Learning Where to Look for the Pancreas.pdf)
 detail：<https://github.com/jyniki/reference-read/blob/master/read/Attention%20U-Net%20Learning%20Where%20to%20Look%20for%20the%20Pancreas.md>
