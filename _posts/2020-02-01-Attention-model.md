@@ -61,7 +61,7 @@ $Attention (Query, Source) =\sum_{i=1}^{L_{x}}Similarity (Query,Key_{i} )*Value_
    SeNet  
    ref: Squeeze-and-excitation networks
 
-![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/SENet1.png)
+![img](https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/SEnet1.png)
 
    	(3) 混合域   
 		Residual Attention Network   
