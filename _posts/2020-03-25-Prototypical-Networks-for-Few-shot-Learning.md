@@ -31,16 +31,27 @@ tags:
 >  Train
 
 - 原型网络通过一个embedding函数$$ f_{\phi}: \mathbb{R}^{D} \rightarrow \mathbb{R}^{M}$$，将每个类别中D维的样例数据映射到一个M维度量空间（metric space）中。
-- 类别的原型Prototype通过对训练集中所有的向量化样例数据取均值得到$$\mathbf{c}_{k}=\frac{1}{\left|S_{k}\right|} \sum_{\left(\mathbf{x}_{i}, y_{i}\right) \in S_{k}} f_{\phi}\left(\mathbf{x}_{i}\right)$$
 
-- 使用欧几里得距离作为距离度量，训练过程是通过随机梯度下降法最小化目标函数：$$J(\boldsymbol{\phi})=-\log p_{\phi}(y=k | \mathbf{x})=-log(\frac{\exp \left(-d\left(f_{\phi}(\mathbf{x}), \mathbf{c}_{k}\right)\right)}{\sum_{k^{\prime}} \exp \left(-d\left(f_{\phi}(\mathbf{x}), \mathbf{c}_{k^{\prime}}\right)\right)})$$
+- 类别的原型Prototype通过对训练集中所有的向量化样例数据取均值得到：
+  $$
+  \mathbf{c}_{k}=\frac{1}{\left|S_{k}\right|} \sum_{\left(\mathbf{x}_{i}, y_{i}\right) \in S_{k}} f_{\phi}\left(\mathbf{x}_{i}\right)
+  $$
+  
+
+- 使用欧几里得距离作为距离度量，训练过程是通过随机梯度下降法最小化目标函数：
+  $$
+  J(\boldsymbol{\phi})=-\log p_{\phi}(y=k | \mathbf{x})=-log(\frac{\exp \left(-d\left(f_{\phi}(\mathbf{x}), \mathbf{c}_{k}\right)\right)}{\sum_{k^{\prime}} \exp \left(-d\left(f_{\phi}(\mathbf{x}), \mathbf{c}_{k^{\prime}}\right)\right)})
+  $$
+  
 
 <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/picture/PN2.png" alt="img" style="zoom:50%;" />
 
 > Test
 
 - 在测试时，原型网络使用softmax作用在embedding后的测试向量点$f_\phi(x)$到$c_k$的距离
-- 分类问题转化为在embedding空间中的最近邻，即将测试样本embedding后，与三个原型进行距离计算，并经过softmax得到$$p_{\phi}(y=k | \mathbf{x})=\frac{\exp \left(-d\left(f_{\phi}(\mathbf{x}), \mathbf{c}_{k}\right)\right)}{\sum_{k^{\prime}} \exp \left(-d\left(f_{\phi}(\mathbf{x}), \mathbf{c}_{k^{\prime}}\right)\right)}$$，从而获得测试样本的类别概率
+- 分类问题转化为在embedding空间中的最近邻，即将测试样本embedding后，与三个原型进行距离计算，并经过softmax得到$$\begin{equation}
+  p_{\phi}(y=k | x )=\frac{\exp \left(-d\left(f_{\phi}( x ), c _{k}\right)\right)}{\sum_{k^{\prime}} \exp \left(-d\left(f_{\phi}( x ), c _{k^{\prime}}\right)\right)}
+  \end{equation}$$，从而获得测试样本的类别概率
 
 
 
