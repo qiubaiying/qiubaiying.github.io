@@ -10,8 +10,6 @@ tags:
     - paper
 ---
 
-### Adversarial Autoencoders
-
 #### 1. Introduction
 
 > - 提出了对抗自编码器，其本质上是自动编码器和GAN架构的合体，通过将AE隐藏层编码向量的聚合后验与任意先验分布进行匹配完成变分推论（variational inference）
