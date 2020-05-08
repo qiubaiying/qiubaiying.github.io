@@ -13,7 +13,7 @@ tags:
 ## 前言
 
 最近一个月在做公司内部OKR培训推广工作，总结一些遇到的使用误区做一个记录和分享。对自己是个总结过程，希望对你也有参考借鉴的作用。  
-![OKR1.jpg](../../../../img/OKR/img/OKR/OKR1.jpg)
+![OKR1.jpg](../../../../img/OKR/OKR1.jpg)
 
 ## 正文
 
@@ -22,11 +22,11 @@ OKR是两个单词的组合：Objective(目标)；KeyResult(关键指标)。OKR�
 
 ### OKR是新的绩效考核？
 
-答案是肯定的“不是”。KPI是绩效考核中的经典方法论之一，如果你希望简单直接的拿到一个提升绩效考核方案，那你会失望的。![KPI.jpg](../../../../img/OKR/img/OKR/KPI.jpg "KPI")
+答案是肯定的“不是”。KPI是绩效考核中的经典方法论之一，如果你希望简单直接的拿到一个提升绩效考核方案，那你会失望的。![KPI.jpg](../../../../img/OKR/KPI.jpg "KPI")
 <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@adeolueletu?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Adeolu Eletu"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Adeolu Eletu</span></a><br/><br/>
 OKR关注的是过程和结果，KPI关注的只是结果。KPI并不是不好，而是被大家误用导致，对于结果我们可以有很多方式让指标达成但是并无法达到你想要的目标，这就是KPI最为被诟病的地方。而OKR希望在你达到指标的过程中，始终有一个为之奋斗的目标在前方。让驱动力从完成指标变成达成目标。
 我比较喜欢下面的两者对比：
-![kpi-vs-okr.png](../../../../img/OKR/img/OKR/kpi_vs_okr.png "KPI VS OKR")
+![kpi-vs-okr.png](../../../../img/OKR/kpi_vs_okr.png "KPI VS OKR")
 
 ### 目标不能是随便的说说的。
 
@@ -34,7 +34,7 @@ OKR的灵魂我认为是Objective(目标)。好的目标要符合SMART原则，�
 目标可以分为承诺型目标和挑战型目标，后者更具有挑战。
 
 看下面几个目标：
-![objective-changed.png](../../../../img/OKR/img/OKR/objective_changed.png)
+![objective-changed.png](../../../../img/OKR/objective_changed.png)
 
 ### KR的信心指数越多越好吗？
 
