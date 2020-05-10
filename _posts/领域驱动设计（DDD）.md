@@ -1,3 +1,17 @@
+---
+layout:     post
+title:      领域驱动设计（DDD）
+subtitle:   领域驱动设计--轻理论、列概念、重实践
+date:       2020-05-10
+author:     jinyinzhubao
+header-img: img/business/ddd-header.jpg
+catalog: true
+tags:
+    - DDD
+    - 领域驱动设计
+    - 业务架构
+---
+
 
 > 领域驱动设计（DDD）：软件核心复杂性的应对之道！ —— Eric Evans
 
