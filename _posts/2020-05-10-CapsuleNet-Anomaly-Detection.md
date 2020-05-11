@@ -54,7 +54,7 @@ tags:
 
 #### 胶囊网络&&异常检测
 
-​	既然胶囊网络是一个类似于自编码器的结构，那当然也可以用来做异常检测，Exploring Deep Anomaly Detection Methods Based on Capsule Net（https://arxiv.org/abs/1907.06312）这篇文章就直接将胶囊网络用作手写数字的无监督异常检测。大体思路也是将某一类数字当做异常类，将其他数字加起来作为训练集进行训练。其采用两种异常判定的方式，一种是传统的重构图像间的像素误差不过他用的不是MSE而是normalized squared error (NSE)，不过也差不多；另一种是他提出了Prediction-Probability-Based Normality Score，将上文提到的胶囊网络最终的每个数字存在的概率值当做异常的判别标准：
+​	既然胶囊网络是一个类似于自编码器的结构，那当然也可以用来做异常检测，Exploring Deep Anomaly Detection Methods Based on Capsule Net（https://arxiv.org/abs/1907.06312） 这篇文章就直接将胶囊网络用作手写数字的无监督异常检测。大体思路也是将某一类数字当做异常类，将其他数字加起来作为训练集进行训练。其采用两种异常判定的方式，一种是传统的重构图像间的像素误差不过他用的不是MSE而是normalized squared error (NSE)，不过也差不多；另一种是他提出了Prediction-Probability-Based Normality Score，将上文提到的胶囊网络最终的每个数字存在的概率值当做异常的判别标准：
 
 <img src="..\img\2020-05-10-Exploring-Deep-Anomaly-Detection-Methods-Based-On-Capsule-Net\fig7.png" alt="fig" style="zoom:80%;" />
 
