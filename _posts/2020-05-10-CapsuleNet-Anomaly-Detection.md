@@ -42,7 +42,7 @@ tags:
 
 #### <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/2020-05-10-Exploring-Deep-Anomaly-Detection-Methods-Based-On-Capsule-Net/fig5.png" alt="fig" style="zoom:80%;" />
 
-​    即先通过普通卷积操作得到$6*6*256$的特征图，经过reshape操作将每8个通道合并得到PrimaryCaps。在输入前经过squashing操作，将向量的大小固定为0到1之间且方向不变，再reshape展开为1152*8D的输入向量。然后就和前面说的胶囊变换一模一样了，即输入神经元不是一个标量而是一个8维的向量！输出为DigitCaps，输出总共有10个胶囊，每个胶囊胶囊为16维的向量，代表一个0-9的数字。对每个向量取模长即可得到每个数字存在的概率值从而进行分类。
+​    即先通过普通卷积操作得到$20\times20\times256$的特征图，经过reshape操作将每8个通道合并得到PrimaryCaps。在输入前经过squashing操作，将向量的大小固定为0到1之间且方向不变，再reshape展开为1152*8D的输入向量。然后就和前面说的胶囊变换一模一样了，即输入神经元不是一个标量而是一个8维的向量！输出为DigitCaps，输出总共有10个胶囊，每个胶囊胶囊为16维的向量，代表一个0-9的数字。对每个向量取模长即可得到每个数字存在的概率值从而进行分类。
 
 ​	此外，文章还使用额外的重构损失（reconstruction loss）来促进数字 capsule 对输入数字的实例化参数进行编码。
 
