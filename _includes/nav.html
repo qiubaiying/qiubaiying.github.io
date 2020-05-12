@@ -21,18 +21,18 @@
                     </li>
                     <li>
 
-                        <a href="https://pandas.imfast.io/">盘</a>
+                        <a href="https://pandas.imfast.io/"><h4>盘</h4></a>
 
                     </li>
                     <li>
-                        <a href="https://infosec.imfast.io/">导航页</a>
+                        <a href="https://infosec.imfast.io/"><h4>导航页</h4></a>
                     </li>
                      <li>
-                        <a href="https://www.cnblogs.com/8gman/">旧博客</a>
+                        <a href="https://www.cnblogs.com/8gman/"><h4>旧博客</h4></a>
                     </li>
                     {% for page in site.pages %}{% if page.title %}
                     <li>
-                        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                        <a href="{{ page.url | prepend: site.baseurl }}"><h4>{{ page.title }}<h4></a>
                     </li>
                     {% endif %}{% endfor %}
                 </ul>
