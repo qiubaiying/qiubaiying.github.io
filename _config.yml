@@ -1,28 +1,28 @@
 # Site settings
 title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
+SEOTitle: 尾巴的博客 | 一个爱生活的程序员
 header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
-description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+email: 295573779@qq.com
+description: "记录我的生活以及前端知识"
+keyword: "BY, BY Blog, 尾巴的博客, heyongfeng, 前端, 学习"
+url: "http://tailiy.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/tailiy/tailiy.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
+sidebar-about-description: "怡然|清纯"
 sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
+weibo_username:     摇摇尾巴吧
+# zhihu_username:     qiubaiying
+github_username:    tailiy
+# facebook_username:  baiying.qiu.7
+jianshu_username:   8867ef6b0a0a
 #twitter_username:   qiubaiying
 
 
