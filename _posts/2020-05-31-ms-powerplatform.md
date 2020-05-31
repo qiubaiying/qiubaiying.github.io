@@ -64,7 +64,7 @@ Power Automate(Flow)提供了众多的模板，几乎覆盖了工作中的大多
 ## 参考链接
 
 - [Microsoft Power Platform](https://powerplatform.microsoft.com/en-us/)
-- [Lern Path Power Automate]](https://docs.microsoft.com/en-us/learn/modules/get-started-flows/)
+- [Lern Path Power Automate](https://docs.microsoft.com/en-us/learn/modules/get-started-flows/)
 - [Learn Path Power Apps](https://docs.microsoft.com/en-us/learn/modules/get-started-with-powerapps/)
 - [Learn Path Common Data Service](https://docs.microsoft.com/en-us/learn/modules/get-started-with-powerapps-common-data-service/)
 - [Power Virtual Agents](https://powervirtualagents.microsoft.com/en-us/)
