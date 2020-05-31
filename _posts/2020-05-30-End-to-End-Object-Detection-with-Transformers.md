@@ -4,7 +4,7 @@ title:      End-to-End Object Detection with Transformers (TODO)
 subtitle:   目标检测算法
 date:       2020-05-30
 author:     JY
-header-img: img/post-bg-git.jpg
+header-img: img/post-bg.jpg
 catalog: true
 tags:
     - paper
