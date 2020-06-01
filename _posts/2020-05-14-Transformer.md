@@ -164,6 +164,8 @@ Transformer的内部也是类似前述的Encoder-Dercoder的结构，但在Trans
 
 **但这其中存在一定的问题：**那就是Encoder输出的K和V都是固定的维度，而Decoder部分由于每次接受的输入不同（随着翻译的过程会越来越多）其维度会不断变化，怎么保证这二者的维度一致呢？这应该属于代码实现的问题，暂且不管。
 
+**对于这个问题目前了解到了：**Decoder部分每次只将上一个单词的query输入到decoder，但这个query同时也用到了之前翻译过的单词的信息，所以decoder部分每次接受的输入的维度也会是相同的（decoder从一个固定的token起始，后面就用上一个单词的query了）。可见https://zhuanlan.zhihu.com/p/47510705。
+
 最后便是Linear和Softmax层了：
 
 <img src="https://github.com/ZJU-CVs/zju-cvs.github.io/raw/master/img/2020-05-14-Transformer/fig29.jpg" alt="img" style="zoom:60%;" />
