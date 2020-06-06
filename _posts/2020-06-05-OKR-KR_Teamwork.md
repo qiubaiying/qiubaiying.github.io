@@ -4,7 +4,7 @@ title:      如何引导更多的人参与团队OKR
 subtitle:   OKR实战系列(三)
 date:       2020-06-05
 author:     Bruce Wong
-header-img: img/objectives1.jpeg
+header-img: img/objectives1.jpg
 catalog: true
 tags:
     - OKR
