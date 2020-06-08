@@ -65,6 +65,24 @@ Linux 系统在配置路径要使用``/``
 
 ``connectionURL="jdbc:mysql://127.0.0.1:3306/imooc_mall?characterEncoding=utf-8&amp;useSSL=false"``
 
+#### MyBatis Generator 配置去除所有注释
+```xml
+<commentGenerator>
+	<property name="suppressAllComments" value="true" />
+</commentGenerator>
+```
+
+**需要主要的是在 context 标签下的子标签是有顺序的，所以需要将 commentGenerator 放在 jdbcConnection 之前**
+
+#### MyBatis Generator 配置去除Example Mapper操作生成
+只需要在指定``table``标签下添加标签属性 ``enableXXXXExample="[true/false]``
+
+#### MyBatis Generator 配置XML文件的覆盖而非追加
+
+``<plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />``
+
 ---
 【参考阅读】
 1. [Spring Boot 日志配置(超详细)](https://blog.csdn.net/inke88/article/details/75007649)
+2. [Introduction to MyBatis Generator](http://mybatis.org/generator/index.html)
+3. [Mybatis Generator 配置详解](https://www.imooc.com/article/21444)
