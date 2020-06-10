@@ -4,7 +4,7 @@ SEOTitle: 布鲁斯的博客 | Bruce Wong Blog
 header-img: img/macbook-Head.jpg
 email: djwdz@hotmail.com
 description: "Make the impossible possible."
-keyword: "BW, Bruce Wong Blog, 布鲁斯的博客,Bruce Wang Blog,wdz, BruceTalk, Agile, OKR"
+keyword: "BW, Bruce Wong Blog, 布鲁斯的博客,王东喆的博客,Bruce Wang Blog,wdz, BruceTalk, Agile, OKR"
 url: "https://brucetalk.com"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/BruceWong001/BruceWong001.github.io.git" # you code repository
