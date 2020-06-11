@@ -1,0 +1,55 @@
+I"G	<blockquote>
+  <p>“🙉🙉🙉 ”</p>
+</blockquote>
+
+<h2 id="前言">前言</h2>
+
+<p>BY 的 Blog 就这么开通了。</p>
+
+<p>本来打算在年前完成 Blog 的搭建，不曾料想踩了很多坑。。。</p>
+
+<p><a href="#build">跳过废话，直接看技术实现 </a></p>
+
+<p>2017 年，BY Blog 总算是搭建好了。</p>
+
+<p>最开始写博客是在<a href="www.jianshu.com">简书</a>这个平台上，简书确实不错，支持markdown在线编辑。</p>
+
+<p>在一次偶然间，听到我的好基友 <strong>阳阳</strong> 想搭建个人主页，觉得作为一个程序员，是应该倒腾倒腾自己的Blog，于是乎就开始了撸起袖子干了。</p>
+
+<p id="build"></p>
+<hr />
+
+<h2 id="正文">正文</h2>
+
+<p>接下来说说搭建这个博客的技术细节。</p>
+
+<p>正好之前就有关注过 <a href="https://pages.github.com/">GitHub Pages</a> + <a href="http://jekyllrb.com/">Jekyll</a> 快速 Building Blog 的技术方案，非常轻松时尚。</p>
+
+<p>其优点非常明显：</p>
+
+<ul>
+  <li><strong>Markdown</strong> 带来的优雅写作体验</li>
+  <li>非常熟悉的 Git workflow ，<strong>Git Commit 即 Blog Post</strong></li>
+  <li>利用 GitHub Pages 的域名和免费无限空间，不用自己折腾主机
+    <ul>
+      <li>如果需要自定义域名，也只需要简单改改 DNS 加个 CNAME 就好了</li>
+    </ul>
+  </li>
+  <li>Jekyll 的自定制非常容易，基本就是个模版引擎</li>
+</ul>
+
+<hr />
+
+<p>主题我直接 Downlosd 了 <a href="https://huangxuan.me/">Hux的博客主题</a> 的进行修改，简单粗暴，不过遇到了很多坑😂，好在都填完了。。。</p>
+
+<p>本地调试环境需要 <code class="language-plaintext highlighter-rouge">gem install jekyll</code>，结果 rubygem 的源居然被墙了，<del>后来手动改成了我大淘宝的镜像源才成功</del>，淘宝的源已经<a href="https://gems.ruby-china.org/">停止维护</a>，换成了OSChina的源 <code class="language-plaintext highlighter-rouge">https://gems.ruby-china.org/</code>。</p>
+
+<h2 id="后记">后记</h2>
+
+<p>最后，感谢 Hux 提供的的 <a href="https://github.com/Huxpro/huxpro.github.io">Blog 主题</a></p>
+
+<p>如果你恰好逛到了这里，希望你也能喜欢这个博客主题，感兴趣的话可以自己动手搭建一个。</p>
+
+<p>—— BY 后记于 2017.2</p>
+
+:ET

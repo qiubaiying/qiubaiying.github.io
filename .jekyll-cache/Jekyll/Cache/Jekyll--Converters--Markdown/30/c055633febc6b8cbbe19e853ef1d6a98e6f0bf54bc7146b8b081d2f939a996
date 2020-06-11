@@ -1,0 +1,41 @@
+I"d<blockquote>
+  <p>让 Finder 显示隐藏文件和文件夹</p>
+</blockquote>
+
+<h1 id="基本">基本</h1>
+
+<h4 id="显示">显示</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
+</code></pre></div></div>
+
+<h4 id="隐藏">隐藏</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder
+</code></pre></div></div>
+
+<h1 id="进阶">进阶</h1>
+
+<p>创建终端快捷命令</p>
+
+<p>在 <strong>zsh</strong> shell 下，创建快捷命令</p>
+
+<h4 id="创建显示命令-fd-filedisplay">创建显示命令 fd （fileDisplay）</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ echo "alias fd='defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder'"&gt;&gt; ~/.zshrc &amp;&amp; source ~/.zshrc
+</code></pre></div></div>
+
+<h4 id="创建隐藏命令-fhfilehide">创建隐藏命令 fh（fileHide）</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ echo "alias fd='defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder'"&gt;&gt; ~/.zshrc &amp;&amp; source ~/.zshrc
+</code></pre></div></div>
+
+<p>使用方法</p>
+
+<p>显示隐藏文件</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ fd 隐藏文件
+
+$ fh
+</code></pre></div></div>
+
+:ET

@@ -1,0 +1,16 @@
+I")<h1 id="文本转语音">文本转语音</h1>
+
+<blockquote>
+  <p>分享一条在Mac上将一个文本转换为音频文件的终端命令，个人认为还是蛮实用的。</p>
+
+  <p>来自: <a href="http://25.io/toau/">http://25.io/toau/</a></p>
+</blockquote>
+
+<p><img src="https://ww2.sinaimg.cn/large/006tNbRwgy1fcqwv0i9ovj30du04p74y.jpg" alt="" /></p>
+
+<h4 id="指令">指令:</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat sample.txt | say -o sample.aiff
+</code></pre></div></div>
+
+:ET

@@ -1,0 +1,147 @@
+I"�*<blockquote>
+  <p>本文首次发布于 <a href="http://qiubaiying.github.io">BY Blog</a>, 作者 <a href="http://github.com/qiubaiying">@柏荧(BY)</a> ,转载请保留原文链接.</p>
+</blockquote>
+
+<h1 id="前言">前言</h1>
+
+<p>通过 IB 设置 控件 的属性非常的方便。</p>
+
+<p><img src="https://ww3.sinaimg.cn/large/006tNc79gy1ff9fpog0vrj30ho084t9m.jpg" alt="" /></p>
+
+<p>但是缺点也很明显，那就是有一些属性没有暴露在 IB 的设置面板中。这时候就要使用 <code class="language-plaintext highlighter-rouge">@IBInspectable</code> 在 IB 面板中添加这些没有的属性。</p>
+
+<p>关于在 OC 中使用 <code class="language-plaintext highlighter-rouge">IBInspectable</code> 可以看一下我的 <a href="http://qiubaiying.top/2016/12/01/%E5%BF%AB%E9%80%9F%E6%B7%BB%E5%8A%A0%E5%9C%86%E8%A7%92%E5%92%8C%E6%8F%8F%E8%BE%B9/#高级">这篇文章</a></p>
+
+<h1 id="正文">正文</h1>
+
+<p>在项目中最常遇到的情况是为 view 设置圆角、描边，以及为 文本控件 添加本地化字符串。</p>
+
+<h2 id="圆角描边">圆角、描边</h2>
+
+<p>先来看看设置圆角、描边</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">UIView</span> <span class="p">{</span>
+    <span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">cornerRadius</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">layer</span><span class="o">.</span><span class="n">cornerRadius</span>
+        <span class="p">}</span>
+        
+        <span class="k">set</span> <span class="p">{</span>
+            <span class="n">layer</span><span class="o">.</span><span class="n">cornerRadius</span> <span class="o">=</span> <span class="n">newValue</span>
+            <span class="n">layer</span><span class="o">.</span><span class="n">masksToBounds</span> <span class="o">=</span> <span class="n">newValue</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">borderWidth</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span>
+        <span class="p">}</span>
+        <span class="k">set</span> <span class="p">{</span>
+            <span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="n">newValue</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">?</span> <span class="nv">newValue</span> <span class="p">:</span> <span class="mi">0</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">borderColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span>
+        <span class="k">get</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">cgColor</span><span class="p">:</span> <span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span><span class="o">!</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="k">set</span> <span class="p">{</span>
+            <span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="n">newValue</span><span class="o">.</span><span class="n">cgColor</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>添加完成就可以在 IB 中设置 view 的这些属性了</p>
+
+<p><img src="https://ww4.sinaimg.cn/large/006tNc79gy1ff9h5afhv2j30f803ajri.jpg" alt="" /></p>
+
+<p>运行效果</p>
+
+<p><img src="https://ww3.sinaimg.cn/large/006tNc79gy1ff9h70z922j30ag061wf7.jpg" alt="" /></p>
+
+<h2 id="利用-ibdesignable-在-ib-中实时显示-ibinspectable-的样式">利用 @IBDesignable 在 IB 中实时显示 @IBInspectable 的样式</h2>
+
+<p>创建一个新的 class 继承 <code class="language-plaintext highlighter-rouge">UIView</code> ，并且使用 <code class="language-plaintext highlighter-rouge">@IBDesignable</code> 声明</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+
+<span class="kd">@IBDesignable</span> <span class="kd">class</span> <span class="kt">IBDesignableView</span><span class="p">:</span> <span class="kt">UIView</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>在 IB 中，选择 view 的 class 为 我们新建的 <code class="language-plaintext highlighter-rouge">IBDesignableView</code></p>
+
+<p><img src="https://ww1.sinaimg.cn/large/006tNc79gy1ff9hs6z5q1j30fr03vweu.jpg" alt="" /></p>
+
+<p>这样在 IB 调整属性时，这些属性的变化就会实时显示在 IB 中。</p>
+
+<h2 id="本地化字符串">本地化字符串</h2>
+
+<p>本地化字符串的解决方法和上面的添加圆角一样</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">UILabel</span> <span class="p">{</span>
+    <span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">localizedKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">set</span> <span class="p">{</span>
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">newValue</span> <span class="o">=</span> <span class="n">newValue</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="kt">NSLocalizedString</span><span class="p">(</span><span class="n">newValue</span><span class="p">,</span> <span class="nv">comment</span><span class="p">:</span> <span class="s">""</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">text</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">extension</span> <span class="kt">UIButton</span> <span class="p">{</span>
+    <span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">localizedKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">set</span> <span class="p">{</span>
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">newValue</span> <span class="o">=</span> <span class="n">newValue</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+            <span class="nf">setTitle</span><span class="p">(</span><span class="kt">NSLocalizedString</span><span class="p">(</span><span class="n">newValue</span><span class="p">,</span> <span class="nv">comment</span><span class="p">:</span> <span class="s">""</span><span class="p">),</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">titleLabel</span><span class="p">?</span><span class="o">.</span><span class="n">text</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">extension</span> <span class="kt">UITextField</span> <span class="p">{</span>
+    <span class="kd">@IBInspectable</span> <span class="k">var</span> <span class="nv">localizedKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">set</span> <span class="p">{</span>
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">newValue</span> <span class="o">=</span> <span class="n">newValue</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+            <span class="n">placeholder</span> <span class="o">=</span> <span class="kt">NSLocalizedString</span><span class="p">(</span><span class="n">newValue</span><span class="p">,</span> <span class="nv">comment</span><span class="p">:</span> <span class="s">""</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">placeholder</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>这样，在 IB 中我们就可以利用对应类型的 Localized Key 来直接设置本地化字符串了：</p>
+
+<p><img src="https://ww1.sinaimg.cn/large/006tNc79gy1ff9h94um01j30aj01vjre.jpg" alt="" /></p>
+
+<h1 id="结语">结语</h1>
+
+<p><code class="language-plaintext highlighter-rouge">IBInspectable</code> 可以使用这些的类型</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Int</code></li>
+  <li><code class="language-plaintext highlighter-rouge">CGFloat</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Double</code></li>
+  <li><code class="language-plaintext highlighter-rouge">String</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Bool</code></li>
+  <li><code class="language-plaintext highlighter-rouge">CGPoint</code></li>
+  <li><code class="language-plaintext highlighter-rouge">CGSize</code></li>
+  <li><code class="language-plaintext highlighter-rouge">CGRect</code></li>
+  <li><code class="language-plaintext highlighter-rouge">UIColor</code></li>
+  <li><code class="language-plaintext highlighter-rouge">UIImage</code></li>
+</ul>
+
+<p>合理的使用<code class="language-plaintext highlighter-rouge">@IBInspectable</code> 能减少很多的模板代码，提高我们的开发效率。</p>
+
+<blockquote>
+  <p>参考</p>
+
+  <ul>
+    <li><a href="https://onevcat.com/2017/04/storyboard-argue/">《再看关于 Storyboard 的一些争论》</a></li>
+    <li><a href="https://medium.com/@Anantha1992/ibdesignable-and-ibinspectable-in-swift-3-702d7dd00ca">《@IBDesignable and @IBInspectable in Swift 3》</a></li>
+  </ul>
+</blockquote>
+:ET

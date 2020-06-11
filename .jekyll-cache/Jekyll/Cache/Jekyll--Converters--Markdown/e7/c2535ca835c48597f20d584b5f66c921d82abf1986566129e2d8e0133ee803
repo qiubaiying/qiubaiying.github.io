@@ -1,0 +1,228 @@
+I"�+<h1 id="前言">前言</h1>
+
+<blockquote>
+  <p>BUG,简单来说就是程序运行结果与预期的不同，下面来说说Xcode中的DEBUG方法</p>
+
+  <p><a href="http://www.cnblogs.com/daiweilai/p/4421340.html#quanjuduandian">参考博文</a></p>
+</blockquote>
+
+<h1 id="断点调试">断点调试</h1>
+
+<ul>
+  <li>普通断点</li>
+  <li>全局断点</li>
+  <li>条件断点</li>
+</ul>
+
+<h4 id="1普通断点">1.普通断点</h4>
+<p>看图</p>
+
+<p><img src="http://ww4.sinaimg.cn/large/65e4f1e6gw1f8rti38wlxj20ke0d3n0h.jpg" alt="" /></p>
+
+<p>当程序运行到断点处时会停下，然后进行单步调试
+<img src="http://images.cnitblog.com/blog2015/680363/201504/131002381048966.png" alt="" /></p>
+
+<h4 id="2全局断点">2.全局断点</h4>
+
+<p>当程序运行出现崩溃时，就会自动断点到出现crash的代码行</p>
+
+<p><img src="http://images.cnitblog.com/blog2015/680363/201504/130933043392329.png" alt="" /></p>
+
+<h4 id="3条件断点">3.条件断点</h4>
+
+<p>我们如果在一个循环里面使用了断点，如果这个循环执行了100万次，那你的断点要执行那么多次，你不觉得蛋蛋都凉了的忧伤么？所以我们这么做：</p>
+
+<p>编辑断点</p>
+
+<p><img src="http://ww1.sinaimg.cn/large/65e4f1e6gw1f8rw64yys0j207i03laah.jpg" alt="" /></p>
+
+<p>添加条件Condition</p>
+
+<p><img src="http://ww2.sinaimg.cn/large/65e4f1e6gw1f8rw52q1tjj20ct04lmxo.jpg" alt="" /></p>
+
+<p><img src="http://ww3.sinaimg.cn/large/65e4f1e6gw1f8rw44p4ykj20ln0g10vg.jpg" alt="" /></p>
+
+<p>还可以Action中在条件断点触发时执行事件</p>
+
+<p><img src="http://ww3.sinaimg.cn/large/65e4f1e6gw1f8rwq16872j20cv07amyg.jpg" alt="" /></p>
+
+<p>如：输出信息</p>
+
+<p><img src="http://ww2.sinaimg.cn/large/65e4f1e6gw1f8rwms50t3j20dj07bjso.jpg" alt="" /></p>
+
+<h4 id="4方法断点">4.方法断点</h4>
+
+<h1 id="打印调试nslog">打印调试（NSLog）</h1>
+
+<p>尽管ARC已经让内存管理变得简单、省时和高效，但是在object的life-cycles中跟踪一些重要事件依然十分重要。毕竟ARC并没有完全排除内存泄露的可能性，或者试图访问一个被release的对象。</p>
+
+<ul>
+  <li>NSLog</li>
+</ul>
+
+<p>强化NSLog</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//A better version of NSLog
+#define NSLog(format, ...) do { \
+fprintf(stderr, "&lt;%s : %d&gt; %s\n", \
+[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], \
+__LINE__, __func__); \
+(NSLog)((format), ##__VA_ARGS__); \
+fprintf(stderr, "-------\n"); \
+} while (0)
+</code></pre></div></div>
+<p>控制台输出</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ViewController.m : 32&gt; -[ViewController viewDidLoad]
+2016-10-14 17:33:31.022 DEUBG[12852:1238167] Hello World！
+-------
+</code></pre></div></div>
+
+<p>利用NSString输出多种类型</p>
+
+<p><img src="http://ww4.sinaimg.cn/large/65e4f1e6gw1f8rxvn6fqlj20nc05cgoh.jpg" alt="" /></p>
+
+<ul>
+  <li>开启僵尸对象</li>
+</ul>
+
+<p>Xcode可以把那些已经release掉得对象，变成“僵尸”，当我们访问一个Zombie对象时，Xcode可以告诉我们正在访问的对象是一个不应该存在的对象了。因为Xcode知道这个对象是什么，所以可以让我们知道这个对象在哪里，以及这是什么时候发生的。
+所以Zombies是你的好基友！他可以让你输出的信息更具体！</p>
+
+<p>具体这样做：(僵尸只能用在模拟器和OC语言)</p>
+
+<p><img src="http://images.cnitblog.com/blog2015/680363/201504/130941016986159.png" alt="" /></p>
+
+<h1 id="控制台lldb-命令">控制台(lldb 命令)</h1>
+
+<p>LLDB 是一个有着 REPL 的特性和 C++ ,Python 插件的开源调试器。LLDB 绑定在 Xcode 内部，存在于主窗口底部的控制台中。调试器允许你在程序运行的特定时暂停它，你可以查看变量的值，执行自定的指令，并且按照你所认为合适的步骤来操作程序的进展。(这里有一个关于调试器如何工作的总体的解释。)</p>
+
+<p>你以前有可能已经使用过调试器，即使只是在 Xcode 的界面上加一些断点。但是通过一些小的技巧，你就可以做一些非常酷的事情。GDB to LLDB 参考是一个非常好的调试器可用命令的总览。你也可以安装 Chisel，它是一个开源的 LLDB 插件合辑，这会使调试变得更加有趣。</p>
+
+<p>参考：</p>
+
+<p><a href="http://objccn.io/issue-19-2/">与调试器共舞 - LLDB 的华尔兹</a></p>
+
+<p><a href="http://www.starfelix.com/blog/2014/03/17/lldbdiao-shi-ming-ling-chu-tan/">LLDB调试命令初探</a></p>
+
+<p><a href="https://developer.apple.com/library/content/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/Introduction.html">About LLDB and Xcode</a></p>
+
+<p><a href="http://lldb.llvm.org/tutorial.html">The LLDB Debugger</a></p>
+
+<h4 id="基础">基础</h4>
+<h6 id="help"><em>help</em></h6>
+<p>在控制台输入<code class="language-plaintext highlighter-rouge">help</code>，显示控制台支持的lldb命令</p>
+
+<h6 id="print"><em>print</em></h6>
+<p>打印值</p>
+
+<p>缩写<code class="language-plaintext highlighter-rouge">p</code></p>
+
+<p>print是 <code class="language-plaintext highlighter-rouge">expression --</code> 的缩写</p>
+
+<p><img src="http://ww4.sinaimg.cn/large/006y8lVagw1f8vakv88vuj30b204s74x.jpg" alt="" /></p>
+
+<p>printk可以指定格式打印
+如
+<code class="language-plaintext highlighter-rouge">默认 p</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">十六进制 p/x</code>、</p>
+
+<p><code class="language-plaintext highlighter-rouge">二进制 p/t</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(lldb) p 16
+16
+
+(lldb) p/x 16
+0x10
+
+(lldb) p/t 16
+0b00000000000000000000000000010000
+
+(lldb) p/t (char)16
+0b00010000
+
+</code></pre></div></div>
+<p>你也可以使用 p/c 打印字符，或者 p/s 打印以空终止的字符串  p/d打印ACRSII(译者注：以 ‘\0’ 结尾的字符串)。</p>
+
+<p>完整清单<a href="https://sourceware.org/gdb/onlinedocs/gdb/Output-Formats.html">点击查看</a></p>
+
+<h6 id="po"><em>po</em></h6>
+
+<p>打印对象，是 <code class="language-plaintext highlighter-rouge">e -o --</code>的缩写</p>
+
+<h6 id="expression"><em>expression</em></h6>
+
+<h4 id="流程控制">流程控制</h4>
+
+<p>当你通过 Xcode 的源码编辑器的侧边槽 (或者通过下面的方法) 插入一个断点，程序到达断点时会就会停止运行。</p>
+
+<p>调试条上会出现四个你可以用来控制程序的执行流程的按钮。</p>
+
+<p><img src="https://objccn.io/images/issues/issue-19/Image_2014-11-22_at_10.37.45_AM.png" alt="" /></p>
+
+<p>从左到右，四个按钮分别是：continue，step over，step into，step out。</p>
+
+<p>第一个，continue 按钮，会取消程序的暂停，允许程序正常执行 (要么一直执行下去，要么到达下一个断点)。在 LLDB 中，你可以使用 process continue 命令来达到同样的效果，它的别名为 continue，或者也可以缩写为 c。</p>
+
+<p>第二个，step over 按钮，会以黑盒的方式执行一行代码。如果所在这行代码是一个函数调用，那么就不会跳进这个函数，而是会执行这个函数，然后继续。LLDB 则可以使用 thread step-over，next，或者 n 命令。</p>
+
+<p>如果你确实想跳进一个函数调用来调试或者检查程序的执行情况，那就用第三个按钮，step in，或者在LLDB中使用 thread step in，step，或者 s 命令。注意，当前行不是函数调用时，next 和 step 效果是一样的。</p>
+
+<p>大多数人知道 c，n 和 s，但是其实还有第四个按钮，step out。如果你曾经不小心跳进一个函数，但实际上你想跳过它，常见的反应是重复的运行 n 直到函数返回。其实这种情况，step out 按钮是你的救世主。它会继续执行到下一个返回语句 (直到一个堆栈帧结束) 然后再次停止。</p>
+
+<h6 id="frame-info">frame info</h6>
+
+<p>会告诉你当前的行数和源码文件</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(lldb) frame info
+frame #0: 0x000000010a53bcd4 DebuggerDance`main + 68 at main.m:17
+
+</code></pre></div></div>
+
+<h6 id="thread-return">Thread Return</h6>
+<p>调试时，还有一个很棒的函数可以用来控制程序流程：thread return 。它有一个可选参数，在执行时它会把可选参数加载进返回寄存器里，然后立刻执行返回命令，跳出当前栈帧。这意味这函数剩余的部分不会被执行。这会给 ARC 的引用计数造成一些问题，或者会使函数内的清理部分失效。但是在函数的开头执行这个命令，是个非常好的隔离这个函数，伪造返回值的方式 。</p>
+
+<p><code class="language-plaintext highlighter-rouge">(lldb) thread return NO</code></p>
+
+<h4 id="不用断点调试">不用断点调试</h4>
+
+<p>在程序运行时，点击暂停按钮,即可进入调试状态，能对全局变量做操作</p>
+
+<p><img src="http://ww4.sinaimg.cn/large/006y8lVagw1f8vd4vy66ej307300xjr8.jpg" alt="" /></p>
+
+<h1 id="工具调试instruments">工具调试(instruments)</h1>
+<p>instruments Xcode自带许多工具供大家使用，打开方式如下图：</p>
+
+<p><img src="http://ww1.sinaimg.cn/large/006y8lVagw1f8ve05g45cj30qd0f276o.jpg" alt="" /></p>
+
+<p><strong>leaks</strong>内存泄漏检查工具</p>
+
+<p><img src="http://ww4.sinaimg.cn/large/006y8lVagw1f8ve5wnnr6j30li0c1wgd.jpg" alt="" /></p>
+
+<p>运行后查看</p>
+
+<p><img src="http://ww4.sinaimg.cn/large/006y8lVagw1f8vebiu6r5j30se0kdqcr.jpg" alt="" /></p>
+
+<h1 id="视图调试">视图调试</h1>
+
+<p>启用视图调试:运行app过程中，按下底部的Debug View Hierarchy 按钮，或者从菜单中选择Debug &gt; View Debugging &gt; Capture View Hierarchy 来启动视图调试。</p>
+
+<p><img src="http://ww1.sinaimg.cn/large/006y8lVagw1f8vejy3rmgj30by01kmx8.jpg" alt="" /></p>
+
+<p>启动视图调试后，Xcode会对应用程序的视图层次拍一个快照并展示三维原型视图来探究用户界面的层级。该三维视图除了展示app的视图层次外，还展示每个视图的位置、顺序和视图尺寸，以及视图间的交互方式。</p>
+
+<h1 id="模拟器调试">模拟器调试</h1>
+
+<p>编译并运行应用程序，选中模拟器，从 Debug菜单中选择Color Blended Layers选项。</p>
+
+<p><img src="http://ww2.sinaimg.cn/large/006y8lVagw1f8vezdqlh1j3092075dgz.jpg" alt="" /></p>
+
+<p>然后会看到app的用户界面被红色和绿色覆盖，显示了哪些图层可以被叠加覆盖，以及哪些图层是透明的。混合层属于计算密集型视图，所以推荐尽可能地使用不透明的图层。</p>
+
+<p><img src="http://ww3.sinaimg.cn/large/006y8lVagw1f8vf07u522j30ag0j1q36.jpg" alt="" /></p>
+
+<h1 id="结语">结语</h1>
+<p>目前所知道的调试方法大概就是上面这几种了，若有什么有趣的方法，请和我分享哈！</p>
+
+:ET

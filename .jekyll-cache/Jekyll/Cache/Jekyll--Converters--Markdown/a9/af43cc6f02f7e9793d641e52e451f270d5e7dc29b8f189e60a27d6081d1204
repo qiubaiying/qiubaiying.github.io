@@ -1,0 +1,63 @@
+I"<h2 id="前言">前言</h2>
+
+<p>平常我们都会用 Instrument 的 Leaks / Allocations 或其他一些开源库进行内存泄露的排查，但它们都存在各种问题和不便，</p>
+
+<p>在这个 ARC 时代更常见的内存泄露是循环引用导致的 Abandoned memory，Leaks 工具查不出这类内存泄露，应用有限。</p>
+
+<p>今天介绍一种简单直接的检测内测泄漏的方法：<strong>Debug Memory Graph</strong></p>
+
+<p>就是这货：</p>
+
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fhxct12udnj311x0s3grw.jpg" alt="" /></p>
+
+<h2 id="正文">正文</h2>
+
+<p>我最近的项目中，退出登录后（跳转到登录页），发现首页控制器没有被销毁，依旧能接收通知。</p>
+
+<p>退出登录代码：</p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">UIStoryboard</span> <span class="o">*</span><span class="n">storyboard</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIStoryboard</span> <span class="nf">storyboardWithName</span><span class="p">:</span><span class="s">@"Login"</span> <span class="nf">bundle</span><span class="p">:[</span><span class="n">NSBundle</span> <span class="nf">mainBundle</span><span class="p">]];</span>
+<span class="n">AppDelegate</span> <span class="o">*</span><span class="n">appDelegate</span> <span class="o">=</span> <span class="p">(</span><span class="n">AppDelegate</span> <span class="o">*</span><span class="p">)[</span><span class="n">UIApplication</span> <span class="nf">sharedApplication</span><span class="p">].</span><span class="n">delegate</span><span class="p">;</span>
+<span class="n">appDelegate</span><span class="p">.</span><span class="n">window</span><span class="p">.</span><span class="n">rootViewController</span> <span class="o">=</span> <span class="p">[</span><span class="n">storyboard</span> <span class="nf">instantiateViewControllerWithIdentifier</span><span class="p">:</span><span class="s">@"LoginVC"</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p>很明显发生了循环引用导致的内测泄漏。</p>
+
+<p>接下来就使用 <strong>Debug Memory Graph</strong> 来查看内测泄漏了。</p>
+
+<h3 id="运行程序">运行程序</h3>
+
+<p>首先启动 Xcode 运行程序。</p>
+
+<h3 id="debug-memory-graph">Debug Memory Graph</h3>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fhxend1a8aj315y0s3gw5.jpg" alt="" /></p>
+
+<p>点击 Debug Memory Graph 按钮后，可以看到红框内的是当前内存中存在的对象。其中，绿色的就是视图控制器。</p>
+
+<p>这样，我们随时都可以查看内测中存在的对象，换句话说，就是可以通过观察 Memory Graph 查看内测泄漏。</p>
+
+<h3 id="调试你的app">调试你的App</h3>
+
+<p>继续运行你的程序</p>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fhxeuh1np5j30v90kvn03.jpg" alt="" /></p>
+
+<p>然后对App进行调试、push、pop 操作，再次点击 Debug Memory Graph 按钮。那些该释放而依旧在内测中的 <code class="language-plaintext highlighter-rouge">控制器</code> 或 <code class="language-plaintext highlighter-rouge">对象</code> 就能一一找出来了。</p>
+
+<p>接下来，只要进入对应的控制器找到内测泄漏的代码就OK了，一般是Block里引用了 <code class="language-plaintext highlighter-rouge">self</code>，改为 <code class="language-plaintext highlighter-rouge">weakSelf</code> 就解决了。</p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define WS(weakSelf) __weak __typeof(&amp;*self)weakSelf = self;
+</span>
+<span class="n">WS</span><span class="p">(</span><span class="n">weakSelf</span><span class="p">)</span>
+<span class="n">sView</span><span class="p">.</span><span class="n">btnBlock</span> <span class="o">=</span> <span class="o">^</span><span class="p">(</span><span class="n">NSInteger</span> <span class="n">idx</span><span class="p">){</span>
+    <span class="p">[</span><span class="n">weakSelf</span><span class="p">.</span><span class="n">tableView</span> <span class="nf">reloadSections</span><span class="p">:[</span><span class="n">NSIndexSet</span> <span class="nf">indexSetWithIndex</span><span class="p">:</span><span class="n">idx</span><span class="p">]</span> <span class="nf">withRowAnimation</span><span class="p">:</span><span class="n">UITableViewRowAnimationAutomatic</span><span class="p">];</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="结语">结语</h2>
+
+<p>就这样，利用 Debug Memory Graph，可以简单快速的检测内测泄漏。</p>
+
+<p>一般由两个对象循环引用的内测泄漏是比较好发现的，如果是由三个及其三个以上的对象形成的大的循环引用，就会比较难排查了。</p>
+:ET

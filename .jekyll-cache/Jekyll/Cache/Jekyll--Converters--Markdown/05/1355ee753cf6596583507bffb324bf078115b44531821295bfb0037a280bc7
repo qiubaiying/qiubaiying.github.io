@@ -1,0 +1,77 @@
+I"�<h2 id="dispatchqueue">DispatchQueue</h2>
+
+<p>Swift 中，对 GCD 语法进行了彻底改写。引入了 <code class="language-plaintext highlighter-rouge">DispatchQueue</code> 这个类。</p>
+
+<p>先来看看在一个异步队列中读取数据， 然后再返回主线程更新 UI， 这种操作在新的 Swift 语法中是这样的：</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">global</span><span class="p">()</span><span class="o">.</span><span class="n">async</span> <span class="p">{</span>
+
+    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">async</span> <span class="p">{</span>
+
+		<span class="c1">// 更新UI操作</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">DispatchQueue.global().async</code> 相当于使用全局队列进行异步操作。然后在调用 <code class="language-plaintext highlighter-rouge">DispatchQueue.main.async</code> 使用主线程更新相应的 UI 内容。</p>
+
+<h2 id="优先级">优先级</h2>
+
+<p>新的 GCD 引入了 QoS (Quality of Service) 的概念。</p>
+
+<p>先看看下面的代码：</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">global</span><span class="p">(</span><span class="nv">qos</span><span class="p">:</span> <span class="o">.</span><span class="n">userInitiated</span><span class="p">)</span><span class="o">.</span><span class="n">async</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>QoS 对应的就是 <code class="language-plaintext highlighter-rouge">Global Queue</code> 中的优先级。 其优先级由最低的 <code class="language-plaintext highlighter-rouge">background</code> 到最高的 <code class="language-plaintext highlighter-rouge">userInteractive</code> 共五个，还有一个未定义的 <code class="language-plaintext highlighter-rouge">unspecified</code>。</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">background</span><span class="p">:</span> <span class="kt">DispatchQoS</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">utility</span><span class="p">:</span> <span class="kt">DispatchQoS</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">let</span> <span class="p">`</span><span class="nv">default</span><span class="p">`:</span> <span class="kt">DispatchQoS</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">userInitiated</span><span class="p">:</span> <span class="kt">DispatchQoS</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">userInteractive</span><span class="p">:</span> <span class="kt">DispatchQoS</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">unspecified</span><span class="p">:</span> <span class="kt">DispatchQoS</span>
+</code></pre></div></div>
+
+<h2 id="自定义-queue">自定义 Queue</h2>
+
+<p>除了直接使用 <code class="language-plaintext highlighter-rouge">DispatchQueue.global().async</code> 这种封装好的代码外，还可以通过<code class="language-plaintext highlighter-rouge">DispatchWorkItem</code> 自定义队列的优先级，特性：</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">queue</span> <span class="o">=</span> <span class="kt">DispatchQueue</span><span class="p">(</span><span class="nv">label</span><span class="p">:</span> <span class="s">"swift_queue"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">dispatchworkItem</span> <span class="o">=</span> <span class="kt">DispatchWorkItem</span><span class="p">(</span><span class="nv">qos</span><span class="p">:</span> <span class="o">.</span><span class="n">userInitiated</span><span class="p">,</span> <span class="nv">flags</span><span class="p">:</span> <span class="o">.</span><span class="n">inheritQoS</span><span class="p">)</span> <span class="p">{</span>
+    
+<span class="p">}</span>
+<span class="n">queue</span><span class="o">.</span><span class="nf">async</span><span class="p">(</span><span class="nv">execute</span><span class="p">:</span> <span class="n">dispatchworkItem</span><span class="p">)</span>
+
+</code></pre></div></div>
+<h2 id="gcd定时器">GCD定时器</h2>
+
+<p>Swift 中 <code class="language-plaintext highlighter-rouge">dispatch_time</code>的用法改成了：</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">delay</span> <span class="o">=</span> <span class="kt">DispatchTime</span><span class="o">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">+</span> <span class="o">.</span><span class="nf">seconds</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">asyncAfter</span><span class="p">(</span><span class="nv">deadline</span><span class="p">:</span> <span class="n">delay</span><span class="p">)</span> <span class="p">{</span> 
+    
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>相较与OC来说更易读了：</p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">let</span> <span class="n">dispatch_time</span> <span class="o">=</span> <span class="n">dispatch_time</span><span class="p">(</span><span class="n">DISPATCH_TIME_NOW</span><span class="p">,</span> <span class="n">Int64</span><span class="p">(</span><span class="mi">60</span> <span class="o">*</span> <span class="n">NSEC_PER_SEC</span><span class="p">))</span>
+</code></pre></div></div>
+
+<ul>
+  <li>参考 <a href="https://www.swiftcafe.io/2016/10/16/swift-gcd/">GCD 在 Swift 3 中的玩儿法</a></li>
+</ul>
+:ET

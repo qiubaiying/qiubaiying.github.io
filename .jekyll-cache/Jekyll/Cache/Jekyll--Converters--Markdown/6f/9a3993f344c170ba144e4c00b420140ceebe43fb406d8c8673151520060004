@@ -1,0 +1,143 @@
+I"�6<h3 id="private-权限扩大">private 权限扩大</h3>
+
+<p>在 Swift 4 中，<code class="language-plaintext highlighter-rouge">extension</code> 可以读取 <code class="language-plaintext highlighter-rouge">private</code> 变量了。</p>
+
+<p>Swift 3 中，如果将主体函数的变量定义为 <code class="language-plaintext highlighter-rouge">private</code>，则其 <code class="language-plaintext highlighter-rouge">extension</code> 无法读取此变量，必须将其改为 <code class="language-plaintext highlighter-rouge">filePrivate</code> 才可以。</p>
+
+<h3 id="单向区间">单向区间</h3>
+
+<p>单向区间是一个新的类型，主要分两种：确定上限和确定下限的区间。直接用字面量定义大概可以写成 <code class="language-plaintext highlighter-rouge">…6</code>和 <code class="language-plaintext highlighter-rouge">2…</code></p>
+
+<p>例如</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">intArr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="k">let</span> <span class="nv">arr1</span> <span class="o">=</span> <span class="n">intArr</span><span class="p">[</span><span class="o">...</span><span class="mi">3</span><span class="p">]</span> 	<span class="c1">// [0, 1, 2, 3]</span>
+<span class="k">let</span> <span class="nv">arr2</span> <span class="o">=</span> <span class="n">intArr</span><span class="p">[</span><span class="mi">3</span><span class="o">...</span><span class="p">]</span> 	<span class="c1">// [3, 4]</span>
+</code></pre></div></div>
+
+<h3 id="字符串改动">字符串改动</h3>
+
+<h4 id="string-操作简化了">String 操作简化了</h4>
+
+<p><code class="language-plaintext highlighter-rouge">String</code> 许多要通过 <code class="language-plaintext highlighter-rouge">.characters</code> 进行的操作，可以直接用 String 进行操作了。</p>
+
+<p>例如：</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">greeting</span> <span class="o">=</span> <span class="s">"Hello, 😜!"</span>
+<span class="c1">// No need to drill down to .characters</span>
+<span class="k">let</span> <span class="nv">n</span> <span class="o">=</span> <span class="n">greeting</span><span class="o">.</span><span class="n">count</span>
+<span class="k">let</span> <span class="nv">endOfSentence</span> <span class="o">=</span> <span class="n">greeting</span><span class="o">.</span><span class="nf">index</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="s">"!"</span><span class="p">)</span><span class="o">!</span>
+
+</code></pre></div></div>
+
+<h4 id="新增-substring-类型">新增 Substring 类型</h4>
+
+<p>swift 4 为字符串片段新增了一个叫 <code class="language-plaintext highlighter-rouge">Substring</code> 的类型。</p>
+
+<p>当你创建一个字符串的片段时，会产生一个 <code class="language-plaintext highlighter-rouge">Substring</code> 实例。<code class="language-plaintext highlighter-rouge">Substring</code> 与 <code class="language-plaintext highlighter-rouge">String</code> 用法相同， 因为子串和原字符串共享内存，所以对子串的操作快速而且高效。</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">greeting</span> <span class="o">=</span> <span class="s">"Hi there! It's nice to meet you! 👋"</span>
+<span class="k">let</span> <span class="nv">endOfSentence</span> <span class="o">=</span> <span class="n">greeting</span><span class="o">.</span><span class="nf">index</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="s">"!"</span><span class="p">)</span><span class="o">!</span> 
+
+<span class="c1">// 产生 Substring 实例</span>
+<span class="k">let</span> <span class="nv">firstSentence</span> <span class="o">=</span> <span class="n">greeting</span><span class="p">[</span><span class="o">...</span><span class="n">endOfSentence</span><span class="p">]</span>
+<span class="c1">// firstSentence == "Hi there!"</span>
+
+<span class="c1">// `Substring` 与 `String` 用法相同</span>
+<span class="k">let</span> <span class="nv">shoutingSentence</span> <span class="o">=</span> <span class="n">firstSentence</span><span class="o">.</span><span class="nf">uppercased</span><span class="p">()</span>
+<span class="c1">// shoutingSentence == "HI THERE!" </span>
+</code></pre></div></div>
+
+<p>但是要注意一个 <code class="language-plaintext highlighter-rouge">Substring</code> 保留从其生成的完整的 <code class="language-plaintext highlighter-rouge">String</code>值。 当您传递一个看似很小的 <code class="language-plaintext highlighter-rouge">Substring</code> 时，这可能导致意外的高内存开销。所以使用 <code class="language-plaintext highlighter-rouge">Substring</code>时，最好转化为 <code class="language-plaintext highlighter-rouge">String</code>.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">newString</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">substring</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="换行可以不用-n了">换行可以不用 <code class="language-plaintext highlighter-rouge">\n</code>了！</h4>
+
+<p>Swift 3，字符串换行要插入 <code class="language-plaintext highlighter-rouge">\n</code>。
+例如：</p>
+
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fjdam0wvhhj305d0283yf.jpg" alt="" /></p>
+
+<p>在 Swift 4 可以这样操作:</p>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fjdas2yri4j303q0260sm.jpg" alt="" /></p>
+
+<p>用两个 <code class="language-plaintext highlighter-rouge">“”“</code> 包裹起来的字符串会自动添加 <code class="language-plaintext highlighter-rouge">\n</code> 换行，更加直观了。注意：换行与缩进参照的是第二个 <code class="language-plaintext highlighter-rouge">“”“</code> 号的位置。</p>
+
+<p>嗯，我觉得OK！</p>
+
+<h4 id="支持-unicode-9">支持 Unicode 9</h4>
+
+<p>Swift 4 支持 Unicode 9，<a href="https://oleb.net/blog/2016/12/emoji-4-0/">为现代表情符号修正了一些问题</a>。</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">family1</span> <span class="o">=</span> <span class="s">"👨‍👩‍👧‍👦"</span>
+<span class="k">let</span> <span class="nv">family2</span> <span class="o">=</span> <span class="s">"👨</span><span class="se">\u{200D}</span><span class="s">👩</span><span class="se">\u{200D}</span><span class="s">👧</span><span class="se">\u{200D}</span><span class="s">👦"</span>
+<span class="n">family1</span> <span class="o">==</span> <span class="n">family2</span> <span class="c1">// → true</span>
+</code></pre></div></div>
+
+<p>居然还有这种操作~</p>
+
+<h3 id="新增-keypath-数据类型">新增 KeyPath 数据类型</h3>
+
+<p>KeyPath 是 Swift 4 新增加的数据类型。</p>
+
+<p>定义两个结构体 <code class="language-plaintext highlighter-rouge">Person</code>与<code class="language-plaintext highlighter-rouge">Book</code></p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Person</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">Book</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">authors</span><span class="p">:</span> <span class="p">[</span><span class="kt">Person</span><span class="p">]</span>
+    <span class="k">var</span> <span class="nv">primaryAuthor</span><span class="p">:</span> <span class="kt">Person</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">authors</span><span class="o">.</span><span class="n">first</span><span class="o">!</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">abelson</span> <span class="o">=</span> <span class="kt">Person</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Harold Abelson"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">sussman</span> <span class="o">=</span> <span class="kt">Person</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Gerald Jay Sussman"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">book</span> <span class="o">=</span> <span class="kt">Book</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Structure and Interpretation of Computer Programs"</span><span class="p">,</span> <span class="nv">authors</span><span class="p">:</span> <span class="p">[</span><span class="n">abelson</span><span class="p">,</span> <span class="n">sussman</span><span class="p">])</span>
+</code></pre></div></div>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">book</span><span class="p">[</span><span class="nv">keyPath</span><span class="p">:</span> <span class="p">\</span><span class="kt">Book</span><span class="o">.</span><span class="n">title</span><span class="p">]</span>
+<span class="n">book</span><span class="p">[</span><span class="nv">keyPath</span><span class="p">:</span> <span class="p">\</span><span class="kt">Book</span><span class="o">.</span><span class="n">primaryAuthor</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+<span class="c1">// 相当与</span>
+<span class="n">book</span><span class="o">.</span><span class="n">title</span>
+<span class="n">book</span><span class="o">.</span><span class="n">primaryAuthor</span><span class="o">.</span><span class="n">name</span>
+</code></pre></div></div>
+
+<p>这里 <code class="language-plaintext highlighter-rouge">\Book.title</code> 与 <code class="language-plaintext highlighter-rouge">\Book.primaryAuthor.name</code> 就是 KeyPath.</p>
+
+<p>KeyPath 可以用 <code class="language-plaintext highlighter-rouge">.appending</code> 拼接</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">authorKeyPath</span> <span class="o">=</span> <span class="p">\</span><span class="kt">Book</span><span class="o">.</span><span class="n">primaryAuthor</span>
+<span class="k">let</span> <span class="nv">nameKeyPath</span> <span class="o">=</span> <span class="n">authorKeyPath</span><span class="o">.</span><span class="nf">appending</span><span class="p">(</span><span class="nv">path</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="c1">// nameKeyPath = \Book.primaryAuthor.name</span>
+</code></pre></div></div>
+
+<h3 id="新增--swapat-函数">新增  <code class="language-plaintext highlighter-rouge">swapAt()</code> 函数</h3>
+<p>Swift 4 引入了一种在集合中交换两个元素的新方法: <code class="language-plaintext highlighter-rouge">swapAt()</code></p>
+
+<p>Swift 3 交换集合中的元素的用 <code class="language-plaintext highlighter-rouge">swap()</code></p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="nf">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1">// numbers = [2,1,3,4,5]</span>
+</code></pre></div></div>
+
+<p>Swift 4 中可以直接用</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">numbers</span><span class="o">.</span><span class="nf">swapAt</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">// numbers = [2,1,3,4,5]</span>
+</code></pre></div></div>
+
+<h3 id="其他改动">其他改动</h3>
+
+<p>其他改动如：<strong>新的整数协议</strong>、<strong>泛型下标</strong>、<strong>NSNumber bridging</strong>等</p>
+
+<p>可以参考：<a href="https://github.com/ole/whats-new-in-swift-4">whats new in swift4</a></p>
+:ET

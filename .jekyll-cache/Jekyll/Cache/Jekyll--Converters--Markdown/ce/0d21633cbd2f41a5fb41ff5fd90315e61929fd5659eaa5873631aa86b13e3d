@@ -1,0 +1,112 @@
+I"�<h1 id="前言">前言</h1>
+
+<p>最近在办公室觉得有点吵，然后忽然想做一个噪音计测试一下噪音，在App Store下载了几款测噪音软件，使用原来都大同小异。于是决定自己实现测噪音的原理。</p>
+
+<h2 id="分贝db">分贝dB</h2>
+<p>首先要测量噪音，必须知道噪音的大小的参考的单位为分贝（dB），分贝的定义如下：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SPL = 20lg[p(e)/p(ref)]
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">p(e)</code>为待测的有效声压，<code class="language-plaintext highlighter-rouge">p(ref)</code>为参考声压，一般取2*10E-5帕，这是人耳能分辨的最小声压（1KHz）。</p>
+
+<p>就是说噪音每增加20dB，声压增强了10倍。</p>
+
+<h2 id="ios测噪音原理">iOS测噪音原理</h2>
+
+<p>iOS设备测量噪音原理非常简单：调用系统麦克风，根据麦克风输入强度计算转化为对应的dB值。但是，实现的过程可是坑满满。</p>
+
+<p>找到了一篇博客介绍iOS硬件的调用:<a href="http://www.cnblogs.com/kenshincui/p/4186022.html">iOS开发系列–音频播放、录音、视频播放、拍照、视频录制</a></p>
+
+<p>iOS的<code class="language-plaintext highlighter-rouge">AVFoundation</code>框架中有一个<code class="language-plaintext highlighter-rouge">AVAudioRecorder</code>类专门处理录音操作，详见<a href="https://developer.apple.com/reference/avfoundation/1668872-av_foundation_audio_settings_con">Apple文档</a></p>
+
+<p>在<code class="language-plaintext highlighter-rouge">AVAudioRecorder.h</code>中找到下列方法</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- (void)updateMeters; /* call to refresh meter values */ 更新麦克风测量值
+- (float)peakPowerForChannel:(NSUInteger)channelNumber; /* returns peak power in decibels for a given channel */ 获取峰值
+- (float)averagePowerForChannel:(NSUInteger)channelNumber; /* returns average power in decibels for a given channel */ 获取平局值
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">- (float)averagePowerForChannel:(NSUInteger)channelNumber;</code>文档中描述：</p>
+
+<blockquote>
+  <p>Return Value</p>
+</blockquote>
+
+<blockquote>
+  <p>The current average power, in decibels, for the sound being recorded. A return value of 0 dB indicates full scale, or maximum power; a return value of -160 dB indicates minimum power (that is, near silence).</p>
+</blockquote>
+
+<blockquote>
+  <p>If the signal provided to the audio recorder exceeds ±full scale, then the return value may exceed 0 (that is, it may enter the positive range).</p>
+</blockquote>
+
+<blockquote>
+  <p>Discussion</p>
+</blockquote>
+
+<blockquote>
+  <p>To obtain a current average power value, you must call the updateMeters method before calling this method.</p>
+</blockquote>
+
+<p>也就是说获取的麦克风测量值返回值范围为 <code class="language-plaintext highlighter-rouge">-160dB ~ 0dB</code>,并且注意最后那句话返回值可能超过0。</p>
+
+<h2 id="转化公式">转化公式</h2>
+
+<p>获取的的测量值为 <code class="language-plaintext highlighter-rouge">-160 ~ 0dB</code> ，如何转化为我们所要的噪音值呢？在网上找了很多资料都没有结果，于是就自己摸索转化公式。</p>
+
+<p>刚开始想到的是利用分贝计算公式<code class="language-plaintext highlighter-rouge">SPL = 20lg[p(e)/p(ref)]</code>进行计算，后来直接放弃这个方案，因为这是一个对数运算，获取到的值非常稳定，几乎不会波动，与其他的测噪软件所得的分贝值出入太大。</p>
+
+<p>然后发现有个App在麦克风没有输入时显示-55dB</p>
+
+<p><img src="http://ww2.sinaimg.cn/large/7853084cgw1f9u0nu3xv3j205n0a0glq.jpg" alt="" /></p>
+
+<p>于是思路就有了。</p>
+
+<p>其他测噪音软件的量程均为<code class="language-plaintext highlighter-rouge">0~110dB</code>,而我们获取的的测量值为 <code class="language-plaintext highlighter-rouge">-160 ~ 0dB</code>，两者之间差了<code class="language-plaintext highlighter-rouge">50dB</code>，也就是说以麦克风的测量值的<code class="language-plaintext highlighter-rouge">-160dB+50dB = -110dB</code>作为起点，<code class="language-plaintext highlighter-rouge">0dB</code>作为Max值,恰好量程为<code class="language-plaintext highlighter-rouge">0~110dB</code>.</p>
+
+<p>问题看似结束，但是直接以<code class="language-plaintext highlighter-rouge">50dB</code>作为补偿测量结果会偏大。最后选择了分段进行处理，代码如下</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+-(void)audioPowerChange{
+    
+    [self.audioRecorder updateMeters];//更新测量值
+    float power = [self.audioRecorder averagePowerForChannel:0];// 均值
+    float powerMax = [self.audioRecorder peakPowerForChannel:0];// 峰值
+    NSLog(@"power = %f, powerMax = %f",power, powerMax);
+    
+    CGFloat progress = (1.0 / 160.0) * (power + 160.0);
+    
+    // 关键代码
+    power = power + 160  - 50;
+    
+    int dB = 0;
+    if (power &lt; 0.f) {
+        dB = 0;
+    } else if (power &lt; 40.f) {
+        dB = (int)(power * 0.875);
+    } else if (power &lt; 100.f) {
+        dB = (int)(power - 15);
+    } else if (power &lt; 110.f) {
+        dB = (int)(power * 2.5 - 165);
+    } else {
+        dB = 110;
+    }
+    
+    NSLog(@"progress = %f, dB = %d", progress, dB);
+    self.powerLabel.text = [NSString stringWithFormat:@"%ddB", dB];
+    [self.audioPowerProgress setProgress:progress];
+
+}
+
+</code></pre></div></div>
+
+<h1 id="效果">效果</h1>
+
+<p>效果如下：</p>
+
+<p><img src="http://ww4.sinaimg.cn/large/7853084cgw1f9u1gqgqieg20k00zk7d8.gif" alt="" /></p>
+
+<h1 id="下载地址">下载地址</h1>
+
+<p>Demo下载地址：<a href="https://github.com/qiubaiying/Noise-meter-Demo">Noise-meter-Demo</a></p>
+:ET

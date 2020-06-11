@@ -1,0 +1,427 @@
+I"�h<h1 id="前言">前言</h1>
+
+<p>定时器的使用是软件开发基础技能，用于延时执行或重复执行某些方法。</p>
+
+<p>我相信大部分人接触iOS的定时器都是从这段代码开始的:</p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">NSTimer</span> <span class="nf">scheduledTimerWithTimeInterval</span><span class="p">:</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span> <span class="nf">target</span><span class="p">:</span><span class="n">self</span> <span class="n">selector</span><span class="o">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">action</span><span class="o">:</span><span class="p">)</span> <span class="n">userInfo</span><span class="o">:</span><span class="nb">nil</span> <span class="n">repeats</span><span class="o">:</span><span class="nb">YES</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>但是你真的会用吗？</p>
+
+<h1 id="正文">正文</h1>
+
+<h2 id="ios定时器">iOS定时器</h2>
+
+<p>首先来介绍iOS中的定时器</p>
+
+<p>iOS中的定时器大致分为这几类：</p>
+
+<ul>
+  <li><strong>NSTimer</strong></li>
+  <li><strong>CADisplayLink</strong></li>
+  <li><strong>GCD定时器</strong></li>
+</ul>
+
+<h3 id="nstimer">NSTimer</h3>
+
+<h4 id="使用方法">使用方法</h4>
+
+<p><strong>NSTime</strong>定时器是我们比较常使用的定时器，比较常使用的方法有两种：</p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">NSTimer</span> <span class="o">*</span><span class="p">)</span><span class="nf">timerWithTimeInterval</span><span class="p">:(</span><span class="n">NSTimeInterval</span><span class="p">)</span><span class="nv">ti</span> <span class="nf">target</span><span class="p">:(</span><span class="n">id</span><span class="p">)</span><span class="nv">aTarget</span> <span class="nf">selector</span><span class="p">:(</span><span class="n">SEL</span><span class="p">)</span><span class="nv">aSelector</span> <span class="nf">userInfo</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="p">)</span><span class="nv">userInfo</span> <span class="nf">repeats</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">yesOrNo</span><span class="p">;</span>
+
+<span class="k">+</span> <span class="p">(</span><span class="n">NSTimer</span> <span class="o">*</span><span class="p">)</span><span class="nf">scheduledTimerWithTimeInterval</span><span class="p">:(</span><span class="n">NSTimeInterval</span><span class="p">)</span><span class="nv">ti</span> <span class="nf">target</span><span class="p">:(</span><span class="n">id</span><span class="p">)</span><span class="nv">aTarget</span> <span class="nf">selector</span><span class="p">:(</span><span class="n">SEL</span><span class="p">)</span><span class="nv">aSelector</span> <span class="nf">userInfo</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="p">)</span><span class="nv">userInfo</span> <span class="nf">repeats</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">yesOrNo</span><span class="p">;</span>
+</code></pre></div></div>
+<p>这两种方法都是创建一个定时器，区别是用<code class="language-plaintext highlighter-rouge">timerWithTimeInterval:</code>方法创建的定时器需要手动加入RunLoop中。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 创建NSTimer对象
+NSTimer *timer = [NSTimer timerWithTimeInterval:3 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
+// 加入RunLoop中
+[[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+</code></pre></div></div>
+
+<p>需要<strong>注意</strong>的是： <code class="language-plaintext highlighter-rouge">UIScrollView</code> 滑动时执行的是 <code class="language-plaintext highlighter-rouge">UITrackingRunLoopMode</code>，<code class="language-plaintext highlighter-rouge">NSDefaultRunLoopMode</code>被挂起，会导致定时器失效，等恢复为<strong>滑动结束</strong>时才恢复定时器。其原因可以查看我这篇<a href="http://www.jianshu.com/p/c4f552ceda63">《Objective-C RunLoop 详解》</a>中的 “RunLoop 的 Mode“章节，有详细的介绍。</p>
+
+<p>举个例子：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- (void)startTimer{
+    NSTimer *UIScrollView = [NSTimer timerWithTimeInterval:0.5 target:self selector:@selector(action:) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+}
+
+- (void)action:(NSTimer *)sender {
+    static int i = 0;
+    NSLog(@"NSTimer: %d",i);
+    i++;
+}
+</code></pre></div></div>
+
+<p>将<code class="language-plaintext highlighter-rouge">timer</code>添加到<strong>NSDefaultRunLoopMode</strong>中，没0.5秒打印一次，然后滑动<code class="language-plaintext highlighter-rouge">UIScrollView</code>.</p>
+
+<p>打印台输出：</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-9de097ecc618b498.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>可以看出在滑动<code class="language-plaintext highlighter-rouge">UIScrollView</code>时，定时器被暂停了。</p>
+
+<p>所以如果需要定时器在 <code class="language-plaintext highlighter-rouge">UIScrollView</code> 拖动时也不影响的话，有两种解决方法</p>
+
+<ol>
+  <li><strong>timer</strong>分别添加到 <code class="language-plaintext highlighter-rouge">UITrackingRunLoopMode</code> 和 <code class="language-plaintext highlighter-rouge">NSDefaultRunLoopMode</code>中</li>
+</ol>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[[</span><span class="n">NSRunLoop</span> <span class="nf">mainRunLoop</span><span class="p">]</span> <span class="nf">addTimer</span><span class="p">:</span><span class="n">timer</span> <span class="nf">forMode</span><span class="p">:</span><span class="n">NSDefaultRunLoopMode</span><span class="p">];</span>
+<span class="p">[[</span><span class="n">NSRunLoop</span> <span class="nf">mainRunLoop</span><span class="p">]</span> <span class="nf">addTimer</span><span class="p">:</span><span class="n">timer</span> <span class="nf">forMode</span><span class="p">:</span> <span class="n">UITrackingRunLoopMode</span><span class="p">];</span> 
+</code></pre></div></div>
+
+<ol>
+  <li>直接将<strong>timer</strong>添加到<code class="language-plaintext highlighter-rouge">NSRunLoopCommonModes</code> 中：</li>
+</ol>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[[</span><span class="n">NSRunLoop</span> <span class="nf">mainRunLoop</span><span class="p">]</span> <span class="nf">addTimer</span><span class="p">:</span><span class="n">timer</span> <span class="nf">forMode</span><span class="p">:</span> <span class="n">NSRunLoopCommonModes</span><span class="p">];</span> 
+</code></pre></div></div>
+
+<p>但并不是都<strong>timer</strong>所有的需要在滑动<code class="language-plaintext highlighter-rouge">UIScrollView</code>时继续执行，比如使用<strong>NSTimer</strong>完成的帧动画，滑动<code class="language-plaintext highlighter-rouge">UIScrollView</code>时就可以停止帧动画，保证滑动的流程性。</p>
+
+<p>若没有特殊要求的话，一般使用第二种方法创建完<strong>timer</strong>，会自动添加到<code class="language-plaintext highlighter-rouge">NSDefaultRunLoopMode</code>中去执行，也是平时最常用的方法。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(action:) userInfo:nil repeats:YES];
+</code></pre></div></div>
+<p>参数：</p>
+
+<p><code class="language-plaintext highlighter-rouge">TimeInterval</code>：延时时间</p>
+
+<p><code class="language-plaintext highlighter-rouge">target</code>:目标对象，一般就是<code class="language-plaintext highlighter-rouge">self</code>本身</p>
+
+<p><code class="language-plaintext highlighter-rouge">selector</code>:执行方法</p>
+
+<p><code class="language-plaintext highlighter-rouge">userInfo</code>:传入信息</p>
+
+<p><code class="language-plaintext highlighter-rouge">repeats</code>:是否重复执行</p>
+
+<p>以上创建的定时器，若<code class="language-plaintext highlighter-rouge">repeats</code>参数设为<code class="language-plaintext highlighter-rouge">NO</code>，执行一次后就会被释放掉;</p>
+
+<p>若<code class="language-plaintext highlighter-rouge">repeats</code>参数设为<code class="language-plaintext highlighter-rouge">YES</code>重复执行时，必须手动关闭，否则定时器不会释放(停止）。</p>
+
+<p>释放方法：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 停止定时器
+[timer invalidate];
+</code></pre></div></div>
+
+<p>实际开发中，我们会将<code class="language-plaintext highlighter-rouge">NSTimer</code>对象设置为属性，这样方便释放。</p>
+
+<p><strong>iOS10.0</strong> 推出了两个新的API，与上面的方法相比，<code class="language-plaintext highlighter-rouge">selector</code>换成Block回调以、减少传入的参数(那几个参数真是鸡肋)。不过开发中一般需要适配低版本，还是尽量使用上面的方法吧。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+ (NSTimer *)timerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats block:(void (^)(NSTimer *timer))block API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.0), tvos(10.0));
+
++ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats block:(void (^)(NSTimer *timer))block API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.0), tvos(10.0));
+</code></pre></div></div>
+
+<p>###特点</p>
+
+<ul>
+  <li>
+    <p><strong>必须加入Runloop</strong></p>
+
+    <p>上面不管使用哪种方法，实际最后都会加入RunLoop中执行，区别就在于是否手动加入而已。</p>
+  </li>
+  <li>
+    <p><strong>存在延迟</strong></p>
+
+    <p>不管是一次性的还是周期性的timer的实际触发事件的时间，都会与所加入的RunLoop和RunLoop Mode有关，如果此RunLoop正在执行一个连续性的运算，timer就会被延时出发。重复性的timer遇到这种情况，如果延迟超过了一个周期，则会在延时结束后立刻执行，并按照之前指定的周期继续执行，这个延迟时间大概为50-100毫秒.</p>
+
+    <p>所以NSTimer不是绝对准确的,而且中间耗时或阻塞错过下一个点,那么下一个点就pass过去了.</p>
+  </li>
+  <li>
+    <p><strong>UIScrollView滑动会暂停计时</strong></p>
+
+    <p>添加到<code class="language-plaintext highlighter-rouge">NSDefaultRunLoopMode</code>的 <code class="language-plaintext highlighter-rouge">timer</code> 在 <code class="language-plaintext highlighter-rouge">UIScrollView</code>滑动时会暂停，若不想被<code class="language-plaintext highlighter-rouge">UIScrollView</code>滑动影响，需要将 <code class="language-plaintext highlighter-rouge">timer</code> 添加再到 <code class="language-plaintext highlighter-rouge">UITrackingRunLoopMode</code> 或 直接添加到<code class="language-plaintext highlighter-rouge">NSRunLoopCommonModes</code> 中</p>
+  </li>
+</ul>
+
+<p>##CADisplayLink</p>
+
+<p>CADisplayLink官方介绍：</p>
+<blockquote>
+  <p>A CADisplayLink object is a timer object that allows your application to synchronize its drawing to the refresh rate of the display</p>
+</blockquote>
+
+<p><strong>CADisplayLink</strong>对象是一个和屏幕刷新率同步的定时器对象。每当屏幕显示内容刷新结束的时候，runloop就会向CADisplayLink指定的<code class="language-plaintext highlighter-rouge">target</code>发送一次指定的<code class="language-plaintext highlighter-rouge">selector</code>消息， CADisplayLink类对应的 <code class="language-plaintext highlighter-rouge">selector</code> 就会被调用一次。</p>
+
+<p>从原理上可以看出，CADisplayLink适合做界面的不停重绘，比如视频播放的时候需要不停地获取下一帧用于界面渲染，或者做动画。
+###使用方法</p>
+
+<p>创建：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@property (nonatomic, strong) CADisplayLink *displayLink;
+
+self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(handleDisplayLink:)];  
+
+// 每隔1帧调用一次
+self.displayLink.frameInterval = 1;  
+
+[self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+</code></pre></div></div>
+<p>释放方法：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[self.displayLink invalidate];  
+
+self.displayLink = nil;
+</code></pre></div></div>
+<p>当把<strong>CADisplayLink</strong>对象添加到runloop中后，<code class="language-plaintext highlighter-rouge">selector</code>就能被周期性调用，类似于重复的NSTimer被启动了；执行<code class="language-plaintext highlighter-rouge">invalidate</code>操作时，CADisplayLink对象就会从runloop中移除，<code class="language-plaintext highlighter-rouge">selector</code>调用也随即停止，类似于NSTimer的<code class="language-plaintext highlighter-rouge">invalidate</code>方法。</p>
+
+<p><strong>CADisplayLink</strong>中有两个重要的属性：</p>
+
+<ul>
+  <li>
+    <p><strong>frameInterval</strong></p>
+
+    <p>NSInteger类型的值，用来设置间隔多少帧调用一次<code class="language-plaintext highlighter-rouge">selector</code>方法，默认值是1，即每帧都调用一次。</p>
+  </li>
+  <li>
+    <p><strong>duration</strong></p>
+
+    <p><code class="language-plaintext highlighter-rouge">CFTimeInterval</code>值为<code class="language-plaintext highlighter-rouge">readOnly</code>，表示两次屏幕刷新之间的时间间隔。需要注意的是，该属性在<code class="language-plaintext highlighter-rouge">targe</code>t的<code class="language-plaintext highlighter-rouge">selector</code>被首次调用以后才会被赋值。<code class="language-plaintext highlighter-rouge">selector</code>的调用间隔时间计算方式是：<strong>调用间隔时间 = duration × frameInterval</strong>。</p>
+  </li>
+</ul>
+
+<p>###特点</p>
+
+<ul>
+  <li>
+    <p><strong>刷新频率固定</strong></p>
+
+    <p>正常情况iOS设备的屏幕刷新频率是固定<strong>60Hz</strong>,如果CPU过于繁忙，无法保证屏幕60次/秒的刷新率，就会导致跳过若干次调用回调方法的机会，跳过次数取决CPU的忙碌程度。</p>
+  </li>
+  <li>
+    <p><strong>屏幕刷新时调用</strong></p>
+
+    <p>CADisplayLink在正常情况下会在每次刷新结束都被调用，精确度相当高。但如果调用的方法比较耗时，超过了屏幕刷新周期，就会导致跳过若干次回调调用机会</p>
+  </li>
+  <li>
+    <p><strong>适合做界面渲染</strong></p>
+
+    <p>CADisplayLink可以确保系统渲染每一帧的时候我们的方法都被调用，从而保证了动画的流畅性。</p>
+  </li>
+</ul>
+
+<p>##GCD定时器</p>
+
+<p><strong>GCD定时器</strong>和NSTimer是不一样的，NSTimer受RunLoop影响，但是GCD的定时器不受影响，因为通过源码可知RunLoop也是基于GCD的实现的，所以GCD定时器有非常高的精度。关于GCD的使用可一看看<a href="http://www.cnblogs.com/pure/archive/2013/03/31/2977420.html">这篇博客</a>。</p>
+
+<p>###使用方法
+创建GCD定时器定时器的方法稍微比较复杂，看下面的代码：</p>
+
+<p>####单次的延时调用
+NSObject中的<code class="language-plaintext highlighter-rouge">performSelector:withObject:afterDelay:</code>以及 <code class="language-plaintext highlighter-rouge">performSelector:withObject:afterDelay:inModes:</code> 这两个方法在调用的时候会设置当前 runloop 中 <code class="language-plaintext highlighter-rouge">timer</code> ，前者设置的 <code class="language-plaintext highlighter-rouge">timer</code> 在 <code class="language-plaintext highlighter-rouge">NSDefaultRunLoopMode</code> 运行，后者则可以指定 <strong>NSRunLoop</strong> 的 <code class="language-plaintext highlighter-rouge">mode</code> 来执行。我们上面介绍过 runloop 中 <code class="language-plaintext highlighter-rouge">timer</code> 在 <code class="language-plaintext highlighter-rouge">UITrackingRunLoopMode</code> 被挂起，就导致了代码就会一直等待 <code class="language-plaintext highlighter-rouge">timer</code> 的调度,解决办法在上面也有说明。</p>
+
+<p>不过我们可以用另一套方案来解决这个问题，就是使用GCD中的 <code class="language-plaintext highlighter-rouge">dispatch_after</code> 来实现单次的延时调用：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self someMethod];
+    });
+</code></pre></div></div>
+
+<p>####循环调用</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 创建GCD定时器
+dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+
+dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+
+dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), 1.0 * NSEC_PER_SEC, 0); //每秒执行
+
+// 事件回调
+dispatch_source_set_event_handler(_timer, ^{
+        
+    dispatch_async(dispatch_get_main_queue(), ^{
+        // 在主线程中实现需要的功能
+        
+	}
+}
+    
+});
+
+// 开启定时器
+dispatch_resume(_timer);
+
+// 挂起定时器（dispatch_suspend 之后的 Timer，是不能被释放的！会引起崩溃）
+dispatch_suspend(_timer);
+
+// 关闭定时器
+dispatch_source_cancel(_timer);
+    
+</code></pre></div></div>
+
+<p>上面代码中要注意的是：</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">dispatch_source_set_event_handler()</code>中的任务实在子线程中执行的，若需要回到主线程，要调用<code class="language-plaintext highlighter-rouge">dispatch_async(dispatch_get_main_queue(), ^{}</code>.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">dispatch_source_set_timer</code> 中第二个参数，当我们使用 <code class="language-plaintext highlighter-rouge">dispatch_time</code> 或者 <code class="language-plaintext highlighter-rouge">DISPATCH_TIME_NOW</code> 时，系统会使用默认时钟来进行计时。然而当系统休眠的时候，默认时钟是不走的，也就会导致计时器停止。使用 <code class="language-plaintext highlighter-rouge">dispatch_walltime </code> 可以让计时器按照真实时间间隔进行计时.</li>
+      <li>第三个参数， ` 1.0 * NSEC_PER_SEC` 为每秒执行一次，对应的还有毫秒，分秒，纳秒可以选择.</li>
+    </ul>
+  </li>
+</ol>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">dispatch_source_set_event_handler</code> 这个函数在执行完之后，block 会立马执行一遍，后面隔一定时间间隔再执行一次。而 <code class="language-plaintext highlighter-rouge">NSTimer</code> 第一次执行是到计时器触发之后。这也是和 <code class="language-plaintext highlighter-rouge">NSTimer</code> 之间的一个显著区别。</li>
+  <li>挂起（暂停）定时器, <code class="language-plaintext highlighter-rouge">dispatch_suspend</code> 之后的 <code class="language-plaintext highlighter-rouge">Timer</code>，不能被释放的,会引起崩溃.</li>
+  <li>创建的<code class="language-plaintext highlighter-rouge">timer</code>一定要有<code class="language-plaintext highlighter-rouge">dispatch_suspend(_timer)</code>或<code class="language-plaintext highlighter-rouge">dispatch_source_cancel(_timer)</code>这两句话来指定出口，否则定时器将不执行，若我们想无限循环可将 <code class="language-plaintext highlighter-rouge">dispatch_source_cancel(_timer)</code> 写在一句永不执行的<code class="language-plaintext highlighter-rouge">if</code>判断语句中。</li>
+</ul>
+
+<p>##使用场景</p>
+
+<p>介绍完iOS中的各种定时器，接下来我们来说说这几种定时器在开发中的几种用法。
+###短信重发倒计时</p>
+
+<p>短信倒计时使我们登录注册常用的功能，一般设置为60s，实现方法如下：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 计时时间
+@property (nonatomic, assign) int timeout;
+
+/** 开启倒计时 */
+- (void)startCountdown {
+    
+    if (_timeout &gt; 0) {
+        return;
+    }
+    
+    _timeout = 60;
+    
+    // GCD定时器
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    
+    dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), 1.0 * NSEC_PER_SEC, 0); //每秒执行
+    
+    dispatch_source_set_event_handler(_timer, ^{
+        
+        if(_timeout &lt;= 0 ){// 倒计时结束
+            
+            // 关闭定时器
+            dispatch_source_cancel(_timer);
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                //设置界面的按钮显示 根据自己需求设置
+                [self.sendMsgBtn setTitle:@"发送" forState:UIControlStateNormal];
+                
+                self.sendMsgBtn.enabled = YES;
+                
+            });
+            
+        }else{// 倒计时中
+            
+            // 显示倒计时结果
+            
+            NSString *strTime = [NSString stringWithFormat:@"重发(%.2d)", _timeout];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                //设置界面的按钮显示 根据自己需求设置
+                
+                [self.sendMsgBtn setTitle:[NSString stringWithFormat:@"%@",strTime] forState:UIControlStateNormal];
+                
+                self.sendMsgBtn.enabled = NO;
+                
+            });
+            
+            _timeout--;
+        }
+    });
+    
+    // 开启定时器
+    dispatch_resume(_timer);
+    
+}
+</code></pre></div></div>
+
+<p>在上面代码中，我们设置了一个60s循环倒计时，当我们向服务器获取短信验证码成功时 调用该方法开始倒计时。每秒刷新按钮的倒计时数，倒计时结束时再将按钮 <code class="language-plaintext highlighter-rouge">Title</code> 恢复为“发送”.</p>
+
+<p>有一点需要注意的是，按钮的样式要设置为 <strong>UIButtonTypeCustom</strong>,否则会出现刷新 <code class="language-plaintext highlighter-rouge">Title</code> 时闪烁.</p>
+
+<p>我们可以把这个方法封装一下，方便调用，否则在控制器中写这么一大段代码确实也不优雅。</p>
+
+<p>效果如下：</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-3d4d1353bcc36026.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<h5 id="代码链接"><a href="https://github.com/qiubaiying/BYTimer">代码链接</a></h5>
+
+<p>###每个几分钟向服务器发送数据</p>
+
+<p>在有定位服务的APP中，我们需要每个一段时间将定位数据发送到服务器，比如每5s定位一次每隔5分钟将再统一将数据发送服务器，这样会处理比较省电。
+一般程序进入后台时，定时器会停止，但是在定位APP中，需要持续进行定位，APP在后台时依旧可以运行，所以在后台定时器也是可以运行的。</p>
+
+<p>注：关于iOS后台常驻,可以查看<a href="http://waitingyuan.blog.163.com/blog/static/2155781652014111133150534/">这篇博客</a></p>
+
+<p>在使用GCD定时的时候发现GCD定时器也可以在后代运行，创建方法同上面的短信倒计时.</p>
+
+<p>这里我们使用<strong>NSTimer</strong>来创建一个每个5分钟执行一次的定时器.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#import &lt;Foundation/Foundation.h&gt;
+
+typedef void(^TimerBlock)();
+
+@interface BYTimer : NSObject
+
+- (void)startTimerWithBlock:(TimerBlock)timerBlock;
+
+- (void)stopTimer;
+
+@end
+
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#import "BYTimer.h"
+
+@interface BYTimer ()
+
+@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) TimerBlock timerBlock;
+
+@end
+
+@implementation BYTimer
+
+- (void)startTimerWithBlock:(TimerBlock)timerBlock {
+
+	 self.timer = [NSTimer timerWithTimeInterval:300 target:self selector:@selector(_timerAction) userInfo:nil repeats:YES];
+	 
+    [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    _timerBlock = timerBlock;
+    
+}
+
+- (void)_timerAction {
+    if (self.timerBlock) {
+        self.timerBlock();
+    }
+}
+
+- (void)stopTimer {
+    [self.timer invalidate];
+}
+
+@end
+</code></pre></div></div>
+
+<p>该接口的实现很简单，就是 <strong>NSTimer</strong> 创建了一个300s执行一次的定时器，但是要注意定时器需要加入<code class="language-plaintext highlighter-rouge">NSRunLoopCommonModes</code>中。</p>
+
+<p>要使定时器在后台能运行，app 就需要在 <a href="http://waitingyuan.blog.163.com/blog/static/2155781652014111133150534/">后台常驻</a>。</p>
+
+<h1 id="结语">结语</h1>
+
+<p>最后总结一下：</p>
+
+<p>NSTimer 使用简单方便，但是应用条件有限。</p>
+
+<p>CADisplayLink 刷新频率与屏幕帧数相同，用于绘制动画。具体使用可看我封装好的一个 <a href="https://github.com/qiubaiying/WaterRippleView">水波纹动画</a>。</p>
+
+<p>GCD定时器 精度高，可控性强，使用稍复杂。</p>
+:ET

@@ -1,0 +1,63 @@
+I"<blockquote>
+  <p>JSON转模型是我们做iOS开发的基础技能，本文将通过<a href="https://github.com/ibireme/YYModel">YYModel</a>这个框架安全快速的完成JSON到模型的转换，其中还会介绍到一款好用的插件<a href="https://github.com/EnjoySR/ESJsonFormat-Xcode">ESJsonFormat</a>。</p>
+</blockquote>
+
+<h1 id="1首先创建模型类">1、首先创建模型类</h1>
+<p>创建模型类我们可以通过<a href="https://github.com/EnjoySR/ESJsonFormat-Xcode">ESJsonFormat</a>这款插件快速完成。</p>
+
+<p>使用方法：</p>
+
+<p>将光标移动到代码行中 如下图的13行</p>
+
+<p>然后点击<code class="language-plaintext highlighter-rouge">Window</code>-&gt;<code class="language-plaintext highlighter-rouge">ESJsonFormat</code>-&gt;<code class="language-plaintext highlighter-rouge">Input JSON Window</code>调出窗口</p>
+
+<p><img src="http://ww1.sinaimg.cn/large/006y8lVagw1f95tr49ed7j30no0csdir.jpg" alt="" /></p>
+
+<p>在窗口中输入你要解析的JSON文本，如下图：</p>
+
+<p><img src="http://ww4.sinaimg.cn/large/006y8lVagw1f97s13l4b9j30jv0e8dhp.jpg" alt="" /></p>
+
+<p>按<code class="language-plaintext highlighter-rouge">Enter</code>继续，然后神奇的一幕发生了</p>
+
+<p><img src="http://ww3.sinaimg.cn/large/006y8lVagw1f97s46k95tj30k30dydj9.jpg" alt="" /></p>
+
+<p><img src="http://ww1.sinaimg.cn/large/006y8lVagw1f97s6yp9hmj30iw0b840m.jpg" alt="" /></p>
+
+<p>看到在.h中 所有的属性自动为你填上，而且帮你选好了类型</p>
+
+<p>.m 也为你声明了<code class="language-plaintext highlighter-rouge">list</code>中成员的类型，不过这里需要稍作修改，因为我们需要用到YYModel进行解析，所以方法名改成<code class="language-plaintext highlighter-rouge">modelContainerPropertyGenericClass</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"list" : [List class]};
+}
+
+</code></pre></div></div>
+
+<p>还有问题就是属性中出现关键字<code class="language-plaintext highlighter-rouge">id</code>，我们需要将id改为<code class="language-plaintext highlighter-rouge">teacherId</code></p>
+
+<p>然后在.m的<code class="language-plaintext highlighter-rouge">implementation</code>中声明,将字典的的<code class="language-plaintext highlighter-rouge">id</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"teacherId" : @"id"};
+}
+</code></pre></div></div>
+
+<p>这样，模型的创建就完成了，剩下的就是用YYModel进行解析了</p>
+
+<h1 id="2使用yymodel进行解析">2、使用YYModel进行解析</h1>
+
+<p>解析很简单，就只需要一句话</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 将 JSON (NSData,NSString,NSDictionary) 转换为 Model:
+Model *model = [Model yy_modelWithJSON:json];
+
+// 或者
+Model *model = [[Model alloc] init];
+[model yy_modelSetWithDictionary:json];
+
+</code></pre></div></div>
+
+<p>到此，简便快速的完成了JSON到模型的转换。</p>
+
+<p>最后，<a href="http://www.jianshu.com/p/25e678fa43d3">这里附上一篇YYModel的使用</a></p>
+:ET

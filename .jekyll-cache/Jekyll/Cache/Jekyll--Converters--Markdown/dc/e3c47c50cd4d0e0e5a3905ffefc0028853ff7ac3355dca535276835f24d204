@@ -1,0 +1,86 @@
+I"<blockquote>
+  <p>本文首次发布于 <a href="http://qiubaiying.github.io">BY Blog</a>, 作者 <a href="http://github.com/qiubaiying">@柏荧(BY)</a> ,转载请保留原文链接.</p>
+</blockquote>
+
+<h3 id="懒加载">懒加载</h3>
+
+<p>常规（简化）写法</p>
+
+<p>懒加载的属性用 <code class="language-plaintext highlighter-rouge">var</code> 声明</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lazy var name: String = {
+	return "BY"
+}()
+</code></pre></div></div>
+
+<p>完整写法</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lazy var name: String = { () -&gt; String i
+	return "BY"
+}()
+</code></pre></div></div>
+
+<p>本质是一个创建一个闭包 <code class="language-plaintext highlighter-rouge">{}</code> 并且在调用该属性时执行闭包 <code class="language-plaintext highlighter-rouge">()</code>。</p>
+
+<p>如OC的懒加载不同的是 swift 懒加载闭包只调用一次，再次调用该属性时因为属性已经创建，不再执行闭包。</p>
+
+<h3 id="计算型属性">计算型属性</h3>
+
+<p>常规写法</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var name: string {
+	return "BY"
+}
+</code></pre></div></div>
+
+<p>完整写法</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var name: string {
+	get {
+		return "BY"
+	}
+}
+</code></pre></div></div>
+
+<p>计算型属性本质是重写了 <code class="language-plaintext highlighter-rouge">get</code> 方法，其类似一个无参有返回值函数，每次调用该属性都会执行 <code class="language-plaintext highlighter-rouge">return</code></p>
+
+<p>通常这样使用</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>struct Cuboid {
+    var width = 0.0, height = 0.0, depth = 0.0
+    var volume: Double {
+        return width * height * depth
+    }
+}
+let fourByFiveByTwo = Cuboid(width: 4.0, height: 5.0, depth: 2.0)
+print("the volume of fourByFiveByTwo is \(fourByFiveByTwo.volume)")
+// Prints "the volume of fourByFiveByTwo is 40.0"
+</code></pre></div></div>
+
+<h3 id="两者对比">两者对比</h3>
+
+<p>相同点</p>
+
+<ul>
+  <li>使用方法完全一致</li>
+  <li>都是用 <code class="language-plaintext highlighter-rouge">var</code> 声明</li>
+</ul>
+
+<p>不同点</p>
+
+<ul>
+  <li>
+    <p>实现原理不同</p>
+
+    <p>懒加载是第一次调用属性时执行闭包进行赋值</p>
+
+    <p>计算型属性是重写 <code class="language-plaintext highlighter-rouge">get</code> 方法</p>
+  </li>
+  <li>
+    <p>调用 <code class="language-plaintext highlighter-rouge">{}</code>的次数不同</p>
+
+    <p>懒加载的闭包只在属性第一次调用时执行
+  计算型属性每次调用都要进入 <code class="language-plaintext highlighter-rouge">{}</code> 中，<code class="language-plaintext highlighter-rouge">return</code> 新的值</p>
+  </li>
+</ul>
+:ET

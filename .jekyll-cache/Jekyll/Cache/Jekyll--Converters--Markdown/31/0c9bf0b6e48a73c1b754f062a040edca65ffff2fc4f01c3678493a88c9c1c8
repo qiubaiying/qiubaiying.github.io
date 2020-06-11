@@ -1,0 +1,68 @@
+I"�<blockquote>
+  <p>本文首次发布于 <a href="http://qiubaiying.github.io">BY Blog</a>, 作者 <a href="http://github.com/qiubaiying">@柏荧(BY)</a> ,转载请保留原文链接.</p>
+</blockquote>
+
+<h1 id="什么是-rswift">什么是 R.swift</h1>
+
+<p>介绍 <a href="https://github.com/mac-cain13/R.swift">R.swift</a> 前，我们先看看 R.swift 能做什么</p>
+
+<p>通常，我们是基于 字符串 来获取资源，例如：图片、xib、或者是 segue</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">myImage</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"myImage"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">myViewController</span> <span class="o">=</span> <span class="kt">R</span><span class="o">.</span><span class="n">storyboard</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">myViewController</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>使用 R.swfit，我们可以这样写</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">myImage</span> <span class="o">=</span> <span class="kt">R</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="nf">myImage</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">viewController</span> <span class="o">=</span> <span class="kt">R</span><span class="o">.</span><span class="n">storyboard</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">myViewController</span><span class="p">()</span>
+
+</code></pre></div></div>
+
+<p>R.swift 通过扫描你的各种基于字符串命名的资源，创建一个使用类型来获取资源。</p>
+
+<p>在保证类型安全的同时，也在自动补全的帮助下节省了大量的时间。</p>
+
+<h1 id="导入-rswift">导入 R.swift</h1>
+
+<p><a href="https://github.com/mac-cain13/R.swift">R.swift</a> 开源在 github 上。</p>
+
+<p>这里是导入的<a href="https://vimeo.com/122888912">视频教程</a></p>
+
+<p>使用 CocoaPods 导入项目中</p>
+
+<ol>
+  <li>添加 <code class="language-plaintext highlighter-rouge">pod 'R.swift'</code>到 Podfile 文件，然后运行 <code class="language-plaintext highlighter-rouge">pod install</code></li>
+  <li>
+    <p>添加一个 <code class="language-plaintext highlighter-rouge">New Run Script Phase</code></p>
+
+    <p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1ff84sw06qxj30vm0hrq6s.jpg" alt="" /></p>
+  </li>
+  <li>
+    <p>将 <code class="language-plaintext highlighter-rouge">Run Script</code> 拖动到 <code class="language-plaintext highlighter-rouge">Check Pods Manifest.lock</code> 的下面，并且添加脚本 <code class="language-plaintext highlighter-rouge">"$PODS_ROOT/R.swift/rswift" "$SRCROOT/项目名称"</code></p>
+
+    <p><img src="https://ww4.sinaimg.cn/large/006tNc79gy1ff853qjiucj30yp0kkn1b.jpg" alt="" /></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Command+B</code> 编译项目，在项目代码目录下，会生成一个 <code class="language-plaintext highlighter-rouge">R.generated.swift</code> 的文件，将它拖如项目中</p>
+
+    <blockquote>
+      <p>注意：不要勾选 <code class="language-plaintext highlighter-rouge">Copy items if needed</code> 选项，因为每次编译都会生成新的 <code class="language-plaintext highlighter-rouge">R.generated.swift</code> 文件，copy 的话，旧的 <code class="language-plaintext highlighter-rouge">R.generated.swift</code> 将不会被覆盖。</p>
+    </blockquote>
+
+    <p><img src="https://ww4.sinaimg.cn/large/006tNc79gy1ff85epj1qpj30qj0hdn17.jpg" alt="" /></p>
+  </li>
+</ol>
+
+<blockquote>
+  <p>tip： 可以在添加 <code class="language-plaintext highlighter-rouge">.gitignore</code> 添加一行 <code class="language-plaintext highlighter-rouge">*.generated.swift</code> 忽略该文件，避免造成冲突</p>
+</blockquote>
+
+<h1 id="用法">用法</h1>
+
+<p>导入完成后，就可以在使用 R.swift 了</p>
+
+<p><img src="https://github.com/mac-cain13/R.swift/raw/master/Documentation/Images/DemoUseImage.gif" alt="" /></p>
+
+<p>关于 R.swift 的更多用法，可以 <a href="https://github.com/mac-cain13/R.swift/blob/master/Documentation/Examples.md">看这里</a>。</p>
+:ET

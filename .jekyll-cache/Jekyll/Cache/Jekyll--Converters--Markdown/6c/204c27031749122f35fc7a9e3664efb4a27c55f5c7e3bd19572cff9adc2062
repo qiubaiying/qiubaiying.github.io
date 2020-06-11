@@ -1,0 +1,162 @@
+I"�<blockquote>
+  <table>
+    <tbody>
+      <tr>
+        <td>Xcode 8.2</td>
+        <td>Swift 3.0</td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<p>在iOS开发中，无论是 <strong>Objective-C</strong> 还是 <strong>Swift</strong> ，<strong>Delegate</strong> 有着具足轻重的位置，如<code class="language-plaintext highlighter-rouge">TabelViewDelegate</code> 与 <code class="language-plaintext highlighter-rouge">TableViewDataSource</code>。</p>
+
+<p><strong>Swift</strong> 中的代理模式 和 <strong>Objective-C</strong> 除了语法外，几乎一样。</p>
+
+<h2 id="objective-c-代理模式">Objective-C 代理模式</h2>
+
+<p>在介绍 Swift 代理模式前，先来看回顾一下 Objective-C 中的代理模式如何实现</p>
+
+<p>Objective-C 中用代理实现反向传值：</p>
+
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fdd51zf5cwg307i0dck3f.gif" alt="" /></p>
+
+<h4 id="委托方子控制器">委托方（子控制器）</h4>
+
+<p>委托方需要实现</p>
+
+<ul>
+  <li>
+    <p>创建协议 、声明协议方法</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  @protocol SubViewDelegate &lt;NSObject&gt;
+	
+  - (void)backWithStr:(NSString *) str;
+
+  @end
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>创建一个代理属性</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  // weak声明
+  @property (nonatomic, weak) id&lt;SubViewDelegate&gt; delegate;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>执行协议方法</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  // 判断代理是实现该方法，避免carsh
+  	if ([self.delegate respondsToSelector:@selector(backWithStr:)]) {
+   	[self.delegate backWithStr:self.textField.text];
+   }
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h4 id="代理方主控制器">代理方（主控制器）</h4>
+<p>代理方需要实现</p>
+
+<ul>
+  <li>
+    <p>遵守（继承）协议</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  @interface ViewController () &lt;SubViewDelegate&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>将代理设为自己</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  subVC.delegate = self;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>实现代理方法</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  - (void)backWithStr:(NSString *)str {
+  	self.label.text = str;
+  }
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="swift-代理模式">Swift 代理模式</h2>
+
+<p>Swift 代理模式 与 Objective-C 一样，只是语法不同。</p>
+
+<p>Swift 中用代理实现反向传值：</p>
+
+<p><img src="https://ww1.sinaimg.cn/large/006tKfTcgy1fdd5oi9048g307i0dc7co.gif" alt="" /></p>
+
+<h4 id="委托方子控制器-1">委托方（子控制器）</h4>
+
+<ul>
+  <li>
+    <p>创建协议 、声明协议方法</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  protocol SubViewDelegate {
+  func backStr(str: String)
+  }	
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>创建一个代理属性</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  var delegate: SubViewDelegate?
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>执行协议方法</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  /// 执行代理方法，将值回传
+  delegate?.backStr(str: textField.text ?? "")
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h4 id="代理方主控制器-1">代理方(主控制器)</h4>
+<ul>
+  <li>
+    <p>继承协议</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  class ViewController: UIViewController, SubViewDelegate
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>将代理设为自己</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  subVC.delegate = self
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>实现代理方法</p>
+
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">func</span> <span class="nf">backStr</span><span class="p">(</span><span class="nv">str</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">self</span><span class="o">.</span><span class="n">textF</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">str</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="总结">总结</h2>
+
+<p>对比可以方法 Swift 代理模式 与 Objective-C 用法完全相同，只是语法发生了变化。</p>
+
+<p>值得一提的是Swift 的扩展 <code class="language-plaintext highlighter-rouge">extension</code>可以用来继承协议,实现代码隔离，便于维护。</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// 使用扩展继承协议 实现协议方法 可以分离代码</span>
+<span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">SubViewDelegate</span><span class="p">{</span>
+    <span class="c1">/// 实现代理方法</span>
+    <span class="kd">func</span> <span class="nf">backStr</span><span class="p">(</span><span class="nv">str</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">textF</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">str</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="demo源码">Demo源码</h2>
+
+<p>最后附上<a href="https://github.com/qiubaiying/iOS-Delegate_Demo">Demo源码</a></p>
+
+<p>如果对你有帮助的话，<strong>Star</strong>✨下一吧！</p>
+
+:ET

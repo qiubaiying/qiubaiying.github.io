@@ -1,0 +1,88 @@
+I"p<h1 id="前言">前言</h1>
+
+<p>最近在喵神 onevcat 的直播中发现喵神直接在终端就能用 vsCode 打开当前代码目录，非常方便。</p>
+
+<p>在<code class="language-plaintext highlighter-rouge">zsh</code>终端中 使用 <code class="language-plaintext highlighter-rouge">code .</code>，在 <strong>vcCode</strong> 打开当前文件目录</p>
+
+<p><img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fdpxob9m7sj31000rkam7.jpg" alt="" /></p>
+
+<h1 id="正文">正文</h1>
+
+<h2 id="配置终端环境">配置终端环境</h2>
+
+<p>终端环境为：<a href="https://www.iterm2.com/">iTerm2</a> + <a href="https://wiki.archlinux.org/index.php/Zsh_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">zsh</a></p>
+
+<p>zsh 使用 <a href="http://ohmyz.sh/">oh_my_zsh</a> 配置</p>
+
+<h2 id="安装zsh">安装zsh</h2>
+
+<h4 id="查看你的系统有几种shell">查看你的系统有几种shell</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat /etc/shells
+</code></pre></div></div>
+
+<p>显示</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/bin/bash
+/bin/csh
+/bin/ksh
+/bin/sh
+/bin/tcsh
+/bin/zsh
+</code></pre></div></div>
+
+<h4 id="安装-oh-my-zsh">安装 oh my zsh</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+</code></pre></div></div>
+
+<p>重新打开终端，输入</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zsh
+</code></pre></div></div>
+
+<p>即可切换终端，并且发现 oh my zsh 已经帮我们配置好 zsh 了</p>
+
+<h4 id="修改主题">修改主题</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>open ~/.zshrc 
+</code></pre></div></div>
+
+<p>修改 <code class="language-plaintext highlighter-rouge">ZSH_THEME=”robbyrussell”</code>，主题在 ~/.oh-my-zsh/themes 目录下。
+修改为</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ZSH_THEME="kolo"
+</code></pre></div></div>
+
+<p>可以<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes">参照这里</a>进行选择.</p>
+
+<h4 id="设置为默认shell">设置为默认shell</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chsh -s /bin/zsh
+</code></pre></div></div>
+
+<h2 id="修改-zsh-配置文件">修改 <code class="language-plaintext highlighter-rouge">zsh</code> 配置文件</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ open ~/.zshrc
+</code></pre></div></div>
+
+<p>在文件中加上这几行代码</p>
+
+<p>对应 atom、SublimeText、与 vcCode。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>alias atom='/Applications/Atom.app/Contents/MacOS/Atom'
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
+</code></pre></div></div>
+
+<h4 id="测试">测试</h4>
+<p>使用 vcCode 打开</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ code .
+</code></pre></div></div>
+
+<blockquote>
+  <p>本文首次发布于 <a href="http://qiubaiying.github.io">BY Blog</a>, 作者 <a href="http://github.com/qiubaiying">@柏荧(BY)</a> ,转载请保留原文链接.</p>
+</blockquote>
+:ET

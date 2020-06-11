@@ -1,0 +1,19 @@
+I"o<h2 id="安装">安装</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xcode-select --install
+</code></pre></div></div>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/545662-f9031dfcce085f8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/459" alt="" /></p>
+
+<h2 id="xcode版本切换">Xcode版本切换</h2>
+
+<h3 id="显示当前使用的xocde版本">显示当前使用的xocde版本</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ xcode-select --print-path
+</code></pre></div></div>
+
+<h3 id="选择xcode中的默认版本">选择Xcode中的默认版本</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo xcode-select -switch /Applications/Xcode.app
+</code></pre></div></div>
+:ET

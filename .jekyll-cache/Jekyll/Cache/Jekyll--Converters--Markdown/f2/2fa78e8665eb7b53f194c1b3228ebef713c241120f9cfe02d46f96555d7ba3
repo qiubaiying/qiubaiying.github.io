@@ -1,0 +1,67 @@
+I"i<p>在 Swift 中，最简单的输出方法就是使用 <code class="language-plaintext highlighter-rouge">print()</code>，在我们关心的地方输出字符串和值。</p>
+
+<p>当程序变得非常复杂的时候，我们可能会输出很多内容，而想在其中寻找到我们希望的输出其实并不容易。我们往往需要更好更精确的输出，这包括输出这个 log 的文件，调用的行号以及所处的方法名字等等。</p>
+
+<p>在 Swift 中，编译器为我们准备了几个很有用的编译符号，它们分别是：</p>
+
+<table><thead>
+<tr>
+<th>符号</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>#file</td>
+<td>String</td>
+<td>包含这个符号的文件的路径</td>
+</tr>
+<tr>
+<td>#line</td>
+<td>Int</td>
+<td>符号出现处的行号</td>
+</tr>
+<tr>
+<td>#column</td>
+<td>Int</td>
+<td>符号出现处的列</td>
+</tr>
+<tr>
+<td>#function</td>
+<td>String</td>
+<td>包含这个符号的方法名字</td>
+</tr>
+</tbody></table>
+
+<p>有了上面的这些编译符号，我们就可以自定义一个输出函数：<code class="language-plaintext highlighter-rouge">printm</code></p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">printm</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="kt">Any</span><span class="o">...</span><span class="p">,</span> <span class="nv">filename</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="kd">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="kd">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kd">#line</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"[</span><span class="se">\(</span><span class="p">(</span><span class="n">filename</span> <span class="k">as</span> <span class="kt">NSString</span><span class="p">)</span><span class="o">.</span><span class="n">lastPathComponent</span><span class="se">)</span><span class="s"> </span><span class="se">\(</span><span class="n">line</span><span class="se">)</span><span class="s"> </span><span class="se">\(</span><span class="n">function</span><span class="se">)</span><span class="s">]</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">items</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>因为输出是一个很消耗性能的操作，所以在releass环境下需要将输出函数去掉，将上面的函数换成：</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#if DEBUG</span>
+
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">printm</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="kt">Any</span><span class="o">...</span><span class="p">,</span> <span class="nv">filename</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="kd">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="kd">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kd">#line</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"[</span><span class="se">\(</span><span class="p">(</span><span class="n">filename</span> <span class="k">as</span> <span class="kt">NSString</span><span class="p">)</span><span class="o">.</span><span class="n">lastPathComponent</span><span class="se">)</span><span class="s"> </span><span class="se">\(</span><span class="n">line</span><span class="se">)</span><span class="s"> </span><span class="se">\(</span><span class="n">function</span><span class="se">)</span><span class="s">]</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">items</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="cp">#else</span>
+
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">printm</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="kt">Any</span><span class="o">...</span><span class="p">,</span> <span class="nv">filename</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="kd">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="kd">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kd">#line</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="cp">#endif</span>
+</code></pre></div></div>
+
+<h4 id="参考">参考:</h4>
+
+<ul>
+  <li><a href="http://swifter.tips/log/">《LOG 输出》</a> - 王巍 (@ONEVCAT)</li>
+</ul>
+
+<blockquote>
+  <p>本文首次发布于 <a href="http://qiubaiying.github.io">BY Blog</a>, 作者 <a href="http://github.com/qiubaiying">@柏荧(BY)</a> ,转载请保留原文链接.</p>
+</blockquote>
+:ET

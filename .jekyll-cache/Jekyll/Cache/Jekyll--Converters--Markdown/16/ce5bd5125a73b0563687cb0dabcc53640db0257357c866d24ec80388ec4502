@@ -1,0 +1,49 @@
+I"�<blockquote>
+  <p>并不适合阅读的个人文档。</p>
+</blockquote>
+
+<h1 id="git-revert-和-git-reset-的区别"><strong>git revert</strong> 和 <strong>git reset</strong> 的区别</h1>
+<p>先看图：</p>
+
+<p><img src="https://ww3.sinaimg.cn/large/006tNbRwgy1fcr9tu6vdjj30t30ez0y8.jpg" alt="" /></p>
+
+<p><strong>sourceTree</strong> 中 <strong>revert</strong> 译为<strong><code class="language-plaintext highlighter-rouge">提交回滚</code></strong>，作用为忽略你指定的版本，然后提交一个新的版本。新的版本中已近删除了你所指定的版本。</p>
+
+<p><strong>reset</strong> 为 <strong>重置到这次提交</strong>，将内容重置到指定的版本。<code class="language-plaintext highlighter-rouge">git reset</code> 命令后面是需要加2种参数的：<code class="language-plaintext highlighter-rouge">–-hard</code> 和 <code class="language-plaintext highlighter-rouge">–-soft</code>。这条命令默认情况下是 <code class="language-plaintext highlighter-rouge">-–soft</code>。</p>
+
+<p>执行上述命令时，这该条commit号之 后（时间作为参考点）的所有commit的修改都会退回到git缓冲区中。使用<code class="language-plaintext highlighter-rouge">git status</code> 命令可以在缓冲区中看到这些修改。而如果加上<code class="language-plaintext highlighter-rouge">-–hard</code>参数，则缓冲区中不会存储这些修改，git会直接丢弃这部分内容。可以使用 <code class="language-plaintext highlighter-rouge">git push origin HEAD --force</code> 强制将分区内容推送到远程服务器。</p>
+
+<h4 id="代码回退">代码回退</h4>
+
+<p>默认参数 <code class="language-plaintext highlighter-rouge">-soft</code>,所有commit的修改都会退回到git缓冲区
+参数<code class="language-plaintext highlighter-rouge">--hard</code>，所有commit的修改直接丢弃</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset --hard HEAD^ 		回退到上个版本
+$ git reset --hard commit_id	退到/进到 指定commit_id 推送到远程	
+
+$ git push origin HEAD --force
+</code></pre></div></div>
+
+<h4 id="可以吃的后悔药-版本穿梭">可以吃的后悔药-&gt;版本穿梭</h4>
+
+<p>当你回滚之后，又后悔了，想恢复到新的版本怎么办？</p>
+
+<p>用<code class="language-plaintext highlighter-rouge">git reflog</code>打印你记录你的每一次操作记录</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reflog
+
+输出：
+c7edbfe HEAD@{0}: reset: moving to c7edbfefab1bdbef6cb60d2a7bb97aa80f022687
+470e9c2 HEAD@{1}: reset: moving to 470e9c2
+b45959e HEAD@{2}: revert: Revert "add img"
+470e9c2 HEAD@{3}: reset: moving to 470e9c2
+2c26183 HEAD@{4}: reset: moving to 2c26183
+0f67bb7 HEAD@{5}: revert: Revert "add img"
+</code></pre></div></div>
+
+<p>找到你操作的id如：<code class="language-plaintext highlighter-rouge">b45959e</code>，就可以回退到这个版本</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset --hard b45959e
+</code></pre></div></div>
+
+:ET

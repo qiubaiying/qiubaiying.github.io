@@ -1,0 +1,40 @@
+I"�<blockquote>
+  <p>使用 <strong>tree</strong> 在终端显示树状文件结构</p>
+</blockquote>
+
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fdhotefcb5j315s0ugjwk.jpg" alt="" /></p>
+
+<h4 id="安装-tree">安装 tree</h4>
+<p>使用 <strong>brew</strong> 进行安装</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ brew install tree
+</code></pre></div></div>
+
+<h4 id="使用">使用</h4>
+<ul>
+  <li>
+    <p>直接使用 <code class="language-plaintext highlighter-rouge">tree</code> 命令，会在当前文件目录下，递归输出所有文件层级</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ tree
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>限制层级</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ tree -L 2
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>指定当前目录下的某个文件夹</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ tree Desktop
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h4 id="导出文件">导出文件</h4>
+<p>用<code class="language-plaintext highlighter-rouge">&gt; 文件名.格式</code> 的形式导出</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ tree -L 1 &gt; tree.md
+</code></pre></div></div>
+:ET

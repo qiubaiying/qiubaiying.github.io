@@ -1,0 +1,187 @@
+I"s<h1 id="前言">前言</h1>
+
+<p>最近换了新机器，重新搭建了开发环境，其中当然包括 <strong>CocoaPods</strong>。</p>
+
+<p>装完顺便更新下 <strong>CocoaPods</strong> 安装文档。</p>
+
+<h1 id="正文">正文</h1>
+
+<h2 id="安装">安装</h2>
+
+<p><strong>CocoaPods</strong> 是用 ruby 实现的，要想使用它首先需要有 ruby 的环境。</p>
+
+<h4 id="升级ruby">升级ruby</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>查看ruby版本 
+$ ruby -v
+
+ruby 2.0.0p648 (2015-12-16 revision 53162) [universal.x86_64-darwin16]
+</code></pre></div></div>
+
+<p>CocoaPods需要<strong>2.2.2</strong>版本及以上的，我们先升级ruby。</p>
+
+<p>使用 <strong>rvm</strong> 安装 ruby</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -L get.rvm.io | bash -s stable 
+source ~/.bashrc
+source ~/.bash_profile
+</code></pre></div></div>
+
+<p>切换 ruby 源</p>
+
+<p>ruby 下载源使用亚马逊的云服务被墙了，切换国内的 <strong>ruby-china源</strong> （<a href="https://ruby.taobao.org/">https://ruby.taobao.org/</a>已经停止维护，详情<a href="https://ruby.taobao.org/">查看公告</a>）：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
+$ gem sources -l
+*** CURRENT SOURCES ***
+
+https://gems.ruby-china.org
+</code></pre></div></div>
+
+<p>安装并切换 ruby</p>
+
+<blockquote>
+  <p>这里不建议安装最新的 2.4.0 版本，因为次版本的 ruby，在xcodebuild 自动打包时，会出现问题！ 所以退一步，安装 2.3.3版本~</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm install 2.3.3 --disable-binary
+rvm use 2.3.3 --default
+</code></pre></div></div>
+
+<p>到此ruby升级完毕.</p>
+
+<p>有关RVM的使用可以看这篇 <a href="http://qiubaiying.github.io/2017/04/28/RVM-使用指南/">RVM 使用指南</a></p>
+
+<h4 id="安装cocoapods">安装CocoaPods</h4>
+
+<ol>
+  <li>
+    <p>安装</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo gem install -n /usr/local/bin cocoapods
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>升级版本库</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> pod setup
+</code></pre></div>    </div>
+
+    <p>这里需要下载版本库（非常庞大），需要等很久</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Receiving objects:  72% (865815/1197150), 150.07 MiB | 190.00 KiB/s
+</code></pre></div>    </div>
+
+    <p>或者直接从其他装有cocoapod的电脑中拷贝<code class="language-plaintext highlighter-rouge">~/.cocoapods</code>到你的用户目录，然后再 <code class="language-plaintext highlighter-rouge">pod setup</code>会节省不少时间</p>
+  </li>
+</ol>
+
+<h1 id="使用">使用</h1>
+
+<h4 id="创建-podfile-文件">创建 <code class="language-plaintext highlighter-rouge">podfile</code> 文件</h4>
+
+<p>绝大多数人创建<code class="language-plaintext highlighter-rouge">podfile</code>都是用 <code class="language-plaintext highlighter-rouge">vim Podfile</code> 命令</p>
+
+<p>其实pod 已经提供了创建 <code class="language-plaintext highlighter-rouge">podfile</code> 文件的命令，在工程目录下</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod init
+</code></pre></div></div>
+
+<p>将会自动生成 <code class="language-plaintext highlighter-rouge">podfile</code> 文件，并且为你写好了格式，稍做修改就能使用</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'projectName' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for projectName
+
+  target 'projectNameTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'projectNameUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+</code></pre></div></div>
+
+<p>其中的</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>target 'projectNameTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'projectNameUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+</code></pre></div></div>
+
+<p>是指定在单元测试和UI测试时导入的测试框架，若没有使用测试框架可以删除。</p>
+
+<p>修改iOS版本，添加<code class="language-plaintext highlighter-rouge">Alamofire</code>库</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Uncomment the next line to define a global platform for your project
+# platform :ios, '8.0'
+
+target 'projectName' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for projectName
+  
+  pod 'Alamofire', '~&gt; 4.4'
+
+end
+</code></pre></div></div>
+
+<h4 id="加载代码库">加载代码库</h4>
+
+<p>使用下面的命令，直接在本地版本库中查找对应的代码库信息，不升级版本库，节省时间</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod install --verbose --no-repo-update
+</code></pre></div></div>
+
+<p>若找不到库，再使用下面的命令</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod install
+</code></pre></div></div>
+
+<h4 id="版本号">版本号</h4>
+
+<p>对版本号的操作除了指定与不指定，你还可以做其他操作：</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">\&gt;0.1</code>  高于0.1的任何版本</li>
+  <li><code class="language-plaintext highlighter-rouge">\&gt;=0.1</code>  版本0.1和任何更高版本</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;0.1</code>  低于0.1的任何版本</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;=0.1</code>  版本0.1和任何较低的版本</li>
+  <li><code class="language-plaintext highlighter-rouge">〜&gt;0.1.2</code>  版本 0.1.2的版本到0.2 ，不包括0.2。
+这个基于你指定的版本号的最后一个部分。这个例子等效于&gt;= 0.1.2并且 &lt;0.2.0，并且始终是你指定范围内的最新版本</li>
+</ul>
+
+<h1 id="结语">结语</h1>
+
+<p>关于<strong>CocoaPods</strong>的安装和使用就这样简单的介绍完了，至于更多使用的方法（平时也用不到~）你可以用下面命令查看</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pod
+</code></pre></div></div>
+
+<p>若对 CocoaPods 的<strong>个人仓库</strong>感兴趣，也可以看看我的这两篇博客</p>
+
+<ul>
+  <li><a href="http://qiubaiying.top/2017/03/08/CocoaPods%E5%85%AC%E6%9C%89%E4%BB%93%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA/">CocoaPods公有仓库的创建</a></li>
+  <li><a href="http://qiubaiying.top/2017/03/10/CocoaPods%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA/">CocoaPods私有仓库的创建</a></li>
+</ul>
+
+<blockquote>
+  <p>本文首次发布于 <a href="http://qiubaiying.github.io">BY Blog</a>, 作者 <a href="http://github.com/qiubaiying">@柏荧(BY)</a> ,转载请保留原文链接.</p>
+</blockquote>
+:ET

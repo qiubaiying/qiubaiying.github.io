@@ -1,0 +1,97 @@
+I"-4<blockquote>
+  <p>HMAC是密钥相关的哈希运算消息认证码（Hash-based Message Authentication Code）。 HMAC运算利用哈希算法，以一个密钥和一个消息为输入，生成一个消息摘要作为输出。也就是说HMAC通过将哈希算法(SHA1, MD5)与密钥进行计算生成摘要。</p>
+</blockquote>
+
+<h2 id="objectice-c">Objectice-C</h2>
+
+<p>在上个 Objectice-C 项目中，使用的 HMAC 和 SHA1 进行加密。如下代码：</p>
+
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">hmacsha1</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">text</span> <span class="nf">key</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">secret</span> <span class="p">{</span>
+    
+    <span class="n">NSData</span> <span class="o">*</span><span class="n">secretData</span> <span class="o">=</span> <span class="p">[</span><span class="n">secret</span> <span class="nf">dataUsingEncoding</span><span class="p">:</span><span class="n">NSUTF8StringEncoding</span><span class="p">];</span>
+    <span class="n">NSData</span> <span class="o">*</span><span class="n">clearTextData</span> <span class="o">=</span> <span class="p">[</span><span class="n">text</span> <span class="nf">dataUsingEncoding</span><span class="p">:</span><span class="n">NSUTF8StringEncoding</span><span class="p">];</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">result</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+    <span class="c1">// SHA1加密</span>
+    <span class="n">CCHmac</span><span class="p">(</span><span class="n">kCCHmacAlgSHA1</span><span class="p">,</span> <span class="p">[</span><span class="n">secretData</span> <span class="nf">bytes</span><span class="p">],</span> <span class="p">[</span><span class="n">secretData</span> <span class="nf">length</span><span class="p">],</span> <span class="p">[</span><span class="n">clearTextData</span> <span class="nf">bytes</span><span class="p">],</span> <span class="p">[</span><span class="n">clearTextData</span> <span class="nf">length</span><span class="p">],</span> <span class="n">result</span><span class="p">);</span>
+    <span class="kt">char</span> <span class="n">base64Result</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+    <span class="kt">size_t</span> <span class="n">theResultLength</span> <span class="o">=</span> <span class="mi">32</span><span class="p">;</span>
+    <span class="c1">// 转为Base64</span>
+    <span class="n">Base64EncodeData</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">base64Result</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">theResultLength</span><span class="p">,</span><span class="nb">YES</span><span class="p">);</span>
+    <span class="n">NSData</span> <span class="o">*</span><span class="n">theData</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSData</span> <span class="nf">dataWithBytes</span><span class="p">:</span><span class="n">base64Result</span> <span class="nf">length</span><span class="p">:</span><span class="n">theResultLength</span><span class="p">];</span>
+    <span class="n">NSString</span> <span class="o">*</span><span class="n">base64EncodedResult</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSString</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithData</span><span class="p">:</span><span class="n">theData</span> <span class="nf">encoding</span><span class="p">:</span><span class="n">NSUTF8StringEncoding</span><span class="p">];</span>
+    <span class="k">return</span> <span class="n">base64EncodedResult</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="swift">swift</h2>
+
+<p>最近用 swift 重构项目,用 Swift <a href="https://stackoverflow.com/questions/26970807/implementing-hmac-and-sha1-encryption-in-swift?rq=1">重写了</a> HMAC 的 SHA1 加密方式。</p>
+
+<h3 id="使用">使用</h3>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 使用HMAC和SHA加密</span>
+<span class="k">let</span> <span class="nv">hmacResult</span><span class="p">:</span><span class="kt">String</span> <span class="o">=</span> <span class="s">"myStringToHMAC"</span><span class="o">.</span><span class="nf">hmac</span><span class="p">(</span><span class="kt">HMACAlgorithm</span><span class="o">.</span><span class="kt">SHA1</span><span class="p">,</span> <span class="nv">key</span><span class="p">:</span> <span class="s">"myKey"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="代码">代码</h3>
+
+<p>使用下面代码时，需要在 OC 桥接文件<code class="language-plaintext highlighter-rouge">xxx-Bridging-Header</code>中 <code class="language-plaintext highlighter-rouge">#import &lt;CommonCrypto/CommonHMAC.h&gt;</code></p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">hmac</span><span class="p">(</span><span class="nv">algorithm</span><span class="p">:</span> <span class="kt">HMACAlgorithm</span><span class="p">,</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">cKey</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="nf">cStringUsingEncoding</span><span class="p">(</span><span class="kt">NSUTF8StringEncoding</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">cData</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="nf">cStringUsingEncoding</span><span class="p">(</span><span class="kt">NSUTF8StringEncoding</span><span class="p">)</span>
+        <span class="k">var</span> <span class="nv">result</span> <span class="o">=</span> <span class="p">[</span><span class="kt">CUnsignedChar</span><span class="p">](</span><span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="p">(</span><span class="n">algorithm</span><span class="o">.</span><span class="nf">digestLength</span><span class="p">()),</span> <span class="nv">repeatedValue</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="kt">CCHmac</span><span class="p">(</span><span class="n">algorithm</span><span class="o">.</span><span class="nf">toCCHmacAlgorithm</span><span class="p">(),</span> <span class="n">cKey</span><span class="o">!</span><span class="p">,</span> <span class="nf">strlen</span><span class="p">(</span><span class="n">cKey</span><span class="o">!</span><span class="p">),</span> <span class="n">cData</span><span class="o">!</span><span class="p">,</span> <span class="nf">strlen</span><span class="p">(</span><span class="n">cData</span><span class="o">!</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">var</span> <span class="nv">hmacData</span><span class="p">:</span><span class="kt">NSData</span> <span class="o">=</span> <span class="kt">NSData</span><span class="p">(</span><span class="nv">bytes</span><span class="p">:</span> <span class="n">result</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="p">(</span><span class="kt">Int</span><span class="p">(</span><span class="n">algorithm</span><span class="o">.</span><span class="nf">digestLength</span><span class="p">())))</span>
+        <span class="k">var</span> <span class="nv">hmacBase64</span> <span class="o">=</span> <span class="n">hmacData</span><span class="o">.</span><span class="nf">base64EncodedStringWithOptions</span><span class="p">(</span><span class="kt">NSDataBase64EncodingOptions</span><span class="o">.</span><span class="kt">Encoding76CharacterLineLength</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kt">String</span><span class="p">(</span><span class="n">hmacBase64</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">enum</span> <span class="kt">HMACAlgorithm</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="kt">MD5</span><span class="p">,</span> <span class="kt">SHA1</span><span class="p">,</span> <span class="kt">SHA224</span><span class="p">,</span> <span class="kt">SHA256</span><span class="p">,</span> <span class="kt">SHA384</span><span class="p">,</span> <span class="kt">SHA512</span>
+
+    <span class="kd">func</span> <span class="nf">toCCHmacAlgorithm</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CCHmacAlgorithm</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">switch</span> <span class="k">self</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="kt">MD5</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">kCCHmacAlgMD5</span>
+        <span class="k">case</span> <span class="o">.</span><span class="kt">SHA1</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">kCCHmacAlgSHA1</span>
+        <span class="k">case</span> <span class="o">.</span><span class="kt">SHA224</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">kCCHmacAlgSHA224</span>
+        <span class="k">case</span> <span class="o">.</span><span class="kt">SHA256</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">kCCHmacAlgSHA256</span>
+        <span class="k">case</span> <span class="o">.</span><span class="kt">SHA384</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">kCCHmacAlgSHA384</span>
+        <span class="k">case</span> <span class="o">.</span><span class="kt">SHA512</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">kCCHmacAlgSHA512</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kt">CCHmacAlgorithm</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">digestLength</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">CInt</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">switch</span> <span class="k">self</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="kt">MD5</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="kt">CC_MD5_DIGEST_LENGTH</span>
+        <span class="k">case</span> <span class="o">.</span><span class="kt">SHA1</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="kt">CC_SHA1_DIGEST_LENGTH</span>
+        <span class="k">case</span> <span class="o">.</span><span class="kt">SHA224</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="kt">CC_SHA224_DIGEST_LENGTH</span>
+        <span class="k">case</span> <span class="o">.</span><span class="kt">SHA256</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="kt">CC_SHA256_DIGEST_LENGTH</span>
+        <span class="k">case</span> <span class="o">.</span><span class="kt">SHA384</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="kt">CC_SHA384_DIGEST_LENGTH</span>
+        <span class="k">case</span> <span class="o">.</span><span class="kt">SHA512</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="kt">CC_SHA512_DIGEST_LENGTH</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kt">Int</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+</code></pre></div></div>
+
+:ET

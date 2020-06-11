@@ -1,0 +1,695 @@
+I"�<blockquote>
+  <p>正所谓前人栽树，后人乘凉。</p>
+
+  <p>感谢<a href="https://github.com/huxpro">Huxpro</a>提供的博客模板</p>
+
+  <p><a href="http://qiubaiying.top">我的的博客</a></p>
+</blockquote>
+
+<h1 id="前言">前言</h1>
+<p>从 Jekyll 到 GitHub Pages 中间踩了许多坑，终于把我的个人博客<a href="http://qiubaiying.top">BY Blog</a>搭建出来了。。。</p>
+
+<p>本教程针对的是不懂技术又想搭建个人博客的小白，操作简单暴力且快速。当然懂技术那就更好了。</p>
+
+<p>看看看博客的主页样式：</p>
+
+<p><a href="http://qiubaiying.github.io/"><img src="http://upload-images.jianshu.io/upload_images/2178672-51a2fe6fbe24d1cd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></a></p>
+
+<p>在手机上的布局：</p>
+
+<p><a href="http://qiubaiying.github.io/"><img src="http://upload-images.jianshu.io/upload_images/2178672-d58bb45f9faedb70.jpg" alt="" /></a></p>
+
+<p>废话不多说了，开始进入正文。</p>
+
+<h1 id="快速开始">快速开始</h1>
+
+<h3 id="从注册一个github账号开始">从注册一个Github账号开始</h3>
+
+<p>我采用的搭建博客的方式是使用 <a href="https://pages.github.com/">GitHub Pages</a> + <a href="http://jekyll.com.cn/">jekyll</a> 的方式。</p>
+
+<p>要使用 GitHub Pages，首先你要注册一个<a href="https://github.com/">GitHub</a>账号，GitHub 是全球最大的同性交友网站(吐槽下程序员~)，你值得拥有。</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-e65e5cda50f38cef.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<h3 id="拉取我的博客模板">拉取我的博客模板</h3>
+
+<p>注册完成后搜索 <code class="language-plaintext highlighter-rouge">qiubaiying.github.io</code> 进入<a href="https://github.com/qiubaiying/qiubaiying.github.io">我的仓库</a></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-1b234fb8549e58aa.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>点击右上角的 <strong>Fork</strong> 将我的仓库拉倒你的账号下</p>
+
+<p>稍等一下，点击刷新，你会看到<strong>Fork</strong>了成功的页面</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-b2347768a1f2d993.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<h3 id="修改仓库名">修改仓库名</h3>
+
+<p>点击<strong>settings</strong>进入设置</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-f47b7e4802de6a34.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p id="Rename"></p>
+<p>修改仓库名为 <code class="language-plaintext highlighter-rouge">你的Github账号名.github.io</code>，然后 Rename</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-ca3d843e526cdd5b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>这时你在在浏览器中输入 <code class="language-plaintext highlighter-rouge">你的Github账号名.github.io</code> 例如:<code class="language-plaintext highlighter-rouge">baiyingqiu.github.io</code></p>
+
+<p>你将会看到如下界面</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-96b5db55df9db422.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>说明已经成功一半了😀。。。当然，还需要修改博客的配置才能变成你的博客。</p>
+
+<p>若是出现</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-cfd55a22902a9d2c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>则需要 <a href="#Rename">检查一下你的仓库名是否正确</a></p>
+
+<h3 id="整个网站结构">整个网站结构</h3>
+
+<p>修改Blog前我们来看看Jekyll 网站的基础结构，当然我们的网站比这个复杂。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── _config.yml
+├── _drafts
+|   ├── begin-with-the-crazy-ideas.textile
+|   └── on-simplicity-in-technology.markdown
+├── _includes
+|   ├── footer.html
+|   └── header.html
+├── _layouts
+|   ├── default.html
+|   └── post.html
+├── _posts
+|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile
+|   └── 2009-04-26-barcamp-boston-4-roundup.textile
+├── _data
+|   └── members.yml
+├── _site
+├── img
+└── index.html
+</code></pre></div></div>
+
+<p>很复杂看不懂是不是，不要紧，你只要记住其中几个OK了</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_config.yml</code> 全局配置文件</li>
+  <li><code class="language-plaintext highlighter-rouge">_posts</code>	放置博客文章的文件夹</li>
+  <li><code class="language-plaintext highlighter-rouge">img</code>	存放图片的文件夹</li>
+</ul>
+
+<p>其他的想继续深究可以<a href="http://jekyll.com.cn/docs/structure/">看这里</a></p>
+
+<h3 id="修改博客配置">修改博客配置</h3>
+
+<p>来到你的仓库，找到<code class="language-plaintext highlighter-rouge">_config.yml</code>文件,这是网站的全局配置文件。</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-c23d4a5d67c88084.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>点击修改</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-b37268df7a7852ca.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>然后编辑<code class="language-plaintext highlighter-rouge">_config.yml</code>的内容</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-0c8750f5a18dbe03.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>接下来我们来详细说说以下配置文件的内容：</p>
+
+<h4 id="基础设置">基础设置</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Site settings
+title: You Blog    				  	#你博客的标题
+SEOTitle: 你的博客 | You Blog    	 #显示在浏览器上搜索的时候显示的标题
+header-img: img/post-bg-rwd.jpg  	#显示在首页的背景图片
+email: You@gmail.com	
+description: "You Blog"  			 #网站介绍
+keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone" #关键词
+url: "https://qiubaiying.github.io"          # 这个就是填写你的博客地址
+baseurl: ""      # 这个我们不用填写
+
+</code></pre></div></div>
+<h4 id="侧边栏">侧边栏</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Sidebar settings
+sidebar: true                           # 是否开启侧边栏.
+sidebar-about-description: "说点装逼的话。。。"
+sidebar-avatar:/img/avatar-by.JPG      # 你的个人头像 这里你可以改成我在img文件夹中的两张备用照片 img/avatar-m 或 avatar-g
+</code></pre></div></div>
+<h4 id="社交账号">社交账号</h4>
+<p>展示你的其他社交平台</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-ec775a22f76e2f40.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>在下面你的社交账号的用户名就可以了，若没有可不用填</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># SNS settings
+RSS: false
+weibo_username:     username
+zhihu_username:     username
+github_username:    username
+facebook_username:  username
+jianshu_username:	jianshu_id
+</code></pre></div></div>
+
+<p>新加入了<strong>简书</strong>，<code class="language-plaintext highlighter-rouge">jianshu_id</code> 在你打开你的简书主页后的地址如：<code class="language-plaintext highlighter-rouge">http://www.jianshu.com/u/e71990ada2fd</code>中，后面这一串数字：<code class="language-plaintext highlighter-rouge">e71990ada2fd </code></p>
+
+<h4 id="评论系统">评论系统</h4>
+
+<p>博客中使用的是 <a href="https://disqus.com/">Disqus</a> 评论系统，在 <a href="https://disqus.com/">官网</a> 注册帐号后，按下面的步骤简单的配置即可：</p>
+
+<p>进入 <a href="https://disqus.com/home/settings/profile/">设置页面</a> 配置个人信息</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-904ecb30c536c73b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="配置 Disqus 个人信息" /></p>
+
+<p>找到 <strong>Username</strong></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-19d1b9e7d2624bfb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Disqus Account" /></p>
+
+<p>这个 <strong>Username</strong>  就是我们 <code class="language-plaintext highlighter-rouge">_config.yml</code> 中 <code class="language-plaintext highlighter-rouge">disqus_username</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Disqus settings（https://disqus.com/）
+disqus_username: qiubaiying
+</code></pre></div></div>
+
+<blockquote>
+  <p>很对人反映 Disqus 评论插件加载不出来，因为 Disqus 在国内加载缓慢，所以我新集成了 Gitalk 评论插件（感谢<a href="https://github.com/FeDemo">@FeDemo</a>的推荐），喜欢折腾的朋友可以看这篇：<a href="http://qiubaiying.top/2017/12/19/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-Gitalk-%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6/">《为博客添加 Gitalk 评论插件》</a>。 我已经在<code class="language-plaintext highlighter-rouge">_config.yml</code> 配置就好了，只需要填写参数可以了。</p>
+</blockquote>
+
+<h4 id="网站统计">网站统计</h4>
+
+<p>集成了 <a href="http://tongji.baidu.com/web/welcome/login">Baidu Analytics</a> 和 <a href="http://www.google.cn/analytics/">Google Analytics</a>，到各个网站注册拿到track_id替换下面的就可以了</p>
+
+<p>这是我的 Google Analytics</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-c36b895c53196fdb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p><strong>不要使用我的track_id</strong>😂。。。</p>
+
+<p>若不想启用统计，直接删除或注释掉就可以了</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Analytics settings
+# Baidu Analytics
+ba_track_id: 83e259f69b37d02a4633a2b7d960139c
+
+# Google Analytics
+ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
+ga_domain: auto
+</code></pre></div></div>
+
+<h4 id="好友">好友</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>friends: [
+    {
+        title: "简书·BY",
+        href: "http://www.jianshu.com/u/e71990ada2fd"
+    },{
+        title: "Apple",
+        href: "https://apple.com"
+    },{
+        title: "Apple Developer",
+        href: "https://developer.apple.com/"
+    }
+]
+</code></pre></div></div>
+
+<h4 id="保存">保存</h4>
+<p>讲网页拉倒底部，点击 <code class="language-plaintext highlighter-rouge">Commit changes</code> 提交保存</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-0781006b5d15d149.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>再次进入你的主页，</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-a49ee2975d524c93.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>恭喜你，你的个人博客搭建完成了😀。</p>
+
+<h1 id="写文章">写文章</h1>
+
+<p>利用 Github网站 ，我们可以不用学习<a href="https://git-scm.com/">git</a>，就可以轻松管理自己的博客</p>
+
+<p>对于轻车熟路的程序猿来说，使用git管理会更加方便。。。</p>
+
+<h2 id="创建">创建</h2>
+<p>文章统一放在网站根目录下的 <code class="language-plaintext highlighter-rouge">_posts</code> 的文件夹中。</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-fb74cdc11a950bd4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>创建一个文件</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-9a47b2074362e570.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>在下面写文章，和标题，还能实时预览，最后提交保存就能看到自己的新文章了。</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-88acd9e29fa3ae8a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<h2 id="格式">格式</h2>
+<p>每一篇文章文件命名采用的是<code class="language-plaintext highlighter-rouge">2017-02-04-Hello-2017.md</code>时间+标题的形式，空格用<code class="language-plaintext highlighter-rouge">-</code>替换连接。</p>
+
+<p>文件的格式是 <code class="language-plaintext highlighter-rouge">.md</code> 的 <a href="http://sspai.com/25137/"><strong>MarkDown</strong></a> 文件。</p>
+
+<p>我们的博客文章格式采用是 <strong>MarkDown</strong>+ <strong>YAML</strong> 的方式。</p>
+
+<p><a href="http://www.ruanyifeng.com/blog/2016/07/yaml.html?f=tt"><strong>YAML</strong></a> 就是我们配置 <code class="language-plaintext highlighter-rouge">_config</code>文件用的语言。</p>
+
+<p><a href="http://sspai.com/25137/"><strong>MarkDown</strong></a> 是一种轻量级的「标记语言」，很简单。<a href="http://sspai.com/25137">花半个小时看一下</a>就能熟练使用了</p>
+
+<p>大概就是这么一个结构。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout:     post   				    # 使用的布局（不需要改）
+title:      My First Post 				# 标题 
+subtitle:   Hello World, Hello Blog #副标题
+date:       2017-02-06 				# 时间
+author:     BY 						# 作者
+header-img: img/post-bg-2015.jpg 	#这篇文章标题背景图片
+catalog: true 						# 是否归档
+tags:								#标签
+    - 生活
+---
+
+## Hey
+&gt;这是我的第一篇博客。
+
+进入你的博客主页，新的文章将会出现在你的主页上.
+</code></pre></div></div>
+
+<p>按格式创建文章后，提交保存。进入你的博客主页，新的文章将会出现在你的主页上.</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-f4d5bb65ae3abd00.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>到这里，恭喜你！</p>
+
+<p>你已经成功搭建了自己的个人博客以及学会在博客上撰写文字的技能了（是不是有点小兴奋🙈）。</p>
+
+<h4 id="首页标签">首页标签</h4>
+
+<p>在首页可以看到这些特色标签，当你的文章出现相同标签（默认相同的<strong>标签数量大于1</strong>），才会自动生成。</p>
+
+<p>所以当你只放一篇文章的时候是不会出现标签的。</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-9281b7176c456f92.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>建站的初期，博客比较少，若你想直接在首页生成比较多的标签。你可以在 <code class="language-plaintext highlighter-rouge">_congfig.yml</code>中找到这段：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Featured Tags
+featured-tags: true                     # 是否使用首页标签
+featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+</code></pre></div></div>
+
+<p>将其修改为<code class="language-plaintext highlighter-rouge">featured-condition-size: 0</code>, 这样只有一个标签时也会出现在首页了。</p>
+
+<p>相反，当你博客比较多，标签也很多时，这时你就需要改回 <code class="language-plaintext highlighter-rouge">1</code> 甚至是 <code class="language-plaintext highlighter-rouge">2</code> 了。</p>
+
+<h1 id="自定义域名">自定义域名</h1>
+
+<p>搭建好博客之后 你可能不想直接使用 <a href="http://baiyingqiu.github.io">baiyingqiu.github.io</a> 这么长的博客域名吧, 想换成想 <a href="http://qiubaiying.top">qiubaiying.top</a> 这样简短的域名。那我们开始吧！</p>
+
+<h4 id="购买域名">购买域名</h4>
+<p>首先，你必须购买一个自己的域名。</p>
+
+<p>我是在<a href="https://wanwang.aliyun.com/domain/?spm=5176.8006371.1007.dnetcndomain.q1ys4x">阿里云</a>购买的域名</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-ef3844cab15e35ff.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>用<strong>阿里云</strong> app也可以注册域名，域名的价格根据后缀的不同和域名的长度而分，比如我这个 <code class="language-plaintext highlighter-rouge">qiubaiying.top</code> 的域名第一年才只要4元~</p>
+
+<p>域名尽量选择短一点比较好记住，注意，不能选择中文域名，比如 <code class="language-plaintext highlighter-rouge">张三.top</code> ,GitHub Pages <strong>无法处理中文域名</strong>，会导致你的域名在你的主页上使用。</p>
+
+<p>注册的步骤就不在介绍了</p>
+
+<h4 id="解析域名">解析域名</h4>
+
+<p>注册好域名后，需要将域名解析到你的博客上</p>
+
+<p>管理控制台 → 域名与网站（万网） → 域名</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-9a75bba50d1b14d7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>选择你注册好的域名，点击解析</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-0968a8dd2045f4fd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>添加解析</p>
+
+<p>分别添加两个<code class="language-plaintext highlighter-rouge">A</code> 记录类型,</p>
+
+<p>一个主机记录为 <code class="language-plaintext highlighter-rouge">www</code>,代表可以解析 <code class="language-plaintext highlighter-rouge">www.qiubaiying.top</code>的域名</p>
+
+<p>另一个为 <code class="language-plaintext highlighter-rouge">@</code>, 代表 <code class="language-plaintext highlighter-rouge">qiubaiying.top</code></p>
+
+<p>记录值就是我们博客的IP地址，是 GitHub Pagas 在美国的服务器的地址 <code class="language-plaintext highlighter-rouge">151.101.100.133</code></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-0769a93bc487e9d8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>可以通过 <a href="http://ip.chinaz.com/">这个网站</a>  或者直接在终端输入<code class="language-plaintext highlighter-rouge">ping 你的地址</code>，查看博客的IP</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ping qiubaiying.github.io
+</code></pre></div></div>
+
+<p>细心地你会发现所有人的博客都解析到 <code class="language-plaintext highlighter-rouge">151.101.100.133</code> 这个IP。</p>
+
+<p>然后 GitHub Pages 再通过 CNAME记录 跳转到你的主页上。</p>
+
+<h4 id="修改cname">修改CNAME</h4>
+
+<p>最后一步，只需要修改 我们github仓库下的 <strong>CNAME</strong> 文件。</p>
+
+<p>选择 <strong>CNAME</strong> 文件</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-a422f3dab436dfb7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>使用的注册的域名进行替换,然后提交保存</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-6e613004fb410b44.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>这时，输入你自己的域名，就可以解析到你的主页了。</p>
+
+<p>大功告成！</p>
+
+<h1 id="进阶">进阶</h1>
+
+<p>若你对博客模板进行修改，你就要看看 Jekyll 的<a href="http://jekyll.com.cn">开发文档</a>,是中文文档哦，对英语一般的朋友简直是福利啊（比如说我😀）。</p>
+
+<p>还要学习 <strong>Git</strong> 和 <strong>GitHub</strong> 的工作机制了及使用。</p>
+
+<p>你可以先看看这个<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/">git教程</a>，对git有个初步的了解后，那么相信你就能将自己图片传到GitHub仓库上，或者可以说掌握了 <strong>使用git管理自己的GitHub仓库</strong> 的技能呢。</p>
+
+<p>对于轻车熟路的程序猿来说，这篇教程就算就结束了，因为下面的内容对于你们来说 so eazy~</p>
+
+<p>但相信很多小白都一脸懵逼，那我们继续👇。</p>
+
+<h1 id="利用githhub-desktop管理github仓库">利用GithHub Desktop管理GitHub仓库</h1>
+
+<p><a href="https://desktop.github.com/">GithHub Desktop</a> 是 <strong>GithHub</strong> 推出的一款管理GitHub仓库的桌面软件，换句话说就是将你在<strong>Github</strong>上的文件同步到本地电脑上，并将修改后的文件同步到<strong>Github</strong>远程仓库。</p>
+
+<h4 id="下载">下载</h4>
+
+<p>点击图片进入下载页面，选择对应的平台进行下载</p>
+
+<p><a href="https://desktop.github.com/"><img src="http://upload-images.jianshu.io/upload_images/2178672-6022ba3938b3088e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></a></p>
+
+<p>下面以<strong>Mac</strong>平台为例：</p>
+
+<h4 id="安装">安装</h4>
+
+<p>将下载好的文件解压，将这只小猫拖到应用程序文件夹中</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-8f8c27f4e5c72276.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>就可以在<strong>Launchpad</strong>找到这只小猫咪~</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-0f2da4717361459c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<h4 id="登录">登录</h4>
+
+<p>点开应用,会弹出<strong>登录</strong>框，</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-adb7d6824e471ef5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>输入你的<strong>GitHub</strong>账号和密码进行登录</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-2d7c407ebddbb44f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>登录后关闭窗口</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-93cdccc42024914b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>然后返回引导窗，一直按 <strong>Continue</strong> 继续</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-450ccef6b1ab7b0a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p><strong>Continue</strong></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-06b6e6792472ecae.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>还是<strong>Continue</strong>~
+<img src="http://upload-images.jianshu.io/upload_images/2178672-681a6c455f6b512f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>进入主界面，先 <strong>右键Remve</strong> 删除这个用户指导，贼烦~</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-604f6f23b8fab6f3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<h4 id="克隆仓库">克隆仓库</h4>
+
+<p>选择你的仓库克隆到本地</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-45ddcd27e2f858a1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-625be1220fea36b6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<h4 id="管理仓库">管理仓库</h4>
+
+<p>现在文件夹中打开</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-92c1616af56b501a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>打开后你会的发现文件结构和你在Github上的一模一样~</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-bf3580ae1cd9a29e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>你最先关心的可能是你的头像~在<strong>img</strong>文件夹中把替换我的头像就好了。</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-c9421d64538c3ba6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>不仅是图片，所有在Github上的的操作都可以进行。</p>
+
+<h4 id="保存修改">保存修改</h4>
+
+<p>当你对仓库文件夹的文件下进行修改、添加或删除时，都可以在 <strong>GitHub Desktop</strong> 中看到</p>
+
+<p>例如我在 <code class="language-plaintext highlighter-rouge">img</code> 中添加了一张图片 <code class="language-plaintext highlighter-rouge">avatar-demo.png</code> 添加了一张图片</p>
+
+<p>就可以在看到<strong>GitHub Desktop</strong>显示了我的修改</p>
+
+<p>保存修改只要按 <strong>Commit to master</strong>，然后可以写上你的修改说明</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-4bfbfec37cbb8eb6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<h4 id="同步">同步</h4>
+
+<p>将修改同步到 <strong>GitHub</strong> 远程仓库上只需要一步：点击右上角的<strong>同步按钮</strong></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-3c2ee8234a7f1832.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<h4 id="完成">完成</h4>
+
+<p>打开你的GitHub上的仓库，你就可以看到已经和本地同步了</p>
+
+<p>可以看到你提交的详情： <code class="language-plaintext highlighter-rouge">add img</code></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-293bdd4cbee0e9e3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>这样，你已经能轻松管理自己的博客了。</p>
+
+<p>想上传头像，背景，或者是删掉你不要的图片（我的头像😏）已经是 so eazy了吧~</p>
+
+<h4 id="注意">注意</h4>
+<p>你在 <strong>GitHub</strong> 网站上进行 <strong>Commit</strong> 操作后，需要在<strong>GitHub Desktop</strong>上按一下 <strong>同步按键</strong> 才能同步网站上的修改到你的本地。</p>
+
+<h1 id="修改个人介绍">修改个人介绍</h1>
+
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fme0poz7gqj30vq0l8whh.jpg" alt="" /></p>
+
+<p>修改个人介绍需要修改根目录下的 <code class="language-plaintext highlighter-rouge">about.html</code> 文件</p>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fme0rna33tj30bw0bntah.jpg" alt="" /></p>
+
+<p>看不懂 HTML 标签？没关系，对照着修改就好了~ 还有注意这个有中英介绍</p>
+
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fme0sbvmmcj30zp0os7ap.jpg" alt="" /></p>
+
+<h1 id="常见问题">常见问题</h1>
+
+<p>最近有很多人给我提问题，我这边总结一下</p>
+
+<h4 id="配置文件修改后没有效果">配置文件修改后没有效果</h4>
+<p>刷新几遍浏览器就好了~</p>
+
+<p>不行的话，先清除浏览器缓存再试试。</p>
+
+<h4 id="404错误">404错误</h4>
+
+<ol>
+  <li>检查你的仓库名是否有按照要求填写</li>
+  <li>确定 <strong>Fork</strong> 的是不是我的仓库~</li>
+</ol>
+
+<h4 id="修改cname文件域名还是不变">修改CNAME文件，域名还是不变</h4>
+
+<p>清除浏览器缓存就OK~</p>
+
+<h4 id="其他问题">其他问题</h4>
+
+<p>直接在评论中提出来或私信我，我会一一替大家解决的😀</p>
+
+<h1 id="其他">其他</h1>
+
+<p>最近有人往我的远程仓库不停的 <strong>push</strong>，一天连收几十封邮件！例如像这样的</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-1347f2cc9a4a8dc8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>原因大多是直接Clone了我的仓库到本地，<strong>没有删除我的远程仓库地址</strong>，添加完自己的仓库地址后，一口气推送到所有远程仓库（包括我的😂）~</p>
+
+<p>打扰了我的工作和生活~</p>
+
+<p>所以，<strong>请不要往我的仓库上推送分支</strong>！</p>
+
+<p>我发现一个问题是，很多人每次修改博客的内容都commit一次到远程仓库，然后再查看修改结果，这样效率非常低！</p>
+
+<h4 id="来上车">来，上车！</h4>
+
+<h2 id="在本地调试博客">在本地调试博客</h2>
+
+<blockquote>
+  <p>注：下面的操作是在 <strong>Mac</strong> 终端进行的。
+<strong>Windows</strong> 环境下的配置请参考 <a href="http://www.jianshu.com/u/a13e7484dc21">@梦幻之云</a> 提供的 <a href="https://agcaiyun.cn/2017/09/10/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">这篇文章</a>。</p>
+</blockquote>
+
+<p>有心的同学在 <a href="http://jekyllcn.com/">jekyll官网</a> 就会发现 <code class="language-plaintext highlighter-rouge">jekyll</code> 的 提供的实例代码。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~ $ gem install jekyll bundler
+~ $ jekyll new my-awesome-site
+~ $ cd my-awesome-site
+~/my-awesome-site $ bundle install
+~/my-awesome-site $ bundle exec jekyll serve
+# =&gt; 打开浏览器 http://localhost:4000
+</code></pre></div></div>
+
+<p>这段命令创建了一个默认的 <code class="language-plaintext highlighter-rouge">jekll</code> 网站，然后在本机的 4000 窗口展示。聪明的你应该发现怎么做了吧~</p>
+
+<p>安装 <code class="language-plaintext highlighter-rouge">jekyll</code>和 <code class="language-plaintext highlighter-rouge">jekyll bundler</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gem install jekyll
+$ gem install jekyll bundler
+</code></pre></div></div>
+
+<p>进入你的 <strong>Blog 所在目录</strong>，然后创建本地服务器</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ jekyll s
+
+</code></pre></div></div>
+
+<p>然后会显示</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Auto-regeneration: enabled for '/Users/baiying/Blog'
+Configuration file: /Users/baiying/Blog/_config.yml
+    Server address: http://127.0.0.1:4000/
+  Server running... press ctrl-c to stop.
+</code></pre></div></div>
+
+<p>你就可以在 <a href="http://127.0.0.1:4000/">http://127.0.0.1:4000/</a> 看到你的博客，你对本地博客的修改都会在这个地址进行显示，这大大提高了对博客的配置效率。</p>
+
+<p>使用<code class="language-plaintext highlighter-rouge">ctrl+c</code>就可以停止 <strong>serve</strong></p>
+
+<h1 id="star">Star</h1>
+
+<p>若本教程顺利帮你搭建了自己的个人博客，请不要 <strong>害羞</strong>，给我的 <a href="https://github.com/qiubaiying/qiubaiying.github.io">github仓库</a> 点个 <strong>star</strong> 吧！</p>
+
+<p>因为最近发现 Fork 将近破百，加上直接 Clone 仓库的，保守估计已经帮助上百人成功的搭建了自己的博客，<del>可是 Star 却仅仅只有 <strong>12</strong>！可能还是做的不够好吧！</del>现在已经破百了，感谢大家的Star！</p>
+
+<h3 id="别无他求点个-star-吧"><strong>别无他求，点个 <a href="https://github.com/qiubaiying/qiubaiying.github.io">Star</a> 吧</strong>！</h3>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-768a38ee9fb0df28.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p><strong>心满意足！</strong></p>
+
+<h1 id="补充">补充</h1>
+
+<h4 id="修改网站的-icon">修改网站的 <strong>icon</strong></h4>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1flgh6k23ppj30ad00uq2t.jpg" alt="" /></p>
+
+<p>要修改如图所示的网站 <strong>icon</strong>：</p>
+
+<p>在博客 <code class="language-plaintext highlighter-rouge">img</code> 目录下找到并替换 <code class="language-plaintext highlighter-rouge">favicon.ico</code> 这个图标即可，图标尺寸为<code class="language-plaintext highlighter-rouge">32x32</code>。</p>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1flghahch1oj30gu09y419.jpg" alt="" /></p>
+
+<h4 id="修改主页的座右铭">修改主页的座右铭</h4>
+
+<p>最近有不少小伙伴私信我：<strong>如何修改主页的座右铭？</strong></p>
+
+<p>就是这个：</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-31dc0068f256aca3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>很简单，找到博客目录下的 <strong>index.html</strong> 文件，修改这句话就可以了。</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-9e4785654523bf07.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<h4 id="如何在博客文章中上插入图片">如何在博客文章中上插入图片</h4>
+
+<p>博客的文章用的是 MarkDown 格式，如果没用过 MarkDown 真的 强烈推荐 <a href="http://sspai.com/25137">花半个小时学习一下</a>。</p>
+
+<p>MarkDown 中添加图片的形式是 :<code class="language-plaintext highlighter-rouge">![](图片的URL)</code></p>
+
+<p>例如：</p>
+
+<p><code class="language-plaintext highlighter-rouge">![MarkDown示例图片](http://upload-images.jianshu.io/upload_images/2178672-eb2effd6b942a500.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</code>就会显示下面这张图片</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-98965f66db8f5856.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="MarkDown示例图片" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">https://ws3.sinaimg.cn/large/006tNc79gy1fj9xhjzobbj30yg0my75z.jpg</code>就是这张图片的URL，我们可以在浏览器输入这个URL找到或下载这张图片。</p>
+
+<p>所以，要在 MacDown 中插入图片，这张图片就需要上传到图床（网上），然后在引
+用这张图片的URL。</p>
+
+<h5 id="将图片上传到图床">将图片上传到图床</h5>
+
+<p>Mac 上的图床神器：iPic</p>
+
+<p>直接在App Store上下载，谁用谁知道！</p>
+
+<p>使用方法很简单，直接拖动图片到 P 图标上，或者选中图片按快捷键 <code class="language-plaintext highlighter-rouge">⌘+U</code>，就能请示上传。</p>
+
+<p>上传成功就能直接粘贴图片的URL。</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-7399aeaced6f1e29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="iPic" /></p>
+
+<p>用 iPic 上传图片后，获取URL插入文章中就可以了。</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-4be76fb02708de5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="iPic上传图片" /></p>
+
+<h4 id="推荐几个好用软件">推荐几个好用软件</h4>
+
+<h5 id="markdown编辑器">MarkDown编辑器</h5>
+
+<p><a href="https://macdown.uranusjr.com/">MacDown</a>：可能是Mac上最好的MacDown编辑器了</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-2226239a63278302.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<h5 id="图片压缩工具">图片压缩工具</h5>
+
+<p><a href="https://imageoptim.com/">ImageOptim</a></p>
+
+<p>对于我们的博客来说，图片越大，加载速度越慢。</p>
+
+<p>不信你用手机打开你的博客试试~</p>
+
+<p>所以有必要对我们上传到博客网站中的图片：指的是你的头像，首页背景图片，文章背景图片等。对于博客文章中插入的图片，其实也可以压缩了再上传。</p>
+
+<p>对博客中的所有图片进行压缩：</p>
+
+<p>看看压缩结果，最高的一张压缩了78.7%，这简直是太可怕了！</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-0f8e643fa1da8674.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ImageOptim压缩图片" /></p>
+
+<p>好了，现在个人博客的加载速度估计要起飞了~</p>
+
+<h1 id="最后要说个事情">最后要说个事情</h1>
+
+<p>我在博客中的文章，你们可以保留，让更多需要帮助人的看到，当然也可以删除。</p>
+
+<p>但是，我发现居然有人把文章的作者改成了自己，然后当成自己的文章放在自己的博客上，这就令人感到气愤了。</p>
+
+<p>比如说向我请教问题的这位：</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2178672-ed45ebafec7f5d34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>我在博客中的每篇文章都是我一字一句敲出来的，转载的文章我也注明了出处，表示对原作者的尊重。同时也希望大家都能尊重我的付出。</p>
+
+<p>谢谢~</p>
+:ET

@@ -1,0 +1,62 @@
+I"
+<blockquote>
+  <p>RVM 常用的命令整理</p>
+</blockquote>
+
+<p>RVM 是一个命令行工具，可以提供一个便捷的多版本 Ruby 环境的管理和切换。<a href="https://rvm.io/">https://rvm.io/</a></p>
+
+<p>我相信做为iOS开发者，对ruby的使用都是从安装 <strong>CocoaPods</strong> 开始的吧~</p>
+
+<blockquote>
+  <p><strong>Note</strong>：这里所有的命令都是再用户权限下操作的，任何命令最好都不要用 sudo.</p>
+</blockquote>
+
+<h2 id="rvm-安装">RVM 安装</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+$ \curl -sSL https://get.rvm.io | bash -s stable
+$ source ~/.bashrc
+$ source ~/.bash_profile
+</code></pre></div></div>
+
+<p>修改 RVM 的 Ruby 安装源到 <a href="https://ruby-china.org/">Ruby China</a> 的 Ruby 镜像服务器，这样能提高安装速度</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ echo "ruby_url=https://cache.ruby-china.org/pub/ruby" &gt; ~/.rvm/user/db
+</code></pre></div></div>
+
+<h2 id="ruby版本的安装与切换">Ruby版本的安装与切换</h2>
+
+<p>列出已知的 Ruby 版本</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm list known
+</code></pre></div></div>
+
+<p>安装一个 Ruby 版本</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm install 2.2.0 --disable-binary
+</code></pre></div></div>
+
+<p>切换 Ruby 版本</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm use 2.2.0
+</code></pre></div></div>
+
+<p>如果想设置为默认版本，这样一来以后新打开的控制台默认的 Ruby 就是这个版本</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm use 2.2.0 --default 
+</code></pre></div></div>
+
+<p>查询已经安装的ruby</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm list
+</code></pre></div></div>
+
+<p>卸载一个已安装版本</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rvm remove 1.8.7
+</code></pre></div></div>
+
+<blockquote>
+  <p>参考：<a href="https://ruby-china.org/wiki/rvm-guide">https://ruby-china.org/wiki/rvm-guide</a></p>
+</blockquote>
+:ET

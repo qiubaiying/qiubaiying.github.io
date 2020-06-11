@@ -1,0 +1,58 @@
+I"�<blockquote>
+  <p>比较水的 Personal Notes</p>
+</blockquote>
+
+<h2 id="查看你的系统有几种shell">查看你的系统有几种shell</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat /etc/shells
+</code></pre></div></div>
+
+<p>显示</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/bin/bash
+/bin/csh
+/bin/ksh
+/bin/sh
+/bin/tcsh
+/bin/zsh
+</code></pre></div></div>
+
+<h2 id="安装-oh-my-zsh">安装 oh my zsh</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+</code></pre></div></div>
+
+<p>重新打开终端，输入</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zsh
+</code></pre></div></div>
+
+<p>即可切换终端，并且发现 oh my zsh 已经帮我们配置好 zsh 了</p>
+
+<h2 id="修改主题">修改主题</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>open ~/.zshrc 
+</code></pre></div></div>
+
+<p>修改 <code class="language-plaintext highlighter-rouge">ZSH_THEME=”robbyrussell”</code>，主题在 ~/.oh-my-zsh/themes 目录下。
+修改为</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ZSH_THEME="kolo"
+</code></pre></div></div>
+
+<p>可以<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes">参照这里</a>进行选择.</p>
+
+<h2 id="设置为默认shell">设置为默认shell</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chsh -s /bin/zsh
+</code></pre></div></div>
+
+<h2 id="添加自定义命令">添加自定义命令</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>open ~/.zshrc 添加显示隐藏文件的快捷命令
+
+alias fd='defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder'
+alias fh='defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder'
+</code></pre></div></div>
+:ET
