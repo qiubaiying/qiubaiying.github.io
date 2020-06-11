@@ -41,7 +41,7 @@ OKR的灵魂我认为是Objective(目标)。好的目标要符合SMART原则，�
 有的时候大家会说为了实现某个目标，我们对于他的若干个KR是有80%~90%的信心达到的。这证明我们有达成目标的信心。但是信心指数真的是越多越好吗？
 ![confidence](../../../../img/OKR/img/OKR/confidence.jpg "Confidence")
 <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@mrthetrain?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Joshua Hoehne"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Joshua Hoehne</span></a><br/>
-正如上面说到的，目标分为两类：承诺型目标和挑战型目标。如果是挑战型目标我们有90%或者100%的信心实现，那还是挑战型目标吗？当你胸有成足的去做某件事请的时候创新的可能性也就会降低，因为你会惯性的按照设定好的路径走到目的地。而当你可能成功也可能失败的时候(50%信心指数)，你就会去想办法思考各种可能的方式，尝试并确保目标能够达成，而这个过程中自然也会给你带来很多意想不到的成长和收获。这可能就是OKR的奇妙之处，他给企业，组织和我们个人都带来了不确定性，而在不确定的过程中成长。
+正如上面说到的，目标分为两类：承诺型目标和挑战型目标。如果是挑战型目标我们有90%或者100%的信心实现，那还是挑战型目标吗？当你胸有成竹的去做某件事请的时候创新的可能性也就会降低，因为你会惯性的按照设定好的路径走到目的地。而当你可能成功也可能失败的时候(50%信心指数)，你就会去想办法思考各种可能的方式，尝试并确保目标能够达成，而这个过程中自然也会给你带来很多意想不到的成长和收获。这可能就是OKR的奇妙之处，他给企业，组织和我们个人都带来了不确定性，而在不确定的过程中成长。
 
 ### KR和Task有什么区别？
 
