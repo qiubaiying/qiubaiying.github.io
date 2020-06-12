@@ -17,7 +17,7 @@ sidebar-avatar: /img/about-BW-gentle.jpg      # use absolute URL, seeing it's us
 
 
 # SNS settings
-RSS: false
+RSS: true
 # weibo_username: BruceWang001
 zhihu_username:     bruce-talk
 weibo_username:     wangdongzhe
