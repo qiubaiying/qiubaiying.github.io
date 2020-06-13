@@ -1,0 +1,153 @@
+<!DOCTYPE html><html>
+
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="canonical" href="https://sso.lib.uts.edu.au/cas/login" /><link type="text/css" rel="stylesheet" href="/cas/themes/utslib/css/bootstrap.min.css" /><link type="text/css" rel="stylesheet" href="/cas/themes/utslib/css/fonts.css" /><link type="text/css" rel="stylesheet" href="/cas/themes/utslib/css/cas.css" /><link rel="icon" href="" type="image/x-icon" /><link rel="apple-touch-icon" sizes="180x180" href="/cas/themes/utslib/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/cas/themes/utslib/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/cas/themes/utslib/favicons/favicon-16x16.png"><meta name="theme-color" content="#0F4BEB"><script type="text/javascript" src="/cas/webjars/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">window.contextPath = "@{/}";</script>
+
+    <meta name="_csrf" content="${_csrf.token}" /><meta name="_csrf_header" content="${_csrf.headerName}" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /></head>
+
+<body class="login false">
+    <main role="main" class="container-fluid mt-3 mb-3">
+        <header role="banner">
+        <div class="row">
+            <div class="col">
+                <div class="header-logo">
+                    <a href="https://www.lib.uts.edu.au" title="UTS Library">
+                        <img src="/cas/themes/utslib/images/lib-logo.svg" /></a>
+                    <h3 class="text-center">Single Sign On</h3>
+                </div>
+            </div>
+        </div>
+    </header>
+
+        <div id="content">
+            <div class="row">
+                <div class="col">
+                    <div class="login-box" id="login">
+                    <form method="post" id="fm1" action="login" target="_top">
+                        <section class="input-wrap">
+                            <a href="#" class="username-tip tip" data-toggle="popover" data-placement="left"
+                                data-trigger="hover">?</a>
+                            <label for="username" class="textbox-label hidden">UTS Staff or Student ID:</label>
+
+                            <input class="first-box form-control required" id="username"
+                                size="25" tabindex="1" type="text" accesskey="u" autocomplete="off" placeholder="UTS Staff / Student ID" name="username" value="" /></section>
+
+                        <section class="input-wrap">
+                            <label for="password" class="textbox-label hidden">Password:</label>
+                            <input class="password form-control required" type="password" id="password" size="25"
+                                tabindex="2" accesskey="p" autocomplete="off" placeholder="Password" name="password" value="" /><span id="capslock-on" style="display:none;">
+                                <p style="text-align: center;">
+                                    <img src="images/warning.png" valign="top"><span >CAPSLOCK key is turned on!</span>
+                                </p>
+                            </span>
+                        </section>
+
+                        <section class="input-wrap btn-row">
+                            <input type="hidden" name="execution" value="2a8b81f9-e06f-4ffd-a514-78c2fcb89849_ZXlKaGJHY2lPaUpJVXpVeE1pSjkuWHozWldrU090bm16U1IxazNPSkZRMHVnWFdPNm1FcEphdmlUenJWby8yLzg5Mm1pQzlGTEpISkptNkhtclp3L3p0VjRQdUVraEIwL01Eb2JkVUZhS0gvWWRvTm5wTlo1QkszSjVSMTBBNnd0Mklha3p3cE5sakVwVUJUamxvbmxuYWZYZlhSZ0RNM09HemZia09tTWUvT0hsNXducnNBNG8yLzNVYmdUaWo3bXRoSS9pakJ6N1hWdWFkZkFiVmxMU1pOTnVMSXpOQXVSODRjeEY0QWNHRUQzRVJ5T0huN2d4RkJ4R2VERWtsMEtPamJSKy95dG5lMTdJZlNONFBSZjBpN2F4cnpReUZrVWNLa2tCdzFsejJ0WjFpcjJQbUQ1ODg3SGV6VUtTQmx5L3ZLNmgyd0VFL01qelJWS2dhb2RKZVZMYm51Y09KZENpdUVOdzRlL0VUM2EybFpwa1pQdWlMdXhKMU8yQ1lRWmR6WDVvWDF1blVKT2hiL1ZaVGRsUnBKY0dQaE1aSmJEbFJOZ21vOEVOa3VNSTArM3UvR2VlWEdTOWxzWVQwblFGYUxpU3dFb2FKdFV6S3ZWWUI4NHVwQmlyRmNZQWRZMC83WlZEakxlYklPREdLNFRjL2JXNTdDaXhGc0dna3BtRHB5SEluSWRLTnU2S05NZEhjM3dGTzRDcU5DQm9qNjNLS1Y4UkRPbkxNUVYxbVBqbjBxbk9ybTM4dWY2SG1XUEdPMFMxTXVhMFo0TFBFa3RvSjBjaUpWUXNHWllYKzN1T29GaWhlbStLRzhkK0hwNFlaWEg5VlJqWklDT1dqcWFINGxaNWNqZFhiR1BRMHpnUE16c2RxcGNRSHdyaE1ETjg1OWR6dWRLQ2xScStVVERteDc2eWpWalBOZDM2bC8xbHY3REtVR0Z0WlB3OFk1SkpybW1haFFtaldTQWVNNFMvRDlHK213cVF0emc1aldvRmUremVnckp6WWN2NXo1TnJEaDV6R3E4SXg4WFd0UXQ5c09yaFpnNENQZWNlaVRsNm1hRU1mUm92M1JmQWZOT2dESEl4Y1Y4SnpxUEF0QnE1eWNqUEpna3B2bisxeDJBSWFlMFNpWUxnLzhJWFZ6ei9vWng1dUkyQkhhc1lWUzg0bjhSaXZNQStZeTJsSytIYzFmVXpPMEp6WFRPcGNnOWpwK3dhSWx6anM4UnR5dHZGd0RwNEdUb1IyT3gzTmd6Vmw4enNWT2xqU0RVVkVPelZvSVFvSHVlQ0JiQjNFRHFNcVlWRWV4YUNhSmIrT2ZIOVdNbnJrdDk1cktMSElRZlFiWmY1d0lTa0k4SnhKL21uNC9RaEp1eUtFZ1A4ZjZGdGhBM1RjYzdvSk5YTzI2eGprZlFjUnlTcHVDbHRSdk9FdEZ0eHg2dGtyMkRHeGFUUGMzYi84SEJ5S0pZOFVEbm5ZWkxwOXFoMTFkR1ptVTBuMi9sdWtrdlo1MWM1QXRSN2piUWI0cndWNGFkMmJLUHFOMlB0c0VkMGt3Vk12N05EempYNGJJVmVCTGdPQVZ4MmozY0N0cWlCdHFvaklHbWxEWHkzN3VlV3ZVVThrWkthUkVOWERXVFdsMWpKdUFWTllLVFQ1NWVQcGRSZWR4ZkxMYjRldjdXbExvenVVenVoQkl1MmdIUjBQZjFhK2ZrNTdZSVVqUHNoYUZLNVZlL3FjTktzMVUrcXdBcTUzQTBGMnpFUEZZMGl0NWFwTktUQ2pJNTlhdWZmTGZxTFIxVTBoRTJwcGlDMCt2dlRuTXoxOTJNR3B4a3duWCs4K2tuSEwrSFVndkc2TC9CVVMvdURJSjF5c0RBbXFFMkZvSENnY05jeW5HWDA0cFhLdWdUdHE4SUkyMThDbTJkL01kUUpXMVpxUVJhclJHZ01Ib24xWjZBcUh3bnFZVEsxWnBpQ3lGK1o3ejdRSGpaejFEb0JuZUlyMGRGQ01oWlJQYVBiaDMzL3JXZ0FxdmorNWVPd0MrVzJHUENoanU1UWtMRnczMzBOdGNHMUdTRUIwNTdqMlFHRjVrQlAzSnBqRVRlMmJiT3dzVGRYS1hhaTl1NkZJRkM3U1MyczRNUHBsMWwvd1l0NU9XZWtnM1ZrRnpzQyswUXNLejZnL2lLSkcxbnMrSGlFRUpuc2Z1OHh0ZnZKKzhkVEJkYllCeWZKV3JkdjZhRDB0OVRIL0ZTYy9UTkIxYk5KcGI5Rmh1WXJaMlNSRUxQaEJNckNmOHJGd2lzdVIrbHVlelNqYm9iTVkyaHpHa1JpTi8zQ2QxT3VvTzRWZUVpWEZIMUR0MDdYaVNldXBYMlhRT0U4MnBTMmQ0VHFxWFRNK2t1eTVYMFFiK1BrVzQ5WENidHhFMWVxZ1FaMUMrelJ0MXZpRGQyNmY0MCtLMllWZytoUmVZeWFJWXhsYzRPbmdQdzk1SHV6RFFWZmdYdXFibVRZRzJIdG5QZHNMa01sekwxQUxhTnJqMjVPK2JjNk1xTjI3bWVXM0dqa3poeFN2NmJpeS9pa0Jmemd4cnJCa3FQRGs3VDJXOEVWQkxVTW1MR1V4VHBNcHBEU0ltTVAvdk9BbTR6dmIyNGlyR1dqUkJsKzVpZDBQdnRJV29ZS0RaK0JvdHlhcUVibXBGcFpmOHROY0lzendTZnAyaDY1OHRJaDl1a09pR3VuTXBuc2FUbmU4RXlHaUg3WXdmVy9abGxOTzMwc2U4YkR6TEpKMnV5ditIZmRTcGdqZ1MwbG12V0U5T3Y4d3lkeklsQ1ZkQk16bXdveXV5dEZZdTAyd0tYYjgzYmhrbXJIei9UNDZzSk1ibG96U3V1ZENXMjZ2SENOMUlhQXA4NXM3WXU1SDNHd0g2cXBFS2RvUGJVeFBOUVBGRmE0QXl0UCt0ZFRiWUF0N3lpUEo4bSs2TnArU21JOGRpYUtNVWhLN0xnL1dKUG0xNm1OaHc1Q0pYL3B3THd6dWNVdWxMei8vd2NReHN5Y2I3WUJnclpqcWl6c1hOSnRnVHl3SHJiUmZEVG54L0FzeUdwTUxnTTZ6amdxczIvRm1mU2s0TmVJMnRrdEZCLzVVUVdQK3pkVFBNQnpuVTlCc3FuZTBvOGpGaFdQVHlkOTQ4Z2F6ZkJtdmk2c2dndG42WUIza045dUpITFc5Qmo0eGp2cGkycEloWWlmWllSRzZ5aHgyaDhLNGZnazRhRk1PSUtlVnlod1ozRnF5QUQ4c2wxTXJzRlgrZDBHQ0RSN2R3NXdxU2psV3RXRnlGR051a0VmeXNMOWs0aFlCSndaSFVtRnliRW9oNVBCR21LRXJGVThpRVVTVFN0MHN5cWJDc0gxbHFsWmt6VVZXdmJGTkpYOUZqbktXaHFiaHd4L1l5NnFjbFQ5enlVOVAyeG93OGpLKyswcVo4VU5WaXp3OW1ZOUF2MGxxQmdDamJwMWloVVlsWjhKMDdrTTBTVC9OZzVBY3dLbFZPbCttN1NRSTFnN01nV0Z6dldXQjNic016QnNoT0hBbkF0OVorK2ZxWGcyMHZQcjlpWXp1QmpvbU9hTG9pZ0tabTZVQlB3N3hNdlBNWHVodDNJd0IyYm16cWY4c1dESnJmd25RUmJqSDJMYjVyRGdsK043YTN6NGw5ZDRxNHlSN0VyQzltQW10bEF1ZjM2WnhyWXVzT2dlUW95ZXBJN3lLSkd2dDV2VDJoZTVRd2JkYkg1UGZxamJzTWY0UEdHNGpMVWJnQ2FIMDlHeGZESFhkakJEb29xTFVub3IwaG9OdWlHZ0hFOWZjSFJIU1daNkV5ME8wd1ZQbFdhNFhYdHJlY2xkc2FXdG5TNU5USEdhSmlhNkszMXN6SlM0ZklxeWhHLythSmJWRVhLUnNkckhoa2dvM2FQT2tiZFc3cFc4N0pmVXQ0amFQMFZFa3A1ZmUvcnQyOUttK2FsVWZ2TW41WEZTZ0U1dnV0M2lMQW5lMU1sVG1hT010VXBtSTgrZS9GRklTdXZqYlNyeHJnSkFzMjNUU3JTZXc0UDFMRm5jc1R0dmcwK3NsNFkwYVI1MUlGY2p5N0hwN0NvdXFVR05VdkUySC9oK3Y2M3B2bTNmU1paOWZ3ck83R2pRR3dZTkdtUXZQUFpsdWVKYnhQbDdHSHhTaE1LYUR3UFlmUkg2RlVHNkFkVmN5YWhqSk1XRHEvSWc2ZW1qbFA5VVN3MU1oRzZ0VnNSK0FkU2x1MmdvSlpCdThyeXUvamJ1VDRteVA2bm83bDBBbUdvcCtxVjB5Wkx2Q3hobFdVS1VHdENzc0VMYzh3RHhTd2wxSTZaQmJSbHp4bC9neTZUdE9wVGxYNzk3TnhqdUFXa2FwZkpna3M0RUNwK0NnRERBS1N4b1FDOE91VmNQc0o1S01OL2w0MnFTZEF3VHh4MUV2S0pNeHNjRXRjMEtSalJadHlqcTNaa21VTVowU2NUbjl1cnJjS3l0OFhlUmt3TksrUjF5TEpKOW1CSXdjYThXemlSYyt2aHJHM0ZOb0ZJOGM0YWtjQlhCejRvcFQ5cVdIeE5iWHdrSWRpUjFCeFE5Nnd3WHRzQVpYSS9kVk1aaXp5QzA1UDZDOHJ5TmZ3SWk4eTZ4bndFZFhOQnlJVGg0Q3ZKZ2pHd05yZjlVbzIxNjdQc1FYTnUrcGRTVmFISXAvSmplbE1taWVRUnhOcmJCckR4OXlrMUMvdDRKUHlubU5GSUdhWnZsdjBBNlUvNkpLK3owODFrRlg0NHZWMzJGbkNJUXpoTUJsT1RrdFpqQ2NybnNMOTYrVWQyYmVUL0hPeVE3NlgzcE1CSS9EY0pEUDhkcUFEZFQ3NzdSK2Vnc2JkTi9UMTBrRm80SjQwYVhEOGxuMHBSU01oYnVnL1FMdGg4cGd5WDZUbkJzQmYxR2VuUEJmOXZqRlVMRWRwYmQyWVFjMkFCeGlVVm12TVltUCtCTlNNMnBYUk9STzhTY2hlVHBEdks0TDNMUXczQ0RNd3dlOExtU3ZCWERjdHR1TWs4aTVPMkY2SEs3aUoybHRZRTRrZjhBbDA1YVlQV3ZybVl0aUNhMm5FOEJkTkZ0STVVVHQ5QnpPVWNJLzg5anZ4Z3JEMmszdmhIK2QwL0YxZCtmWkdSRkp3ejVlbC9rbDNjaGJ0Sm1PV2NNT1BWTkpEQmZQSWFQT2ZWSXQ0VXFzM1NNN3VHR0tvUDlOQ3MxU2l6RHQwU1ZGcWZmYmlMZVR0UWtJV0d0QmVWTEpPYW5OcWtYdWhtU1VqMXVlYkZoajVhVlR4N1E0N0E5UGtHaWh3M1hEamdvMzhxbzJzR290WTEzdElzbEx4aHluYmhOMmd0TWtNeTRTUHY3MjdsWjlDSUFFSG9CMlFielBRZEo2WEIxeGlPL1ppa1hYZkpleUdmT3lHdEticjZuT1oyZzYzWFYvOFRIL1NlSmNxZ1k5bHVROVdGOG1XclJpYmhYbVdEdnBMVUgwRDhsYkEvbkhmOEdVMW9EVFdUQW1Pc1padk1lLzQrM21VYVYrdWwzMG1ndlRXUlpaTWphYWZENGRUQk8yZlNVbmhhYlp4Ym5iSzNYSVBPbGVGNXNucHhYYjZqYUR6TitpYXl4SlJNVnpZZ3dQeWVPeDhRZUNhd1FTTUwwQ1JEODJHRlBKanh2MDZ4VHNJTEtQZ1YrYnNFYnRMbkNoTlI2dDdMUmk0RUNqZHhKWGN2eXNyQ0k4eStZbVRiOTN2bGp0d0FLYWJpRGhBMUZJZ1ZhM1VQSW5CN3BPZk1KTnBTY2lFSzJYU3lxWCtNK0JQSkFyQlFoUVRXVGUyRS85TFJPQk1YYnZnQy80M1Jrb3ZaTmtIM0tBPT0ucVd5NW1lRkdDbldxTWNrY2ExR29abWdjaUkzeXFOUHlxYl9faXBxb3NqZkhoT3JsWTA1cHRDcWVUcXpGUnBkckdvNDg0YXU3b29SaFpDSmlIS3ZZNXc=" /><input type="hidden" name="_eventId" value="submit" /><input type="hidden" name="geolocation" /><input class="btn btn-block btn-submit login btn-primary" name="submit" accesskey="l" tabindex="6" type="submit"
+                                value="Login" /></section>
+
+                        <section class="input-wrap">
+                            <div class="row">
+                                <div class="col col-auto">
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="rememberMe" id="rememberMe" value="true" tabindex="4" /><label for="rememberMe" class="form-label text-muted">Keep me logged in</label>
+                                    </div>
+                                </div>
+                                <div class="col ml-auto text-right">
+                                    <a href="https://www.lib.uts.edu.au/node/34">Help</a>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="input-wrap">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <span class="tc">By signing in, you are agreeing to the <a href="http://www.lib.uts.edu.au/conditions/use">terms
+                                            and conditions</a>.</span>
+                                </div>
+                            </div>
+                        </section>
+
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer" role="contentinfo">
+        <div class="row">
+            <div class="col text-center">
+                <span id="copyright">UTS Library &copy; 2019</span>
+            </div>
+        </div>
+    </footer>
+    </main>
+
+    <script type="text/javascript" src="/cas/webjars/zxcvbn/4.3.0/zxcvbn.js"></script>
+<script type="text/javascript" src="/cas/webjars/jquery-ui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/cas/webjars/jquery-cookie/1.4.1-1/jquery.cookie.js"></script>
+<script src="/cas/webjars/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
+
+<script src="/cas/webjars/headjs/1.0.3/head.min.js"></script>
+<script src="/cas/webjars/store.js/1.3.17/store.min.js"></script>
+<script type="text/javascript" src="/cas/themes/utslib/js/cas.js"></script>
+
+<script>
+    (function ($, onReady) {
+        if ($.isFunction(onReady)) onReady($);
+    })(jQuery, window.utslibReady);
+</script>
+
+<script>
+    head.ready(document, function () {
+        if (!window.jQuery) {
+            var jqueryUrl = "\/cas\/webjars\/jquery\/3.3.1\/jquery.min.js";
+            head.load(jqueryUrl, loadjQueryUI);
+        } else {
+            notifyResourcesAreLoaded(resourceLoadedSuccessfully);
+        }
+    });
+
+    function loadjQueryUI() {
+        var jqueryUrl = "\/cas\/webjars\/jquery-ui\/1.12.1\/jquery-ui.min.js";
+        head.load(jqueryUrl, loadjQueryCookies);
+    }
+
+    function loadjQueryCookies() {
+        var jqueryUrl = "\/cas\/webjars\/jquery-cookie\/1.4.1-1\/jquery.cookie.js";
+        head.load(jqueryUrl, notifyResourcesAreLoaded(resourceLoadedSuccessfully));
+    }
+
+    function notifyResourcesAreLoaded(callback) {
+        if (typeof callback === "function") {
+            callback();
+        }
+    }
+</script>
+
+<script>
+    /*<![CDATA[*/
+
+    var trackGeoLocation = false;
+
+    var googleAnalyticsTrackingId = "UA-427154-16";
+
+    if (googleAnalyticsTrackingId != null && googleAnalyticsTrackingId != '') {
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', googleAnalyticsTrackingId, 'auto');
+        ga('send', 'pageview');
+    }
+
+    /*]]>*/
+</script>
+
+</body>
+
+</html>
