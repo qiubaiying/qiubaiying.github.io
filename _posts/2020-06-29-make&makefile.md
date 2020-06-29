@@ -125,11 +125,11 @@ clean:
 
 为了避免重复输入文件名，引入符号 $@ ，$<，$^
 
-例如，有 <target>: <dependencies> 对：all: library.cpp main.cpp
+例如，有 [target]: [dependencies] 对：all: library.cpp main.cpp
 
-- $@ 指代当前的<target>
-- $< 指代当前<dependencies> 中的 第一个 dependency
-- $^ 指代当前<dependencies> 中的 所有的 dependencies
+- $@ 指代当前的 [target]
+- $< 指代当前 [dependencies] 中的 第一个 dependency
+- $^ 指代当前 [dependencies] 中的 所有的 dependencies
 
 ## an concise + version of the example （自动检测 cpp 文件，并且自动替换文件名后缀）
 
