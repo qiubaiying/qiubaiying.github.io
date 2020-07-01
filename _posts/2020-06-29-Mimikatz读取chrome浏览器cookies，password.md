@@ -52,5 +52,25 @@ sqlserver密码获取工具Get-MSSQLCredentialPasswords.psm1 //未测
 for /f "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do  @echo %j | findstr -i -v echo | netsh wlan show profiles %j key=clear
 ```
 
+### 2.3 windows log的信息查看
+
+windows自带的命令就可以
+
+日志查看收集
+
+#### 1、Windows2003下默认存在eventquery.vbs
+
+```
+cscript c:\WINDOWS\system32\eventquery.vbs /fi "Datetime eq 06/24/2015,01:00:00AM-06/24/2015,10:00:00AM" /l Security /V #查看SECURITY日志 2015-6.24 上午1点-上午10点日志
+```
+
+#### 2 windows 7以上wevtutil 命令
+
+```
+wevtutil qe security /rd:true /f:text /q:"*[system/eventid=4624 and 4623 and 4627]" #查询所有登录、注销相关的日志语法
+```
+
+#### 3.第三方信息收集工具LogParser.exe psloglist.exe等
+
 
 
