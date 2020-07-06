@@ -90,7 +90,7 @@ service-worker: true
 friends: [
    {
         title: "梁同学的blog",
-        href: "https://www.baidu.com/developer.apple.com/"
+        href: "https://hooblog.cn/"
     }
 ]
 
