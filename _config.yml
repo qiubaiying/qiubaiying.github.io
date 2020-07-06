@@ -86,5 +86,13 @@ featured-condition-size: 0            # 相同标签数量大于这个数，才�
 chrome-tab-theme-color: "#000000"
 service-worker: true
 
+# Friends
+friends: [
+   {
+        title: "梁同学的blog",
+        href: "https://www.baidu.com/developer.apple.com/"
+    }
+]
+
 
 
