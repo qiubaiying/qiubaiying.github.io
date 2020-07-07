@@ -94,5 +94,13 @@ friends: [
     }
 ]
 
+# MY PAGES
+MY OTHER PAGES: [
+   {
+        title: "LEETCODE",
+        href: "https://leetcode-cn.com/u/beiyi-2/"
+    }
+]
+
 
 
