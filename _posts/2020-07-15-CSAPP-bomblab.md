@@ -1,1 +1,11 @@
-
+---
+layout:     post   				    # 使用的布局（不需要改）
+title:      深入理解计算机系统(CSAPP)_bomb lab	# 标题 
+#subtitle:   脚本，xss #副标题
+date:       2020-07-15 				# 时间
+author:     s-seven 						# 作者
+header-img: img/post-bg-2015.jpg 	#这篇文章标题背景图片
+catalog: true 						# 是否归档
+tags:								#标签
+    - CSAPP
+---
