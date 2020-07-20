@@ -16,6 +16,10 @@ tags:
 并没有什么收录标准，角度刁钻、思路新颖、逻辑清晰都可能成为理由，甚至是单纯顺眼
 
 ---
+### ExoPlayer
+
+[ExoPlayer-Codelab](https://codelabs.developers.google.com/codelabs/exoplayer-intro/#0)
+
 ### JetPack
 
 [JetPack-LifeCycle](http://blog.chengyunfeng.com/?p=1065)
