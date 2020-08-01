@@ -1,10 +1,10 @@
 ---
 layout:     post
-title:      规模化敏捷选择地图(翻译)
+title:      规模化敏捷选择地图
 subtitle:   
 date:       2020-07-31
 author:     Bruce Wong
-header-img: img/view1.jpg
+header-img: img/View1.jpg
 catalog: true
 tags:
     - 敏捷
@@ -21,6 +21,3 @@ tags:
 
 ## 个人观点  
 规模化敏捷基础仍然是单团队要先敏捷起来，之后才是你选择如何扩展敏捷到多团队。上面的地图主要是帮你找到适合你们公司实际情况的落地方案，是一个参考建议。但是在这之前你的组织或者团队需要对敏捷有认识，接受并理解敏捷思想。否则直接应用规模化敏捷的方案只会让你很失望。
-
-
-
