@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      规模化敏捷选择路径(翻译)
+title:      规模化敏捷选择地图(翻译)
 subtitle:   
 date:       2020-07-31
 author:     Bruce Wong
