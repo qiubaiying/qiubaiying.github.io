@@ -63,6 +63,4 @@ def objective():
 ```
 The disadvantages of this protocol are (1) that this kind of function cannot return extra information about each evaluation into the trials database, and (2) that this kind of function cannot interact with the search algorithm or other concurrent function evaluations.
 
-
-
 ![](https://raw.githubusercontent.com/JazzikPeng/jazzikpeng.github.io/master/_posts/img/hyperband_rank_chart.png)
