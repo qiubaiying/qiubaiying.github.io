@@ -65,4 +65,4 @@ The disadvantages of this protocol are (1) that this kind of function cannot ret
 
 
 
-![](./img/hyperband_rank_chart.png)
+![](https://raw.githubusercontent.com/JazzikPeng/jazzikpeng.github.io/master/_posts/img/hyperband_rank_chart.png)
