@@ -8,6 +8,7 @@ header-img: img/power_brandon-morgan-unsplash.jpg
 catalog: true
 tags:
     - Microsoft
+    - 技术
 ---
 
 ## 前言  
