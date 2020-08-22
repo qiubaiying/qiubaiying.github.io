@@ -3,25 +3,25 @@ title: XiaoJun's  Blog
 SEOTitle: 小军的博客 | Hong Xiaojun
 header-img: img/kjHvwJ0nl8U.jpg
 email: junqiaochen@gmail.com
-description: "Think Different."
-keyword: "洪小军, GITHUB Blog, Xiaojun的博客, Hongxiaojun, 小军, BOX, 定投, iPhoneX"
+description: "BOX定投践行群邀请码：  MRY60ALY9K "
+keyword: "BTC,EOS,hongxiaojun, BOX, 定投, 李笑来，BOX定投践行群"
 url: "https://hongxiaojun.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/hongxiaojun/hongxiaojun.github.io" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "BOX定投践行者，和你一起慢慢变富"
+sidebar-about-description: "种下一棵树的最佳时间是十年前，其次就是现在..."
 sidebar-avatar:      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
-RSS: false
-# weibo_username:     小军Hong
-zhihu_username:     no 知乎
+RSS: true
+ weibo_username:    BOX践行者说
+WeChatshipinhao:     BOX践行者说
 github_username:    hongixaojun
-facebook_username:  junqiaochen
+facebook_username:  junqiaochen2
 jianshu_username:   junqiaochen
 twitter_username:   junqiaochen2
 
@@ -106,9 +106,9 @@ friends: [
         href: "http://www.jianshu.com/u/37e07b694e3d"
     },{
         title: "Mixin Messenger",
-        href: "https://ohmy.xin/circles/5416143/posts/234"
+        href: "https://ohmy.xin/circles/5590334/posts/10748"
     },{
         title: "微博",
-        href: "https://developer.apple.com/"
+        href: "http://weibointl.api.weibo.com/share/167653701.html?weibo_id=4539275888828130"
     }
 ]
