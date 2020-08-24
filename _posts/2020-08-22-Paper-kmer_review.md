@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      Paper sharing - 
-subtitle:   K-mer counting
+title:      Paper sharing - A review paper of K-mer counting
+subtitle:   K-mer counting: memory-efficient strategy parallel computing and field of application for Bioinformatics
 date:       2020-08-22
 author:     Xuan
 header-img: img/post-bg-3.png
