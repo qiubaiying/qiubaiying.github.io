@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      PaperSharing - A review paper of K-mer counting
-subtitle:   2018 BIBM (IEEE International Conference o Bioinformatics and Biomedicine)
+subtitle:   2018 BIBM (IEEE International Conference on Bioinformatics and Biomedicine)
 date:       2020-08-22
 author:     Xuan
 header-img: img/post-bg-2.png
