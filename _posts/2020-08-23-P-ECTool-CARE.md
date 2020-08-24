@@ -13,13 +13,24 @@ tags:
 
 > Title: CARE: Content-Aware Sequencing Read Error Correction
 
+- a alignment-based method 
+- using **minhash** : for efficient similarity search
+- GPU acceleration (handle human genome in only 4 hours)
+- evaluation: false positive; true positive; superior de nove assembly
+- written in C++ [code](https://github.com/fkallen/CARE)
+
+>>  how to compare assembly results?
+
+
 ## Content
-
-
+![paper structure](/img/post-ct-care.png)
 
 ## Innovation
 
-logical clearly
+
+1. Using minhashing
+
+CARE is based on a variant of minhashing to quickly find a set of candidate reads which are similar to a query read with high probability.
 
 
 ## learning
