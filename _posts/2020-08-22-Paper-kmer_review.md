@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      Paper - A review paper of K-mer counting 
-subtitle:   K-mer counting: memory-efficient strategy parallel computing and field of application for Bioinformatics
+title:      读 - 《人人都能用英语》
+subtitle:   缺乏耐心几乎是所有人的本性，也是绝大多数人最终未能矫正的习惯。
 date:       2020-08-22
 author:     Xuan
 header-img: img/post-bg-3.png
@@ -12,6 +12,9 @@ tags:
 ---
 
 > Background: 2018 BIBM
+
+title:      Paper - A review paper of K-mer counting 
+subtitle:   K-mer counting: memory-efficient strategy parallel computing and field of application for Bioinformatics
 
 ## content
 
