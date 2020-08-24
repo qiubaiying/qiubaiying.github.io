@@ -1,29 +1,27 @@
 ---
 layout:     post
 title:      PaperSharing - A review paper of K-mer counting
-subtitle:   K-mer counting memory-efficient strategy parallel computing and field of application for Bioinformatics
+subtitle:   2018 BIBM (IEEE International Conference o Bioinformatics and Biomedicine)
 date:       2020-08-22
 author:     Xuan
 header-img: img/post-bg-3.png
 catalog: true
 tags:
-    - Paper_reading 
+    - Paper_sharing 
     - Review_paper
 ---
 
-> Background: 2018 BIBM
+> Title: K-mer counting: memory-efficient strategy parallel computing and field of application for Bioinformatics
 
-title:      Paper - A review paper of K-mer counting 
-subtitle:   K-mer counting: memory-efficient strategy parallel computing and field of application for Bioinformatics
 
-## content
+
+## Content
 
 ![paper structure](/img/post-ct-kmerr.png)
 
-## innovation
+## Innovation
 
 logical clearly
-
 
 
 ## Reference
