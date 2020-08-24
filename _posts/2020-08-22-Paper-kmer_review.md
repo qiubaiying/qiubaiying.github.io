@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Paper - A review paper of K-mer counting 
-subtitle:   Title "K-mer counting: memory-efficient strategy parallel computing and field of application for Bioinformatics"
+subtitle:   K-mer counting: memory-efficient strategy parallel computing and field of application for Bioinformatics
 date:       2020-08-22
 author:     Xuan
 header-img: img/post-bg-3.png
@@ -15,7 +15,7 @@ tags:
 
 ## content
 
-![paper structure](/img/post-ct-kmerr)
+![paper structure](/img/post-ct-kmerr.png)
 
 ## innovation
 
