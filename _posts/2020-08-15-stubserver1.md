@@ -18,7 +18,7 @@ tags:
 打桩服务呢？顾名思义用一种非侵入性的方式，让被测试服务或接口中调用的第三方服务被模拟，这样当测试到使用第三方服务的时候能够快速反馈指定内容，而无需真正调用到第三方服务。这个模拟器就是打桩服务。
 ## 他和mock服务的区别  
 一些熟悉TDD的工程师看到这里肯定觉得这就是Mock嘛！是的，他和TDD中的mock的主要区别在于mock是code级别的，而打桩服务属于应用层面的，level更高一些，力度更大一些。 
-Martine Fowler写过一篇关于mock和stub去别的文章，感兴趣的可以看一下：[Mocks Aren't Stubs](https://martinfowler.com/articles/mocksArentStubs.html)。总结以下几个主要的不同如下：
+Martine Fowler写过一篇关于mock和stub去别的文章，感兴趣的可以看一下：[Mocks Aren't Stubs](https://martinfowler.com/articles/mocksArentStubs.html)。总结几个主要的不同如下：
 1. Mock 侧重于行为验证(behavior verification)
     行为验证更多的是根据测试对象的被测试业务逻辑，设计被模拟对象的反馈行为，从而达到验证业务逻辑的结果。例如一个邮件服务，如果使用Mock方式模拟它，那么当验证使用这个邮件服务的业务逻辑时候，例如当发送附件大于限制时候，Mock对象会返回错误，而使用方要如何处理这种响应？当邮件标题为空时，邮件服务会返回错误提示，调用方业务逻辑是否能够处理这个情况？
 2. Stub 侧重于状态验证(state verification)  
@@ -36,7 +36,7 @@ Martine Fowler写过一篇关于mock和stub去别的文章，感兴趣的可以�
     控制Stub的后端请求是否真的调用所模拟的真实服务。他的Mode分为三类：
     - proxyOnce：只有第一次请求调用真实服务，之后所有请求讲返回第一次调用的结果。
     - proxyAlways：每次都调用真实服务，并记录到mountebank数据库，之后可以设置重放来模拟复杂请求。
-    - proxyTransparent：每次都调用真是服务，并且不记录到mountebank数据库。
+    - proxyTransparent：每次都调用真实服务，并且不记录到mountebank数据库。
 3. 响应行为设定  
     可以设定响应的行为，mountebank根据测试场景支持如下集中行为：
     > wait: 网络延迟，设定延迟响应的毫秒数。  
