@@ -17,7 +17,7 @@ tags:
 
 ## Content
 
-Motivation: 
+>Motivation?
 
 when do sequence comparision (including nucleic acid / protein / etc.), too much seeds need to be stored, but which cannot be stored in RAM.
 
@@ -43,12 +43,35 @@ Way 2.different strings Ti and Tj choose the same representative if they share a
 
 选择原则是，对于不同的序列（Ti and Tj）, 他们共有的长子串可以被同样的kmer所代表。这样被选出的kmer叫做minimizers。
 
-## Definiation
+> minimizers' properties?
 
-1. how many memories do all seeds take ?
+- Property1. If two strings have as ignificant exact match,then at least one of the minimizers chosen from one will also be chosen from the other. (If two strings have a substring of length w+k−1 in common, then they have a (w, k)-minimizer in common.)
+有相同子串，就一定会共享同一个minimizer
+
+
+> Flowchart of minimizer selection
+
+Step1.select an ordering for the set of all k-mers
+
+Step2.examine w consecutive k-mers and **select the smallest** as a minimizer.
+
+```
+a set of w consecutive k-mers covers a string of exactly w + k − 1 letters, where ‘consecutive’ means that each k-mer is shifted by one letter from the previous one.
+```
+
+> An example of minimizer?
+![(4,3)-minimizers](/img/post-ct-minimizer2.png)
+
+
+> how many memories do all seeds take ?
 ![seeds take memories](/img/post-ct-minimizer1.png)
 
-2. An example of minimizer?
+> how much space saving?
+
+in general the space savings is about a factor of 2/(w + 1), see section 3
+
+
+
 
 
 
