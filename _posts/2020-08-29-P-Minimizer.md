@@ -35,12 +35,10 @@ Minimizers, only a small fraction fo all seeds.
 > how to select a fewer kmer (as minimizer)?
 
 Way 1.every k-th k-mer (each letter is covered exactly once)
-
 don't work, because that. 
 However, in that case two strings Ti and Tj with long identical subsequences that start at positions pi and pj need not have a stored k-mer in common unless pi − pj is a multiple of k. Thus, the database would not satisfy the collection criterion, in the sense that sorting it by k-mer would yield seeds for only a small fraction of matching pairs (Ti , Tj ).
 
 Way 2.different strings Ti and Tj choose the same representative if they share a long enough subsequence.
-
 选择原则是，对于不同的序列（Ti and Tj）, 他们共有的长子串可以被同样的kmer所代表。这样被选出的kmer叫做minimizers。
 
 > minimizers' properties?
@@ -54,12 +52,13 @@ Way 2.different strings Ti and Tj choose the same representative if they share a
 Step1.select an ordering for the set of all k-mers
 
 Step2.examine w consecutive k-mers and **select the smallest** as a minimizer.
-
-```
 a set of w consecutive k-mers covers a string of exactly w + k − 1 letters, where ‘consecutive’ means that each k-mer is shifted by one letter from the previous one.
-```
+
+
 
 > An example of minimizer?
+
+This is the fundamental reason **why using minimizers (rather than all k-mers) as seeds reduces storage requirements.**
 ![(4,3)-minimizers](/img/post-ct-minimizer2.png)
 
 
