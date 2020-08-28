@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      PaperSharing - Minimizer was first proposed
+title:      PaperSharing - Minimizer, a representativa of a set of kmers
 subtitle:   2004 Bioinformatics
 date:       2020-08-29
 author:     Xuan
@@ -18,26 +18,30 @@ tags:
 ## Content
 
 Motivation: 
+
 when do sequence comparision (including nucleic acid / protein / etc.), too much seeds need to be stored, but which cannot be stored in RAM.
 
->the existing methods:
+>the existing method's catagories?
 
 - "seed and extend" approaches, e.g. BLAST_1990
 - "seeds" without an explicit extend step, e.g. SSAHA_2001
 
 > why minimizers?
-Minimizers, only a small fraction fo seeds.
+
+Minimizers, only a small fraction fo all seeds.
 - speed up string-matching comparision
 - missing only a small fraction of the matches (using all seeds)
 
-> how to select a fewer kmer
+> how to select a fewer kmer (as minimizer)?
 
-1.every k-th k-mer (each letter is covered exactly once)
->>don't work, because that. 
+Way 1.every k-th k-mer (each letter is covered exactly once)
+
+don't work, because that. 
 However, in that case two strings Ti and Tj with long identical subsequences that start at positions pi and pj need not have a stored k-mer in common unless pi − pj is a multiple of k. Thus, the database would not satisfy the collection criterion, in the sense that sorting it by k-mer would yield seeds for only a small fraction of matching pairs (Ti , Tj ).
 
-2.different strings Ti and Tj choose the same representative if they share a long enough subsequence.
->> 选择原则是，对于不同的序列（Ti and Tj）, 他们共有的长子串可以被同样的kmer所代表。这样被选出的kmer叫做minimizers。
+Way 2.different strings Ti and Tj choose the same representative if they share a long enough subsequence.
+
+选择原则是，对于不同的序列（Ti and Tj）, 他们共有的长子串可以被同样的kmer所代表。这样被选出的kmer叫做minimizers。
 
 ## Definiation
 
