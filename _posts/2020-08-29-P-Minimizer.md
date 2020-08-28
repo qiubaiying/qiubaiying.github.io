@@ -63,6 +63,7 @@ This is the fundamental reason **why using minimizers (rather than all k-mers) a
 
 
 > how many memories do all seeds take ?
+
 ![seeds take memories](/img/post-ct-minimizer1.png)
 
 > how much space saving?
