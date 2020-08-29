@@ -17,22 +17,22 @@ tags:
 
 ## Content
 
->Motivation?
+1.Motivation?
 
 when do sequence comparision (including nucleic acid / protein / etc.), too much seeds need to be stored, but which cannot be stored in RAM.
 
->the existing method's catagories?
+the existing method's catagories?
 
 - "seed and extend" approaches, e.g. BLAST_1990
 - "seeds" without an explicit extend step, e.g. SSAHA_2001
 
-> why minimizers?
+2.why minimizers?
 
 Minimizers, only a small fraction fo all seeds.
 - speed up string-matching comparision
 - missing only a small fraction of the matches (using all seeds)
 
-> how to select a fewer kmer (as minimizer)?
+3.how to select minimizers（a fewer representative kmers)?
 
 Way 1.every k-th k-mer (each letter is covered exactly once)
 don't work, because that. 
@@ -41,13 +41,13 @@ However, in that case two strings Ti and Tj with long identical subsequences tha
 Way 2.different strings Ti and Tj choose the same representative if they share a long enough subsequence.
 选择原则是，对于不同的序列（Ti and Tj）, 他们共有的长子串可以被同样的kmer所代表。这样被选出的kmer叫做minimizers。
 
-> minimizers' properties?
+4.minimizers' properties?
 
 - Property1. If two strings have as ignificant exact match,then at least one of the minimizers chosen from one will also be chosen from the other. (If two strings have a substring of length w+k−1 in common, then they have a (w, k)-minimizer in common.)
 有相同子串，就一定会共享同一个minimizer
 
 
-> Flowchart of minimizer selection
+5.Flowchart of minimizer selection
 
 Step1.select an ordering for the set of all k-mers
 
@@ -55,16 +55,15 @@ Step2.examine w consecutive k-mers and **select the smallest** as a minimizer.
 a set of w consecutive k-mers covers a string of exactly w + k − 1 letters, where ‘consecutive’ means that each k-mer is shifted by one letter from the previous one.
 
 
-
-> An example of minimizer?
+6.An example of minimizer?
 
 This is the fundamental reason **why using minimizers (rather than all k-mers) as seeds reduces storage requirements.**
 ![(4,3)-minimizers](/img/post-ct-minimizer2.png)
 
 
-> 为啥要保证minimizer cover 所有bases 啊？
+7.为啥要保证minimizer cover 所有bases 啊？
 
-1.保证minimizer cover 所有bases的策略:
+1）.保证minimizer cover 所有bases的策略:
 
 - w ≤ k, every base in a string will be covered
 - use (u, k)-end- minimizers, the ends of strings will be well covered
@@ -73,12 +72,12 @@ This is the fundamental reason **why using minimizers (rather than all k-mers) a
 increasing the likelihood of finding low-fidelity matches on the ends of strings ？
 Properties 1′ and 2 imply that two strings with an exact overlap of at least 2k bases have a minimizer in common. 
 
-2.minimizer 没覆盖所有bases的情况（w ≫ k）：
+2）.minimizer 没覆盖所有bases的情况（w ≫ k）：
 ordering 顺序的选择更为重要，通过设置排序方式，尽量选到更有价值的kmer作为minimizer（when minimizers do not cover all the letters in a string, it is especially important that they cover ‘valuable’ substrings. ）
 有价值的（‘valuable’ substring）这里指频率更低，是后续查找和比对更高效的代表序列。
 
 
-> Ordering selection？
+8.Ordering selection？
 
 Object： 
 1.if a string contains many consecutive zeros （避免全0的kmer被选为minimizer）
@@ -93,21 +92,19 @@ mitigate the above effects:
 - ？？ （changing the ordering from one letter to the next）
 
 
-> Reverse complement?
+9.Reverse complement?
 
 Finally, for DNA sequences we are also interested in matches between one string and the reverse complement of another string. 
 Thus in choosing seeds, we identify each k-mer with its reverse complement. 
 Then we choose the minimizer of each window W to be the smaller of the two minimizers from W and its reverse complement.
 
-> how many memories do all seeds take ?
+10.how many memories do all seeds take ?
 
 ![seeds take memories](/img/post-ct-minimizer1.png)
 
-> how much space saving?
+11.how much space saving?
 
 in general the space savings is about a factor of 2/(w + 1), see section 3
-
-
 
 
 
