@@ -1,1 +1,12 @@
-12123
+layout:    post
+title:     my first post
+date：     2020-08-29
+author：   董文文
+header-img：img/post-bg-2015.jpg
+catalogs:true
+tags:
+  -生活
+  ---
+  ## Hey
+  这是我的第一篇博客
+
