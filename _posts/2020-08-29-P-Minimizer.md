@@ -13,8 +13,6 @@ tags:
 
 > Title: Reducting storage requirements for biological sequence comparision
 
-
-
 ## Content
 
 1.Motivation?
@@ -113,8 +111,6 @@ Then we choose the minimizer of each window W to be the smaller of the two minim
 in general the space savings is about a factor of 2/(w + 1), see section 3
 
 
-
-
 ## Comments
 
 1. sequence comparison, used in many applications.
@@ -125,7 +121,7 @@ in general the space savings is about a factor of 2/(w + 1), see section 3
 不同应用场景的本质区别是 pair-wise comparision V.S. multi-pair-wise comparision
 
 
-2. 至少是random order, 评判标准是 density，产生多少个minimizer（与内存和查询速度有关，与匹配准确率有关）
+2.至少是random order, 评判标准是 density，产生多少个minimizer（与内存和查询速度有关，与匹配准确率有关）
 
 3.minimizer就是MinHash；就是如何sample k-mer的问题, 怎么sample达到内存速度准确的一个平衡
 
@@ -137,15 +133,13 @@ in general the space savings is about a factor of 2/(w + 1), see section 3
 
 
 
-## Innovation
-
-
-
 
 ## Reference
 
 [参考实现：minicom](https://github.com/yuansliu/minicom)
+
 [参考实现：minimap_2017](https://github.com/lh3/minimap)
+
 [参考实现：minimap2_2020](https://github.com/lh3/minimap2)
 
 
