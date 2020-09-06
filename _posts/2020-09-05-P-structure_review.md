@@ -26,9 +26,9 @@ The *aim* of design data structures : *represents* a way of sketching sequence c
 - support approximate membership queries (AMQs)
 - minimizers and local schemes : sequence analysis & provide reduced representations of strings
 
-> 1.e.g. FM-index : save space to information-theoretic minimum, while still supporting exact search.  
-2.e.g. locality-sensitive hashing (LSH) schemes : but with some error by representing each datum by a probabilistic sketch ?  
-3.e.g.  data can be usefully represented as a set; AMQ data structures allow that set to be stored in small space, at the cost usually of both some errors and some limits on the types of operations that can be performed. ?
+> 1.e.g. FM-index : save space to information-theoretic minimum, while still supporting exact search; Burrows-wheeler transform; Suffix trees/arrays;  
+2.e.g. *locality-sensitive hashing (LSH)* schemes : but with some error by representing each datum by a probabilistic sketch ?  
+3.e.g.  data can be usefully represented as a set; AMQ data structures allow that set to be stored in small space, at the cost usually of both some errors and some limits on the types of operations that can be performed. ?; Bloom Filter
 
 
 
@@ -45,17 +45,16 @@ short read sequencing V.S. long read sequencing
 - Variant calling
 - Read mapping : identify the best matching against a reference
 - Sequence alignment : find similar sequences
-- Experiment search ? 
+- Experiment search 
 - Metagenomic abundance estimation
 
 
-> *Genome assembly* is usually *broken into subproblems*, (contaminant removal, error correction, overlap computation, construction of the de Bruijn graph to represent the sequenced fragments)<br />
+>*Genome assembly* is usually *broken into subproblems*, (contaminant removal, error correction, overlap computation, construction of the de Bruijn graph to represent the sequenced fragments)<br />
 **Variant calling** is to identify the genomic differences between a reference sequence and a sequenced individual, requires a lower depth of sequencing than de novo genome assembly.<br />
 *Read mapping* given a collec- tion of fragments {t1 , . . . , tm } and a reference string T , and our goal is to identify the best matching (typically under the edit distance or some appropriately defined alignment score) substring of T for each of the ti.<br />   
 *Sequence alignment* is to find similar sequences, e.g. BLAST (basic local alignment search tool); Given a set of sequences {t1 , . . . , tm } and a query q, find the ti and their substrings that are significantly similar to a substring of q; When there is only one sequence in the set (i.e., m = 1) and t1 and q both represent entire genomes, this is the genome-to-genome alignment problem.<br />
-*Experiment search* ??<br />
+*Experiment search* Let R = {R1 , . . . , Rm } be a set of experiments, where each Ri is a set of short read fragments. The experiment search problem aims to find the subset of experiments from R for which it is likely that a query sequence q was among the sequences sampled.<br />
 *Metagenomic abundance estimation* identify from this mixture which species or genes are present in what relative quantities in the environment.
-
 
 
 
