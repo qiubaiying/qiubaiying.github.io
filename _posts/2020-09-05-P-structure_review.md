@@ -77,6 +77,7 @@ streaming algorithm / off-line settings
 
 ## good writting sentence
 
+----------introduction section----------
 Driven by falling costs and increasing availability, the number of applications using sequencing data has been increasing rapidly. 
 
 Public repositories of genomics data (7–9) have seen an exponential growth for over two decades 
@@ -89,6 +90,9 @@ In the medical setting, the timely processing and querying of data are even more
 We have selected the techniques we cover with an eye to their importance and their representativeness.
 
 Our aims are to broaden the appreciation of these sketching and data structuring techniques and to provide a starting point for those interested in applying or improving on them. 
+
+---------------Minimizer section---------
+Since these original applications, the minimizer idea has found a number of applications in speeding up sequence analysis. 
 
 
 ## Reference
