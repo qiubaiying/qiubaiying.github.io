@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      PaperSharing - A review of Sketching and Subliner Data Structures in Genomics
+title:      PaperSharing - A review of Data Structures in Genomics
 subtitle:   2019 Annual Reviews
 date:       2020-09-06
 author:     Xuan
@@ -16,24 +16,20 @@ tags:
 
 ## Content
 
-0.The aim of design data structures : *represents* a way of sketching sequence collections, either with or without error, *using small space*. (用更少的空间去表达数据)
+The *aim* of design data structures : *represents* a way of sketching sequence collections, either with or without error, *using small space*. (用更少的空间去表达数据)
 
 
 
-1.*Four broad classes of data structures* 
+1.*Four broad classes of data structures*
+ 
 - compact, compressed indices : efficient exact string matching 
-
-> e.g. FM-index : save space to information-theoretic minimum, while still supporting exact search
-
 - dimensionality reduction : data queries?
-
-> e.g. locality-sensitive hashing (LSH) schemes : but with some error by representing each datum by a probabilistic sketch ?
-
 - support approximate membership queries (AMQs)
-
-> e.g.  data can be usefully represented as a set; AMQ data structures allow that set to be stored in small space, at the cost usually of both some errors and some limits on the types of operations that can be performed. ?
-
 - minimizers and local schemes : sequence analysis & provide reduced representations of strings
+
+> 1.e.g. FM-index : save space to information-theoretic minimum, while still supporting exact search. 
+2.e.g. locality-sensitive hashing (LSH) schemes : but with some error by representing each datum by a probabilistic sketch ?  
+3.e.g.  data can be usefully represented as a set; AMQ data structures allow that set to be stored in small space, at the cost usually of both some errors and some limits on the types of operations that can be performed. ?
 
 
 
@@ -60,14 +56,10 @@ short read sequencing V.S. long read sequencing
 
 
 > *Genome assembly* is usually *broken into subproblems*, (contaminant removal, error correction, overlap computation, construction of the de Bruijn graph to represent the sequenced fragments)    
-
-*Variant calling* is to identify the genomic differences between a reference sequence and a sequenced individual, requires a lower depth of sequencing than de novo genome assembly.  
+*Variant calling* is to identify the genomic differences between a reference sequence and a sequenced individual, requires a lower depth of sequencing than de novo genome assembly. 
 *Read mapping* given a collec- tion of fragments {t1 , . . . , tm } and a reference string T , and our goal is to identify the best matching (typically under the edit distance or some appropriately defined alignment score) substring of T for each of the ti.   
-
 *Sequence alignment* is to find similar sequences, e.g. BLAST (basic local alignment search tool); Given a set of sequences {t1 , . . . , tm } and a query q, find the ti and their substrings that are significantly similar to a substring of q; When there is only one sequence in the set (i.e., m = 1) and t1 and q both represent entire genomes, this is the genome-to-genome alignment problem.
-
 *Experiment search* ??
-
 *Metagenomic abundance estimation* identify from this mixture which species or genes are present in what relative quantities in the environment.
 
 
