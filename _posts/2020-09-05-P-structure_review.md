@@ -49,8 +49,9 @@ short read sequencing V.S. long read sequencing
 - Metagenomic abundance estimation
 
 
-> - *Genome assembly* is usually *broken into subproblems*, (contaminant removal, error correction, overlap computation, construction of the de Bruijn graph to represent the sequenced fragments)    
-- **Variant calling** is to identify the genomic differences between a reference sequence and a sequenced individual, requires a lower depth of sequencing than de novo genome assembly. 
+> - *Genome assembly* is usually *broken into subproblems*, (contaminant removal, error correction, overlap computation, construction of the de Bruijn graph to represent the sequenced fragments)  
+  
+**Variant calling** is to identify the genomic differences between a reference sequence and a sequenced individual, requires a lower depth of sequencing than de novo genome assembly. 
 *Read mapping* given a collec- tion of fragments {t1 , . . . , tm } and a reference string T , and our goal is to identify the best matching (typically under the edit distance or some appropriately defined alignment score) substring of T for each of the ti.   
 *Sequence alignment* is to find similar sequences, e.g. BLAST (basic local alignment search tool); Given a set of sequences {t1 , . . . , tm } and a query q, find the ti and their substrings that are significantly similar to a substring of q; When there is only one sequence in the set (i.e., m = 1) and t1 and q both represent entire genomes, this is the genome-to-genome alignment problem.
 *Experiment search* ??
