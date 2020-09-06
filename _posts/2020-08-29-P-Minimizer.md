@@ -17,6 +17,7 @@ tags:
 
 1.Motivation?
 
+*compute read overlap*
 when do sequence comparision (including nucleic acid / protein / etc.), too much seeds need to be stored, but which cannot be stored in RAM.
 
 the existing method's catagories?
