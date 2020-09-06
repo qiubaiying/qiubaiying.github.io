@@ -21,7 +21,6 @@ The *aim* of design data structures : *represents* a way of sketching sequence c
 
 
 1.*Four broad classes of data structures*
-
 - compact, compressed indices : efficient exact string matching 
 - dimensionality reduction : data queries?
 - support approximate membership queries (AMQs)
@@ -34,19 +33,14 @@ The *aim* of design data structures : *represents* a way of sketching sequence c
 
 
 2.Two classes of Sequencing methods
-
 short read sequencing V.S. long read sequencing
-
 - Error rate: 1% V.S. 10\~15%
 
 - Read Length: 30\~400 bp V.S. 1000\~100,000 bp (average 30,000 bp)
 
 
 
-
-
 3.Six classes of Biological Applications
-
 - Genome assembly 
 - Variant calling
 - Read mapping : identify the best matching against a reference
