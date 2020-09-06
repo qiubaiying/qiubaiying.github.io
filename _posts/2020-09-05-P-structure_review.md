@@ -58,6 +58,37 @@ short read sequencing V.S. long read sequencing
 
 ### Minimizer section
 
+1.Definition 
+
+k, the k-mer length; w, the length of the window; and π, an order (i.e., a permutation) of the k-mers or a function f taking wk-mers as arguments and returning an index in [1, w] 
+
+2.Two properties
+- 
+- 
+
+3.Metrics
+
+**density** of a minimizers scheme is the number of positions chosen over the length of the input sequence.
+>low density implies reducing the size of the bins or the number of minimizers positions to keep in a hash, which in turn improves the runtime or memory usage.
+
+4.Parameter selection
+
+a large value of **k**, and hence long k-mers, avoids spurious collisions
+
+a large value of **w** lowers the density
+
+5.Interests of minimizers
+
+Improving the density of minimizer schemes by choosing *the best π* is of great interest
+>Regardless of the choice of the order or function, the above properties a and b of minimizers are satisfied.
+
+6.Applications
+
+- Pairwise string overlaps
+- Read alignment
+- Counting k-mers with super k-mers
+- De Bruijn graph creation
+- Sparse data structures
 
 
 <!-- ![paper structure](/img/post-ct-kmerr.png) -->
