@@ -46,9 +46,18 @@ e.g. Coral (Salmela and Schröder, 2011) and ECHO (Kao et al., 2011),Fiona (Schu
 
 > CARE uses *minhash* to approch the above aims
 
-3.Definition of Minhash
+### Minhash
 
 Minhash a specific locality sensitive hashing *subsampling technique* (originally introduced 2000)
+
+### Jaccard Index
+
+S(A,B) = |A_∩\_B|/|A∪B|
+
+>A，B 两个集合：A = {s1, s3, s6, s8, s9} ; B = {s3, s4, s7, s8, s10}  
+根据Jaccard Index公式，A,B的相似度 S(A,B) = |A_∩\_B|/|A∪B| = 2/8 = 0.25  
+<\br>
+随机从两个集合中各挑选一个元素s(A)、s(B)，刚好这两个无素相同的概率 **其实等于** 在A∪B这个大的随机域里，选中的元素落在A_∩B_这个区域的概率，这个概率就等于Jaccard的相似度！**这就是MinHash的基本原理**
 
  
 ## Innovation
