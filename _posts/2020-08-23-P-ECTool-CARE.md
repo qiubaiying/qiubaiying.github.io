@@ -53,7 +53,7 @@ e.g. Coral (Salmela and Schröder, 2011) and ECHO (Kao et al., 2011),Fiona (Schu
 S(A,B) = |A_∩\_B|/|A∪B|
 
 >A，B 两个集合：A = {s1, s3, s6, s8, s9} ; B = {s3, s4, s7, s8, s10}  
-根据Jaccard Index公式，A,B的相似度 S(A,B) = |A_∩\_B|/|A∪B| = 2/8 = 0.25<\br>  
+根据Jaccard Index公式，A,B的相似度 S(A,B) = |A_∩\_B|/|A∪B| = 2/8 = 0.25  
 随机从两个集合中各挑选一个元素s(A)、s(B)，刚好这两个无素相同的概率 **其实等于** 在A∪B这个大的随机域里，选中的元素落在A_∩B_这个区域的概率，这个概率就等于Jaccard的相似度！**这就是MinHash的基本原理**  
 找一个随机的哈希函数h,对集合的每一个元素作哈希运算，比如集合A，可以算出5个hash值，因为是随机的，这5个hash值里值最小的那个元素，对于A集合中所有元素概率都是均等的。同样方法从B中取最小hash值，2个minhash相等的概率就是集合的相似度了。
 
@@ -65,11 +65,17 @@ Minhash a specific locality sensitive hashing *subsampling technique* (originall
 Minhash算法大体思路是：举个例子，S1 = {a,d,e}，S2 = {c, e}，设全集U = {a,b,c,d,e}。见表1；采用一种hash函数，将元素的位置均匀打乱，然后将新顺序下每个集合第一个元素作为该集合的特征值。比如哈希函数h1(i) = (i + 1) % 5，其中i为行号。作用于集合S1和S2
 ![举例如图](/img/post-ct-minhash.png)
 
+1.从特征矩阵 通过hash映射得到 signature矩阵
+![举例如图1](/img/post-ct-minhash1.png)
+![具体计算](/img/post-ct-minhash2.png)
+
+
 >给出N个集合，找到相似的集合对，如何实现呢？直观的方法是比较任意两个集合。那么可以十分精确的找到每一对相似的集合，但是时间复杂度是O(n2)。**Minhash和LSH（Locality-sensitive Hashing）**来实现上述目的，在相似的集合较少的情况下，可以在O(n)时间找到大部分相似的集合对。</br>  
 只需要找到N个哈希函数，对集合生成一组minhash，算两个集合的相似度，也就是这2组minhash中，交集/并集了。这个计算相对容易了，因为每个集合的元素数变成了常数N，也就是说，MinHash其实是一种降维技术。
 
 ### LSH (Locality-Sensitive Hashing)
 局部敏感哈希(Locality-Sensitive Hashing, LSH) 是一种解决在海量的高维数据集中查找与**查询数据点（query data point）近似最相邻的某个或某些数据点**的方法。
+一种方法能够不遍历所有可能的元素对就找出相似度较大的那些（大于某个给定的阈值t），这就是所谓Locality-Sensitive Hashing
 
 理论：两个相邻数据点通过相同的映射或投影变换（projection）后，这两个数据点在新的数据空间中仍然相邻的概率很大，而不相邻的数据点被映射到同一个桶的概率很小。
 
@@ -97,4 +103,4 @@ CARE is based on a variant of minhashing to quickly find a set of candidate read
 
 [MinHash原理与应用](http://jm.taobao.org/2012/10/29/minhash-intro/)
 
-[局部敏感哈希 - MinHash（比较详细）](https://ansvver.github.io/lsh_minhash.html)
+[局部敏感哈希 - MinHash（很详细，有图，有code）](https://ansvver.github.io/lsh_minhash.html)
