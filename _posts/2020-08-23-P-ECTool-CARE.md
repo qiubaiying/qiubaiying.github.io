@@ -46,9 +46,7 @@ e.g. Coral (Salmela and Schröder, 2011) and ECHO (Kao et al., 2011),Fiona (Schu
 
 > CARE uses *minhash* to approch the above aims
 
-### Minhash
 
-Minhash a specific locality sensitive hashing *subsampling technique* (originally introduced 2000)
 
 ### Jaccard Index
 
@@ -57,9 +55,18 @@ S(A,B) = |A_∩\_B|/|A∪B|
 >A，B 两个集合：A = {s1, s3, s6, s8, s9} ; B = {s3, s4, s7, s8, s10}  
 根据Jaccard Index公式，A,B的相似度 S(A,B) = |A_∩\_B|/|A∪B| = 2/8 = 0.25  
 <\br>
-随机从两个集合中各挑选一个元素s(A)、s(B)，刚好这两个无素相同的概率 **其实等于** 在A∪B这个大的随机域里，选中的元素落在A_∩B_这个区域的概率，这个概率就等于Jaccard的相似度！**这就是MinHash的基本原理**
+随机从两个集合中各挑选一个元素s(A)、s(B)，刚好这两个无素相同的概率 **其实等于** 在A∪B这个大的随机域里，选中的元素落在A_∩B_这个区域的概率，这个概率就等于Jaccard的相似度！**这就是MinHash的基本原理**  
+找一个随机的哈希函数h,对集合的每一个元素作哈希运算，比如集合A，可以算出5个hash值，因为是随机的，这5个hash值里值最小的那个元素，对于A集合中所有元素概率都是均等的。同样方法从B中取最小hash值，2个minhash相等的概率就是集合的相似度了。
 
- 
+
+### Minhash
+
+Minhash a specific locality sensitive hashing *subsampling technique* (originally introduced 2000)
+
+>Minhash和LSH（Locality-sensitive Hashing）来实现上述目的，在相似的集合较少的情况下，可以在O(n)时间找到大部分相似的集合对。  
+<\br>
+只需要找到N个哈希函数，对集合生成一组minhash，算两个集合的相似度，也就是这2组minhash中，交集/并集了。这个计算相对容易了，因为每个集合的元素数变成了常数N，也就是说，MinHash其实是一种降维技术。
+
 ## Innovation
 
 
