@@ -63,7 +63,7 @@ S(A,B) = |A_∩\_B|/|A∪B|
 
 Minhash a specific locality sensitive hashing *subsampling technique* (originally introduced 2000)
 
->Minhash和LSH（Locality-sensitive Hashing）来实现上述目的，在相似的集合较少的情况下，可以在O(n)时间找到大部分相似的集合对。  
+>给出N个集合，找到相似的集合对，如何实现呢？直观的方法是比较任意两个集合。那么可以十分精确的找到每一对相似的集合，但是时间复杂度是O(n2)。**Minhash和LSH（Locality-sensitive Hashing）**来实现上述目的，在相似的集合较少的情况下，可以在O(n)时间找到大部分相似的集合对。  
 <\br>
 只需要找到N个哈希函数，对集合生成一组minhash，算两个集合的相似度，也就是这2组minhash中，交集/并集了。这个计算相对容易了，因为每个集合的元素数变成了常数N，也就是说，MinHash其实是一种降维技术。
 
