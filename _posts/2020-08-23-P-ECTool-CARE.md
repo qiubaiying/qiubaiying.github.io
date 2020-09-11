@@ -62,8 +62,23 @@ S(A,B) = |A_∩\_B|/|A∪B|
 
 Minhash a specific locality sensitive hashing *subsampling technique* (originally introduced 2000)
 
+Minhash算法大体思路是：举个例子，S1 = {a,d,e}，S2 = {c, e}，设全集U = {a,b,c,d,e}。见表1；采用一种hash函数，将元素的位置均匀打乱，然后将新顺序下每个集合第一个元素作为该集合的特征值。比如哈希函数h1(i) = (i + 1) % 5，其中i为行号。作用于集合S1和S2
+![举例如图](/img/post-ct-minhash.png)
+
 >给出N个集合，找到相似的集合对，如何实现呢？直观的方法是比较任意两个集合。那么可以十分精确的找到每一对相似的集合，但是时间复杂度是O(n2)。**Minhash和LSH（Locality-sensitive Hashing）**来实现上述目的，在相似的集合较少的情况下，可以在O(n)时间找到大部分相似的集合对。</br>  
 只需要找到N个哈希函数，对集合生成一组minhash，算两个集合的相似度，也就是这2组minhash中，交集/并集了。这个计算相对容易了，因为每个集合的元素数变成了常数N，也就是说，MinHash其实是一种降维技术。
+
+### LSH (Locality-Sensitive Hashing)
+局部敏感哈希(Locality-Sensitive Hashing, LSH) 是一种解决在海量的高维数据集中查找与**查询数据点（query data point）近似最相邻的某个或某些数据点**的方法。
+
+理论：两个相邻数据点通过相同的映射或投影变换（projection）后，这两个数据点在新的数据空间中仍然相邻的概率很大，而不相邻的数据点被映射到同一个桶的概率很小。
+
+如果我们对原始数据进行一些hash映射后，我们希望原先相邻的两个数据能够被hash到相同的桶内，具有相同的桶号。
+对原始数据集合中所有的数据都进行hash映射后，我们就得到了一个hash table，这些原始数据集被分散到了hash table的桶内，每个桶会落入一些原始数据，属于同一个桶内的数据就有很大可能是相邻的，当然也存在不相邻的数据被hash到了同一个桶内。
+
+优缺点：LSH并不能保证一定能够查找到与query data point最相邻的数据，而是减少需要匹配的数据点个数的同时保证查找到最近邻的数据点的概率很大。
+
+两种常见的LSH算法—— MinHash 和 SimHash
 
 ## Innovation
 
@@ -81,3 +96,5 @@ CARE is based on a variant of minhashing to quickly find a set of candidate read
 [CARE: Content-Aware Sequencing Read Error Correction](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8621325)
 
 [MinHash原理与应用](http://jm.taobao.org/2012/10/29/minhash-intro/)
+
+[局部敏感哈希 - MinHash（比较详细）](https://ansvver.github.io/lsh_minhash.html)
