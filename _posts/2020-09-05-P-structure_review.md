@@ -55,7 +55,8 @@ The *aim* of design data structures : *represents* a way of sketching sequence c
 minimap; minimap2;
 <br />   
 **Sequence alignment** is to find similar sequences, e.g. BLAST (basic local alignment search tool); Given a set of sequences {t1 , . . . , tm } and a query q, find the ti and their substrings that are significantly similar to a substring of q; When there is only one sequence in the set (i.e., m = 1) and t1 and q both represent entire genomes, this is the genome-to-genome alignment problem.<br /><br />
-**Experiment search** Let R = {R1 , . . . , Rm } be a set of experiments, where each Ri is a set of short read fragments. The experiment search problem aims to find the subset of experiments from R for which it is likely that a query sequence q was among the sequences sampled.<br /><br />
+**Experiment search** Let R = {R1 , . . . , Rm } be a set of experiments, where each Ri is a set of short read fragments. The experiment search problem aims to find the subset of experiments from R for which it is likely that a query sequence q was among the sequences sampled.<br />  
+
 **Metagenomic abundance estimation** identify from this mixture which species or genes are present in what relative quantities in the environment.
 
 ### Minimizer section
