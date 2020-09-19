@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      什么是“软件工程”
+title:      重新理解“软件工程”
 subtitle:   《软件工艺》读后感
 date:       2020-09-19
 author:     Bruce Wong
