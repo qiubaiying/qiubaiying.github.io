@@ -4,7 +4,7 @@ SEOTitle: Cyorage | Cyorage's Blog
 header-img: img/title.jpg
 email: cyorage@foxmail.com
 description: "「あなたがとても好きです。」"
-keyword: "Cyorage, Cyorage's Blog, Cyorage的博客, Cyorage's, mtf, iOS, Apple, iPhone"
+keyword: "Cyorage, Cyorage's Blog, Cyorage的博客, Cyorage's,Google, iOS, Apple, iPhone"
 url: "http://cyorageeee.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/Cyorageeee/Cyorageeee.github.io.git" # you code repository
@@ -62,8 +62,8 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: 4c56f695b50d9e0e2f10                            #生成的clientID
-  clientSecret: c88141d8caae9e84d7525438da4474d206bd34fc    #生成的clientSecret
+  clientID: 0bf0689e156378a45cea                            #生成的clientID
+  clientSecret: 9e5c7a0bd0ba76ab8303c73f7d4f6ae3f0392e65    #生成的clientSecret
   repo: Cyorageeee.github.io    #仓库名称
   owner: Cyorageeee    #github用户名
   admin: Cyorageeee
