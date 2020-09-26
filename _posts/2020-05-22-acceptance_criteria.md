@@ -9,6 +9,7 @@ catalog: true
 tags:
     - Agile
     - 敏捷
+    - ProductOwner
     - Acceptance Criteria(AC)
     - 验收标准
 ---
