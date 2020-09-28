@@ -62,8 +62,8 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
+  clientID: 8bece05ff70ca63a25ba                            #生成的clientID
+  clientSecret: 64e21779a8348661a791191f54e7378daab38fa0    #生成的clientSecret
   repo: chaosnyaruko.github.io    #仓库名称
   owner: ChaosNyaruko    #github用户名
   admin: ChaosNyaruko
@@ -98,17 +98,4 @@ service-worker: true
 
 # Friends
 friends: [
-    {
-        title: "WY",
-        href: "http://zhengwuyang.com"
-    },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
-    },{
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
-    }
 ]
