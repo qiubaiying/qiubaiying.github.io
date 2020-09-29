@@ -1,4 +1,16 @@
-1
+---
+
+layout: post
+title:python第三方库的使用方法										
+subtitle: Python
+date: 2020-08-30
+author: mr_king
+header-img: img/background.jpg
+catalog: true
+tags: 
+    -Python
+    -学习笔记
+---
 
 # gmpy2库
 
