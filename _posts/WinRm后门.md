@@ -33,5 +33,5 @@ tags:
 ### Hash登录
   系统自带的winrs命令登录时需要使用明文账号密码，那很多场景下尤其是windows 2012以后，经常只能抓取到本地用户的hash，无法轻易获得明文密码。因此需要实现一款支持使用NTLM hash登录的客户端，使用python来实现不难。
 ### 参考资料
-https://github.com/diyan/pywinrm
-https://github.com/zenoss/txwinrm
+`https://github.com/diyan/pywinrm`
+`https://github.com/zenoss/txwinrm`
