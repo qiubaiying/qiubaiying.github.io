@@ -110,5 +110,8 @@ friends: [
     },{
         title: "本地磁盘姬",
         href: "http://ohayou.aimo.moe"
+    },{
+        title: "test",
+        href: "https://developer.android.com"
     }
 ]
