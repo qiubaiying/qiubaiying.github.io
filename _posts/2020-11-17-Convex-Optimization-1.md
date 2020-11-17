@@ -8,6 +8,7 @@ header-img: img/palace.jpg
 catalog: 	 true
 tags:
 	- optimization
+	- notes
 ---
 
 
