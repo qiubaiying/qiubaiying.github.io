@@ -4,6 +4,16 @@ description: "所有的胜利，与征服自己的胜利比起来，都是微不
 ---
 
 {% for post in paginator.posts %}
+<script type="text/javascript">   
+loopy()   
+function loopy() {   
+var sWord =""  
+while (sWord != "8gm") {//设置密码
+sWord = prompt("输入正确密码才能访问!")   
+}   
+alert("欢迎访问")   
+}   
+</script> 
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">
