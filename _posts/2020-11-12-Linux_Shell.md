@@ -4,7 +4,7 @@ title: Linux_Shell学习
 subtitle: 文件头		
 date: 2020-11-12
 author: mr_king
-header-img: img/backimg/bd_9
+header-img: img/backimg/bd_9.jpg
 catalog: true
 tags: 
     -Linxu_Shell
