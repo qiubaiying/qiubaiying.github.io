@@ -1,8 +1,8 @@
 # Site settings
-title: 瓜西的Blog
+title: GX Blog
 SEOTitle: 瓜西不是西瓜的博客 | 瓜西的Blog
 header-img: img/post-bg-desk.jpg
-email: 562949576@qq.com
+email: gaoxi@yusys.com.cn
 description: "Every failure is leading towards success."
 keyword: "kathy 前端开发 vue electron UI框架"
 url: "http://gao1314xi.github.io"          # your host, for absolute URL
@@ -11,7 +11,7 @@ github_repo: "https://github.com/gao1314xi/gao1314xi.github.io.git" # you code r
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
+sidebar-about-description: "行动是治愈恐惧的良药，而犹豫拖延将不断滋养恐惧。"
 sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -43,11 +43,6 @@ kramdown:
   input: GFM                            # use Github Flavored Markdown !important
 
 
-
-# 评论系统
-# Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
-
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
@@ -59,18 +54,9 @@ gitalk:
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
-# 统计
-
-# Analytics settings
-# Baidu Analytics
-ba_track_id: b50bf2b12b5338a1845e33832976fd68
-
 # Google Analytics
 ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
-
-
-
+ga_domain: auto             # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 # Featured Tags
