@@ -19,17 +19,6 @@
                     <li>
                         <a href="{{ site.baseurl }}/">首页</a>
                     </li>
-                    <li>
-
-                        <a href="https://pandas.imfast.io/">盘</a>
-
-                    </li>
-                    <li>
-                        <a href="https://infosec.imfast.io/">导航页</a>
-                    </li>
-                     <li>
-                        <a href="https://www.cnblogs.com/8gman/">旧博客</a>
-                    </li>
                     {% for page in site.pages %}{% if page.title %}
                     <li>
                         <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
