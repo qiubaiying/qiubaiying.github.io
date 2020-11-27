@@ -1,13 +1,13 @@
 # Site settings
-title: BY Blog
-SEOTitle: 瓜西不是西瓜的博客 | GX Blog
+title: 瓜西的Blog
+SEOTitle: 瓜西不是西瓜的博客 | 瓜西的Blog
 header-img: img/post-bg-desk.jpg
-email: galaxy_gx@126.com
+email: 562949576@qq.com
 description: "Every failure is leading towards success."
-keyword: "kathy, fronter"
+keyword: "kathy 前端开发 vue electron UI框架"
 url: "http://gao1314xi.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/gao1314xi/gao1314xi.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -29,7 +29,8 @@ anchorjs: true                          # if you want to customize anchor. check
 # from PR#40, to support local preview for Jekyll 3.0
 gems: [jekyll-paginate]
 
-
+# SNS settings 
+github_username: gao1314xi  
 
 
 # Markdown settings
@@ -95,6 +96,9 @@ friends: [
         href: "http://www.jiaoguoliang.com"
     },{
         title: "fy的博客",
-        href: "blog.sydney710.cn"
+        href: "http://blog.sydney710.cn"
+    },{
+        title: "米司博客",
+        href: "http://blog.misitebao.com"
     }
 ]
