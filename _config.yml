@@ -1,30 +1,18 @@
 # Site settings
-title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
+title: GX Blog
+SEOTitle: 瓜西不是西瓜的博客 | 瓜西的Blog
 header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
+email: gaoxi@yusys.com.cn
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+keyword: "kathy 前端开发 vue electron UI框架"
+url: "http://gao1314xi.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/gao1314xi/gao1314xi.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
-
-
-
-# SNS settings
-RSS: false
-# weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
-#twitter_username:   qiubaiying
-
+sidebar-about-description: "行动是治愈恐惧的良药，而犹豫拖延将不断滋养恐惧。"
+sidebar-avatar: /img/avatar-gx.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -41,7 +29,8 @@ anchorjs: true                          # if you want to customize anchor. check
 # from PR#40, to support local preview for Jekyll 3.0
 gems: [jekyll-paginate]
 
-
+# SNS settings 
+github_username: gao1314xi  
 
 
 # Markdown settings
@@ -54,11 +43,6 @@ kramdown:
   input: GFM                            # use Github Flavored Markdown !important
 
 
-
-# 评论系统
-# Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
-
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
@@ -70,18 +54,9 @@ gitalk:
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
-# 统计
-
-# Analytics settings
-# Baidu Analytics
-ba_track_id: b50bf2b12b5338a1845e33832976fd68
-
 # Google Analytics
 ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
-
-
-
+ga_domain: auto             # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 # Featured Tags
@@ -98,17 +73,18 @@ service-worker: true
 
 # Friends
 friends: [
+{
+        title: "秋月居",
+        href: "https://www.wetsion.site/"
+    },
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        title: "米白小站",
+        href: "http://www.jiaoguoliang.com"
     },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
+        title: "fy的博客",
+        href: "http://blog.sydney710.cn"
     },{
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "米司博客",
+        href: "http://blog.misitebao.com"
     }
 ]
