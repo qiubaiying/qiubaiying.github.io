@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      一次产品路线图(Roadmap)的探索之旅
-subtitle:   绘制一张影响地图。
+subtitle:   绘制一张影响地图
 date:       2020-12-05
 author:     Bruce Wong
 header-img: img/pexels-jamal-yahya-3520802.jpg 
