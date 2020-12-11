@@ -1,10 +1,10 @@
 # Site settings
-title: Lyn's Blog
-SEOTitle: 林仆仆的博客 | Lyn's Blog
+title: No-Error
+SEOTitle: No-Error的博客 | No-Error's Blog
 header-img: img/post-bg-desk.jpg
 email: 949664458@gmail.com
-description: "Every failure is leading towards success."
-keyword: "Lyn, Lyn's Blog, ；林仆仆的博客, jianglinyu, 蒋林钰, iOS, Apple, iPhone"
+description: " May I get some error?"
+keyword: "No-Error, No-Error's Blog, ；No-Error的博客, No-Error, No-Error, iOS, Apple, iPhone"
 url: "http://linpupu.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/linpupu/linpupu.github.io.git" # you code repository
