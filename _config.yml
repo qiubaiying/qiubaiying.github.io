@@ -1,30 +1,29 @@
 # Site settings
-title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
+title: BugMan
+SEOTitle: BugMan
 header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
+email: shell@outlook.sk
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+keyword: "BugMan"
+url: "http://8gm.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/8gm/8gm.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "要努力使每一天都开心而有意义，Hard！！！"
+sidebar-avatar: /img/bugman-header.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
-RSS: false
+RSS: true
 # weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
-#twitter_username:   qiubaiying
-
+zhihu_username:     
+github_username:  jxysir
+facebook_username:  
+jianshu_username:   BugMan_Sec
+twitter_username:   
 
 
 
@@ -62,23 +61,23 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  clientID: 29d8ee96ec210f09facb                            #生成的clientID
+  clientSecret: f574397867a00564381b9076e9fafc5fd3602280    #生成的clientSecret
+  repo: 8gm.github.io    #仓库名称
+  owner: 8gm    #github用户名
+  admin: 8gm
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
 # 统计
 
 # Analytics settings
-# Baidu Analytics
-ba_track_id: b50bf2b12b5338a1845e33832976fd68
+#Baidu Analytics
+ba_track_id: 2c9591bfe18d9396e6f007f8377ede29
 
 # Google Analytics
 ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_domain: auto               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
@@ -86,7 +85,7 @@ ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定�
 
 # Featured Tags
 featured-tags: true                     # 是否使用首页标签
-featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+featured-condition-size: 0              # 相同标签数量大于这个数，才会出现在首页
 
 
 
@@ -96,19 +95,54 @@ service-worker: true
 
 
 
-# Friends
+# 友情链接
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        title: "安全师",
+        href: "https://www.secshi.com/"
     },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
+        title: "lionking",
+        href: "https://lionking.top/"
     },{
-        title: "Apple",
-        href: "https://apple.com"
+        title: "KAT",
+        href: "https://www.cnblogs.com/kat-sec"
     },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "Yang34",
+        href: "https://www.cnblogs.com/Yang34/"
+    },{
+        title: "彭楷模",
+        href: "https://kaimopeng.github.io/"
+    },{
+        title: "Noaccess",
+        href: "https://noaccess.cn/"
+    },{
+        title: "Cnnb",
+        href: "https://www.cnblogs.com/CNnb/"
+    },{
+        title: "简书",
+        href: "https://www.jianshu.com/"
+    },{
+        title: "先知",
+        href: "https://xz.aliyun.com/"
+    },{
+        title: "SEC-IN",
+        href: "https://sec-in.com/"
+    },{
+        title: "SeeBug",
+        href: "https://www.seebug.org/"
+    },{
+        title: "VirusTotal",
+        href: "https://www.virustotal.com/"
+    },{
+        title: "CVE",
+        href: "https://cve.mitre.org/"
+    },{
+        title: "CxSecurity",
+        href: "https://cxsecurity.com/"
+    },{
+        title: "T00ls",
+        href: "https://www.t00ls.net/"
     }
 ]
+
+
