@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Course - Data Structure
+title:      Online Course - Data Structure
 subtitle:   William Fiset from Google
 date:       2021-01-5
 author:     Xuan
