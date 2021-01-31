@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Scrum Patterns:迭代计划会(译)
+title:      Scrum Patterns(24):迭代计划会(译)
 subtitle:   A Scrum Book The Spirit of the Game
 date:       2021-01-24
 author:     Bruce Wong
@@ -10,6 +10,7 @@ tags:
     - 敏捷
     - Agile
     - 译文
+    - Scrum Patterns
 ---
 ## 正文  
 
