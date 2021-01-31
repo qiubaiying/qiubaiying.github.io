@@ -1,27 +1,16 @@
 ---
 layout:     post
-title:      定时器
-date:       2021-01-31
+title:      Endnote使用技巧
+date:       2021-01-10
 author:     Yukun SHANG
 catalog: 	 true
 tags:
-    - iOS
-    - 定时器
+    - Research
 ---
 
 
 
-# Endnote Basic Tutorial
-
-
-
-//test
-
-
-
-
-
-
+# Endnote使用技巧
 
 
 
