@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Scrum Patterns(65):准备就绪的标准(DoR)
+title:      Scrum Patterns(65):准备就绪的标准 DoR(译)
 subtitle:   A Scrum Book The Spirit of the Game
 date:       2021-01-31
 author:     Bruce Wong
