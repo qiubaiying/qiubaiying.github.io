@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      定时器
-subtitle:   iOS
 date:       2021-01-31
 author:     Yukun SHANG
 catalog: 	 true
