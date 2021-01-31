@@ -1,10 +1,9 @@
 ---
 layout:     post
-title:      定时器 你真的会使用吗？
-subtitle:   iOS定时器详解
-date:       2016-12-13
-author:     BY
-header-img: img/post-bg-ios9-web.jpg
+title:      定时器
+subtitle:   iOS
+date:       2021-01-31
+author:     Yukun SHANG
 catalog: 	 true
 tags:
     - iOS
