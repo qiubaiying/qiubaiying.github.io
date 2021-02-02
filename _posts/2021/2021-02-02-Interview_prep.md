@@ -16,13 +16,13 @@ tags:
 
 #### IsPrime
 
-https://blog.csdn.net/afei__/article/details/80638460
+[https://blog.csdn.net/afei__/article/details/80638460](https://blog.csdn.net/afei__/article/details/80638460)
 
 #### GCD & LCM
 
-https://blog.csdn.net/nk1212582/article/details/89291747
+[https://blog.csdn.net/nk1212582/article/details/89291747](https://blog.csdn.net/nk1212582/article/details/89291747)
 
-https://blog.csdn.net/weixin_45577435/article/details/106058147
+[https://blog.csdn.net/weixin_45577435/article/details/106058147](https://blog.csdn.net/weixin_45577435/article/details/106058147)
 
 
 
