@@ -13,7 +13,9 @@ tags:
 
 In order to run CPP files in vscode, we need some configure files.
 
-![vscode_cpp](/Users/yukun/Yukun4119.github.io/img/vscode_cpp.png)
+![vscode_cpp](https://github.com/Yukun4119/Yukun4119.github.io/blob/master/img/vscode_cpp.png?raw=true)
+
+
 
 Here are files in my .vscode
 
