@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Markdown 编写规范
+title:      python list slice
 date:       2020-10-26
 author:     Yukun SHANG
 catalog: 	 true
