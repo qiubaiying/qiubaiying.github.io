@@ -22,8 +22,6 @@ ssh -i ~/.ssh/nesa -p 6079 [nesa@47.107.142.126](
 
 
 
-
-
 Ssh config ：
 
 ```shell
