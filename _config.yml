@@ -12,7 +12,7 @@ github_repo: "https://github.com/Yukun4119/Yukun4119.github.io.git" # you code r
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "None"
+sidebar-about-description: "THE MISSING CS DEGREE OF MY LIFE"
 sidebar-avatar: /img/sideBarBG.jpeg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
