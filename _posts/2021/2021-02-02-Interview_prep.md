@@ -32,6 +32,105 @@ tags:
 
 ## General Question
 
+##### self introduction
+
+Hi, I am SHANG yukun from Zhejiang University. 
+
+
+
+##### Why do you choose your undergraduate major?
+
+
+
+
+
+
+
+
+
+##### Why this program?
+
+* fitness: I'm fit for the program, undergraduate courses,  research experience
+
+* future: The program meets the need of my further development: perform as a "bond" to connect between environment and CS
+
+
+
+##### What do you know about the courses of XXXXX program？
+
+
+
+
+
+##### what skill can  be acquired from XXXXX courses
+
+
+
+
+
+
+
+##### Why HK？
+
+* like HK
+* international mindset: an important part of the Great Bay Area: with policies, the economy of the area is very likely to boom, the area may develop rapidly
+* near SHEN ZHEN
+
+
+
+
+
+
+
+##### Why HKU？
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##### what can be remembered  after you  read the official website?
+
+
+
+
+
+##### in your 5th year, what do you finished
+
+* 4 courses on campus
+* apply for the grad program
+* take TOEFL and GRE
+* 2 research
+
+
+
+
+
+##### what is your future career plan?
+
+
+
+##### Do you have girlfriend
+
+
+
+
+
 
 
 
