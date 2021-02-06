@@ -1,0 +1,18 @@
+{
+    "mouseover": [
+        {
+            "selector": ".title a",
+            "text": ["要看看 {text} 么？"]
+        },
+        {
+            "selector": ".searchbox",
+            "text": ["在找什么东西呢，需要帮忙吗？"]
+        }
+    ],
+    "click": [
+        {
+            "selector": "#landlord #live2d",
+            "text": ["请把手拿开，好吗？", "再摸的话我可要报警了！⌇●﹏●⌇", "不要摸我(ó﹏ò｡)"]
+        }
+    ]
+}

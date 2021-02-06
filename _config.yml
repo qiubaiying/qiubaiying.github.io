@@ -1,28 +1,28 @@
 # Site settings
-title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
-header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
-description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+title: <font color="#E6E6FA">MHYCDH-blog</font>
+SEOTitle: a pitiful Hacker(poor)╮(๑•́ ₃•̀๑)╭
+header-img: img/t019d23b99f5a6a580a.png
+email: 2094216191@gmail.com
+description: "rise yourself and everything can be hacked"
+keyword: "hacker,HAK5,Digispark,ESP8266,netcat,CDH"
+url: "http://MHYCDH.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/MHYCDH/MHYCDH.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
-
+sidebar-about-description: <font color="#DDA0DD">"hack hard and struggle to 109 97 114 114 121 CDH!"</font>
+sidebar-avatar: /img/cat.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 # SNS settings
 RSS: false
 # weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
+zhihu_username:     
+github_username:    MHYCDH
+facebook_username:  
+jianshu_username:   
+twitter_username:   MCHDYH
 #twitter_username:   qiubaiying
 
 
@@ -57,41 +57,48 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
+# disqus_username: MHYCDH
 
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  clientID: cf1fef93921fdec65a3b                            #生成的clientID
+  clientSecret: 796f6fce0a6bedddf136182254c2818f181ab7ee    #生成的clientSecret
+  repo: MHYCDH.github.io    #仓库名称
+  owner: MHYCDH    #github用户名
+  admin: MHYCDH
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
+
+
+
+
+
+
 
 
 # 统计
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: b50bf2b12b5338a1845e33832976fd68
+#ba_track_id: b50bf2b12b5338a1845e33832976fd68
 
 # Google Analytics
-ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_track_id: 'UA-142586043-1'            # Format: UA-xxxxxx-xx
+ga_domain: mhycdh.info        # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
-
-
+#评论配置参数
+intensedebate_comments: true
 
 
 # Featured Tags
 featured-tags: true                     # 是否使用首页标签
 featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+tags:
 
 
 
 # Progressive Web Apps
-chrome-tab-theme-color: "#000000"
+chrome-tab-theme-color: "#F8F8FF"
 service-worker: true
 
 
@@ -99,16 +106,16 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        title: "twitter",
+        href: "https://twitter.com"
     },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
+        title: "github",
+        href: "https://github.com/MHYCDH/"
     },{
-        title: "Apple",
-        href: "https://apple.com"
+        title: "Mr_xueyuan-blog",
+        href: "https://xueyuan.tech"
     },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "kali_blog",
+        href: "https://blog.bbskali.cn"
     }
 ]

@@ -1,23 +1,43 @@
 ---
 layout: page
-description: "Thinking will not overcome fear but action will."
+description: "hack everything for protect our lovely people."
 ---
 
+
+
 {% for post in paginator.posts %}
+
+
+
+<body>
+
+<div id="container">
+    
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
+        <center><h2 class="post-title">
             {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
+        </h2></center>
+        
+        
+        {% if post.subtitle %}   
+        <center><p style="color:#A9A9A9";>
+            <h5 class="post-subtitle">
             {{ post.subtitle }}
-        </h3>
-        {% endif %}
-        <div class="post-content-preview">
+            </h5></p>
+        </center>            
+
+        {% endif %} 
+        <div class="post-content-preview">               
             {{ post.content | strip_html | truncate:200 }}
-        </div>
+        </div>    
     </a>
+      
+        </div>
+    
+    </body>
+    
+
     <p class="post-meta">
         Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
     </p>
@@ -25,8 +45,55 @@ description: "Thinking will not overcome fear but action will."
 <hr>
 {% endfor %}
 
+
+
+<!--live2d-->
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="245" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
+
+
+<!-- （飘动的彩带） 
+<script src="https://g.joyinshare.com/hc/piao.js" type="text/javascript"></script>-->
+
+
+<!--牛顿物理球
+<center><object type="application/x-shockwave-flash" style="outline:none;" data="http://cdn.abowman.com/widgets/newtonscradle/newtonsCradle.swf?up_ballColor=686269&up_stringColor=666666&up_barColor=333333&up_speakerColor=999999&up_numBalls=5&up_bgColor=FFFFFF&" width="300" height="225"><param name="movie" value="http://cdn.abowman.com/widgets/newtonscradle/newtonsCradle.swf?up_ballColor=686269&up_stringColor=666666&up_barColor=333333&up_speakerColor=999999&up_numBalls=5&up_bgColor=FFFFFF&"></param><param name="AllowScriptAccess" value="always"></param><param name="wmode" value="opaque"></param></object></center>
+-->
+
+
+
+
+<style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            height: 100%;
+        }
+        body {
+            height: 100%;
+            background-image: url(https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/bizhi.jpg?raw=true);
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            background-position:center;
+        }
+        
+        #container {
+            background-color: rgba(255, 255, 255, 0.8);
+            height: 100%;
+        }
+    </style>
+
+
+
+
 <!-- Pager -->
 {% if paginator.total_pages > 1 %}
+    
 <ul class="pager">
     {% if paginator.previous_page %}
     <li class="previous">
@@ -39,4 +106,8 @@ description: "Thinking will not overcome fear but action will."
     </li>
     {% endif %}
 </ul>
+
 {% endif %}
+
+
+

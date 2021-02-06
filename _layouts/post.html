@@ -12,7 +12,6 @@ layout: default
         position: relative;
         background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
     }
-
     {% if page.header-mask %}
     header.intro-header .header-mask{
         width: 100%;
@@ -22,6 +21,7 @@ layout: default
     }
     {% endif %}
 </style>
+
 <header class="intro-header" >
     <div class="header-mask"></div>
     <div class="container">
@@ -40,26 +40,78 @@ layout: default
                     {% comment %} if page.subtitle {% endcomment %}
                     <h2 class="subheading">{{ page.subtitle }}</h2>
                     {% comment %} endif {% endcomment %}
-                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
+                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>		
+			
                 </div>
             </div>
         </div>
     </div>
 </header>
+			
+
+
+
+<style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            height: 100%;
+        }
+        body {
+            height: 100%;
+            background-image: url(https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/bizhi_blog07.png?raw=true);
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            background-position:right bottom;
+        }
+        
+        #container {
+            background-color: rgba(255, 255, 255, 0.8);
+            height: 100%;
+        }
+    </style>
+
+
+
+<!-- live2d -->
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="245" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
+
+
+
+
+<!--人体时钟-->
+<script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_wh.js"></script>  
+
+
+<!-- （飘动的彩带） -->
+<script src="https://g.joyinshare.com/hc/piao.js" type="text/javascript"></script>
+
+
 
 <!-- Post Content -->
 <article>
     <div class="container">
         <div class="row">
 
+		
     <!-- Post Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 post-container">
 
-				{{ content }}
+		{{ content }}
+		   
+	<!--时钟 -->
+<center><object type="application/x-shockwave-flash" style="outline:none;" data="http://cdn.abowman.com/widgets/pendulumclock/pendulumClockV2.swf?" width="300" height="200"><param name="movie" value="http://cdn.abowman.com/widgets/pendulumclock/pendulumClockV2.swf?"></param><param name="AllowScriptAccess" value="always"></param><param name="wmode" value="opaque"></param><param name="bgcolor" value=""/></object></center>
 
+		    
                 <hr style="visibility: hidden;">
 
                 <ul class="pager">
@@ -81,41 +133,51 @@ layout: default
                     {% endif %}
                 </ul>
 
+		    
+		    
 
+		    
+	
+		
+		
+		
+		<div id='gitalk-container'></div>
+		
+		
                 <!--Gitalk评论start  -->
                 {% if site.gitalk.enable %}
                 <!-- 引入Gitalk评论插件  -->
-                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-                <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
-                <div id="gitalk-container"></div>
-                <!-- 引入一个生产md5的js，用于对id值进行处理，防止其过长 -->
-                <!-- Thank DF:https://github.com/NSDingFan/NSDingFan.github.io/issues/3#issuecomment-407496538 -->
-                <script src="{{ site.baseurl }}/js/md5.min.js"></script>
-                <script type="text/javascript">
-                    var gitalk = new Gitalk({
-                    clientID: '{{site.gitalk.clientID}}',
-                    clientSecret: '{{site.gitalk.clientSecret}}',
-                    repo: '{{site.gitalk.repo}}',
-                    owner: '{{site.gitalk.owner}}',
-                    admin: ['{{site.gitalk.admin}}'],
-                    distractionFreeMode: {{site.gitalk.distractionFreeMode}},
-                    id: md5(location.pathname),
-                    });
-                    gitalk.render('gitalk-container');
-                </script>
+               <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+		<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+		<!-- or -->
+	
+		<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+		<script src="https://unpkg.com/gitalk/dist/gitalk.min.js">
+		</script>
+		    
                 {% endif %}
                 <!-- Gitalk end -->
 
-                {% if site.disqus_username %}
-                <!-- disqus 评论框 start -->
-                <div class="comment">
-                    <div id="disqus_thread" class="disqus-thread"></div>
-                </div>
-                <!-- disqus 评论框 end -->
-                {% endif %}
+                <script>
+		const gitalk = new Gitalk({
+  		clientID: '12786851e32a35aa5f9e',
+  		clientSecret: '38201876e6ff81c9791dab58b7a3efd81ab7cc4c',
+  		repo: 'MHYCDH.github.io',
+  		owner: 'MHYCDH',
+  		admin: ['MHYCDH'],
+  		id: '{{ page.title }}',      // Ensure uniqueness and length less than 50
+  		distractionFreeMode: false  // Facebook-like distraction free mode
+		})
 
-            </div>  
+		 gitalk.render('gitalk-container')  
+		</script>
 
+            </div>
+		
+		
+		
+		
     <!-- Side Catalog Container -->
         {% if page.catalog %}
             <div class="
@@ -179,7 +241,6 @@ layout: default
     var disqus_shortname = "{{site.disqus_username}}";
     var disqus_identifier = "{{page.id}}";
     var disqus_url = "{{site.url}}{{page.url}}";
-
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
@@ -214,6 +275,7 @@ layout: default
         anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
     })
 </script>
+
 <style>
     /* place left on bigger screen */
     @media all and (min-width: 800px) {
@@ -226,3 +288,6 @@ layout: default
     }
 </style>
 {% endif %}
+
+
+
