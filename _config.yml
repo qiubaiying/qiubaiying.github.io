@@ -1,29 +1,23 @@
 # Site settings
-title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
+title: XP Blog
+SEOTitle: 薛盼的博客 | XP Blog
 header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
-description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+email: 18810930068@163.com
+description: "失败乃成功之母！"
+keyword: "XP, XP Blog, 薛盼的博客,xuepan, 薛盼, iOS, Apple, iPhone"
+url: "http://xiaopan999.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/xiaopan999/xiaopan999.github.io.git" # you code repository
 
 # Sidebar settings
-sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar: true                        # whether or not using Sidebar.
+sidebar-about-description: "有志者，事竞成！"
+sidebar-avatar: /img/avatar_m.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
-RSS: false
-# weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
-#twitter_username:   qiubaiying
+#twitter_username:  
 
 
 
@@ -57,16 +51,16 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
+# disqus_username:xiaopan999
 
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  clientID: 1839ab0ae6bde516f72c                            #生成的clientID
+  clientSecret: 6ce7449fd1b9b43d659573f9d2e0903bac231f86    #生成的clientSecret
+  repo: xiaopan999.github.io    #仓库名称
+  owner: xiaopan999    #github用户名
+  admin: xiaopan999
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
