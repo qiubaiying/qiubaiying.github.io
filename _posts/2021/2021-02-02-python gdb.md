@@ -3,7 +3,7 @@ layout:     post
 title:      PySnooper -- gdb in python
 date:       2021-02-03
 author:     Yukun SHANG
-catalog: 	 true
+catalog: 	true
 tags:
     - python
 	- gdb
