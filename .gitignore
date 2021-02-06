@@ -33,3 +33,6 @@ Temporary Items
 
 # debug file
 _site
+.idea
+.jekyll-cache
+Gemfile.lock
