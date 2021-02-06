@@ -8,7 +8,7 @@ tags:
     - Machine Learning
 ---
 
-## sklearn中的LinearRegression
+# sklearn中的LinearRegression
 
 ```python
 #创建并拟合模型
@@ -87,9 +87,9 @@ if sp.issparse(X):#如果X是稀疏矩阵
 
 
 
+# 关于$R^2$
 
 
-## 关于$R^2$
 
 在模型评价方面，sklearning用R 方r-squared）评估预测的效果。
 

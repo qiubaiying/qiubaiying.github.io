@@ -9,7 +9,7 @@ tags:
 
 ---
 
-
+# anaconda tips
 
 ```python
 #查看conda版本
@@ -27,3 +27,4 @@ conda deactivate
 #在环境中安装pytorch
 pip install torch torchvision
 ```
+

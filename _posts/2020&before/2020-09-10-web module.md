@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      pythob web module
+title:      python web module
 date:       2020-09-10
 author:     Yukun SHANG
 catalog: 	 true
@@ -8,7 +8,9 @@ tags:
     - python
 ---
 
-# pythob web module
+# python web module
+
+python 代码将图片挂在浏览器页面，方便查看feature是否提取正确。一般是使用python web。
 
 ### Case:
 

@@ -11,7 +11,11 @@ tags:
 
 # Vim_Tmux_Zsh
 
+Tmux 读法： `Tee Mucks`
 
+vim 读法： just like `tim`
+
+Zsh 读法： `Z shell`
 
 ## Reference
 

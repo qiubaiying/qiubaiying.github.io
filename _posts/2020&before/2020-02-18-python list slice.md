@@ -10,7 +10,7 @@ tags:
 
 # python list slice
 
-### Case:
+### Some Cases:
 
 As for 2-d list, such as matrix:
 
