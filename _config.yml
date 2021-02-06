@@ -1,28 +1,28 @@
 # Site settings
-title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
+title: ST Blog
+SEOTitle: 甜果果的博客 | ST Blog
 header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
-description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+email: tianguoguo15@g163.com
+description: "Stay hungry. Stay foolish."
+keyword: "ST, ST Blog, 甜果果的博客, 人工智能, 自然语言处理, 机器翻译, 吉他, 钢琴, 阅读, 游泳"
+url: "http://tianguoguo15.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/tianguoguo15/tianguoguo15.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "Live with love, happiness, and dreams~"
+sidebar-avatar: /img/minions.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
 RSS: false
 # weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
+zhihu_username:     tiaguoguo
+github_username:    tianguoguo15
+facebook_username:  tianguoguo
+jianshu_username:   tianguoguo
 #twitter_username:   qiubaiying
 
 
@@ -57,16 +57,16 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
-# disqus_username: qiubaiying
+disqus_username: tianguoguo
 
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: f2c84e7629bb1446c1a4                            #生成的clientID
   clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  repo: tianguoguo15.github.io    #仓库名称
+  owner: tianguoguo15    #github用户名
+  admin: tianguoguo15
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
