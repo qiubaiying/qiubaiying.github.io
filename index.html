@@ -1,6 +1,6 @@
 ---
 layout: page
-description: "Thinking will not overcome fear but action will."
+description: "唯独基督 (SOLA CHRISTUS)"
 ---
 
 {% for post in paginator.posts %}
@@ -15,11 +15,16 @@ description: "Thinking will not overcome fear but action will."
         </h3>
         {% endif %}
         <div class="post-content-preview">
+            {% if post.lang == 'en' %}
+            {{ post.content | strip_html | truncate:300 }}
+            {% else %}
             {{ post.content | strip_html | truncate:200 }}
+            {% endif %}
         </div>
     </a>
     <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on
+        {{ post.date | date: "%B %-d, %Y" }}
     </p>
 </div>
 <hr>
