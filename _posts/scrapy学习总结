@@ -1,0 +1,851 @@
+## 安装scrapy
+
+https://blog.csdn.net/xiaoyong5854/article/details/84642123安装在windows安装scrapy时，遇到了几个问题
+
+1.在最开始时以为只要用pip install scrapy就可以了然后没看懂它的命令以为就这样就可以了
+
+在后来的时候就发现不对，因为在安装scrapy时需要先安装其他的库，然后才能安装scrapy库
+
+2.在下载一个库时，需要下载.whl文件（Twisted-18.9.0-cp37-cp37m-win_amd64.whl），但是会遇到一个问题，就是Requirement '.whl' looks like a filename, but the file does not exist报错，这个问题时根据上面的链接解决的
+
+问题：为什么下载那两个文件后（vcruntime140.dll，visualcppbuildtools full.exe）就可以安装了呢？感觉第二个文件是没有什么用的
+
+在ubuntu下安装scrapy 
+
+https://blog.csdn.net/duanyajun987/article/details/81456203最开始是参照的这篇博客发现在第四步时报错了sudo:easy_install :找不到命令,中间百度了一波，试了很多次感觉不太好，所有就用下面的方法
+
+先安装pip，再执行pip install scrapy 或者pip3 install scrapy
+
+## 对scrapy的大致了解
+
+结构：分布式
+
+流程：数据流
+
+1 Engine从Spider处获得爬取请求(Request) 
+
+2 Engine将爬取请求转发给Scheduler，用于调度
+
+3 Engine从Scheduler处获得下一个要爬取的请求
+
+ 4 Engine将爬取请求通过中间件发送给Downloader 
+
+5 爬取网页后，Downloader形成响应（Response） 通过中间件发给Engine
+
+ 6 Engine将收到的响应通过中间件发送给Spider处理
+
+7 Spider处理响应后产生爬取项（scraped Item） 和新的爬取请求（Requests）给Engine
+
+ 8 Engine将爬取项发送给Item Pipeline（框架出口）
+
+ 9 Engine将爬取请求发送给Scheduler
+
+Engine 
+
+(1)控制所有模块之间的数据流
+
+ (2)根据条件触发事件
+
+Downloader
+根据请求下载网页
+
+Scheduler
+对所有爬取请求进行调度管理
+
+不需要用户修改
+
+Downloader Middleware 目的：实施Engine、Scheduler和Downloader 之间进行用户可配置的控制 功能：修改、丢弃、新增请求或响应
+
+Item Pipelines 
+
+(1)以流水线方式处理Spider产生的爬取项
+
+ (2)由一组操作顺序组成，类似流水线，每个操 作是一个Item Pipeline类型
+“5+2”结构 Item Pipelines
+(3)可能操作包括：清理、检验和查重爬取项中 的HTML数据、将数据存储到数据库 需要用户编写配置代码
+
+Spider Middleware 目的：对请求和爬取项的再处理 功能：修改、丢弃、新增请求或爬取项
+
+settings
+
+用户可以编写配置代码
+
+python123demo/ 外层目录
+
+scrapy.cfg  部署Scrapy爬虫的配置文件 服务器本机时不用改变
+
+python123demo/  Scrapy框架的用户自定义Python代码 
+
+__init__.py 初始化脚本
+
+ items.py Items代码模板（继承类）
+middlewares.py Middlewares代码模板（继承类）
+
+ pipelines.py Pipelines代码模板（继承类）
+
+ settings.py   Scrapy爬虫的配置文件 
+
+spiders/Spiders代码模板目录（继承类）
+目录结构 __pycache__/ 缓存目录，无需修改
+D:\scrapy\python123demo>scrapy genspider demo python.io生成文件
+
+Scrapy 使用了 Twisted异步网络库来处理网络通讯
+
+  为了创建一个Spider，您必须继承 scrapy.Spider 类， 且定义以下三个属性:
+
+- name: 用于区别Spider。 该名字必须是唯一的，您不可以为不同的Spider设定相同的名字。
+- start_urls: 包含了Spider在启动时进行爬取的url列表。 因此，第一个被获取到的页面将是其中之一。 后续的URL则从初始的URL获取到的数据中提取。
+- parse() 是spider的一个方法。 被调用时，每个初始URL完成下载后生成的 Response 对象将会作为唯一的参数传递给该函数。 该方法负责解析返回的数据(response data)，提取数据(生成item)以及生成需要进一步处理的URL的 Request 对象。
+
+
+
+## 笔记和操作
+
+制作爬虫需要四步
+
+新建项目 scrpy startproject     
+
+明确目标 编写items.py：抓取目标
+
+制作爬虫spiders：制作爬虫
+
+存储内容pipelines.py：存储
+
+注意学习官方文档（中文维护网站？）
+
+scrapy命令
+
+scrapy bench电脑爬取命令测试
+
+fetch
+
+genspider
+
+runspider
+
+settings
+
+shell测试响应文件
+
+startproject
+
+version
+
+view调用浏览器
+
+创建爬虫scrapy genspider 名称 域名
+
+parse处理响应，解析内容形成字典，发现新的URL爬取请求
+
+yield生成器，产生一个冻结一个，下一次就继续，与循环搭配，对比：循环和列表，列表需要存储很多值占用空间
+
+startproject 创建一个新工程 scrapy startproject <name> [dir]
+
+genspider 创建一个爬虫scrapy genspider [options] <name> <domain>
+
+一定要记住加上域名，在生成的爬虫文件后
+
+ settings 获得爬虫配置信息scrapy settings [options] 
+
+crawl运行一个爬虫scrapy crawl <spider> 
+
+ list列出工程中所有爬虫 scrapy list
+shell    启动URL调试命令行 scrapy shell [url]
+
+item类似于字典，存储字段
+
+scrapy 保存数据四种方法：scrapy crawl spider命名 -o 名字.json(csv,xml)
+
+还可以在管道中定义函数（存储到数据库）
+
+xpath()返回的是包含一个元素的列表
+
+extract()方法返回的是unicode字符串
+
+yield将获取的数据交给pipeline
+
+![1548424562979](C:\Users\甘棠\AppData\Roaming\Typora\typora-user-images\1548424562979.png)
+
+![1548424796689](C:\Users\甘棠\AppData\Roaming\Typora\typora-user-images\1548424796689.png)
+
+.extract将xpath提取出来的对象转换为unicode字符串，xpath的/text()提取文字.返回列表
+
+创建item字段，存储信息
+
+return返回给引擎
+
+json文件uniode形式转换为utf-8
+
+## 任务
+
+任务一：	 	 	 	 	 	 	 	 	 	 	 	 	 
+1、重庆市公共资源交易网（https://www.cqggzy.com/jyjg/005002/second-page-jyjg.html）	 	 	 	 	 	 	 	 	 	 	 	 	 
+2、进入后抓取其交易结果中的工程招投标中的中标公示	 	 	 	 	 	 	 	 	 	 	 	 	 
+3、爬取所有中标公示名称，日期及网址（一共15433条）	 	 	 	 	 	 	 	 	 	 	 	 	 
+4、进入每个中标公示，爬取其 （中标时间 、招标人、招标公告编号、项目名称、招标代理机构、第一第二第三中标候选人、拟中标人、工商注册号、投诉受理部门、中标价、第二第三中标人价格等字段（如字段无内容则令其为空）	 	 	 	 	 	 	 	 	 	 	 	 	 
+任务二：	 	 	 	 	 	 	 	 	 	 	 	 	 
+1、从重庆市公共资源交易网到各区县公共交易网	 	 	 	 	 	 	 	 	 	 	 	 	 
+2、进入后抓取其交易结果中的工程招投标中的中标公示	 	 	 	 	 	 	 	 	 	 	 	 	 
+3、爬取所有中标公示名称，日期及网址	 	 	 	 	 	 	 	 	 	 	 	 	 
+4、进入每个中标公示，爬取其 （中标时间 、招标人、招标公告编号、项目名称、招标代理机构、第一第二第三中标候选人、拟中标人、工商注册号、投诉受理部门、中标价、第二第三中标人价格等字段（如字段无内容则令其为空）	 	 	 	 	 	 	 	 	 	 	 	 	 
+任务三：	 	 	 	 	 	 	 	 	 	 	 	 	 
+1、重庆市建设工程招标投标网（http://jzzb.cqjsxx.com/CQ_ZB/ForeDisplay/ZBAffiche_Info/ZBAffiche_Info.aspx）	 	 	 	 	 	 	 	 	 	 	 	 	 
+2、进入后抓取其交易结果中的工程招投标中的中标公示	 	 	 	 	 	 	 	 	 	 	 	 	 
+3、爬取所有中标公示名称，日期及网址	 	 	 	 	 	 	 	 	 	 	 	 	 
+4、进入每个中标公示，爬取其 （中标时间 、招标人、招标公告编号、项目名称、招标代理机构、第一第二第三中标候选人、拟中标人、工商注册号、投诉受理部门、中标价、第二第三中标人价格等字段（如字段无内容则令其为空）	 	 	 	 	 	 	 	 	 	 	 	 	 
+代码注释以及规范性：	 	 	 	 	 	 	 	 	 	 	 	 	 
+1、为了养成更好的编程习惯，每个人的代码都必须要有注释（可以参照群里代码的注释）	 	 	 	 	 	 	 	 	 	 	 	 	 
+2、规范代码同样很重要
+
+### 任务一
+
+1.首先对网页进行分析，网页的url并没有改变，去network里面看是会找到下面的网址组成，
+
+```python
+url = "https://www.cqggzy.com/web/services/PortalsWebservice/getInfoList?response=application/json&pageIndex="+str(i)+"&pageSize=18&siteguid=d7878853-1c74-4913-ab15-1d72b70ff5e7&categorynum=005002&title=&infoC="
+```
+
+就直接使用Request进行请求，会获取一个json文件，对json文件中的东西进行分析。
+
+![1552466510342](C:\Users\甘棠\AppData\Roaming\Typora\typora-user-images\1552466510342.png)
+
+2.对每一页的时间，标题，网址等进行抓取，网址如图：
+
+![img](file:///C:\Users\甘棠\AppData\Roaming\Tencent\Users\1726886711\TIM\WinTemp\RichOle\CK$%@_}_[9}VHF8Y5FI0SQE.png)
+
+需要在前面加上一点
+
+3.对网址Request,进入详情页，对每一个中标公示进行分析，我最开始用的就是firefox的的一个xpath的工具，但是呢，后面我发现，你抓取的内容和网页显示的是不同的，这是一个坑，因为有得浏览器会加上tbody标签。所以，在对网页进行分析时，最好用谷歌的xpath helper,在使用shell来验证xpath的路径是否正确。
+
+以下是详情代码
+
+```python
+import scrapy
+import re
+from scrapy.http import Request
+from cqggzy.items import CqggzyItem
+import json
+class CSpider(scrapy.Spider):
+    name = 'c'
+    def start_requests(self):
+      for i in range(1,867):
+          url = "https://www.cqggzy.com/web/services/PortalsWebservice/getInfoList?response=application/json&pageIndex="+str(i)+"&pageSize=18&siteguid=d7878853-1c74-4913-ab15-1d72b70ff5e7&categorynum=005002&title=&infoC="
+          yield Request(url = url,callback = self.parse)
+    def parse(self,response):
+        jsonBody = json.loads(response.body)
+        item = CqggzyItem()
+        json_body = jsonBody["return"]
+        infodate = re.compile('"infodate":"(.*?)"').findall(json_body)
+        infourl = re.compile('"infourl":"(.*?)"').findall(json_body)
+        title = re.compile('"title":"(.*?)"').findall(json_body)
+        for i in range(len(infourl)):
+            info_url = "https://www.cqggzy.com"+infourl[i]
+            info_date = infodate[i]
+            ti_tle = title[i]
+            item['infourl'] =info_url
+            item['infodate'] = info_date
+            item['title'] = ti_tle
+
+            yield item
+            # 如果想要获得所有中标公示名称，日期及网址，请把最后的 yield item注释掉，如果想要获得中标公示的内容，请把上一行注释掉哦
+
+            yield Request(url = info_url,callback = self.info)
+
+    def info(self,response):
+        # print(response.body)
+        item = CqggzyItem()
+
+        # 备注：以下分析了一些情况，但可能不完全，有两个是特殊例子（万州区2018年财政涉农资金第三批“四好农村路”
+        # 通组公路建设项目-柱山乡金牛村、何庙村、山田村、葵花村、三木村、云安村通组公路硬化工程,万州区长青路加油站)
+        # 与其它中标公示完全不同
+
+        # 以下主要从中标公示第一页18个公示分析得出，但是因为情况较多，可能会不太准确
+
+        # 招标时间
+        a = response.xpath("/html/body/div[3]/div/div[2]/div[1]").extract()[0]
+        zhongbiao_shijian = re.compile('信息时间：(.*?)】').findall(a)
+        item['zhongbiao_shijian'] = zhongbiao_shijian
+
+        # 招标人
+        b = response.xpath("/html/body/div[3]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[2]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[2]/p/span[2]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[3]/td[2]/p/span[1]/text()|"
+                            "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[3]/td[3]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/epointform/table/tbody/tr[4]/td[2]/text()").extract()
+        if len(b) != 0:
+            item['zhaobiao_ren'] = b[0]
+        else:
+            item['zhaobiao_ren'] = " "
+
+        # 招标编号
+        c = response.xpath("/html/body/div[3]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[2]/td[2]/p/b[1]/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[2]/td[2]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/p/b/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/epointform/table/tbody/tr[2]/td[2]/text()").extract()
+        if len(c) != 0:
+            item['gonggao_bianhao'] = c[0]
+        else:
+            item['gonggao_bianhao'] = " "
+
+        # 项目名称
+        d = response.xpath("/html/body/div[3]/div/div[2]/div[2]/div/table/tbody/tr[1]/td[2]/p[1]/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[1]/td[2]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/div/table/tbody/tr[1]/td[2]/p/span[1]/text()|"
+                            "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[3]/td[2]/p[1]/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[1]/td[2]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/epointform/table/tbody/tr[3]/td[2]/text()").extract()
+        if len(d) != 0:
+            item['xiangmu_mingcheng'] = d[0]
+        else:
+            item['xiangmu_mingcheng'] = " "
+
+        # 招标代理机构
+        e = response.xpath("/html/body/div[3]/div/div[2]/div[2]/div/table/tbody/tr[4]/td[2]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[4]/td[2]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[6]/td[2]/p/span[1]/text()").extract()
+        if len(e) != 0:
+            item['zhaobiao_dailijigou'] = e[0]
+        else:
+            item['zhaobiao_dailijigou'] = " "
+
+        # 第一中标候选人
+        f = response.xpath("/html/body/div[3]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[3]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[5]/td[4]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[4]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[6]/td[4]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[7]/td[4]/p/span[1]/text()").extract()
+        if len(f) != 0:
+            item['zhongbiao_houxuanren_first'] = f[0]
+        else:
+            item['zhongbiao_houxuanren_first'] = " "
+
+        # 第二中标候选人
+        g = response.xpath("/html/body/div[3]/div/div[2]/div[2]/div/table/tbody/tr[6]/td[2]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[6]/td[2]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[7]/td[2]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[8]/td[2]/p/span[1]/text()").extract()
+        if len(g) != 0:
+            item['zhongbiao_houxuanren_second'] = g[0]
+        else:
+            item['zhongbiao_houxuanren_second'] = " "
+
+        # 第三中标候选人
+        h = response.xpath("/html/body/div[3]/div/div[2]/div[2]/div/table/tbody/tr[7]/td[2]/p/span[2]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[7]/td[2]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/div/table/tbody/tr[7]/td[2]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[8]/td[2]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[9]/td[2]/p/span[1]/text()").extract()
+        if len(h) != 0:
+            item['zhongbiao_houxuanren_third'] = h[0]
+        else:
+            item['zhongbiao_houxuanren_third'] = " "
+
+        # 拟中标人
+        i = response.xpath("/html/body/div[3]/div/div[2]/div[2]/div/table/tbody/tr[8]/td[2]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[8]/td[2]/p/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/div/table/tbody/tr[8]/td[2]/p/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[9]/td[2]/p/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[10]/td[2]/p/span[1]/text()").extract()
+        if len(i) != 0:
+            item['ni_zhongbiaoren'] = i[0]
+        else:
+            item['ni_zhongbiaoren'] = " "
+
+        # 工商注册号
+        j = response.xpath("/html/body/div[3]/div/div[2]/div[2]/div/table/tbody/tr[9]/td[2]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[9]/td[2]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[10]/td[2]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[11]/td[2]/p/span[1]/text()").extract()
+        if len(j) != 0:
+            item['gongshang_zhucehao'] = j[0]
+        else:
+            item['gongshang_zhucehao'] = " "
+
+        # 第一投诉代理机构
+        k = response.xpath("/html/body/div[3]/div/div[2]/div[2]/div/table/tbody/tr[10]/td[2]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[10]/td[2]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/div/table/tbody/tr[10]/td[2]/p/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[11]/td[3]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[12]/td[2]/p/span[1]/text()").extract()
+        if len(k) != 0:
+            item['tousu_dailibumen_first'] = k[0]
+        else:
+            item['tousu_dailibumen_first'] = " "
+
+        # 第二投诉代理部门
+        l = response.xpath("/html/body/div[3]/div/div[2]/div[2]/div/table/tbody/tr[11]/td[1]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[11]/td[1]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[12]/td[2]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[13]/td[1]/p/span[1]/text()").extract()
+        if len(l) != 0:
+            item['tousu_dailibumen_second'] = l[0]
+        else:
+            item['tousu_dailibumen_second'] = " "
+
+        # 中标价
+        m = response.xpath("/html/body/div[3]/div/div[2]/div[2]/div/table/tbody/tr[8]/td[4]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[8]/td[4]/p/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[9]/td[4]/p/span[1]/text()|"
+                           "/html/body/div[3]/div/div[2]/div[2]/table/tbody/tr[10]/td[4]/p/span[1]/text()").extract()
+        if len(m) != 0:
+            item['zhongbiaojia'] = m[0]
+        else:
+            item['zhongbiaojia'] = " "
+
+        yield item
+```
+
+### 任务二
+
+1.
+
+```
+# 彭水，巫山，奉节，巫溪
+```
+
+我是抓取的这几个网站，对彭水，巫山，奉节，巫溪的网页进行了分析，发现前三个都是用的post表单提交，获取数据。第四个是"http://zfxx.wx.cq.gov.cn/www/list_0_700"_+str(i)+".shtml?"这种类型，第四个较简单，主要对前三个进行爬取。
+
+2.首先对网页进行分析，发现你在翻页时url并没有改变，这里是因为采用的是ajax动态加载技术，这里卡住了
+
+3.再去network里面找找包，忽然发现没有json文件啥的，就只能找到有个post有点用，没错就是它，这里是采用的post把表单提交给后台，它会给你返回数据
+
+```python
+for i in range(2,5):
+        formdata = {"__VIEWSTATE":__VIEWSTATE,
+                    "__EVENTVALIDATION":__EVENTVALIDATION,
+                    "ctl00$ContentPlaceHolder2$T1":"4",
+                    "ctl00$ContentPlaceHolder2$T2":str(i),
+                    "ctl00$ContentPlaceHolder2$F3":"上一页",
+                    "select2":"",
+                    "select":"",
+                    "select":"",
+                    "select":""}
+        yield scrapy.FormRequest(url="http://www.psggzy.com/LBv3/n_newslist_zz_item.aspx?ILWHBNjF4clKo8UY2fiQHA=%3d",
+                        formdata=formdata,
+                        method = "POST",
+                        callback=self.after
+                        )
+```
+
+如上，有一个要注意的地方就是，它的__VIEWSTATE 是在网页元素里面的，并且它是属于下一页的__VIEWSTATE，化重点，这里卡住过。还有一个地方就是，上面的代码的response只有后面几页，所以对于第一页，我就把它的解析放在了formdata前面。
+
+
+
+4.对详情页进行解析，它的详情页非常乱，不太好提取字段。
+
+http://www.psggzy.com/LBv3/n_newsdetail_zz.aspx?WvqKkwOy3UsIN9oAC1/wIFcE2MzYfnaDz+syQLdofSsvlFIZwRCxgl1Un/tDi7Zq
+
+邮政生产指挥调度中心
+
+response.xpath("//p/text()").extract()
+
+response.xpath("//p/span/text()").extract()
+
+http://www.psggzy.com/LBv3/n_newsdetail_zz.aspx?WvqKkwOy3UsLngU5S3fOXVcE2MzYfnaDK8NR1/GZ2ykvlFIZwRCxgl1Un/tDi7Zq
+
+#### response.xpath('//p/text()').extract()
+
+response.xpath('//p/span/text()').extract()
+
+http://www.psggzy.com/LBv3/n_newsdetail_zz.aspx?D9olvtxRSHgZYm9H11dvexyE/Cw9eDVQ9R4qEGIHO57Ve/gP99ELxw==
+
+response.xpath("//span/text()").extract()
+
+http://www.psggzy.com/LBv3/n_newsdetail_zz.aspx?WvqKkwOy3Us5iB6KPhwp0dloEUziUBELgagVAMJ4UlUvlFIZwRCxgl1Un/tDi7Zq
+
+ '彭水县大垭乡易地扶贫搬迁塘口集中安置点（一期）工程'
+
+response.xpath("//span/text()").extract()
+
+response.xpath("//font/text()").extract()    编号和日期
+
+这是我找的一点规律，我按照这几个来进行提取，发现是乱的，但是有人给我说可以把所有字段的列表先找到，循环列表，因为每个字段是有规律的，比如项目名称后跟着的是名称，我还没有实现。
+
+以下是详情代码
+
+```python
+import scrapy
+import re
+import json
+from scrapy.http import Request
+from scrapy.http import FormRequest
+from qxggzyjy.items import QxggzyjyItem
+
+class JSpider(scrapy.Spider):
+    name = 'j'
+    # allowed_domains = ['qxggzyjy.com']
+    def start_requests(self):
+        # 彭水，巫山，奉节
+        urls = ['http://www.psggzy.com/LBv3/n_newslist_zz_item.aspx?ILWHBNjF4clKo8UY2fiQHA=%3d',
+                      'http://www.wsggzyjy.com/lbv3/n_newslist_zz_item.aspx?ILWHBNjF4clKo8UY2fiQHA==',
+                      'http://www.fjjyzx.gov.cn/lbv3/n_newslist_zz_item.aspx?ILWHBNjF4clKo8UY2fiQHA==']
+        # 巫溪
+        url4 = 'http://zfxx.wx.cq.gov.cn/www/list_0_702_0.shtml'
+        yield Request(url4, callback=self.next4)
+        # for i in range(3):
+        #     url1 = urls[i]
+        #     yield Request(url1,callback=self.next)
+        url1 = urls[0]
+        yield Request(url1, callback=self.parse)
+
+        # 和第一个网址相同原理
+        # url2 = urls[1]
+        # yield Request(url2, callback=self.next2)
+        # url3 = urls[2]
+        # yield Request(url3, callback=self.next3)
+        
+    def parse(self, response):
+        body = response.body.decode()
+        a = re.compile('value="(.*?)"').findall(body)
+        __VIEWSTATE = a[0]
+        __EVENTVALIDATION = a[1]
+
+        # 这里主要是对第一页的信息进行提取
+        item = QxggzyjyItem()
+        url = response.xpath("//nobr/a/@href").extract()
+        for i in range(len(url)):
+            item["title"] = response.xpath("//nobr/a/text()").extract()[i]
+            item["infodate"] = response.xpath("//nobr/text()").extract()[i]
+            item["infourl"] = "http://www.psggzy.com/LBv3/" + url[i]
+            yield Request(url=item["infourl"], callback=self.info)
+            yield item
+
+
+        for i in range(2,5):
+                formdata = {"__VIEWSTATE":__VIEWSTATE,
+                            "__EVENTVALIDATION":__EVENTVALIDATION,
+                            "ctl00$ContentPlaceHolder2$T1":"4",
+                            "ctl00$ContentPlaceHolder2$T2":str(i),
+                            "ctl00$ContentPlaceHolder2$F3":"上一页",
+                            "select2":"",
+                            "select":"",
+                            "select":"",
+                            "select":""}
+                yield scrapy.FormRequest(url="http://www.psggzy.com/LBv3/n_newslist_zz_item.aspx?ILWHBNjF4clKo8UY2fiQHA=%3d",
+                                formdata=formdata,
+                                method = "POST",
+                                callback=self.after
+                                )
+
+    def next4(self, response):
+        for i in range(1,21):
+            url = "http://zfxx.wx.cq.gov.cn/www/list_0_702_" + str(i)+".shtml?"
+            yield Request(url = url,callback=self.after)
+
+    def after(self,response):
+        item = QxggzyjyItem()
+        url = response.xpath("//nobr/a/@href").extract()
+        for i in range(len(url)):
+            item["title"] = response.xpath("//nobr/a/text()").extract()[i]
+            item["infodate"] = response.xpath("//nobr/text()").extract()[i]
+            item["infourl"] = "http://www.psggzy.com/LBv3/"+url[i]
+            yield Request(url = item["infourl"],callback = self.info)
+            yield item
+    def info(self,response):
+        item = QxggzyjyItem()
+        # 类似于邮政生产指挥调度中心项目
+        yz1 = response.xpath("//p/text()").extract()
+        yz2 = response.xpath("//p/span/text()").extract()
+        # '彭水县大垭乡易地扶贫搬迁塘口集中安置点（一期）工程'
+        # 中标公示
+        ps1 = response.xpath("//span/text()").extract()
+        # 其余内容
+        ps2 = response.xpath("//font/text()").extract()
+        if yz1[0] == "项目名称":
+            item['total1'] = yz1
+            item['total2'] = yz2
+            for i in range(len(yz2)):
+                # 中标时间
+                item['zhongbiao_shijian'] = yz2[2]+yz2[3]+yz[4]+ yz2[5]+yz2[6]+yz2[7]
+                # 公告编号
+                item['gonggao_bianhao'] = yz2[15]
+                # 工商注册号
+                item['gongshang_zhucehao'] = yz2[26]
+                # 中标价
+                item['zhongbiaojia'] = yz2[25]
+                # 投诉代理部门
+                item['tousu_dailibumen_first'] = yz2[29]
+                item['tousu_dailibumen_second'] = yz2[31]
+
+            for i in range(len(yz1)):
+                    # 招标人
+                    item['zhaobiao_ren'] =  yz1[6]
+                    # 项目名称
+                    item['xiangmu_mingcheng'] = yz1[1]
+                    # 招标代理机构
+                    item['zhaobiao_dailijigou'] = yz1[9]
+                    # 中标候选人
+                    item['zhongbiao_houxuanren_first'] = yz1[11]
+                    item['zhongbiao_houxuanren_second'] = yz1[13]
+                    item['zhongbiao_houxuanren_third'] = yz1[14]
+                # 拟中标人
+                # ni_zhongbiaoren
+                # # 第二第三中标人价格
+                # zhongbiao_jia = scrapy.Field()
+
+        elif len(ps2) > 100:
+            item['total1'] = ps1
+            item['total2'] = ps2
+            for i in range(len(ps1)):
+                # 中标时间
+                item['zhongbiao_shijian'] = ps1[3]+ps1[4]+ps1[5]+ps1[6]+ps1[7]+ps1[8]
+                # 公告编号
+                item['gonggao_bianhao'] = ps1[16]
+
+
+            for i in range(len(ps2)):
+                # 招标人
+                item['zhaobiao_ren'] = ps2[34]
+                # 项目名称
+                item['xiangmu_mingcheng'] = ps2[12]
+                # 招标代理机构
+                item['zhaobiao_dailijigou'] = ps2[52]
+                # 中标候选人
+                item['zhongbiao_houxuanren_first'] = ps2[70]
+                item['zhongbiao_houxuanren_second'] = ps2[80]
+                item['zhongbiao_houxuanren_third'] = ps2[93]
+
+                # 工商注册号
+                item['gongshang_zhucehao'] = ps2[126]
+                # 中标价
+                item['zhongbiaojia'] = ps2[116]
+                # 投诉代理部门
+                item['tousu_dailibumen_first'] = ps2[144]
+                item['tousu_dailibumen_second'] = ps2[158]
+                item['tousu_dailibumen_third'] = ps2[172]
+        else:
+    # '彩票公益设施（大垭乡通畅公路工程）建设项目
+            cb = ps1
+            item['total1'] = cb
+            for i in range(len(ps1)):
+                # 中标时间
+                item['zhongbiao_shijian'] = cb[3] + cb[4] + cb[5] + cb[6] + cb[7] + cb[8]
+                # 公告编号
+                item['gonggao_bianhao'] = cb[19]
+                # 招标人
+                item['zhaobiao_ren'] = cb[25]
+                # 项目名称
+                item['xiangmu_mingcheng'] = cb[17]
+                # 招标代理机构
+                item['zhaobiao_dailijigou'] = cb[29]
+                # 拟中标人
+                item['ni_zhongbiaoren'] = cb[47]
+                # 中标候选人
+                item['zhongbiao_houxuanren_first'] = cb[35]
+                item['zhongbiao_houxuanren_second'] = cb[37]
+                item['zhongbiao_houxuanren_third'] = cb[39]
+
+                # 工商注册号
+                item['gongshang_zhucehao'] = cb[54]
+                # 中标价
+                item['zhongbiaojia'] = cb[52]
+                # 投诉代理部门
+                item['tousu_dailibumen_first'] = cb[58]
+                item['tousu_dailibumen_second'] = cb[61]
+        yield item
+```
+
+任务三
+
+1.首先对网页进行分析，发现和任务二差不多，依旧是post表单
+
+2.但是呢，在formdata中只有一个参数变化，如果写循环的话，就会发现，它的确是爬取了所有网页的内容，但是，它返回给下一个函数的就只有最后一页的内容
+
+3.在这个地方呢，因为我实在没想到好的解决方案，所以，我采用的是meta传参的方法，将每一个body写到列表中，在callback给本身的函数，在断时，我是使用的len(list),
+
+控制爬取网页的数量，顺便callback给下一个函数。但是这个方法不好，首先，我们可以通过提取网页中的当前页数，来设置断点。其次，这个方法很容易弄混，程序本身不太清晰，可能除了自己，别人就看不懂了
+
+4.对详情页进行解析，有规律，好找。
+
+以下是详情代码
+
+
+
+```python
+import scrapy
+import re
+from scrapy.http import Request
+from cqjsxx.items import CqjsxxItem
+
+class JSpider(scrapy.Spider):
+    name = 'j'
+    # allowed_domains = ['jzzb.cqjsxx.com']
+    def start_requests(self):
+        list = []
+        list__VIEWSTATE = []
+        start_urls = ['http://jzzb.cqjsxx.com/CQ_ZB/ForeDisplay/ZBAffiche_Info/ZBAffiche_Info.aspx']
+        yield Request(url = start_urls[0],callback = self.parse,meta={"body": list,"list__VIEWSTATE":list__VIEWSTATE})
+
+    def parse(self, response):
+
+        list1 = []
+        urls = []
+        list = response.meta["body"]
+        list__VIEWSTATE = response.meta["list__VIEWSTATE"]
+        item = CqjsxxItem()
+        title = response.xpath("//font/a/font/text()").extract()
+        for i in range(len(title)):
+            item['title'] = title[i]
+            item['infodate'] = response.xpath("//td[4]/font/text()").extract()[i + 1]
+            yield item
+
+
+
+        body = response.body.decode('gbk')
+        __VIEWSTATE = re.compile('value="(.*?)"').findall(body)
+        __VIEWSTATE = __VIEWSTATE[2]
+        list__VIEWSTATE.append(__VIEWSTATE)
+        print(len(list__VIEWSTATE))
+        list.append(body)
+        # print(len(list))
+
+        if len(list)>= 874:
+            formdata = {
+                "__EVENTTARGET": "Pager1:LB_Next",
+                "__EVENTARGUMENT": " ",
+                "__VIEWSTATE": __VIEWSTATE,
+                "__VIEWSTATEGENERATOR": "77E10603",
+                "FName": " ",
+                "Pager1": "NewPage:400"
+            }
+            yield scrapy.FormRequest(url="http://jzzb.cqjsxx.com/CQ_ZB/ForeDisplay/ZBAffiche_Info/ZBAffiche_Info.aspx",
+                                     formdata=formdata,
+                                     meta={ "__VIEWSTATE": list__VIEWSTATE,"url":urls,"list1":list1},
+                                     method="POST",
+                                     callback=self.after
+                                     )
+
+        else:
+            formdata ={
+                "__EVENTTARGET" : "Pager1:LB_Next",
+                "__EVENTARGUMENT" : " ",
+                "__VIEWSTATE" : __VIEWSTATE,
+                "__VIEWSTATEGENERATOR" : "77E10603",
+                "FName" : " ",
+                "Pager1" : "NewPage:400"
+                    }
+            yield scrapy.FormRequest(url="http://jzzb.cqjsxx.com/CQ_ZB/ForeDisplay/ZBAffiche_Info/ZBAffiche_Info.aspx",
+                                     formdata=formdata,
+                                     meta={"body":list,"list__VIEWSTATE":list__VIEWSTATE},
+                                     method="POST",
+                                     callback=self.parse
+                                     )
+
+    def after(self,response):
+
+        item = CqjsxxItem()
+
+        body = response.body.decode('gbk')
+
+        list1 = response.meta["list1"]
+        list1.append(body)
+
+        url = re.findall(r"window.open\('(.*?)'", body)
+        print(url)
+        print(len(list1))
+        item['infourl'] = url
+        urls = response.meta["url"]
+        urls.append(url)
+
+        yield item
+        list__VIEWSTATE = response.meta["__VIEWSTATE"]
+
+        for i in range(len(list__VIEWSTATE)):
+            __VIEWSTATE = list__VIEWSTATE[i]
+
+            if len(list1) >= 874*5:
+                formdata1 = {
+                    "__EVENTTARGET": "DataGrid1:_ctl14:_ctl0",
+                    "__EVENTARGUMENT": " ",
+                    "__VIEWSTATE": __VIEWSTATE,
+                    "__VIEWSTATEGENERATOR": "77E10603",
+                    "FName": " ",
+                    "Pager1": "NewPage:400"
+                }
+                yield scrapy.FormRequest(
+                    url="http://jzzb.cqjsxx.com/CQ_ZB/ForeDisplay/ZBAffiche_Info/ZBAffiche_Info.aspx",
+                    formdata=formdata1,
+                    method="POST",
+                    callback=self.after1,
+                    meta={"url": urls}
+                    )
+            else:
+                for j in range(3, 18):
+                    formdata1 = {
+                        "__EVENTTARGET": "DataGrid1:_ctl" + str(j) + ":_ctl0",
+                        "__EVENTARGUMENT": " ",
+                        "__VIEWSTATE": __VIEWSTATE,
+                        "__VIEWSTATEGENERATOR": "77E10603",
+                        "FName": " ",
+                        "Pager1": "NewPage:"
+                    }
+                    yield scrapy.FormRequest(url="http://jzzb.cqjsxx.com/CQ_ZB/ForeDisplay/ZBAffiche_Info/ZBAffiche_Info.aspx",
+                                             formdata=formdata1,
+                                             method="POST",
+                                             meta={"url": urls,"__VIEWSTATE":list__VIEWSTATE,"list1":list1},
+                                             callback=self.after
+                                             )
+
+
+
+    def after1(self,response):
+
+        urls = response.meta["url"]
+        print(response)
+        print(urls)
+        for i in range(len(urls)):
+            url = urls[i]
+            if len(url) > 0:
+                yield Request(url = url[0],callback = self.info)
+
+    def info(self,response):
+        item = CqjsxxItem()
+        # 中标时间
+        item['zhongbiao_shijian'] = response.xpath('//*[@id="Gskssj"]/text()').extract()[0]
+        # 招标人
+        item['zhaobiao_ren'] = response.xpath('//*[@id="FEmployer"]/text()').extract()[0]
+        # 公告编号
+        item['gonggao_bianhao'] = response.xpath('//*[@id="FTNO"]/text()').extract()[0]
+        # 项目名称
+        item['xiangmu_mingcheng'] = response.xpath('//*[@id="FProjectName"]/text()').extract()[0]
+
+        # 招标代理机构
+        # zhaobiao_dailijigou
+        # 中标候选人
+        item['zhongbiao_houxuanren_first'] = response.xpath('//*[@id="FAwardOrgan"]/text()').extract()[0]
+        item['zhongbiao_houxuanren_second'] = response.xpath('//*[@id="FSecondAwardOrgan"]/text()').extract()[0]
+        item['zhongbiao_houxuanren_third'] = response.xpath('//*[@id="FSecondAwardOrgan"]/text()').extract()[0]
+
+        # 拟中标人
+        # ni_zhongbiaoren
+        # 工商注册号
+        # gongshang_zhucehao
+        # 投诉代理部门
+        # tousu_dailibumen_first
+        # tousu_dailibumen_second
+        # 中标价
+        item['zhongbiaojia'] = response.xpath('//*[@id="FAwardPrice"]/text()').extract()[0]
+        # # 第二第三中标人价格
+        # zhongbiao_jia
+        yield item
+```
+
+### 
+
+## 其它
+
+命令行（不是图形界面）更容易自动化，适合脚本控制
+本质上，Scrapy是给程序员用的，功能（而不是界面）更重要
+
+环境变量是在操作系统中一个具有特定名字的对象,它包含了一个或者多个应用程序所将使用到的信息。例如Windows和DOS操作系统中的path环境变量,当要求系统运行一个程序而没有告诉它程序所在的完整路径时,系统除了在当前目录下面寻找此程序外,还应到path中指定的路径去找。用户通过设置环境变量,来更好的运行进程
+
+wsl：windows下的Linux子系统，使纯正的Ubuntu 14.04 "Trusty Tahr"映像能下载和解压到用户的本地计算机，并且映像内的工具和实用工具能在此子系统上原生运行
+
+WSL提供了一个微软开发的Linux兼容内核接口（不包含Linux代码），来自Ubuntu的用户模式二进制文件在其上运行
+
+由于windows10的推出生产力又进一步释放，绝大部分开发人员还是继续会在windows上进行日常开发，但是linux又是普遍公认的服务器部署首选系统，开发人员有必要了解linux的日常使用，并在linux环境下进行测试程序的可靠性，wsl无疑为我们简化了这一过程，告别了使用虚拟机的开销，相信会让开发者更高效的工作
+
+https://www.cnblogs.com/JettTang/p/8186315.html
+
+https://linux.cn/article-9545-1.html
