@@ -1,5 +1,5 @@
 ---
-layout:     post
+layout:     post
 title:      PySnooper -- gdb in python
 date:       2021-02-03
 author:     Yukun SHANG
