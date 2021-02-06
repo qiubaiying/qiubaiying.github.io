@@ -1,21 +1,13 @@
 ---
-layout:     post
-title:      iOS噪音计
-subtitle:   一个iOS噪音计模型、以及测量原理及分贝计算
-date:       2016-11-15
-author:     BY
-header-img: img/post-bg-ios9-web.jpg
+layout:     post
+title:      PySnooper -- gdb in python
+date:       2021-02-03
+author:     Yukun SHANG
 catalog: true
 tags:
-    - iOS
-    - Demo
+    - python
+    - gdb
 ---
-
-
-
-
-
-
 
 # PySnooper -- gdb in python
 
@@ -35,15 +27,3 @@ def .....
 
 
 
-
-
-
-
-layout:     post
-title:      PySnooper -- gdb in python
-date:       2021-02-03
-author:     Yukun SHANG
-catalog: 	true
-tags:
-    - python
-	- gdb
