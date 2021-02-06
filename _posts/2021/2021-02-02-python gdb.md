@@ -5,8 +5,7 @@ date:       2021-02-03
 author:     Yukun SHANG
 catalog: 	 true
 tags:
-    - python
-	- gdb
+    - python - gdb
 ---
 
 # PySnooper -- gdb in python
