@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      验收标准如何写？
-subtitle:   PO的正确姿势
+subtitle:   PO的姿势系列
 date:       2020-05-22
 author:     Bruce Wong
 header-img: img/post-bg-universe.jpg
