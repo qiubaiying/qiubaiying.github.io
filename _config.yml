@@ -1,7 +1,7 @@
 # Site settings
 title: HKUbets Blog
 # SEOTitle: Blog
-header-img: img/HKU_main.jpg
+header-img: img/HKU_main.png
 email: hkubets@gmail.com
 description: "Every failure is leading towards success."
 keyword: "Wallstreetbets, HKUbets Blog,"
@@ -11,7 +11,7 @@ github_repo: "https://github.com/hkubet/hkubet.github.io.git" # you code reposit
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
+sidebar-about-description: "In every bet there is a foo and a theif."
 sidebar-avatar: /img/group_logo.jpeg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -85,7 +85,7 @@ ga_domain: auto               #
 
 # Featured Tags
 featured-tags: true                     #
-featured-condition-size: 1              #
+featured-condition-size: 0              #
 
 
 
