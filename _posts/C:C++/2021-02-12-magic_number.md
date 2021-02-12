@@ -1,3 +1,14 @@
+---
+layout:     post
+title:      Magic Number
+date:       2021-02-12
+author:     Yukun SHANG
+catalog: 	 true
+tags:
+    - C/C++
+
+---
+
 ## Fast Inverse Square Root
 
 ```c
@@ -13,8 +24,6 @@ float InvSqrt(float x)
 
 
 ```
-
-
 
 ## Reference:
 

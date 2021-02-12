@@ -32,8 +32,3 @@ typedef char char_t, *char_p, (*fp)(void); // declares char_t to be an alias for
 可以理解为一个等号
 
 
-
-
-
-这两个似乎方向的相反的
-
