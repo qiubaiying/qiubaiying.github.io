@@ -1,0 +1,18 @@
+I"G<h2 id="installation">Installation</h2>
+<p>Having Jekyll installed on a relatively old Macbook turned out to be a very daunting task. To start with, the system protected the original Ruby and forbid other installation such as Jekyll. Hence it required a new Ruby. After a couple fail attempts to use homebrew to directly install ruby and jekyll, I decided to use RVM to better manage the different versions of Ruby installed. Here are the command lines that worked for me.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ xcode-select --install   $ brew install ruby   $ gem install bundler jekyll
+</code></pre></div></div>
+
+<h2 id="blah">blah</h2>
+
+<h3 id="123">123</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ xcode-select --print-path
+</code></pre></div></div>
+
+<h3 id="123-1">123</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo xcode-select -switch /Applications/Xcode.app
+</code></pre></div></div>
+:ET

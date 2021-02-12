@@ -1,0 +1,227 @@
+I"�:<h2 id="前言">前言</h2>
+
+<p>一年一度的 WWDC（苹果全球开发者大会）于北京时间 6月5日 凌晨1点开幕。废话不多说，来看看这次WWDC 都有哪些亮点吧!</p>
+
+<h2 id="ios-12-和-arkit-20">iOS 12 和 ARKit 2.0</h2>
+
+<blockquote>
+  <p>关键词：官方防沉迷最为致命</p>
+</blockquote>
+
+<h3 id="ios-12">iOS 12</h3>
+
+<p>iOS 12 相较于 iOS 11 并没有太多UI上的变动，刚更新完 bate 版本的 iOS 12，完全感觉不到这是个新系统。</p>
+
+<p>iOS 12 主要是对安全和性能的优化，iOS 12 在旧设备上的运行速度比 iOS 11更块，程序加载速度快了一倍。（PS：看来苹果并没有放弃旧设备）</p>
+
+<p><img src="https://cdn.mos.cms.futurecdn.net/RdxhPVv8fAyM6oHsRgF6dH-650-80.png" alt="" /></p>
+
+<h3 id="arkit-20">ARKit 2.0</h3>
+
+<p>Apple 与 皮克斯 合作开发了一种用于共享AR内容的新文件格式，新的 AR 格式名为 USDZ。</p>
+
+<p>作为一个含着金苹果出生的新生儿，USDZ 一开始就得到了 Adobe Creative Cloud （包括 Photoshop CC、InDesign CC、Illustrator CC、Dreamweaver CC、Premiere Pro CC）套件的支持。</p>
+
+<p><img src="https://images.ifanr.cn/wp-content/uploads/2018/06/WWDC-10.jpg" alt="" /></p>
+
+<p>同时，面向开发者的开发套件 ARKit 则升级到了二代，主要提升了面部跟踪、渲染能力、3D 探测和共享体验等能力。</p>
+
+<p>随后展示了一款名为 Measure 的 App，可使用AR查看物品大小。</p>
+
+<p><img src="https://cdn.mos.cms.futurecdn.net/4tbGCxGUGsH9VwSLsfMDK5-650-80.png" alt="" /></p>
+
+<p>最后为了演示新的 AR 能力和效果，苹果请来了乐高的创意总监来捧场。这是一个真实的乐高积木建筑物为基础，最多四个人可以用苹果 AR 应用进行游戏，可以在真实环境中模拟出各种虚拟的形象和建筑。</p>
+
+<p><img src="https://images.ifanr.cn/wp-content/uploads/2018/06/WWDC-9.jpg" alt="" />
+<img src="https://images.ifanr.cn/wp-content/uploads/2018/06/WWDC-11.jpg" alt="" /></p>
+
+<h3 id="相册优化">相册优化</h3>
+
+<p>iOS 12 的相册将大大提升搜索性能，系统不仅会提出搜索建议，还会帮你按主题整理照片。</p>
+
+<p><img src="https://images.ifanr.cn/wp-content/uploads/2018/06/WWDC-13.jpg" alt="" /></p>
+
+<p><img src="https://images.ifanr.cn/wp-content/uploads/2018/06/WWDC-14.jpg" alt="" /></p>
+
+<h3 id="siri变得更聪明">Siri变得更聪明</h3>
+
+<p>iOS 12 中，苹果为 Siri 提供了更加高效的操作，让它可以操作各个应用内部的功能，并且能在锁屏界面建议用户下一步的行动。</p>
+
+<p>苹果还发布了一款名为「Shortcuts」的应用，它允许用户自定义 Siri 搜索指令，支持通过拖拽来快速编辑指令，同时还提供了一个指令库供用户下载现成的命令，就像是为 Siri 打造的 Workflow 自动化工具。</p>
+
+<p><img src="https://cdn.sspai.com/2018-06-04-Artboard.jpg?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="" /></p>
+
+<p>看到这里，相比熟悉苹果的朋友大概明白了，Siri 的本次改进，很可能是源于它收购的效率神器 Workflow，堪称一个用 Siri 唤醒的 Workflow。</p>
+
+<h3 id="原生应用大更新">原生应用大更新</h3>
+
+<p>iOS 12 中，不少原生应用都得到了更新。</p>
+
+<ul>
+  <li>iBooks 更名为 <strong>Apple Books</strong>，采用类似 App Store 的新界面设计。</li>
+  <li>新闻应用（News）在 iPad 上新添加了侧边栏，方便浏览，也突出策划内容。</li>
+  <li>语音备忘录现在支持 iCloud 了</li>
+  <li>股市的界面重构，可以看到股票全天走势，并打通 News 应用，方便看财经新闻；</li>
+</ul>
+
+<h3 id="carplay-开放了">CarPlay 开放了</h3>
+
+<p><img src="https://images.ifanr.cn/wp-content/uploads/2018/06/WWDC-21.jpg" alt="" /></p>
+
+<p>CarPlay 变得更加开放了，曾经被苹果狠心抛弃的 Google Maps 和 Google 的干儿子地图 Waze，以及来自东方的神秘力量高德地图成为首批 CarPlay 支持的第三方导航，从此“志玲姐姐为您导航”将可以常伴林肯领航者车主左右，中国梦和美国梦一起实现。</p>
+
+<h3 id="防手机沉迷---划重点">防手机沉迷 - 划重点！</h3>
+
+<p>本次 iOS 12 的重点就是：<strong>防沉迷！</strong></p>
+
+<p><img src="https://images.ifanr.cn/wp-content/uploads/2018/06/WWDC-25.jpg" alt="" /></p>
+
+<p>鉴于手机上瘾成为了一个社会议题，今年 Google 和苹果都不约而同地将“防沉迷”加入到了系统更新当中：</p>
+
+<ul>
+  <li><strong>Do Not Disturb（别吵我）</strong>功能将关掉手机的视觉通知，在夜深人静想起她或梦见她的时候，来了邮件也不会亮屏刺破夜的静谧和黑暗</li>
+  <li>Deliver Quietly（安静通知）则是将消息推送静默化、不显示在锁屏，也不出声，也不会在 app 右上角标红</li>
+  <li><strong>Grouped Notifications（分组通知</strong>）可以将某一类型的通知归组，微信群聊消息不再有轰炸的感觉</li>
+  <li><strong>Reports（应用报告）</strong>可以用周报告的形式，告诉用户用什么应用最多，哪个应用通知最多，每天起床第一个打开的是什么应用等等</li>
+  <li><strong>App Limits（应用限制</strong>）可以给某个应用规定使用时间，当然这不是强制性的，用户可以突破限制继续“吃鸡”</li>
+  <li><strong>Allowances（零用钱？）</strong> 是家长限制孩子使用应用的新特性</li>
+</ul>
+
+<h3 id="imessage-和-feactime">iMessage 和 FeacTime</h3>
+
+<p>Animoji 新增了 4 个新表情（幽灵，考拉，老虎和霸王龙），用户还可以为自己量身定做 Animoji ，并用到各种场景——这就是全新的 Memoji 技术</p>
+
+<p><img src="https://images.ifanr.cn/wp-content/uploads/2018/06/WWDC-26.jpg" alt="" /></p>
+
+<p><img src="https://cdn.sspai.com/2018/06/05/67b6fba3d36bdd7caf09bec94dcb157b.jpg?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="" /></p>
+
+<p>iOS 版 <strong>FaceTime</strong> 迎来了群聊功能，最多支持 32 人同时聊天，成员可以随时加入或离开聊天。聊天界面用瀑布流的形式呈现，正在说话的成员窗口会自动放大。macOS 版 FaceTime 同样也得到了更新。</p>
+
+<p><img src="https://cdn.sspai.com/2018-06-04-Screen%20Shot%202018-06-05%20at%202.00.58%20AM.png?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="" /></p>
+
+<h2 id="tvos">tvOS</h2>
+
+<blockquote>
+  <p>关键词：优化试听体验</p>
+</blockquote>
+
+<p>tvOS 今年的变化比较小，更新主要集中在了影视资源以及细节优化上。</p>
+
+<p>Apple TV 4K 将支持杜比全景声和杜比视界，让你在家里也能获得电影院般的听觉体验。</p>
+
+<p><img src="https://cdn.sspai.com/2018-06-04-Screen%20Shot%202018-06-05%20at%202.26.21%20AM.png?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="" /></p>
+
+<h2 id="watchos-5">watchOS 5</h2>
+
+<blockquote>
+  <p>关键词：运动进行到底</p>
+</blockquote>
+
+<p>随着 Apple Watch 成长的，还有它的操作系统 watchOS，这一次 watchOS 升级到了第五代。</p>
+
+<p><img src="https://images.ifanr.cn/wp-content/uploads/2018/06/WWDC-31.jpg" alt="" /></p>
+
+<p>Apple Watch 的功能朝着运动的方向发展，此次 watchOS 5 的更新，也以运动为主。</p>
+
+<p><img src="https://images.ifanr.cn/wp-content/uploads/2018/06/WWDC-35.jpg" alt="" /></p>
+
+<p>watchOS 5 的一个小惊喜是让 Apple Watch 成为了对讲机，这个应用名为 Walkie Talkie（对讲机）。</p>
+
+<p><img src="https://images.ifanr.cn/wp-content/uploads/2018/06/WWDC-38.jpg" alt="" /></p>
+
+<p>Apple Watch 早就支持了 Apple Pay，不过在通知上，Apple Watch 显然可以做得更多，比如值机和给滴滴师傅付款评分，手表不再只是个通知器，也能做些轻交互。</p>
+
+<p><img src="https://images.ifanr.cn/wp-content/uploads/2018/06/WWDC-51.jpg" alt="" /></p>
+
+<p>还有 Apple Watch 可以浏览网页了~</p>
+
+<h2 id="macos-mojave">macOS Mojave</h2>
+
+<blockquote>
+  <p>关键词：夜间模式、全新的App Store</p>
+</blockquote>
+
+<p><img src="https://cdn.sspai.com/2018-06-04-macOS01.png?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="" /></p>
+
+<p>对于大多数人来说，macOS 更新最大的悬念，是新系统叫什么名字。</p>
+
+<p>答案是：<strong>macOS Mojave</strong>，Mojave 中译名是莫哈韦沙漠，位于在美国加利福尼亚西南，出于洛杉矶和拉斯维加斯之间。</p>
+
+<p>在 Mojave 这版系统中，苹果加入了一套适应暗光环境下使用的夜间主题，并对 Mac App Store 的交互界面进行了重塑，整个系统的改变甚至连库克都称为是苹果的一次 “巨大的跨越”。</p>
+
+<p><img src="https://images.ifanr.cn/wp-content/uploads/2018/06/WWDC-89.jpg" alt="" /></p>
+
+<h3 id="夜间模式--动态桌面">夜间模式 / 动态桌面</h3>
+
+<p>不少用户会在暗光环境下使用电脑，即便是将屏幕亮度调到最低，也难免会因为白底色为主的主题而感到刺眼。在这次更新中，macOS Mojave 新增加了一套暗色主题，不同于目前将菜单和程序栏调成暗色的选项，新系统上的是一套全局暗色主题，即便是在文件夹、应用里都是以黑色为主色呈现。</p>
+
+<p><img src="https://images.ifanr.cn/wp-content/uploads/2018/06/WWDC-63.jpg" alt="" /></p>
+
+<p>另外，系统可根据时间变化对桌面进行自动调整，日间使用时系统为正常主题；夜间使用时系统则自动切换至暗色模式主题。此时，台下的开发者们爆发出了一阵欢呼，大概是这个主题能够提升程序员朋友夜间加班的幸福感吧。</p>
+
+<p><img src="https://images.ifanr.cn/wp-content/uploads/2018/06/WWDC-63.jpg" alt="" /></p>
+
+<h3 id="智能分类">智能分类</h3>
+
+<p>macOS 会跟据文件类型和标签对桌面的文件进行自动分类整理，从此再也不用担心满桌面都是文件了。</p>
+
+<p><img src="https://images.ifanr.cn/wp-content/uploads/2018/06/WWDC-82.jpg" alt="" /></p>
+
+<p><img src="https://cdn.sspai.com/2018-06-04-macOS04.png?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="" /></p>
+
+<h3 id="快速查看升级">快速查看升级</h3>
+
+<p><img src="https://images.ifanr.cn/wp-content/uploads/2018/06/WWDC-92.jpg" alt="" /></p>
+
+<p>访达在这次系统上的更新并不多，只是针对图片查看增添了 “图库视图” 功能。通过 “图库视图”，用户可更加便捷快速地浏览到访达文件夹内的图片内容，与此同时功能内部也内置了图片元数据显示窗，用户可以借助数据窗口了解到图片的相关详情，并且可对图片进行快速编辑操作。</p>
+
+<h3 id="截图录屏操作---类似ios">截图/录屏操作 - 类似iOS</h3>
+
+<p><img src="https://images.ifanr.cn/wp-content/uploads/2018/06/WWDC-93.jpg" alt="" /></p>
+
+<p>此次 macOS Mojave 加入了 “系统级” 的截屏功能，用户也可以在截屏后对截屏图片进行简单的标记。不过实际上，目前不少社交软件其实都已经具备了截图 + 标记的相关功能，且在体验上也相当不错。</p>
+
+<h3 id="安全权限">安全权限</h3>
+
+<p>当我们在 iOS 系统上打开刚下载的应用程序时，系统会弹出弹窗，提示是否允许程序访问用户信息和手机硬件。而这次苹果也将相关的安全控制策略从 iOS “搬” 到了 macOS 上，当用户打开某个网址或程序时，系统会弹出 “是否允许访问” 的弹窗以获得用户批准。这也可能是为了呼应最近越发严格的隐私政策。</p>
+
+<h3 id="在-macos-上运行的几款-ios-程序">在 macOS 上运行的几款 iOS 程序</h3>
+
+<p><img src="https://images.ifanr.cn/wp-content/uploads/2018/06/WWDC-84.jpg" alt="" /></p>
+
+<p>将 iOS 的应用程序搬到 macOS 上运行是不少玩家曾经有过的想法。此次苹果在新版的 macOS 系统上加入了 iOS 端的新闻、股市、家、语音备忘录四个程序，用户可以在桌面系统上通过这几款应用阅读新闻、控制家庭设备等等。</p>
+
+<p>在发布会的最后，苹果否认了将对 iOS 和 macOS 进行合并的传闻，但考虑到 iOS 平台有非常庞大的应用数量，他们也希望其中的部分应用能来到 macOS。于是苹果在发布会上为大家提前预览了一个准备多年的项目，macOS 将可以使用 iOS 的 UIKit 框架进行开发，以降低开发多平台应用的成本。</p>
+
+<p><img src="https://cdn.sspai.com/2018-06-04-Screen%20Shot%202018-06-05%20at%203.08.05%20AM.png?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="" /></p>
+
+<p>比如这次 macOS Mojave 中新增的 4 款应用——News、股票、语音备忘录、家庭——均采用了这种新技术。</p>
+
+<h3 id="全新的-mac-app-store">全新的 Mac App Store</h3>
+
+<p><img src="https://cdn.sspai.com/2018-06-04-macOS09.jpg?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1" alt="" /></p>
+
+<p>在 iOS 11 对 Mac App Store 进行了重新设计后，macOS Mojave 也迎来了全新设计的 Mac App Store。新版拥有与 iOS 上 App Store 类似的发现页，里面能看到每日编辑推荐和一些 App 的使用技巧。进入 App 页面后，你可以看到视频预览和与 iOS 类似的评分系统。为了方便用户评分，新版 macOS 还加入了和 iOS 一样的 App 内打分功能。此外，苹果还宣布包括 Office 365 和 Adobe Lightroom CC 在内的一批重量级 App 将在今年稍后登录 Mac App Store。</p>
+
+<h2 id="结语">结语</h2>
+
+<p>是的，这次的 WWDC 只有软件，没有新的电子设备发布，没有新 iPad Pro、没有 iPhone SE2、没有带八代酷睿的新 MacBook，唯一能和“硬件”沾上边的就是一个新的彩虹表带。</p>
+
+<p><img src="https://images.ifanr.cn/wp-content/uploads/2018/06/WWDC-56.jpg" alt="" /></p>
+
+<p>时至今日，苹果生态已经日趋完善了，大概苹果的产品经理们也想不出什么石破天惊的功能让大家 wow 一声了，有的只是细节层面的改进。作为看客和用户，也只能接受这样的现实了。</p>
+
+<p>对了，那个可以四个人一起玩的乐高积木和 AR 应用，倒是可以考虑买来玩一下，不要一边说没有新东西，一边又对新东西视而不见。</p>
+
+<p>对于 iOS 开发者来说，macOS 将可以使用 iOS 的 UIKit 框架进行开发是一个值得关注的点。</p>
+
+<h3 id="参考">参考</h3>
+
+<ul>
+  <li><a href="https://developer.apple.com/videos/play/wwdc2018/101/">WWDC 2018 Keynote</a></li>
+  <li><a href="https://www.techradar.com/news/apple-wwdc-2018-keynote">Apple WWDC 2018: what’s new? All the announcements from the keynote</a></li>
+  <li><a href="http://www.ifanr.com/1043270">iOS 加入「防沉迷」，macOS 有了暗色主题，今年的 WWDC 重点都在系统上</a></li>
+  <li><a href="https://sspai.com/post/44816">苹果 WWDC 2018：最全总结看这里，不错过任何重点</a></li>
+</ul>
+
+:ET

@@ -1,0 +1,27 @@
+I"�<h2 id="xcode-项目中我们可以使用-arc-和非-arc-的混合模式">Xcode 项目中我们可以使用 ARC 和非 ARC 的混合模式。</h2>
+
+<blockquote>
+  <p>有些时候我们工程中引用了十分古老的库为MRC模式，这时就需要采用混合模式进行处理</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>如果你的项目使用的 MRC 模式，要为 ARC 模式的代码文件加入 <code class="language-plaintext highlighter-rouge">-fobjc-arc</code> 标签。</p>
+  </li>
+  <li>
+    <p>如果你的项目使用的是 ARC 模式，要为 MRC 代码文件加入 <code class="language-plaintext highlighter-rouge">-fno-objc-arc</code> 标签</p>
+  </li>
+</ul>
+
+<p>添加标签的方法：</p>
+
+<p>打开：你的<code class="language-plaintext highlighter-rouge">target -&gt; Build Phases -&gt; Compile Sources</code></p>
+
+<p>双击对应的 *.m 文件</p>
+
+<p>在弹出窗口中输入上面提到的标签 <code class="language-plaintext highlighter-rouge">-fobjc-arc</code> 或 <code class="language-plaintext highlighter-rouge">-fno-objc-arc</code>
+点击 done 保存</p>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fl3kvg0yp1j30pl0ahgov.jpg" alt="" /></p>
+
+:ET

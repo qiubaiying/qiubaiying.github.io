@@ -1,0 +1,18 @@
+I"»<h2 id="installation">Installation</h2>
+<p>Having Jekyll installed on a relatively old mac turned out to be a very daunting task.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ xcode-select --install
+</code></pre></div></div>
+
+<h2 id="blah">blah</h2>
+
+<h3 id="123">123</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ xcode-select --print-path
+</code></pre></div></div>
+
+<h3 id="123-1">123</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo xcode-select -switch /Applications/Xcode.app
+</code></pre></div></div>
+:ET
