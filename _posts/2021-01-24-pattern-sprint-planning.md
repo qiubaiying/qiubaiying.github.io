@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Scrum Patterns(24):迭代计划会(译)
-subtitle:   A Scrum Book The Spirit of the Game
+subtitle:   A Scrum Book——The Spirit of the Game
 date:       2021-01-24
 author:     Bruce Wong
 header-img: img/SprintPlanning_Head.jpg  
@@ -29,7 +29,7 @@ Scrum团队作为一个整体，如果对PBIs的理解通常不够详细，那�
 
 开发团队成员可能需要在Sprint期间调整他们的工作计划，因为他们开始更多地了解业务需求和技术约束。在实现大型单个PBIs时，这是很困难的。  
 
-因此:
+#### 因此:
 
 在每个Sprint的开始阶段，Scrum团队(或所有共同交付产品增量的团队)会聚在一起，计划如何在Sprint中创造价值。团队同意Sprint目标，并为开发团队将开发什么以及如何开发制定计划。这要求Scrum团队对解决方案进行足够详细的设计，以对如何构建产品有高度的信心，并要求团队成员觉得他们可以在Sprint期间完成他们的工作计划。  
 ![SprintPlanning_Post](/img/scrum/SprintPlanning_Post.jpg)

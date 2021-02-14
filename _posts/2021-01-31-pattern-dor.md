@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Scrum Patterns(65):准备就绪的标准 DoR(译)
-subtitle:   A Scrum Book The Spirit of the Game
+subtitle:   A Scrum Book——The Spirit of the Game
 date:       2021-01-31
 author:     Bruce Wong
 header-img: img/DefinitionOfReady_Head.jpg  
@@ -42,7 +42,7 @@ tags:
 
 在精益思想中，不确定是造成浪费的一个原因。如果开发团队没有充分的理解PBIs的真正意思，或者如何开发它， 如何估算他都无法完成，那么对于Sprint的成果增加了不确定的风险，同时这种工作还可能会导致成本、风险和不确定性增加。  
 
-因此：
+#### 因此：
 
 在Sprint计划会中，能够成为开发团队领取的当次迭代备选的PBIs，必须符合下面的条件：
 
