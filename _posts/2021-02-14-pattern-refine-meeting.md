@@ -14,7 +14,7 @@ tags:
 ---
 
 ##  Bruce有话说   
-Scrum Guide中提到Scrum有5个Event，他们分别是：Sprint Planning Meeting，Daily Meeting，Review Meeting， Retrospective Meeting和Sprint本身。而梳理会(Refinement Meeting)并不是作为一个独立的事件在Guide中被提到。不过笔者一致认为，要让Scrum运行好梳理会是一个关键因素。那么为什么它如此重要呢？它主要是解决什么问题呢？今天我翻译的这篇文章，就是介绍梳理会的作用和如何进行更有效。本文会涉及到的几个关键点总结如下：  
+Scrum Guide中提到Scrum有5个Event，他们分别是：Sprint Planning Meeting，Daily Meeting，Review Meeting， Retrospective Meeting和Sprint本身。而梳理会(Refinement Meeting)并不是作为一个独立的事件在Guide中被提到。不过笔者一致认为，要让Scrum运行好梳理会是一个关键因素。那么为什么它如此重要呢？它主要是解决什么问题呢？今天我翻译的这篇文章，就是介绍梳理会的作用和如何进行它更有效。本文会涉及到的几个关键点总结如下：  
 + 为什么要延迟决策，而不是提前计划？  
 + 持续梳理PBI优先级的原因？  
 + 介绍一个简单工具来给带有依赖关系的PBIs排序。  
