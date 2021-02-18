@@ -5,7 +5,7 @@ date:       2019-01-18
 author:     Yukun SHANG
 catalog: 	 true
 tags:
-    - c
+    - C/C++
 ---
 
 # C/C++中main的参数的理解
