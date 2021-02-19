@@ -38,7 +38,7 @@ line5
 仍然是两行，只是行距变大
 
 [锚点](#用于锚点的标题 "标题")  
-![图片链接](./img/avatar-ch.png "title")
+![图片链接](/img/avatar-ch.png "title")
 [github首页](http://github.com)
 
 | col1 | col2 | col3 |
