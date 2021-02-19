@@ -83,7 +83,7 @@ fmt.Println()
 
 Markdown 还没有办法指定图片的高度与宽度，如果你需要的话，你可以使用普通的 \<img> 标签。
 
-<img src="img/avatar_g.jpg" width="50%">
+<img src="/img/avatar_g.jpg" width="50%">
 
 > 引用  
 > xh
