@@ -2,7 +2,7 @@
 layout: post
 title: Rust Common Programming Concepts
 subtitle: 
-date: 2021-02-19
+date: 2021-02-20
 author: ChaosNyaruko
 header-img: 
 catalog: true
