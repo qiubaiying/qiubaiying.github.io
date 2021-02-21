@@ -2,7 +2,7 @@
 layout:     post
 title:      Scrum Patterns(57):团队('猪们')的估算(译)
 subtitle:   A Scrum Book——The Spirit of the Game
-date:       2021-02-17
+date:       2021-02-21
 author:     Bruce Wong
 header-img: img/PigsEstimate_Head.jpg  
 catalog: true
