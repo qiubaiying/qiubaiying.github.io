@@ -17,8 +17,11 @@ tags:
    - 始终不可变，并且总是需要[annotate]
    - 可以在任何范围内声明，包括全局(global)
    - 只能用一个常量表达式(constant expression)赋值
+
    ``` Rust
    const MAX_POINTS: u32 = 100_000;
+   ```
+
 3. Shadowing
     - 和mut不同
     - 同一个名字可以成为不同的类型
@@ -28,6 +31,7 @@ tags:
 2. 当有多种可能性编译器无法直接推导(infer)出来时，要使用类型注解(type annotation)
     ``` Rust
     let guess: u32 = "42".parse().expect("Not a number!");
+    ```
 3. Scalar Types
     - integers
         - i/u 区分有无符号
@@ -69,13 +73,13 @@ tags:
         - return values: most functions return the last expression implicitly
 
 6. Comments
-    - start with two slashes ```//```
+    - start with two slashes `//`
     - documentation comments
 7. Control Flow
     - arms
     - condition: must be a bool, or we'll get an error. No automatically conversion
-    - ```if``` is an expression
+    - `if` is an expression
     - loop, while, for
         - returning values from loops
-        - ```for``` is the most common
+        - `for` is the most common
         - Range(a type): e.g. (1..4), 1 included, 4 exclude
