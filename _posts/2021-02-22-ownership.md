@@ -68,7 +68,7 @@ Rust中有一种特殊的注解(annotation) `Copy`trait, 实现了这个trait类
 函数中传参和返回值也一样有ownership的转移问题，传参即赋值，返回值会将ownship move到调用它的函数
 
 ## 太过仪式化(too much ceremony)和繁琐？-> references
-如果严格按照
+如果严格按照Ownership的规则编写代码，在涉及到函数调用和返回时会显得非常繁琐，感受一下:  
 ```Rust
 fn main() {
     let s1 = gives_ownership();         // gives_ownership moves its return
