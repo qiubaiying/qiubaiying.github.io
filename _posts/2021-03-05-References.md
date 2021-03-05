@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Reference
+title: References
 subtitle: 
 date: 2021-03-05
 author: ChaosNyaruko
@@ -9,7 +9,7 @@ catalog: true
 tags:
     - rust
 ---
-# Reference
+# References
 Something like `&String`, the concept is similar to a Pointer  in C/C++/Golang/...  
 It will not take the ownership, thus we can drop some tuple code to make it simpler.
 
