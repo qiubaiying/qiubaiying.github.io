@@ -1,17 +1,17 @@
 # Site settings
-title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
+title: 郑心明的博客
+SEOTitle: 郑心明的博客 | Mr Zheng
 header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
-description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+email: 1528082142@qq.com
+description: "有什么问题请及时指正"
+keyword: "Mr Zheng, 郑心明的博客, iyzh635428, 郑心明"
+url: "https://iyzh635428.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
+sidebar-about-description: "刚进来!"
 sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -62,11 +62,11 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  clientID: d2749cca1e65e539369a                            #生成的clientID
+  clientSecret: 92f1db59f2779e05b94d0509cb42daa961c45235    #生成的clientSecret
+  repo: iyzh635428.github.io    #仓库名称
+  owner: iyzh635428    #github用户名
+  admin: iyzh635428
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
