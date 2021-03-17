@@ -1,11 +1,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ site.description }}">
     <meta name="keywords"  content="{{ site.keyword }}">
     <meta name="theme-color" content="{{ site.chrome-tab-theme-color }}">
+	<meta name="google-site-verification" content="1cqwsRa7rb2N7-FRcVFC7WfPQ87B6N2o08GQE2q7pug" />
+	<meta name="baidu-site-verification" content="code-50aldXrZvs" />
     
     <title>{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}</title>
 
@@ -53,3 +54,33 @@
     <!-- ga & ba script hoook -->
     <script></script>
 </head>
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+  <!--小帅哥： https://unpkg.com/live2d-widget-model-chitose@1.0.5/assets/chitose.model.json-->
+  <!--萌娘：https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json-->
+  <!--小可爱（女）：https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json-->
+  <!--小可爱（男）：https://unpkg.com/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json-->
+  <!--未知：https://unpkg.com/live2d-widget-model-z16@1.0.5/assets/z16.model.json-->
+  <!--初音：https://unpkg.com/live2d-widget-model-miku@1.0.5/assets/miku.model.json-->
+   <!-- 上边的不同链接显示的是不同的小人，这个可以根据需要来选择 下边的初始化部分，可以修改宽高来修改小人的大小，或者是鼠标移动到小人上的透明度，也可以修改小人在页面出现的位置。 -->
+  <script>
+    /*https://unpkg.com/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json*/
+    L2Dwidget.init({ "model": { jsonPath:
+          "https://unpkg.com/live2d-widget-model-hibiki/assets/hibiki.model.json",
+        "scale": 1 }, "display": { "position": "right", "width": 90, "height": 190,
+        "hOffset": 0, "vOffset": -20 }, "mobile": { "show": true, "scale": 0.5 },
+      "react": { "opacityDefault": 0.8, "opacityOnHover": 0.1 } });
+  </script>	
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
