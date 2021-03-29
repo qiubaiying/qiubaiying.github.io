@@ -516,7 +516,7 @@ MyClass+Category1.h:
 
 MyClass+Category1.m:
 
-```
+```objc
 #import "MyClass+Category1.h"
 #import <objc/runtime.h>
 
