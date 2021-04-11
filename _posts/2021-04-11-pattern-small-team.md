@@ -4,7 +4,7 @@ title:      Scrum Patterns(9):小团队(译)
 subtitle:   A Scrum Book——The Spirit of the Game
 date:       2021-04-11
 author:     Bruce Wong
-header-img: img/smallteam.jpg  
+header-img: img/SmallTeam.jpg  
 catalog: true
 tags:
     - 敏捷
