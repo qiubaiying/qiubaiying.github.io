@@ -4,7 +4,7 @@ title:      用户故事是垂直的切片(译)
 subtitle:   User Stories Are Vertical Slices
 date:       2021-04-17
 author:     Bruce Wong
-header-img: img/pexels-oliver-sjöström-1074505.jpg   
+header-img: img/pexels-oliver-sjostrom-1074505.jpg   
 catalog: true
 tags:
     - 敏捷
