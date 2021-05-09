@@ -12,7 +12,7 @@ github_repo: "https://github.com/BruceWong001/BruceWong001.github.io.git" # you 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "动机至善,私心了无!"
-sidebar-avatar: /img/about-BW-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/Life/myself.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
