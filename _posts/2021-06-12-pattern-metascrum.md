@@ -39,7 +39,7 @@ tags:
 
 ![MetaScrum_Post_v3.png](/img/scrum/MetaScrum_Post_v3.png)   
 
-MetaScrum有自己的节奏，类似于一种公司级的Sprint脉冲(Sprint Pulse)。MetaScrum每一段时间间隔就召开一次，他类似与Sprint计划会，包含了Scrum团队将在两次MetaScrum会议间隔的Sprint中交付的内容。  
+MetaScrum有自己的节奏，类似于一种公司级的Sprint脉冲(Sprint Pulse)。MetaScrum每一段时间间隔就召开一次，它类似于Sprint计划会，包含了Scrum团队将在两次MetaScrum会议间隔的Sprint中交付的内容。  
 
 在这个会议上，Scrum团队可以向Scrum团队之外的利益攸关者请求支持、资金、信息甚至产品———任何他们为完成交付而缺少的东西。MetaScrum可以作为一个场所，来提出此类请求并做出支持这些请求。管理层和其他产品负责人可以在这个定期会议上为产品backlog的变更进行讨论。在会议结束时，为了管理管理层的想法，产品待办事项列表将被锁定，直到下一次MetaScrum会议。  
 
