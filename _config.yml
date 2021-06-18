@@ -11,7 +11,7 @@
 
 # Sidebar settings
   sidebar: true                           # whether or not using Sidebar.
-  sidebar-about-description: "关键词：EE, Master, UMN, BJTU, 我"
+  sidebar-about-description: "关键词：ECE, UH, UMN, HKUST, BJTU, Who am I?"
   sidebar-avatar: /img/profile.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
   
   show_downloads: true
