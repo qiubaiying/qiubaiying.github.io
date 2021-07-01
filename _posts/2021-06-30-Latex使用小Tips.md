@@ -47,6 +47,26 @@ tags:
 \begin{sidewaystable}
 \end{sidewaystable}
 ```
+4.表格居中
+```
+\begin{center}
+\begin{tabular}
+... ...
+\end{tabular}
+\begin{center}
+```
+
+5. 表格位置
+!htbp应该是这样的：
+
+- **!**: 表示无视美学规则按下面的要求放置；
+- h(here):放置在当前位置；
+- t(top): 放在该页顶端；
+- b(bottom): 放在该页底部；
+- p(page): 另起一页单独放；
+
+你也可以自己定优先级, [htbp]分别代表4中放置方式优先级依次递减.
+
 
 
 # Reference
