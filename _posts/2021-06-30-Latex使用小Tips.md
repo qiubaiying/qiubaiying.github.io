@@ -57,6 +57,7 @@ tags:
 ```
 
 5.表格位置
+
 !htbp应该是这样的：
 
 - **!**: 表示无视美学规则按下面的要求放置；
@@ -66,6 +67,22 @@ tags:
 - p(page): 另起一页单独放；
 
 你也可以自己定优先级, [htbp]分别代表4中放置方式优先级依次递减.
+
+6.表格字体设置
+
+由小到大依次为：
+
+- \tiny
+- \scriptsize
+- \footnotesize
+- \small
+- \normalsize
+- \large
+- \Large
+- \LARGE
+- \huge
+- \Huge
+
 
 
 
