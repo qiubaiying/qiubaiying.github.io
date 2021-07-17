@@ -35,7 +35,7 @@ Scrum的5个价值观中有一条就是Focus(聚焦)，大家应该在同一时�
 + **虽然有Bug，但是如果不做剩下的Sprint Backlog会导致一些更重要的Story没有做进来，无法达到Sprint Goal。**  
     这一点很有意思，因为团队在Sprint中应该先做优先级最高的backlog，如果在2周过去后发现没做的Item里面仍然有很重要的Backlog，那会是什么原因呢？  
 
-在Sprint中，我们应该保证每一个Sprint Backlog都能够通过AC(验收标准)的测试。同时也要达到DoD(完成标准)。如果仍然有"Bug"剩余，如果已经通过了AC和DoD，那么可以考虑真的是Bug还是前面的标准过低了。Bug如果无法在当次Sprint完成，那么建议汇入Product Backlog和其他Backlog一起重新排序，决定是否在后续Sprint中fix掉。这个故事另一个分享点就是，Sprint中也需要优先做最重要的事情，避免由于突然原因无法完成Sprint所有任务的时候，对Sprint Goal的影响讲到最低。  
+在Sprint中，我们应该保证每一个Sprint Backlog都能尽快够通过AC(验收标准)的测试，同时也要达到DoD(完成标准)，之后再开始新的Backlog，这样才能保证当Sprint timebox结束的时候，得到的都是符合完成标准的，而不会有半成品。如果仍然有”Bug”剩余，而且已经通过了AC和DoD，那么可以考虑真的是Bug还是前面的标准过低了。Bug如果无法在当次Sprint完成，那么建议汇入Product Backlog和其他Backlog一起重新排序，决定是否在后续Sprint中fix掉。这个故事另一个分享点就是，Sprint中也需要优先做最重要的事情，避免由于突然原因无法完成Sprint所有任务的时候，对Sprint Goal的影响讲到最低。  
 
 ## 故事3 Sprint中发现的Improvement如何来做？  
 这个问题是同一个项目中的BA来问的我，因为Team在Sprint中对某些用户故事提出了更好的建议，大家希望当成Improvement来做，这个时候希望能有JIRA来跟踪，但是BA不确定这类JIRA是否应该在当次Sprint内完成还是在紧接着的下一个Sprint中。我的想法是，先确定这类Improvement是什么性质的：
