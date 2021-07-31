@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      基于业务规则的用户故事拆分练习 
+title:      一次基于业务规则的用户故事拆分 
 subtitle:   
 date:       2021-07-31
 author:     Bruce Wong
