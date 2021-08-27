@@ -99,10 +99,10 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "Apple",
-        href: "https://apple.com"
+        title: "leftering",
+        href: "https://github.com/leftering/"
     },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "Ydream",
+        href: "https://ydreamw.github.io/"
     }
 ]
