@@ -3,7 +3,7 @@ title: Avatar Ganymede
 SEOTitle: Autumn Cicade | Blog
 header-img: img/head.jpg
 email: liu.ruitong@outlook.com
-description: "Every failure is leading towards success."
+description: "个人向博客 记录自己的学习与成长"
 keyword: "Liu Ruitong"
 url: "http://AvatarGanymede.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
@@ -99,7 +99,7 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "leftering",
+        title: "Leftering",
         href: "https://github.com/leftering/"
     },{
         title: "Ydream",
