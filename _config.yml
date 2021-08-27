@@ -11,7 +11,7 @@ github_repo: "https://github.com/AvatarGanymede/AvatarGanymede.github.io.git" # 
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
+sidebar-about-description: "Hi!😀"
 sidebar-avatar: /img/profile.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
