@@ -26,7 +26,9 @@ github_username:    AvatarGanymede
 #twitter_username:   qiubaiying
 
 
-
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
 
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
@@ -34,13 +36,6 @@ permalink: pretty
 paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
-
-
-
-# Gems
-# from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
-
 
 
 
@@ -62,8 +57,8 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f0a409b80ec9572c2a60                            #生成的clientID
-  clientSecret: aa8e883f5184229065c5797fce1f571d65130a62    #生成的clientSecret
+  clientID: 6a1e64128d0664f72222                            #生成的clientID
+  clientSecret: 891e2d00ecc99b0ccee51972996279b4ffc4c6f3    #生成的clientSecret
   repo: AvatarGanymede.github.io    #仓库名称
   owner: AvatarGanymede    #github用户名
   admin: AvatarGanymede
