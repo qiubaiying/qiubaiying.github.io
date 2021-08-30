@@ -1,0 +1,22 @@
+I"r<p>感谢<a href="[qiubaiying (BY) (github.com)](https://github.com/qiubaiying)">@BY</a>提供的详细教程，本博客才得以顺利搭建。详细教程参见 <a href="http://www.jianshu.com/p/e68fba58f75c">《利用 GitHub Pages 快速搭建个人博客》</a>。</p>
+
+<p>然而在实际搭建过程中，依然遇到了若干问题，在此记录自己的解决办法。</p>
+
+<h3 id="本地调试博客">本地调试博客</h3>
+
+<p>安装过程就不说了，先装 ruby 再装 rubygems（详见<a href="https://www.jianshu.com/p/9f71e260925d">教程</a>）。</p>
+
+<p>然后项目初始化：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>jekyll
+gem <span class="nb">install </span>jekyll bundler
+</code></pre></div></div>
+
+<p>但之后执行 <code class="language-plaintext highlighter-rouge">jekyll s</code> 以启动服务器时，出现了 <code class="language-plaintext highlighter-rouge">cannot load such file -- webrick (LoadError)</code> 的报错。查了很多资料未能解决，最后发现是我安装的 ruby 版本太高（3.0.1-1），不兼容 jekyll，重新安装低版本即可（推荐2.7.3-1）。</p>
+
+<h3 id="本地调试-gitalk">本地调试 Gitalk</h3>
+
+<p>点击<a href="[New OAuth Application (github.com)](https://github.com/settings/applications/new)">此链接</a>创建 GitHub Application，Application name 和 Application description 可以随便填，两个 URL 要填成自己博客主页的URL：</p>
+
+<p><img src="2017-02-04-Hello-2017.assets/image-20210830150755136.png" alt="image-20210830150755136" /></p>
+:ET
