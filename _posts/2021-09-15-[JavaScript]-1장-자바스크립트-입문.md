@@ -1,0 +1,183 @@
+---
+layout:     post
+title:      [JavaScript] 1장. 자바스크립트 입문 
+subtitle:   기초 문법
+date:       2021-09-15
+author:     CY
+header-img: 
+catalog: true
+tags:
+    - JavaScript
+---
+
+
+참고 블로그 : 벨로퍼트와 함께하는 모던 자바 스크립트 
+
+[링크]: https://learnjs.vlpt.us/
+
+
+
+### Console.log
+
+`console.log('콘솔에 출력할 내용');`
+
+
+
+### 변수와 상수
+
+1. 변수 let
+
+   선언했으면 똑같은 이름으로 선언하지 못함
+
+   `let value = 1;`
+
+2. 상수 const
+
+   한번 선언하고 값이 바뀌지 않는 고정적인 값
+
+   `const value = 1;`
+
+3. 데이터 타입
+
+   - 숫자
+
+   - 문자열 : ' ', " " 로 감싸준다.
+
+   - Boolean : true false
+
+   - null과 undefined
+
+     null : 값이 없다
+
+     undefined : 값을 선언하지 않았다.
+
+     ```javascript
+     const num1 = null; // null 출력
+     const num2; // undefined 출력
+     ```
+
+     
+
+### 연산자
+
+연산 순서 : NOT -> AND -> OR
+
+1. 산술 연산자
+
+   : + - * / ++ 
+
+2. 대입 연산자
+
+   : = += -= *= /=
+
+3. 논리 연산자
+
+   - NOT 연산자 ( ! )
+   - AND 연산자 ( && )
+   - OR 연산자 ( || )
+
+4. 비교 연산자
+
+   - == 와 ===
+
+     == 는 타입 검사를 하지 않는다. (undefined과 null도 같은 값으로 간주)
+
+     ```javascript
+     const a = 1;
+     const b = 1;
+     const c = '1';
+     console.log(a == b); // true 출력
+     console.log(a === c); // false 출력
+     ```
+
+   - != 와 !==
+
+     != 는 타입 검사를 하지 않는다.
+
+5. 문자열 붙이기
+
+   +연산자로 문자열 연결 가능
+
+   `console.log('안녕'+'하세요');`
+
+
+
+### 조건문
+
+1. if - else 문
+
+   ```javascript
+   if (조건) {
+     코드;
+   } else{
+       코드;
+   }
+   ```
+
+2. if - else if 문
+
+   ```javascript
+   if (조건) {
+     코드;
+   } else if(조건){
+       코드;
+   } else {
+   	코드;
+   }
+   ```
+
+3. switch 문
+
+   ```javascript
+   const num;
+   
+   switch (num){
+   	case 1 : 코드; break;
+   	case 2 : 코드; break;
+   	...
+   	default : 코드;
+   }
+   ```
+
+   
+
+### 함수
+
+코드를 묶어주자
+
+```javascript
+function introduce (name){
+	console.log("안녕 내이름은 " + name);
+}
+
+introduce ('김');
+introduce ('이');
+```
+
+템플릿 리터럴 사용
+
+```javascript
+function introduce (name){
+	console.log("안녕 내이름은 ${name}!");
+}
+```
+
+##### 화살표 함수
+
+function 키워드 대신 => 문자를 사용한다.
+
+[함수의 파라미터] => [코드 블록]
+
+`let introduce = (name) => console.log("안녕 내이름은 "+name);`
+
+
+
+### 객체
+
+- 하나의 틀
+
+- 객체 선언
+
+  `{키 : 값}`
+
+  
