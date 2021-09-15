@@ -4,7 +4,6 @@ title:      [JavaScript] 1장. 자바스크립트 입문
 subtitle:   기초 문법
 date:       2021-09-15
 author:     CY
-header-img: 
 catalog: true
 tags:
     - JavaScript
