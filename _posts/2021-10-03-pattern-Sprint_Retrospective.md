@@ -2,7 +2,7 @@
 layout:     post
 title:      Scrum Patterns(36):Sprint回顾(译) 
 subtitle:   A Scrum Book——The Spirit of the Game
-date:       2021-10-02
+date:       2021-10-03
 author:     Bruce Wong
 header-img: img/SprintRetrospective_Head.jpg
 catalog: true
