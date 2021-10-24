@@ -99,8 +99,8 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        title: "ss.xju",
+        href: "https://ss.xju.edu.cn"
     },{
         title: "简书·Leng",
         href: "http://www.jianshu.com/u/5f9e877fba47"
