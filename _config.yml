@@ -100,7 +100,7 @@ service-worker: true
 friends: [
     {
         title: "ss.xju",
-        href: "https://ss.xju.edu.cn"
+        href: "http://ss.xju.edu.cn"
     },{
         title: "简书·Leng",
         href: "http://www.jianshu.com/u/5f9e877fba47"
