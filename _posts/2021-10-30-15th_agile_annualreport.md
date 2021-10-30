@@ -2,7 +2,7 @@
 layout:     post
 title:      第15份敏捷年度状态调查
 subtitle:   
-date:       2021-10-28
+date:       2021-10-30
 author:     Bruce Wong
 header-img: img/charles-deluvio-Lks7vei-eAg-unsplash.jpg
 catalog: true
