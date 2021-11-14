@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Scrum模式之估算点模式后感 
+title:      Scrum模式之估算点模式读后感 
 subtitle:   
 date:       2021-11-14
 author:     Bruce Wong
