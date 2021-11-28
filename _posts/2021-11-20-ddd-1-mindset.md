@@ -2,7 +2,7 @@
 layout:     post
 title:      领域驱动设计是软件设计思维方式的转变
 subtitle:   领域驱动设计(DDD)系列
-date:       2021-11-27
+date:       2021-11-20
 author:     Bruce Wong
 header-img: img/krisztian-tabori-IyaNci0CyRk-unsplash.jpg
 catalog: true
