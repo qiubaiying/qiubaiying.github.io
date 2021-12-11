@@ -3,7 +3,7 @@ title: Cyorage's Blog
 SEOTitle: Cyorage | Cyorage's Blog
 header-img: img/title.jpg
 email: cyorage@foxmail.com
-description: "「あなたがとても好きです。」"
+description: "欢迎来到我的世界。"
 keyword: "Cyorage, Cyorage's Blog, Cyorage的博客, Cyorage's,Google, iOS, Apple, iPhone"
 url: "http://cyorageeee.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
@@ -62,9 +62,9 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: 0bf0689e156378a45cea                            #生成的clientID
-  clientSecret: 9e5c7a0bd0ba76ab8303c73f7d4f6ae3f0392e65    #生成的clientSecret
-  repo: Cyorageeee.github.io    #仓库名称
+  clientID: 5797a68b5eee5aa34475                            #生成的clientID
+  clientSecret: db968b918db69de5b7817c2353f73a5106ccc9b6    #生成的clientSecret
+  repo: cyorageeee.github.io    #仓库名称
   owner: Cyorageeee    #github用户名
   admin: Cyorageeee
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
