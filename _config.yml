@@ -62,8 +62,8 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: c01955b004d968e6b117                            #生成的clientID
-  clientSecret: cffec8ca1195f229b874e36da164c20c9afa5272    #生成的clientSecret
+  clientID: c1d7a9643a14446f1fbb                            #生成的clientID
+  clientSecret: bafea8fb581d41ac183ea59c774beecdddcaff8e    #生成的clientSecret
   repo: cyorageeee.github.io    #仓库名称
   owner: Cyorageeee    #github用户名
   admin: Cyorageeee
