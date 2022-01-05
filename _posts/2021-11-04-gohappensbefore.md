@@ -413,6 +413,9 @@ func twoprint() {
 ```
 
 doprint观察到done的写入并不能保证它也能观测到a的写入
+![playground执行结果](/img/playground-1.png)
+![本地执行结果](/img/playground-1.png)
+
 
 ```go
 var a string
@@ -430,10 +433,10 @@ func main() {
 	print(a) // B
 }
 ```
-这个例子，很并不能确保打印 “hello, world”，print(a)  执行的时候 a 是可能没有赋值的，没有任何规则保证 A <= B 这个顺序。
+这个例子，并不能确保打印 “hello, world”，print(a)  执行的时候 a 是可能没有赋值的，没有任何规则保证 A <= B 这个顺序。
 
-a="hello, world" 和 done=true  这两行代码的实际执行顺序并没有任何保证哈，cpu 是可以乱序执行的；
-更糟糕的，main 程序很有可能会死循环，因为 done  的赋值是在另一个并发的 goroutine 里，并且没有确保被 main 函数可见；
+a="hello, world" 和 done=true  这两行代码的实际执行顺序并没有任何保证，cpu 是可以乱序执行的；
+更糟糕的，main 程序有可能会死循环，因为 done  的赋值是在另一个并发的 goroutine 里，并且没有确保被 main 函数可见；
 goroutine: setup 和 goroutine: main 这两者之间的没有存在承诺的规则，无法保证 A <= B 这个可见性。
 
 ```Go
@@ -457,12 +460,6 @@ func main() {
 }
 
 ```
-
-![image-20220105185528132](/Users/bytedance/Library/Application Support/typora-user-images/image-20220105185528132.png)
-![playground执行结果](/img/playground-1.png)
-
-![image-20220105185632332](/Users/bytedance/Library/Application Support/typora-user-images/image-20220105185632332.png)
-![本地执行结果](/img/playground-1.png)
 
 # 更多例子
 
