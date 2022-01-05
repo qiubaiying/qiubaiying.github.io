@@ -8,7 +8,7 @@ header-img:
 catalog: true
 tags:
     - go
-	- mem
+    - mem
 ---
 
 # 什么是内存模型
