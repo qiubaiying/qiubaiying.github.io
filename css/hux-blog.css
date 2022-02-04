@@ -1,4 +1,4 @@
-@media (min-width: 1200px) {
+@media (min-width: 1250px) {
   .post-container,
   .sidebar-container {
     padding-right: 5%;
@@ -60,7 +60,7 @@
 }
 .side-catalog.fixed {
   position: fixed;
-  top: -21px;
+  top: -20px;
 }
 .side-catalog.fold .catalog-toggle::before {
   content: "+";
