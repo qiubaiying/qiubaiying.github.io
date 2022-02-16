@@ -889,7 +889,7 @@ window.LEVEL_CONFIG = [
 			{x:0,y:80,w:115,h:150},
 			{x:185,y:80,w:115,h:150}
 		],
-		countdown:12000
+		countdown:120
 	},
 	// I
 	{
