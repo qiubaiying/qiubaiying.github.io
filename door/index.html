@@ -1,0 +1,66 @@
+<!doctype>
+<html>
+<head>
+
+	<!-- Place this data between the <head> tags of your website -->
+	<title>it's a(door)able</title>
+	<meta name="description" content="a one-minute minigame."/>
+	<link rel="icon" type="image/png" href="favicon.png">
+
+	<!-- Schema.org markup for Google+ -->
+	<meta itemprop="name" content="it's a(door)able">
+	<meta itemprop="description" content="a one-minute minigame.">
+	<meta itemprop="image" content="thumbnail.png">
+
+	<!-- Open Graph data -->
+	<meta property="og:title" content="it's a(door)able">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://ncase.me/door/">
+	<meta property="og:image" content="http://ncase.me/door/thumbnail.png">
+	<meta property="og:description" content="a one-minute minigame.">
+	<meta property="og:site_name" content="it's a(door)able">
+
+	<!-- Style -->
+	<link rel="stylesheet" type="text/css" href="css/index.css"> 
+
+</head>
+<body>
+
+	<div id="loading"><div>LOADING</div></div>
+
+	<div id="whole_container">
+
+		<!--span style="display:none"-->
+		<div id="screen_one">
+			<canvas id="canvas_intro"></canvas>
+		</div>
+
+		<div id="screen_two">
+			<div id="canvas_container">
+
+				<canvas id="canvas_1" width="300" height="380"></canvas>
+				<canvas id="canvas_2" width="300" height="380"></canvas>
+				<canvas id="canvas_3" width="300" height="380" style="margin:0"></canvas>
+				<canvas id="canvas_4" width="300" height="380" ></canvas>
+				<canvas id="canvas_5" width="300" height="380" ></canvas>
+				<canvas id="canvas_6" width="300" height="380" style="margin:0"></canvas>
+				
+				<div id="valentines_text">I love u forever and ever!</div>
+				<div id="rewind_text">rewinding...</div>
+				<div id="replay_text">playing back...</div>
+
+			</div>
+		</div>
+		<!--/span-->
+	</div>
+</body>
+</html>
+
+<script src="js/Key.js"></script>
+<script src="js/game.js"></script>
+<script src="js/popup.js"></script>
+<script src="js/soundjs-0.6.0.min.js"></script>
+
+<script>
+//STAGE = 4;
+</script>
