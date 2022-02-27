@@ -13,6 +13,7 @@ tags:								#标签
 ## 解题思路:
 > 使用unordered_map来解决问题.
 > 代码放在哪边呢?
+> 我认为这道题比较重要的点在于:x的值在不断更新,如果哈希表中找到了任意一个x,那么久返回true;否则返回false.
 class Solution {
 public:
     bool containsDuplicate(vector<int>& nums) {
