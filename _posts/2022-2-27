@@ -1,0 +1,32 @@
+---
+layout:     post   				    # 使用的布局（不需要改）
+title:      LC217题记录——存在重复元素				# 标题 
+subtitle:   题目类型:简单 #副标题
+date:       2022-02-27 				# 时间
+author:     xie96808 						# 作者
+header-img: img/freak.JPG 	#这篇文章标题背景图片
+catalog: true 						# 是否归档
+tags:								#标签
+    - LeetCode
+---
+
+## 解题思路:
+> 使用unordered_map来解决问题.
+> 代码放在哪边呢?
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        unordered_set<int> s;
+        for(auto x : nums)
+        {
+            if(s.find(x) != s.end())
+            {
+                return true;
+            }
+            s.insert(x);
+
+        }
+        return false;
+
+    }
+};
