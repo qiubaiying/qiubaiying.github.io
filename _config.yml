@@ -1,6 +1,7 @@
 # Site settings
 title: Coding Lane
 SEOTitle: 记录成长 | Coding Lane
+timezone: Asia/Shanghai
 header-img: img/post-bg-desk.jpg
 email: xie96808@gmail.com
 description: "One step tody, just ONE step."
