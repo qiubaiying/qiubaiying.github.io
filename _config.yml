@@ -8,7 +8,7 @@ description: "One step tody, just ONE step."
 keyword: "NONE"
 url: "http://xie96808.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/xie96808.github.io.git" # you code repository
+
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
