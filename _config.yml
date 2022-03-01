@@ -18,13 +18,13 @@ sidebar-avatar: /img/touxiang2.jpg      # use absolute URL, seeing it's used in 
 
 
 # SNS settings
-RSS: true
+RSS: false
 # weibo_username:     NONE
 zhihu_username:     SwitchX
 github_username:    xie96808
-facebook_username:  NONE
-jianshu_username:   NONE
-#twitter_username:  Billy_Xie
+#facebook_username:  NONE
+#jianshu_username:   NONE
+twitter_username:  Billy_Xie
 
 
 
