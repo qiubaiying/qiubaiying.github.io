@@ -4,7 +4,7 @@ SEOTitle: 记录成长 | Coding Lane
 timezone: Asia/Shanghai
 header-img: img/post-bg-desk.jpg
 email: xie96808@gmail.com
-description: "记忆之中没有辛苦，只有遗憾"
+description: "ONE more step"
 keyword: "NONE"
 url: "http://xie96808.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
@@ -12,7 +12,7 @@ baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "First things first"
+sidebar-about-description: "记忆之中没有辛苦，只有遗憾"
 sidebar-avatar: /img/touxiang2.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
