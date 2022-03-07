@@ -1,0 +1,44 @@
+---
+layout:     post   				    # 使用的布局（不需要改）
+title:      LC387题————字符串中的第一个唯一字符				# 标题 
+subtitle:   题目类型:Midium #副标题
+date:       2022-03-08 				# 时间
+author:     谢玄xx 						# 作者
+header-img: img/sea1.jpg 	#这篇文章标题背景图片
+catalog: true 						# 是否归档
+tags:								#标签
+    - LeetCode
+    - 哈希表
+---
+
+# 第387题：字符串中的第一个唯一字符
+
+给定一个字符串 s ，找到它的第一个不重复的字符，并返回它的索引 。如果不存在，则返回 -1 。
+这里只需要考虑小写字母。
+
+
+## 解题思路
+
+使用一个数组来记录出现过的小写字母。如果出现i次，就记录为index[s[i] - 'a']。然后再遍历一次数组，找i=1的即可。
+
+
+## 代码如下：
+
+    int firstUniqChar(string s) {
+        int a[26]={0};
+        int index[26];
+        int size=s.size();
+        for(int i=0;i<size;i++)
+        {
+            a[s[i]-'a']++;
+            index[s[i]-'a']=i;
+        }
+        for(int i=0;i<size;i++)
+        {
+            if(a[s[i]-'a']==1)
+            {
+                return index[s[i]-'a'];
+            }
+        }
+        return -1;
+    }    
