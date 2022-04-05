@@ -1,0 +1,38 @@
+---
+layout:     post   				    # 使用的布局（不需要改）
+title:      二叉树展开为链表 				# 标题 
+subtitle:   题目难度：Medium #副标题
+date:       2022-04-07 				# 时间
+author:     谢玄xx 						# 作者
+header-img: img/sea2.jpg 	#这篇文章标题背景图片
+catalog: true 						# 是否归档
+tags:								#标签
+    - 二叉树
+    - 链表
+---
+
+# 原题链接 —— [二叉树展开为链表](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/submissions/)
+```CPP
+void flatten(TreeNode* root) 
+{
+    vector<TreeNode*> cur;
+    preOrderTraversal(root, cur);
+    int n = cur.size();
+    for(int i = 1; i < n; i++)//这个居然是1..0会报错
+    {
+        TreeNode* pre = cur.at(i - 1);
+        TreeNode* curr = cur.at(i);
+        pre->left = nullptr;
+        pre->right = curr;    
+    }
+}
+
+void preOrderTraversal(TreeNode* root, vector<TreeNode*> &nums)
+{
+    if(root != NULL){
+    nums.push_back(root);
+    preOrderTraversal(root->left, nums);
+    preOrderTraversal(root->right, nums);
+    }
+}
+```
