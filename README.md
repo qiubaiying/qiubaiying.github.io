@@ -1,8 +1,8 @@
-![](https://raw.githubusercontent.com/xie96808/xie96808.github.io/master/img/website1.png)
+![](https://raw.githubusercontent.com/xie96808/xie96808.github.io/master/img/website1.PNG)
 
 这是我的网页搭建过程。感谢原作者qiubaiying！作者的Github主页：[戳这里](https://github.com/qiubaiying/qiubaiying.github.io)
 
-![](https://github.com/xie96808/xie96808.github.io/tree/master/img/website1.png)
+![](https://github.com/xie96808/xie96808.github.io/tree/master/img/website1.PNG)
 
 ![](img/website1.png)
 
