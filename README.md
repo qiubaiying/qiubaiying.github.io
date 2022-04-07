@@ -4,6 +4,8 @@
 
 ![](https://github.com/xie96808/xie96808.github.io/tree/master/img/website1.png)
 
+![](img/website1.png)
+
 ## [查看我的博客戳这里 👆](xieyw.xyz)
 
 ## 致谢
