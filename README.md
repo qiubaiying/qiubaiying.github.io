@@ -2,6 +2,8 @@
 
 这是我的网页搭建过程。感谢原作者qiubaiying！作者的Github主页：[戳这里](https://github.com/qiubaiying/qiubaiying.github.io)
 
+![](https://github.com/xie96808/xie96808.github.io/tree/master/img/website1.png)
+
 ## [查看我的博客戳这里 👆](xieyw.xyz)
 
 ## 致谢
