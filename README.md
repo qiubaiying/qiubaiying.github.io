@@ -2,16 +2,13 @@
 
 这是我的网页搭建过程。感谢原作者qiubaiying！作者的Github主页：[戳这里](https://github.com/qiubaiying/qiubaiying.github.io)
 
-![](https://github.com/xie96808/xie96808.github.io/tree/master/img/website1.PNG)
-
-![](img/website1.png)
-
 ## [查看我的博客戳这里 👆](xieyw.xyz)
 
 ## 致谢
 
 1. 这个模板是从这里 [Hux](https://github.com/Huxpro/huxpro.github.io) fork 的, 感谢这个作者。 
 2. 感谢 Jekyll、Github Pages 和 Bootstrap!
+3. 下述教程均来源于BY Blog，一些功能的添加与修改供各位参考：）
 
 ## License
 
