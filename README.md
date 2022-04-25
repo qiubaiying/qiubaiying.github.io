@@ -1,4 +1,4 @@
-# MHYCDH的专属BLOG
+# MHYXJY的专属BLOG
 欢迎各位莅临我的blog，鄙人奋发向上，至少一个月写一篇blog。
 
 ![](https://github.com/MHYCDH/MHYCDH.github.io/blob/master/img/hardwork/write99.gif?raw=true)
