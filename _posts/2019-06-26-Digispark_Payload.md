@@ -3,7 +3,7 @@ layout:     post
 title:      翻译ducky_payload
 subtitle:   关于如何翻译ducky的payload
 date:       2019-06-26
-author:     MHYCDH
+author:     HY
 header-img: img/ducky_payload.png
 music-id:   28405261
 catalog: true
