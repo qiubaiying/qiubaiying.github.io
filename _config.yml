@@ -1,6 +1,6 @@
 # Site settings
-title: <font color="#E6E6FA">MHYCDH-blog</font>
-SEOTitle: a pitiful Hacker(poor)╮(๑•́ ₃•̀๑)╭
+title: <font color="#E6E6FA">MHYXJY-blog</font>
+SEOTitle: a pitiful BOY(Designer)╮(๑•́ ₃•̀๑)╭
 header-img: img/t019d23b99f5a6a580a.png
 email: 2094216191@gmail.com
 description: "rise yourself and everything can be hacked"
@@ -108,9 +108,6 @@ friends: [
     {
         title: "twitter",
         href: "https://twitter.com"
-    },{
-        title: "github",
-        href: "https://github.com/MHYCDH/"
     },{
         title: "Mr_xueyuan-blog",
         href: "https://xueyuan.tech"
