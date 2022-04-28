@@ -3,7 +3,7 @@ layout:     post
 title:      排序算法(下)
 subtitle:   讲解一些常用常考的算法
 date:       2019-07-01
-author:     MHYCDH
+author:     HY
 header-img: img/algorithm/suanfa.png
 catalog: true
 tags:
