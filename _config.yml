@@ -7,11 +7,11 @@ description: "rise yourself and everything can be better"
 keyword: "HUA洋,嘉嘉,Digispark,音乐,netcat,设计"
 url: "http://MHYXJY.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/MHYCDH/MHYCDH.github.io.git" # you code repository
+github_repo: "https://github.com/MHYXJY/MHYXJY.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: <font color="#DDA0DD">"hack hard and struggle to 109 97 114 114 121 CDH!"</font>
+sidebar-about-description: <font color="#DDA0DD">" - > JIAJIA IS MINE !!! < -!"</font>
 sidebar-avatar: /img/cat.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -57,7 +57,7 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
-# disqus_username: MHYCDH
+# disqus_username: MHYXJY
 
 # Gitalk
 gitalk:
