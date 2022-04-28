@@ -3,7 +3,7 @@ layout:     post
 title:      工具_零件
 subtitle:   一些关于hack的硬件工具
 date:       2019-07-09
-author:     MHYCDH
+author:     HY
 header-img: img/bizhi01.jpg
 catalog: true
 tags:
