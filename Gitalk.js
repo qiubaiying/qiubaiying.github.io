@@ -9,12 +9,12 @@
     <script type="text/javascript">
     var gitalk = new Gitalk({
     // gitalk的主要参数
-		clientID: `4dede977f9d18025b3b5`,
-		clientSecret: `b1607f2c0a2ed2a143c60b1df7cc683d22787bce`,
-		repo: `xie96808.github.io`,
-		owner: 'xie96808',
-		admin: ['xie96808'],
-		id: 'location.href',
+	clientID: `4dede977f9d18025b3b5`,
+	clientSecret: `b1607f2c0a2ed2a143c60b1df7cc683d22787bce`,
+	repo: `xie96808.github.io`,
+	owner: 'xie96808',
+	admin: ['xie96808'],
+	id: 'location.href',
     
     });
     gitalk.render('gitalk-container');
