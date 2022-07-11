@@ -26,7 +26,6 @@ git bash的初始配置与 Github 连接的完整一系列命令
 ```
 - 用户名和邮箱配置
 
-
 ```objc
 - ssh-keygen -t rsa  #创建秘钥;
 ```
