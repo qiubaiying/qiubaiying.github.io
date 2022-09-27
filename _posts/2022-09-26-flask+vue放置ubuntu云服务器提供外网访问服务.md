@@ -7,7 +7,7 @@ author:     BY Magicsmx
 header-img: img/post-bg-cook.jpg
 catalog: true
 tags:
-    - port
+    - flask_vue
 ---
 
 ## “ª°¢≈‰÷√gunicorn
