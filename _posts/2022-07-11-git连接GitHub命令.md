@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      git连接GIthub命令操作
+title:      Git连接GIthub命令操作
 subtitle:   add, commit, pull, push等命令。
 date:       2022-07-11
 author:     BY Magicsmx
