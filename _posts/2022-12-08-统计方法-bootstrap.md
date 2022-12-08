@@ -22,11 +22,16 @@ tags:
 ## bootstrapping steps
 
 Application Scenario: only a single sample is available
+
 preparaion: an exist/raw dataset
 
+
 Step1: make a bootstrapped dataset (randomly select the same number of data from the existing dataset)
+
 Step2: calculate statistics(e.g. mean)
+
 Step3: keep track of the calculated statistics
+
 Step4: repeat step1-3 a bunch of times
 
 > bootstrapping procedura can maintains data structure but reshuffles values; can sample each value multiple times, or not at all
