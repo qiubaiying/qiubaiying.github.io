@@ -1,10 +1,10 @@
 # Site settings
 title: Stars Blog
-SEOTitle: 博客 | Stars Blog
+SEOTitle: Stars的博客 | Stars Blog
 header-img: img/post-bg-desk.jpg
 email: cxc1999628@foxmail.com
 description: "Every failure is leading towards success."
-keyword: "Stars, Stars Blog, 柏荧的博客, chenxinchao, 陈鑫超, iOS, Apple, iPhone"
+keyword: "Stars, Stars Blog, Stars的博客, chenxinchao, iOS, Apple, iPhone"
 url: "https://stars0628.github.io/"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
