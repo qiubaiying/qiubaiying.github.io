@@ -99,10 +99,10 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "Apple",
-        href: "https://apple.com"
+        title: "STM32",
+        href: "https://www.stmcu.com.cn/"
     },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "Qt Creator",
+        href: "https://www.qt.io/zh-cn/"
     }
 ]
