@@ -13,9 +13,9 @@ tags:
 
 ## 前言
 
-  scrapy和scrapy-redis项目可以部署在scrapyd服务器中，我们可以通过scrapyd提供的接口访问web主页。
-而spiderkeeper和scrapyd-web可以实现操作的可视化以及实现一键部署，定时任务，多主机统一管理等功能。
-下面分别介绍scrapyd和spiderkeeper的安装和使用方法。
+&emsp;&emsp;scrapy和scrapy-redis项目可以部署在scrapyd服务器中，我们可以通过scrapyd提供的接口访问web主页。  
+&emsp;&emsp;而spiderkeeper和scrapyd-web可以实现操作的可视化以及实现一键部署，定时任务，多主机统一管理等功能。  
+&emsp;&emsp;下面分别介绍scrapyd和spiderkeeper的安装和使用方法。  
 
 
 
@@ -23,7 +23,7 @@ tags:
 
 #### 1. 安装scrapyd以及scrapyd-client
 
-pip方式安装
+&emsp;&emsp;pip方式安装
 ```	objc
 - pip install scrapyd;
 ```
@@ -34,7 +34,7 @@ pip方式安装
 
 #### 2. 启动
 
-  在项目目录命令行下输入scrapyd即可，然后访问浏览器url https://localhost:6800
+&emsp;&emsp;在项目目录命令行下输入scrapyd即可，然后访问浏览器url https://localhost:6800
 
 ```	objc
 - scrapyd;
@@ -42,15 +42,15 @@ pip方式安装
 
 #### 3. 将项目上传到scrapyd服务器
 
-  修改项目下的scrapy.cfg文件，解开url的注释，设置项目名称
+&emsp;&emsp;修改项目下的scrapy.cfg文件，解开url的注释，设置项目名称  
 
-  在scrapy.cfg文件所在路径执行如下命令，若返回ok状态则表示成功上传。
+&emsp;&emsp;在scrapy.cfg文件所在路径执行如下命令，若返回ok状态则表示成功上传。  
 ```	objc
 - scrapyd-deploy;
 ```
 
 #### 4. scrapyd中常用的api
-  总结如下：
+&emsp;&emsp;总结如下：
 ```	objc
 - 
 1. 获取状态
@@ -77,19 +77,19 @@ curl http://127.0.0.1:6800/delproject.json （post方式，data={ " project " :m
 
 #### 1. 安装和启动spiderkeeper
 
-  pip方式安装
+&emsp;&emsp;pip方式安装  
 ```	objc
 - pip install spiderkeeper;
 ```
 
-  命令行直接输入下列命令启动，然后访问浏览器的 https://127.0.0.1:5000
+&emsp;&emsp;命令行直接输入下列命令启动，然后访问浏览器的 https://127.0.0.1:5000  
 ```	objc
 - spiderkeeper;
 ```
 
 #### 2. spiderkeeper的使用
 
-  按照上文scrapyd的使用方法，将生成的egg文件直接上传到spiderkeeper的网页可视化界面中，然后便可部署、停止和查看后续的爬虫任务。
+&emsp;&emsp;按照上文scrapyd的使用方法，将生成的egg文件直接上传到spiderkeeper的网页可视化界面中，然后便可部署、停止和查看后续的爬虫任务。  
 
 
 ### 参考
