@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3260d5a2-2392-4039-be84-aa86f3939d65" name="默认更改列表" comment="">
+    <list default="true" id="3260d5a2-2392-4039-be84-aa86f3939d65" name="默认更改列表" comment="默认更改列表">
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2019-11-12-Go语法基础二.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2019-11-12-Go语法基础二.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2019-11-7-Go语法基础一.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2019-11-7-Go语法基础一.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +94,16 @@
       <workItem from="1661153502354" duration="35000" />
       <workItem from="1679581666678" duration="765000" />
       <workItem from="1679583090693" duration="1834000" />
+      <workItem from="1679657967974" duration="358000" />
     </task>
+    <task id="LOCAL-00001" summary="默认更改列表">
+      <created>1679658057541</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679658057541</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,5 +120,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="默认更改列表" />
+    <option name="LAST_COMMIT_MESSAGE" value="默认更改列表" />
   </component>
 </project>
