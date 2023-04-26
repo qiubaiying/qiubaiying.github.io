@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3260d5a2-2392-4039-be84-aa86f3939d65" name="默认更改列表" comment="默认更改列表">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2023-04-26-PHP程序员学Java指南01 – 嫌麻烦之让chatgpt帮我学习.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,6 +92,8 @@
       <workItem from="1679581666678" duration="765000" />
       <workItem from="1679583090693" duration="1834000" />
       <workItem from="1679657967974" duration="861000" />
+      <workItem from="1681024031558" duration="9000" />
+      <workItem from="1682502929235" duration="5245000" />
     </task>
     <task id="LOCAL-00001" summary="默认更改列表">
       <created>1679658057541</created>
