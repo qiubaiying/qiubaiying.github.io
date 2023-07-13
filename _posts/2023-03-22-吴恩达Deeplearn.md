@@ -78,3 +78,5 @@ gradient algorithm
     look at nootbook please
 
 （be continued...）
+
+> 本文首次发布于 [Joey Blog](http://qiaoyu113.github.io), 作者 [@乔宇(Joey)](http://github.com/qiaoyu113) ,转载请保留原文链接..
