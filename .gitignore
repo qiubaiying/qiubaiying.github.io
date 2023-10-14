@@ -32,4 +32,8 @@ Temporary Items
 # End of https://www.gitignore.io/api/macos
 
 # debug file
+_sit
+
+# Archive Folder
+_posts_archive
 _site

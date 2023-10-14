@@ -1,31 +1,29 @@
 # Site settings
-title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
+title: Jazzik's Blog
+SEOTitle: 哲健的博客 | Jazzik's Blog
 header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
-description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+email: zhejianpeng@yahoo.com
+description: "Strive for greatness"
+keyword: "Jazzik, 博客, Scuba Diver, Data Scientist, Machine Learning Engineer"
+url: "https://jazzikpeng.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/JazzikPeng/jazzikpeng.github.io" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution - Albert Einstein"
+sidebar-avatar: /img/about_Jazzik.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
 RSS: false
 # weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
+github_username:             Jazzikpeng
+linkedin_username:           zhejian-peng-82302712b
+instagram_username:          jazzik_peng
+youtube_username:            channel/UCR7ohymZdzclHCyr6YZW9vQ?view_as=subscriber
 #twitter_username:   qiubaiying
-
-
 
 
 # Build settings
@@ -39,7 +37,7 @@ anchorjs: true                          # if you want to customize anchor. check
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 
 
 
@@ -62,11 +60,11 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  clientID: 689ad5fe65e10d96c66a                            # generated clientID
+  clientSecret: 03d60c67e1f0fd6fe2d19ee7d1d20c6edf19c0a9    # generated clientSecret
+  repo: jazzikpeng.github.io    #仓库名称
+  owner: JazzikPeng    #github用户名
+  admin: JazzikPeng
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
@@ -74,11 +72,11 @@ gitalk:
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: b50bf2b12b5338a1845e33832976fd68
+# ba_track_id: b50bf2b12b5338a1845e33832976fd68
 
 # Google Analytics
-ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_track_id: 'UA-137525491-1'            # Format: UA-xxxxxx-xx
+ga_domain: auto               # default is auto, if you have your own domain name please use your own domain name here
 
 
 
@@ -99,16 +97,11 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
-    },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
-    },{
+        title: "LinkedIn",
+        href: "https://linkedin.com/"
+    },
+    {
         title: "Apple",
         href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
     }
 ]
