@@ -254,6 +254,11 @@ ga_domain: huangxuan.me			# 默认的是 auto, 这里我是自定义了的域名
 2. 模板是从这里 [Hux](https://github.com/Huxpro/huxpro.github.io) fork 的, 致谢这个作者。 
 3. 感谢 Jekyll、Github Pages 和 Bootstrap!
 
+## 如何运行
+1. 安装[jekyll](http://jekyllcn.com/)
+2. bash 输入 `jekyll serve`
+3. 本地浏览器中输入 `http://127.0.0.1:4000/` 即可调试
+
 ## License
 
 遵循 MIT 许可证。有关详细,请参阅 [LICENSE](https://github.com/qiubaiying/qiubaiying.github.io/blob/master/LICENSE)。
