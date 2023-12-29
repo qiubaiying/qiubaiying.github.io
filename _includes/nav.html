@@ -20,11 +20,23 @@
                         <a href="{{ site.baseurl }}/">Home</a>
                     </li>
                     <li><a href="https://helloo2020.github.io/Running-Tim/">Running</a></li>
-                    {% for page in site.pages %}
-                        {% if page.title and page.title != "About" and page.title != "Tags" %}
-                            <li>
-                                <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-                            </li>
+                    <!-- Tags link -->
+                    {% for page in site.pages %}{% if page.title == "Tags" %}
+                    <li>
+                        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                    </li>
+                    {% endif %}{% endfor %}
+                    <!-- About link -->
+                    {% for page in site.pages %}{% if page.title == "About" %}
+                    <li>
+                        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                    </li>
+                    {% endif %}{% endfor %}
+                    <!-- Other links -->
+                    {% for page in site.pages %}{% if page.title != "About" and page.title != "Tags" %}
+                    <li>
+                        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                    </li>
                     {% endif %}{% endfor %}
                 </ul>
             </div>
