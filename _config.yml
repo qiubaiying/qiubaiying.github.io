@@ -65,7 +65,7 @@ gitalk:
   enable: ture    #是否开启Gitalk评论
   clientID: 3155f3c68e5bf4ec3d88                            #生成的clientID
   clientSecret: c0d65498a33ff378edc2ff0cfe204bcea34a9ebb    #生成的clientSecret
-  repo: https://github.com/helloo2020/helloo2020.github.io   #仓库名称
+  repo: helloo2020.github.io   #仓库名称
   owner: helloo2020    #github用户名
   admin: helloo2020
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
