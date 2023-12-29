@@ -20,6 +20,12 @@
                         <a href="{{ site.baseurl }}/">Home</a>
                     </li>
                     <li><a href="https://helloo2020.github.io/Running-Tim/">Running</a></li>
+                    <li>
+                        <a href="{{ site.baseurl }}/">Tags</a>
+                    </li>
+                    <li>
+                        <a href="{{ site.baseurl }}/">about</a>
+                    </li>
                     {% for page in site.pages %}{% if page.title %}
                     <li>
                         <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
