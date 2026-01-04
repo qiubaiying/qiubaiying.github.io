@@ -11,7 +11,7 @@ Icon
 
 
 # Thumbnails
-._*
+#._*
 
 # Files that might appear in the root of a volume
 .DocumentRevisions-V100
@@ -26,6 +26,7 @@ Icon
 .AppleDB
 .AppleDesktop
 Network Trash Folder
+github_clone-push-ghcr.sh
 Temporary Items
 .apdisk
 
