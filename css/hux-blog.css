@@ -48,6 +48,279 @@
 .sidebar-container .short-about .list-inline > li {
   padding-left: 0px;
 }
+
+/* Reading Time Styling */
+.reading-time {
+  display: inline-block;
+  margin-left: 15px;
+  color: #bfbfbf;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.reading-time i {
+  margin-right: 5px;
+}
+
+/* Site Runtime Styling */
+.site-runtime {
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  color: #666;
+  font-size: 14px;
+}
+
+.site-runtime i {
+  margin-right: 8px;
+  color: #0085a1;
+}
+
+/* Blog Timeline Styling */
+.blog-timeline-container {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.timeline-sidebar {
+  flex: 0 0 300px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.blog-posts-main {
+  flex: 1;
+}
+
+.timeline {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.timeline-year {
+  margin-bottom: 15px;
+}
+
+.timeline-year-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background: #0085a1;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.timeline-year-header:hover {
+  background: #006d84;
+}
+
+.timeline-year-header i {
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.timeline-year-header.expanded i {
+  transform: rotate(90deg);
+}
+
+.year-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.post-count {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.timeline-months {
+  display: none;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.timeline-months.expanded {
+  display: block;
+}
+
+.timeline-month {
+  margin-bottom: 10px;
+}
+
+.timeline-month-header {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background: #e9ecef;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.timeline-month-header:hover {
+  background: #dee2e6;
+}
+
+.timeline-month-header i {
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+  font-size: 12px;
+}
+
+.timeline-month-header.expanded i {
+  transform: rotate(90deg);
+}
+
+.month-label {
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+.timeline-posts {
+  display: none;
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.timeline-posts.expanded {
+  display: block;
+}
+
+.timeline-post {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  border-left: 2px solid #dee2e6;
+  margin-left: 10px;
+  padding-left: 15px;
+}
+
+.timeline-post::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #0085a1;
+  border-radius: 50%;
+  margin-left: -19px;
+  margin-right: 10px;
+}
+
+.post-date {
+  font-size: 12px;
+  color: #6c757d;
+  margin-right: 10px;
+  min-width: 30px;
+}
+
+.timeline-post .post-title {
+  font-size: 13px;
+  color: #495057;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.timeline-post .post-title:hover {
+  color: #0085a1;
+}
+
+/* Theme Switcher Styling */
+.theme-switcher {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.theme-switcher-toggle {
+  width: 50px;
+  height: 50px;
+  background: #0085a1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.theme-switcher-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.theme-switcher-toggle i {
+  color: white;
+  font-size: 20px;
+}
+
+.theme-switcher-panel {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  width: 250px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.theme-switcher.open .theme-switcher-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.theme-switcher-panel h4 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 16px;
+}
+
+.theme-option {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 8px;
+}
+
+.theme-option:hover {
+  background: #f8f9fa;
+}
+
+.theme-option.active {
+  background: #e3f2fd;
+  border: 2px solid #0085a1;
+}
+
+.theme-preview {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 12px;
+  border: 2px solid #ddd;
+}
+
+.theme-option span {
+  font-size: 14px;
+  color: #555;
+}
 .catalog-container {
   padding: 0px;
 }

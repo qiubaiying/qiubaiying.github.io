@@ -1,0 +1,22 @@
+/* Placeholder for theme images */
+/* You should replace these with actual anime/dark/pastel themed images */
+
+/* Default theme background */
+body {
+    background-image: url('/img/home-bg.jpg');
+}
+
+/* Anime theme background */
+body.theme-anime {
+    background-image: url('/img/anime-bg.jpg');
+}
+
+/* Dark theme background */
+body.theme-dark {
+    background-image: url('/img/dark-bg.jpg');
+}
+
+/* Pastel theme background */
+body.theme-pastel {
+    background-image: url('/img/pastel-bg.jpg');
+}

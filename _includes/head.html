@@ -51,5 +51,8 @@
     <![endif]-->
 
     <!-- ga & ba script hoook -->
-    <script></script>
+    {% include google-analytics.html %}
+    
+    <!-- Theme Manager -->
+    <script src="{{ "/js/theme-manager.js" | prepend: site.baseurl }}"></script>
 </head>
