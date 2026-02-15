@@ -2,6 +2,19 @@
   padding-top: 20px;
   overflow-anchor: auto;
 }
+/* 标签页：与文章页一致的容器宽度和左侧栏尺寸 */
+@media only screen and (min-width: 992px) {
+  .tag-page-container.container {
+    width: 97%;
+    max-width: 97%;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .tag-page-container .tag-tree-wrap {
+    padding-left: 12px;
+    box-sizing: border-box;
+  }
+}
 /* 手机端：保证文章可完整滚动到底，不被裁切（含 HICPlot 等长文） */
 @media (max-width: 991px) {
   .post-article,
@@ -169,6 +182,10 @@
 .tag-tree-node-child .tag-tree-tag {
   font-size: 12px;
   font-weight: 500;
+}
+/* 折叠到一级：隐藏二级子标签 */
+.tag-tree-wrap.tag-tree-fold-level1 .tag-tree-node-child {
+  display: none !important;
 }
 .tag-tree-post {
   display: block;

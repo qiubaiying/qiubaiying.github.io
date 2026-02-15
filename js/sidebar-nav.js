@@ -55,14 +55,17 @@
   function initTagTreeToggle() {
     var tree = document.getElementById('tag-tree');
     if (!tree) return;
+    var wrap = tree.closest('.tag-tree-wrap');
+    if (!wrap) wrap = tree;
     tree.querySelectorAll('.nav-toggle-btn').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var action = this.getAttribute('data-action');
-        var nodes = tree.querySelectorAll('.tag-tree-node');
         if (action === 'collapse') {
-          nodes.forEach(function (n) { n.classList.remove('open'); });
+          wrap.classList.add('tag-tree-fold-level1');
+          tree.querySelectorAll('.tag-tree-node, .tag-tree-group').forEach(function (n) { n.classList.remove('open'); });
         } else {
-          nodes.forEach(function (n) { n.classList.add('open'); });
+          wrap.classList.remove('tag-tree-fold-level1');
+          tree.querySelectorAll('.tag-tree-node, .tag-tree-group').forEach(function (n) { n.classList.add('open'); });
         }
       });
     });

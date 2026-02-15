@@ -24,28 +24,16 @@ header-img: "img/flowers/tags.jpg"
 		<div class="col-lg-9 col-md-8 tag-main">
 			<div id="tag_cloud" class="tags tag-cloud-chips">
 				{% assign article_pages = site.posts %}
-				{% assign tag_index = 0 %}
 				{% for tag_item in site.tag_tree %}
 					{% if tag_item.name %}
 						{% assign tag_name = tag_item.name %}
-						{% assign tag_index = tag_index | plus: 1 %}
 						{% assign count = 0 %}
 						{% for a in article_pages %}
 							{% if a.tags contains tag_name %}{% assign count = count | plus: 1 %}{% endif %}
 						{% endfor %}
 						<a href="#{{ tag_name }}" title="{{ tag_name }}" rel="{{ count }}">{{ tag_name }} ({{ count }})</a>
-						{% for child in tag_item.children %}
-							{% assign child_full = tag_name | append: '/' | append: child %}
-							{% assign tag_index = tag_index | plus: 1 %}
-							{% assign count = 0 %}
-							{% for a in article_pages %}
-								{% if a.tags contains child_full %}{% assign count = count | plus: 1 %}{% endif %}
-							{% endfor %}
-							<a href="#{{ child_full }}" class="tag-chip-child" title="{{ tag_name }} › {{ child }}" rel="{{ count }}">{{ child }} ({{ count }})</a>
-						{% endfor %}
 					{% else %}
 						{% assign tag_name = tag_item %}
-						{% assign tag_index = tag_index | plus: 1 %}
 						{% assign count = 0 %}
 						{% for a in article_pages %}
 							{% if a.tags contains tag_name %}{% assign count = count | plus: 1 %}{% endif %}
