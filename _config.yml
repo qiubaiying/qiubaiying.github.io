@@ -75,7 +75,11 @@ featured-condition-size: 1
 #   - 玩转电脑
 #   - 玩转电脑/Windows
 # 使用 collection 时 Tags 页按此列表展示（与各文章 front matter 的 tags 对应）
-tag_list: [R, Windows, Sample, JAMES街访, 中国诗, 中国诗/有点志气]
+tag_list: [R, \
+        Windows, \
+        Sample, \
+        JAMES街访, \
+        中国诗, 中国诗/有点志气]
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
