@@ -112,3 +112,22 @@
 .poem-content ruby rp {
   display: none; /* 兼容旧浏览器时的括号，现代浏览器可隐藏 */
 }
+
+/* ========== 诗/词文末投稿说明 ========== */
+.poem-contribution-notice {
+  margin: 1.8em 0 1em 0;
+  padding: 1em 1.2em;
+  background: #f8f9fa;
+  border-left: 4px solid #0085a1;
+  font-size: 0.95em;
+  color: #444;
+  line-height: 1.6;
+}
+.poem-contribution-notice a {
+  color: #0085a1;
+  font-weight: 500;
+}
+.poem-contribution-notice a:hover {
+  color: #006b82;
+  text-decoration: underline;
+}

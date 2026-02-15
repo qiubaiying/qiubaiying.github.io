@@ -86,6 +86,12 @@ layout: default
 
 				{{ content | replace: '^o^', '<sup>o</sup>' }}
 
+                {% if page.tags contains "中国诗" %}
+                <div class="poem-contribution-notice">
+                    <p>如果您有关于这篇诗/词的故事或感悟，可分享至站长邮箱（<a href="{{ site.baseurl }}/about/" title="关于我">关于我</a> 页面有联系方式），欢迎投稿！</p>
+                </div>
+                {% endif %}
+
                 <hr style="visibility: hidden;">
                 <style>.post-container mark{background:rgba(255,235,59,0.5);padding:0 .15em;border-radius:2px;}</style>
                 <style>.post-container .mermaid,.post-container .katex-block{margin:1em 0;text-align:center;}</style>

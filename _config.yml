@@ -79,7 +79,11 @@ tag_tree:
   - name: 中国诗
     children:
       - 有点志气
-
+      - 模版
+      - 毛主席
+      - 离别
+      - 新年好
+      
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
 service-worker: true
