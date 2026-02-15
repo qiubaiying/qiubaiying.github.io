@@ -58,3 +58,37 @@
   color: rgba(255, 255, 255, 0.5);
   pointer-events: none;
 }
+
+/* ========== 古诗正文 + 拼音（ruby）样式 ========== */
+.poem-content {
+  margin: 1.5em 0 2em 0;
+  text-align: center;
+}
+
+.poem-content .poem-lines {
+  font-size: 1.35em;
+  line-height: 2.2;
+  letter-spacing: 0.15em;
+  color: #222;
+  margin: 0;
+  font-family: "STKaiti", "KaiTi", "楷体", serif;
+}
+
+/* ruby 拼音：字上方显示注音 */
+.poem-content ruby {
+  ruby-position: over;
+  ruby-align: center;
+}
+
+.poem-content ruby rt {
+  font-size: 0.45em;
+  line-height: 1;
+  color: #666;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+}
+
+.poem-content ruby rp {
+  display: none; /* 兼容旧浏览器时的括号，现代浏览器可隐藏 */
+}
