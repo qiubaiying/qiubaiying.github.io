@@ -160,6 +160,16 @@
 }
 .tag-tree-group.open .tag-tree-node .tag-tree-posts { display: block; }
 .tag-tree-node.open .tag-tree-posts { display: block; }
+/* 子标签：缩进在父级下 */
+.tag-tree-node-child {
+  padding-left: 18px;
+  margin-left: 8px;
+  border-left: 2px solid #b8d4dc;
+}
+.tag-tree-node-child .tag-tree-tag {
+  font-size: 12px;
+  font-weight: 500;
+}
 .tag-tree-post {
   display: block;
   padding: 6px 10px 6px 12px;
@@ -397,6 +407,13 @@
   font-size: 14px;
   padding: 6px 12px;
 }
+/* 子标签 chip：小一号、缩进感 */
+.tag-page-container #tag_cloud a.tag-chip-child {
+  font-size: 12px;
+  padding: 4px 10px;
+  margin-left: 8px;
+  opacity: 0.92;
+}
 .tag-page-container .one-tag-list {
   margin-bottom: 20px;
 }
@@ -408,6 +425,15 @@
   font-size: 1.8rem;
   padding: 0 0 0 10px;
   line-height: 1.4;
+}
+/* 子标签区块：缩进、小一号 */
+.tag-page-container .one-tag-list.tag-sub {
+  margin-left: 20px;
+  margin-bottom: 16px;
+}
+.tag-page-container .tag-section-heading-sub {
+  font-size: 1.45rem;
+  padding-left: 14px;
 }
 /* 蓝色标签图标缩小为 0.7 倍 */
 .tag-page-container .tag-section-heading .listing-seperator,

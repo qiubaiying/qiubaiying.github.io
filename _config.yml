@@ -70,16 +70,15 @@ ga_domain: auto
 featured-tags: true
 featured-condition-size: 1
 
-# 多级 Tags：在文章 front matter 中可使用多个 tags，层级用 "父级/子级" 表示，例如：
-# tags:
-#   - 玩转电脑
-#   - 玩转电脑/Windows
-# 使用 collection 时 Tags 页按此列表展示（与各文章 front matter 的 tags 对应）
-tag_list: [R, \
-        Windows, \
-        Sample, \
-        JAMES街访, \
-        中国诗, 中国诗/有点志气]
+# 多级 Tags：父级可带 children 表示子标签，文章 front matter 用 "父级/子级" 如 中国诗/有点志气
+tag_tree:
+  - R
+  - Windows
+  - Sample
+  - JAMES街访
+  - name: 中国诗
+    children:
+      - 有点志气
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"

@@ -52,10 +52,28 @@ layout: default
     <div class="container post-page-container">
         <div class="row">
             {% assign tag_tree_active_index = nil %}
-            {% for tag_name in site.tag_list %}
-                {% if page.tags contains tag_name %}
-                    {% assign tag_tree_active_index = forloop.index %}
-                    {% break %}
+            {% assign tag_tree_active_parent = nil %}
+            {% assign ti = 0 %}
+            {% for tag_item in site.tag_tree %}
+                {% if tag_item.name %}
+                    {% assign ti = ti | plus: 1 %}
+                    {% if page.tags contains tag_item.name %}
+                        {% assign tag_tree_active_index = ti %}
+                        {% assign tag_tree_active_parent = tag_item.name %}
+                    {% endif %}
+                    {% for child in tag_item.children %}
+                        {% assign child_full = tag_item.name | append: '/' | append: child %}
+                        {% assign ti = ti | plus: 1 %}
+                        {% if page.tags contains child_full %}
+                            {% assign tag_tree_active_index = ti %}
+                            {% assign tag_tree_active_parent = tag_item.name %}
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    {% assign ti = ti | plus: 1 %}
+                    {% if page.tags contains tag_item %}
+                        {% assign tag_tree_active_index = ti %}
+                    {% endif %}
                 {% endif %}
             {% endfor %}
             {% assign tag_tree_is_post = true %}
