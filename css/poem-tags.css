@@ -65,6 +65,26 @@
   text-align: center;
 }
 
+/* 作者·朝代 元信息 */
+.poem-content .poem-meta {
+  font-size: 0.95em;
+  color: #666;
+  margin: 0 0 1em 0;
+  font-family: "PingFang SC", "Microsoft YaHei", serif;
+}
+
+/* 词牌分段：上阕 / 下阕 */
+.poem-content .poem-stanza {
+  font-size: 0.85em;
+  color: #888;
+  margin: 1.2em 0 0.4em 0;
+  letter-spacing: 0.2em;
+}
+
+.poem-content .poem-stanza:first-of-type {
+  margin-top: 0;
+}
+
 .poem-content .poem-lines {
   font-size: 1.35em;
   line-height: 2.2;
