@@ -71,18 +71,19 @@ featured-tags: true
 featured-condition-size: 1
 
 # 多级 Tags：父级可带 children 表示子标签，文章 front matter 用 "父级/子级" 如 中国诗/有点志气
+# 排序：英文优先按字母，中文按拼音；同级内排序
 tag_tree:
-  - R
-  - Windows
-  - Sample
   - JAMES街访
+  - R
+  - Sample
+  - Windows
   - name: 中国诗
     children:
-      - 有点志气
-      - 模版
-      - 毛主席
-      - 离别
       - 2026新年到
+      - 离别
+      - 毛主席
+      - 模版
+      - 有点志气
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
