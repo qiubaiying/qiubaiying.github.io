@@ -27,8 +27,8 @@ layout: default
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <div class="tags">
+                <div class="post-heading{% if page.tags contains "中国诗" %} poem-post{% endif %}">
+                    <div class="tags{% if page.tags contains "中国诗" %} poem-tags{% endif %}">
                         {% for tag in page.tags %}
                         <a class="tag" href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
                         {% endfor %}
