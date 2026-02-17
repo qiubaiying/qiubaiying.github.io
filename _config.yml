@@ -70,19 +70,19 @@ ga_domain: auto
 featured-tags: true
 featured-condition-size: 1
 
-# 多级 Tags：父级可带 children 表示子标签，文章 front matter 用 "父级/子级" 如 中国诗/有点志气
-# 排序：英文优先按字母，中文按拼音；同级内排序
+# 多级 Tags：统一用 tag，父级可带 children；文章 front matter 用 "父级/子级" 如 中国诗/有点志气
 tag_tree:
-  - JAMES街访
-  - R
-  - Windows
-  - name: 中国诗
+  - tag: JAMES街访
+  - tag: R
+  - tag: Windows
+  - tag: 中国诗
     children:
       - 2026新年到
       - 离别
       - 毛主席
+      - 模版
       - 有点志气
-  - name: 文案
+  - tag: 文案
     children:
       - 大爱仙尊
       - 只管向前

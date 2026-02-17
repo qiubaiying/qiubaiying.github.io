@@ -25,39 +25,35 @@ header-img: "img/flowers/tags.jpg"
 			<div id="tag_cloud" class="tags tag-cloud-chips">
 				{% assign article_pages = site.posts %}
 				{% for tag_item in site.tag_tree %}
-					{% if tag_item.name %}
-						{% assign tag_name = tag_item.name %}
-						{% assign count = 0 %}
-						{% for a in article_pages %}
-							{% if a.tags contains tag_name %}{% assign count = count | plus: 1 %}{% endif %}
-						{% endfor %}
-						<a href="#{{ tag_name }}" title="{{ tag_name }}" rel="{{ count }}">{{ tag_name }} ({{ count }})</a>
-					{% else %}
-						{% assign tag_name = tag_item %}
-						{% assign count = 0 %}
-						{% for a in article_pages %}
-							{% if a.tags contains tag_name %}{% assign count = count | plus: 1 %}{% endif %}
-						{% endfor %}
-						<a href="#{{ tag_name }}" title="{{ tag_name }}" rel="{{ count }}">{{ tag_name }} ({{ count }})</a>
-					{% endif %}
+					{% assign tag_name = tag_item.tag | default: tag_item.name | default: tag_item %}
+					{% assign count = 0 %}
+					{% for a in article_pages %}
+						{% if a.tags contains tag_name %}{% assign count = count | plus: 1 %}{% endif %}
+					{% endfor %}
+					<a href="#{{ tag_name }}" title="{{ tag_name }}" rel="{{ count }}">{{ tag_name }} ({{ count }})</a>
 				{% endfor %}
 			</div>
 
 			{% assign tag_index = 0 %}
+			{% assign per_page = 5 %}
 			{% for tag_item in site.tag_tree %}
-				{% if tag_item.name %}
-					{% assign tag_name = tag_item.name %}
+				{% assign tag_name = tag_item.tag | default: tag_item.name | default: tag_item %}
+				{% if tag_item.children %}
 					{% assign tag_index = tag_index | plus: 1 %}
-					{% assign tag_id = tag_index %}
+					{% assign posts_for_tag = article_pages | where_exp: "p", "p.tags contains tag_name" %}
+					{% assign total = posts_for_tag.size %}
 					<div class="one-tag-list" id="{{ tag_name }}">
 						<h2 class="tag-section-heading">
 							<span class="fa fa-tag listing-seperator"></span>
 							<span class="tag-text">{{ tag_name }}</span>
 						</h2>
-						<div class="tag-posts-grid">
+						<div class="tag-posts-grid tag-posts-paginated" data-tag-id="tag-{{ tag_index }}" data-per-page="{{ per_page }}" data-total="{{ total }}">
+							{% assign count = 0 %}
 							{% for post in article_pages %}
 								{% if post.tags contains tag_name %}
-							<article class="tag-post-card">
+									{% assign count = count | plus: 1 %}
+									{% assign page_num = count | minus: 1 | divided_by: per_page | plus: 1 %}
+							<article class="tag-post-card" data-page="{{ page_num }}">
 								<a href="{{ post.url | prepend: site.baseurl }}" class="tag-post-card-link">
 									<h3 class="tag-post-card-title">{{ post.title }}</h3>
 									{% if post.subtitle %}
@@ -68,21 +64,32 @@ header-img: "img/flowers/tags.jpg"
 							</article>
 								{% endif %}
 							{% endfor %}
+							{% if total > per_page %}
+							<div class="tag-pagination" data-tag-id="tag-{{ tag_index }}">
+								<button type="button" class="tag-pagination-prev" disabled>上一页</button>
+								<span class="tag-pagination-info">1/{{ total | plus: 4 | divided_by: per_page }}</span>
+								<button type="button" class="tag-pagination-next">下一页</button>
+							</div>
+							{% endif %}
 						</div>
 					</div>
 					{% for child in tag_item.children %}
 						{% assign child_full = tag_name | append: '/' | append: child %}
 						{% assign tag_index = tag_index | plus: 1 %}
-						{% assign child_id = tag_index %}
+						{% assign posts_for_child = article_pages | where_exp: "p", "p.tags contains child_full" %}
+						{% assign total = posts_for_child.size %}
 						<div class="one-tag-list tag-sub" id="{{ child_full }}">
 							<h2 class="tag-section-heading tag-section-heading-sub">
 								<span class="fa fa-tag listing-seperator"></span>
 								<span class="tag-text">{{ child }}</span>
 							</h2>
-							<div class="tag-posts-grid">
+							<div class="tag-posts-grid tag-posts-paginated" data-tag-id="tag-{{ tag_index }}" data-per-page="{{ per_page }}" data-total="{{ total }}">
+								{% assign count = 0 %}
 								{% for post in article_pages %}
 									{% if post.tags contains child_full %}
-								<article class="tag-post-card">
+										{% assign count = count | plus: 1 %}
+										{% assign page_num = count | minus: 1 | divided_by: per_page | plus: 1 %}
+								<article class="tag-post-card" data-page="{{ page_num }}">
 									<a href="{{ post.url | prepend: site.baseurl }}" class="tag-post-card-link">
 										<h3 class="tag-post-card-title">{{ post.title }}</h3>
 										{% if post.subtitle %}
@@ -93,22 +100,32 @@ header-img: "img/flowers/tags.jpg"
 								</article>
 									{% endif %}
 								{% endfor %}
+								{% if total > per_page %}
+								<div class="tag-pagination" data-tag-id="tag-{{ tag_index }}">
+									<button type="button" class="tag-pagination-prev" disabled>上一页</button>
+									<span class="tag-pagination-info">1/{{ total | plus: 4 | divided_by: per_page }}</span>
+									<button type="button" class="tag-pagination-next">下一页</button>
+								</div>
+								{% endif %}
 							</div>
 						</div>
 					{% endfor %}
 				{% else %}
-					{% assign tag_name = tag_item %}
 					{% assign tag_index = tag_index | plus: 1 %}
-					{% assign tag_id = tag_index %}
+					{% assign posts_for_tag = article_pages | where_exp: "p", "p.tags contains tag_name" %}
+					{% assign total = posts_for_tag.size %}
 					<div class="one-tag-list" id="{{ tag_name }}">
 						<h2 class="tag-section-heading">
 							<span class="fa fa-tag listing-seperator"></span>
 							<span class="tag-text">{{ tag_name }}</span>
 						</h2>
-						<div class="tag-posts-grid">
+						<div class="tag-posts-grid tag-posts-paginated" data-tag-id="tag-{{ tag_index }}" data-per-page="{{ per_page }}" data-total="{{ total }}">
+							{% assign count = 0 %}
 							{% for post in article_pages %}
 								{% if post.tags contains tag_name %}
-							<article class="tag-post-card">
+									{% assign count = count | plus: 1 %}
+									{% assign page_num = count | minus: 1 | divided_by: per_page | plus: 1 %}
+							<article class="tag-post-card" data-page="{{ page_num }}">
 								<a href="{{ post.url | prepend: site.baseurl }}" class="tag-post-card-link">
 									<h3 class="tag-post-card-title">{{ post.title }}</h3>
 									{% if post.subtitle %}
@@ -119,6 +136,13 @@ header-img: "img/flowers/tags.jpg"
 							</article>
 								{% endif %}
 							{% endfor %}
+							{% if total > per_page %}
+							<div class="tag-pagination" data-tag-id="tag-{{ tag_index }}">
+								<button type="button" class="tag-pagination-prev" disabled>上一页</button>
+								<span class="tag-pagination-info">1/{{ total | plus: 4 | divided_by: per_page }}</span>
+								<button type="button" class="tag-pagination-next">下一页</button>
+							</div>
+							{% endif %}
 						</div>
 					</div>
 				{% endif %}
@@ -126,3 +150,34 @@ header-img: "img/flowers/tags.jpg"
 		</div>
 	</div>
 </div>
+
+<script>
+(function(){
+  var PER_PAGE = 5;
+  document.querySelectorAll('.tag-posts-paginated').forEach(function(grid){
+    var total = parseInt(grid.getAttribute('data-total') || '0', 10);
+    if (total <= PER_PAGE) return;
+    var cards = grid.querySelectorAll('.tag-post-card');
+    var pagination = grid.querySelector('.tag-pagination');
+    if (!pagination || cards.length === 0) return;
+    var prevBtn = pagination.querySelector('.tag-pagination-prev');
+    var nextBtn = pagination.querySelector('.tag-pagination-next');
+    var infoSpan = pagination.querySelector('.tag-pagination-info');
+    var totalPages = Math.ceil(total / PER_PAGE);
+    var currentPage = 1;
+    function showPage(p){
+      currentPage = Math.max(1, Math.min(p, totalPages));
+      cards.forEach(function(card, i){
+        var page = parseInt(card.getAttribute('data-page') || '1', 10);
+        card.style.display = (page === currentPage) ? '' : 'none';
+      });
+      prevBtn.disabled = (currentPage <= 1);
+      nextBtn.disabled = (currentPage >= totalPages);
+      if (infoSpan) infoSpan.textContent = currentPage + '/' + totalPages;
+    }
+    prevBtn.addEventListener('click', function(){ showPage(currentPage - 1); });
+    nextBtn.addEventListener('click', function(){ showPage(currentPage + 1); });
+    showPage(1);
+  });
+})();
+</script>
