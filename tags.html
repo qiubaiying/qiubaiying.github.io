@@ -39,40 +39,6 @@ header-img: "img/flowers/tags.jpg"
 			{% for tag_item in site.tag_tree %}
 				{% assign tag_name = tag_item.tag | default: tag_item.name | default: tag_item %}
 				{% if tag_item.children %}
-					{% assign tag_index = tag_index | plus: 1 %}
-					{% assign posts_for_tag = article_pages | where_exp: "p", "p.tags contains tag_name" %}
-					{% assign total = posts_for_tag.size %}
-					<div class="one-tag-list" id="{{ tag_name }}">
-						<h2 class="tag-section-heading">
-							<span class="fa fa-tag listing-seperator"></span>
-							<span class="tag-text">{{ tag_name }}</span>
-						</h2>
-						<div class="tag-posts-grid tag-posts-paginated" data-tag-id="tag-{{ tag_index }}" data-per-page="{{ per_page }}" data-total="{{ total }}">
-							{% assign count = 0 %}
-							{% for post in article_pages %}
-								{% if post.tags contains tag_name %}
-									{% assign count = count | plus: 1 %}
-									{% assign page_num = count | minus: 1 | divided_by: per_page | plus: 1 %}
-							<article class="tag-post-card" data-page="{{ page_num }}">
-								<a href="{{ post.url | prepend: site.baseurl }}" class="tag-post-card-link">
-									<h3 class="tag-post-card-title">{{ post.title }}</h3>
-									{% if post.subtitle %}
-									<p class="tag-post-card-subtitle">{{ post.subtitle }}</p>
-									{% endif %}
-									<p class="tag-post-card-meta">{{ post.date | date: "%Y-%m-%d" }}</p>
-								</a>
-							</article>
-								{% endif %}
-							{% endfor %}
-							{% if total > per_page %}
-							<div class="tag-pagination" data-tag-id="tag-{{ tag_index }}">
-								<button type="button" class="tag-pagination-prev" disabled>上一页</button>
-								<span class="tag-pagination-info">1/{{ total | plus: 4 | divided_by: per_page }}</span>
-								<button type="button" class="tag-pagination-next">下一页</button>
-							</div>
-							{% endif %}
-						</div>
-					</div>
 					{% for child in tag_item.children %}
 						{% assign child_tag = child.tag | default: child %}
 						{% assign child_full = tag_name | append: '/' | append: child_tag %}
