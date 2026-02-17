@@ -31,7 +31,8 @@
 							<a href="{% if tag_tree_is_post %}{{ site.baseurl }}/tags/{% endif %}#{{ tag_name }}" class="tag-tree-tag" title="{{ tag_name }}">{{ tag_name }} ({{ count }})</a>
 						</div>
 						{% for child in tag_item.children %}
-							{% assign child_full = tag_name | append: '/' | append: child %}
+							{% assign child_tag = child.tag | default: child %}
+							{% assign child_full = tag_name | append: '/' | append: child_tag %}
 							{% assign tag_index = tag_index | plus: 1 %}
 							{% assign child_id = tag_index %}
 							{% assign count = 0 %}
@@ -42,9 +43,9 @@
 							{% if tag_tree_active_index == child_id %}{% assign child_active = true %}{% endif %}
 							<div class="tag-tree-node {% if child_active %}open tag-tree-node-active{% endif %} tag-tree-node-child" data-target="{{ child_full }}">
 								{% if tag_tree_is_post %}
-								<a href="{{ site.baseurl }}/tags/#{{ child_full }}" class="tag-tree-tag" title="{{ child }}">{{ child }} ({{ count }})</a>
+								<a href="{{ site.baseurl }}/tags/#{{ child_full }}" class="tag-tree-tag" title="{{ child_tag }}">{{ child.title | default: child_tag }} ({{ count }})</a>
 								{% else %}
-								<a href="#{{ child_full }}" class="tag-tree-tag" title="{{ child }}">{{ child }} ({{ count }})</a>
+								<a href="#{{ child_full }}" class="tag-tree-tag" title="{{ child_tag }}">{{ child.title | default: child_tag }} ({{ count }})</a>
 								{% endif %}
 								<div class="tag-tree-posts">
 									{% for a in article_pages %}
