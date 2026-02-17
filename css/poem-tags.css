@@ -75,16 +75,12 @@
 
 /* 释义（诗-解释 结构中的解释块） */
 .poem-content .poem-interp {
-  font-size: 0.9em;
+  font-size: 0.92em;
   color: #666;
-  margin: 0 0 1.5em 0;
-  padding: 0.6em 1em;
-  font-style: normal;
-  background: #f5f7f8;
-  border-left: 4px solid #c5d5da;
-  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-  text-align: left;
-  border-radius: 0 4px 4px 0;
+  margin: 0.5em 0 1.5em 0;
+  padding-left: 0.5em;
+  font-style: italic;
+  font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
 }
 
 /* 词牌分段：上阕 / 下阕 */
@@ -100,13 +96,12 @@
 }
 
 .poem-content .poem-lines {
-  font-size: 1.4em;
+  font-size: 1.35em;
   line-height: 2.2;
   letter-spacing: 0.15em;
-  color: #111;
-  margin: 0 0 0.4em 0;
-  font-family: "STKaiti", "KaiTi", "楷体", serif;
-  font-weight: 600;
+  color: #222;
+  margin: 0 0 0.3em 0;
+  font-family: "SimSun", "宋体", "STSong", serif;
 }
 
 /* ruby 拼音：字上方显示注音 */
