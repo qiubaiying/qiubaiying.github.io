@@ -75,14 +75,12 @@ featured-condition-size: 1
 tag_tree:
   - JAMES街访
   - R
-  - Sample
   - Windows
   - name: 中国诗
     children:
       - 2026新年到
       - 离别
       - 毛主席
-      - 模版
       - 有点志气
 
 # Progressive Web Apps
