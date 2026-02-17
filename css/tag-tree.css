@@ -484,6 +484,12 @@
   padding: 10px 14px 12px;
   display: block;
 }
+.tag-page-container .tag-post-card-link:hover,
+.tag-page-container .tag-post-card-link:focus,
+.tag-page-container .tag-post-card-link:hover *,
+.tag-page-container .tag-post-card-link:focus * {
+  text-decoration: none !important;
+}
 .tag-page-container .tag-post-card-title {
   font-size: 1.65rem;
   font-weight: 600;
