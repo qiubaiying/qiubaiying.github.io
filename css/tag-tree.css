@@ -120,25 +120,9 @@
   color: #006b82 !important;
 }
 .tag-tree-group { margin-bottom: 10px; }
-/* 父级标签与平级标签统一样式（原 tag-tree-top 改为与 tag-tree-node 一致） */
-.tag-tree-group > .tag-tree-node-tag,
-.tag-tree-group > a.tag-tree-node-tag {
-  display: block;
-  padding: 8px 12px 8px 14px;
-  margin: 4px 0 4px 0;
-  font-weight: 600;
-  font-size: 13px;
-  color: #0a5f75 !important;
-  text-decoration: none !important;
-  border-radius: 0;
-  line-height: 1.4;
-  background: #e0f2f6 !important;
-  border-left: 4px solid #2d9db5;
-}
-.tag-tree-group > .tag-tree-node-tag:hover,
-.tag-tree-group > a.tag-tree-node-tag:hover {
-  background: #c5e8ef !important;
-  color: #006b82 !important;
+/* 父级标签（中国诗、文案等）与平级标签统一样式，仅字号略大 */
+.tag-tree-node-parent .tag-tree-tag {
+  font-size: 14px;
 }
 .tag-tree-node {
   margin-top: 4px;

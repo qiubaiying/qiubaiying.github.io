@@ -27,7 +27,9 @@
 					{% if tag_tree_active_index == tag_id %}{% assign is_active = true %}{% endif %}
 					{% if tag_tree_active_parent == tag_name %}{% assign is_active = true %}{% endif %}
 					<div class="tag-tree-group {% if is_active %}open{% endif %}" data-target="{{ tag_name }}">
-						<a href="{% if tag_tree_is_post %}{{ site.baseurl }}/tags/{% endif %}#{{ tag_name }}" class="tag-tree-node-tag tag-tree-tag" title="{{ tag_name }}">{{ tag_name }} ({{ count }})</a>
+						<div class="tag-tree-node tag-tree-node-flat tag-tree-node-parent {% if is_active %}open tag-tree-node-active{% endif %}">
+							<a href="{% if tag_tree_is_post %}{{ site.baseurl }}/tags/{% endif %}#{{ tag_name }}" class="tag-tree-tag" title="{{ tag_name }}">{{ tag_name }} ({{ count }})</a>
+						</div>
 						{% for child in tag_item.children %}
 							{% assign child_full = tag_name | append: '/' | append: child %}
 							{% assign tag_index = tag_index | plus: 1 %}
