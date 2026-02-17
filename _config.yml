@@ -82,6 +82,10 @@ tag_tree:
       - 离别
       - 毛主席
       - 有点志气
+  - name: 文案
+    children:
+      - 大爱仙尊
+      - 只管向前
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
