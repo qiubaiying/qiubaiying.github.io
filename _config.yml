@@ -77,8 +77,7 @@ tag_tree:
   - tag: Windows
   - tag: 中国诗
     children:
-      - tag: 2026新年到
-        title: 2026年收集
+      - 新年到
       - 离别
       - 毛主席
       - 有点志气
