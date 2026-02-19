@@ -24,6 +24,9 @@
     {% if page.layout == "post" and page.tags contains "中国诗" %}
     <link rel="stylesheet" href="{{ "/css/poem-tags.css" | prepend: site.baseurl }}">
     {% endif %}
+    {% if page.layout == "post" and page.tags contains "文案/名人短文" %}
+    <link rel="stylesheet" href="{{ "/css/prose-essay.css" | prepend: site.baseurl }}">
+    {% endif %}
     {% if page.layout == "post" %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
     {% endif %}
