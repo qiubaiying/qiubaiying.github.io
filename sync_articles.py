@@ -7,7 +7,16 @@
 """
 import re
 import shutil
+import sys
 from pathlib import Path
+
+# Windows 控制台编码，避免 print 中文/日文时报 UnicodeEncodeError
+if sys.platform == "win32":
+    try:
+        import io
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", line_buffering=True)
+    except Exception:
+        pass
 
 ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "_articles"   # 本地编辑用，md + 同级 .assets
@@ -17,6 +26,8 @@ POSTS = ROOT / "_posts"
 # img 下保留：整个 flowers 目录 + 这些根文件
 KEEP_IMG_FILES = {"404-bg.jpg", "apple-touch-icon.png", "favicon.ico", "底特律·变包.png"}
 KEEP_IMG_DIRS = {"flowers"}
+
+
 
 
 def slug_from_name(name):
@@ -84,7 +95,7 @@ def copy_article_assets_to_img():
         if not src_dir.is_dir():
             continue
         for f in src_dir.iterdir():
-            if not f.is_file():
+            if not f.is_file() or f.name == ".gitkeep":
                 continue
             dest_name = slug + "_" + f.name
             shutil.copy2(f, IMG / dest_name)

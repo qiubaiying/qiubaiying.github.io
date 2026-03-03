@@ -1,0 +1,5 @@
+# 请将以下图片放入此目录：
+# 元宵-孔明灯.jpg
+# 元宵-背景1.jpg
+# 元宵-灯笼.jpg
+# 放入后运行 sync_articles.py，本地 Typora 和线上 HTML 均可正常显示
