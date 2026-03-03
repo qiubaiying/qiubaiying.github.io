@@ -72,15 +72,14 @@ featured-condition-size: 1
 
 # 多级 Tags：统一用 tag，父级可带 children；文章 front matter 用 "父级/子级" 如 中国诗/有点志气
 tag_tree:
-  - tag: JAMES街访
-  - tag: R
   - tag: Windows
   - tag: 中国诗
     children:
-      - 新年到
+      - 节日
       - 离别
       - 毛主席
       - 有点志气
+  - tag: 年终总结
   - tag: 文案
     children:
       - 名人短文

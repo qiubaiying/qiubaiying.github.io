@@ -59,6 +59,82 @@
   pointer-events: none;
 }
 
+/* ========== 节日祝福语 ========== */
+.poem-festival-wish {
+  text-align: center;
+  margin: 1.5em 0 2em 0;
+  padding: 1em 1.5em;
+  background: linear-gradient(135deg, #f8fafb 0%, #eef4f7 100%);
+  border-left: 4px solid #0085a1;
+  border-radius: 0 8px 8px 0;
+  font-size: 1.05em;
+  color: #333;
+  line-height: 1.8;
+}
+
+.poem-festival-wish strong { color: #0085a1; }
+
+/* 节日文章配图 */
+.poem-festival-img {
+  text-align: center;
+  margin: 2em 0;
+}
+
+.poem-festival-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* 年末感悟/札记区 */
+.poem-year-end {
+  margin-top: 2.5em;
+  padding: 1.5em 2em;
+  background: linear-gradient(135deg, #f0f7fa 0%, #e8f4f8 100%);
+  border-radius: 8px;
+  border-left: 4px solid #0085a1;
+}
+
+.poem-year-end .year-end-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.8em;
+}
+
+.poem-year-end .year-end-placeholder {
+  font-size: 0.95em;
+  color: #666;
+  font-style: italic;
+  min-height: 2em;
+}
+
+.poem-year-end .year-end-link {
+  display: inline-block;
+  margin-top: 1em;
+  font-size: 0.95em;
+  color: #0085a1;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.poem-year-end .year-end-link:hover {
+  color: #006b82;
+  text-decoration: underline;
+}
+
+/* 诗节标题（### 词牌名）居中 */
+.post-container h3 {
+  text-align: center;
+  font-size: 1.2em;
+  color: #333;
+  margin: 2em 0 0.8em 0;
+  font-weight: 600;
+}
+
+.post-container h3:first-of-type { margin-top: 0; }
+
 /* ========== 古诗正文 + 拼音（ruby）样式 ========== */
 .poem-content {
   margin: 1.5em 0 2em 0;
