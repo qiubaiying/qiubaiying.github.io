@@ -149,6 +149,25 @@
   line-height: 1.4;
   background: #e0f2f6 !important;
   border-left: 4px solid #2d9db5;
+  position: relative;
+}
+/* 有下辖的项才显示倒三角（放右侧）：父级有子标签，或节点有文章列表 */
+.tag-tree-group:has(.tag-tree-node-child) .tag-tree-node-parent .tag-tree-tag,
+.tag-tree-node:has(.tag-tree-post) .tag-tree-tag {
+  padding-right: 20px;
+}
+.tag-tree-group:has(.tag-tree-node-child) .tag-tree-node-parent .tag-tree-tag::after,
+.tag-tree-node:has(.tag-tree-post) .tag-tree-tag::after {
+  content: "▶";
+  position: absolute;
+  right: 8px;
+  font-size: 9px;
+  opacity: 0.7;
+}
+.tag-tree-group.open .tag-tree-node-parent .tag-tree-tag::after,
+.tag-tree-group.tag-tree-peek-open .tag-tree-node-parent .tag-tree-tag::after,
+.tag-tree-node.open .tag-tree-tag::after {
+  content: "▼";
 }
 .tag-tree-node .tag-tree-tag:hover {
   background: #c5e8ef !important;
@@ -389,8 +408,47 @@
 .side-catalog.catalog-fold-sub.catalog-has-min-4 .catalog-body .h4_nav { display: list-item; }
 .side-catalog.catalog-fold-sub.catalog-has-min-5 .catalog-body .h5_nav { display: list-item; }
 .side-catalog.catalog-fold-sub.catalog-has-min-6 .catalog-body .h6_nav { display: list-item; }
-/* 折叠时点击一级，显示其直属二级 */
+/* 折叠/初始时双击展开的直属子项 */
 .side-catalog.catalog-fold-sub .catalog-body .catalog-direct-child-show { display: list-item !important; }
+/* 初始状态：一级+二级可见，三级及以上隐藏 */
+.side-catalog.catalog-initial .catalog-body .h3_nav,
+.side-catalog.catalog-initial .catalog-body .h4_nav,
+.side-catalog.catalog-initial .catalog-body .h5_nav,
+.side-catalog.catalog-initial .catalog-body .h6_nav {
+  display: none;
+}
+.side-catalog.catalog-initial.catalog-has-min-1 .catalog-body .h1_nav,
+.side-catalog.catalog-initial.catalog-has-min-1 .catalog-body .h2_nav { display: list-item; }
+.side-catalog.catalog-initial.catalog-has-min-2 .catalog-body .h2_nav,
+.side-catalog.catalog-initial.catalog-has-min-2 .catalog-body .h3_nav { display: list-item; }
+.side-catalog.catalog-initial.catalog-has-min-3 .catalog-body .h3_nav,
+.side-catalog.catalog-initial.catalog-has-min-3 .catalog-body .h4_nav { display: list-item; }
+.side-catalog.catalog-initial.catalog-has-min-4 .catalog-body .h4_nav,
+.side-catalog.catalog-initial.catalog-has-min-4 .catalog-body .h5_nav { display: list-item; }
+.side-catalog.catalog-initial.catalog-has-min-5 .catalog-body .h5_nav,
+.side-catalog.catalog-initial.catalog-has-min-5 .catalog-body .h6_nav { display: list-item; }
+.side-catalog.catalog-initial.catalog-has-min-6 .catalog-body .h6_nav { display: list-item; }
+.side-catalog.catalog-initial .catalog-body .catalog-direct-child-show { display: list-item !important; }
+/* 展开模式下双击折叠：隐藏该分支所有后代 */
+.post-page-container .side-catalog .catalog-body .catalog-force-hide { display: none !important; }
+/* 有下辖标题的项显示倒三角（放右侧） */
+.post-page-container .side-catalog .catalog-body li[data-has-children="1"] > a {
+  padding-right: 18px;
+  position: relative;
+}
+.post-page-container .side-catalog .catalog-body li[data-has-children="1"] > a::after {
+  content: "▼";
+  position: absolute;
+  right: 4px;
+  font-size: 10px;
+  opacity: 0.7;
+}
+/* 折叠/初始模式下未展开、或全展开模式下已折叠：显示 ▶ */
+.side-catalog.catalog-fold-sub .catalog-body li[data-has-children="1"]:not(.catalog-peek-open) > a::after,
+.side-catalog.catalog-initial .catalog-body li[data-has-children="1"]:not(.catalog-peek-open) > a::after,
+.post-page-container .side-catalog .catalog-body li[data-has-children="1"].catalog-branch-collapsed > a::after {
+  content: "▶";
+}
 
 /* 仅在小屏单列布局时取消 sticky，避免侧栏挡住正文 */
 @media only screen and (max-width: 991px) {

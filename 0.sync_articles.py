@@ -23,9 +23,9 @@ SRC = ROOT / "_articles"   # 本地编辑用，md + 同级 .assets
 IMG = ROOT / "img"
 POSTS = ROOT / "_posts"
 
-# img 下保留：整个 flowers 目录 + 这些根文件
+# img 下保留：整个 header_img 目录 + 这些根文件
 KEEP_IMG_FILES = {"404-bg.jpg", "apple-touch-icon.png", "favicon.ico", "底特律·变包.png"}
-KEEP_IMG_DIRS = {"flowers"}
+KEEP_IMG_DIRS = {"header_img"}
 
 
 
@@ -37,7 +37,7 @@ def slug_from_name(name):
 
 
 def clear_img_except_keep():
-    """删除 img 下除 flowers 和 KEEP_IMG_FILES 以外的所有东西"""
+    """删除 img 下除 header_img 和 KEEP_IMG_FILES 以外的所有东西"""
     if not IMG.exists():
         return
     for p in IMG.iterdir():
@@ -154,6 +154,23 @@ def parse_date_from_front_matter(text):
     return "2026-01-01"
 
 
+def rewrite_header_img(front, assets_folder, slug):
+    """若 header-img 指向 img/xxx 且 xxx 在该文章的 .assets 中，则改写为 img/slug_xxx"""
+    match = re.search(r"header-img:\s*(img/[^\s\n\"']+)", front)
+    if not match:
+        return front
+    val = match.group(1).strip()
+    m2 = re.match(r"img/([^/]+)$", val)
+    if not m2:
+        return front
+    fname = m2.group(1)
+    adir = SRC / assets_folder
+    if adir.is_dir() and (adir / fname).is_file():
+        new_val = "img/" + slug + "_" + fname
+        return re.sub(r"header-img:\s*" + re.escape(val), "header-img: " + new_val, front, count=1)
+    return front
+
+
 def generate_posts(assets_to_slug):
     """从 _articles/*.md 生成 _posts/YYYY-MM-DD-slug.md。永远覆盖：每次都用 front matter 的 date，直接替换同名校验。"""
     POSTS.mkdir(parents=True, exist_ok=True)
@@ -182,6 +199,11 @@ def generate_posts(assets_to_slug):
         front = parts[0][4:] if parts[0].startswith("---\n") else parts[0]
         body = parts[1]
         date = parse_date_from_front_matter(front)
+        match_af = re.search(r"assets_folder:\s*(\S+)", front)
+        assets_folder = (match_af.group(1).strip() if match_af else (name + ".assets"))
+        if not assets_folder.endswith(".assets"):
+            assets_folder = assets_folder + ".assets"
+        front = rewrite_header_img(front, assets_folder, assets_to_slug.get(assets_folder, slug_from_name(assets_folder[:-7].replace("_", "-"))))
         front = re.sub(r"\nassets_folder:.*", "", front)
         front = re.sub(r"\narticle:\s*true\s*", "\n", front)
         body = highlight_double_equals(body)
@@ -197,7 +219,7 @@ def generate_posts(assets_to_slug):
 
 
 def main():
-    print("1. Clearing img (keep flowers + important files)...")
+    print("1. Clearing img (keep header_img + important files)...")
     clear_img_except_keep()
     amap = get_assets_slug_map()
     print("2. Copying _articles/*.assets to img/ (flat, slug_ prefix)...")

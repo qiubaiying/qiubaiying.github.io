@@ -1,7 +1,7 @@
 # Site settings
 title: June Blog
 SEOTitle: 徐子昂的博客 | Github.io
-header-img: img/flowers/header.jpg
+header-img: img/header_img/header.jpg
 email: 3439394104@qq.com
 description: "Who Changes? Who Benifits!"
 keyword: "徐子昂的博客, Ziang, Python, Bio, Gaming"
@@ -73,18 +73,19 @@ featured-condition-size: 1
 # 多级 Tags：统一用 tag，父级可带 children；文章 front matter 用 "父级/子级" 如 中国诗/有点志气
 tag_tree:
   - tag: Windows
+  - tag: 年终总结
+  - tag: 生信
+  - tag: 文案
+    children:
+      - 大爱仙尊
+      - 名人短文
+      - 只管向前
   - tag: 中国诗
     children:
       - 节日
       - 离别
       - 毛主席
       - 有点志气
-  - tag: 年终总结
-  - tag: 文案
-    children:
-      - 名人短文
-      - 大爱仙尊
-      - 只管向前
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"

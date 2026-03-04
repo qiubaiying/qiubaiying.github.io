@@ -16,7 +16,7 @@
 
 
 
-![header](./img/flowers/header.jpg)
+![header](./img/header_img/header.jpg)
 
 
 
@@ -97,7 +97,7 @@ tags:
 ### 侧边栏
 
 看右边:
-![侧边栏](./img/flowers/侧边栏.png)
+![侧边栏](./img/header_img/侧边栏.png)
 
 
 
