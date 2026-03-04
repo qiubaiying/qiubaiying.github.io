@@ -98,6 +98,10 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  flex-shrink: 0;
 }
 .tag-tree-title .nav-toggle {
   font-size: 12px;
@@ -168,9 +172,12 @@
   font-size: 12px;
   font-weight: 500;
 }
-/* 折叠到一级：隐藏二级子标签 */
+/* 折叠到一级：隐藏二级子标签；点击一级时显示其直属二级 */
 .tag-tree-wrap.tag-tree-fold-level1 .tag-tree-node-child {
   display: none !important;
+}
+.tag-tree-wrap.tag-tree-fold-level1 .tag-tree-group.tag-tree-peek-open .tag-tree-node-child {
+  display: block !important;
 }
 .tag-tree-post {
   display: block;
@@ -308,6 +315,10 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  flex-shrink: 0;
 }
 .catalog-title-row .nav-toggle {
   font-size: 12px;
@@ -378,6 +389,8 @@
 .side-catalog.catalog-fold-sub.catalog-has-min-4 .catalog-body .h4_nav { display: list-item; }
 .side-catalog.catalog-fold-sub.catalog-has-min-5 .catalog-body .h5_nav { display: list-item; }
 .side-catalog.catalog-fold-sub.catalog-has-min-6 .catalog-body .h6_nav { display: list-item; }
+/* 折叠时点击一级，显示其直属二级 */
+.side-catalog.catalog-fold-sub .catalog-body .catalog-direct-child-show { display: list-item !important; }
 
 /* 仅在小屏单列布局时取消 sticky，避免侧栏挡住正文 */
 @media only screen and (max-width: 991px) {
