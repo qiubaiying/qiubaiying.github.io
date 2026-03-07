@@ -14,3 +14,12 @@ gem "webrick"
 
 # Windows 系统的时区补丁（没有这个会报错）
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# 避免监听文件变更时的轮询（Jekyll 建议）
+gem "wdm", ">= 0.1.0"
+
+# Ruby 4.0 后 fiddle 不再默认包含，提前声明以消除警告
+gem "fiddle"
+
+# Faraday v2.0+ 重试中间件，消除 "install faraday-retry" 警告
+gem "faraday-retry"
