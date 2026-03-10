@@ -8,6 +8,7 @@ header-img: img/header_img/snow-4936687.jpg
 assets_folder: pairtools处理HIC数据bug解决日志.assets
 tags:
     - 生信
+    - 生信/分析
 article: true
 ---
 

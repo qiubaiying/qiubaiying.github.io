@@ -75,6 +75,9 @@ tag_tree:
   - tag: Windows
   - tag: 年终总结
   - tag: 生信
+    children:
+      - 文章
+      - 分析
   - tag: 文案
     children:
       - 大爱仙尊

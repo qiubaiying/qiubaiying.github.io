@@ -7,6 +7,7 @@ author:     June
 header-img: img/header_img/snow-4936687.jpg
 tags:
     - 生信
+    - 生信/分析
 
 ---
 

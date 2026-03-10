@@ -1,14 +1,13 @@
 ---
 layout:     post
-title:      单细胞三维基因组与转录组同步解析
-Subtitle:   HiRES 技术实现染色质空间构象与基因表达的同步测量
+title:      HiRES单细胞三维基因组与转录组同步解析
 date:       2026-03-05
 author:     June
 header-img: img/header_img/snow-4936687.jpg
-assets_folder: article1_HIC+RNA-seq关联.assets
 tags:
     - 生信
-article: true
+    - 生信/文章
+
 ---
 
 
@@ -37,7 +36,7 @@ https://www.science.org/doi/10.1126/science.adg3797
 
 `图1`
 
-![img](./article1_HIC+RNA-seq关联.assets/science.adg3797-f1.jpg)
+![img](/img/article1-hires-hic+rna-seq关联_science.adg3797-f1.jpg)
 
 ### 第一步：原位逆转录（In situ Reverse Transcription）
 
@@ -76,17 +75,17 @@ https://www.science.org/doi/10.1126/science.adg3797
 
 `图 1D`可见聚类分析，下图揭示了RNA聚类注释与HIC聚类注释结果高度一致（`图 S1-I`）。
 
-![image-20260305215405999](./article1_HIC+RNA-seq关联.assets/image-20260305215405999.png)
+![image-20260305215405999](/img/article1-hires-hic+rna-seq关联_image-20260305215405999.png)
 
 使用 HiRES 的 Hi-C 数据，对每个细胞重建结构，代表性的如`S2 A-C`，其中`染色体区域`（A）、`AB区室`（B，CpG频率高的代表转录活跃，属于A compartment，为绿色）、`径向偏好`（C，细胞核里不同的DNA区域有各自固定的"位置偏好"——活跃基因倾向待在核中心，沉默基因倾向待在核边缘）。
 
-![image-20260305220305127](./article1_HIC+RNA-seq关联.assets/image-20260305220305127.png)
+![image-20260305220305127](/img/article1-hires-hic+rna-seq关联_image-20260305220305127.png)
 
 
 
 `图 1F`左右图分别展示了单细胞3D基因组结构和基因表达的关系（黄球越大表达越高），说明转录基因总喜欢在更活跃的染色质环境中。
 
-![image-20260305221623652](./article1_HIC+RNA-seq关联.assets/image-20260305221623652.png)
+![image-20260305221623652](/img/article1-hires-hic+rna-seq关联_image-20260305221623652.png)
 
 
 
@@ -114,7 +113,7 @@ https://www.science.org/doi/10.1126/science.adg3797
 
 - `图 2B`是HIC包含四个细胞群的注释，且图 3C可见外胚层（蓝色）和中胚层（红色）在一开始比较混合，之后彼此分离`（E7.5-E11.5）`，证明`染色质构象作为基因表达支架的作用在早期发育中是保守的`。
 
-![science.adg3797-f2](./article1_HIC+RNA-seq关联.assets/science.adg3797-f2.jpg)
+![science.adg3797-f2](/img/article1-hires-hic+rna-seq关联_science.adg3797-f2.jpg)
 
 
 
@@ -126,7 +125,7 @@ B区室是基因组中转录沉默、染色质压缩的区域（异染色质）�
 - 因此随着发育时间推进，越来越多的区域变成B区室，且这些B区室彼此靠近聚集，在Hi-C数据中就表现为B-B之间的接触频率持续升高。
 - 本质上，**B-B互作增多反映的是细胞在分化过程中对"不需要的基因"进行集中封存的过程**。
 
-![image-20260307203059287](./article1_HIC+RNA-seq关联.assets/image-20260307203059287.png)
+![image-20260307203059287](/img/article1-hires-hic+rna-seq关联_image-20260307203059287.png)
 
 
 
@@ -142,7 +141,7 @@ B区室是基因组中转录沉默、染色质压缩的区域（异染色质）�
 - Q2：那么为什么RNA又那么整齐？
 - A2：因为RNA聚类靠的是基因表达，标记的是细胞类型（细胞身份本身），而非细胞的状态，他们的RNA表达足够相似。
 
-<img src="./article1_HIC+RNA-seq关联.assets/image-20260307205221960.png" alt="image-20260307205221960" style="zoom: 80%;" /><img src="./article1_HIC+RNA-seq关联.assets/image-20260307205243822.png" alt="image-20260307205243822" style="zoom:50%;" />
+<img src="/img/article1-hires-hic+rna-seq关联_image-20260307205221960.png" alt="image-20260307205221960" style="zoom: 80%;" /><img src="/img/article1-hires-hic+rna-seq关联_image-20260307205243822.png" alt="image-20260307205243822" style="zoom:50%;" />
 
 > [!IMPORTANT]
 >
@@ -156,7 +155,7 @@ B区室是基因组中转录沉默、染色质压缩的区域（异染色质）�
 
 作者团队开发了一种基于DNA和RNA数据将单细胞分配到七个细胞周期阶段的策略，每个阶段都具有独特的细胞周期基因表达、DNA复制和接触分布特征（图S6 A、B）。
 
-![image-20260307205704289](./article1_HIC+RNA-seq关联.assets/image-20260307205704289.png)
+![image-20260307205704289](/img/article1-hires-hic+rna-seq关联_image-20260307205704289.png)
 
 
 
@@ -166,7 +165,7 @@ B区室是基因组中转录沉默、染色质压缩的区域（异染色质）�
 
 F：热图显示三维基因组簇中与细胞周期或RNA定义的簇重叠的细胞比例。RNA细胞类型的编号与（A）相同。
 
-![image-20260307205923587](./article1_HIC+RNA-seq关联.assets/image-20260307205923587.png)
+![image-20260307205923587](/img/article1-hires-hic+rna-seq关联_image-20260307205923587.png)
 
 
 
@@ -174,7 +173,7 @@ F：热图显示三维基因组簇中与细胞周期或RNA定义的簇重叠的�
 
 发育后期的细胞不再需要快速增殖，G1期自然延长（`图S6E`显示G1期比例随发育增加）；G1期延长使染色质在有丝分裂结束后有更充足的时间重建三维结构（如TAD、长程互作），因此观察到发育后期细胞的平均长程接触更多（`图S6D`）。
 
-![image-20260307211027206](./article1_HIC+RNA-seq关联.assets/image-20260307211027206.png)
+![image-20260307211027206](/img/article1-hires-hic+rna-seq关联_image-20260307211027206.png)
 
 
 
@@ -268,7 +267,7 @@ B细胞类型：100个细胞的距离值 → 0.8, 0.9, 0.75, 0.85...（100个数
 
 C：DI锚点与顶级标记基因重叠的比值。DI组按FDR排序。误差条表示95%置信区间。
 
-![image-20260307222539024](./article1_HIC+RNA-seq关联.assets/image-20260307222539024.png)
+![image-20260307222539024](/img/article1-hires-hic+rna-seq关联_image-20260307222539024.png)
 
 
 
@@ -290,7 +289,7 @@ C：DI锚点与顶级标记基因重叠的比值。DI组按FDR排序。误差条
 
 图 3B：从早期神经元中识别出的DI示例。白色箭头指示3D邻近图（上图）上包含DI的主要区域。圆圈表示3D差异图（下图）上的主要DI。
 
-![image-20260309154345925](./article1_HIC+RNA-seq关联.assets/image-20260309154345925.png)
+![image-20260309154345925](/img/article1-hires-hic+rna-seq关联_image-20260309154345925.png)
 
 
 
@@ -300,7 +299,7 @@ GREAT = **Genomic Regions Enrichment of Annotations Tool**
 
 使用细胞类型特异的DI做GREAT得到基因列表，上调最显著的DI富集了与特定细胞类型相关的基因本体论（GO）术语，例如`神经外胚层中的“神经元分化”`和`早期中胚层中的“心脏发育”`。
 
-![image-20260309155228382](./article1_HIC+RNA-seq关联.assets/image-20260309155228382.png)
+![image-20260309155228382](/img/article1-hires-hic+rna-seq关联_image-20260309155228382.png)
 
 > [!IMPORTANT]
 >
@@ -316,7 +315,7 @@ GREAT = **Genomic Regions Enrichment of Annotations Tool**
 
 **D图是C图仅保留G1期、G0期细胞的版本**。
 
-![image-20260309161200324](./article1_HIC+RNA-seq关联.assets/image-20260309161200324.png)
+![image-20260309161200324](/img/article1-hires-hic+rna-seq关联_image-20260309161200324.png)
 
 我们发现，使用最佳DI谱进行聚类仍然无法区分早期发育谱系中的细胞类型（图S9C）。作者给出了两个可能的原因：
 
@@ -331,7 +330,7 @@ GREAT = **Genomic Regions Enrichment of Annotations Tool**
 
 图 3C：基于聚合DI谱的元细胞UMAP聚类。虚线圆圈分别表示神经外胚层（蓝色）和中胚层（橙色）谱系。
 
-![image-20260309162542098](./article1_HIC+RNA-seq关联.assets/image-20260309162542098.png)
+![image-20260309162542098](/img/article1-hires-hic+rna-seq关联_image-20260309162542098.png)
 
 > [!IMPORTANT] 
 >
@@ -347,7 +346,7 @@ GREAT = **Genomic Regions Enrichment of Annotations Tool**
 
 使用相关性分析，即每个DI在每个metacell里面的距离值与每个基因在每个metacell里面的表达（metacell由RNA表达决定）。
 
-![image-20260309164037553](./article1_HIC+RNA-seq关联.assets/image-20260309164037553.png)
+![image-20260309164037553](/img/article1-hires-hic+rna-seq关联_image-20260309164037553.png)
 
 `图 S10A`：`GADI`比随机的`gene-DI`有更显著的结果，证明`GADI`的可靠性。
 
@@ -360,7 +359,7 @@ GREAT = **Genomic Regions Enrichment of Annotations Tool**
   - 受同一个三维调控域（TAD）统一管控
   - 一个增强子或染色质互作可以同时影响**多个相邻Hox基因**的表达，一个关键的增强子（HS5-1）通过形成染色质环轮流激活不同的原钙黏蛋白基因
 
-![image-20260309164818051](./article1_HIC+RNA-seq关联.assets/image-20260309164818051.png)
+![image-20260309164818051](/img/article1-hires-hic+rna-seq关联_image-20260309164818051.png)
 
 
 
@@ -368,13 +367,13 @@ GREAT = **Genomic Regions Enrichment of Annotations Tool**
 
 与 DI 相比，`GADI` 在转录起始位点 (TSS) 周围高度富集（`图 3E`），而且大多数（69.5%）锚定点与 TSS 重叠的 GADI 显示出相互作用强度与基因活性之间的`正相关性（图 S10E）`。
 
-![image-20260309165514703](./article1_HIC+RNA-seq关联.assets/image-20260309165514703.png)
+![image-20260309165514703](/img/article1-hires-hic+rna-seq关联_image-20260309165514703.png)
 
 这些相互作用通常将启动子与远端调控元件（包括超级增强子）连接起来（`图 3F`）。
 
 `图 3F`：与*Dcc*（左）或*Dlc1*（右）相连的GADI。顶部显示3D邻近图。每个GADI用连接其两个锚点的弧线表示，颜色表示其与基因表达的相关性。
 
-![image-20260309165812929](./article1_HIC+RNA-seq关联.assets/image-20260309165812929.png)
+![image-20260309165812929](/img/article1-hires-hic+rna-seq关联_image-20260309165812929.png)
 
 
 
@@ -382,7 +381,7 @@ GREAT = **Genomic Regions Enrichment of Annotations Tool**
 
 `图 S10F`：类似上图。
 
-![image-20260309170116560](./article1_HIC+RNA-seq关联.assets/image-20260309170116560.png)
+![image-20260309170116560](/img/article1-hires-hic+rna-seq关联_image-20260309170116560.png)
 
 
 
@@ -400,7 +399,7 @@ GREAT = **Genomic Regions Enrichment of Annotations Tool**
 
 作者首先恢复了两条胚胎分化轨迹：早期神经元轨迹和混合的晚期间充质轨迹（`图S11，A和B`）( [*43*](https://www.science.org/doi/10.1126/science.adg3797#core-collateral-R43) )。
 
-![image-20260309170901331](./article1_HIC+RNA-seq关联.assets/image-20260309170901331.png)
+![image-20260309170901331](/img/article1-hires-hic+rna-seq关联_image-20260309170901331.png)
 
 **每个GADI-基因对的“残差”**：同一元细胞中GADI相互作用强度与表达水平之差，类似于“染色质潜能”方法( [*44*](https://www.science.org/doi/10.1126/science.adg3797#core-collateral-R44) )
 
@@ -416,13 +415,13 @@ GREAT = **Genomic Regions Enrichment of Annotations Tool**
 
 **结果：**虽然大多数染色质相互作用与基因表达同步变化，但仍有40,990个（21.6%）GADI-基因对（涵盖315个基因）的残差显著大于零，表明在转录改变之前染色质相互作用就已经发生了重连（`图 4A`）。
 
-![image-20260309172726652](./article1_HIC+RNA-seq关联.assets/image-20260309172726652.png)
+![image-20260309172726652](/img/article1-hires-hic+rna-seq关联_image-20260309172726652.png)
 
 
 
 GADI的变化落后于RNA表达的例子
 
-![image-20260309173155860](./article1_HIC+RNA-seq关联.assets/image-20260309173155860.png)
+![image-20260309173155860](/img/article1-hires-hic+rna-seq关联_image-20260309173155860.png)
 
 
 
@@ -440,7 +439,7 @@ GADI的变化落后于RNA表达的例子
 
 下图：每组GADI中，有多少比例属于B-B区室互作
 
-![image-20260309173509072](./article1_HIC+RNA-seq关联.assets/image-20260309173509072.png)
+![image-20260309173509072](/img/article1-hires-hic+rna-seq关联_image-20260309173509072.png)
 
 1. 在`混合的晚期间充质谱系中（左边四图）`，无论GADI相互作用强度与基因活性之间的相关性如何，基因表达前发生变化的相互作用都显著富集了活性增强子的染色质特征（上图H3K27ac强度高，这个明显；下图BB互作强度弱，即不在异染色质区）。
 
@@ -462,7 +461,7 @@ GADI的变化落后于RNA表达的例子
 
 图 S13C：各组都是负相关GADI-RNA的基因列表，即负相关Prior GADI在基因表达下降**之前**就先建立互作。
 
-![image-20260309180004176](./article1_HIC+RNA-seq关联.assets/image-20260309180004176.png)
+![image-20260309180004176](/img/article1-hires-hic+rna-seq关联_image-20260309180004176.png)
 
 
 
@@ -474,4 +473,4 @@ GADI的变化落后于RNA表达的例子
 
 其次，对于位于抑制性染色质环境中的基因，转录激活前发生的是浓缩的异染色质的松弛。这两个过程并非互斥，可能同时发生在同一基因上。
 
-![image-20260309175145792](./article1_HIC+RNA-seq关联.assets/image-20260309175145792.png)
+![image-20260309175145792](/img/article1-hires-hic+rna-seq关联_image-20260309175145792.png)
