@@ -58,6 +58,20 @@
   padding-bottom: 40px;
   width: 195px;
 }
+.side-catalog::-webkit-scrollbar {
+  width: 6px;
+}
+.side-catalog::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+.side-catalog::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+.side-catalog::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
 .side-catalog.fixed {
   position: fixed;
   top: -21px;
@@ -86,6 +100,26 @@
 .side-catalog .catalog-body li {
   position: relative;
   list-style: none;
+  margin-bottom: 2px;
+  transition: all 0.2s ease;
+}
+.side-catalog .catalog-body li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 0;
+  background: #0085a1;
+  border-radius: 2px;
+  transition: height 0.2s ease;
+}
+.side-catalog .catalog-body li:hover::before {
+  height: 60%;
+}
+.side-catalog .catalog-body li:hover a {
+  color: #0085a1;
 }
 .side-catalog .catalog-body li a {
   padding-left: 10px;
@@ -98,24 +132,91 @@
   text-decoration: none;
   white-space: nowrap;
   text-overflow: ellipsis;
+  transition: all 0.2s ease;
+  border-radius: 3px;
 }
-.side-catalog .catalog-body .h1_nav { margin-left: 0; font-size: 13px; font-weight: bold; }
-.side-catalog .catalog-body .h2_nav { margin-left: 0; font-size: 13px; font-weight: bold; }
-.side-catalog .catalog-body .h3_nav { margin-left: 8px; font-size: 13px; font-weight: bold; }
-.side-catalog .catalog-body .h4_nav { margin-left: 16px; font-size: 12px; font-weight: bold; }
-.side-catalog .catalog-body .h5_nav { margin-left: 24px; font-size: 12px; }
-.side-catalog .catalog-body .h6_nav { margin-left: 32px; font-size: 12px; }
-.side-catalog .catalog-body .h4_nav a,
-.side-catalog .catalog-body .h5_nav a,
+.side-catalog .catalog-body .h1_nav {
+  margin-left: 0;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.side-catalog .catalog-body .h1_nav::before {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.side-catalog .catalog-body .h1_nav a {
+  color: #333;
+  font-weight: 600;
+}
+.side-catalog .catalog-body .h2_nav {
+  margin-left: 10px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.side-catalog .catalog-body .h2_nav::before {
+  background: linear-gradient(135deg, #0085a1 0%, #00a8cc 100%);
+}
+.side-catalog .catalog-body .h2_nav a {
+  color: #444;
+  font-weight: 600;
+}
+.side-catalog .catalog-body .h3_nav {
+  margin-left: 20px;
+  font-size: 13px;
+  font-weight: normal;
+}
+.side-catalog .catalog-body .h3_nav::before {
+  background: #52c41a;
+}
+.side-catalog .catalog-body .h3_nav a {
+  color: #666;
+}
+.side-catalog .catalog-body .h4_nav {
+  margin-left: 30px;
+  font-size: 12px;
+}
+.side-catalog .catalog-body .h4_nav::before {
+  background: #faad14;
+}
+.side-catalog .catalog-body .h4_nav a {
+  color: #777;
+  max-width: 150px;
+}
+.side-catalog .catalog-body .h5_nav {
+  margin-left: 40px;
+  font-size: 12px;
+}
+.side-catalog .catalog-body .h5_nav::before {
+  background: #ff7875;
+}
+.side-catalog .catalog-body .h5_nav a {
+  color: #888;
+  max-width: 140px;
+}
+.side-catalog .catalog-body .h6_nav {
+  margin-left: 50px;
+  font-size: 11px;
+}
+.side-catalog .catalog-body .h6_nav::before {
+  background: #d3adf7;
+}
 .side-catalog .catalog-body .h6_nav a {
-  max-width: 170px;
+  color: #999;
+  max-width: 130px;
 }
 .side-catalog .catalog-body .active {
   border-radius: 4px;
-  background-color: #F5F5F5;
+  background-color: rgba(0, 133, 161, 0.05);
+}
+.side-catalog .catalog-body .active::before {
+  height: 80% !important;
+  width: 4px;
 }
 .side-catalog .catalog-body .active a {
   color: #0085a1!important;
+  font-weight: 600;
+  background-color: rgba(0, 133, 161, 0.08);
 }
 @media (max-width: 1200px) {
   .side-catalog {
@@ -217,17 +318,21 @@ pre,
 pre code {
   display: block;
   width: auto;
-  white-space: pre;
-  word-wrap: normal;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 .postlist-container {
   margin-bottom: 15px;
 }
-.post-container a {
+.post-container a,
+.postlist-container a {
   color: #337ab7;
 }
 .post-container a:hover,
-.post-container a:focus {
+.post-container a:focus,
+.postlist-container a:hover,
+.postlist-container a:focus {
   color: #0085a1;
 }
 .post-container h1,

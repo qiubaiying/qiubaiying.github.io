@@ -34,5 +34,5 @@ Temporary Items
 # debug file
 _site
 
-# 文章源在 articles/，图片由 sync_articles.py 同步到 img/；构建用 _posts + img
+# 构建用 _posts + images；图片统一在 images/
 /assets

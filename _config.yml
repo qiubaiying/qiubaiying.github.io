@@ -73,6 +73,7 @@ featured-condition-size: 1
 # 多级 Tags：统一用 tag，父级可带 children；文章 front matter 用 "父级/子级" 如 中国诗/有点志气
 tag_tree:
   - tag: Windows
+  - tag: 记录
   - tag: 年终总结
   - tag: 生信
     children:
@@ -89,6 +90,7 @@ tag_tree:
       - 离别
       - 毛主席
       - 有点志气
+      - 名篇
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"

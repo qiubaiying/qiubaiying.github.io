@@ -4,7 +4,7 @@ title:      如何解决Win11右键菜单冗余的问题
 subtitle:   Win11右键菜单经常会出现`正在加载中`的问题，本文一站式解决
 date:       2026-01-26
 author:     June
-header-img: img/header_img/flower-7958117_1920.jpg
+header-img: images/header_img/flower-7958117_1920.jpg
 tags:
     - Windows
 
@@ -14,7 +14,7 @@ tags:
 
 当我们下载了某些软件后，右键菜单常常变得冗余，从而看起来很不舒服，如下图所示：
 
-![Win11右键菜单正在加载中](/img/win11-right-click_Win11右键正在加载中.png)
+![Win11右键菜单正在加载中](./images/win11-right-click/Win11右键正在加载中.png)
 
 ### 原因分析
 
@@ -31,7 +31,7 @@ Win11 的新版右键菜单采用了**二级菜单设计**（"显示更多选项
 #### 文件下载
 
 - **GitHub 源码地址**：[点击访问](https://github.com/javakam/Windows-Scripts/blob/master/Win11%E6%94%B9%E7%94%A8%E4%BC%A0%E7%BB%9F%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95.bat)
-- **本地文件下载**：[点击下载](/img/win11-right-click_Win11改用传统右键菜单.txt)（下载后请将文件后缀改为 `.bat`）
+- **本地文件下载**：[点击下载](./images/win11-right-click/Win11改用传统右键菜单.txt)（下载后请将文件后缀改为 `.bat`）
 
 #### 脚本内容
 

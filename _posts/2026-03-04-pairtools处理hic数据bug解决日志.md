@@ -4,7 +4,7 @@ title:      pairtools处理HIC测序数据
 subtitle:   bug解决日志
 date:       2026-03-04
 author:     June
-header-img: img/header_img/snow-4936687.jpg
+header-img: images/header_img/snow-4936687.jpg
 tags:
     - 生信
     - 生信/分析

@@ -1,0 +1,142 @@
+/* ===========================================================
+ * 表格：Markdown 表格在 .post-container 中的样式
+ * =========================================================== */
+.post-container table,
+.postlist-container table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1.5em;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.post-container table th,
+.post-container table td,
+.postlist-container table th,
+.postlist-container table td {
+  padding: 0.75em;
+  border: 1px solid #eee;
+  text-align: left;
+}
+.post-container table thead th,
+.postlist-container table thead th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+.post-container table tbody tr:nth-of-type(odd),
+.postlist-container table tbody tr:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.02);
+}
+.post-container table tbody tr:hover,
+.postlist-container table tbody tr:hover {
+  background-color: rgba(0,0,0,.04);
+}
+.post-container .table-responsive,
+.postlist-container .table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ===========================================================
+ * Callout（GitHub 风格 [!/NOTE] / TIP / IMPORTANT / CAUTION / WARNING）
+ * 由 js/callouts.js 添加 .callout-note 等 class 后生效
+ * =========================================================== */
+.post-container blockquote.callout-note,
+.postlist-container blockquote.callout-note,
+.post-container blockquote.callout-tip,
+.postlist-container blockquote.callout-tip,
+.post-container blockquote.callout-important,
+.postlist-container blockquote.callout-important,
+.post-container blockquote.callout-caution,
+.postlist-container blockquote.callout-caution,
+.post-container blockquote.callout-warning,
+.postlist-container blockquote.callout-warning {
+  position: relative;
+  margin: 1em 0;
+  padding: 1em 1em 1em 3.5em;
+  font-style: normal;
+  border-radius: 4px;
+  border-left: 4px solid;
+}
+.post-container blockquote.callout-note .callout-title,
+.post-container blockquote.callout-tip .callout-title,
+.post-container blockquote.callout-important .callout-title,
+.post-container blockquote.callout-caution .callout-title,
+.post-container blockquote.callout-warning .callout-title {
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.post-container blockquote.callout-note .callout-title .fa,
+.post-container blockquote.callout-tip .callout-title .fa,
+.post-container blockquote.callout-important .callout-title .fa,
+.post-container blockquote.callout-caution .callout-title .fa,
+.post-container blockquote.callout-warning .callout-title .fa {
+  font-size: 1.1em;
+  margin-right: 0.4em;
+  color: inherit;
+}
+
+/* NOTE - 蓝色 */
+.post-container blockquote.callout-note,
+.postlist-container blockquote.callout-note {
+  background: rgba(2, 119, 189, 0.08);
+  border-color: #0277bd;
+  color: inherit;
+}
+.post-container blockquote.callout-note .callout-title,
+.postlist-container blockquote.callout-note .callout-title { color: #0277bd; }
+
+/* TIP - 绿色 */
+.post-container blockquote.callout-tip,
+.postlist-container blockquote.callout-tip {
+  background: rgba(0, 128, 0, 0.08);
+  border-color: #008000;
+  color: inherit;
+}
+.post-container blockquote.callout-tip .callout-title,
+.postlist-container blockquote.callout-tip .callout-title { color: #008000; }
+
+/* IMPORTANT - 紫色 */
+.post-container blockquote.callout-important,
+.postlist-container blockquote.callout-important {
+  background: rgba(102, 51, 153, 0.08);
+  border-color: #663399;
+  color: inherit;
+}
+.post-container blockquote.callout-important .callout-title,
+.postlist-container blockquote.callout-important .callout-title { color: #663399; }
+
+/* CAUTION - 红色 */
+.post-container blockquote.callout-caution,
+.postlist-container blockquote.callout-caution {
+  background: rgba(200, 0, 0, 0.08);
+  border-color: #c00;
+  color: inherit;
+}
+.post-container blockquote.callout-caution .callout-title,
+.postlist-container blockquote.callout-caution .callout-title { color: #c00; }
+
+/* WARNING - 橙黄色 */
+.post-container blockquote.callout-warning,
+.postlist-container blockquote.callout-warning {
+  background: rgba(237, 177, 32, 0.12);
+  border-color: #edb120;
+  color: inherit;
+}
+.post-container blockquote.callout-warning .callout-title,
+.postlist-container blockquote.callout-warning .callout-title { color: #c99400; }
+
+.post-container .callout-body,
+.postlist-container .callout-body {
+  margin-top: 0;
+}
+.post-container .callout-body p:first-child,
+.postlist-container .callout-body p:first-child {
+  margin-top: 0;
+}
+.post-container .callout-body p:last-child,
+.postlist-container .callout-body p:last-child {
+  margin-bottom: 0;
+}
