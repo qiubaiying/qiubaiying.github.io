@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Windows on June's Blog</title><link>https://June6699.github.io/tags/windows/</link><description>Recent content in Windows on June's Blog</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Mon, 26 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://June6699.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>如何解决Win11右键菜单冗余的问题</title><link>https://June6699.github.io/posts/win11-right-click/</link><pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate><guid>https://June6699.github.io/posts/win11-right-click/</guid><description>&lt;h2 id="问题描述"&gt;问题描述&lt;/h2&gt;
+&lt;p&gt;当我们下载了某些软件后，右键菜单常常变得冗余，从而看起来很不舒服，如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://June6699.github.io/images/win11-right-click/Win11%e5%8f%b3%e9%94%ae%e6%ad%a3%e5%9c%a8%e5%8a%a0%e8%bd%bd%e4%b8%ad.png" alt="Win11右键菜单正在加载中" loading="lazy" /&gt;
+&lt;/p&gt;
+&lt;h3 id="原因分析"&gt;原因分析&lt;/h3&gt;
+&lt;p&gt;Win11 的新版右键菜单采用了&lt;strong&gt;二级菜单设计&lt;/strong&gt;（&amp;ldquo;显示更多选项&amp;rdquo;），当系统中安装了过多第三方软件时，这些软件会在右键菜单中注册大量菜单项。由于 Win11 的新菜单需要动态加载这些第三方菜单项，当菜单项过多或某些软件响应较慢时，就会出现&amp;quot;正在加载中&amp;quot;的提示，导致右键菜单响应迟缓，影响使用体验。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="解决方案"&gt;解决方案&lt;/h2&gt;
+&lt;h3 id="方案一切换为-win10-传统右键菜单推荐"&gt;方案一：切换为 Win10 传统右键菜单（推荐）&lt;/h3&gt;
+&lt;p&gt;将 Win11 的新版右键菜单切换为 Win10 的传统样式，可以彻底解决&amp;quot;正在加载中&amp;quot;的问题，同时菜单响应速度更快。&lt;/p&gt;
+&lt;h4 id="文件下载"&gt;文件下载&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GitHub 源码地址&lt;/strong&gt;：&lt;a href="https://github.com/javakam/Windows-Scripts/blob/master/Win11%E6%94%B9%E7%94%A8%E4%BC%A0%E7%BB%9F%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95.bat"&gt;点击访问&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;本地文件下载&lt;/strong&gt;：&lt;a href="./images/win11-right-click/Win11%E6%94%B9%E7%94%A8%E4%BC%A0%E7%BB%9F%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95.txt"&gt;点击下载&lt;/a&gt;（下载后请将文件后缀改为 &lt;code&gt;.bat&lt;/code&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="脚本内容"&gt;脚本内容&lt;/h4&gt;
+&lt;p&gt;以下为脚本完整内容，您可以选择&lt;strong&gt;下载文件&lt;/strong&gt;或&lt;strong&gt;复制代码&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bat" data-lang="bat"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@&lt;span style="color:#66d9ef"&gt;echo&lt;/span&gt; off
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;gt;nul &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;&amp;gt;&amp;amp;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;%SYSTEMROOT%&lt;span style="color:#e6db74"&gt;\system32\cacls.exe&amp;#34;&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;%SYSTEMROOT%&lt;span style="color:#e6db74"&gt;\system32\config\system&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &amp;#39;%errorlevel%&amp;#39; &lt;span style="color:#f92672"&gt;NEQ&lt;/span&gt; &amp;#39;0&amp;#39; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;goto&lt;/span&gt; UACPrompt
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;) &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt; ( &lt;span style="color:#66d9ef"&gt;goto&lt;/span&gt; gotAdmin&lt;span style="color:#75715e"&gt; &lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;:UACPrompt
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;echo&lt;/span&gt; Set UAC = CreateObject&lt;span style="color:#ae81ff"&gt;^(&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;Shell.Application&amp;#34;&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;^)&lt;/span&gt; &amp;gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;%temp%&lt;span style="color:#e6db74"&gt;\getadmin.vbs&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;echo&lt;/span&gt; UAC.ShellExecute &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;%~s0&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;#34;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;#34;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#34;runas&amp;#34;&lt;/span&gt;, 1 &amp;gt;&amp;gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;%temp%&lt;span style="color:#e6db74"&gt;\getadmin.vbs&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;%temp%&lt;span style="color:#e6db74"&gt;\getadmin.vbs&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;exit&lt;/span&gt; /B
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;:gotAdmin
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;exist&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;%temp%&lt;span style="color:#e6db74"&gt;\getadmin.vbs&amp;#34;&lt;/span&gt; ( &lt;span style="color:#66d9ef"&gt;del&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;%temp%&lt;span style="color:#e6db74"&gt;\getadmin.vbs&amp;#34;&lt;/span&gt; )
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@&lt;span style="color:#66d9ef"&gt;echo&lt;/span&gt; off
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;echo&lt;/span&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;echo&lt;/span&gt; =============================================
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;echo&lt;/span&gt; 右键菜单类型
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;echo&lt;/span&gt; 1 (Win10旧版右键菜单)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;echo&lt;/span&gt; 2 (Win11新版右键菜单)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;echo&lt;/span&gt; =============================================
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;:select
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;set&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;/p&lt;/span&gt; opt=请选择操作：
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; %opt%&lt;span style="color:#f92672"&gt;==&lt;/span&gt;1 (
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;echo&lt;/span&gt; 正在开启Win10旧版右键菜单·········
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; reg add &lt;span style="color:#e6db74"&gt;&amp;#34;HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32&amp;#34;&lt;/span&gt; /f /ve
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; %opt%&lt;span style="color:#f92672"&gt;==&lt;/span&gt;2 (
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;echo&lt;/span&gt; 正在恢复Win11新版右键菜单·········
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; reg delete &lt;span style="color:#e6db74"&gt;&amp;#34;HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}&amp;#34;&lt;/span&gt; /f
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;@&lt;span style="color:#66d9ef"&gt;echo&lt;/span&gt; off
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;echo&lt;/span&gt; *************************************
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;echo&lt;/span&gt; * *
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;echo&lt;/span&gt; * 重启任务管理器... *
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;echo&lt;/span&gt; * *
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;echo&lt;/span&gt; *************************************
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;taskkill /f /im explorer.exe &amp;amp; &lt;span style="color:#66d9ef"&gt;start&lt;/span&gt; explorer.exe
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;pause&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;使用说明：&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

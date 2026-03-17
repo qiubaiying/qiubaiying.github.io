@@ -1,0 +1,16 @@
+/* Typora 主题 aspartate.css 原文件，供参考。博客正文样式已适配在 assets/css/extended/custom.css，并同步明暗模式。 */
+:root {
+    --text-color: #f5f6f7;
+    --bg-color: #18191a;
+    --sidebar-width: 300px;
+    --code-block-bg-color: rgb(40, 42, 54);
+    --as-font-family-base: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+    --as-font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --as-meta-block-bg-color: hsla(0, 0%, 100%, 0.05);
+    --as-meta-block-font-color: #dadde1;
+    --as-inline-code-color: #ff6e6e;
+    --as-link-color: #00aeff;
+    --as-title-color: #e3f7ff;
+    --as-blockquote-border-color: #606770;
+    --as-blockquote-font-color: #ebedf0;
+}
