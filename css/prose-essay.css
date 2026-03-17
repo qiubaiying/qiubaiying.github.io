@@ -1,0 +1,55 @@
+/**
+ * 名人短文 · 文案/名人短文 样式
+ * 标题居中放大，正文左对齐，作者介绍
+ */
+
+.prose-essay .prose-title {
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: 600;
+  margin: 0 0 0.5em 0;
+  color: #222;
+}
+
+.prose-essay .prose-author {
+  text-align: center;
+  font-size: 0.95em;
+  color: #666;
+  margin: 0 0 2em 0;
+}
+
+.prose-essay .prose-body {
+  line-height: 1.9;
+  color: #333;
+  text-align: left;
+}
+
+.prose-essay .prose-body p {
+  margin-bottom: 1.2em;
+}
+
+.prose-essay .prose-body h2 {
+  font-size: 1.15em;
+  font-weight: 600;
+  color: #333;
+  margin: 2em 0 1em 0;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.prose-essay .prose-body h2:first-of-type {
+  margin-top: 0;
+}
+
+.prose-essay .prose-author-intro {
+  margin-top: 2.5em;
+  padding-top: 1.5em;
+  border-top: 1px solid #e8e8e8;
+  font-size: 0.9em;
+  color: #666;
+  line-height: 1.6;
+}
+
+.prose-essay .prose-author-intro strong {
+  color: #444;
+}

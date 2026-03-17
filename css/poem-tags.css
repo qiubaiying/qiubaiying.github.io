@@ -1,0 +1,219 @@
+/**
+ * 中国诗 · 标签样式
+ * 参考传统诗页：小号灰字，标题下元信息，不喧宾夺主
+ */
+
+/* 诗文章：标题在上，标签在标题下方，呈现为类似「〇二〇二」的副标题风格 */
+.post-heading.poem-post .tags.poem-tags {
+  order: 2;
+  margin-top: 0.35em;
+  margin-bottom: 0.5em;
+}
+
+.post-heading.poem-post h1 {
+  order: 1;
+}
+
+.post-heading.poem-post .subheading {
+  order: 3;
+}
+
+.post-heading.poem-post .meta {
+  order: 4;
+}
+
+/* 使用 flex 调整顺序：标题 -> 标签(〇二〇二风) -> 副标题 -> 元信息 */
+.post-heading.poem-post {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* 诗文章标签：小字、灰色、无边框，克制风格 */
+.post-heading.poem-post .tags.poem-tags,
+.post-heading.poem-post .tags.poem-tags a,
+.post-heading.poem-post .tags.poem-tags .tag {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.72);
+  border: none;
+  background: transparent;
+  padding: 0 0.25em 0 0;
+  margin: 0 0.4em 0 0;
+  margin-bottom: 0;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.post-heading.poem-post .tags.poem-tags a:hover,
+.post-heading.poem-post .tags.poem-tags .tag:hover {
+  color: rgba(255, 255, 255, 0.95);
+  background: transparent;
+}
+
+/* 标签之间用间隔符（可选，更贴近「〇二〇二」那种简约） */
+.post-heading.poem-post .tags.poem-tags a:not(:last-child)::after {
+  content: " · ";
+  margin-left: 0.4em;
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+}
+
+/* ========== 节日祝福语 ========== */
+.poem-festival-wish {
+  text-align: center;
+  margin: 1.5em 0 2em 0;
+  padding: 1em 1.5em;
+  background: linear-gradient(135deg, #f8fafb 0%, #eef4f7 100%);
+  border-left: 4px solid #0085a1;
+  border-radius: 0 8px 8px 0;
+  font-size: 1.05em;
+  color: #333;
+  line-height: 1.8;
+}
+
+.poem-festival-wish strong { color: #0085a1; }
+
+/* 节日文章配图 */
+.poem-festival-img {
+  text-align: center;
+  margin: 2em 0;
+}
+
+.poem-festival-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* 年末感悟/札记区 */
+.poem-year-end {
+  margin-top: 2.5em;
+  padding: 1.5em 2em;
+  background: linear-gradient(135deg, #f0f7fa 0%, #e8f4f8 100%);
+  border-radius: 8px;
+  border-left: 4px solid #0085a1;
+}
+
+.poem-year-end .year-end-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.8em;
+}
+
+.poem-year-end .year-end-placeholder {
+  font-size: 0.95em;
+  color: #666;
+  font-style: italic;
+  min-height: 2em;
+}
+
+.poem-year-end .year-end-link {
+  display: inline-block;
+  margin-top: 1em;
+  font-size: 0.95em;
+  color: #0085a1;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.poem-year-end .year-end-link:hover {
+  color: #006b82;
+  text-decoration: underline;
+}
+
+/* 诗节标题（### 词牌名）居中 */
+.post-container h3 {
+  text-align: center;
+  font-size: 1.2em;
+  color: #333;
+  margin: 2em 0 0.8em 0;
+  font-weight: 600;
+}
+
+.post-container h3:first-of-type { margin-top: 0; }
+
+/* ========== 古诗正文 + 拼音（ruby）样式 ========== */
+.poem-content {
+  margin: 1.5em 0 2em 0;
+  text-align: center;
+}
+
+/* 作者·朝代 元信息 */
+.poem-content .poem-meta {
+  font-size: 0.95em;
+  color: #666;
+  margin: 0 0 1em 0;
+  font-family: "PingFang SC", "Microsoft YaHei", serif;
+}
+
+/* 释义（诗-解释 结构中的解释块） */
+.poem-content .poem-interp {
+  font-size: 0.92em;
+  color: #666;
+  margin: 0.5em 0 1.5em 0;
+  padding-left: 0.5em;
+  font-style: italic;
+  font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+}
+
+/* 词牌分段：上阕 / 下阕 */
+.poem-content .poem-stanza {
+  font-size: 0.85em;
+  color: #888;
+  margin: 1.2em 0 0.4em 0;
+  letter-spacing: 0.2em;
+}
+
+.poem-content .poem-stanza:first-of-type {
+  margin-top: 0;
+}
+
+.poem-content .poem-lines {
+  font-size: 1.35em;
+  line-height: 2.2;
+  letter-spacing: 0.15em;
+  color: #222;
+  margin: 0 0 0.3em 0;
+  font-family: "SimSun", "宋体", "STSong", serif;
+}
+
+/* ruby 拼音：字上方显示注音 */
+.poem-content ruby {
+  ruby-position: over;
+  ruby-align: center;
+}
+
+.poem-content ruby rt {
+  font-size: 0.45em;
+  line-height: 1;
+  color: #666;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+}
+
+.poem-content ruby rp {
+  display: none; /* 兼容旧浏览器时的括号，现代浏览器可隐藏 */
+}
+
+/* ========== 诗/词文末投稿说明 ========== */
+.poem-contribution-notice {
+  margin: 1.8em 0 1em 0;
+  padding: 1em 1.2em;
+  background: #f8f9fa;
+  border-left: 4px solid #0085a1;
+  font-size: 0.95em;
+  color: #444;
+  line-height: 1.6;
+}
+.poem-contribution-notice a {
+  color: #0085a1;
+  font-weight: 500;
+}
+.poem-contribution-notice a:hover {
+  color: #006b82;
+  text-decoration: underline;
+}

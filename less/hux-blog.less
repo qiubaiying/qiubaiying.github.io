@@ -406,6 +406,17 @@ pre code{
 	@media only screen and (min-width: 768px) {
 		margin-bottom: 20px;  /* response on desktop */
 	}
+	// 首页/About/Tags 头部图完整显示不裁剪
+	&.intro-header-full {
+		-webkit-background-size: contain;
+		-moz-background-size: contain;
+		-o-background-size: contain;
+		background-size: contain;
+		min-height: 280px;
+		@media only screen and (min-width: 768px) {
+			min-height: 380px;
+		}
+	}
 	.site-heading,
 	.post-heading,
 	.page-heading {
@@ -791,22 +802,136 @@ img::-moz-selection {
 	}
 
 }
-// tag_cloud
+.tag-page-container { padding-top: 20px; }
+.tag-tree-wrap {
+	position: sticky;
+	top: 60px;
+	max-height: calc(100vh - 80px);
+	overflow-y: auto;
+	@media only screen and (max-width: 991px) {
+		position: static;
+		max-height: none;
+		margin-bottom: 24px;
+	}
+}
+.tag-tree-card {
+	font-size: 13px;
+	background: #fafbfc;
+	border: 1px solid #e0e6e9;
+	border-radius: 12px;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+	overflow: hidden;
+}
+.tag-tree-title {
+	padding: 14px 18px;
+	font-size: 15px;
+	font-weight: 700;
+	color: #fff;
+	background: linear-gradient(135deg, #0085a1 0%, #006b82 100%);
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.tag-tree-inner {
+	padding: 14px 10px 18px 14px;
+	max-height: calc(100vh - 180px);
+	overflow-y: auto;
+	@media only screen and (max-width: 991px) {
+		max-height: none;
+	}
+}
+.tag-tree-group { margin-bottom: 10px; }
+.tag-tree-top {
+	font-weight: 700;
+	font-size: 14px;
+	color: #fff;
+	padding: 10px 14px 10px 18px;
+	margin: 0 0 6px 0;
+	border-radius: 8px;
+	border-left: none;
+	background: linear-gradient(135deg, #0096b3 0%, #0085a1 100%);
+	cursor: pointer;
+	user-select: none;
+	line-height: 1.4;
+	box-shadow: 0 1px 3px rgba(0,133,161,0.25);
+	&:hover {
+		background: linear-gradient(135deg, #00a0c0 0%, #0096b3 100%);
+		color: #fff;
+		box-shadow: 0 2px 6px rgba(0,133,161,0.35);
+	}
+}
+.tag-tree-node {
+	margin-top: 4px;
+	margin-left: 0;
+	padding-left: 28px;
+	border-left: none;
+	.tag-tree-tag {
+		display: block;
+		padding: 8px 12px 8px 14px;
+		margin: 4px 0;
+		font-weight: 600;
+		font-size: 13px;
+		color: #0a5f75;
+		text-decoration: none;
+		border-radius: 6px;
+		line-height: 1.4;
+		background: #e0f2f6;
+		border-left: 4px solid #2d9db5;
+		&:hover {
+			background: #c5e8ef;
+			color: #006b82;
+		}
+	}
+}
+.tag-tree-posts {
+	margin-left: 24px;
+	padding-left: 12px;
+	border-left: 2px solid #d0e4e8;
+	display: none;
+}
+.tag-tree-group.open .tag-tree-node .tag-tree-posts { display: block; }
+.tag-tree-node.open .tag-tree-posts { display: block; }
+.tag-tree-post {
+	display: block;
+	padding: 6px 10px 6px 12px;
+	margin: 2px 0;
+	font-size: 12px;
+	color: #555;
+	text-decoration: none;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 1.4;
+	border-radius: 4px;
+	background: transparent;
+	&:hover {
+		color: #0085a1;
+		background: rgba(0,133,161,0.08);
+	}
+}
 #tag_cloud{
-	margin:20px 0 15px 0;
-	a,.tag{
-		font-size: 14px;
+	margin: 16px 0 24px 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px 10px;
+	&.tag-cloud-chips a, &.tag-cloud-chips .tag {
+		font-size: 12px;
 		border: none;
-		line-height: 28px;
-		margin: 0 2px;
-		margin-bottom: 8px;
-		background: #D6D6D6;
-		&:hover, &:active{
+		line-height: 1.3;
+		padding: 5px 10px;
+		margin: 0;
+		background: #e8e8e8;
+		color: #404040;
+		border-radius: 999em;
+		box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+		transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+		&:hover, &:active {
 			background-color: #0085a1 !important;
+			color: #fff !important;
+			box-shadow: 0 2px 6px rgba(0,133,161,0.3);
+			text-decoration: none;
 		}
 	}
 	@media only screen and (min-width: 768px) {
-		margin-bottom: 25px;
+		margin-bottom: 28px;
 	}
 }
 
@@ -838,23 +963,75 @@ img::-moz-selection {
 	}
 }
 
-// Customize Style for Posts in One-Tag-List
 .one-tag-list{
+	margin-bottom: 48px;
+	&:last-child { margin-bottom: 24px; }
+	.tag-section-heading {
+		font-size: 1.35rem;
+		font-weight: 600;
+		color: #333;
+		margin: 0 0 1rem 0;
+		padding: 0 0 0 12px;
+		border-left: 4px solid #0085a1;
+		line-height: 1.5;
+		.listing-seperator { margin-right: 6px; }
+	}
+	&.tag-sub .tag-section-heading {
+		margin-left: 16px;
+		border-left-color: #6ab0ce;
+	}
 	.tag-text{
-		font-weight: 200;
+		font-weight: 600;
 		.sans-serif;
 	}
+	.tag-posts-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 20px;
+		@media only screen and (min-width: 600px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media only screen and (min-width: 992px) {
+			gap: 24px;
+		}
+	}
+	.tag-post-card {
+		background: #fff;
+		border: 1px solid #eee;
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+		transition: box-shadow 0.2s ease, border-color 0.2s ease;
+		&:hover {
+			box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+			border-color: #ddd;
+		}
+	}
+	.tag-post-card-link {
+		display: block;
+		padding: 12px 14px;
+		color: inherit;
+		text-decoration: none;
+		&:hover, &:focus { color: inherit; text-decoration: none; }
+	}
+	.tag-post-card-title {
+		font-size: 1rem;
+		font-weight: 700;
+		margin: 0 0 2px 0;
+		line-height: 1.3;
+		color: #404040;
+	}
+	.tag-post-card-link:hover .tag-post-card-title { color: #0085a1; }
+	.tag-post-card-subtitle { font-size: 0.85rem; color: #666; margin: 0 0 2px 0; line-height: 1.35; }
+	.tag-page-container .tag-post-card-link { padding: 8px 12px; }
+	.tag-page-container .tag-post-card-title { margin: 0 0 1px 0; line-height: 1.25; }
+	.tag-page-container .tag-post-card-subtitle { margin: 0 0 1px 0; line-height: 1.28; }
+	.tag-post-card-meta { font-size: 0.75rem; color: #999; margin: 0; line-height: 1.3; }
 	.post-preview {
 		position: relative;
 		> a {
-			.post-title{
-				font-size: 16px;
-				font-weight: 500;
-				margin-top: 20px;
-			}
-			.post-subtitle{
-				font-size: 12px;
-			}
+			.post-title{ font-size: 16px; font-weight: 500; margin-top: 20px; }
+			.post-subtitle{ font-size: 12px; }
 		}
 		> .post-meta{
 			position: absolute;
@@ -867,17 +1044,10 @@ img::-moz-selection {
 		@media only screen and (min-width: 768px) {
 			margin-left: 20px;
 			> a {
-				> .post-title {
-					font-size: 18px;
-					line-height: 1.3
-				}
-				> .post-subtitle{
-					font-size: 14px;
-				}
+				> .post-title { font-size: 18px; line-height: 1.3 }
+				> .post-subtitle{ font-size: 14px; }
 			}
-			.post-meta{
-				font-size: 18px;
-			}
+			.post-meta{ font-size: 18px; }
 		}
 	}
 }

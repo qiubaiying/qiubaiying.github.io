@@ -113,6 +113,8 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="{{ "/js/hux-blog.min.js " | prepend: site.baseurl }}"></script>
+<script src="{{ "/js/sidebar-nav.js " | prepend: site.baseurl }}"></script>
+<script src="{{ "/js/callouts.js " | prepend: site.baseurl }}"></script>
 
 <!-- Service Worker -->
 {% if site.service-worker %}
@@ -160,13 +162,37 @@
 -->
 
 
+<script>
+(function(){
+    function fixCodeBlockNewlines(block){
+        var code = block.querySelector('code');
+        if(!code || code.getAttribute('data-fixed-newlines')) return;
+        if((code.textContent||'').indexOf('\n')>=0) return;
+        function walk(n){
+            if(n.nodeType===3){
+                var t=n.textContent;
+                if(/\s+\[\s*\d+\s*\]/.test(t)){
+                    n.textContent=t.replace(/\s+\[\s*(\d+)\s*\]/g,'\n [$1]');
+                }
+            }else if(n.nodeType===1)
+                for(var i=0;i<n.childNodes.length;i++) walk(n.childNodes[i]);
+        }
+        walk(code);
+        code.setAttribute('data-fixed-newlines','1');
+    }
+    document.addEventListener('DOMContentLoaded',function(){
+        document.querySelectorAll('.highlight pre').forEach(fixCodeBlockNewlines);
+    });
+})();
+</script>
+
 <!-- jquery.tagcloud.js -->
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
         async('{{ "/js/jquery.tagcloud.js" | prepend: site.baseurl }}',function(){
             $.fn.tagcloud.defaults = {
-                //size: {start: 1, end: 1, unit: 'em'},
+                size: {start: 11, end: 13, unit: 'px'},
                 color: {start: '#bbbbee', end: '#0085a1'},
             };
             $('#tag_cloud a').tagcloud();
@@ -183,88 +209,37 @@
 </script>
 
 
-<!-- Google Analytics -->
+<!-- Google Analytics / Baidu：延后加载，避免阻塞首屏 -->
 {% if site.ga_track_id %}
 <script>
-    // dynamic User by Hux
-    var _gaId = '{{ site.ga_track_id }}';
-    var _gaDomain = '{{ site.ga_domain }}';
-
-    // Originial
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', _gaId, _gaDomain);
-    ga('send', 'pageview');
+(function(){
+    function runGA(){
+        var _gaId = '{{ site.ga_track_id }}';
+        var _gaDomain = '{{ site.ga_domain }}';
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments); };i[r].l=1*new Date();a=s.createElement(o);m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', _gaId, _gaDomain);
+        ga('send', 'pageview');
+    }
+    if (window.requestIdleCallback) requestIdleCallback(runGA, { timeout: 3000 });
+    else window.addEventListener('load', function(){ setTimeout(runGA, 0); });
+})();
 </script>
 {% endif %}
 
-
-<!-- Baidu Tongji -->
 {% if site.ba_track_id %}
 <script>
-    // dynamic User by Hux
-    var _baId = '{{ site.ba_track_id }}';
-
-    // Originial
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?" + _baId;
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-{% endif %}
-
-
-
-<!-- Side Catalog -->
-{% if page.catalog %}
-<script type="text/javascript">
-    function generateCatalog (selector) {
-        var P = $('div.post-container'),a,n,t,l,i,c;
-        a = P.find('h1,h2,h3,h4,h5,h6');
-        a.each(function () {
-            n = $(this).prop('tagName').toLowerCase();
-            i = "#"+$(this).prop('id');
-            t = $(this).text();
-            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
-            l = $('<li class="'+n+'_nav"></li>').append(c);
-            $(selector).append(l);
-        });
-        return true;    
+(function(){
+    function runBaidu(){
+        var _baId = '{{ site.ba_track_id }}';
+        var _hmt = _hmt || [];
+        (function(){ var hm = document.createElement("script"); hm.src = "//hm.baidu.com/hm.js?" + _baId; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })();
     }
-
-    generateCatalog(".catalog-body");
-
-    // toggle side catalog
-    $(".catalog-toggle").click((function(e){
-        e.preventDefault();
-        $('.side-catalog').toggleClass("fold")
-    }))
-
-    /*
-     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
-     * Fork by Hux to support padding
-     */
-    async("{{ '/js/jquery.nav.js' | prepend: site.baseurl }}", function () {
-        $('.catalog-body').onePageNav({
-            currentClass: "active",
-            changeHash: !1,
-            easing: "swing",
-            filter: "",
-            scrollSpeed: 700,
-            scrollOffset: 0,
-            scrollThreshold: .2,
-            begin: null,
-            end: null,
-            scrollChange: null,
-            padding: 80
-        });
-    });
+    if (window.requestIdleCallback) requestIdleCallback(runBaidu, { timeout: 3000 });
+    else window.addEventListener('load', function(){ setTimeout(runBaidu, 0); });
+})();
 </script>
 {% endif %}
+
+
+
 

@@ -71,14 +71,8 @@ jQuery(document).ready(function($) {
                 }
                 this.previousTop = currentTop;
 
-
-                //adjust the appearance of side-catalog
-                $catalog.show()
-                if (currentTop > (bannerHeight + 41)) {
-                    $catalog.addClass('fixed')
-                } else {
-                    $catalog.removeClass('fixed')
-                }
+                // 左右侧栏统一用 sticky 随页面滑动，不再给 .side-catalog 加 fixed
+                $catalog.show();
             });
     }
 });

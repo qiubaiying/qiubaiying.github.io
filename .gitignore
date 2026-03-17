@@ -33,3 +33,6 @@ Temporary Items
 
 # debug file
 _site
+
+# 构建用 _posts + images；图片统一在 images/
+/assets

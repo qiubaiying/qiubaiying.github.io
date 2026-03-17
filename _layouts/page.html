@@ -2,8 +2,8 @@
 layout: default
 ---
 
-<!-- Page Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+<!-- Page Header：intro-header-full 使背景图完整显示不裁剪 -->
+<header class="intro-header intro-header-full" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
@@ -38,19 +38,15 @@ layout: default
                     <!-- no hr -->
                     <h5><a href="{{'/tags/' | prepend: site.baseurl }}">FEATURED TAGS</a></h5>
                     <div class="tags">
-        				{% for tag in site.tags %}
-                            {% if tag[1].size > {{site.featured-condition-size}} %}
-                				<a href="{{ site.baseurl }}/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
-                                    {{ tag[0] }}
-                                </a>
-                            {% endif %}
+        				{% for tag in site.tag_list %}
+                				<a href="{{ site.baseurl }}/tags/#tag-{{ forloop.index }}" title="{{ tag }}" rel="1">{{ tag }}</a>
         				{% endfor %}
         			</div>
                 </section>
                 {% endif %}
 
-                <!-- Friends Blog -->
-                {% if site.friends %}
+                <!-- Friends 仅首页与 About 显示 -->
+                {% if site.friends and page.url == "/" or site.friends and page.url == "/index.html" or site.friends and page.url contains "about" %}
                 <hr>
                 <h5>FRIENDS</h5>
                 <ul class="list-inline">
@@ -87,12 +83,8 @@ layout: default
                     <hr class="hidden-sm hidden-xs">
                     <h5><a href="{{'/tags/' | prepend: site.baseurl }}">FEATURED TAGS</a></h5>
                     <div class="tags">
-                        {% for tag in site.tags %}
-                            {% if tag[1].size > {{site.featured-condition-size}} %}
-                                <a href="{{ site.baseurl }}/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
-                                    {{ tag[0] }}
-                                </a>
-                            {% endif %}
+                        {% for tag in site.tag_list %}
+                                <a href="{{ site.baseurl }}/tags/#tag-{{ forloop.index }}" title="{{ tag }}" rel="1">{{ tag }}</a>
                         {% endfor %}
                     </div>
                 </section>
@@ -190,8 +182,8 @@ layout: default
                         {% endif %}
                     </div>
                 </section>
-                <!-- Friends Blog -->
-                {% if site.friends %}
+                <!-- Friends 仅首页与 About 显示 -->
+                {% if site.friends and page.url == "/" or site.friends and page.url == "/index.html" or site.friends and page.url contains "about" %}
                 <hr>
                 <h5>FRIENDS</h5>
                 <ul class="list-inline">

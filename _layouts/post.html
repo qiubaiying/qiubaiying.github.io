@@ -27,8 +27,8 @@ layout: default
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <div class="tags">
+                <div class="post-heading{% if page.tags contains "中国诗" %} poem-post{% endif %}">
+                    <div class="tags{% if page.tags contains "中国诗" %} poem-tags{% endif %}">
                         {% for tag in page.tags %}
                         <a class="tag" href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
                         {% endfor %}
@@ -48,60 +48,92 @@ layout: default
 </header>
 
 <!-- Post Content -->
-<article>
-    <div class="container">
+<article class="post-article">
+    <div class="container post-page-container">
         <div class="row">
+            {% assign tag_tree_active_index = nil %}
+            {% assign tag_tree_active_parent = nil %}
+            {% assign ti = 0 %}
+            {% for tag_item in site.tag_tree %}
+                {% assign tn = tag_item.tag | default: tag_item.name | default: tag_item %}
+                {% if tag_item.children %}
+                    {% assign ti = ti | plus: 1 %}
+                    {% if page.tags contains tn %}
+                        {% assign tag_tree_active_index = ti %}
+                        {% assign tag_tree_active_parent = tn %}
+                    {% endif %}
+                    {% for child in tag_item.children %}
+                        {% assign child_full = tn | append: '/' | append: child %}
+                        {% assign ti = ti | plus: 1 %}
+                        {% if page.tags contains child_full %}
+                            {% assign tag_tree_active_index = ti %}
+                            {% assign tag_tree_active_parent = tn %}
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    {% assign ti = ti | plus: 1 %}
+                    {% if page.tags contains tn %}
+                        {% assign tag_tree_active_index = ti %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+            {% assign tag_tree_is_post = true %}
+            {% include tag-tree-nav.html %}
 
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
+                col-lg-6 col-md-6
                 post-container">
 
-				{{ content }}
+				{{ content | replace: '^o^', '<sup>o</sup>' }}
+
+                {% if page.tags contains "中国诗" %}
+                <div class="poem-contribution-notice">
+                    <p>如果您有关于这篇诗/词的故事或感悟，可分享至站长邮箱（<a href="{{ site.baseurl }}/about/" title="关于我">关于我</a> 页面有联系方式），欢迎投稿！</p>
+                </div>
+                {% endif %}
 
                 <hr style="visibility: hidden;">
+                <style>.post-container mark{background:rgba(255,235,59,0.5);padding:0 .15em;border-radius:2px;}</style>
+                <style>.post-container .mermaid,.post-container .katex-block{margin:1em 0;text-align:center;}</style>
 
                 <ul class="pager">
                     {% if page.previous.url %}
                     <li class="previous">
-                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
+                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{ page.previous.title }}">
                         Previous<br>
-                        <span>{{page.previous.title}}</span>
+                        <span>{{ page.previous.title }}</span>
                         </a>
                     </li>
                     {% endif %}
                     {% if page.next.url %}
                     <li class="next">
-                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
+                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{ page.next.title }}">
                         Next<br>
-                        <span>{{page.next.title}}</span>
+                        <span>{{ page.next.title }}</span>
                         </a>
                     </li>
                     {% endif %}
                 </ul>
 
 
-                <!--Gitalk评论start  -->
+                <!-- Gitalk 评论：延后加载，避免阻塞首屏 -->
                 {% if site.gitalk.enable %}
-                <!-- 引入Gitalk评论插件  -->
-                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-                <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
                 <div id="gitalk-container"></div>
-                <!-- 引入一个生产md5的js，用于对id值进行处理，防止其过长 -->
-                <!-- Thank DF:https://github.com/NSDingFan/NSDingFan.github.io/issues/3#issuecomment-407496538 -->
-                <script src="{{ site.baseurl }}/js/md5.min.js"></script>
-                <script type="text/javascript">
-                    var gitalk = new Gitalk({
-                    clientID: '{{site.gitalk.clientID}}',
-                    clientSecret: '{{site.gitalk.clientSecret}}',
-                    repo: '{{site.gitalk.repo}}',
-                    owner: '{{site.gitalk.owner}}',
-                    admin: ['{{site.gitalk.admin}}'],
-                    distractionFreeMode: {{site.gitalk.distractionFreeMode}},
-                    id: md5(location.pathname),
-                    });
-                    gitalk.render('gitalk-container');
+                <script>
+                (function(){
+                    function loadGitalk(){
+                        var link = document.createElement('link'); link.rel = 'stylesheet'; link.href = 'https://unpkg.com/gitalk/dist/gitalk.css'; document.head.appendChild(link);
+                        var s1 = document.createElement('script'); s1.src = '{{ site.baseurl }}/js/md5.min.js'; s1.onload = function(){
+                            var s2 = document.createElement('script'); s2.src = 'https://unpkg.com/gitalk@latest/dist/gitalk.min.js'; s2.onload = function(){
+                                var gitalk = new Gitalk({ clientID: '{{ site.gitalk.clientID }}', clientSecret: '{{ site.gitalk.clientSecret }}', repo: '{{ site.gitalk.repo }}', owner: '{{ site.gitalk.owner }}', admin: ['{{ site.gitalk.admin }}'], distractionFreeMode: {{ site.gitalk.distractionFreeMode }}, id: md5(location.pathname) });
+                                gitalk.render('gitalk-container');
+                            }; document.body.appendChild(s2);
+                        }; document.body.appendChild(s1);
+                    }
+                    if (window.requestIdleCallback) requestIdleCallback(function(){ loadGitalk(); }, { timeout: 2000 });
+                    else window.addEventListener('load', function(){ setTimeout(loadGitalk, 0); });
+                })();
                 </script>
                 {% endif %}
                 <!-- Gitalk end -->
@@ -114,59 +146,23 @@ layout: default
                 <!-- disqus 评论框 end -->
                 {% endif %}
 
-            </div>  
+            </div>
 
-    <!-- Side Catalog Container -->
-        {% if page.catalog %}
-            <div class="
-                col-lg-2 col-lg-offset-0
-                visible-lg-block
-                sidebar-container
-                catalog-container">
-                <div class="side-catalog">
-                    <hr class="hidden-sm hidden-xs">
-                    <h5>
-                        <a class="catalog-toggle" href="#">CATALOG</a>
-                    </h5>
-                    <ul class="catalog-body"></ul>
+    <!-- Right: 文章标题导航 (原 theme side-catalog，多级目录) -->
+            <aside class="col-lg-3 col-md-3 catalog-aside-wrap">
+                <div class="catalog-container">
+                    <div class="side-catalog" id="side-catalog">
+                        <div class="catalog-title-row">
+                            <span class="catalog-title-text">标题导航</span>
+                            <span class="nav-toggle">
+                                <a href="javascript:void(0)" class="nav-toggle-btn catalog-fold-sub" title="折叠到一级标题">折叠</a>
+                                <a href="javascript:void(0)" class="nav-toggle-btn catalog-expand-sub" title="展开全部层级">展开</a>
+                            </span>
+                        </div>
+                        <ul class="catalog-body" id="catalog-body"></ul>
+                    </div>
                 </div>
-            </div>
-        {% endif %}
-
-    <!-- Sidebar Container -->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-                <!-- Featured Tags -->
-                {% if site.featured-tags %}
-                <section>
-                    <hr class="hidden-sm hidden-xs">
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-                    <div class="tags">
-        				{% for tag in site.tags %}
-                            {% if tag[1].size > {{site.featured-condition-size}} %}
-                				<a href="/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
-                                    {{ tag[0] }}
-                                </a>
-                            {% endif %}
-        				{% endfor %}
-        			</div>
-                </section>
-                {% endif %}
-
-                <!-- Friends Blog -->
-                {% if site.friends %}
-                <hr>
-                <h5>FRIENDS</h5>
-                <ul class="list-inline">
-                    {% for friend in site.friends %}
-                        <li><a href="{{friend.href}}">{{friend.title}}</a></li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-            </div>
+            </aside>
         </div>
     </div>
 </article>
@@ -190,6 +186,48 @@ layout: default
 {% endif %}
 
 
+<!-- KaTeX + Mermaid：DOM 就绪后再渲染，保证 $$、\begin{aligned}、graph LR 都能显示 -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" crossorigin="anonymous"></script>
+<script>
+(function(){
+  function run(){
+    var container = document.querySelector('.post-container');
+    if (!container) return;
+    if (typeof renderMathInElement === 'function') {
+      renderMathInElement(container, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false },
+          { left: '\\[', right: '\\]', display: true },
+          { left: '\\(', right: '\\)', display: false }
+        ],
+        throwOnError: false
+      });
+    }
+    if (typeof mermaid !== 'undefined') {
+      var codes = container.querySelectorAll('pre code.language-mermaid');
+      codes.forEach(function(code){
+        var pre = code.closest('pre');
+        if (!pre) return;
+        var div = document.createElement('div');
+        div.className = 'mermaid';
+        div.textContent = code.textContent.replace(/^\s+|\s+$/g,'');
+        pre.parentNode.replaceChild(div, pre);
+      });
+      var nodes = container.querySelectorAll('.mermaid');
+      if (nodes.length) {
+        mermaid.initialize({ startOnLoad: false, theme: 'default' });
+        mermaid.run({ nodes: nodes });
+      }
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else setTimeout(run, 0);
+})();
+</script>
+
 {% if site.anchorjs %}
 <!-- async load function -->
 <script>
@@ -205,7 +243,7 @@ layout: default
 <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
 <script>
     async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
-        // BY Fix:去除标题前的‘#’ issues:<https://github.com/qiubaiying/qiubaiying.github.io/issues/137>
+        // BY Fix:去除标题前的‘#’ issues:<https://github.com/june6699/june6699.github.io/issues/137>
         // anchors.options = {
         //   visible: 'always',
         //   placement: 'right',

@@ -1,0 +1,87 @@
+{% comment %}
+  左侧标签导航。tag_tree 统一用 tag 字段，支持 children。
+  可选变量：tag_tree_active_index、tag_tree_is_post
+{% endcomment %}
+<aside class="col-lg-3 col-md-4 tag-tree-wrap">
+	<nav class="tag-tree-card" id="tag-tree">
+		<div class="tag-tree-title">
+			标签导航
+			<span class="nav-toggle">
+				<a href="javascript:void(0)" class="nav-toggle-btn" data-action="collapse" title="一键折叠">折叠</a>
+				<a href="javascript:void(0)" class="nav-toggle-btn" data-action="expand" title="一键展开">展开</a>
+			</span>
+		</div>
+		<div class="tag-tree-inner">
+			{% assign article_pages = site.posts %}
+			{% assign tag_index = 0 %}
+			{% for tag_item in site.tag_tree %}
+				{% assign tag_name = tag_item.tag | default: tag_item.name | default: tag_item %}
+				{% if tag_item.children %}
+					{% assign tag_index = tag_index | plus: 1 %}
+					{% assign tag_id = tag_index %}
+					{% assign count = 0 %}
+					{% for a in article_pages %}
+						{% if a.tags contains tag_name %}{% assign count = count | plus: 1 %}{% endif %}
+					{% endfor %}
+					{% assign is_active = false %}
+					{% if tag_tree_active_index == tag_id %}{% assign is_active = true %}{% endif %}
+					{% if tag_tree_active_parent == tag_name %}{% assign is_active = true %}{% endif %}
+					<div class="tag-tree-group {% if is_active %}open{% endif %}" data-target="{{ tag_name }}">
+						<div class="tag-tree-node tag-tree-node-flat tag-tree-node-parent {% if is_active %}open tag-tree-node-active{% endif %}">
+							<a href="{% if tag_tree_is_post %}{{ site.baseurl }}/tags/{% endif %}#{{ tag_name }}" class="tag-tree-tag" title="{{ tag_name }}">{{ tag_name }} ({{ count }})</a>
+						</div>
+						{% for child in tag_item.children %}
+							{% assign child_tag = child.tag | default: child %}
+							{% assign child_full = tag_name | append: '/' | append: child_tag %}
+							{% assign tag_index = tag_index | plus: 1 %}
+							{% assign child_id = tag_index %}
+							{% assign count = 0 %}
+							{% for a in article_pages %}
+								{% if a.tags contains child_full %}{% assign count = count | plus: 1 %}{% endif %}
+							{% endfor %}
+							{% assign child_active = false %}
+							{% if tag_tree_active_index == child_id %}{% assign child_active = true %}{% endif %}
+							<div class="tag-tree-node {% if child_active %}open tag-tree-node-active{% endif %} tag-tree-node-child" data-target="{{ child_full }}">
+								{% if tag_tree_is_post %}
+								<a href="{{ site.baseurl }}/tags/#{{ child_full }}" class="tag-tree-tag" title="{{ child_tag }}">{{ child.title | default: child_tag }} ({{ count }})</a>
+								{% else %}
+								<a href="#{{ child_full }}" class="tag-tree-tag" title="{{ child_tag }}">{{ child.title | default: child_tag }} ({{ count }})</a>
+								{% endif %}
+								<div class="tag-tree-posts">
+									{% for a in article_pages %}
+										{% if a.tags contains child_full %}
+										<a href="{{ a.url | prepend: site.baseurl }}" class="tag-tree-post">{{ a.title }}</a>
+										{% endif %}
+									{% endfor %}
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				{% else %}
+					{% assign tag_index = tag_index | plus: 1 %}
+					{% assign tag_id = tag_index %}
+					{% assign count = 0 %}
+					{% for a in article_pages %}
+						{% if a.tags contains tag_name %}{% assign count = count | plus: 1 %}{% endif %}
+					{% endfor %}
+					{% assign is_active = false %}
+					{% if tag_tree_active_index and tag_tree_active_index == tag_id %}{% assign is_active = true %}{% endif %}
+					<div class="tag-tree-node tag-tree-node-flat {% if is_active %}open tag-tree-node-active{% endif %}" data-target="{{ tag_name }}">
+						{% if tag_tree_is_post %}
+						<a href="{{ site.baseurl }}/tags/#{{ tag_name }}" class="tag-tree-tag" title="{{ tag_name }}">{{ tag_name }} ({{ count }})</a>
+						{% else %}
+						<a href="#{{ tag_name }}" class="tag-tree-tag" title="{{ tag_name }}">{{ tag_name }} ({{ count }})</a>
+						{% endif %}
+						<div class="tag-tree-posts">
+							{% for a in article_pages %}
+								{% if a.tags contains tag_name %}
+								<a href="{{ a.url | prepend: site.baseurl }}" class="tag-tree-post">{{ a.title }}</a>
+								{% endif %}
+							{% endfor %}
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+	</nav>
+</aside>

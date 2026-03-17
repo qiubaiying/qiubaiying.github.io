@@ -1,16 +1,19 @@
-/* to make lines scroll instead of wrap */
-/* from http://stackoverflow.com/a/23393920 */
-
-.highlight pre code * {
-  white-space: nowrap;    // this sets all children inside to nowrap
+/* preserve line breaks in code (nowrap was collapsing R and other code to one line) */
+.highlight pre code,
+.highlight pre code *,
+.post-container .highlight pre code,
+.post-container .highlight pre code * {
+  white-space: pre !important;
 }
 
-.highlight pre {
-  overflow-x: auto;       // this sets the scrolling in x
+.highlight pre,
+.post-container .highlight pre {
+  overflow-x: auto;
+  white-space: pre !important;
 }
 
 .highlight pre code {
-  white-space: pre;       // forces <code> to respect <pre> formatting
+  white-space: pre !important;
 }
 
 

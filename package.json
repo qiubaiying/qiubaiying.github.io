@@ -1,14 +1,14 @@
 {
     "name": "by-blog",
     "title": "BY Blog",
-    "author": "BY <qiubaiyingios@163.com>",
+    "author": "BY <3439394104@qq.com>",
     "version": "1.7.0",
-    "homepage": "http://qiubaiying.github.io",
+    "homepage": "http://june6699.github.io",
     "repository": {
         "type": "git",
-        "url": "https://github.com/qiubaiying/qiubaiying.github.io"
+        "url": "https://github.com/june6699/june6699.github.io"
     },
-    "bugs": "https://github.com/qiubaiying/qiubaiying.github.io/issues",
+    "bugs": "https://github.com/june6699/june6699.github.io/issues",
     "devDependencies": {
         "grunt": ">=1.3.0"
         "grunt-contrib-less": "~0.11.4",

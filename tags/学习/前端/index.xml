@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>学习/前端 on June's Blog</title><link>https://June6699.github.io/tags/%E5%AD%A6%E4%B9%A0/%E5%89%8D%E7%AB%AF/</link><description>Recent content in 学习/前端 on June's Blog</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://June6699.github.io/tags/%E5%AD%A6%E4%B9%A0/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>廖雪峰JavaScript学习</title><link>https://June6699.github.io/posts/javascript%E5%BB%96%E9%9B%AA%E5%B3%B0/</link><pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate><guid>https://June6699.github.io/posts/javascript%E5%BB%96%E9%9B%AA%E5%B3%B0/</guid><description>&lt;h3 id="1为什么javascript的整数最大范围不是263而是253"&gt;1、为什么JavaScript的整数最大范围不是±2^63^，而是±2^53^&lt;/h3&gt;
+&lt;p&gt;这是一个关于 IEEE 754 浮点数标准的经典问题。&lt;/p&gt;
+&lt;p&gt;根本原因：JS 用浮点数表示整数&lt;/p&gt;
+&lt;p&gt;JavaScript 没有独立的整数类型，所有数字（包括整数）都用 &lt;strong&gt;64位双精度浮点数（IEEE 754 double）&lt;/strong&gt; 存储。&lt;/p&gt;
+&lt;p&gt;64位浮点数的内存布局如下：## 核心原因：53位有效精度&lt;/p&gt;
+&lt;p&gt;IEEE 754 双精度浮点数用 &lt;strong&gt;52位尾数&lt;/strong&gt; 存储小数部分，但规格化表示时，整数部分固定为 &lt;code&gt;1&lt;/code&gt;（比如 &lt;code&gt;1.101011...&lt;/code&gt;），这个 &lt;code&gt;1&lt;/code&gt; 不需要显式存储，因此实际有效精度是 &lt;strong&gt;52 + 1 = 53 位&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="为什么超过-2-就不安全"&gt;为什么超过 2⁵³ 就不安全？&lt;/h2&gt;
+&lt;p&gt;当整数超过 2⁵³ 时，相邻两个浮点数之间的间距变为 2，也就是说有些整数已经无法被精确表示：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-js" data-lang="js"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;&lt;span style="color:#f92672"&gt;**&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;53&lt;/span&gt; &lt;span style="color:#75715e"&gt;// 9007199254740992 ✅ 精确
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;&lt;span style="color:#f92672"&gt;**&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;53&lt;/span&gt; &lt;span style="color:#f92672"&gt;+&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt; &lt;span style="color:#75715e"&gt;// 9007199254740992 ❌ 和上面相等！被&amp;#34;舍入&amp;#34;了
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;&lt;span style="color:#f92672"&gt;**&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;53&lt;/span&gt; &lt;span style="color:#f92672"&gt;+&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt; &lt;span style="color:#75715e"&gt;// 9007199254740994 ✅ 又精确了（偶数）
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这是浮点数精度间距（ULP, Unit in the Last Place）的问题——指数每增大一档，尾数能表示的粒度就粗一倍。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="那-2-是哪来的"&gt;那 ±2⁶³ 是哪来的？&lt;/h2&gt;
+&lt;p&gt;那是 &lt;strong&gt;64位整数类型&lt;/strong&gt;（如 C/Java 的 &lt;code&gt;long&lt;/code&gt;，或 JS 的 &lt;code&gt;BigInt&lt;/code&gt;）的范围，它用全部 64 位存整数，没有指数/尾数的分配，所以能精确表示 ±2⁶³ 内的每一个整数。&lt;/p&gt;</description></item></channel></rss>
