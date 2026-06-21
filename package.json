@@ -1,14 +1,14 @@
 {
-    "name": "by-blog",
-    "title": "BY Blog",
-    "author": "BY <qiubaiyingios@163.com>",
+    "name": "Manste-blog",
+    "title": "Manste Blog",
+    "author": "BY <manuelle.ndamtang@goossens-network.be>",
     "version": "1.7.0",
-    "homepage": "http://qiubaiying.github.io",
+    "homepage": "http://manste.github.io",
     "repository": {
         "type": "git",
-        "url": "https://github.com/qiubaiying/qiubaiying.github.io"
+        "url": "https://github.com/Manste/manste.github.io"
     },
-    "bugs": "https://github.com/qiubaiying/qiubaiying.github.io/issues",
+    "bugs": "https://github.com/Manste/manste.github.io/issues",
     "devDependencies": {
         "grunt": ">=1.3.0"
         "grunt-contrib-less": "~0.11.4",
