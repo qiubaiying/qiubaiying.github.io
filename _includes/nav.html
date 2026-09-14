@@ -1,85 +1,66 @@
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+<nav class="site-nav" aria-label="主导航">
+    <div class="nav-shell">
+        <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} 首页">
+            <span class="brand-mark" aria-hidden="true">N</span>
+            <span class="brand-copy">
+                <strong>Needham</strong>
+                <small>Notes & fragments</small>
+            </span>
+        </a>
+
+        <div class="nav-actions">
+            <button class="search-toggle" type="button" aria-label="搜索文章" title="搜索文章">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
             </button>
-            <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+            <button class="theme-toggle" type="button" aria-label="切换深浅色主题" title="切换深浅色主题">
+                <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path></svg>
+                <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 15.4A8.5 8.5 0 0 1 8.6 3.6 8.5 8.5 0 1 0 20.4 15.4Z"></path></svg>
+            </button>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+                <span class="menu-toggle-label">菜单</span>
+                <span class="menu-lines" aria-hidden="true"><i></i><i></i></span>
+            </button>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="{{ site.baseurl }}/">Home</a>
-                    </li>
-                    {% for page in site.pages %}{% if page.title %}
-                    <li>
-                        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-                    </li>
-                    {% endif %}{% endfor %}
-                </ul>
-            </div>
+        <div class="primary-menu" id="primary-menu">
+            <a href="{{ '/' | relative_url }}" {% if page.url == '/' or page.layout == 'post' %}aria-current="page"{% endif %}>文章</a>
+            <a href="{{ '/photos/' | relative_url }}" {% if page.url == '/photos/' %}aria-current="page"{% endif %}>影像</a>
+            <a href="{{ '/tags/' | relative_url }}" {% if page.url == '/tags/' %}aria-current="page"{% endif %}>标签</a>
+            <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>关于</a>
         </div>
-        <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container -->
 </nav>
-<script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
 
-    var __HuxNav__ = {
-        close: function(){
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function(){
-                // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        },
-        open: function(){
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
+<dialog class="search-dialog" aria-labelledby="search-title">
+    <div class="search-dialog-inner">
+        <div class="search-dialog-heading">
+            <div>
+                <p class="eyebrow"><span></span> Search notes</p>
+                <h2 id="search-title">找一段文字</h2>
+            </div>
+            <button class="search-close" type="button" aria-label="关闭搜索">×</button>
+        </div>
+        <label class="search-field">
+            <span class="sr-only">搜索标题、标签或正文</span>
+            <input type="search" data-search-input placeholder="输入关键词，例如：北京、故乡、工作" autocomplete="off">
+            <kbd>Esc</kbd>
+        </label>
+        <div class="search-results" data-search-results aria-live="polite">
+            <p class="search-hint">从标题、标签和文章内容中搜索。</p>
+        </div>
+    </div>
+</dialog>
 
-    // Bind Event
-    $toggle.addEventListener('click', function(e){
-        if ($navbar.className.indexOf('in') > 0) {
-            __HuxNav__.close()
-        }else{
-            __HuxNav__.open()
-        }
-    })
-
-    /**
-     * Since Fastclick is used to delegate 'touchstart' globally
-     * to hack 300ms delay in iOS by performing a fake 'click',
-     * Using 'e.stopPropagation' to stop 'touchstart' event from 
-     * $toggle/$collapse will break global delegation.
-     * 
-     * Instead, we use a 'e.target' filter to prevent handler
-     * added to document close HuxNav.  
-     *
-     * Also, we use 'click' instead of 'touchstart' as compromise
-     */
-    document.addEventListener('click', function(e){
-        if(e.target == $toggle) return;
-        if(e.target.className == 'icon-bar') return;
-        __HuxNav__.close();
-    })
+<script type="application/json" id="post-search-data">
+[
+{% for post in site.posts %}
+    {
+        "title": {{ post.title | jsonify }},
+        "url": {{ post.url | relative_url | jsonify }},
+        "date": {{ post.date | date: '%Y.%m.%d' | jsonify }},
+        "tags": {{ post.tags | join: ' ' | jsonify }},
+        "text": {{ post.content | strip_html | strip_newlines | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
 </script>

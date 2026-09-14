@@ -1,19 +1,25 @@
 {
-  "name": "BY Blog",
-  "short_name": "BY Blog",
-  "description": "A personal blog by engineer",
-  "icons": [{
-    "src": "icons/pwa_icon_128.png",
-    "sizes": "128x128",
-    "type": "image/png"
-  }, {
-    "src": "icons/pwa_icon_512.png",
-    "sizes": "512x512",
-    "type": "image/png"
-  }],
-  "background_color": "#fff",
-  "theme_color": "#000",
+  "name": "Needham Blog",
+  "short_name": "Needham",
+  "description": "把一些日子、片刻和心情留在这里",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "icons/pwa_icon_128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/pwa_icon_512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "background_color": "#f3f1eb",
+  "theme_color": "#f3f1eb",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "orientation": "portrait"
+  "orientation": "any"
 }

@@ -1,0 +1,40 @@
+---
+layout: photo-page
+title: 光影集
+description: "一些生活里的片刻"
+permalink: /photos/
+header-img: img/home-bg-art.jpg
+---
+
+<section class="photo-page-intro" aria-labelledby="photo-intro-title">
+    <div>
+        <p class="eyebrow"><span></span> Photo journal</p>
+        <h2 id="photo-intro-title">有些瞬间，<br>不需要解释。</h2>
+    </div>
+    <p>不一定是什么重要的画面，只是某一刻觉得值得留下：风景、街道、天空、路过的人，和日子里的光。</p>
+</section>
+
+{% assign photos = site.static_files | where_exp: "file", "file.path contains '/img/photos/'" | sort: "name" | reverse %}
+
+<div class="photo-masonry" aria-label="摄影作品">
+    {% for file in photos %}
+        {% assign ext = file.extname | downcase %}
+        {% if ext == '.jpg' or ext == '.jpeg' or ext == '.png' or ext == '.webp' or ext == '.gif' %}
+        <figure class="photo-card">
+            <a href="{{ file.path | relative_url }}" data-lightbox data-index="{{ forloop.index }}">
+                <img src="{{ file.path | relative_url }}" alt="生活影像 {{ forloop.index }}" loading="lazy" decoding="async">
+                <span class="photo-number">0{{ forloop.index }}</span>
+                <span class="photo-open" aria-hidden="true">↗</span>
+            </a>
+        </figure>
+        {% endif %}
+    {% endfor %}
+</div>
+
+<dialog class="lightbox" aria-label="照片预览">
+    <button class="lightbox-close" type="button" aria-label="关闭预览">×</button>
+    <button class="lightbox-prev" type="button" aria-label="上一张">←</button>
+    <img alt="">
+    <button class="lightbox-next" type="button" aria-label="下一张">→</button>
+    <p class="lightbox-counter" aria-live="polite"></p>
+</dialog>

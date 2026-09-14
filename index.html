@@ -1,42 +1,128 @@
 ---
-layout: page
-description: "Thinking will not overcome fear but action will."
+layout: default
+description: "把日子、片刻和心情，写成可以回看的光。"
+body_class: home-page
 ---
 
-{% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
-            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-        <div class="post-content-preview">
-            {{ post.content | strip_html | truncate:200 }}
+<main id="main-content">
+    {% if paginator.page == 1 %}
+    <section class="home-hero" aria-labelledby="home-title">
+        <div class="hero-copy">
+            <p class="eyebrow"><span></span> Personal journal · Since 2023</p>
+            <h1 id="home-title">在生活的<br><em>缝隙里</em>，<br>收藏回声。</h1>
+            <p class="hero-lede">关于故乡、城市、书与偶然落下的情绪。这里不追赶答案，只诚实地保存经过。</p>
+            <div class="hero-cta">
+                <a class="button button-primary" href="#latest">开始阅读 <span aria-hidden="true">↘</span></a>
+                <a class="text-link" href="{{ '/photos/' | relative_url }}">去看影像 <span aria-hidden="true">↗</span></a>
+            </div>
         </div>
-    </a>
-    <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
-</div>
-<hr>
-{% endfor %}
 
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
+        <div class="hero-visual" style="--hero-image: url('{{ site.header-img | relative_url }}')">
+            <div class="hero-visual-label"><span>01</span><span>Beijing · Wuwei</span></div>
+            <p>“把普通的日子<br>留得久一点。”</p>
+        </div>
+
+        <dl class="hero-stats" aria-label="博客数据">
+            <div><dt>{{ site.posts.size }}</dt><dd>篇文字</dd></div>
+            <div><dt>{{ site.tags.size }}</dt><dd>个标签</dd></div>
+            <div><dt>∞</dt><dd>仍在继续</dd></div>
+        </dl>
+    </section>
     {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
+
+    {% assign latest_post = paginator.posts | first %}
+    {% assign list_offset = 0 %}
+    {% if paginator.page == 1 and latest_post %}
+        {% assign list_offset = 1 %}
+        {% assign reading_units = latest_post.content | strip_html | size | divided_by: 500 | plus: 1 %}
+    <section class="latest-section section-shell" id="latest" aria-labelledby="latest-title">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow"><span></span> Latest story</p>
+                <h2 id="latest-title">最近写下</h2>
+            </div>
+            <span class="section-index">01 / 03</span>
+        </div>
+
+        <article class="featured-story">
+            <a class="featured-cover" href="{{ latest_post.url | relative_url }}" style="--story-image: url('{{ latest_post.header-img | default: site.header-img | relative_url }}')" aria-label="阅读《{{ latest_post.title }}》">
+                <span class="featured-number">N° {{ site.posts.size }}</span>
+                <span class="cover-arrow" aria-hidden="true">↗</span>
+            </a>
+            <div class="featured-content">
+                <div class="story-meta">
+                    <time datetime="{{ latest_post.date | date_to_xmlschema }}">{{ latest_post.date | date: '%Y.%m.%d' }}</time>
+                    <span>{{ reading_units }} 分钟阅读</span>
+                </div>
+                <h3><a href="{{ latest_post.url | relative_url }}">{{ latest_post.title }}</a></h3>
+                {% if latest_post.subtitle %}<p class="story-subtitle">{{ latest_post.subtitle }}</p>{% endif %}
+                <p class="story-excerpt">{{ latest_post.content | strip_html | strip_newlines | truncate: 150 }}</p>
+                <div class="story-footer">
+                    <div class="story-tags">
+                        {% for tag in latest_post.tags limit: 3 %}<a href="{{ '/tags/' | relative_url }}#{{ tag }}"># {{ tag }}</a>{% endfor %}
+                    </div>
+                    <a class="read-link" href="{{ latest_post.url | relative_url }}">阅读全文 <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </article>
+    </section>
     {% endif %}
-</ul>
-{% endif %}
+
+    <section class="archive-section section-shell" aria-labelledby="archive-title">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow"><span></span> Notes archive</p>
+                <h2 id="archive-title">文字存档</h2>
+            </div>
+            <span class="section-index">02 / 03</span>
+        </div>
+
+        <div class="story-list">
+            {% for post in paginator.posts offset:list_offset %}
+            {% assign reading_time = post.content | strip_html | size | divided_by: 500 | plus: 1 %}
+            <article class="story-row">
+                <a class="story-row-main" href="{{ post.url | relative_url }}">
+                    <div class="story-date">
+                        <strong>{{ post.date | date: '%d' }}</strong>
+                        <span>{{ post.date | date: '%Y.%m' }}</span>
+                    </div>
+                    <div class="story-row-copy">
+                        <div class="story-row-tags">{% for tag in post.tags limit: 2 %}<span>#{{ tag }}</span>{% endfor %}</div>
+                        <h3>{{ post.title }}</h3>
+                        {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}
+                    </div>
+                    <span class="story-reading">{{ reading_time }} min</span>
+                    <span class="story-arrow" aria-hidden="true">↗</span>
+                </a>
+            </article>
+            {% endfor %}
+        </div>
+
+        {% if paginator.total_pages > 1 %}
+        <nav class="pagination" aria-label="文章分页">
+            {% if paginator.previous_page %}<a href="{{ paginator.previous_page_path | relative_url }}">← 更新的文章</a>{% else %}<span></span>{% endif %}
+            <span>{{ paginator.page }} / {{ paginator.total_pages }}</span>
+            {% if paginator.next_page %}<a href="{{ paginator.next_page_path | relative_url }}">更早的文章 →</a>{% else %}<span></span>{% endif %}
+        </nav>
+        {% endif %}
+    </section>
+
+    {% if paginator.page == 1 %}
+    <section class="home-outro section-shell" aria-labelledby="outro-title">
+        <div class="outro-card">
+            <p class="eyebrow eyebrow-light"><span></span> Elsewhere</p>
+            <h2 id="outro-title">有些话写进文章，<br>有些光留在照片里。</h2>
+            <a class="button button-light" href="{{ '/photos/' | relative_url }}">浏览光影集 <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="profile-card">
+            <img src="{{ site.sidebar-avatar | relative_url }}" alt="Needham 的头像" loading="lazy">
+            <div>
+                <p class="eyebrow"><span></span> About me</p>
+                <h3>Needham</h3>
+                <p>{{ site.sidebar-about-description }}</p>
+                <a class="text-link" href="{{ '/about/' | relative_url }}">更多关于我 <span aria-hidden="true">→</span></a>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+</main>

@@ -2,227 +2,80 @@
 layout: default
 ---
 
-<!-- Image to hack wechat -->
-<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+<div class="reading-progress" aria-hidden="true"><span></span></div>
 
-<!-- Post Header -->
-<style type="text/css">
-    header.intro-header{
-        position: relative;
-        background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
-    }
-
-    {% if page.header-mask %}
-    header.intro-header .header-mask{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background: rgba(0,0,0, {{ page.header-mask }});
-    }
-    {% endif %}
-</style>
-<header class="intro-header" >
-    <div class="header-mask"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <div class="tags">
-                        {% for tag in page.tags %}
-                        <a class="tag" href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
-                        {% endfor %}
-                    </div>
-                    <h1>{{ page.title }}</h1>
-                    {% comment %}
-                        always create a h2 for keeping the margin , Hux
-                    {% endcomment %}
-                    {% comment %} if page.subtitle {% endcomment %}
-                    <h2 class="subheading">{{ page.subtitle }}</h2>
-                    {% comment %} endif {% endcomment %}
-                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
-                </div>
-            </div>
+<header class="post-hero" style="--post-image: url('{{ page.header-img | default: site.header-img | relative_url }}')">
+    <div class="post-hero-shell">
+        <div class="post-tags">
+            {% for tag in page.tags %}<a href="{{ '/tags/' | relative_url }}#{{ tag }}">{{ tag }}</a>{% endfor %}
+        </div>
+        <h1>{{ page.title }}</h1>
+        {% if page.subtitle %}<p class="post-subtitle">{{ page.subtitle }}</p>{% endif %}
+        <div class="post-meta">
+            <span>By {{ page.author | default: site.title }}</span>
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y 年 %m 月 %d 日' }}</time>
+            {% assign reading_time = content | strip_html | size | divided_by: 500 | plus: 1 %}
+            <span>{{ reading_time }} 分钟阅读</span>
         </div>
     </div>
+    <span class="post-scroll-cue" aria-hidden="true">Scroll<br>↓</span>
 </header>
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-
-    <!-- Post Container -->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container">
-
-				{{ content }}
-
-                <hr style="visibility: hidden;">
-
-                <ul class="pager">
-                    {% if page.previous.url %}
-                    <li class="previous">
-                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
-                        Previous<br>
-                        <span>{{page.previous.title}}</span>
-                        </a>
-                    </li>
-                    {% endif %}
-                    {% if page.next.url %}
-                    <li class="next">
-                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
-                        Next<br>
-                        <span>{{page.next.title}}</span>
-                        </a>
-                    </li>
-                    {% endif %}
-                </ul>
-
-
-                <!--Gitalk评论start  -->
-                {% if site.gitalk.enable %}
-                <!-- 引入Gitalk评论插件  -->
-                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-                <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
-                <div id="gitalk-container"></div>
-                <!-- 引入一个生产md5的js，用于对id值进行处理，防止其过长 -->
-                <!-- Thank DF:https://github.com/NSDingFan/NSDingFan.github.io/issues/3#issuecomment-407496538 -->
-                <script src="{{ site.baseurl }}/js/md5.min.js"></script>
-                <script type="text/javascript">
-                    var gitalk = new Gitalk({
-                    clientID: '{{site.gitalk.clientID}}',
-                    clientSecret: '{{site.gitalk.clientSecret}}',
-                    repo: '{{site.gitalk.repo}}',
-                    owner: '{{site.gitalk.owner}}',
-                    admin: ['{{site.gitalk.admin}}'],
-                    distractionFreeMode: {{site.gitalk.distractionFreeMode}},
-                    id: md5(location.pathname),
-                    });
-                    gitalk.render('gitalk-container');
-                </script>
-                {% endif %}
-                <!-- Gitalk end -->
-
-                {% if site.disqus_username %}
-                <!-- disqus 评论框 start -->
-                <div class="comment">
-                    <div id="disqus_thread" class="disqus-thread"></div>
-                </div>
-                <!-- disqus 评论框 end -->
-                {% endif %}
-
-            </div>  
-
-    <!-- Side Catalog Container -->
+<main class="article-shell" id="main-content">
+    <div class="article-layout{% unless page.catalog %} article-layout-single{% endunless %}">
         {% if page.catalog %}
-            <div class="
-                col-lg-2 col-lg-offset-0
-                visible-lg-block
-                sidebar-container
-                catalog-container">
-                <div class="side-catalog">
-                    <hr class="hidden-sm hidden-xs">
-                    <h5>
-                        <a class="catalog-toggle" href="#">CATALOG</a>
-                    </h5>
-                    <ul class="catalog-body"></ul>
-                </div>
-            </div>
+        <aside class="article-toc" aria-label="文章目录">
+            <p>本页目录</p>
+            <ol data-toc></ol>
+        </aside>
         {% endif %}
 
-    <!-- Sidebar Container -->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
+        <article class="article-prose prose" data-article>
+            {{ content }}
 
-                <!-- Featured Tags -->
-                {% if site.featured-tags %}
-                <section>
-                    <hr class="hidden-sm hidden-xs">
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-                    <div class="tags">
-        				{% for tag in site.tags %}
-                            {% if tag[1].size > {{site.featured-condition-size}} %}
-                				<a href="/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
-                                    {{ tag[0] }}
-                                </a>
-                            {% endif %}
-        				{% endfor %}
-        			</div>
-                </section>
-                {% endif %}
-
-                <!-- Friends Blog -->
-                {% if site.friends %}
-                <hr>
-                <h5>FRIENDS</h5>
-                <ul class="list-inline">
-                    {% for friend in site.friends %}
-                        <li><a href="{{friend.href}}">{{friend.title}}</a></li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
+            <div class="article-end" aria-label="文章结束">
+                <span></span><i></i><span></span>
             </div>
-        </div>
+
+            <nav class="post-navigation" aria-label="相邻文章">
+                {% if page.previous.url %}
+                <a class="post-nav-item post-nav-prev" href="{{ page.previous.url | relative_url }}">
+                    <span>上一篇</span><strong>{{ page.previous.title }}</strong>
+                </a>
+                {% else %}<span></span>{% endif %}
+                {% if page.next.url %}
+                <a class="post-nav-item post-nav-next" href="{{ page.next.url | relative_url }}">
+                    <span>下一篇</span><strong>{{ page.next.title }}</strong>
+                </a>
+                {% endif %}
+            </nav>
+            <div class="post-utility">
+                <button class="text-link random-post" type="button" data-random-post>随便走走 <span aria-hidden="true">↗</span></button>
+            </div>
+
+            {% if site.gitalk.enable and site.gitalk.clientSecret %}
+            <section class="comments-card" aria-labelledby="comments-title">
+                <div class="comments-heading">
+                    <p class="eyebrow"><span></span> Conversation</p>
+                    <h2 id="comments-title">留言</h2>
+                </div>
+                <link rel="stylesheet" href="https://unpkg.com/gitalk@1.8.0/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk@1.8.0/dist/gitalk.min.js"></script>
+                <div id="gitalk-container"></div>
+                <script src="{{ '/js/md5.min.js' | relative_url }}"></script>
+                <script>
+                    new Gitalk({
+                        clientID: '{{ site.gitalk.clientID }}',
+                        clientSecret: '{{ site.gitalk.clientSecret }}',
+                        repo: '{{ site.gitalk.repo }}',
+                        owner: '{{ site.gitalk.owner }}',
+                        admin: ['{{ site.gitalk.admin }}'],
+                        distractionFreeMode: {{ site.gitalk.distractionFreeMode }},
+                        id: md5(location.pathname)
+                    }).render('gitalk-container');
+                </script>
+            </section>
+            {% endif %}
+        </article>
     </div>
-</article>
-
-
-{% if site.disqus_username %}
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "{{site.disqus_username}}";
-    var disqus_identifier = "{{page.id}}";
-    var disqus_url = "{{site.url}}{{page.url}}";
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<!-- disqus 公共JS代码 end -->
-{% endif %}
-
-
-{% if site.anchorjs %}
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script>
-    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
-        // BY Fix:去除标题前的‘#’ issues:<https://github.com/qiubaiying/qiubaiying.github.io/issues/137>
-        // anchors.options = {
-        //   visible: 'always',
-        //   placement: 'right',
-        //   icon: '#'
-        // };
-        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-    })
-</script>
-<style>
-    /* place left on bigger screen */
-    @media all and (min-width: 800px) {
-        .anchorjs-link{
-            position: absolute;
-            left: -0.75em;
-            font-size: 1.1em;
-            margin-top : -0.1em;
-        }
-    }
-</style>
-{% endif %}
+</main>

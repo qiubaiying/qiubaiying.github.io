@@ -1089,3 +1089,538 @@ img::-moz-selection {
 .page-fullscreen footer .copyright a:hover {
   color: #ddd;
 }
+/* ================================
+   Needham Personal Journal Theme
+   个人散文 / 日记 / 相册风格
+================================ */
+
+body {
+  background: #faf7f2;
+  color: #2f2a26;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    sans-serif;
+  line-height: 1.9;
+}
+
+/* 链接 */
+a {
+  color: #9a6b4f;
+  transition: all 0.2s ease;
+}
+
+a:hover,
+a:focus {
+  color: #6f4934;
+  text-decoration: none;
+}
+
+/* 顶部导航 */
+.navbar-custom {
+  background: rgba(250, 247, 242, 0.86);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(234, 223, 210, 0.9);
+  box-shadow: none;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav li a {
+  color: #2f2a26 !important;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .nav li a:hover {
+  color: #9a6b4f !important;
+}
+
+/* 顶部大图 */
+.intro-header {
+  position: relative;
+  background-color: #2f2a26;
+  margin-bottom: 52px;
+}
+
+.intro-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(47, 42, 38, 0.32),
+      rgba(47, 42, 38, 0.68)
+    );
+  z-index: 1;
+}
+
+.intro-header .container {
+  position: relative;
+  z-index: 2;
+}
+
+.intro-header .site-heading,
+.intro-header .page-heading,
+.intro-header .post-heading {
+  color: #fffaf3;
+}
+
+.intro-header .site-heading h1,
+.intro-header .page-heading h1 {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    "Songti SC",
+    "SimSun",
+    serif;
+  font-size: clamp(42px, 7vw, 76px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.intro-header .site-heading .subheading,
+.intro-header .page-heading .subheading {
+  margin-top: 18px;
+  color: rgba(255, 250, 243, 0.86);
+  font-size: clamp(16px, 2vw, 22px);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* 首页个人介绍 */
+.home-hero-card {
+  background: #fffdf8;
+  border: 1px solid #eadfd2;
+  border-radius: 28px;
+  padding: 46px 50px;
+  margin-bottom: 36px;
+  box-shadow: 0 18px 50px rgba(80, 58, 42, 0.08);
+}
+
+.home-eyebrow {
+  margin: 0 0 14px;
+  color: #b7795f;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.home-hero-card h1 {
+  margin: 0;
+  max-width: 760px;
+  color: #2f2a26;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    "Songti SC",
+    "SimSun",
+    serif;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.28;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.home-hero-card p {
+  max-width: 720px;
+  margin: 22px 0 0;
+  color: #6f655d;
+  font-size: 18px;
+  line-height: 2;
+}
+
+.home-hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.home-primary-btn,
+.home-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.home-primary-btn {
+  background: #9a6b4f;
+  color: #fffaf3 !important;
+}
+
+.home-primary-btn:hover {
+  background: #6f4934;
+  color: #fffaf3 !important;
+  transform: translateY(-1px);
+}
+
+.home-secondary-btn {
+  background: #f5eee6;
+  color: #7c5942 !important;
+  border: 1px solid #eadfd2;
+}
+
+.home-secondary-btn:hover {
+  background: #eadfd2;
+}
+
+/* 文章列表：日记条目风 */
+.post-preview {
+  background: #fffdf8;
+  border: 1px solid #eadfd2;
+  border-radius: 24px;
+  padding: 30px 34px;
+  margin-bottom: 26px;
+  box-shadow: 0 14px 36px rgba(80, 58, 42, 0.06);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.post-preview:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 48px rgba(80, 58, 42, 0.1);
+}
+
+.post-preview > a {
+  color: #2f2a26;
+}
+
+.post-preview > a:hover {
+  color: #8a5d43;
+}
+
+.post-preview .post-title {
+  margin-top: 0;
+  color: #2f2a26;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    "Songti SC",
+    "SimSun",
+    serif;
+  font-size: 30px;
+  line-height: 1.38;
+  font-weight: 500;
+}
+
+.post-preview .post-subtitle {
+  margin-top: 12px;
+  color: #756a61;
+  font-size: 16px;
+  line-height: 1.9;
+  font-weight: 400;
+}
+
+.post-preview .post-meta {
+  margin-top: 20px;
+  color: #9a9088;
+  font-size: 13px;
+  font-style: normal;
+}
+
+.post-excerpt {
+  margin-top: 14px;
+  color: #756a61;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.postlist-container hr {
+  display: none;
+}
+
+/* 文章正文 */
+.post-container {
+  background: #fffdf8;
+  border: 1px solid #eadfd2;
+  border-radius: 24px;
+  padding: 42px 48px;
+  box-shadow: 0 16px 42px rgba(80, 58, 42, 0.06);
+}
+
+.post-container p {
+  margin: 24px 0;
+  color: #3f3832;
+  font-size: 17px;
+  line-height: 2.05;
+}
+
+.post-container h1,
+.post-container h2,
+.post-container h3,
+.post-container h4 {
+  color: #2f2a26;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    "Songti SC",
+    "SimSun",
+    serif;
+  font-weight: 500;
+}
+
+.post-container h2 {
+  margin-top: 42px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eadfd2;
+}
+
+.post-container blockquote {
+  border-left: 4px solid #b7795f;
+  background: #f8f1e9;
+  color: #6f655d;
+  padding: 14px 22px;
+  border-radius: 0 14px 14px 0;
+  font-style: normal;
+}
+
+/* 图片展示 */
+.post-container img,
+.post-preview img {
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(80, 58, 42, 0.12);
+}
+
+.post-container img {
+  margin: 26px auto;
+}
+
+/* 侧边栏 */
+.sidebar-container .short-about,
+.sidebar-container .tags,
+.sidebar-container .friends {
+  background: #fffdf8;
+  border: 1px solid #eadfd2;
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: 0 14px 36px rgba(80, 58, 42, 0.05);
+}
+
+.sidebar-container h5 {
+  color: #2f2a26;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.sidebar-container .short-about img {
+  width: 104px;
+  height: 104px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 18px;
+  box-shadow: 0 12px 30px rgba(80, 58, 42, 0.16);
+}
+
+/* 标签 */
+.tags a,
+.sidebar-container .tags a {
+  display: inline-block;
+  border: 1px solid #eadfd2;
+  background: #f8f1e9;
+  color: #8a5d43 !important;
+  border-radius: 999px;
+  padding: 6px 12px;
+  margin: 4px 4px 8px 0;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.tags a:hover,
+.sidebar-container .tags a:hover {
+  background: #9a6b4f;
+  border-color: #9a6b4f;
+  color: #fffaf3 !important;
+}
+
+/* 分页 */
+.pager li > a,
+.pager li > span {
+  border-radius: 999px;
+  border: 1px solid #eadfd2;
+  color: #8a5d43;
+  background: #fffdf8;
+  font-weight: 600;
+}
+
+.pager li > a:hover {
+  background: #9a6b4f;
+  color: #fffaf3;
+  border-color: #9a6b4f;
+}
+
+/* 移动端 */
+@media only screen and (max-width: 767px) {
+  body {
+    background: #fffdf8;
+  }
+
+  .intro-header {
+    margin-bottom: 28px;
+  }
+
+  .intro-header .site-heading,
+  .intro-header .page-heading,
+  .intro-header .post-heading {
+    padding: 96px 0 64px;
+  }
+
+  .home-hero-card {
+    padding: 32px 24px;
+    border-radius: 22px;
+    box-shadow: none;
+  }
+
+  .home-hero-card p {
+    font-size: 16px;
+  }
+
+  .post-preview {
+    padding: 24px 22px;
+    border-radius: 20px;
+    box-shadow: none;
+  }
+
+  .post-preview .post-title {
+    font-size: 25px;
+  }
+
+  .post-container {
+    border: none;
+    box-shadow: none;
+    padding: 12px 4px;
+  }
+
+  .post-container p {
+    font-size: 16px;
+    line-height: 2;
+  }
+}
+
+/* ================================
+   Personal Photo Page
+   照片页 / 相册页
+================================ */
+
+.photo-page-intro {
+  max-width: 760px;
+  margin: 20px auto 44px;
+  text-align: center;
+}
+
+.photo-page-kicker {
+  margin: 0 0 12px;
+  color: #b7795f;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.photo-page-intro h1 {
+  margin: 0;
+  color: #2f2a26;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    "Songti SC",
+    "SimSun",
+    serif;
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.photo-page-intro p {
+  margin: 18px auto 0;
+  max-width: 620px;
+  color: #7a6f66;
+  font-size: 17px;
+  line-height: 2;
+}
+
+/* 相册瀑布流 */
+.photo-masonry {
+  column-count: 3;
+  column-gap: 22px;
+  margin: 0 auto 60px;
+}
+
+.photo-card {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 22px;
+  break-inside: avoid;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #fffdf8;
+  box-shadow: 0 18px 48px rgba(80, 58, 42, 0.11);
+}
+
+.photo-card a {
+  display: block;
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+.photo-card:hover img {
+  transform: scale(1.035);
+  filter: brightness(0.96);
+}
+
+/* 移动端相册 */
+@media only screen and (max-width: 991px) {
+  .photo-masonry {
+    column-count: 2;
+    column-gap: 18px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .photo-page-intro {
+    text-align: left;
+    margin: 10px 0 30px;
+  }
+
+  .photo-page-intro h1 {
+    font-size: 34px;
+  }
+
+  .photo-page-intro p {
+    font-size: 16px;
+  }
+
+  .photo-masonry {
+    column-count: 1;
+  }
+
+  .photo-card {
+    border-radius: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 12px 30px rgba(80, 58, 42, 0.1);
+  }
+
+  .photo-card img {
+    border-radius: 20px;
+  }
+}

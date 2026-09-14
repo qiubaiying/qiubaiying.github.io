@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<header class="photo-hero" style="--page-image: url('{{ page.header-img | default: site.header-img | relative_url }}')">
+    <div class="photo-hero-shell">
+        <p class="eyebrow eyebrow-light"><span></span> Visual notes</p>
+        <h1>{{ page.title }}</h1>
+        {% if page.description %}<p>{{ page.description }}</p>{% endif %}
+    </div>
+</header>
+
+<main class="photo-page-wrapper" id="main-content">
+    {{ content }}
+</main>
