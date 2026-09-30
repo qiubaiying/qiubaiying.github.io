@@ -13,10 +13,14 @@
     <link rel="manifest" href="{{ site.baseurl }}/pwa/manifest.json">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ site.baseurl }}/img/favicon.ico">
+   <!-- Favicon (use absolute URLs and version to force fresh fetch) -->
+    <link rel="icon" href="https://wanglei.gaoxiaoxue.life/favicon.png?v=2" type="image/png" sizes="32x32">
+    <link rel="shortcut icon" href="https://wanglei.gaoxiaoxue.life/favicon.ico?v=2" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://wanglei.gaoxiaoxue.life/favicon.png?v=2">
+    <link rel="mask-icon" href="https://wanglei.gaoxiaoxue.life/favicon.png?v=2" color="#000000">
 
     <!-- Safari Webpage Icon    by-BY -->
-    <link rel="apple-touch-icon" href="{{ site.baseurl }}/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="{{ site.baseurl }}/favicon.png">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">

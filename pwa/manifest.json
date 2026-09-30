@@ -1,7 +1,7 @@
 {
-  "name": "BY Blog",
-  "short_name": "BY Blog",
-  "description": "A personal blog by engineer",
+  "name": "王镭的杂货铺",
+  "short_name": "杂货铺",
+  "description": "生活与技术笔记",
   "icons": [{
     "src": "icons/pwa_icon_128.png",
     "sizes": "128x128",

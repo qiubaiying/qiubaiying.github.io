@@ -1,29 +1,29 @@
 # Site settings
-title: BY Blog
-SEOTitle: 柏荧的博客 | BY Blog
-header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
+title: 王镭的杂货铺
+SEOTitle: 王镭的杂货铺 | 生活与技术笔记
+header-img: img/post-bg-desk1.jpg
+email: lei.wangxb@gmail.com
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
-url: "http://qiubaiying.github.io"          # your host, for absolute URL
+keyword: " 王镭的杂货铺, gaoxiaoxue, 高晓雪, ESP32, Drum, Ableton, 王镭"
+url: "https://wanglei.gaoxiaoxue.life/"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/leiwangsnow/leiwangsnow.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "渴望被救赎"
+sidebar-avatar: /img/about-WL-funny.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
-#twitter_username:   qiubaiying
+# weibo_username:     wanglei
+# zhihu_username:     
+github_username:    leiwangsnow
+# facebook_username:  
+# jianshu_username:   
+twitter_username:   wanglei70084502
 
 
 
@@ -32,14 +32,19 @@ jianshu_username:   e71990ada2fd
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 permalink: pretty
 paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","AGENTS.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
 
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
 
+  
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
+# gems: [jekyll-paginate]
 
 
 
@@ -62,11 +67,11 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
-  repo: qiubaiying.github.io    #仓库名称
-  owner: qiubaiying    #github用户名
-  admin: qiubaiying
+  clientID: 19b7aa49fbad74a1cae2                            #生成的clientID
+  clientSecret: fb97144546707a84d86949405ace1d5c4c7e8e03    #生成的clientSecret
+  repo: leiwangsnow.github.io    #仓库名称
+  owner: leiwangsnow    #github用户名
+  admin: leiwangsnow        
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
@@ -99,16 +104,10 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        title: "Google",
+        href: "http://www.google.com"
     },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
-    },{
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "Twitter",
+        href: "https://twitter.com/wanglei70084502"
     }
 ]
