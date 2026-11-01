@@ -2,8 +2,8 @@
   "source": "Google Scholar",
   "profileUrl": "https://scholar.google.com/citations?user=7p-fiAsAAAAJ&hl=en",
   "authorId": "7p-fiAsAAAAJ",
-  "lastUpdated": "2026-10-31T15:21:35.632Z",
-  "totalCitations": 237,
+  "lastUpdated": "2026-11-01T16:03:55.380Z",
+  "totalCitations": 238,
   "hIndex": 6,
   "i10Index": 6,
   "citationHistory": [
@@ -25,7 +25,7 @@
     },
     {
       "year": 2026,
-      "citations": 74
+      "citations": 75
     }
   ],
   "knownScholarArticles": [
@@ -109,14 +109,6 @@
       "venue": "DEB Neira - arXiv preprint arXiv:2610.27362, 2026 - arxiv.org",
       "year": 2026,
       "url": "https://arxiv.org/abs/2610.27362",
-      "sourcePublication": "HQC-Bend: A Python Package of Hybrid Quantum-Classical Multi-cuts Benders' Decomposition Algorithm"
-    },
-    {
-      "title": "A Hybrid Quantum-Classical Benders Decomposition Framework for Solving Quadratic-Linear Bilevel Programming Problems",
-      "authors": "KM Lan",
-      "venue": "KM Lan - IEEE Access, 2026 - ieeexplore.ieee.org",
-      "year": 2026,
-      "url": "https://ieeexplore.ieee.org/abstract/document/11506371/",
       "sourcePublication": "HQC-Bend: A Python Package of Hybrid Quantum-Classical Multi-cuts Benders' Decomposition Algorithm"
     },
     {
