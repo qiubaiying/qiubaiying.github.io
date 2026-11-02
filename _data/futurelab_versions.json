@@ -1,7 +1,11 @@
 {
+  "djzts/SichuanMahjong-Online": {
+    "version": "0.1",
+    "source": "package.json"
+  },
   "djzts/Guandan-Studio": {
     "version": "0.2",
-    "source": "release"
+    "source": "package.json"
   },
   "djzts/bridge-bidding-practice": {
     "version": "0.2",

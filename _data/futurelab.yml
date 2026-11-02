@@ -11,6 +11,27 @@
 #   links                  List of { label, url }; a url under /xxx/ can point to repo djzts/xxx on GitHub Pages
 #   placeholder            true marks a sample entry; delete the entry once real ideas are in
 
+- title: Sichuan Mahjong Online
+  title_zh: 四川麻将 · 血战到底
+  summary: >-
+    An online Sichuan Mahjong (Blood Battle) game for friends. Play solo against three bots or open a
+    room for 4 to 7 players with rotation, spectators and a live scoreboard. Browser to browser over
+    WebRTC, no server and no sign-up, in Chinese or English.
+  summary_zh: >-
+    给熟人朋友玩的在线四川麻将（血战到底）。可以单机对 3 个电脑，也可以开房间联机，支持 4 到 7 人轮换、观战和实时积分榜。浏览器之间直连，不需要服务器和注册，中英文界面都有。
+  status: live
+  repo: djzts/SichuanMahjong-Online
+  tags: [Mahjong, Multiplayer, Web App]
+  url: /SichuanMahjong-Online/
+  image: /assets/img/futurelab/sichuan-mahjong-en.jpg
+  image_zh: /assets/img/futurelab/sichuan-mahjong-zh.jpg
+  links:
+    - label: Play
+      label_zh: 开始游戏
+      url: /SichuanMahjong-Online/
+    - label: GitHub
+      url: https://github.com/djzts/SichuanMahjong-Online
+
 - title: HQC-Bend
   title_zh: HQC-Bend 混合量子经典 Benders 分解
   summary: >-
