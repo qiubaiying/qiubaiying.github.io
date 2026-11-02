@@ -5,7 +5,7 @@
   },
   "djzts/Guandan-Studio": {
     "version": "0.2",
-    "source": "package.json"
+    "source": "release"
   },
   "djzts/bridge-bidding-practice": {
     "version": "0.2",
