@@ -2,7 +2,7 @@
   "source": "Google Scholar",
   "profileUrl": "https://scholar.google.com/citations?user=7p-fiAsAAAAJ&hl=en",
   "authorId": "7p-fiAsAAAAJ",
-  "lastUpdated": "2026-11-02T19:31:21.984Z",
+  "lastUpdated": "2026-11-03T17:05:49.590Z",
   "totalCitations": 239,
   "hIndex": 6,
   "i10Index": 6,
@@ -112,11 +112,75 @@
       "sourcePublication": "HQC-Bend: A Python Package of Hybrid Quantum-Classical Multi-cuts Benders' Decomposition Algorithm"
     },
     {
+      "title": "A Hybrid Quantum-Classical Benders Decomposition Framework for Solving Quadratic-Linear Bilevel Programming Problems",
+      "authors": "KM Lan",
+      "venue": "KM Lan - IEEE Access, 2026 - ieeexplore.ieee.org",
+      "year": 2026,
+      "url": "https://ieeexplore.ieee.org/abstract/document/11506371/",
+      "sourcePublication": "HQC-Bend: A Python Package of Hybrid Quantum-Classical Multi-cuts Benders' Decomposition Algorithm"
+    },
+    {
       "title": "Inorganic nanomaterial-based tumor vaccines",
       "authors": "Y Fan, J Zhang, Z Wang, Y Ren, Z Li, D Luo",
       "venue": "Y Fan, J Zhang, Z Wang, Y Ren, Z Li, D Luo - Progress in Natural Science …, 2026 - Elsevier",
       "year": 2026,
       "url": "https://www.sciencedirect.com/science/article/pii/S1002007126001498",
+      "sourcePublication": "A cancer nanovaccine based on an FeAl-layered double hydroxide framework for reactive oxygen species-augmented metalloimmunotherapy"
+    },
+    {
+      "title": "An Orthogonal Nanoadjuvant-Based RSV Subunit Vaccine Unlocks Potent Immunity through a High-Entropy-like Immunostimulatory Effect",
+      "authors": "L Chen, Y Sun, Y Dong, Y Jin, Z Han",
+      "venue": "L Chen, Y Sun, Y Dong, Y Jin, Z Han… - Journal of the …, 2026 - ACS Publications",
+      "year": 2026,
+      "url": "https://pubs.acs.org/doi/abs/10.1021/jacs.6c11987",
+      "sourcePublication": "A cancer nanovaccine based on an FeAl-layered double hydroxide framework for reactive oxygen species-augmented metalloimmunotherapy"
+    },
+    {
+      "title": "Personalized cancer vaccines: bridging immune-oncology and precision medicine for advanced therapeutics",
+      "authors": "L Ye, G Zhao, J Ma, Q Gan, N Luo, D Pan",
+      "venue": "L Ye, G Zhao, J Ma, Q Gan, N Luo, D Pan… - … and Targeted Therapy, 2026 - nature.com",
+      "year": 2026,
+      "url": "https://www.nature.com/articles/s41392-026-02769-3",
+      "sourcePublication": "A cancer nanovaccine based on an FeAl-layered double hydroxide framework for reactive oxygen species-augmented metalloimmunotherapy"
+    },
+    {
+      "title": "Mn-augmented CuFe-layered double hydroxide nanozymes orchestrate multimodal cell death to reshape the osteosarcoma innate immune activation landscape",
+      "authors": "Z Wang, J Cai, Y Wang, J Fan, J Lu, Y Ke",
+      "venue": "Z Wang, J Cai, Y Wang, J Fan, J Lu, Y Ke… - Chemical Engineering …, 2026 - Elsevier",
+      "year": 2026,
+      "url": "https://www.sciencedirect.com/science/article/pii/S138589472607138X",
+      "sourcePublication": "A cancer nanovaccine based on an FeAl-layered double hydroxide framework for reactive oxygen species-augmented metalloimmunotherapy"
+    },
+    {
+      "title": "Leveraging Two‐Dimensionality Matters in Cancer Combination Therapy: Synthetic Methods for Production, Surface Functionalization, and Immunomodulation",
+      "authors": "V Ravichandran, R TM, S Balasubramanian",
+      "venue": "V Ravichandran, R TM, S Balasubramanian… - …, 2026 - Wiley Online Library",
+      "year": 2026,
+      "url": "https://aces.onlinelibrary.wiley.com/doi/abs/10.1002/cnma.70325",
+      "sourcePublication": "A cancer nanovaccine based on an FeAl-layered double hydroxide framework for reactive oxygen species-augmented metalloimmunotherapy"
+    },
+    {
+      "title": "Size-Dependent Layered Double Hydroxide Nanoparticles Promote Osteogenesis and Bone Regeneration via METTL3-Dependent N6-Methyladenosine Modification …",
+      "authors": "Y Zhu, W Sun, Y Huang, J Li, H Jiang",
+      "venue": "Y Zhu, W Sun, Y Huang, J Li, H Jiang… - International Journal …, 2026 - Taylor & Francis",
+      "year": 2026,
+      "url": "https://www.tandfonline.com/doi/abs/10.2147/IJN.S611081",
+      "sourcePublication": "A cancer nanovaccine based on an FeAl-layered double hydroxide framework for reactive oxygen species-augmented metalloimmunotherapy"
+    },
+    {
+      "title": "A modular in situ cancer vaccine platform incorporating an ICD inducer and Lycium barbarum polysaccharide for potent immunotherapy",
+      "authors": "LQ Zhao, CJ Bao, YN Liu, XF Liang, MQ Liu",
+      "venue": "LQ Zhao, CJ Bao, YN Liu, XF Liang, MQ Liu… - … Composites and Hybrid …, 2026 - Springer",
+      "year": 2026,
+      "url": "https://link.springer.com/article/10.1007/s42114-026-01860-1",
+      "sourcePublication": "A cancer nanovaccine based on an FeAl-layered double hydroxide framework for reactive oxygen species-augmented metalloimmunotherapy"
+    },
+    {
+      "title": "Nanocatalysts as Emerging Immunomodulators for Enhanced Antitumor Immunotherapy",
+      "authors": "J Wang, J Guo, T Cui, L Lin",
+      "venue": "J Wang, J Guo, T Cui, L Lin - ACS Nano Medicine, 2026 - ACS Publications",
+      "year": 2026,
+      "url": "https://pubs.acs.org/doi/abs/10.1021/acsnanomed.6c00015",
       "sourcePublication": "A cancer nanovaccine based on an FeAl-layered double hydroxide framework for reactive oxygen species-augmented metalloimmunotherapy"
     }
   ]
