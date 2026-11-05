@@ -54,7 +54,7 @@ tags:
 
 所有工程选择都是围绕这一维展开的。要么把它补齐成定长 $\max_i n_i$，让 256 个专家共享一个 batch 维（于是有了 padding，有了 capacity factor）；要么让它变长，每次形状都不同（于是有了一次 shape 一个 kernel）。这份代码选的是后者，而且是**逐专家**选，不是逐层选。
 
-第 680 行的 `x.view(-1, self.dim)` 也不是白写的。进 MoE 的那个张量是 `self.ffn_norm(x)` 的输出（`Block.forward`，第 734 行），RMSNorm 逐元素算出来的新张量必然连续，所以这个 view 不拷贝、不报错。换成 `transpose` 之后的非连续张量进来，这一行会直接抛异常。
+第 680 行的 `x.view(-1, self.dim)` 也不是白写的。进 MoE 的那个张量是 `self.ffn_norm(x)` 的输出（`Block.forward`，{% include src.html path="inference/model.py" lines="734" text="第 734 行" %}），RMSNorm 逐元素算出来的新张量必然连续，所以这个 view 不拷贝、不报错。换成 `transpose` 之后的非连续张量进来，这一行会直接抛异常。
 
 ## 二、25 行代码：重排拆成了 16 份
 
@@ -119,9 +119,9 @@ tags:
 
 另一种写法是只建 16 个专家，把 `indices` 减掉 `experts_start_idx` 之后再取。省一次减法，但代价是 gate 的输出语义从「全局号」变成「本地号」——而 `Gate` 只接收 `args`，它根本不知道自己在第几个 rank 上，改不了。
 
-这个选择在权重加载那一侧留下了痕迹。`convert.py` 第 66-71 行按 `name.split(".")[-3]` 取出专家号，只把落在本 rank 区间内的张量写进 `model{i}-mp{mp}.safetensors`，键名里的专家号保留全局值。所以每个 rank 的 checkpoint 里，路由专家的键是 `layers.3.ffn.experts.128.w1.weight` 这种带 128 的，而不是从 0 开始。
+这个选择在权重加载那一侧留下了痕迹。`convert.py` {% include src.html path="inference/convert.py" lines="66-71" text="第 66-71 行" %} 按 `name.split(".")[-3]` 取出专家号，只把落在本 rank 区间内的张量写进 `model{i}-mp{mp}.safetensors`，键名里的专家号保留全局值。所以每个 rank 的 checkpoint 里，路由专家的键是 `layers.3.ffn.experts.128.w1.weight` 这种带 128 的，而不是从 0 开始。
 
-顺带一提，`convert.py` 第 68 行那个条件是 `"experts" in name and "shared_experts" not in name`。共享专家不走专家分片，走的是下面的 TP 切分分支——这一点在第 4 节还会回来。
+顺带一提，{% include src.html path="inference/convert.py" lines="68" text="第 68 行" %} 那个条件是 `"experts" in name and "shared_experts" not in name`。共享专家不走专家分片，走的是下面的 TP 切分分支——这一点在第 4 节还会回来。
 
 ### 3. 分片切法和路由分组是对齐的
 
@@ -215,7 +215,7 @@ $$
 
 **误解一：MoE 推理就是 grouped GEMM 加 all-to-all。**
 
-在这个仓库里，两个词各命中 0 次。`fp8_gemm` 是存在的，但它是**单专家**的 GEMM（`kernel.py` 第 175 行），没有分段、没有变长 M、没有 `grouped` 的调度逻辑；`Expert` 调的是 `Linear`，一路走到 `linear()`，跟 grouped 没有任何关系。grouped GEMM 是服务框架的事，不是这份教学实现的事。想找真实调度，得等第 9 期换仓库之后。
+在这个仓库里，两个词各命中 0 次。`fp8_gemm` 是存在的，但它是**单专家**的 GEMM（`kernel.py` {% include src.html path="inference/kernel.py" lines="175" text="第 175 行" %}），没有分段、没有变长 M、没有 `grouped` 的调度逻辑；`Expert` 调的是 `Linear`，一路走到 `linear()`，跟 grouped 没有任何关系。grouped GEMM 是服务框架的事，不是这份教学实现的事。想找真实调度，得等第 9 期换仓库之后。
 
 **误解二：MoE 推理要设 capacity factor 丢 token。**
 
@@ -227,9 +227,9 @@ $$
 
 `z = self.shared_experts(x)`，完整输入，不加权，直接和 `y` 相加。
 
-更值得注意的是它的并行方式：`Expert` 用的是 `Linear`（第 619-621 行），整块矩阵待在一个 rank 上，靠专家分片摊开；`shared_experts` 是 `MLP`（第 667 行），里面是 `ColumnParallelLinear` 和 `RowParallelLinear`（第 518-520 行），靠 TP 切开。这个不对称是有道理的：路由专家一人一卡，不需要再切；共享专家每张卡都要算，不切就每张卡存一份完整副本。
+更值得注意的是它的并行方式：`Expert` 用的是 `Linear`（{% include src.html path="inference/model.py" lines="619-621" text="第 619-621 行" %}），整块矩阵待在一个 rank 上，靠专家分片摊开；`shared_experts` 是 `MLP`（{% include src.html path="inference/model.py" lines="667" text="第 667 行" %}），里面是 `ColumnParallelLinear` 和 `RowParallelLinear`（{% include src.html path="inference/model.py" lines="518-520" text="第 518-520 行" %}），靠 TP 切开。这个不对称是有道理的：路由专家一人一卡，不需要再切；共享专家每张卡都要算，不切就每张卡存一份完整副本。
 
-代价是集合通信次数。共享专家的 `w2` 是 `RowParallelLinear`，自己带一次 all_reduce（第 264 行），加上 692 行那次，一个 MoE 层是**两次** `[T, 7168]` 的 all_reduce，不是一次。稠密层只有一次。
+代价是集合通信次数。共享专家的 `w2` 是 `RowParallelLinear`，自己带一次 all_reduce（{% include src.html path="inference/model.py" lines="264" text="第 264 行" %}），加上 692 行那次，一个 MoE 层是**两次** `[T, 7168]` 的 all_reduce，不是一次。稠密层只有一次。
 
 **误解四：`y[idx] +=` 是原子累加。**
 
