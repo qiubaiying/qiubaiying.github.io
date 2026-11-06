@@ -17,13 +17,13 @@ header-img: "img/og/xiuxing.png"
     <span class="x-id">A</span>
     <span class="x-name"><a href="{{ '/xiuxing/neidan/' | relative_url }}">内丹次第</a></span>
     <span class="x-note">六张图 · 筑基三调 → 三花聚顶；已上线 3 张</span>
-    <span class="x-state">进行中</span>
+    <span class="x-state">已上线 3 张</span>
 </div>
-<div class="x-topic is-muted">
+<div class="x-topic">
     <span class="x-id">B</span>
-    <span class="x-name">经络气血</span>
-    <span class="x-note">十二正经、奇经八脉、子午流注、营卫与大周天</span>
-    <span class="x-state">规划中</span>
+    <span class="x-name"><a href="{{ '/xiuxing/jingluo/' | relative_url }}">经络气血</a></span>
+    <span class="x-note">十二正经、奇经八脉、子午流注、营卫与大周天；已上线 4 张</span>
+    <span class="x-state">已上线 4 张</span>
 </div>
 <div class="x-topic is-muted">
     <span class="x-id">C</span>
@@ -44,18 +44,27 @@ header-img: "img/og/xiuxing.png"
     <span class="x-state">规划中</span>
 </div>
 
-<h2>内丹专题 · 已上线图谱</h2>
+<h2>已上线图谱</h2>
 
-{% assign live = site.data.xiuxing.neidan.items | where: "status", "已上线" %}
-{% for item in live %}
-{% include xiuxing-card.html n=item.n title=item.title level=item.level status=item.status driver=item.driver desc=item.desc url=item.url cover=item.cover %}
+<p>两个专题共 7 张图，全部入口如下；完整说明、封面与术语表在各自的专题页。</p>
+
+{% assign all = site.data.xiuxing.neidan.items | concat: site.data.xiuxing.jingluo.items %}
+{% for item in all %}
+{% if item.url %}
+<div class="x-topic">
+    <span class="x-id">{{ item.n }}</span>
+    <span class="x-name"><a href="{{ item.url | relative_url }}">{{ item.title }}</a></span>
+    <span class="x-note">{{ item.level }} · 单一输入：{{ item.driver }}</span>
+    <span class="x-state">{{ item.status }}</span>
+</div>
+{% endif %}
 {% endfor %}
 
-<p><a href="{{ '/xiuxing/neidan/' | relative_url }}">查看完整次第与术语表 →</a></p>
+<p><a href="{{ '/xiuxing/neidan/' | relative_url }}">内丹次第 →</a> · <a href="{{ '/xiuxing/jingluo/' | relative_url }}">经络气血 →</a></p>
 
 <h2>关于这些图</h2>
 
-<p>三田三关依兰州李少波真气运行研究所公开所述的定义建模：上丹田在头顶百会，中丹田在心窝部，下丹田在小腹部；三关为尾闾、夹脊、玉枕。模型按 1 单位 = 10 cm、身高 170 cm 建立。每张图只由<strong>一个输入变量</strong>驱动（呼吸相位、周天度数……），气团位置、经络高亮、面板读数与自动导览都从它推导，不会出现读数与画面不一致。</p>
+<p>三田三关依兰州李少波真气运行研究所公开所述的定义建模：上丹田在头顶百会，中丹田在心窝部，下丹田在小腹部；三关为尾闾、夹脊、玉枕。模型按 1 单位 = 10 cm、身高 170 cm 建立。每张图只由<strong>一个输入变量</strong>驱动（呼吸相位、周天度数……），气团位置、经络高亮、面板读数与自动导览都从它推导，不会出现读数与画面不一致。七张图共用同一套人体底模、面板与装配器，差别只在曲线库、节点、次第和那一个输入变量；经络专题最多十三条脉络同屏，只有当令的一条高亮。</p>
 
 <p>交互页是完全自包含的离线页面，三维库、字体与样式都打包在文件里，不请求任何外部资源；拖动旋转、滚轮缩放、按数字键切换次第、按 E 拆解、按 C 切换剖切模式、按 V 换机位、空格暂停。浏览器不支持 WebGL 时会退回静态总览图。</p>
 

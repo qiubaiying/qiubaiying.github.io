@@ -1,0 +1,40 @@
+# 经络气血专题图谱清单。四张图共用同一份曲线库（十二正经 / 奇经八脉 / 时辰环 / 卫气环）。
+intro: "内丹专题讲「气怎么走」，经络专题讲「走在哪张网里」。先用四张图把这张网拆开：十二正经是主干，奇经八脉是水库与约束，子午流注给它加上时间刻度，营卫与大周天区分脉中、脉外两层循环。四张图共用同一份曲线库与人体底模，切换时界面不变。"
+
+items:
+  - n: B0
+    title: "十二正经 · 循行流注"
+    en: "TWELVE MERIDIANS"
+    level: "主干 · 十二正经"
+    status: "已上线"
+    driver: "流注相位"
+    url: "/xiuxing/shierjing.html"
+    cover: "/xiuxing/cover-shierjing.png"
+    desc: "按四类走向逐组拆解：手三阴从胸走手、手三阳从手走头、足三阳从头走足、足三阴从足走腹，最后合为肺→大肠→胃→…→肝的如环无端。朱砂高亮的是此刻当令的一经。"
+  - n: B1
+    title: "奇经八脉 · 蓄溢调节"
+    en: "EIGHT EXTRA VESSELS"
+    level: "调控 · 奇经八脉"
+    status: "已上线"
+    driver: "蓄溢相位"
+    url: "/xiuxing/qijingbamai.html"
+    cover: "/xiuxing/cover-qijingbamai.png"
+    desc: "任督为阴阳之海，冲为十二经之海，带脉绕腰约束纵行诸经，跷脉司眼睑开合，维脉维系阴阳。八脉分四类逐组显示，看它们如何调节十二经气血。"
+  - n: B2
+    title: "子午流注 · 十二时辰"
+    en: "CIRCADIAN FLOW"
+    level: "时间 · 子午流注"
+    status: "已上线"
+    driver: "时辰相位"
+    url: "/xiuxing/ziwuliuzhu.html"
+    cover: "/xiuxing/cover-ziwuliuzhu.png"
+    desc: "「岁有十二月，日有十二辰，子午为经，卯酉为纬。」气团沿时辰环推进，体内当令经与环上刻度严格同步；一昼夜压缩为一圈，同一相位驱动两者。"
+  - n: B3
+    title: "营卫与大周天"
+    en: "YING & WEI"
+    level: "内外 · 营卫循环"
+    status: "已上线"
+    driver: "营卫相位"
+    url: "/xiuxing/yingwei.html"
+    cover: "/xiuxing/cover-yingwei.png"
+    desc: "「营在脉中，卫在脉外」：先单独看营气沿十二经流注，再单独看卫气沿体表环巡行，最后两层同显，对应一昼夜五十营。内外两层由同一相位驱动。"

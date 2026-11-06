@@ -1,0 +1,45 @@
+---
+layout: page
+title: "经络气血"
+kicker: "Meridians"
+description: "四张可拆解的 3D 图谱，把十二正经、奇经八脉、子午流注与营卫循环拆成一张能转的网。"
+permalink: /xiuxing/jingluo/
+header-img: "img/og/xiuxing.png"
+---
+
+{% include xiuxing-style.html %}
+
+<p>{{ site.data.xiuxing.jingluo.intro }}</p>
+
+<p><a href="{{ '/xiuxing/' | relative_url }}">← 返回修仙栏目</a></p>
+
+<h2>四张图的关系</h2>
+
+<p>B0 铺主干、B1 加调控、B2 加时间、B3 分内外。四张图共用同一份曲线库（十二正经、奇经八脉、时辰环、卫气环）与同一具人体底模，所以从一张切到另一张，机位、剖切、面板都不用重新认。每张图仍只由<strong>一个输入变量</strong>驱动。</p>
+
+<h2>图谱</h2>
+
+{% for item in site.data.xiuxing.jingluo.items %}
+{% include xiuxing-card.html n=item.n title=item.title level=item.level status=item.status driver=item.driver desc=item.desc url=item.url cover=item.cover %}
+{% endfor %}
+
+<h2>术语与异说</h2>
+
+<p>「大周天」在不同体系里指的不是同一件事，经络走向也历代有出入。下表是栏目统一口径；每张图仍按它所依据的体系单独标注。</p>
+
+<details>
+    <summary>展开术语表（{{ site.data.xiuxing.glossary.size }} 条）</summary>
+    <ul class="x-gloss">
+        {% for g in site.data.xiuxing.glossary %}
+        <li><b>{{ g.term }}</b><span>{{ g.note }}</span></li>
+        {% endfor %}
+    </ul>
+</details>
+
+<h2>与内丹专题的衔接</h2>
+
+<p><a href="{{ '/xiuxing/neidan/' | relative_url }}">内丹专题</a>的 N1 真气运行图只画任督一圈，N2 河车搬运只沿督脉上行；本专题的 B0／B3 才是「周身经络」的完整背景。先看完 B0，再回头看 N2，会更容易明白「小周天」为什么被称为一圈而非全身。</p>
+
+<div class="x-note">
+    <p><strong>内容边界</strong>：以上均为传统文献概念模型的可视化，非医疗诊断、治疗建议或修炼指导。经络走向依《灵枢·经脉》通行说法整理，穴位与循行线为教学示意，不承诺定位精度；子午流注是古人以时间描述气血盛衰的模型，不作诊疗或养生时刻建议。身体不适请就医。</p>
+</div>
