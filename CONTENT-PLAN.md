@@ -27,7 +27,7 @@
 | 06 | S1 | MLA 下：576 维的 KV cache 与吸收技巧 | `MLA.forward` 450-499 | 已写 |
 | 07 | S1 | MoE 上：256 选 8 怎么不旱涝不均 | `Gate` 535-600、`Expert` 601-635 | 已写 |
 | 08 | S1 | MoE 下：8 个专家的 token 怎么拼成一批 | `MoE.forward` 636-695、`kernel.py` `fp8_gemm` | 已写 |
-| 09 | S2 | V4.1 比 V3 多了什么 | `v4_modules/` 24 个文件、`builder.py` | 待写 |
+| 09 | S2 | V4.1 比 V3 多了什么 | `v4_modules/` 24 个文件、`builder.py` | 已写 |
 | 10 | S2 | 稀疏注意力：只算 top-k 块 | `index_attn.py` 576 行 | 待写 |
 | 11 | S2 | Engram：一个新的记忆结构 | `engram.py` 220 行、`engram_parameters.py` | 待写 |
 | 12 | S2 | YOCO：只缓存一次 | `yoco.py` 124 行、`compress.py` 168 行 | 待写 |
@@ -134,3 +134,4 @@
 | 2026-11-03 | DeepSeek-V3 源码精读（6）：576 维的 cache 里没有 K，也没有 V | C |
 | 2026-11-04 | DeepSeek-V3 源码精读（7）：256 选 8，怎么不旱涝不均 | C |
 | 2026-11-05 | DeepSeek-V3 源码精读（8）：8 个专家的 token 没有拼成一批 | C |
+| 2026-11-06 | DeepSeek-V4.1 源码精读（9）：24 个文件里，只有 6 个是新器官 | C |
