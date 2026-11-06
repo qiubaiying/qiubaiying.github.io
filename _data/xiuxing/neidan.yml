@@ -1,0 +1,53 @@
+# 内丹专题图谱清单。status: 已上线 / 规划中。
+# driver 是每张图唯一的输入变量，姿态、高亮、读数与导览都由它推导。
+intro: "内丹把人体当鼎炉，把精、气、神当药物，把时机与强度当火候。这个专题按「筑基 → 炼精化气 → 炼气化神 → 炼神还虚」的次第，把传统文本里只能靠想象串起来的路线做成能转、能拆、能看数的图。每张图只由一个输入驱动。"
+
+items:
+  - n: N0
+    title: "筑基 · 调身调息调心"
+    en: "THREE ADJUSTMENTS"
+    level: "筑基"
+    status: "已上线"
+    driver: "呼吸相位"
+    url: "/xiuxing/santiao.html"
+    cover: "/xiuxing/cover-santiao.png"
+    desc: "入门三调：正体放松、呼吸由粗到细、凝神入静。任督只作淡背景，真气沿中轴巡行，指示放松与息的次序。三调俱足，才算筑基有基。"
+  - n: N1
+    title: "真气运行法 · 人体运行图"
+    en: "ZHENQI ORBIT"
+    level: "初关 · 小周天"
+    status: "已上线"
+    driver: "呼吸相位"
+    url: "/xiuxing/zhenqi.html"
+    cover: "/xiuxing/cover.png"
+    desc: "李少波真气运行法五步功：三田三关、任督闭合回路，吸气沿督脉升、呼气沿任脉降。可拆解外壳、四种剖切、六个机位，面板读数与气团同源。"
+  - n: N2
+    title: "河车搬运 · 三关火候"
+    en: "RIVER-CART FIRE"
+    level: "初关 · 炼精化气"
+    status: "已上线"
+    driver: "周天度数"
+    url: "/xiuxing/heche.html"
+    cover: "/xiuxing/cover-heche.png"
+    desc: "采药、封固、炼药、止火四段。牛车过尾闾缓、羊车过夹脊中、鹿车过玉枕疾，三段速度差就是「火候」；三关按阈值依次点开。"
+  - n: N3
+    title: "大周天 · 十二正经流注"
+    en: "MACROCOSMIC ORBIT"
+    level: "中关 · 炼气化神"
+    status: "规划中"
+    driver: "时辰相位"
+    desc: "从任督一圈扩到十二正经与奇经八脉：肺→大肠→胃→脾→心→小肠→膀胱→肾→心包→三焦→胆→肝，如环无端。"
+  - n: N4
+    title: "坎离交媾 · 水火既济"
+    en: "CANON OF WATER AND FIRE"
+    level: "中关 · 药物鼎炉"
+    status: "规划中"
+    driver: "水火相位"
+    desc: "心肾、水火、龙虎、铅汞：把丹经的隐喻还原成一组可拆解的关系件，看「取坎填离」在模型里对应哪些节点。"
+  - n: N5
+    title: "三花聚顶 · 五气朝元"
+    en: "THREE FLOWERS, FIVE QI"
+    level: "上关 · 归一"
+    status: "规划中"
+    driver: "归一相位"
+    desc: "精、气、神三花聚于顶，五脏之气归于中。符号层的收束图，只作概念呈现，不拟真演示任何境界或效验。"

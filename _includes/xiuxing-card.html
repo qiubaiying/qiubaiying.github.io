@@ -1,0 +1,19 @@
+{% comment %} 图谱卡片。参数：n / title / level / status / driver / desc / url / cover {% endcomment %}
+{% assign planned = true %}
+{% if include.status == '已上线' %}{% assign planned = false %}{% endif %}
+<article class="x-card{% if planned %} is-planned{% endif %}">
+    {% unless planned %}
+    <a href="{{ include.url | relative_url }}"><img src="{{ include.cover | relative_url }}" alt="{{ include.title }} 总览" loading="lazy" width="2000" height="1125"></a>
+    {% endunless %}
+    <div class="x-body">
+        <span class="x-kicker">{{ include.level }} · {{ include.status }}</span>
+        <span class="x-title"><span class="x-n">{{ include.n }}</span>{{ include.title }}</span>
+        <span class="x-desc">{{ include.desc }}</span>
+        <span class="x-meta">单一输入：{{ include.driver }}</span>
+        {% unless planned %}
+        <a class="x-cta" href="{{ include.url | relative_url }}">打开可拆解模型 →</a>
+        {% else %}
+        <span class="x-cta">规划中 · 见栏目规划</span>
+        {% endunless %}
+    </div>
+</article>
