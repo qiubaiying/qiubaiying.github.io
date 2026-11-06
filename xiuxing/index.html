@@ -1,0 +1,58 @@
+---
+layout: page
+title: "修仙"
+kicker: "Cultivation"
+description: "把文字讲不清的路线、次第与结构，做成能拆开的图。不定期，不占日更。"
+permalink: /xiuxing/
+header-img: "img/og/xiuxing.png"
+---
+
+<style>
+.x-card {
+    display: block; margin: 0 0 40px; border: 1px solid rgba(128,128,128,.28);
+    background: var(--paper, #FCFBF8); color: var(--ink, #16191A); text-decoration: none;
+}
+.x-card:hover { border-color: var(--press, #1E5B4E); text-decoration: none; color: var(--ink, #16191A); }
+.x-card img { display: block; width: 100%; height: auto; border-bottom: 1px solid rgba(128,128,128,.2); }
+.x-card .x-body { display: block; padding: 20px 24px 22px; }
+.x-card .x-kicker {
+    display: block; font-family: var(--mono, monospace); font-size: 12px;
+    letter-spacing: .08em; color: var(--ink-2, #5C6462); text-transform: uppercase;
+}
+.x-card .x-title { display: block; font-size: 22px; font-weight: 600; margin: 8px 0 10px; }
+.x-card .x-desc { display: block; font-size: 15px; line-height: 1.7; color: var(--ink-2, #5C6462); }
+.x-card .x-cta { display: block; margin-top: 14px; font-size: 14px; color: var(--press, #1E5B4E); }
+.x-card:hover .x-cta { text-decoration: underline; }
+</style>
+
+<p>这个栏目放的不是心得，是结构。传统文本里的路线与次第常被写成一串名词，读完了仍不知道它们怎么连起来、谁先谁后。这里试着把它们做成能转、能拆、能看数的图。</p>
+
+<a class="x-card" href="{{ '/xiuxing/zhenqi.html' | relative_url }}">
+    <img src="{{ '/xiuxing/cover.png' | relative_url }}" alt="真气运行法人体运行图：3/4 全景下的任督二脉与五步功法读数" loading="lazy" width="2000" height="1125">
+    <span class="x-body">
+        <span class="x-kicker">交互图解 · WebGL</span>
+        <span class="x-title">真气运行法 · 人体运行图</span>
+        <span class="x-desc">把人体当作一台会呼吸的机器：任督二脉构成一个闭合回路，三田三关是沿途的节点，一个呼吸相位驱动真气位置、经络高亮和所有读数。可拆解、可剖切、可换六个机位，静置时自动导览。</span>
+        <span class="x-cta">打开可拆解模型 →</span>
+    </span>
+</a>
+
+<h2>五步次第</h2>
+
+<ol>
+    <li><strong>呼气注意心窝部</strong>：注意呼气，意守心窝（中丹田），真气在此聚集，为通任脉筑基。</li>
+    <li><strong>意息相随丹田趋</strong>：真气随呼气沿任脉下沉，联通中丹田与下丹田。</li>
+    <li><strong>调息凝神守丹田</strong>：守下丹田蓄气，带脉环腰而转，是通督的关键一步。</li>
+    <li><strong>通督勿忘复勿助</strong>：气足自然绕尾闾、过命门、透夹脊、越玉枕而上达百会，依次打通三关。</li>
+    <li><strong>元神蓄力育生机</strong>：任督贯通，吸气沿督脉升、呼气沿任脉降，一息一周天。</li>
+</ol>
+
+<h2>关于这张图</h2>
+
+<p>三田三关依兰州李少波真气运行研究所公开所述的定义建模：上丹田在头顶百会，中丹田在心窝部，下丹田在小腹部；三关为尾闾、夹脊、玉枕。模型按 1 单位 = 10 cm、身高 170 cm 建立，呼吸设为 6 次/分。页面里的数字与 3D 姿态由同一个呼吸相位算出，不会出现读数与画面不一致。</p>
+
+<p>交互页是一个完全自包含的离线页面，三维库、字体与样式都打包在文件里，不请求任何外部资源；拖动旋转、滚轮缩放、按 1–5 切换功法、按 E 拆解、按 C 切换剖切模式、按 V 换机位、空格暂停。浏览器不支持 WebGL 时会退回静态总览图。</p>
+
+<div class="note">
+    <p><strong>说明</strong>：这是示意性可视化，穴位与经络位置为教学示意，非医疗诊断、治疗建议或修炼指导。身体不适请就医，练功请在有资质的老师指导下进行。</p>
+</div>
