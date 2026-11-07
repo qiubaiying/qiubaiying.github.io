@@ -1,0 +1,40 @@
+# 火候易象专题。把「时机与强度」这类看不见的量做成刻度、环与速度。
+intro: "丹经说「药物易知，火候难准」。火是神的运用，候是时刻与数度。这个专题不谈口诀，只把火候背后的符号结构摆出来：卦气是时间刻度，周天是空间路径，三车是速度差，文武是强度变化。四张图共用同一具人体与同一套面板。"
+
+items:
+  - n: D0
+    title: "十二消息卦"
+    en: "TWELVE HEXAGRAMS"
+    level: "刻度 · 卦气消长"
+    status: "已上线"
+    driver: "卦气相位"
+    url: "/xiuxing/xiaoxi.html"
+    cover: "/xiuxing/cover-xiaoxi.png"
+    desc: "自复卦一阳来复至乾卦六阳，再自姤卦消至坤卦六阴。气团沿十二卦环推进，面板给出当前卦名与阳爻数，看「进火／退符」的刻度从何而来。"
+  - n: D1
+    title: "子午卯酉周天"
+    en: "FOUR CARDINAL POINTS"
+    level: "骨架 · 四正方位"
+    status: "已上线"
+    driver: "周天相位"
+    url: "/xiuxing/ziwu.html"
+    cover: "/xiuxing/cover-ziwu.png"
+    desc: "「子午为经，卯酉为纬」：子午纵环主抽添，卯酉横环主沐浴。两环同显时，就是丹道大周天的空间骨架；与经络体系的大周天不同义。"
+  - n: D2
+    title: "三车与卦气"
+    en: "THREE CARTS & FIRE"
+    level: "速度 · 三车搬运"
+    status: "已上线"
+    driver: "火候相位"
+    url: "/xiuxing/sanchehuo.html"
+    cover: "/xiuxing/cover-sanchehuo.png"
+    desc: "牛车过尾闾缓、羊车过夹脊中、鹿车过玉枕疾。把 N2 的分段速度单独拆出来，与卦气刻度环并置，看「火候」如何落到速度与度数的对应上。"
+  - n: D3
+    title: "文火武火 · 沐浴温养"
+    en: "GENTLE AND STRONG FIRE"
+    level: "强度 · 止火沐浴"
+    status: "已上线"
+    driver: "温养相位"
+    url: "/xiuxing/muyu.html"
+    cover: "/xiuxing/cover-muyu.png"
+    desc: "文火缓、武火急、止火归养：内外两环分别示强度，最后两环淡出只留中宫一点。「沐浴」不是另起一功，而是火候上的暂停。"

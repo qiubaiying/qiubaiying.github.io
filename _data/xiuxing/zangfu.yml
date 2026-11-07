@@ -1,0 +1,40 @@
+# 脏腑五行专题。四张图共用同一组可拆解五脏与五行环。
+intro: "内丹讲气怎么走，经络讲走在哪张网里，脏腑五行则讲这张网挂在哪套关系上。肝木、心火、脾土、肺金、肾水不是五种物质，而是一组生克制化、升降出入的关系模型。四张图把五脏做成可拆解的部件，让关系能被转着看。"
+
+items:
+  - n: C0
+    title: "五脏与五行"
+    en: "FIVE ORGANS"
+    level: "归属 · 五脏定位"
+    status: "已上线"
+    driver: "五行相位"
+    url: "/xiuxing/wuzang.html"
+    cover: "/xiuxing/cover-wuzang.png"
+    desc: "把肝、心、脾、肺、肾放进同一具可拆解人体：按 E 散开看位置，按 C 切换剖切。气团沿五行方位环推进，对应脏器同步高亮。"
+  - n: C1
+    title: "五行生克制化"
+    en: "GENERATION & RESTRAINT"
+    level: "关系 · 生克制化"
+    status: "已上线"
+    driver: "生克相位"
+    url: "/xiuxing/shengke.html"
+    cover: "/xiuxing/cover-shengke.png"
+    desc: "相生环（木火土金水）与相克星（隔位相制）分看再合看：一行当令时，既生其所生，亦受其所克，是为「制化」。"
+  - n: C2
+    title: "气机升降"
+    en: "ASCENT & DESCENT"
+    level: "动态 · 升降出入"
+    status: "已上线"
+    driver: "升降相位"
+    url: "/xiuxing/qiji.html"
+    cover: "/xiuxing/cover-qiji.png"
+    desc: "脾升胃降、肝升肺降、心肾相交：气团沿两条中轴线往返，一升一降构成最基本的气机循环，并与 N4 坎离交媾互为两种画法。"
+  - n: C3
+    title: "五气朝元"
+    en: "FIVE QI TO THE CENTRE"
+    level: "归一 · 归于中宫"
+    status: "已上线"
+    driver: "归一相位"
+    url: "/xiuxing/wuqichaoyuan.html"
+    cover: "/xiuxing/cover-wuqichaoyuan.png"
+    desc: "五脏之气各沿短径趋向中宫，五线同归时中宫环点亮。与内丹 N5 同题，此图专讲脏腑关系，不涉内丹境界。"

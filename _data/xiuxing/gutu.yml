@@ -1,0 +1,31 @@
+# 古图复原专题。把三张经典丹道图谱里的隐喻，逐件对照回同一具人体。
+intro: "古人把内丹画成山水、星宿与回光，用隐语把路径藏进图里。这个专题做一件笨功夫：把《内经图》《修真图》《性命圭旨》反照图里的隐喻逐件标回人体，看它们与前面那些 3D 图谱是不是同一套结构。原图是平面隐喻，这里是可转、可拆的对照模型，不是古画复原。"
+
+items:
+  - n: E0
+    title: "《内经图》3D 拆解"
+    en: "NEIJING CHART"
+    level: "隐喻 · 山水即人身"
+    status: "已上线"
+    driver: "周天相位"
+    url: "/xiuxing/neijingtu.html"
+    cover: "/xiuxing/cover-neijingtu.png"
+    desc: "铁牛耕地=下丹田精气神三合，十二重楼=喉，阴阳玄牝车=会阴，白头老子=气沿督升，碧眼胡僧=搭上鹊桥。外环是山水隐喻边界，体内仍是任督一圈。"
+  - n: E1
+    title: "《修真图》3D 拆解"
+    en: "XIUZHEN CHART"
+    level: "刻度 · 三关三田与宿度"
+    status: "已上线"
+    driver: "宿度相位"
+    url: "/xiuxing/xiuzhentu.html"
+    cover: "/xiuxing/cover-xiuzhentu.png"
+    desc: "三关三田标在同一中轴，外加二十八宿环与月相环。三层同显时，可见古图如何把空间路径与时间刻度叠在一起；与 D0 十二消息卦对照看。"
+  - n: E2
+    title: "《性命圭旨》反照图"
+    en: "TURNED-BACK LIGHT"
+    level: "内观 · 回光返照"
+    status: "已上线"
+    driver: "回光相位"
+    url: "/xiuxing/fanzhao.html"
+    cover: "/xiuxing/cover-fanzhao.png"
+    desc: "回光自两目之间沿中轴下行入下丹田，返照则由内达外。收束于「凝神入气穴」，与 N0 筑基三调的调心相呼应。"

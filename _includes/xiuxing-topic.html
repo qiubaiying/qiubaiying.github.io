@@ -1,0 +1,96 @@
+{% comment %}
+  专题页通用骨架（方案 B「次第」）。参数全部为纯文本，不含 HTML：
+  key(zangfu|yixiang|gutu) / mode(neidan|jingluo) / lead / steps_h2 /
+  steps_intro / glossary_intro / bridge_h2 / bridge_p1 / bridge_p2 / boundary。
+{% endcomment %}
+{% assign d = site.data.xiuxing[include.key] %}
+{% include xiuxing-style.html %}
+
+<nav class="x-anchor-nav" aria-label="页内导航">
+    <span class="x-an-label">页内</span>
+    <a href="#atlas">图谱</a>
+    <a href="#glossary">术语</a>
+    <a href="#bridge">衔接</a>
+    <a href="#boundary">内容边界</a>
+    <a href="#">回顶</a>
+</nav>
+
+<p>{{ d.intro }}</p>
+
+<p><a href="{{ '/xiuxing/' | relative_url }}">← 返回修仙栏目</a></p>
+
+<h2 id="topics"><span class="x-h2-tick" aria-hidden="true"></span>{{ include.steps_h2 }}</h2>
+
+<p>{{ include.steps_intro }}</p>
+
+<span class="x-lead">{{ include.lead }}</span>
+
+<div class="x-steps-wrap">
+    <span class="x-rail" aria-hidden="true"></span>
+    <ol class="x-steps" role="list" data-mode="{{ include.mode }}" aria-label="{{ include.lead }}">
+        {% for item in d.items %}
+        {% include xiuxing-card.html n=item.n title=item.title level=item.level status=item.status driver=item.driver url=item.url index=forloop.index0 mode=include.mode total=forloop.length %}
+        {% endfor %}
+    </ol>
+</div>
+
+<h2 id="atlas"><span class="x-h2-tick" aria-hidden="true"></span>图谱</h2>
+
+<ul class="x-bcards">
+    {% for item in d.items %}
+    {% if item.url %}
+    <li class="x-card-item">
+        <a class="x-card x-card--full" href="{{ item.url | relative_url }}" target="_blank" rel="noopener"
+           aria-labelledby="tp-{{ item.n }}" aria-describedby="dp-{{ item.n }}">
+            <span class="x-cover">
+                {% if forloop.first %}
+                <img src="{{ item.cover | relative_url }}" alt="" width="2000" height="1125" loading="eager" fetchpriority="high" decoding="async">
+                {% else %}
+                <img src="{{ item.cover | relative_url }}" alt="" width="2000" height="1125" loading="lazy" decoding="async">
+                {% endif %}
+            </span>
+            <span class="x-card-info">
+                <span class="x-mono-line">{{ item.n }} · {{ item.level }} · 已上线 · 单一输入：<span id="dp-{{ item.n }}">{{ item.driver }}</span></span>
+                <span class="x-card-title" id="tp-{{ item.n }}">{{ item.title }}</span>
+                <span class="x-card-desc">{{ item.desc }}</span>
+                <span class="x-open">在新页打开 ↗</span>
+            </span>
+        </a>
+    </li>
+    {% else %}
+    <li class="x-card-item is-planned">
+        <div class="x-card x-planned x-card--full" aria-label="{{ item.n }} {{ item.title }}，规划中 · 尚未刊行">
+            <span aria-hidden="true" class="x-cover x-thumb x-plate-plan">{{ item.n }}</span>
+            <span class="x-card-info">
+                <span class="x-mono-line">{{ item.n }} · {{ item.level }} · 规划中 · 尚未刊行 · 单一输入：{{ item.driver }}</span>
+                <span class="x-card-title">{{ item.title }}</span>
+                <span class="x-card-desc">{{ item.desc }}</span>
+            </span>
+        </div>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
+
+<section id="glossary" aria-labelledby="glossary-h">
+    <h2 id="glossary-h"><span class="x-h2-tick" aria-hidden="true"></span>术语与异说 <span class="count">{{ site.data.xiuxing.glossary | size }} 条</span></h2>
+
+    <p>{{ include.glossary_intro }}</p>
+
+    <ul class="x-gloss-1">
+        {% for g in site.data.xiuxing.glossary %}
+        <li><dl><dt>{{ g.term }}</dt><dd>{{ g.note }}</dd></dl></li>
+        {% endfor %}
+    </ul>
+</section>
+
+<h2 id="bridge"><span class="x-h2-tick" aria-hidden="true"></span>{{ include.bridge_h2 }}</h2>
+
+<p>{{ include.bridge_p1 }}</p>
+{% if include.bridge_p2 %}<p>{{ include.bridge_p2 }}</p>{% endif %}
+
+<p class="x-lead"><a href="{{ '/xiuxing/neidan/' | relative_url }}">内丹次第 →</a> · <a href="{{ '/xiuxing/jingluo/' | relative_url }}">经络气血 →</a> · <a href="{{ '/xiuxing/zangfu/' | relative_url }}">脏腑五行 →</a> · <a href="{{ '/xiuxing/yixiang/' | relative_url }}">火候易象 →</a> · <a href="{{ '/xiuxing/gutu/' | relative_url }}">古图复原 →</a></p>
+
+<div class="x-disclaimer" id="boundary" aria-label="内容边界"><strong>内容边界</strong>：{{ include.boundary }}</div>
+
+<p class="to-top"><a href="#">回到顶部 &uarr;</a></p>
