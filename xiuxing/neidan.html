@@ -9,44 +9,88 @@ header-img: "img/og/xiuxing.png"
 
 {% include xiuxing-style.html %}
 
+<nav class="x-anchor-nav" aria-label="页内导航">
+    <span class="x-an-label">页内</span>
+    <a href="#atlas">图谱</a>
+    <a href="#glossary">术语</a>
+    <a href="#bridge">衔接</a>
+    <a href="#boundary">内容边界</a>
+    <a href="#">回顶</a>
+</nav>
+
 <p>{{ site.data.xiuxing.neidan.intro }}</p>
 
 <p><a href="{{ '/xiuxing/' | relative_url }}">← 返回修仙栏目</a></p>
 
-<h2>次第一览</h2>
+<h2 id="topics"><span class="x-h2-tick" aria-hidden="true"></span>次第一览</h2>
 
-{% for item in site.data.xiuxing.neidan.items %}
-<div class="x-topic{% if item.status != '已上线' %} is-muted{% endif %}">
-    <span class="x-id">{{ item.n }}</span>
-    <span class="x-name">{{ item.title }}</span>
-    <span class="x-note">{{ item.level }} · 单一输入：{{ item.driver }}</span>
-    <span class="x-state">{{ item.status }}</span>
+<span class="x-lead">次第递进 · 由筑基至上关，共 6 阶</span>
+
+<div class="x-steps-wrap">
+    <span class="x-rail" aria-hidden="true"></span>
+    <ol class="x-steps" role="list" data-mode="neidan" aria-label="内丹次第阶梯，共 6 阶">
+        {% for item in site.data.xiuxing.neidan.items %}
+        {% include xiuxing-card.html n=item.n title=item.title level=item.level status=item.status driver=item.driver url=item.url index=forloop.index0 mode='neidan' total=forloop.length %}
+        {% endfor %}
+    </ol>
 </div>
-{% endfor %}
 
-<h2>图谱</h2>
+<h2 id="atlas"><span class="x-h2-tick" aria-hidden="true"></span>图谱</h2>
 
-{% for item in site.data.xiuxing.neidan.items %}
-{% include xiuxing-card.html n=item.n title=item.title level=item.level status=item.status driver=item.driver desc=item.desc url=item.url cover=item.cover %}
-{% endfor %}
+<ul class="x-bcards">
+    {% for item in site.data.xiuxing.neidan.items %}
+    {% if item.url %}
+    <li class="x-card-item">
+        <a class="x-card x-card--full" href="{{ item.url | relative_url }}" target="_blank" rel="noopener"
+           aria-labelledby="tp-{{ item.n }}" aria-describedby="dp-{{ item.n }}">
+            <span class="x-cover">
+                {% if forloop.first %}
+                <img src="{{ item.cover | relative_url }}" alt="" width="2000" height="1125" loading="eager" fetchpriority="high" decoding="async">
+                {% else %}
+                <img src="{{ item.cover | relative_url }}" alt="" width="2000" height="1125" loading="lazy" decoding="async">
+                {% endif %}
+            </span>
+            <span class="x-card-info">
+                <span class="x-mono-line">{{ item.n }} · {{ item.level }} · 已上线 · 单一输入：<span id="dp-{{ item.n }}">{{ item.driver }}</span></span>
+                <span class="x-card-title" id="tp-{{ item.n }}">{{ item.title }}</span>
+                <span class="x-card-desc">{{ item.desc }}</span>
+                <span class="x-open">在新页打开 ↗</span>
+            </span>
+        </a>
+    </li>
+    {% else %}
+    <li class="x-card-item is-planned">
+        <div class="x-card x-planned x-card--full" aria-label="{{ item.n }} {{ item.title }}，规划中 · 尚未刊行">
+            <span aria-hidden="true" class="x-cover x-thumb x-plate-plan">{{ item.n }}</span>
+            <span class="x-card-info">
+                <span class="x-mono-line">{{ item.n }} · {{ item.level }} · 规划中 · 尚未刊行 · 单一输入：{{ item.driver }}</span>
+                <span class="x-card-title">{{ item.title }}</span>
+                <span class="x-card-desc">{{ item.desc }}</span>
+            </span>
+        </div>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
 
-<h2>术语与异说</h2>
+<section id="glossary" aria-labelledby="glossary-h">
+    <h2 id="glossary-h"><span class="x-h2-tick" aria-hidden="true"></span>术语与异说 <span class="count">{{ site.data.xiuxing.glossary | size }} 条</span></h2>
 
-<p>同一个词在不同体系里常常不是一回事。下面这份表是本栏目统一采用的口径，每张图仍会按它所依据的体系单独标注。</p>
+    <p>同一个词在不同体系里常常不是一回事。下面这份表是本栏目统一采用的口径，每张图仍会按它所依据的体系单独标注。</p>
 
-<details>
-    <summary>展开术语表（{{ site.data.xiuxing.glossary.size }} 条）</summary>
-    <ul class="x-gloss">
+    <ul class="x-gloss-1">
         {% for g in site.data.xiuxing.glossary %}
-        <li><b>{{ g.term }}</b><span>{{ g.note }}</span></li>
+        <li><dl><dt>{{ g.term }}</dt><dd>{{ g.note }}</dd></dl></li>
         {% endfor %}
     </ul>
-</details>
+</section>
 
-<h2>读法建议</h2>
+<h2 id="bridge"><span class="x-h2-tick" aria-hidden="true"></span>读法建议</h2>
 
 <p>按 N0 → N1 → N2 的顺序看：先知道「调什么」，再看「气沿哪一圈走」，最后看「这一圈里哪里快、哪里慢、什么叫火候」。三张图共用同一具人体底模、同一套面板与视角，区别只在曲线、节点、次第和那一个输入变量，所以切换时不用重新认界面。</p>
 
-<div class="x-note">
-    <p><strong>内容边界</strong>：以上均为传统文献概念模型的可视化，非医疗诊断、治疗建议或修炼指导；「出神」「阳神」「长生」一类说法只作符号层呈现，不拟真演示，也不作效果宣称。穴位与经络位置为教学示意，不承诺定位精度。身体不适请就医。</p>
-</div>
+<p><a href="{{ '/xiuxing/jingluo/' | relative_url }}">经络气血 →</a></p>
+
+<div class="x-disclaimer" id="boundary" aria-label="内容边界"><strong>内容边界</strong>：以上均为传统文献概念模型的可视化，非医疗诊断、治疗建议或修炼指导；「出神」「阳神」「长生」一类说法只作符号层呈现，不拟真演示，也不作效果宣称。穴位与经络位置为教学示意，不承诺定位精度。身体不适请就医。</div>
+
+<p class="to-top"><a href="#">回到顶部 &uarr;</a></p>

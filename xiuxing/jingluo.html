@@ -9,37 +9,88 @@ header-img: "img/og/xiuxing.png"
 
 {% include xiuxing-style.html %}
 
+<nav class="x-anchor-nav" aria-label="页内导航">
+    <span class="x-an-label">页内</span>
+    <a href="#atlas">图谱</a>
+    <a href="#glossary">术语</a>
+    <a href="#bridge">衔接</a>
+    <a href="#boundary">内容边界</a>
+    <a href="#">回顶</a>
+</nav>
+
 <p>{{ site.data.xiuxing.jingluo.intro }}</p>
 
 <p><a href="{{ '/xiuxing/' | relative_url }}">← 返回修仙栏目</a></p>
 
-<h2>四张图的关系</h2>
+<h2 id="topics"><span class="x-h2-tick" aria-hidden="true"></span>四张图的关系</h2>
 
 <p>B0 铺主干、B1 加调控、B2 加时间、B3 分内外。四张图共用同一份曲线库（十二正经、奇经八脉、时辰环、卫气环）与同一具人体底模，所以从一张切到另一张，机位、剖切、面板都不用重新认。每张图仍只由<strong>一个输入变量</strong>驱动。</p>
 
-<h2>图谱</h2>
+<span class="x-lead">并列维度 · 主干 / 调控 / 时间 / 内外，无先后</span>
 
-{% for item in site.data.xiuxing.jingluo.items %}
-{% include xiuxing-card.html n=item.n title=item.title level=item.level status=item.status driver=item.driver desc=item.desc url=item.url cover=item.cover %}
-{% endfor %}
+<div class="x-steps-wrap">
+    <span class="x-rail" aria-hidden="true"></span>
+    <ol class="x-steps" role="list" data-mode="jingluo" aria-label="经络并列维度，共 4 项">
+        {% for item in site.data.xiuxing.jingluo.items %}
+        {% include xiuxing-card.html n=item.n title=item.title level=item.level status=item.status driver=item.driver url=item.url index=forloop.index0 mode='jingluo' total=forloop.length %}
+        {% endfor %}
+    </ol>
+</div>
 
-<h2>术语与异说</h2>
+<h2 id="atlas"><span class="x-h2-tick" aria-hidden="true"></span>图谱</h2>
 
-<p>「大周天」在不同体系里指的不是同一件事，经络走向也历代有出入。下表是栏目统一口径；每张图仍按它所依据的体系单独标注。</p>
+<ul class="x-bcards">
+    {% for item in site.data.xiuxing.jingluo.items %}
+    {% if item.url %}
+    <li class="x-card-item">
+        <a class="x-card x-card--full" href="{{ item.url | relative_url }}" target="_blank" rel="noopener"
+           aria-labelledby="tp-{{ item.n }}" aria-describedby="dp-{{ item.n }}">
+            <span class="x-cover">
+                {% if forloop.first %}
+                <img src="{{ item.cover | relative_url }}" alt="" width="2000" height="1125" loading="eager" fetchpriority="high" decoding="async">
+                {% else %}
+                <img src="{{ item.cover | relative_url }}" alt="" width="2000" height="1125" loading="lazy" decoding="async">
+                {% endif %}
+            </span>
+            <span class="x-card-info">
+                <span class="x-mono-line">{{ item.n }} · {{ item.level }} · 已上线 · 单一输入：<span id="dp-{{ item.n }}">{{ item.driver }}</span></span>
+                <span class="x-card-title" id="tp-{{ item.n }}">{{ item.title }}</span>
+                <span class="x-card-desc">{{ item.desc }}</span>
+                <span class="x-open">在新页打开 ↗</span>
+            </span>
+        </a>
+    </li>
+    {% else %}
+    <li class="x-card-item is-planned">
+        <div class="x-card x-planned x-card--full" aria-label="{{ item.n }} {{ item.title }}，规划中 · 尚未刊行">
+            <span aria-hidden="true" class="x-cover x-thumb x-plate-plan">{{ item.n }}</span>
+            <span class="x-card-info">
+                <span class="x-mono-line">{{ item.n }} · {{ item.level }} · 规划中 · 尚未刊行 · 单一输入：{{ item.driver }}</span>
+                <span class="x-card-title">{{ item.title }}</span>
+                <span class="x-card-desc">{{ item.desc }}</span>
+            </span>
+        </div>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
 
-<details>
-    <summary>展开术语表（{{ site.data.xiuxing.glossary.size }} 条）</summary>
-    <ul class="x-gloss">
+<section id="glossary" aria-labelledby="glossary-h">
+    <h2 id="glossary-h"><span class="x-h2-tick" aria-hidden="true"></span>术语与异说 <span class="count">{{ site.data.xiuxing.glossary | size }} 条</span></h2>
+
+    <p>「大周天」在不同体系里指的不是同一件事，经络走向也历代有出入。下表是栏目统一口径；每张图仍按它所依据的体系单独标注。</p>
+
+    <ul class="x-gloss-1">
         {% for g in site.data.xiuxing.glossary %}
-        <li><b>{{ g.term }}</b><span>{{ g.note }}</span></li>
+        <li><dl><dt>{{ g.term }}</dt><dd>{{ g.note }}</dd></dl></li>
         {% endfor %}
     </ul>
-</details>
+</section>
 
-<h2>与内丹专题的衔接</h2>
+<h2 id="bridge"><span class="x-h2-tick" aria-hidden="true"></span>与内丹专题的衔接</h2>
 
 <p><a href="{{ '/xiuxing/neidan/' | relative_url }}">内丹专题</a>的 N1 真气运行图只画任督一圈，N2 河车搬运只沿督脉上行；本专题的 B0／B3 才是「周身经络」的完整背景。先看完 B0，再回头看 N2，会更容易明白「小周天」为什么被称为一圈而非全身。</p>
 
-<div class="x-note">
-    <p><strong>内容边界</strong>：以上均为传统文献概念模型的可视化，非医疗诊断、治疗建议或修炼指导。经络走向依《灵枢·经脉》通行说法整理，穴位与循行线为教学示意，不承诺定位精度；子午流注是古人以时间描述气血盛衰的模型，不作诊疗或养生时刻建议。身体不适请就医。</p>
-</div>
+<div class="x-disclaimer" id="boundary" aria-label="内容边界"><strong>内容边界</strong>：以上均为传统文献概念模型的可视化，非医疗诊断、治疗建议或修炼指导。经络走向依《灵枢·经脉》通行说法整理，穴位与循行线为教学示意，不承诺定位精度；子午流注是古人以时间描述气血盛衰的模型，不作诊疗或养生时刻建议。身体不适请就医。</div>
+
+<p class="to-top"><a href="#">回到顶部 &uarr;</a></p>

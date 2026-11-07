@@ -1,19 +1,48 @@
-{% comment %} 图谱卡片。参数：n / title / level / status / driver / desc / url / cover {% endcomment %}
+{% comment %}
+  方案 B「次第」阶梯卡。参数：n / title / level / status / driver / url /
+  index(forloop.index0) / mode(neidan|jingluo) / total(forloop.length)。
+  阶梯卡退化为纯索引：编号 + 标题 + 次第/状态/单一输入；desc 只在专题页
+  「图谱」区的 .x-bcards 封面卡里完整输出一次，避免读屏重复播报。
+  右侧 168×95 属 <240px 缩略位，一律用 span.x-thumb CSS 色块，不发 PNG 请求；
+  真封面（width/height/loading/decoding）在专题页「图谱」区的 .x-bcards 卡片里渲染。
+  已上线：整卡只保留一个 <a>；规划中：不渲染任何 <a>/<button>。
+{% endcomment %}
 {% assign planned = true %}
-{% if include.status == '已上线' %}{% assign planned = false %}{% endif %}
-<article class="x-card{% if planned %} is-planned{% endif %}">
-    {% unless planned %}
-    <a href="{{ include.url | relative_url }}"><img src="{{ include.cover | relative_url }}" alt="{{ include.title }} 总览" loading="lazy" width="2000" height="1125"></a>
-    {% endunless %}
-    <div class="x-body">
-        <span class="x-kicker">{{ include.level }} · {{ include.status }}</span>
-        <span class="x-title"><span class="x-n">{{ include.n }}</span>{{ include.title }}</span>
-        <span class="x-desc">{{ include.desc }}</span>
-        <span class="x-meta">单一输入：{{ include.driver }}</span>
-        {% unless planned %}
-        <a class="x-cta" href="{{ include.url | relative_url }}">打开可拆解模型 →</a>
-        {% else %}
-        <span class="x-cta">规划中 · 见栏目规划</span>
-        {% endunless %}
+{% if include.url %}{% assign planned = false %}{% endif %}
+{% assign xi = include.index | plus: 0 %}
+{% if include.mode == 'jingluo' %}{% assign xi = 0 %}{% endif %}
+{% assign step_no = include.index | plus: 1 %}
+<li class="x-step-item">
+{% if planned %}
+    <div class="x-step-card is-plan" style="--x-i:{{ xi }}" data-mode="{{ include.mode }}"
+         aria-label="{{ include.n }} {{ include.title }}，规划中 · 尚未刊行">
+        <span class="x-step-no">{{ include.n }}</span>
+        <span class="x-tick{% if include.mode == 'jingluo' %} dot{% endif %}" aria-hidden="true"></span>
+        <span class="x-tread" aria-hidden="true"></span>
+        <span class="x-step-body">
+            <span class="x-step-title">{{ include.title }}</span>
+            <span class="x-step-line">{{ include.level }} · 规划中 · 尚未刊行 · 单一输入：{{ include.driver }}</span>
+        </span>
+        <span aria-hidden="true" class="x-cover x-thumb x-plate-plan">{{ include.n }}</span>
     </div>
-</article>
+{% else %}
+    <a class="x-step-card" style="--x-i:{{ xi }}" data-mode="{{ include.mode }}"
+       href="{{ include.url | relative_url }}" target="_blank" rel="noopener"
+       aria-labelledby="ts-{{ include.n }}" aria-describedby="ds-{{ include.n }}">
+        <span class="x-step-no">{{ include.n }}</span>
+        <span class="x-tick{% if include.mode == 'jingluo' %} dot{% endif %}" aria-hidden="true"></span>
+        <span class="x-tread" aria-hidden="true"></span>
+        <span class="x-step-body">
+            <span class="x-step-title" id="ts-{{ include.n }}">{{ include.title }}</span>
+            <span class="x-step-line">{{ include.level }} · 已上线 · 单一输入：<span id="ds-{{ include.n }}">{{ include.driver }}</span></span>
+            <span class="x-open">在新页打开 ↗</span>
+        </span>
+        <span aria-hidden="true" class="x-cover x-thumb">{{ include.n }}</span>
+    </a>
+{% endif %}
+{% if include.mode == 'jingluo' %}
+    <span class="sr-only">并列维度第 {{ step_no }} 项</span>
+{% else %}
+    <span class="sr-only">第 {{ step_no }} 阶，共 {{ include.total }} 阶</span>
+{% endif %}
+</li>

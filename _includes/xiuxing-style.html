@@ -1,44 +1,197 @@
 <style>
-.x-card {
-    display: block; margin: 0 0 32px; border: 1px solid rgba(128,128,128,.28);
-    background: var(--paper, #FCFBF8); color: var(--ink, #16191A); text-decoration: none;
+/* ==========================================================================
+   修仙板块 · 方案 B「次第」
+   替换原 xiuxing-style.html：原 5 处硬编码灰常量全部改为 Paper 变量
+   （--rule / --rule-2 / --wash），不再与暗色脱钩。
+   本文件只承载 x- 前缀组件样式、公共层变量、以及刻意覆盖 paper.css 继承的几条；
+   .wrap / .sheet / .page-head / h2 基线 / :root 全站变量仍由 css/paper.css 提供。
+   ========================================================================== */
+
+/* --- G1 / G12：公共层变量与回落（不改 paper.css） --- */
+:root{
+  --x-faint:#666E67;          /* 亮：专供 ≤13px 文本，≥4.5:1 */
+  --x-faint-deco:#8A928C;     /* 亮：只用于 ≥24px 大字与刻度几何 */
+  --x-rail:40px; --x-tick:9px; --x-step:12px;
 }
-a.x-card:hover { border-color: var(--press, #1E5B4E); text-decoration: none; color: var(--ink, #16191A); }
-.x-card img { display: block; width: 100%; height: auto; border-bottom: 1px solid rgba(128,128,128,.2); }
-.x-card .x-body { display: block; padding: 18px 22px 20px; }
-.x-card .x-kicker {
-    display: block; font-family: var(--mono, monospace); font-size: 12px;
-    letter-spacing: .06em; color: var(--ink-2, #5C6462);
+html[data-theme="dark"]{
+  --x-faint:#8A928C;          /* 暗：专供 ≤13px 文本 */
+  --x-faint-deco:#6E7A72;     /* 暗：只用于 ≥24px 大字与刻度几何 */
 }
-.x-card .x-title { display: block; font-size: 21px; font-weight: 600; margin: 8px 0 10px; }
-.x-card .x-title .x-n { font-family: var(--mono, monospace); font-size: 13px; color: var(--press, #1E5B4E); margin-right: 10px; }
-.x-card .x-desc { display: block; font-size: 15px; line-height: 1.7; color: var(--ink-2, #5C6462); }
-.x-card .x-meta { display: block; margin-top: 10px; font-family: var(--mono, monospace); font-size: 12.5px; color: var(--ink-2, #5C6462); }
-.x-card .x-cta { display: block; margin-top: 12px; font-size: 14px; color: var(--press, #1E5B4E); }
-a.x-card:hover .x-cta { text-decoration: underline; }
-.x-card.is-planned { border-style: dashed; }
-.x-card.is-planned .x-title { color: var(--ink-2, #5C6462); }
-.x-card.is-planned .x-cta { color: var(--ink-2, #5C6462); }
-.x-card.is-planned .x-body { padding: 16px 22px 18px; }
-.x-topic {
-    display: flex; align-items: baseline; gap: 14px; padding: 14px 0;
-    border-bottom: 1px solid rgba(128,128,128,.18);
+@media (max-width:899px){:root{--x-step:6px}}
+@media (max-width:559px){:root{--x-step:0px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* --- G11：1px 裁切式视觉隐藏（paper.css 无 .sr-only） --- */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+
+/* --- G4 三层字族 / G1 状态色 --- */
+.x-mono,.x-kicker,.x-num,.x-state,.x-open,.x-lead{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.x-faint{color:var(--x-faint)}
+.x-deco{color:var(--x-faint-deco)}
+.x-state-live{color:var(--press)}
+.x-state-plan{color:var(--x-faint)}
+.x-lead{display:block;font-family:var(--mono);font-size:12px;line-height:1.7;letter-spacing:.03em;color:var(--ink-2);margin:0 0 14px}
+
+/* --- G3：免责块去灰底 --- */
+.x-disclaimer{margin:32px 0 0;padding:16px 0 0 14px;border-left:2px solid var(--mark);border-top:1px solid var(--rule);background:transparent;font-family:var(--sans);font-size:13px;line-height:1.75;color:var(--ink-2)}
+.x-disclaimer strong{color:var(--ink);font-weight:600}
+
+/* --- G11：页内锚点导航（.to-top 沿用 paper.css，不新造） --- */
+.x-anchor-nav{margin:0 0 28px;padding:11px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;font-family:var(--mono);font-size:12px}
+.x-anchor-nav .x-an-label{color:var(--ink-2);font-size:11px;letter-spacing:.08em;margin-right:2px}
+.x-anchor-nav a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:1px;font-family:var(--mono);font-size:12px}
+.x-anchor-nav a:hover{color:var(--press);border-color:var(--press)}
+#topics,#atlas,#glossary,#glossary-h,#bridge,#boundary,#about{scroll-margin-top:88px}
+@media (max-width:900px){#topics,#atlas,#glossary,#glossary-h,#bridge,#boundary,#about{scroll-margin-top:76px}}
+
+/* --- G5：封面 / <240px 缩略位一律 CSS 色块，不发 PNG 请求 --- */
+.x-cover{display:block;position:relative;width:100%;aspect-ratio:16/9;background:var(--wash);border:1px solid var(--rule);overflow:hidden}
+.x-cover img{display:block;width:100%;height:100%;object-fit:cover;margin:0}  /* 封面不反色、不加 filter / 遮罩 */
+.x-thumb{display:flex;align-items:center;justify-content:center;aspect-ratio:16/9;background:var(--wash);border:1px solid var(--rule);font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums;color:var(--ink-2);letter-spacing:.04em}
+.x-planned .x-thumb,.x-planned .x-cover,.x-plate-plan{border:1px dashed var(--rule);background:var(--wash)}
+.x-planned,.x-planned *{cursor:default}
+
+/* --- G8：显式覆盖 paper.css 三个破坏性继承 --- */
+.sheet a.x-card,.sheet a.x-card *,.sheet a.x-step-card,.sheet a.x-step-card *{text-decoration:none}
+/* .sheet a 的特异性 (0,1,1) 高于单个类名，必须显式压回纸墨色与无下划线 */
+.sheet a.x-card,.sheet a.x-step-card,.sheet a.x-vol-row{color:var(--ink);text-decoration:none}
+.sheet .x-card img,.sheet .x-thumb img{margin:0}
+.sheet .x-index-wrap th,.sheet .x-index-wrap td{padding:8px 10px 8px 0 !important;line-height:1.5 !important;vertical-align:middle;border-left:0 !important;border-right:0 !important;border-bottom:1px solid var(--rule-2) !important}
+.sheet .x-index-wrap thead th{border-top:1.5px solid var(--rule-strong) !important;border-bottom:1px solid var(--rule) !important}
+.sheet .x-index-wrap tbody tr:last-child td{border-bottom:1.5px solid var(--rule-strong) !important}
+.sheet a.x-r-name{color:var(--ink);text-decoration:none;border-bottom:1px solid transparent}
+.sheet a.x-r-name:hover{color:var(--press);border-color:var(--press)}
+a.x-r-name:focus-visible{outline:2px solid var(--press);outline-offset:3px;position:relative;z-index:1}
+.x-r-open{display:block;font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:10.5px;line-height:1.5;letter-spacing:.04em;color:var(--press);margin-top:2px;text-decoration:none}
+
+/* --- G9：卡片只留一个 <a> --- */
+.x-card{display:block;color:var(--ink);border:1px solid var(--rule);background:transparent;text-decoration:none;height:100%;position:relative}
+a.x-card:hover{border-color:var(--press);color:var(--ink);text-decoration:none}
+a.x-card:focus-visible{outline:2px solid var(--press);outline-offset:3px;z-index:1}
+.x-card-info{min-height:140px;display:flex;flex-direction:column;padding:14px 16px 16px}
+.x-mono-line{display:block;font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:11.5px;line-height:1.6;color:var(--ink-2);letter-spacing:.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.x-card-title{display:block;font-family:var(--serif);font-size:17px;line-height:1.45;font-weight:600;color:var(--ink);margin:8px 0 6px;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2}
+.x-card-desc{display:block;font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--ink-2);overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2}
+.x-open{display:block;margin-top:auto;padding-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--press)}
+.x-planned .x-card-title,.x-planned .x-mono-line,.x-planned .x-card-desc{color:var(--x-faint)}
+.x-card--full .x-card-desc{-webkit-line-clamp:unset;line-clamp:unset;overflow:visible;display:block;font-size:14px;line-height:1.8}
+.x-card--full .x-card-info{min-height:0}
+.x-card--full .x-mono-line{white-space:normal;overflow:visible}
+.x-card-item{list-style:none;margin:0;min-width:0}
+.x-bcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;overflow:visible;padding:0;margin:0 0 8px}
+.x-bcards > .x-card-item{min-width:0}
+@media (max-width:559px){.x-bcards{grid-template-columns:minmax(0,1fr)}}
+
+/* --- G7：几何只做几何，语义走真实 DOM --- */
+.x-h2-tick{display:inline-block;width:9px;height:9px;background:var(--press);margin:0 12px 2px 0;vertical-align:middle}
+.sheet h2::before{display:none}  /* B：改用真实 span.x-h2-tick，不用 34×2 伪元素短线 */
+/* 术语 section 内的 h2 是 section 的首子元素，会被 paper.css 的
+   .sheet h2:first-child 误去掉规线；此处按原值补回，不改 paper.css。 */
+.sheet #glossary h2:first-child{margin-top:60px;border-top:1px solid var(--rule);padding-top:18px}
+.x-term-rule{display:block;width:20px;height:1px;background:var(--press);margin:0 0 5px}
+.x-gloss-dl{margin:0;padding:0}
+.x-gloss-dl dt{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--ink);padding-top:9px;break-after:avoid}
+.x-gloss-dl dd{margin:0 0 12px;padding:0 0 12px;border-bottom:1px solid var(--rule-2);font-size:13px;line-height:1.75;color:var(--ink-2);font-family:var(--sans)}
+.x-tick,.x-tread,.x-rail,.x-term-rule,.x-h2-tick{pointer-events:none}
+
+/* --- 凡例（仅 xiuxing/index.html）：无规线、无底色、无 h2 语言、统一 --ink-2 --- */
+.x-legend{margin:0;padding:0;border:0;background:transparent}
+.sheet .x-legend p{margin:0;font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:12px;font-weight:400;line-height:1.8;letter-spacing:0;color:var(--ink-2);background:transparent}
+.x-legend p span{display:block}
+@media (max-width:559px){
+  .x-legend p span{margin-bottom:6px}
+  .x-legend p span:last-child{margin-bottom:0}
+  .x-legend + h2{margin-top:40px}
 }
-.x-topic > .x-id { font-family: var(--mono, monospace); font-size: 12px; color: var(--ink-2, #5C6462); flex: none; }
-.x-topic > .x-name { font-size: 17px; font-weight: 600; flex: none; }
-.x-topic > .x-note { font-size: 14px; color: var(--ink-2, #5C6462); flex: 1; }
-.x-topic > .x-state { font-size: 13px; color: var(--press, #1E5B4E); flex: none; }
-.x-topic.is-muted > .x-name, .x-topic.is-muted > .x-state { color: var(--ink-2, #5C6462); }
-.x-gloss { margin: 0; padding: 0; list-style: none; }
-.x-gloss li { padding: 12px 0; border-bottom: 1px solid rgba(128,128,128,.18); }
-.x-gloss b { font-size: 15px; }
-.x-gloss span { display: block; margin-top: 5px; font-size: 14px; line-height: 1.7; color: var(--ink-2, #5C6462); }
-.x-note {
-    margin: 28px 0 0; padding: 14px 18px; border-left: 3px solid var(--press, #1E5B4E);
-    background: rgba(128,128,128,.06); font-size: 14px; line-height: 1.75;
-}
-@media (max-width: 700px) {
-    .x-topic { flex-wrap: wrap; gap: 6px 12px; }
-    .x-topic > .x-note { flex-basis: 100%; }
+
+/* ==========================================================================
+   方案 B「次第」：首页卷目轴 + 索引尺，专题页阶梯轴
+   ========================================================================== */
+
+/* 首页「专题」= 卷目轴 5 行 */
+.x-volume-axis{margin:0 0 8px;padding:0;list-style:none;border-top:1px solid var(--rule)}
+.x-vol{margin:0;border-bottom:1px solid var(--rule-2);position:relative}
+.x-vol-row{display:grid;grid-template-columns:44px 1fr auto auto;gap:16px;align-items:baseline;padding:14px 0;color:var(--ink);text-decoration:none}
+a.x-vol-row:hover .x-vol-name{color:var(--press)}
+a.x-vol-row:focus-visible{outline:2px solid var(--press);outline-offset:3px;position:relative;z-index:1}
+.x-vol-id{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--press);letter-spacing:.06em}
+.x-vol-name{font-family:var(--serif);font-size:17px;font-weight:600}
+.x-vol-count{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);white-space:nowrap}
+.x-vol-go{font-family:var(--mono);font-size:11.5px;color:var(--press);white-space:nowrap}
+.x-vol.is-plan .x-vol-row,.x-vol.is-plan .x-vol-row *{cursor:default}
+.x-vol.is-plan .x-vol-id,.x-vol.is-plan .x-vol-name,.x-vol.is-plan .x-vol-count,.x-vol.is-plan .x-vol-go{color:var(--x-faint)}
+
+/* 首页「已上线图谱」= 索引尺：table 语义、行高 52px、只有横线、第 4 列 112px */
+.x-index-wrap{width:100%;overflow-x:auto}
+.x-ruler{width:100%;table-layout:fixed;border-collapse:collapse}
+.x-ruler col.c1{width:48px}.x-ruler col.c2{width:auto}
+.x-ruler col.c3{width:48px}.x-ruler col.c4{width:112px}
+.x-ruler col.c5{width:108px}.x-ruler col.c6{width:72px}
+.x-ruler tr{height:52px}
+.x-ruler thead th{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink-2);font-weight:600;text-align:left}
+.x-ruler tbody th{font-family:var(--mono);font-size:12px;color:var(--press);font-weight:600}
+.x-ruler tbody td{font-family:var(--sans);font-size:13px;color:var(--ink)}
+.x-ruler .x-r-name{font-family:var(--serif);font-size:14px;font-weight:600;color:var(--ink);line-height:1.5}
+.x-ruler .x-r-level{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+.x-ruler .x-r-driver{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+.x-ruler .x-r-state{font-family:var(--mono);font-size:11.5px;color:var(--press)}
+.x-ruler .x-thumb{width:44px;aspect-ratio:16/9;font-size:10px}
+.x-meta{display:none;font-family:var(--mono);font-size:12px;line-height:1.6;color:var(--ink-2);margin-top:3px}
+.u-hide-sm{}
+
+/* 专题页阶梯轴：竖轴放在 ol 外的 wrapper 里，避免 <span> 直接做 <ol> 子元素 */
+.x-steps-wrap{position:relative}
+.x-steps{margin:0;padding:0;list-style:none;position:relative;overflow:visible}
+.x-rail{position:absolute;left:28px;top:0;bottom:0;width:1px;background:var(--rule);display:block}
+.x-step-item{list-style:none;margin:0}
+.x-step-card{display:grid;grid-template-columns:72px minmax(0,1fr) 168px;gap:16px;padding:18px 0;border-bottom:1px solid var(--rule-2);position:relative;overflow:visible;align-items:start;color:var(--ink);text-decoration:none;background:transparent}
+a.x-step-card:focus-visible{outline:2px solid var(--press);outline-offset:3px;z-index:1}
+.x-step-card:focus-within{z-index:1}
+/* 阶梯卡 hover：与 a.x-vol-row / a.x-card 同一套套色反馈；
+   只作用于已上线的 <a> 卡片，规划态 <div> 不触发。focus-visible 规则不动。 */
+a.x-step-card:hover .x-step-title{color:var(--press)}
+a.x-step-card:hover{border-bottom-color:var(--press)}
+.x-step-no{font-family:var(--mono);font-size:34px;line-height:1;font-weight:600;color:var(--press);letter-spacing:-.02em;padding-top:2px;font-variant-numeric:tabular-nums}
+.x-tick{position:absolute;left:24px;top:22px;width:9px;height:9px;background:var(--press);display:block}
+.x-tick.dot{left:26px;width:5px;height:5px;border-radius:50%}
+.x-tread{position:absolute;left:28px;top:26px;height:1px;background:var(--rule);display:block;width:calc(40px + var(--x-i,0) * var(--x-step))}
+[data-mode="jingluo"] .x-tread{display:none}   /* 经络：5px 圆点、零缩进等距 */
+.x-step-body{min-width:0;margin-left:calc(var(--x-i,0) * var(--x-step))}
+.x-step-title{display:block;font-family:var(--serif);font-size:16px;font-weight:600;line-height:1.5;color:var(--ink)}
+.x-step-line{display:block;font-family:var(--mono);font-size:11.5px;line-height:1.7;color:var(--ink-2);margin-top:4px;overflow-wrap:anywhere}
+.x-step-body .x-open{margin-top:6px;padding-top:0}
+.x-step-card .x-cover{width:168px;aspect-ratio:16/9}
+/* G1：34px 阶号属 ≥24px 大字，规划态用 --x-faint-deco；≤13px 状态文字仍用达标的 --x-faint */
+.x-step-card.is-plan .x-step-no{color:var(--x-faint-deco)}
+.x-step-card.is-plan .x-tick{background:transparent;border:1px solid var(--x-faint)}
+.x-step-card.is-plan .x-step-title,.x-step-card.is-plan .x-step-line{color:var(--x-faint)}
+.x-step-card.is-plan .x-cover{border:1px dashed var(--rule);background:var(--wash)}
+.x-step-card.is-plan,.x-step-card.is-plan *{cursor:default}
+
+/* 术语单列刻度式索引 */
+.x-gloss-1{margin:0;padding:0;list-style:none;border-top:1px solid var(--rule)}
+.x-gloss-1 li{padding:12px 0 12px 16px;border-bottom:1px solid var(--rule-2);position:relative;margin:0}
+.x-gloss-1 li::before{content:"";position:absolute;left:0;top:20px;width:9px;height:9px;background:var(--press)}
+.x-gloss-1 dt{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--ink)}
+.x-gloss-1 dd{margin:4px 0 0;font-size:13px;line-height:1.75;color:var(--ink-2)}
+
+/* <560 两处收敛 */
+@media (max-width:559px){
+  /* ① 阶梯卡：V=375 内容仅 335px，原 72/1fr/168 会崩；封面移到第二行整宽 16/9 */
+  .x-step-card{grid-template-columns:48px minmax(0,1fr)}
+  .x-step-card .x-cover{grid-column:2;width:100%;aspect-ratio:16/9}
+  .x-step-no{font-size:24px}
+  .x-vol-row{grid-template-columns:36px minmax(0,1fr);gap:10px}
+  .x-vol-count,.x-vol-go{grid-column:2;text-align:left}
+  /* ② 索引尺：次第 / 单一输入折进图名单元格第二行 .x-meta（真实 DOM 文本，
+     不删核心概念），行高 56px；被折的列换行显示而非一删了之。
+     同时把被收起的 4 个 <col> 宽度归零：否则 table-layout:fixed 的
+     colgroup 固定宽度合计 388px 会顶宽 .sheet，在 375px 视口造成横向溢出。 */
+  .x-ruler tr{height:56px}
+  .x-ruler col.c2{width:auto}
+  .x-ruler col.c3,.x-ruler col.c4,.x-ruler col.c5,.x-ruler col.c6{width:0}
+  .x-meta{display:block}
+  .u-hide-sm{display:none !important}
+  .x-ruler .x-r-name{font-size:13.5px}
 }
 </style>

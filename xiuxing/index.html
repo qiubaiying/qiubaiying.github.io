@@ -9,65 +9,126 @@ header-img: "img/og/xiuxing.png"
 
 {% include xiuxing-style.html %}
 
+<nav class="x-anchor-nav" aria-label="页内导航">
+    <span class="x-an-label">页内</span>
+    <a href="#topics">专题</a>
+    <a href="#atlas">图谱</a>
+    <a href="#about">关于这些图</a>
+    <a href="#boundary">内容边界</a>
+    <a href="#">回顶</a>
+</nav>
+
 <p>这个栏目放的不是心得，是结构。传统文本里的路线与次第常被写成一串名词，读完了仍不知道它们怎么连起来、谁先谁后。这里试着把它们做成能转、能拆、能看数的图，并按专题排成从基础到高深的阶梯。</p>
 
-<h2>专题</h2>
+<aside class="x-legend" aria-labelledby="x-legend-t">
+    <span class="sr-only" id="x-legend-t">凡例：卷次、图号、次第与单一输入的读法</span>
+    <p>
+        <span>卷次 A–E 分专题，图号 N0–N5、B0–B3 各归其卷；未刊之卷只存其目。</span>
+        <span>次第在内丹是由筑基至上关的阶序，在经络是主干、调控、时间、内外四维并列，不分先后。</span>
+        <span>每张图只由一个输入变量驱动，气团位置、经络高亮与面板读数皆由它推导，画面与读数不会相左。</span>
+    </p>
+</aside>
 
-<div class="x-topic">
-    <span class="x-id">A</span>
-    <span class="x-name"><a href="{{ '/xiuxing/neidan/' | relative_url }}">内丹次第</a></span>
-    <span class="x-note">六张图 · 筑基三调 → 三花聚顶；已上线 3 张</span>
-    <span class="x-state">已上线 3 张</span>
-</div>
-<div class="x-topic">
-    <span class="x-id">B</span>
-    <span class="x-name"><a href="{{ '/xiuxing/jingluo/' | relative_url }}">经络气血</a></span>
-    <span class="x-note">十二正经、奇经八脉、子午流注、营卫与大周天；已上线 4 张</span>
-    <span class="x-state">已上线 4 张</span>
-</div>
-<div class="x-topic is-muted">
-    <span class="x-id">C</span>
-    <span class="x-name">脏腑五行</span>
-    <span class="x-note">五脏生克、气机升降、心肾水火、五气朝元</span>
-    <span class="x-state">规划中</span>
-</div>
-<div class="x-topic is-muted">
-    <span class="x-id">D</span>
-    <span class="x-name">火候易象</span>
-    <span class="x-note">十二消息卦、子午卯酉周天、河车三车、沐浴温养</span>
-    <span class="x-state">规划中</span>
-</div>
-<div class="x-topic is-muted">
-    <span class="x-id">E</span>
-    <span class="x-name">古图复原</span>
-    <span class="x-note">《内经图》《修真图》等丹道图谱的 3D 拆解</span>
-    <span class="x-state">规划中</span>
-</div>
+<h2 id="topics"><span class="x-h2-tick" aria-hidden="true"></span>专题</h2>
 
-<h2>已上线图谱</h2>
+{% assign nd_live = site.data.xiuxing.neidan.items | where: "status", "已上线" %}
+{% assign jl_live = site.data.xiuxing.jingluo.items | where: "status", "已上线" %}
+<ol class="x-volume-axis" role="list">
+    <li class="x-vol">
+        <a class="x-vol-row" href="{{ '/xiuxing/neidan/' | relative_url }}"
+           aria-label="卷次 A，内丹次第，共 {{ site.data.xiuxing.neidan.items | size }} 图，已上线 {{ nd_live | size }} 张，六张图 · 筑基三调 → 三花聚顶，进入专题">
+            <span class="x-vol-id">A</span>
+            <span class="x-vol-name">内丹次第</span>
+            <span class="x-vol-count">{{ site.data.xiuxing.neidan.items | size }} 图 · 已上线 {{ nd_live | size }} 张</span>
+            <span class="x-vol-go">入口 →</span>
+        </a>
+    </li>
+    <li class="x-vol">
+        <a class="x-vol-row" href="{{ '/xiuxing/jingluo/' | relative_url }}"
+           aria-label="卷次 B，经络气血，共 {{ site.data.xiuxing.jingluo.items | size }} 图，已上线 {{ jl_live | size }} 张，十二正经、奇经八脉、子午流注、营卫与大周天，进入专题">
+            <span class="x-vol-id">B</span>
+            <span class="x-vol-name">经络气血</span>
+            <span class="x-vol-count">{{ site.data.xiuxing.jingluo.items | size }} 图 · 已上线 {{ jl_live | size }} 张</span>
+            <span class="x-vol-go">入口 →</span>
+        </a>
+    </li>
+    <li class="x-vol is-plan">
+        <div class="x-vol-row" aria-label="卷次 C，脏腑五行，五脏生克、气机升降、心肾水火、五气朝元，规划中 · 尚未刊行">
+            <span class="x-vol-id">C</span>
+            <span class="x-vol-name">脏腑五行</span>
+            <span class="x-vol-count">规划中 · 尚未刊行</span>
+            <span class="x-vol-go">未刊</span>
+        </div>
+    </li>
+    <li class="x-vol is-plan">
+        <div class="x-vol-row" aria-label="卷次 D，火候易象，十二消息卦、子午卯酉周天、河车三车、沐浴温养，规划中 · 尚未刊行">
+            <span class="x-vol-id">D</span>
+            <span class="x-vol-name">火候易象</span>
+            <span class="x-vol-count">规划中 · 尚未刊行</span>
+            <span class="x-vol-go">未刊</span>
+        </div>
+    </li>
+    <li class="x-vol is-plan">
+        <div class="x-vol-row" aria-label="卷次 E，古图复原，《内经图》《修真图》等丹道图谱的 3D 拆解，规划中 · 尚未刊行">
+            <span class="x-vol-id">E</span>
+            <span class="x-vol-name">古图复原</span>
+            <span class="x-vol-count">规划中 · 尚未刊行</span>
+            <span class="x-vol-go">未刊</span>
+        </div>
+    </li>
+</ol>
 
+<h2 id="atlas"><span class="x-h2-tick" aria-hidden="true"></span>已上线图谱</h2>
+
+<p class="x-lead">以下 7 图分属 A/B 两卷</p>
 <p>两个专题共 7 张图，全部入口如下；完整说明、封面与术语表在各自的专题页。</p>
 
 {% assign all = site.data.xiuxing.neidan.items | concat: site.data.xiuxing.jingluo.items %}
-{% for item in all %}
-{% if item.url %}
-<div class="x-topic">
-    <span class="x-id">{{ item.n }}</span>
-    <span class="x-name"><a href="{{ item.url | relative_url }}">{{ item.title }}</a></span>
-    <span class="x-note">{{ item.level }} · 单一输入：{{ item.driver }}</span>
-    <span class="x-state">{{ item.status }}</span>
+<div class="x-index-wrap">
+    <table class="x-ruler">
+        <colgroup>
+            <col class="c1"><col class="c2"><col class="c3">
+            <col class="c4"><col class="c5"><col class="c6">
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">编号</th>
+                <th scope="col">图名</th>
+                <th scope="col" class="u-hide-sm">图版</th>
+                <th scope="col" class="u-hide-sm">次第</th>
+                <th scope="col" class="u-hide-sm">单一输入</th>
+                <th scope="col" class="u-hide-sm">状态</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in all %}
+            {% if item.url %}
+            <tr>
+                <th scope="row">{{ item.n }}</th>
+                <td>
+                    <a class="x-r-name" href="{{ item.url | relative_url }}" target="_blank" rel="noopener">{{ item.title }}</a>
+                    <span class="x-r-open">在新页打开 ↗</span>
+                    <span class="x-meta">{{ item.n }} · {{ item.level }} · {{ item.driver }}</span>
+                </td>
+                <td class="u-hide-sm"><span aria-hidden="true" class="x-thumb">{{ item.n }}</span></td>
+                <td class="u-hide-sm"><span class="x-r-level">{{ item.level }}</span></td>
+                <td class="u-hide-sm"><span class="x-r-driver">{{ item.driver }}</span></td>
+                <td class="u-hide-sm"><span class="x-r-state">{{ item.status }}</span></td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
-{% endif %}
-{% endfor %}
 
 <p><a href="{{ '/xiuxing/neidan/' | relative_url }}">内丹次第 →</a> · <a href="{{ '/xiuxing/jingluo/' | relative_url }}">经络气血 →</a></p>
 
-<h2>关于这些图</h2>
+<h2 id="about"><span class="x-h2-tick" aria-hidden="true"></span>关于这些图</h2>
 
 <p>三田三关依兰州李少波真气运行研究所公开所述的定义建模：上丹田在头顶百会，中丹田在心窝部，下丹田在小腹部；三关为尾闾、夹脊、玉枕。模型按 1 单位 = 10 cm、身高 170 cm 建立。每张图只由<strong>一个输入变量</strong>驱动（呼吸相位、周天度数……），气团位置、经络高亮、面板读数与自动导览都从它推导，不会出现读数与画面不一致。七张图共用同一套人体底模、面板与装配器，差别只在曲线库、节点、次第和那一个输入变量；经络专题最多十三条脉络同屏，只有当令的一条高亮。</p>
 
 <p>交互页是完全自包含的离线页面，三维库、字体与样式都打包在文件里，不请求任何外部资源；拖动旋转、滚轮缩放、按数字键切换次第、按 E 拆解、按 C 切换剖切模式、按 V 换机位、空格暂停。浏览器不支持 WebGL 时会退回静态总览图。</p>
 
-<div class="x-note">
-    <p><strong>说明</strong>：这是传统文献概念模型的可视化，穴位与经络位置为教学示意，非医疗诊断、治疗建议或修炼指导。身体不适请就医，练功请在有资质的老师指导下进行。</p>
-</div>
+<div class="x-disclaimer" id="boundary" aria-label="内容边界"><strong>说明</strong>：这是传统文献概念模型的可视化，穴位与经络位置为教学示意，非医疗诊断、治疗建议或修炼指导。身体不适请就医，练功请在有资质的老师指导下进行。</div>
+
+<p class="to-top"><a href="#">回到顶部 &uarr;</a></p>

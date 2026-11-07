@@ -142,6 +142,41 @@
 
 # ----- 外语电影 -----
 
+- title: "生化危机：爆发夜"
+  kind: film
+  region: world
+  year: 2026
+  creator: "扎克·克雷格"
+  note: "医疗快递员布莱恩深夜送货误入浣熊市，整座城市正在病毒中沦陷。导演《野蛮人》《凶器》。"
+
+- title: "逃出布迪秀"
+  kind: film
+  region: world
+  year: 2026
+  creator: "加斯帕·凯利"
+  note: "一群孩子被困在诡异的老式儿童节目里，橙色独角兽布迪要求人人欢笑顺从，不配合就被清除。恐怖喜剧。"
+
+- title: "死神来了：血脉诅咒"
+  kind: film
+  region: world
+  year: 2025
+  creator: "扎克·利波夫斯基、亚当·斯坦"
+  note: "系列第六部。大学生斯蒂芬妮梦见外婆阻止的 1969 年观景塔惨剧，死神转而追杀整条血脉。"
+
+- title: "异形：夺命舰"
+  kind: film
+  region: world
+  year: 2024
+  creator: "费德·阿尔瓦雷兹"
+  note: "时间线在 1979 第一部与 1986《异形2》之间，一群太空殖民者在废弃空间站撞上异形。雷德利·斯科特监制。"
+
+- title: "魔鬼深夜秀"
+  kind: film
+  region: world
+  year: 2023
+  creator: "科林·凯恩斯、卡梅伦·凯恩斯"
+  note: "1977 年万圣节深夜，脱口秀主持人杰克为冲收视请来灵媒与邪教幸存者，直播失控放出恶灵。伪直播录像风格。"
+
 - title: "沙丘"
   kind: film
   region: world
