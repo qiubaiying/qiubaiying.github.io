@@ -2,8 +2,8 @@
   "source": "Google Scholar",
   "profileUrl": "https://scholar.google.com/citations?user=7p-fiAsAAAAJ&hl=en",
   "authorId": "7p-fiAsAAAAJ",
-  "lastUpdated": "2026-11-06T16:47:55.521Z",
-  "totalCitations": 239,
+  "lastUpdated": "2026-11-07T15:40:47.518Z",
+  "totalCitations": 240,
   "hIndex": 6,
   "i10Index": 6,
   "citationHistory": [
@@ -25,7 +25,7 @@
     },
     {
       "year": 2026,
-      "citations": 76
+      "citations": 77
     }
   ],
   "knownScholarArticles": [
@@ -36,16 +36,16 @@
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=7p-fiAsAAAAJ&pagesize=100&citation_for_view=7p-fiAsAAAAJ:9yKSN-GCB0IC"
     },
     {
-      "title": "A cancer nanovaccine based on an FeAl-layered double hydroxide framework for reactive oxygen species-augmented metalloimmunotherapy",
-      "year": 2024,
-      "publication": "ACS nano 18 (11), 8143-8156, 2024",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=7p-fiAsAAAAJ&pagesize=100&citation_for_view=7p-fiAsAAAAJ:W7OEmFMy1HYC"
-    },
-    {
       "title": "Optimal data center energy management with hybrid quantum-classical multi-cuts benders' decomposition method",
       "year": 2023,
       "publication": "IEEE Transactions on Sustainable Energy 15 (2), 847-858, 2023",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=7p-fiAsAAAAJ&pagesize=100&citation_for_view=7p-fiAsAAAAJ:Y0pCki6q_DkC"
+    },
+    {
+      "title": "A cancer nanovaccine based on an FeAl-layered double hydroxide framework for reactive oxygen species-augmented metalloimmunotherapy",
+      "year": 2024,
+      "publication": "ACS nano 18 (11), 8143-8156, 2024",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=7p-fiAsAAAAJ&pagesize=100&citation_for_view=7p-fiAsAAAAJ:W7OEmFMy1HYC"
     },
     {
       "title": "Minimizing delay in network function visualization with quantum computing",
