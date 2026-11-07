@@ -7,7 +7,7 @@ description: "标题、标签、正文一起搜。支持多个词，空格分隔
 
 <div class="search-field">
     <input id="q" class="search-input" type="search" autocomplete="off" spellcheck="false"
-           placeholder="试试「分区」「PPO」「幂等」" aria-label="搜索文章">
+           placeholder="试试「分区」「PPO」「经络」" aria-label="搜索文章与图谱">
 </div>
 
 <p class="search-hint" id="hint">输入关键词开始——索引在本地，不打网络请求。</p>
@@ -20,6 +20,7 @@ description: "标题、标签、正文一起搜。支持多个词，空格分隔
         <ul class="se-links">
             <li><a href="{{ site.baseurl }}/series/">{{ site.data.series.size }} 条连载，从第一章读起</a></li>
             <li><a href="{{ site.baseurl }}/tags/">全部标签，按主题翻</a></li>
+            <li><a href="{{ '/xiuxing/' | relative_url }}">修仙图谱，按专题翻</a></li>
         </ul>
     </div>
     <div>
@@ -111,14 +112,14 @@ description: "标题、标签、正文一起搜。支持多个词，空格分隔
     if (!hits.length) {
       list.innerHTML = '';
       if (empty) empty.hidden = false;
-      hint.textContent = '没有匹配「' + q + '」的文章。';
+      hint.textContent = '没有匹配「' + q + '」的内容。';
       return;
     }
 
-    hint.textContent = hits.length + ' 篇匹配「' + q + '」';
+    hint.textContent = hits.length + ' 条匹配「' + q + '」';
     list.innerHTML = hits.slice(0, 30).map(function (h) {
       return '<li>' +
-        '<time>' + h.p.d + '</time>' +
+        (h.p.d ? '<time>' + h.p.d + '</time>' : '') +
         '<div><a href="' + h.p.u + '">' + esc(h.p.t) + '</a>' +
         '<p>' + esc(snippet(h.p.c, terms[0])) + '</p></div>' +
         '</li>';

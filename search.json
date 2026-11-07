@@ -4,6 +4,19 @@ layout: null
 sitemap: false
 ---
 [
-{% for post in site.posts %}{"t":{{ post.title | jsonify }},"u":{{ post.url | relative_url | jsonify }},"d":"{{ post.date | date: '%Y-%m-%d' }}","g":{{ post.tags | jsonify }},"c":{{ post.content | strip_html | normalize_whitespace | jsonify }}}{% unless forloop.last %},{% endunless %}
+{% for post in site.posts %}{"t":{{ post.title | jsonify }},"u":{{ post.url | relative_url | jsonify }},"d":"{{ post.date | date: '%Y-%m-%d' }}","g":{{ post.tags | jsonify }},"c":{{ post.content | strip_html | normalize_whitespace | jsonify }}},
 {% endfor %}
+{% comment %}
+    静态图谱页没有 front matter，不在 site.pages 里，只能从 _data/xiuxing 取。
+    逗号用法：posts 每项后带逗号；3 个固定条目之间带逗号、最后一条不带；
+    7 张图谱每条「前面」带逗号 —— 这样即使 live 为空也不会留尾随逗号。
+{% endcomment %}
+{% assign atlas = site.data.xiuxing.neidan.items | concat: site.data.xiuxing.jingluo.items %}
+{% assign live = '' | split: '' %}
+{% for item in atlas %}{% if item.url %}{% assign live = live | push: item %}{% endif %}{% endfor %}
+{"t":"修仙 · 栏目总览","u":{{ '/xiuxing/' | relative_url | jsonify }},"d":"","g":["修仙","图谱","内丹","经络"],"c":"修仙栏目：把传统文本里讲不清的路线、次第与结构做成能转、能拆、能看数的图。五个专题 A 内丹次第、B 经络气血、C 脏腑五行、D 火候易象、E 古图复原；已上线 7 张图谱 N0–N2 与 B0–B3。每张图只由一个输入变量驱动。"},
+{"t":"内丹次第 · 专题","u":{{ '/xiuxing/neidan/' | relative_url | jsonify }},"d":"","g":["修仙","内丹","图谱"],"c":"内丹次第专题：从筑基三调到河车搬运，按次第排成一条线。N0 筑基调身调息调心、N1 真气运行法人体运行图、N2 河车搬运三关火候已上线；N3 大周天、N4 坎离交媾、N5 三花聚顶规划中。附术语与异说表。"},
+{"t":"经络气血 · 专题","u":{{ '/xiuxing/jingluo/' | relative_url | jsonify }},"d":"","g":["修仙","经络","图谱"],"c":"经络气血专题：四张可拆解的 3D 图谱。B0 十二正经循行流注、B1 奇经八脉蓄溢调节、B2 子午流注十二时辰、B3 营卫与大周天。四张共用同一份曲线库与人体底模，属并列维度而非阶序。附术语与异说表。"}
+{% for item in live %}{% capture tagline %}{{ item.n }} {{ item.title }}{% endcapture %},
+{"t":{{ tagline | jsonify }},"u":{{ item.url | relative_url | jsonify }},"d":"","g":["修仙","图谱",{{ item.level | jsonify }},{{ item.driver | jsonify }}],"c":{{ item.desc | jsonify }}}{% endfor %}
 ]

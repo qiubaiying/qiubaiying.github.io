@@ -41,8 +41,8 @@ html[data-theme="dark"]{
 .x-anchor-nav .x-an-label{color:var(--ink-2);font-size:11px;letter-spacing:.08em;margin-right:2px}
 .x-anchor-nav a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:1px;font-family:var(--mono);font-size:12px}
 .x-anchor-nav a:hover{color:var(--press);border-color:var(--press)}
-#topics,#atlas,#glossary,#glossary-h,#bridge,#boundary,#about{scroll-margin-top:88px}
-@media (max-width:900px){#topics,#atlas,#glossary,#glossary-h,#bridge,#boundary,#about{scroll-margin-top:76px}}
+#topics,#atlas,#planned,#glossary,#glossary-h,#bridge,#boundary,#about{scroll-margin-top:88px}
+@media (max-width:900px){#topics,#atlas,#planned,#glossary,#glossary-h,#bridge,#boundary,#about{scroll-margin-top:76px}}
 
 /* --- G5：封面 / <240px 缩略位一律 CSS 色块，不发 PNG 请求 --- */
 .x-cover{display:block;position:relative;width:100%;aspect-ratio:16/9;background:var(--wash);border:1px solid var(--rule);overflow:hidden}
@@ -167,6 +167,19 @@ a.x-step-card:hover{border-bottom-color:var(--press)}
 .x-step-card.is-plan .x-step-title,.x-step-card.is-plan .x-step-line{color:var(--x-faint)}
 .x-step-card.is-plan .x-cover{border:1px dashed var(--rule);background:var(--wash)}
 .x-step-card.is-plan,.x-step-card.is-plan *{cursor:default}
+
+/* 未刊图目：与已刊索引尺区隔，只用三级墨与规线，不做成可点卡片 */
+.x-plan-list{margin:0 0 28px;padding:0;list-style:none;border-top:1px solid var(--rule)}
+.x-plan-list li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:14px;padding:16px 0;border-bottom:1px solid var(--rule-2)}
+.x-plan-id{font-family:var(--mono);font-size:16px;font-weight:600;color:var(--x-faint);font-variant-numeric:tabular-nums}
+.x-plan-title{display:block;font-family:var(--serif);font-size:16px;font-weight:600;color:var(--ink)}
+.x-plan-meta{display:block;font-family:var(--mono);font-size:11.5px;line-height:1.7;color:var(--ink-2);margin-top:4px}
+.x-plan-body p{margin:8px 0 0;font-family:var(--sans);font-size:13px;line-height:1.75;color:var(--ink-2)}
+.x-plan-basis{color:var(--x-faint)}
+.x-plan-vols{margin:0;padding:0;border-top:1px solid var(--rule)}
+.x-plan-vols dt{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--ink);padding-top:12px}
+.x-plan-vols dd{margin:4px 0 12px;padding-bottom:12px;border-bottom:1px solid var(--rule-2);font-family:var(--sans);font-size:13px;line-height:1.75;color:var(--ink-2)}
+@media (max-width:559px){.x-plan-list li{grid-template-columns:36px minmax(0,1fr);gap:10px}}
 
 /* 术语单列刻度式索引 */
 .x-gloss-1{margin:0;padding:0;list-style:none;border-top:1px solid var(--rule)}
