@@ -2,8 +2,8 @@
   "source": "Google Scholar",
   "profileUrl": "https://scholar.google.com/citations?user=7p-fiAsAAAAJ&hl=en",
   "authorId": "7p-fiAsAAAAJ",
-  "lastUpdated": "2026-11-07T15:40:47.518Z",
-  "totalCitations": 240,
+  "lastUpdated": "2026-11-08T15:59:52.148Z",
+  "totalCitations": 242,
   "hIndex": 6,
   "i10Index": 6,
   "citationHistory": [
@@ -25,7 +25,7 @@
     },
     {
       "year": 2026,
-      "citations": 77
+      "citations": 79
     }
   ],
   "knownScholarArticles": [
@@ -54,16 +54,16 @@
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=7p-fiAsAAAAJ&pagesize=100&citation_for_view=7p-fiAsAAAAJ:qjMakFHDy7sC"
     },
     {
-      "title": "CPPU: Policy space diversity for informative path planning and GAI-enabled updating CSI in ISAC",
-      "year": 2024,
-      "publication": "IEEE Transactions on Cognitive Communications and Networking 11 (2), 777-790, 2024",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=7p-fiAsAAAAJ&pagesize=100&citation_for_view=7p-fiAsAAAAJ:YsMSGLbcyi4C"
-    },
-    {
       "title": "QAOA-assisted benders' decomposition for mixed-integer linear programming",
       "year": 2024,
       "publication": "ICC 2024-IEEE International Conference on Communications, 1127-1132, 2024",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=7p-fiAsAAAAJ&pagesize=100&citation_for_view=7p-fiAsAAAAJ:IjCSPb-OGe4C"
+    },
+    {
+      "title": "CPPU: Policy space diversity for informative path planning and GAI-enabled updating CSI in ISAC",
+      "year": 2024,
+      "publication": "IEEE Transactions on Cognitive Communications and Networking 11 (2), 777-790, 2024",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=7p-fiAsAAAAJ&pagesize=100&citation_for_view=7p-fiAsAAAAJ:YsMSGLbcyi4C"
     },
     {
       "title": "Optimal energy and IT service emergency schedule for Internet data center",
