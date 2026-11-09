@@ -87,43 +87,104 @@ header-img: "img/og/xiuxing.png"
 
 <h2 id="atlas"><span class="x-h2-tick" aria-hidden="true"></span>已上线图谱</h2>
 
-<p class="x-lead">以下 21 图分属 A–E 五卷</p>
-<p>五个专题共 21 张图，全部入口如下；完整说明、封面与术语表在各自的专题页。</p>
+<p class="x-lead">以下按卷次列出各图入口</p>
+<p>各图入口如下；完整说明、封面与术语表在各自的专题页。</p>
 
-{% assign ab = site.data.xiuxing.neidan.items | concat: site.data.xiuxing.jingluo.items %}
-{% assign abc = ab | concat: site.data.xiuxing.zangfu.items %}
-{% assign abcd = abc | concat: site.data.xiuxing.yixiang.items %}
-{% assign all = abcd | concat: site.data.xiuxing.gutu.items %}
-<div class="x-index-wrap">
-    <table class="x-ruler">
+{% assign nd = site.data.xiuxing.neidan.items %}
+{% assign jl = site.data.xiuxing.jingluo.items %}
+{% assign zf = site.data.xiuxing.zangfu.items %}
+{% assign yx = site.data.xiuxing.yixiang.items %}
+{% assign gt = site.data.xiuxing.gutu.items %}
+<div class="x-index-wrap x-index-wrap--idx">
+    <table class="x-ruler x-ruler--idx">
+        <caption>修仙图谱索引尺 · A–E 五卷共 21 图</caption>
         <colgroup>
-            <col class="c1"><col class="c2"><col class="c3">
-            <col class="c4"><col class="c5"><col class="c6">
+            <col class="c1"><col class="c2"><col class="c3"><col class="c4">
         </colgroup>
         <thead>
             <tr>
                 <th scope="col">编号</th>
                 <th scope="col">图名</th>
-                <th scope="col" class="u-hide-sm">图版</th>
-                <th scope="col" class="u-hide-sm">次第</th>
-                <th scope="col" class="u-hide-sm">单一输入</th>
-                <th scope="col" class="u-hide-sm">状态</th>
+                <th scope="col" class="x-col-lv">次第</th>
+                <th scope="col" class="x-col-dr">单一输入</th>
             </tr>
         </thead>
-        <tbody>
-            {% for item in all %}
+        <tbody id="vol-a" aria-labelledby="vol-a-label">
+            {% for item in nd %}
             {% if item.url %}
             <tr>
                 <th scope="row">{{ item.n }}</th>
-                <td>
-                    <a class="x-r-name" href="{{ item.url | relative_url }}" target="_blank" rel="noopener">{{ item.title }}</a>
-                    <span class="x-r-open">在新页打开 ↗</span>
-                    <span class="x-meta">{{ item.n }} · {{ item.level }} · {{ item.driver }}</span>
+                <td class="x-r-name-cell">
+                    {% if forloop.first %}<span class="sr-only" id="vol-a-label">A · 内丹次第（N0–N5）</span>{% endif %}
+                    <a class="x-r-name" href="{{ item.url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.title }} <span aria-hidden="true">↗</span><span class="sr-only">（在新页打开）</span></a>
+                    <span class="x-meta"><span class="sr-only">次第：</span>{{ item.level }}<span class="x-meta-extra"> · <span class="sr-only">单一输入：</span>{{ item.driver }}</span></span>
                 </td>
-                <td class="u-hide-sm"><span aria-hidden="true" class="x-thumb">{{ item.n }}</span></td>
-                <td class="u-hide-sm"><span class="x-r-level">{{ item.level }}</span></td>
-                <td class="u-hide-sm"><span class="x-r-driver">{{ item.driver }}</span></td>
-                <td class="u-hide-sm"><span class="x-r-state">{{ item.status }}</span></td>
+                <td class="x-col-lv"><span class="x-r-level">{{ item.level }}</span></td>
+                <td class="x-col-dr"><span class="x-r-driver">{{ item.driver }}</span></td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+        <tbody id="vol-b" aria-labelledby="vol-b-label">
+            {% for item in jl %}
+            {% if item.url %}
+            <tr>
+                <th scope="row">{{ item.n }}</th>
+                <td class="x-r-name-cell">
+                    {% if forloop.first %}<span class="sr-only" id="vol-b-label">B · 经络气血（B0–B3）</span>{% endif %}
+                    <a class="x-r-name" href="{{ item.url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.title }} <span aria-hidden="true">↗</span><span class="sr-only">（在新页打开）</span></a>
+                    <span class="x-meta"><span class="sr-only">次第：</span>{{ item.level }}<span class="x-meta-extra"> · <span class="sr-only">单一输入：</span>{{ item.driver }}</span></span>
+                </td>
+                <td class="x-col-lv"><span class="x-r-level">{{ item.level }}</span></td>
+                <td class="x-col-dr"><span class="x-r-driver">{{ item.driver }}</span></td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+        <tbody id="vol-c" aria-labelledby="vol-c-label">
+            {% for item in zf %}
+            {% if item.url %}
+            <tr>
+                <th scope="row">{{ item.n }}</th>
+                <td class="x-r-name-cell">
+                    {% if forloop.first %}<span class="sr-only" id="vol-c-label">C · 脏腑五行（C0–C3）</span>{% endif %}
+                    <a class="x-r-name" href="{{ item.url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.title }} <span aria-hidden="true">↗</span><span class="sr-only">（在新页打开）</span></a>
+                    <span class="x-meta"><span class="sr-only">次第：</span>{{ item.level }}<span class="x-meta-extra"> · <span class="sr-only">单一输入：</span>{{ item.driver }}</span></span>
+                </td>
+                <td class="x-col-lv"><span class="x-r-level">{{ item.level }}</span></td>
+                <td class="x-col-dr"><span class="x-r-driver">{{ item.driver }}</span></td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+        <tbody id="vol-d" aria-labelledby="vol-d-label">
+            {% for item in yx %}
+            {% if item.url %}
+            <tr>
+                <th scope="row">{{ item.n }}</th>
+                <td class="x-r-name-cell">
+                    {% if forloop.first %}<span class="sr-only" id="vol-d-label">D · 火候易象（D0–D3）</span>{% endif %}
+                    <a class="x-r-name" href="{{ item.url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.title }} <span aria-hidden="true">↗</span><span class="sr-only">（在新页打开）</span></a>
+                    <span class="x-meta"><span class="sr-only">次第：</span>{{ item.level }}<span class="x-meta-extra"> · <span class="sr-only">单一输入：</span>{{ item.driver }}</span></span>
+                </td>
+                <td class="x-col-lv"><span class="x-r-level">{{ item.level }}</span></td>
+                <td class="x-col-dr"><span class="x-r-driver">{{ item.driver }}</span></td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+        <tbody id="vol-e" aria-labelledby="vol-e-label">
+            {% for item in gt %}
+            {% if item.url %}
+            <tr>
+                <th scope="row">{{ item.n }}</th>
+                <td class="x-r-name-cell">
+                    {% if forloop.first %}<span class="sr-only" id="vol-e-label">E · 古图复原（E0–E2）</span>{% endif %}
+                    <a class="x-r-name" href="{{ item.url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.title }} <span aria-hidden="true">↗</span><span class="sr-only">（在新页打开）</span></a>
+                    <span class="x-meta"><span class="sr-only">次第：</span>{{ item.level }}<span class="x-meta-extra"> · <span class="sr-only">单一输入：</span>{{ item.driver }}</span></span>
+                </td>
+                <td class="x-col-lv"><span class="x-r-level">{{ item.level }}</span></td>
+                <td class="x-col-dr"><span class="x-r-driver">{{ item.driver }}</span></td>
             </tr>
             {% endif %}
             {% endfor %}
@@ -136,7 +197,7 @@ header-img: "img/og/xiuxing.png"
 <h2 id="planned"><span class="x-h2-tick" aria-hidden="true"></span>刊行说明</h2>
 
 <p class="x-lead">五卷二十一图已全部刊行</p>
-<p>此前列在这里的 N3–N5 与 C／D／E 三卷已全部补齐，规划中的 21 张图到此完整。各卷的范围、单一输入与前置关系写在专题页；后续只做校订与术语补正，不再增图，以免体系无限扩张。</p>
+<p>此前列在这里的 N3–N5 与 C／D／E 三卷已补齐；各卷的范围、单一输入与前置关系写在专题页；后续只做校订与术语补正，不再增图，以免体系无限扩张。</p>
 
 <h3>体系边界</h3>
 <dl class="x-plan-vols">

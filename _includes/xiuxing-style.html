@@ -41,8 +41,8 @@ html[data-theme="dark"]{
 .x-anchor-nav .x-an-label{color:var(--ink-2);font-size:11px;letter-spacing:.08em;margin-right:2px}
 .x-anchor-nav a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:1px;font-family:var(--mono);font-size:12px}
 .x-anchor-nav a:hover{color:var(--press);border-color:var(--press)}
-#topics,#mapping,#atlas,#planned,#glossary,#glossary-h,#bridge,#boundary,#about{scroll-margin-top:88px}
-@media (max-width:900px){#topics,#mapping,#atlas,#planned,#glossary,#glossary-h,#bridge,#boundary,#about{scroll-margin-top:76px}}
+#topics,#mapping,#atlas,#planned,#glossary,#glossary-h,#bridge,#boundary,#about,#vol-a,#vol-b,#vol-c,#vol-d,#vol-e{scroll-margin-top:88px}
+@media (max-width:900px){#topics,#mapping,#atlas,#planned,#glossary,#glossary-h,#bridge,#boundary,#about,#vol-a,#vol-b,#vol-c,#vol-d,#vol-e{scroll-margin-top:76px}}
 
 /* --- G5：封面 / <240px 缩略位一律 CSS 色块，不发 PNG 请求 --- */
 .x-cover{display:block;position:relative;width:100%;aspect-ratio:16/9;background:var(--wash);border:1px solid var(--rule);overflow:hidden}
@@ -56,13 +56,16 @@ html[data-theme="dark"]{
 /* .sheet a 的特异性 (0,1,1) 高于单个类名，必须显式压回纸墨色与无下划线 */
 .sheet a.x-card,.sheet a.x-step-card,.sheet a.x-vol-row{color:var(--ink);text-decoration:none}
 .sheet .x-card img,.sheet .x-thumb img{margin:0}
-.sheet .x-index-wrap th,.sheet .x-index-wrap td{padding:8px 10px 8px 0 !important;line-height:1.5 !important;vertical-align:middle;border-left:0 !important;border-right:0 !important;border-bottom:1px solid var(--rule-2) !important}
-.sheet .x-index-wrap thead th{border-top:1.5px solid var(--rule-strong) !important;border-bottom:1px solid var(--rule) !important}
-.sheet .x-index-wrap tbody tr:last-child td{border-bottom:1.5px solid var(--rule-strong) !important}
+/* 只作用于首页索引尺（--idx）；neidan 的「次第 ↔ 图号对照」表不再被这三条全局覆盖命中。
+   结构线一律用 --rule：暗色 --rule-strong 对比度不足，不承担结构边界。 */
+.sheet .x-index-wrap--idx th,.sheet .x-index-wrap--idx td{padding:8px 10px 8px 0 !important;line-height:1.5 !important;vertical-align:middle;border-left:0 !important;border-right:0 !important;border-bottom:1px solid var(--rule) !important}
+.sheet .x-index-wrap--idx thead th{border-top:1px solid var(--rule) !important;border-bottom:1px solid var(--rule) !important}
+.sheet .x-index-wrap--idx tbody tr:last-child td{border-bottom:1px solid var(--rule) !important}
+/* 对照表兜底：任何 .x-ruler 固定行高都不得压到非索引尺表格 */
+.x-ruler:not(.x-ruler--idx) tr{height:auto}
 .sheet a.x-r-name{color:var(--ink);text-decoration:none;border-bottom:1px solid transparent}
-.sheet a.x-r-name:hover{color:var(--press);border-color:var(--press)}
-a.x-r-name:focus-visible{outline:2px solid var(--press);outline-offset:3px;position:relative;z-index:1}
-.x-r-open{display:block;font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:10.5px;line-height:1.5;letter-spacing:.04em;color:var(--press);margin-top:2px;text-decoration:none}
+.sheet a.x-r-name:hover{color:var(--press);text-decoration:underline;text-underline-offset:3px}
+a.x-r-name:focus-visible{outline:2px solid var(--press);outline-offset:3px}
 
 /* --- G9：卡片只留一个 <a> --- */
 .x-card{display:block;color:var(--ink);border:1px solid var(--rule);background:transparent;text-decoration:none;height:100%;position:relative}
@@ -121,23 +124,75 @@ a.x-vol-row:focus-visible{outline:2px solid var(--press);outline-offset:3px;posi
 .x-vol.is-plan .x-vol-row,.x-vol.is-plan .x-vol-row *{cursor:default}
 .x-vol.is-plan .x-vol-id,.x-vol.is-plan .x-vol-name,.x-vol.is-plan .x-vol-count,.x-vol.is-plan .x-vol-go{color:var(--x-faint)}
 
-/* 首页「已上线图谱」= 索引尺：table 语义、行高 52px、只有横线、第 4 列 112px */
-.x-index-wrap{width:100%;overflow-x:auto}
-.x-ruler{width:100%;table-layout:fixed;border-collapse:collapse}
-.x-ruler col.c1{width:48px}.x-ruler col.c2{width:auto}
-.x-ruler col.c3{width:48px}.x-ruler col.c4{width:112px}
-.x-ruler col.c5{width:108px}.x-ruler col.c6{width:72px}
-.x-ruler tr{height:52px}
-.x-ruler thead th{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink-2);font-weight:600;text-align:left}
-.x-ruler tbody th{font-family:var(--mono);font-size:12px;color:var(--press);font-weight:600}
-.x-ruler tbody td{font-family:var(--sans);font-size:13px;color:var(--ink)}
-.x-ruler .x-r-name{font-family:var(--serif);font-size:14px;font-weight:600;color:var(--ink);line-height:1.5}
-.x-ruler .x-r-level{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
-.x-ruler .x-r-driver{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
-.x-ruler .x-r-state{font-family:var(--mono);font-size:11.5px;color:var(--press)}
-.x-ruler .x-thumb{width:44px;aspect-ratio:16/9;font-size:10px}
-.x-meta{display:none;font-family:var(--mono);font-size:12px;line-height:1.6;color:var(--ink-2);margin-top:3px}
-.u-hide-sm{}
+/* 首页「已上线图谱」= 索引尺。所有规则带 --idx 作用域，绝不误伤 neidan 对照表。
+   真根因反制：paper.js 会把每个 .sheet table 自动包进 .table-responsive；paper.css
+   ≥1100px 又强制它 900px / margin-left:-120px，把整列推出 660px 版心（横滚 120px）。
+   这里只在板块作用域内把注入容器还原成自适应、零左移、不裁切；focus-visible
+   的 3px offset 也不再被 overflow-x:auto 算出的另一轴裁掉。 */
+.sheet .x-index-wrap--idx > .table-responsive{
+  width:auto !important;margin-left:0 !important;overflow:visible !important;
+}
+.sheet .x-index-wrap--idx{width:100%;overflow:visible}
+.x-index-wrap{width:100%}  /* 原 overflow-x:auto 取消：对照表也不再做横滚容器 */
+
+.sheet .x-ruler--idx{width:100%;table-layout:fixed;border-collapse:collapse}
+.sheet .x-ruler--idx caption{caption-side:top;text-align:left;font-family:var(--mono);font-size:12px;line-height:1.6;letter-spacing:.03em;color:var(--ink-2);padding:0 0 8px}
+.sheet .x-ruler--idx tr{height:56px}
+.sheet .x-ruler--idx thead th{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ink-2);font-weight:600;text-align:left;white-space:nowrap}
+.sheet .x-ruler--idx tbody th{font-family:var(--mono);font-size:12px;color:var(--press);font-weight:600;white-space:nowrap}
+.sheet .x-ruler--idx tbody td{font-family:var(--sans);font-size:13px;color:var(--ink)}
+.sheet .x-ruler--idx .x-r-level,.sheet .x-ruler--idx .x-r-driver{font-family:var(--mono);font-size:12px;line-height:1.5;color:var(--ink-2);overflow-wrap:anywhere}
+.sheet .x-ruler--idx tbody tr:first-child > th,.sheet .x-ruler--idx tbody tr:first-child > td{border-top:1px solid var(--rule) !important}
+.sheet .x-ruler--idx tbody tr:hover,.sheet .x-ruler--idx tbody tr:focus-within{background:var(--wash)}
+.sheet .x-ruler--idx tbody tr:hover a.x-r-name,.sheet .x-ruler--idx tbody tr:focus-within a.x-r-name{color:var(--press);text-decoration:underline;text-underline-offset:3px}
+
+/* 图名格：单 <a> 本身 40px 高，::after 铺满整个 56px 的格（tab 停靠点仍恒为 21）。
+   .x-meta 绝对定位在下半格，不参与行高计算：折行也不会把 56px 撑成 76.8px。 */
+.sheet .x-ruler--idx td.x-r-name-cell{position:relative}
+.sheet .x-ruler--idx .x-r-name{display:block;min-height:39px;font-family:var(--serif);font-size:13.5px;font-weight:600;line-height:1.35;color:var(--ink);white-space:normal;overflow-wrap:anywhere}
+.sheet .x-ruler--idx .x-r-name::after{content:"";position:absolute;inset:0}
+.sheet .x-ruler--idx .x-meta{position:absolute;left:0;right:10px;top:26px;font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--ink-2);white-space:normal;overflow-wrap:anywhere;overflow:visible;min-height:2.6em;pointer-events:none}
+
+/* S（移动优先，<560）：编号 36（≤360 为 32）+ 图名；次第 / 单一输入折进 .x-meta */
+.sheet .x-ruler--idx col.c1{width:36px}
+.sheet .x-ruler--idx col.c2{width:auto}
+.sheet .x-ruler--idx col.c3,.sheet .x-ruler--idx col.c4{width:0}
+@media (max-width:360px){.sheet .x-ruler--idx col.c1{width:32px}}
+/* 被折叠的列保留单元格，只用 visibility:hidden + 零尺寸；不用 display:none（会串列）。
+   后代 span 也必须一并归零：否则 .x-r-level/.x-r-driver 自带的 12px/1.5 会在
+   0 宽列里逐字折行，把 56px 撑成 180px，并让最后一个字溢出表格右缘 12px。 */
+.sheet .x-ruler--idx th.x-col-lv,.sheet .x-ruler--idx td.x-col-lv,
+.sheet .x-ruler--idx th.x-col-dr,.sheet .x-ruler--idx td.x-col-dr,
+.sheet .x-ruler--idx .x-col-lv *,.sheet .x-ruler--idx .x-col-dr *{
+  visibility:hidden;padding:0 !important;border:0 !important;font-size:0 !important;line-height:0 !important;
+}
+
+/* M（≥560）：编号 44 + 图名 + 单一输入 96；次第仍折进 .x-meta */
+@media (min-width:560px){
+  .sheet .x-ruler--idx col.c1{width:44px}
+  .sheet .x-ruler--idx col.c2{width:auto}
+  .sheet .x-ruler--idx col.c3{width:0}
+  .sheet .x-ruler--idx col.c4{width:96px}
+  .sheet .x-ruler--idx th.x-col-dr,.sheet .x-ruler--idx td.x-col-dr{
+    visibility:visible;padding:8px 10px 8px 0 !important;font-size:12px !important;line-height:1.25 !important;border-bottom:1px solid var(--rule) !important;
+  }
+  .sheet .x-ruler--idx .x-col-dr *{visibility:visible;font-size:12px !important;line-height:1.25 !important}
+  .sheet .x-ruler--idx .x-r-name{font-size:14px}
+  .sheet .x-ruler--idx .x-meta-extra{display:none}
+}
+
+/* L（≥700）：编号 48 + 图名 + 次第 132 + 单一输入 108；.x-meta 隐藏 */
+@media (min-width:700px){
+  .sheet .x-ruler--idx col.c1{width:48px}
+  .sheet .x-ruler--idx col.c2{width:auto}
+  .sheet .x-ruler--idx col.c3{width:132px}
+  .sheet .x-ruler--idx col.c4{width:108px}
+  .sheet .x-ruler--idx th.x-col-lv,.sheet .x-ruler--idx td.x-col-lv{
+    visibility:visible;padding:8px 10px 8px 0 !important;font-size:12px !important;line-height:1.25 !important;border-bottom:1px solid var(--rule) !important;
+  }
+  .sheet .x-ruler--idx .x-col-lv *{visibility:visible;font-size:12px !important;line-height:1.25 !important}
+  .sheet .x-ruler--idx .x-meta{display:none}
+}
 
 /* 专题页阶梯轴：竖轴放在 ol 外的 wrapper 里，避免 <span> 直接做 <ol> 子元素 */
 .x-steps-wrap{position:relative}
@@ -188,7 +243,7 @@ a.x-step-card:hover{border-bottom-color:var(--press)}
 .x-gloss-1 dt{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--ink)}
 .x-gloss-1 dd{margin:4px 0 0;font-size:13px;line-height:1.75;color:var(--ink-2)}
 
-/* <560 两处收敛 */
+/* <560 两处收敛（索引尺的 .x-ruler 规则已移到上面的移动优先两档，此处一律不动） */
 @media (max-width:559px){
   /* ① 阶梯卡：V=375 内容仅 335px，原 72/1fr/168 会崩；封面移到第二行整宽 16/9 */
   .x-step-card{grid-template-columns:48px minmax(0,1fr)}
@@ -196,15 +251,5 @@ a.x-step-card:hover{border-bottom-color:var(--press)}
   .x-step-no{font-size:24px}
   .x-vol-row{grid-template-columns:36px minmax(0,1fr);gap:10px}
   .x-vol-count,.x-vol-go{grid-column:2;text-align:left}
-  /* ② 索引尺：次第 / 单一输入折进图名单元格第二行 .x-meta（真实 DOM 文本，
-     不删核心概念），行高 56px；被折的列换行显示而非一删了之。
-     同时把被收起的 4 个 <col> 宽度归零：否则 table-layout:fixed 的
-     colgroup 固定宽度合计 388px 会顶宽 .sheet，在 375px 视口造成横向溢出。 */
-  .x-ruler tr{height:56px}
-  .x-ruler col.c2{width:auto}
-  .x-ruler col.c3,.x-ruler col.c4,.x-ruler col.c5,.x-ruler col.c6{width:0}
-  .x-meta{display:block}
-  .u-hide-sm{display:none !important}
-  .x-ruler .x-r-name{font-size:13.5px}
 }
 </style>
