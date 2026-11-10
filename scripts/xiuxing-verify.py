@@ -227,6 +227,10 @@ if isinstance(pr, dict):
     for asset in ("js/xiuxing-practice-data.js", "js/xiuxing-practice.js"):
         ck("'" + asset + "'" in sw, "sw.js 预缓存缺 " + asset)
         ck((ROOT / asset).exists(), "跟练资源缺失 " + asset)
+    # 浮层只能贴右下：图页底部是满屏控制条（阶段／导览／复位）加操作提示，贴左会压住它们
+    pjs = (ROOT / "js/xiuxing-practice.js").read_text(encoding="utf-8")
+    ck(".xp-root{position:fixed;right:16px;bottom:16px" in pjs,
+       "跟练浮层须贴右下角（right:16px;bottom:16px）；贴左会压住图页底部控制条")
 
 # ---------------------------------------------------------------- 结果
 print("卷册 %d 卷 / 图目 %d 张 / 新图 %d 张 / 术语 %d 条" %

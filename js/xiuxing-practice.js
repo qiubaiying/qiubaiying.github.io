@@ -53,7 +53,8 @@
 
   /* ---------------------------------------------------------- 样式 */
   var css = [
-    '.xp-root{position:fixed;left:16px;bottom:16px;z-index:2147483000;display:flex;flex-direction:column-reverse;align-items:flex-start;font:13px/1.6 var(--font-sans,system-ui,sans-serif);color:#e8e6e0}',
+    // 贴右下角：图页底部有满屏控制条（阶段按钮／导览／复位）与操作提示，左下角必然压住它们
+    '.xp-root{position:fixed;right:16px;bottom:16px;z-index:2147483000;display:flex;flex-direction:column-reverse;align-items:flex-end;font:13px/1.6 var(--font-sans,system-ui,sans-serif);color:#e8e6e0}',
     '.xp-toggle{background:rgba(18,20,24,.92);color:#e8e6e0;border:1px solid rgba(200,151,90,.55);border-radius:999px;padding:8px 16px;cursor:pointer;font-size:13px;letter-spacing:.04em}',
     '.xp-toggle:hover{border-color:#c8975a}',
     '.xp-panel{display:none;width:340px;max-width:calc(100vw - 32px);max-height:78vh;overflow:auto;background:rgba(18,20,24,.95);border:1px solid rgba(200,151,90,.4);border-radius:12px;padding:14px 16px;margin-bottom:10px;box-shadow:0 8px 28px rgba(0,0,0,.35)}',
