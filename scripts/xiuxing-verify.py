@@ -231,6 +231,11 @@ if isinstance(pr, dict):
     pjs = (ROOT / "js/xiuxing-practice.js").read_text(encoding="utf-8")
     ck(".xp-root{position:fixed;right:16px;bottom:16px" in pjs,
        "跟练浮层须贴右下角（right:16px;bottom:16px）；贴左会压住图页底部控制条")
+    # 文案随位置走：浮层贴右下后，页面里不能再写「图页左下角」
+    stale = [p.name for p in list((ROOT / "xiuxing").glob("*.html")) +
+             list((ROOT / "_includes").glob("*.html"))
+             if "图页左下角" in p.read_text(encoding="utf-8")]
+    ck(not stale, "文案与浮层位置不符（仍写「图页左下角」）：" + ", ".join(stale))
 
 # ---------------------------------------------------------------- 结果
 print("卷册 %d 卷 / 图目 %d 张 / 新图 %d 张 / 术语 %d 条" %
