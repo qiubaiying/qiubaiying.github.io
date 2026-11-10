@@ -1,0 +1,45 @@
+# 卷册清单：驱动 /xiuxing/ 的卷目轴、索引尺与总数统计。
+# 新增一卷只需在此追加一条，并建同名 _data/xiuxing/<key>.yml；
+# 图目增减由各卷 items 自动反映，页面不再硬编码卷数与图数。
+- key: neidan
+  id: A
+  name: "内丹次第"
+  range: "N0–N5"
+  url: "/xiuxing/neidan/"
+  desc: "入手三调 → 三花聚顶（含参照系）"
+- key: jingluo
+  id: B
+  name: "经络气血"
+  range: "B0–B3"
+  url: "/xiuxing/jingluo/"
+  desc: "十二正经、奇经八脉、子午流注、营卫与大周天"
+- key: zangfu
+  id: C
+  name: "脏腑五行"
+  range: "C0–C3"
+  url: "/xiuxing/zangfu/"
+  desc: "五脏生克、气机升降、五气朝元"
+- key: yixiang
+  id: D
+  name: "火候易象"
+  range: "D0–D3"
+  url: "/xiuxing/yixiang/"
+  desc: "十二消息卦、子午卯酉周天、三车与文武火候"
+- key: gutu
+  id: E
+  name: "古图复原"
+  range: "E0–E2"
+  url: "/xiuxing/gutu/"
+  desc: "内经图、修真图、反照图的 3D 概念对照"
+- key: buxu
+  id: F
+  name: "经络补遗"
+  range: "F0–F3"
+  url: "/xiuxing/buxu/"
+  desc: "穴位、经筋、皮部、络脉与经别"
+- key: tonglan
+  id: G
+  name: "通览与异说"
+  range: "G0–G1"
+  url: "/xiuxing/tonglan/"
+  desc: "五卷合图与三田三关异说对照"

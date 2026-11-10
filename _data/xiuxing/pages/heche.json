@@ -1,0 +1,823 @@
+{
+  "id": "heche",
+  "slug": "heche",
+  "title": "河车搬运 · 三关火候",
+  "kicker": "RIVER-CART FIRE",
+  "subtitle": "初关 · 炼精化气",
+  "backLabel": "返回修仙",
+  "backHref": "./",
+  "cover": "cover-heche.png",
+  "unitNote": "1 单位 = 10 cm · 身高 170 cm",
+  "disclaimer": "示意性可视化，非医疗或修炼指导；三车与火候为丹经隐喻，图中速度差仅作概念演示",
+  "stageLabel": "采炼次第",
+  "breath": 12,
+  "duration": 120,
+  "breathLabels": [
+    "进火 · 沿督上升",
+    "退符 · 沿任下降"
+  ],
+  "curves": {
+    "du": [
+      [
+        0,
+        5.3,
+        0
+      ],
+      [
+        0,
+        5.52,
+        -0.4
+      ],
+      [
+        0,
+        5.8,
+        -0.7
+      ],
+      [
+        0,
+        7.2,
+        -0.78
+      ],
+      [
+        0,
+        8.9,
+        -0.8
+      ],
+      [
+        0,
+        10.35,
+        -0.82
+      ],
+      [
+        0,
+        11.85,
+        -0.8
+      ],
+      [
+        0,
+        13.3,
+        -0.74
+      ],
+      [
+        0,
+        14.45,
+        -0.64
+      ],
+      [
+        0,
+        15.05,
+        -0.55
+      ],
+      [
+        0,
+        15.9,
+        -0.3
+      ],
+      [
+        0,
+        16.62,
+        0
+      ]
+    ],
+    "ren": [
+      [
+        0,
+        16.62,
+        0
+      ],
+      [
+        0,
+        16.05,
+        0.5
+      ],
+      [
+        0,
+        15.55,
+        0.8
+      ],
+      [
+        0,
+        14.95,
+        0.76
+      ],
+      [
+        0,
+        14.55,
+        0.68
+      ],
+      [
+        0,
+        13.55,
+        0.6
+      ],
+      [
+        0,
+        12.1,
+        0.82
+      ],
+      [
+        0,
+        10.7,
+        0.85
+      ],
+      [
+        0,
+        9.65,
+        0.84
+      ],
+      [
+        0,
+        8.85,
+        0.8
+      ],
+      [
+        0,
+        7.85,
+        0.62
+      ],
+      [
+        0,
+        7.35,
+        0.34
+      ],
+      [
+        0,
+        6.3,
+        0.12
+      ],
+      [
+        0,
+        5.3,
+        0
+      ]
+    ]
+  },
+  "vessels": [
+    {
+      "id": "du",
+      "label": "督脉",
+      "color": "#9b3a26",
+      "hot": "#e85c34"
+    },
+    {
+      "id": "ren",
+      "label": "任脉",
+      "color": "#8a6a22",
+      "hot": "#dfa336",
+      "baseOpacity": 0.6
+    }
+  ],
+  "gates": [
+    "weilv",
+    "jiaji",
+    "yuzhen"
+  ],
+  "nodes": [
+    {
+      "id": "baihui",
+      "name": "百会",
+      "sub": "泥丸 · 上丹田",
+      "p": [
+        0,
+        16.62,
+        0
+      ],
+      "type": "tian",
+      "side": 0,
+      "steps": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "yuzhen",
+      "name": "玉枕关",
+      "sub": "鹿车 · 上关",
+      "p": [
+        0,
+        15.05,
+        -0.55
+      ],
+      "type": "gate",
+      "side": -1,
+      "steps": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "shangqiao",
+      "name": "上鹊桥",
+      "sub": "舌抵上颚",
+      "p": [
+        0,
+        15.2,
+        0.65
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": [
+        4
+      ]
+    },
+    {
+      "id": "shierlou",
+      "name": "十二重楼",
+      "sub": "喉 · 气液相交",
+      "p": [
+        0,
+        13.9,
+        0.55
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": [
+        4
+      ]
+    },
+    {
+      "id": "tiantu",
+      "name": "天突",
+      "sub": "任脉",
+      "p": [
+        0,
+        13.55,
+        0.6
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": [
+        4
+      ]
+    },
+    {
+      "id": "danzhong",
+      "name": "膻中",
+      "sub": "中丹田",
+      "p": [
+        0,
+        12.1,
+        0.82
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": [
+        4
+      ]
+    },
+    {
+      "id": "xinwo",
+      "name": "心窝部",
+      "sub": "中丹田（真法）",
+      "p": [
+        0,
+        10.7,
+        0.85
+      ],
+      "type": "tian",
+      "side": 1,
+      "steps": [
+        4
+      ]
+    },
+    {
+      "id": "shenque",
+      "name": "神阙",
+      "sub": "脐",
+      "p": [
+        0,
+        8.85,
+        0.8
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": [
+        1,
+        4
+      ]
+    },
+    {
+      "id": "dantian",
+      "name": "下丹田",
+      "sub": "炉 · 采药之所",
+      "p": [
+        0,
+        7.35,
+        0.34
+      ],
+      "type": "tian",
+      "side": 1,
+      "steps": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "focus": [
+        1
+      ]
+    },
+    {
+      "id": "huiyin",
+      "name": "会阴",
+      "sub": "下鹊桥",
+      "p": [
+        0,
+        5.3,
+        0
+      ],
+      "type": "node",
+      "side": 0,
+      "steps": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "weilv",
+      "name": "尾闾关",
+      "sub": "牛车 · 下关",
+      "p": [
+        0,
+        5.8,
+        -0.7
+      ],
+      "type": "gate",
+      "side": -1,
+      "steps": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "mingmen",
+      "name": "命门",
+      "sub": "腰后",
+      "p": [
+        0,
+        8.9,
+        -0.8
+      ],
+      "type": "node",
+      "side": -1,
+      "steps": [
+        3
+      ]
+    },
+    {
+      "id": "jiaji",
+      "name": "夹脊关",
+      "sub": "羊车 · 中关",
+      "p": [
+        0,
+        11.85,
+        -0.8
+      ],
+      "type": "gate",
+      "side": -1,
+      "steps": [
+        3
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "n": 1,
+      "name": "采药 · 丹田气发",
+      "en": "GATHER THE MEDICINE",
+      "desc": "筑基既固，精气神三宝渐足，下丹田真气萌动，是谓「药物」。此时只宜静守温养，不可搬运。",
+      "hint": "「药」指精气神，丹经隐语；此处仅作概念标注。",
+      "path": {
+        "type": "hold",
+        "node": "dantian",
+        "radius": 0.2,
+        "rhythm": "breath",
+        "flow": 16
+      },
+      "hot": {
+        "ren": 0.25
+      },
+      "store": 60,
+      "intensity": 0.5,
+      "belt": true,
+      "chips": [
+        false,
+        false,
+        false
+      ],
+      "site": "下丹田 · 药生",
+      "siteId": "dantian"
+    },
+    {
+      "n": 2,
+      "name": "封固 · 下鹊桥",
+      "en": "SEAL THE LOWER BRIDGE",
+      "desc": "气足自然下行至会阴，过下鹊桥而向尾闾。此段最宜「封固」，勿使散失，亦勿以意强引。",
+      "hint": "丹经以鹊桥喻任督交接处，非解剖结构。",
+      "path": {
+        "type": "curve",
+        "curve": "du",
+        "from": 0,
+        "to": 3,
+        "ease": "smooth",
+        "flowFrom": 10,
+        "flowTo": 35
+      },
+      "hot": {
+        "du": 0.65
+      },
+      "store": 72,
+      "intensity": 0.58,
+      "orbit": true,
+      "chips": [
+        false,
+        false,
+        false
+      ],
+      "site": "会阴 → 尾闾",
+      "siteId": "huiyin"
+    },
+    {
+      "n": 3,
+      "name": "炼药 · 三车过关",
+      "en": "THREE CARTS, THREE PASSES",
+      "desc": "沿督脉逆流而上：尾闾用牛车（缓）、夹脊用羊车（中）、玉枕用鹿车（疾）。三段速度不同，即是「火候」；三关依次点开，直上泥丸。",
+      "hint": "牛 / 羊 / 鹿三车是比喻行进缓急，图中以同一呼吸相位下的分段速度表示。",
+      "path": {
+        "type": "curve",
+        "curve": "du",
+        "from": 0,
+        "to": 12,
+        "ease": "cart"
+      },
+      "gateThresholds": [
+        0.14,
+        0.56,
+        0.83
+      ],
+      "hot": {
+        "du": 1
+      },
+      "store": 88,
+      "intensityFrom": 0.62,
+      "intensityTo": 0.95,
+      "orbit": true
+    },
+    {
+      "n": 4,
+      "name": "止火 · 玉液还丹",
+      "en": "STOP THE FIRE, RETURN THE DEW",
+      "desc": "气至泥丸，沿任脉降下，经上鹊桥、十二重楼、膻中而复归丹田，一转完成。火候足则止火温养，不再搬运。",
+      "hint": "子午周天至此一转；大周天另属中关，见后续图谱。",
+      "path": {
+        "type": "curve",
+        "curve": "ren",
+        "from": 0,
+        "to": 12,
+        "ease": "smooth",
+        "flowFrom": 100,
+        "flowTo": 20
+      },
+      "gates": [
+        true,
+        true,
+        true
+      ],
+      "hot": {
+        "du": 0.8,
+        "ren": 1
+      },
+      "store": 100,
+      "intensity": 0.78,
+      "orbit": true,
+      "belt": true,
+      "big": true
+    }
+  ],
+  "metrics": [
+    {
+      "id": "degree",
+      "label": "周天度数",
+      "unit": "°",
+      "source": "degree",
+      "max": 360
+    },
+    {
+      "id": "cart",
+      "label": "当前河车",
+      "unit": "车",
+      "source": "cartStage",
+      "max": 3
+    },
+    {
+      "id": "fire",
+      "label": "火候强度",
+      "unit": "%",
+      "source": "intensity",
+      "max": 100
+    },
+    {
+      "id": "gates",
+      "label": "已过三关",
+      "unit": "/3",
+      "source": "gateCount",
+      "max": 3
+    }
+  ],
+  "chips": {
+    "title": "三车三关",
+    "en": "THREE CARTS",
+    "items": [
+      "牛车 · 尾闾",
+      "羊车 · 夹脊",
+      "鹿车 · 玉枕"
+    ],
+    "rule": "gates",
+    "on": " · 已过",
+    "off": " · 未过"
+  },
+  "legend": [
+    {
+      "key": "qi",
+      "label": "真气 · 当前所在"
+    },
+    {
+      "key": "du",
+      "label": "督脉（逆升）"
+    },
+    {
+      "key": "ren",
+      "label": "任脉（顺降）"
+    },
+    {
+      "key": "gate",
+      "label": "三关"
+    },
+    {
+      "key": "tian",
+      "label": "三田"
+    },
+    {
+      "key": "big",
+      "label": "大周天分支"
+    }
+  ],
+  "views": {
+    "three": {
+      "pos": [
+        17,
+        12.6,
+        21
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "3/4 全景"
+    },
+    "front": {
+      "pos": [
+        0,
+        9.6,
+        27
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "正面 · 任脉"
+    },
+    "back": {
+      "pos": [
+        0,
+        9.6,
+        -27
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "背面 · 督脉"
+    },
+    "side": {
+      "pos": [
+        26,
+        10.2,
+        7
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "侧面 · 周天环"
+    },
+    "dantian": {
+      "pos": [
+        9.5,
+        8.4,
+        11
+      ],
+      "target": [
+        0,
+        7.7,
+        0
+      ],
+      "label": "局部 · 下丹田"
+    },
+    "gates": {
+      "pos": [
+        12,
+        12.8,
+        -15
+      ],
+      "target": [
+        0,
+        11.4,
+        -0.4
+      ],
+      "label": "局部 · 三关"
+    }
+  },
+  "viewOrder": [
+    "three",
+    "side",
+    "back",
+    "gates",
+    "front",
+    "dantian"
+  ],
+  "frontViews": [
+    "front",
+    "dantian"
+  ],
+  "backViews": [
+    "back",
+    "gates"
+  ],
+  "camK": {
+    "three": 1.38,
+    "front": 1.38,
+    "back": 1.38,
+    "side": 1.38,
+    "dantian": 1.12,
+    "gates": 1.32
+  },
+  "cuts": [
+    {
+      "id": "glass",
+      "label": "玻璃体"
+    },
+    {
+      "id": "section",
+      "label": "半剖"
+    },
+    {
+      "id": "xray",
+      "label": "线框"
+    },
+    {
+      "id": "solid",
+      "label": "实体"
+    }
+  ],
+  "extras": {
+    "spine": true,
+    "spineCurve": "du",
+    "belt": true,
+    "big": true
+  },
+  "tour": {
+    "step": [
+      [
+        0,
+        1
+      ],
+      [
+        12,
+        2
+      ],
+      [
+        24,
+        3
+      ],
+      [
+        46,
+        4
+      ],
+      [
+        70,
+        4
+      ],
+      [
+        78,
+        1
+      ],
+      [
+        88,
+        2
+      ],
+      [
+        100,
+        3
+      ],
+      [
+        112,
+        4
+      ]
+    ],
+    "view": [
+      [
+        0,
+        "three"
+      ],
+      [
+        10,
+        "side"
+      ],
+      [
+        22,
+        "back"
+      ],
+      [
+        34,
+        "gates"
+      ],
+      [
+        48,
+        "three"
+      ],
+      [
+        62,
+        "front"
+      ],
+      [
+        76,
+        "dantian"
+      ],
+      [
+        88,
+        "three"
+      ]
+    ],
+    "explode": [
+      [
+        0,
+        0
+      ],
+      [
+        30,
+        0
+      ],
+      [
+        34,
+        0.8
+      ],
+      [
+        42,
+        0.8
+      ],
+      [
+        48,
+        0
+      ],
+      [
+        92,
+        0
+      ],
+      [
+        96,
+        0.85
+      ],
+      [
+        104,
+        0
+      ]
+    ],
+    "cut": [
+      [
+        0,
+        "glass"
+      ],
+      [
+        52,
+        "section"
+      ],
+      [
+        60,
+        "glass"
+      ],
+      [
+        72,
+        "solid"
+      ],
+      [
+        80,
+        "glass"
+      ]
+    ]
+  }
+}

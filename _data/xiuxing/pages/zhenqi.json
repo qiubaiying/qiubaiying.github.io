@@ -1,0 +1,850 @@
+{
+  "id": "zhenqi",
+  "slug": "zhenqi",
+  "title": "真气运行法 · 人体运行图",
+  "kicker": "TEARDOWN — 一台会呼吸的机器",
+  "subtitle": "李少波真气运行法五步功",
+  "stageLabelEn": "FIVE STEPS",
+  "stepWords": [
+    "一",
+    "二",
+    "三",
+    "四",
+    "五"
+  ],
+  "stepUnit": "步",
+  "backLabel": "返回修仙",
+  "backHref": "./",
+  "cover": "cover.png",
+  "unitNote": "1 单位 = 10 cm · 身高 170 cm",
+  "disclaimer": "示意性可视化，非医疗或修炼指导；穴位与经络依真法公开所述三田三关绘制",
+  "stageLabel": "五步功法",
+  "breath": 10,
+  "duration": 120,
+  "breathLabels": [
+    "吸气 · 督脉升",
+    "呼气 · 任脉降"
+  ],
+  "curves": {
+    "du": [
+      [
+        0,
+        5.3,
+        0
+      ],
+      [
+        0,
+        5.52,
+        -0.4
+      ],
+      [
+        0,
+        5.8,
+        -0.7
+      ],
+      [
+        0,
+        7.2,
+        -0.78
+      ],
+      [
+        0,
+        8.9,
+        -0.8
+      ],
+      [
+        0,
+        10.35,
+        -0.82
+      ],
+      [
+        0,
+        11.85,
+        -0.8
+      ],
+      [
+        0,
+        13.3,
+        -0.74
+      ],
+      [
+        0,
+        14.45,
+        -0.64
+      ],
+      [
+        0,
+        15.05,
+        -0.55
+      ],
+      [
+        0,
+        15.9,
+        -0.3
+      ],
+      [
+        0,
+        16.62,
+        0
+      ]
+    ],
+    "ren": [
+      [
+        0,
+        16.62,
+        0
+      ],
+      [
+        0,
+        16.05,
+        0.5
+      ],
+      [
+        0,
+        15.55,
+        0.8
+      ],
+      [
+        0,
+        14.95,
+        0.76
+      ],
+      [
+        0,
+        14.55,
+        0.68
+      ],
+      [
+        0,
+        13.55,
+        0.6
+      ],
+      [
+        0,
+        12.1,
+        0.82
+      ],
+      [
+        0,
+        10.7,
+        0.85
+      ],
+      [
+        0,
+        9.65,
+        0.84
+      ],
+      [
+        0,
+        8.85,
+        0.8
+      ],
+      [
+        0,
+        7.85,
+        0.62
+      ],
+      [
+        0,
+        7.35,
+        0.34
+      ],
+      [
+        0,
+        6.3,
+        0.12
+      ],
+      [
+        0,
+        5.3,
+        0
+      ]
+    ]
+  },
+  "vessels": [
+    {
+      "id": "du",
+      "label": "督脉",
+      "color": "#9b3a26",
+      "hot": "#e85c34"
+    },
+    {
+      "id": "ren",
+      "label": "任脉",
+      "color": "#8a6a22",
+      "hot": "#dfa336"
+    }
+  ],
+  "gates": [
+    "weilv",
+    "jiaji",
+    "yuzhen"
+  ],
+  "nodes": [
+    {
+      "id": "baihui",
+      "name": "百会",
+      "sub": "上丹田",
+      "p": [
+        0,
+        16.62,
+        0
+      ],
+      "type": "tian",
+      "side": 0,
+      "steps": [
+        5
+      ]
+    },
+    {
+      "id": "yuzhen",
+      "name": "玉枕关",
+      "sub": "督脉·上部",
+      "p": [
+        0,
+        15.05,
+        -0.55
+      ],
+      "type": "gate",
+      "side": -1,
+      "steps": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "yintang",
+      "name": "印堂",
+      "sub": "上鹊桥",
+      "p": [
+        0,
+        15.55,
+        0.8
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": [
+        5
+      ]
+    },
+    {
+      "id": "tiantu",
+      "name": "天突",
+      "sub": "任脉",
+      "p": [
+        0,
+        13.55,
+        0.6
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": [
+        2,
+        5
+      ]
+    },
+    {
+      "id": "danzhong",
+      "name": "膻中",
+      "sub": "任脉",
+      "p": [
+        0,
+        12.1,
+        0.82
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": [
+        2,
+        5
+      ]
+    },
+    {
+      "id": "xinwo",
+      "name": "心窝部",
+      "sub": "中丹田",
+      "p": [
+        0,
+        10.7,
+        0.85
+      ],
+      "type": "tian",
+      "side": 1,
+      "steps": [
+        1,
+        2,
+        5
+      ],
+      "focus": [
+        1
+      ]
+    },
+    {
+      "id": "shenque",
+      "name": "神阙",
+      "sub": "脐",
+      "p": [
+        0,
+        8.85,
+        0.8
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": [
+        2,
+        5
+      ]
+    },
+    {
+      "id": "dantian",
+      "name": "下丹田",
+      "sub": "气海·关元",
+      "p": [
+        0,
+        7.35,
+        0.34
+      ],
+      "type": "tian",
+      "side": 1,
+      "steps": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "focus": [
+        3
+      ]
+    },
+    {
+      "id": "huiyin",
+      "name": "会阴",
+      "sub": "任督交接",
+      "p": [
+        0,
+        5.3,
+        0
+      ],
+      "type": "node",
+      "side": 0,
+      "steps": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "weilv",
+      "name": "尾闾关",
+      "sub": "督脉·下部",
+      "p": [
+        0,
+        5.8,
+        -0.7
+      ],
+      "type": "gate",
+      "side": -1,
+      "steps": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "mingmen",
+      "name": "命门",
+      "sub": "腰后",
+      "p": [
+        0,
+        8.9,
+        -0.8
+      ],
+      "type": "node",
+      "side": -1,
+      "steps": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "jiaji",
+      "name": "夹脊关",
+      "sub": "督脉·中部",
+      "p": [
+        0,
+        11.85,
+        -0.8
+      ],
+      "type": "gate",
+      "side": -1,
+      "steps": [
+        4,
+        5
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "n": 1,
+      "name": "呼气注意心窝部",
+      "en": "GATHER AT THE MIDDLE FIELD",
+      "desc": "注意呼气，意守心窝（中丹田）。心火下降温煦脾土，真气在此聚集，为通任脉筑基。",
+      "hint": "都在呼气上下功夫，吸气任其自然。",
+      "path": {
+        "type": "hold",
+        "node": "xinwo",
+        "radius": 0.1,
+        "rhythm": "breath",
+        "flow": 18
+      },
+      "hot": {
+        "ren": 0.35
+      },
+      "store": 12,
+      "intensity": 0.34,
+      "site": "心窝部 · 中丹田",
+      "siteId": "xinwo"
+    },
+    {
+      "n": 2,
+      "name": "意息相随丹田趋",
+      "en": "FOLLOW THE BREATH DOWN",
+      "desc": "真气随呼气沿任脉一步步下沉，经中脘、神阙趋向下丹田，联通中丹田与下丹田，通达任脉。",
+      "hint": "意息相随，勿忘勿助，不刻意导引。",
+      "path": {
+        "type": "curve",
+        "curve": "ren",
+        "from": 7,
+        "to": 12,
+        "ease": "smooth",
+        "flowFrom": 18,
+        "flowTo": 82
+      },
+      "hot": {
+        "ren": 0.75
+      },
+      "storeFrom": 14,
+      "storeTo": 40,
+      "intensityFrom": 0.38,
+      "intensityTo": 0.6
+    },
+    {
+      "n": 3,
+      "name": "调息凝神守丹田",
+      "en": "STORE IN THE LOWER FIELD",
+      "desc": "调息凝神守下丹田，真气蓄积成气丘，逐渐充实饱满；带脉环腰而转，为通督积蓄力量。",
+      "hint": "五步之中此步最久，是通督的关键。",
+      "path": {
+        "type": "hold",
+        "node": "dantian",
+        "radius": 0.22,
+        "rhythm": "breath",
+        "flow": 30
+      },
+      "hot": {
+        "ren": 0.3
+      },
+      "store": 58,
+      "storeGrow": 0.22,
+      "intensity": 0.6,
+      "belt": true,
+      "site": "下丹田 · 气丘",
+      "siteId": "dantian"
+    },
+    {
+      "n": 4,
+      "name": "通督勿忘复勿助",
+      "en": "OPEN THE GOVERNING VESSEL",
+      "desc": "丹田气足，自然经会阴绕尾闾、过命门、透夹脊、越玉枕而上达百会，依次打通三关。",
+      "hint": "气足自冲关，切忌以意领气强行导引。",
+      "path": {
+        "type": "curve",
+        "curve": "du",
+        "from": 0,
+        "to": 12,
+        "ease": "smooth"
+      },
+      "gateThresholds": [
+        0.14,
+        0.56,
+        0.83
+      ],
+      "hot": {
+        "du": 1
+      },
+      "store": 86,
+      "intensityFrom": 0.6,
+      "intensityTo": 0.9,
+      "orbit": true
+    },
+    {
+      "n": 5,
+      "name": "元神蓄力育生机",
+      "en": "THE MICROCOSMIC ORBIT",
+      "desc": "任督贯通，一息一周天：吸气沿督脉升，呼气沿任脉降；久之上丹田元神蓄力，渐通大周天。",
+      "hint": "周天运转，顺乎自然，持之以恒。",
+      "path": {
+        "type": "orbit",
+        "inhale": {
+          "curve": "du",
+          "from": 0,
+          "to": 12
+        },
+        "exhale": {
+          "curve": "ren",
+          "from": 0,
+          "to": 14
+        }
+      },
+      "gates": [
+        true,
+        true,
+        true
+      ],
+      "hot": {
+        "du": 1,
+        "ren": 1
+      },
+      "store": 100,
+      "intensity": 0.82,
+      "orbit": true,
+      "belt": true,
+      "big": true
+    }
+  ],
+  "metrics": [
+    {
+      "id": "flow",
+      "label": "气行进度",
+      "unit": "%",
+      "source": "flow",
+      "max": 100
+    },
+    {
+      "id": "store",
+      "label": "丹田蓄气",
+      "unit": "%",
+      "source": "store",
+      "max": 100
+    },
+    {
+      "id": "cycles",
+      "label": "周天圈数",
+      "unit": "",
+      "source": "cycles",
+      "bar": "phase",
+      "dashExcept": 5
+    },
+    {
+      "id": "rate",
+      "label": "呼吸频率",
+      "unit": "次/分",
+      "source": "breathRate",
+      "decimals": 1,
+      "bar": "fixed",
+      "fixed": 60
+    }
+  ],
+  "chips": {
+    "title": "三关",
+    "en": "THREE PASSES",
+    "items": [
+      "尾闾关",
+      "夹脊关",
+      "玉枕关"
+    ],
+    "rule": "gates",
+    "on": " · 已通",
+    "off": " · 未通"
+  },
+  "legend": [
+    {
+      "key": "qi",
+      "label": "真气 · 当前所在"
+    },
+    {
+      "key": "du",
+      "label": "督脉（背 · 升）"
+    },
+    {
+      "key": "ren",
+      "label": "任脉（前 · 降）"
+    },
+    {
+      "key": "gate",
+      "label": "三关"
+    },
+    {
+      "key": "tian",
+      "label": "三田"
+    },
+    {
+      "key": "big",
+      "label": "大周天分支"
+    }
+  ],
+  "views": {
+    "three": {
+      "pos": [
+        17,
+        12.6,
+        21
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "3/4 全景"
+    },
+    "front": {
+      "pos": [
+        0,
+        9.6,
+        27
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "正面 · 任脉"
+    },
+    "back": {
+      "pos": [
+        0,
+        9.6,
+        -27
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "背面 · 督脉"
+    },
+    "side": {
+      "pos": [
+        26,
+        10.2,
+        7
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "侧面 · 小周天环"
+    },
+    "dantian": {
+      "pos": [
+        9.5,
+        8.4,
+        11
+      ],
+      "target": [
+        0,
+        7.7,
+        0
+      ],
+      "label": "局部 · 下丹田"
+    },
+    "gates": {
+      "pos": [
+        12,
+        12.8,
+        -15
+      ],
+      "target": [
+        0,
+        11.4,
+        -0.4
+      ],
+      "label": "局部 · 三关"
+    }
+  },
+  "viewOrder": [
+    "three",
+    "side",
+    "front",
+    "back",
+    "dantian",
+    "gates"
+  ],
+  "frontViews": [
+    "front",
+    "dantian"
+  ],
+  "backViews": [
+    "back",
+    "gates"
+  ],
+  "camK": {
+    "three": 1.38,
+    "front": 1.38,
+    "back": 1.38,
+    "side": 1.38,
+    "dantian": 1.12,
+    "gates": 1.32
+  },
+  "cuts": [
+    {
+      "id": "glass",
+      "label": "玻璃体"
+    },
+    {
+      "id": "section",
+      "label": "半剖"
+    },
+    {
+      "id": "xray",
+      "label": "线框"
+    },
+    {
+      "id": "solid",
+      "label": "实体"
+    }
+  ],
+  "extras": {
+    "spine": true,
+    "spineCurve": "du",
+    "belt": true,
+    "big": true
+  },
+  "tour": {
+    "step": [
+      [
+        0,
+        1
+      ],
+      [
+        12,
+        2
+      ],
+      [
+        22,
+        3
+      ],
+      [
+        34,
+        4
+      ],
+      [
+        46,
+        5
+      ],
+      [
+        78,
+        5
+      ],
+      [
+        86,
+        1
+      ],
+      [
+        94,
+        2
+      ],
+      [
+        102,
+        3
+      ],
+      [
+        110,
+        4
+      ],
+      [
+        116,
+        5
+      ]
+    ],
+    "view": [
+      [
+        0,
+        "three"
+      ],
+      [
+        8,
+        "side"
+      ],
+      [
+        20,
+        "front"
+      ],
+      [
+        28,
+        "back"
+      ],
+      [
+        40,
+        "side"
+      ],
+      [
+        52,
+        "dantian"
+      ],
+      [
+        62,
+        "gates"
+      ],
+      [
+        72,
+        "three"
+      ]
+    ],
+    "explode": [
+      [
+        0,
+        0
+      ],
+      [
+        26,
+        0
+      ],
+      [
+        30,
+        0.8
+      ],
+      [
+        38,
+        0.8
+      ],
+      [
+        44,
+        0
+      ],
+      [
+        88,
+        0
+      ],
+      [
+        92,
+        0.9
+      ],
+      [
+        100,
+        0
+      ]
+    ],
+    "cut": [
+      [
+        0,
+        "glass"
+      ],
+      [
+        48,
+        "section"
+      ],
+      [
+        56,
+        "glass"
+      ],
+      [
+        70,
+        "solid"
+      ],
+      [
+        78,
+        "glass"
+      ]
+    ]
+  }
+}

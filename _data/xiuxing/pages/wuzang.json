@@ -1,0 +1,770 @@
+{
+  "backLabel": "返回修仙",
+  "backHref": "./",
+  "unitNote": "1 单位 = 10 cm · 身高 170 cm · 示意性模型",
+  "disclaimer": "传统文献概念模型的可视化，非医疗诊断或修炼指导；不作功效宣称",
+  "stageLabel": "图解次第",
+  "views": {
+    "three": {
+      "pos": [
+        17,
+        12.6,
+        21
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "3/4 全景"
+    },
+    "front": {
+      "pos": [
+        0,
+        9.6,
+        27
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "正面 · 任脉"
+    },
+    "back": {
+      "pos": [
+        0,
+        9.6,
+        -27
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "背面 · 督脉"
+    },
+    "side": {
+      "pos": [
+        26,
+        10.2,
+        7
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "侧面 · 周天环"
+    },
+    "limbs": {
+      "pos": [
+        14,
+        10.5,
+        20
+      ],
+      "target": [
+        0.6,
+        9.5,
+        0
+      ],
+      "label": "局部 · 脏腑"
+    },
+    "dantian": {
+      "pos": [
+        9.5,
+        8.4,
+        11
+      ],
+      "target": [
+        0,
+        7.7,
+        0
+      ],
+      "label": "局部 · 下丹田"
+    }
+  },
+  "viewOrder": [
+    "three",
+    "side",
+    "front",
+    "back",
+    "limbs",
+    "dantian"
+  ],
+  "frontViews": [
+    "front",
+    "dantian"
+  ],
+  "backViews": [
+    "back"
+  ],
+  "camK": {
+    "three": 1.38,
+    "front": 1.38,
+    "back": 1.38,
+    "side": 1.38,
+    "limbs": 1.12,
+    "dantian": 1.12
+  },
+  "cuts": [
+    {
+      "id": "glass",
+      "label": "玻璃体"
+    },
+    {
+      "id": "section",
+      "label": "半剖"
+    },
+    {
+      "id": "xray",
+      "label": "线框"
+    },
+    {
+      "id": "solid",
+      "label": "实体"
+    }
+  ],
+  "extras": {
+    "spine": true,
+    "spineCurve": "du",
+    "belt": true,
+    "big": true
+  },
+  "gates": [],
+  "breath": 20,
+  "duration": 120,
+  "breathLabels": [
+    "前半 · 升",
+    "后半 · 降"
+  ],
+  "cover": "cover-wuzang.png",
+  "dir": "c0-wuzang",
+  "id": "wuzang",
+  "slug": "wuzang",
+  "title": "五脏与五行",
+  "kicker": "FIVE ORGANS",
+  "subtitle": "脏腑专题 · 归属",
+  "organs": [
+    {
+      "id": "liver",
+      "name": "肝 · 木",
+      "p": [
+        -0.78,
+        10.2,
+        0.2
+      ],
+      "scale": [
+        0.62,
+        0.46,
+        0.4
+      ],
+      "color": 4157288,
+      "group": 0,
+      "dir": [
+        -1.6,
+        0.4,
+        0.8
+      ]
+    },
+    {
+      "id": "heart",
+      "name": "心 · 火",
+      "p": [
+        0.1,
+        12,
+        0.16
+      ],
+      "scale": [
+        0.52,
+        0.5,
+        0.42
+      ],
+      "color": 12862508,
+      "group": 1,
+      "dir": [
+        0.4,
+        1.6,
+        0.8
+      ]
+    },
+    {
+      "id": "spleen",
+      "name": "脾 · 土",
+      "p": [
+        -0.48,
+        9,
+        0.32
+      ],
+      "scale": [
+        0.5,
+        0.4,
+        0.36
+      ],
+      "color": 11568172,
+      "group": 2,
+      "dir": [
+        -1.2,
+        -0.6,
+        1.2
+      ]
+    },
+    {
+      "id": "lung",
+      "name": "肺 · 金",
+      "p": [
+        0.72,
+        12.3,
+        0.1
+      ],
+      "scale": [
+        0.54,
+        0.58,
+        0.4
+      ],
+      "color": 10133670,
+      "group": 3,
+      "dir": [
+        1.6,
+        0.8,
+        0.6
+      ]
+    },
+    {
+      "id": "kidney",
+      "name": "肾 · 水",
+      "p": [
+        0,
+        8,
+        -0.32
+      ],
+      "scale": [
+        0.46,
+        0.5,
+        0.36
+      ],
+      "color": 3891102,
+      "group": 4,
+      "dir": [
+        0.2,
+        -1.4,
+        -1.2
+      ]
+    }
+  ],
+  "curves": {
+    "du": [
+      [
+        0,
+        5.3,
+        0
+      ],
+      [
+        0,
+        5.52,
+        -0.4
+      ],
+      [
+        0,
+        5.8,
+        -0.7
+      ],
+      [
+        0,
+        7.2,
+        -0.78
+      ],
+      [
+        0,
+        8.9,
+        -0.8
+      ],
+      [
+        0,
+        10.35,
+        -0.82
+      ],
+      [
+        0,
+        11.85,
+        -0.8
+      ],
+      [
+        0,
+        13.3,
+        -0.74
+      ],
+      [
+        0,
+        14.45,
+        -0.64
+      ],
+      [
+        0,
+        15.05,
+        -0.55
+      ],
+      [
+        0,
+        15.9,
+        -0.3
+      ],
+      [
+        0,
+        16.62,
+        0
+      ]
+    ],
+    "ren": [
+      [
+        0,
+        16.62,
+        0
+      ],
+      [
+        0,
+        16.05,
+        0.5
+      ],
+      [
+        0,
+        15.55,
+        0.8
+      ],
+      [
+        0,
+        14.95,
+        0.76
+      ],
+      [
+        0,
+        14.55,
+        0.68
+      ],
+      [
+        0,
+        13.55,
+        0.6
+      ],
+      [
+        0,
+        12.1,
+        0.82
+      ],
+      [
+        0,
+        10.7,
+        0.85
+      ],
+      [
+        0,
+        9.65,
+        0.84
+      ],
+      [
+        0,
+        8.85,
+        0.8
+      ],
+      [
+        0,
+        7.85,
+        0.62
+      ],
+      [
+        0,
+        7.35,
+        0.34
+      ],
+      [
+        0,
+        6.3,
+        0.12
+      ],
+      [
+        0,
+        5.3,
+        0
+      ]
+    ],
+    "wuxing": [
+      [
+        0,
+        6.4,
+        -4
+      ],
+      [
+        3.8,
+        6.4,
+        -1.24
+      ],
+      [
+        2.35,
+        6.4,
+        3.24
+      ],
+      [
+        -2.35,
+        6.4,
+        3.24
+      ],
+      [
+        -3.8,
+        6.4,
+        -1.24
+      ],
+      [
+        0,
+        6.4,
+        -4
+      ]
+    ]
+  },
+  "vessels": [
+    {
+      "id": "wuxing",
+      "label": "五行方位环",
+      "color": "#b0842c",
+      "hot": "#dfa336",
+      "group": 0,
+      "baseOpacity": 0.6
+    }
+  ],
+  "nodes": [
+    {
+      "id": "baihui",
+      "name": "百会",
+      "sub": "上丹田",
+      "p": [
+        0,
+        16.62,
+        0
+      ],
+      "type": "tian",
+      "side": 0,
+      "steps": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "dantian",
+      "name": "下丹田",
+      "sub": "气海",
+      "p": [
+        0,
+        7.35,
+        0.34
+      ],
+      "type": "tian",
+      "side": 1,
+      "steps": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "liver",
+      "name": "肝 · 木",
+      "sub": "五脏",
+      "p": [
+        -0.78,
+        10.2,
+        0.2
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": []
+    },
+    {
+      "id": "heart",
+      "name": "心 · 火",
+      "sub": "五脏",
+      "p": [
+        0.1,
+        12,
+        0.16
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": []
+    },
+    {
+      "id": "spleen",
+      "name": "脾 · 土",
+      "sub": "五脏",
+      "p": [
+        -0.48,
+        9,
+        0.32
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": []
+    },
+    {
+      "id": "lung",
+      "name": "肺 · 金",
+      "sub": "五脏",
+      "p": [
+        0.72,
+        12.3,
+        0.1
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": []
+    },
+    {
+      "id": "kidney",
+      "name": "肾 · 水",
+      "sub": "五脏",
+      "p": [
+        0,
+        8,
+        -0.32
+      ],
+      "type": "node",
+      "side": -1,
+      "steps": []
+    }
+  ],
+  "stages": [
+    {
+      "n": 1,
+      "name": "五脏定位",
+      "en": "LOCATE THE ORGANS",
+      "desc": "把肝、心、脾、肺、肾放进同一具可拆解人体：按 E 散开看位置，按 C 切换玻璃／半剖／线框。",
+      "hint": "内脏形状与位置为教学示意，非解剖图。",
+      "path": {
+        "type": "curve",
+        "curve": "wuxing",
+        "from": 0,
+        "to": 6,
+        "ease": "linear"
+      },
+      "hot": {
+        "wuxing": 0.5
+      },
+      "intensity": 0.55,
+      "store": 50,
+      "organRule": {
+        "type": "sequential"
+      },
+      "siteRule": "activeOrgan",
+      "siteSuffix": " · 当令"
+    },
+    {
+      "n": 2,
+      "name": "五行归属",
+      "en": "FIVE PHASES",
+      "desc": "肝木、心火、脾土、肺金、肾水：气团沿五行环推进，对应脏器同步高亮，颜色与图例一一对应。",
+      "hint": "五行是关系模型，不是五种物质。",
+      "path": {
+        "type": "curve",
+        "curve": "wuxing",
+        "from": 0,
+        "to": 6,
+        "ease": "linear"
+      },
+      "hot": {
+        "wuxing": 0.7
+      },
+      "intensity": 0.66,
+      "store": 50,
+      "organRule": {
+        "type": "sequential"
+      },
+      "siteRule": "activeOrgan",
+      "siteSuffix": " · 当令",
+      "chipRule": "organ"
+    },
+    {
+      "n": 3,
+      "name": "四时相应",
+      "en": "SEASONAL CORRESPONDENCE",
+      "desc": "春木、夏火、长夏土、秋金、冬水：五脏与四时的配属是同一套关系模型在时间上的展开。",
+      "hint": "配属历代有异说，此处取通行说法。",
+      "path": {
+        "type": "curve",
+        "curve": "wuxing",
+        "from": 0,
+        "to": 6,
+        "ease": "linear"
+      },
+      "hot": {
+        "wuxing": 0.6
+      },
+      "intensity": 0.75,
+      "store": 50,
+      "organRule": {
+        "type": "sequential"
+      },
+      "siteRule": "activeOrgan",
+      "siteSuffix": " · 当令",
+      "chipRule": "organ",
+      "big": true
+    }
+  ],
+  "metrics": [
+    {
+      "id": "organ",
+      "label": "当令脏序",
+      "unit": "/5",
+      "source": "organIndex",
+      "max": 5
+    },
+    {
+      "id": "phase",
+      "label": "五行相位",
+      "unit": "%",
+      "source": "phase",
+      "max": 100
+    },
+    {
+      "id": "u",
+      "label": "方位进度",
+      "unit": "%",
+      "source": "u",
+      "max": 100
+    },
+    {
+      "id": "count",
+      "label": "五脏总数",
+      "unit": "脏",
+      "source": "organCount",
+      "max": 5,
+      "bar": "fixed",
+      "fixed": 100
+    }
+  ],
+  "chips": {
+    "title": "五行",
+    "en": "FIVE PHASES",
+    "items": [
+      "木 · 肝",
+      "火 · 心",
+      "土 · 脾",
+      "金 · 肺",
+      "水 · 肾"
+    ],
+    "on": " · 当令",
+    "off": " · —"
+  },
+  "legend": [
+    {
+      "key": "wood",
+      "label": "木 · 肝"
+    },
+    {
+      "key": "fire",
+      "label": "火 · 心"
+    },
+    {
+      "key": "earth",
+      "label": "土 · 脾"
+    },
+    {
+      "key": "metal",
+      "label": "金 · 肺"
+    },
+    {
+      "key": "water",
+      "label": "水 · 肾"
+    }
+  ],
+  "tour": {
+    "step": [
+      [
+        0,
+        1
+      ],
+      [
+        32,
+        2
+      ],
+      [
+        64,
+        3
+      ],
+      [
+        116,
+        3
+      ]
+    ],
+    "view": [
+      [
+        0,
+        "three"
+      ],
+      [
+        16,
+        "side"
+      ],
+      [
+        32,
+        "front"
+      ],
+      [
+        48,
+        "back"
+      ],
+      [
+        64,
+        "limbs"
+      ],
+      [
+        80,
+        "three"
+      ]
+    ],
+    "explode": [
+      [
+        0,
+        0
+      ],
+      [
+        40,
+        0
+      ],
+      [
+        44,
+        0.85
+      ],
+      [
+        52,
+        0.85
+      ],
+      [
+        58,
+        0
+      ]
+    ],
+    "cut": [
+      [
+        0,
+        "glass"
+      ],
+      [
+        60,
+        "section"
+      ],
+      [
+        68,
+        "glass"
+      ],
+      [
+        82,
+        "solid"
+      ],
+      [
+        92,
+        "glass"
+      ]
+    ]
+  }
+}

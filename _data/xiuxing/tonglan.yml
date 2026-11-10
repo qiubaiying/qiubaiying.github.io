@@ -1,0 +1,24 @@
+# 卷 G · 通览与异说。不新增体系，只把既有各卷叠合或并列对照。
+intro: "前五卷各问一件事，本卷问两件收束的事：把它们叠在同一具人体上会看见什么，以及同名异实的说法究竟差在哪里。合图不为主张同源，只为对照结构；异说不为调和，只为把分歧摆到同一张图上。"
+
+items:
+  - n: G0
+    title: "五卷合图 · 一具人体同屏"
+    en: "ATLAS OVERLAY"
+    level: "通览 · 图层叠合"
+    status: "已上线"
+    driver: "图层次第"
+    url: "/xiuxing/hecan.html"
+    cover: "/xiuxing/cover-hecan.png"
+    source: "本站 A–E 五卷图目与总览「源流层位」"
+    desc: "把 A 路径、B 网络、C 关系、D 刻度、E 图式五组几何叠在同一具底模上，按 1–6 逐层显示或同屏。底模相同不等于体系相同：不同时代的身体观压在同一具人体上，只是为了看清结构差异。"
+  - n: G1
+    title: "三田三关 · 异说对照"
+    en: "THREE FIELDS IN CONTRAST"
+    level: "对照 · 同名异实"
+    status: "已上线"
+    driver: "对照次第"
+    url: "/xiuxing/santian.html"
+    cover: "/xiuxing/cover-santian.png"
+    source: "真气运行法公开所述、明清丹书通行说法、glossary.yml 三田与三关条"
+    desc: "真法三田（百会、心窝、小腹）与丹道三田（泥丸、绛宫、气海）定位不同，三关位置历代另有异说。把两套点位并列在同一具人体上，只作标注，不互相套用、不强行调和。"

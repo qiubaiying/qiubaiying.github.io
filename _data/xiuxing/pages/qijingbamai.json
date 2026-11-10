@@ -1,0 +1,964 @@
+{
+  "backLabel": "返回修仙",
+  "backHref": "./",
+  "unitNote": "1 单位 = 10 cm · 身高 170 cm · 示右侧，左右对称",
+  "disclaimer": "示意性可视化，非医疗或修炼指导；经络走向依《灵枢·经脉》通行说法整理，穴位为教学示意",
+  "stageLabel": "经络次第",
+  "views": {
+    "three": {
+      "pos": [
+        17,
+        12.6,
+        21
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "3/4 全景"
+    },
+    "front": {
+      "pos": [
+        0,
+        9.6,
+        27
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "正面 · 诸经"
+    },
+    "back": {
+      "pos": [
+        0,
+        9.6,
+        -27
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "背面 · 膀胱经"
+    },
+    "side": {
+      "pos": [
+        26,
+        10.2,
+        7
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "侧面 · 走向"
+    },
+    "limbs": {
+      "pos": [
+        14,
+        10.5,
+        20
+      ],
+      "target": [
+        0.6,
+        9.5,
+        0
+      ],
+      "label": "局部 · 四肢"
+    },
+    "dantian": {
+      "pos": [
+        9.5,
+        8.4,
+        11
+      ],
+      "target": [
+        0,
+        7.7,
+        0
+      ],
+      "label": "局部 · 下丹田"
+    }
+  },
+  "viewOrder": [
+    "three",
+    "side",
+    "front",
+    "back",
+    "limbs",
+    "dantian"
+  ],
+  "frontViews": [
+    "front",
+    "dantian"
+  ],
+  "backViews": [
+    "back"
+  ],
+  "camK": {
+    "three": 1.38,
+    "front": 1.38,
+    "back": 1.38,
+    "side": 1.38,
+    "limbs": 1.12,
+    "dantian": 1.12
+  },
+  "cuts": [
+    {
+      "id": "glass",
+      "label": "玻璃体"
+    },
+    {
+      "id": "section",
+      "label": "半剖"
+    },
+    {
+      "id": "xray",
+      "label": "线框"
+    },
+    {
+      "id": "solid",
+      "label": "实体"
+    }
+  ],
+  "extras": {
+    "spine": true,
+    "spineCurve": "du",
+    "belt": true,
+    "big": true
+  },
+  "gates": [],
+  "id": "qijingbamai",
+  "slug": "qijingbamai",
+  "title": "奇经八脉 · 蓄溢调节",
+  "kicker": "EIGHT EXTRA VESSELS",
+  "subtitle": "不属脏腑 · 调节十二经气血",
+  "cover": "cover-qijingbamai.png",
+  "breath": 16,
+  "duration": 120,
+  "breathLabels": [
+    "蓄 · 灌注",
+    "溢 · 调节"
+  ],
+  "curves": {
+    "du": [
+      [
+        0,
+        5.3,
+        0
+      ],
+      [
+        0,
+        5.52,
+        -0.4
+      ],
+      [
+        0,
+        5.8,
+        -0.7
+      ],
+      [
+        0,
+        7.2,
+        -0.78
+      ],
+      [
+        0,
+        8.9,
+        -0.8
+      ],
+      [
+        0,
+        10.35,
+        -0.82
+      ],
+      [
+        0,
+        11.85,
+        -0.8
+      ],
+      [
+        0,
+        13.3,
+        -0.74
+      ],
+      [
+        0,
+        14.45,
+        -0.64
+      ],
+      [
+        0,
+        15.05,
+        -0.55
+      ],
+      [
+        0,
+        15.9,
+        -0.3
+      ],
+      [
+        0,
+        16.62,
+        0
+      ]
+    ],
+    "ren": [
+      [
+        0,
+        16.62,
+        0
+      ],
+      [
+        0,
+        16.05,
+        0.5
+      ],
+      [
+        0,
+        15.55,
+        0.8
+      ],
+      [
+        0,
+        14.95,
+        0.76
+      ],
+      [
+        0,
+        14.55,
+        0.68
+      ],
+      [
+        0,
+        13.55,
+        0.6
+      ],
+      [
+        0,
+        12.1,
+        0.82
+      ],
+      [
+        0,
+        10.7,
+        0.85
+      ],
+      [
+        0,
+        9.65,
+        0.84
+      ],
+      [
+        0,
+        8.85,
+        0.8
+      ],
+      [
+        0,
+        7.85,
+        0.62
+      ],
+      [
+        0,
+        7.35,
+        0.34
+      ],
+      [
+        0,
+        6.3,
+        0.12
+      ],
+      [
+        0,
+        5.3,
+        0
+      ]
+    ],
+    "chong": [
+      [
+        0,
+        5.3,
+        0.05
+      ],
+      [
+        0,
+        7,
+        0.35
+      ],
+      [
+        0,
+        8.8,
+        0.45
+      ],
+      [
+        0,
+        11,
+        0.45
+      ],
+      [
+        0,
+        13.2,
+        0.4
+      ],
+      [
+        0,
+        14.8,
+        0.5
+      ]
+    ],
+    "dai": [
+      [
+        0,
+        8.9,
+        0.95
+      ],
+      [
+        1.1,
+        8.9,
+        0.7
+      ],
+      [
+        1.6,
+        8.9,
+        0
+      ],
+      [
+        1.1,
+        8.9,
+        -0.7
+      ],
+      [
+        0,
+        8.9,
+        -0.95
+      ],
+      [
+        -1.1,
+        8.9,
+        -0.7
+      ],
+      [
+        -1.6,
+        8.9,
+        0
+      ],
+      [
+        -1.1,
+        8.9,
+        0.7
+      ],
+      [
+        0,
+        8.9,
+        0.95
+      ]
+    ],
+    "yinqiao": [
+      [
+        0.8,
+        1.2,
+        0.3
+      ],
+      [
+        0.8,
+        3.5,
+        0.3
+      ],
+      [
+        0.6,
+        7,
+        0.35
+      ],
+      [
+        0.5,
+        10,
+        0.4
+      ],
+      [
+        0.4,
+        13,
+        0.45
+      ],
+      [
+        0.28,
+        15.3,
+        0.6
+      ]
+    ],
+    "yangqiao": [
+      [
+        1,
+        1.2,
+        -0.1
+      ],
+      [
+        1.1,
+        3.5,
+        0
+      ],
+      [
+        1.2,
+        7,
+        0
+      ],
+      [
+        1.3,
+        10,
+        0
+      ],
+      [
+        1.5,
+        13,
+        -0.1
+      ],
+      [
+        0.9,
+        15,
+        -0.2
+      ],
+      [
+        0.3,
+        15.4,
+        0.5
+      ]
+    ],
+    "yinwei": [
+      [
+        0.7,
+        1.5,
+        0.3
+      ],
+      [
+        0.7,
+        5,
+        0.4
+      ],
+      [
+        0.7,
+        8.5,
+        0.45
+      ],
+      [
+        0.9,
+        11,
+        0.45
+      ],
+      [
+        0.4,
+        13.2,
+        0.5
+      ],
+      [
+        0,
+        13.55,
+        0.6
+      ]
+    ],
+    "yangwei": [
+      [
+        1,
+        1.5,
+        -0.2
+      ],
+      [
+        1.2,
+        5,
+        -0.1
+      ],
+      [
+        1.2,
+        9,
+        0
+      ],
+      [
+        1.4,
+        12,
+        -0.1
+      ],
+      [
+        1.3,
+        14.2,
+        -0.3
+      ],
+      [
+        0.4,
+        14.6,
+        -0.55
+      ],
+      [
+        0,
+        15.05,
+        -0.55
+      ]
+    ]
+  },
+  "vessels": [
+    {
+      "id": "ren",
+      "label": "任脉 · 阴脉之海",
+      "short": "任脉",
+      "group": 0,
+      "color": "#8a6a22",
+      "hot": "#dfa336",
+      "baseOpacity": 0.7
+    },
+    {
+      "id": "du",
+      "label": "督脉 · 阳脉之海",
+      "short": "督脉",
+      "group": 0,
+      "color": "#9b3a26",
+      "hot": "#e8734a",
+      "baseOpacity": 0.7
+    },
+    {
+      "id": "chong",
+      "label": "冲脉 · 十二经之海",
+      "short": "冲脉",
+      "group": 1,
+      "color": "#3b5f9e",
+      "hot": "#7ba3e8",
+      "baseOpacity": 0.7
+    },
+    {
+      "id": "dai",
+      "label": "带脉 · 约束纵行诸经",
+      "short": "带脉",
+      "group": 1,
+      "color": "#8a6a22",
+      "hot": "#dfa336",
+      "baseOpacity": 0.7
+    },
+    {
+      "id": "yinqiao",
+      "label": "阴跷脉",
+      "short": "阴跷",
+      "group": 2,
+      "color": "#3f6f68",
+      "hot": "#6fc4b0",
+      "baseOpacity": 0.7
+    },
+    {
+      "id": "yangqiao",
+      "label": "阳跷脉",
+      "short": "阳跷",
+      "group": 2,
+      "color": "#9b3a26",
+      "hot": "#e8734a",
+      "baseOpacity": 0.7
+    },
+    {
+      "id": "yinwei",
+      "label": "阴维脉 · 维系诸阴",
+      "short": "阴维",
+      "group": 3,
+      "color": "#3b5f9e",
+      "hot": "#7ba3e8",
+      "baseOpacity": 0.7
+    },
+    {
+      "id": "yangwei",
+      "label": "阳维脉 · 维系诸阳",
+      "short": "阳维",
+      "group": 3,
+      "color": "#8a6a22",
+      "hot": "#dfa336",
+      "baseOpacity": 0.7
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ren",
+      "name": "任脉",
+      "sub": "任督 · 阴阳之海",
+      "p": [
+        0,
+        10.7,
+        0.85
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": []
+    },
+    {
+      "id": "du",
+      "name": "督脉",
+      "sub": "任督 · 阴阳之海",
+      "p": [
+        0,
+        11.85,
+        -0.8
+      ],
+      "type": "node",
+      "side": -1,
+      "steps": []
+    },
+    {
+      "id": "chong",
+      "name": "冲脉",
+      "sub": "冲带 · 蓄溢约束",
+      "p": [
+        0,
+        11,
+        0.45
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": []
+    },
+    {
+      "id": "dai",
+      "name": "带脉",
+      "sub": "冲带 · 蓄溢约束",
+      "p": [
+        0,
+        8.9,
+        -0.95
+      ],
+      "type": "node",
+      "side": -1,
+      "steps": []
+    },
+    {
+      "id": "yinqiao",
+      "name": "阴跷",
+      "sub": "跷脉 · 眼睑开合",
+      "p": [
+        0.5,
+        10,
+        0.4
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": []
+    },
+    {
+      "id": "yangqiao",
+      "name": "阳跷",
+      "sub": "跷脉 · 眼睑开合",
+      "p": [
+        1.3,
+        10,
+        0
+      ],
+      "type": "node",
+      "side": 0,
+      "steps": []
+    },
+    {
+      "id": "yinwei",
+      "name": "阴维",
+      "sub": "维脉 · 维系阴阳",
+      "p": [
+        0.9,
+        11,
+        0.45
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": []
+    },
+    {
+      "id": "yangwei",
+      "name": "阳维",
+      "sub": "维脉 · 维系阴阳",
+      "p": [
+        1.4,
+        12,
+        -0.1
+      ],
+      "type": "node",
+      "side": 0,
+      "steps": []
+    },
+    {
+      "id": "baihui",
+      "name": "百会",
+      "sub": "上丹田",
+      "p": [
+        0,
+        16.62,
+        0
+      ],
+      "type": "tian",
+      "side": 0,
+      "steps": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "dantian",
+      "name": "下丹田",
+      "sub": "气海",
+      "p": [
+        0,
+        7.35,
+        0.34
+      ],
+      "type": "tian",
+      "side": 1,
+      "steps": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "n": 1,
+      "name": "任督 · 阴阳之海",
+      "en": "REN & DU",
+      "desc": "任脉总揽诸阴、督脉总司诸阳，一前一后构成小周天的骨架。",
+      "hint": "奇经不直属脏腑、无表里配对，作用是蓄溢调节十二经气血。",
+      "path": {
+        "type": "activeVessel"
+      },
+      "hotRule": {
+        "type": "sequential",
+        "group": 0
+      },
+      "vesselFilter": [
+        0
+      ],
+      "chipRule": "vesselGroup",
+      "siteRule": "activeVessel",
+      "hot": {},
+      "intensity": 0.55,
+      "store": 25
+    },
+    {
+      "n": 2,
+      "name": "冲带 · 蓄溢约束",
+      "en": "CHONG & DAI",
+      "desc": "冲脉为十二经之海、五脏六腑之海；带脉绕腰一周，约束纵行诸经。",
+      "hint": "奇经不直属脏腑、无表里配对，作用是蓄溢调节十二经气血。",
+      "path": {
+        "type": "activeVessel"
+      },
+      "hotRule": {
+        "type": "sequential",
+        "group": 1
+      },
+      "vesselFilter": [
+        1
+      ],
+      "chipRule": "vesselGroup",
+      "siteRule": "activeVessel",
+      "hot": {},
+      "intensity": 0.6200000000000001,
+      "store": 45
+    },
+    {
+      "n": 3,
+      "name": "跷脉 · 眼睑开合",
+      "en": "QIAO MAI",
+      "desc": "阴跷、阳跷自足上行至目内眦，主司下肢运动与眼睑开合。",
+      "hint": "奇经不直属脏腑、无表里配对，作用是蓄溢调节十二经气血。",
+      "path": {
+        "type": "activeVessel"
+      },
+      "hotRule": {
+        "type": "sequential",
+        "group": 2
+      },
+      "vesselFilter": [
+        2
+      ],
+      "chipRule": "vesselGroup",
+      "siteRule": "activeVessel",
+      "hot": {},
+      "intensity": 0.6900000000000001,
+      "store": 65
+    },
+    {
+      "n": 4,
+      "name": "维脉 · 维系阴阳",
+      "en": "WEI MAI",
+      "desc": "阴维维系诸阴、阳维维系诸阳，分别会合于任、督。",
+      "hint": "奇经不直属脏腑、无表里配对，作用是蓄溢调节十二经气血。",
+      "path": {
+        "type": "activeVessel"
+      },
+      "hotRule": {
+        "type": "sequential",
+        "group": 3
+      },
+      "vesselFilter": [
+        3
+      ],
+      "chipRule": "vesselGroup",
+      "siteRule": "activeVessel",
+      "hot": {},
+      "intensity": 0.76,
+      "store": 85
+    }
+  ],
+  "metrics": [
+    {
+      "id": "active",
+      "label": "当令脉序",
+      "unit": "/8",
+      "source": "activeIndex",
+      "max": 8
+    },
+    {
+      "id": "store",
+      "label": "蓄溢程度",
+      "unit": "%",
+      "source": "store",
+      "max": 100
+    },
+    {
+      "id": "count",
+      "label": "奇经总数",
+      "unit": "脉",
+      "source": "vesselCount",
+      "max": 8,
+      "bar": "fixed",
+      "fixed": 100
+    },
+    {
+      "id": "groups",
+      "label": "已观类别",
+      "unit": "/4",
+      "source": "chipCount",
+      "max": 4
+    }
+  ],
+  "chips": {
+    "title": "八脉四类",
+    "en": "FOUR KINDS",
+    "items": [
+      "任督 · 阴阳之海",
+      "冲带 · 蓄溢约束",
+      "跷脉 · 眼睑开合",
+      "维脉 · 维系阴阳"
+    ],
+    "on": " · 当令",
+    "off": " · —"
+  },
+  "legend": [
+    {
+      "key": "ren",
+      "label": "任督"
+    },
+    {
+      "key": "zuyin",
+      "label": "冲带"
+    },
+    {
+      "key": "yin",
+      "label": "跷脉"
+    },
+    {
+      "key": "zuyang",
+      "label": "维脉"
+    },
+    {
+      "key": "qi",
+      "label": "当令脉"
+    }
+  ],
+  "tour": {
+    "step": [
+      [
+        0,
+        1
+      ],
+      [
+        24,
+        2
+      ],
+      [
+        48,
+        3
+      ],
+      [
+        72,
+        4
+      ],
+      [
+        116,
+        4
+      ]
+    ],
+    "view": [
+      [
+        0,
+        "three"
+      ],
+      [
+        14,
+        "front"
+      ],
+      [
+        30,
+        "back"
+      ],
+      [
+        46,
+        "side"
+      ],
+      [
+        62,
+        "three"
+      ]
+    ],
+    "explode": [
+      [
+        0,
+        0
+      ],
+      [
+        40,
+        0
+      ],
+      [
+        44,
+        0.85
+      ],
+      [
+        52,
+        0.85
+      ],
+      [
+        58,
+        0
+      ]
+    ],
+    "cut": [
+      [
+        0,
+        "glass"
+      ],
+      [
+        62,
+        "section"
+      ],
+      [
+        70,
+        "glass"
+      ],
+      [
+        82,
+        "solid"
+      ],
+      [
+        92,
+        "glass"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,678 @@
+{
+  "backLabel": "返回修仙",
+  "backHref": "./",
+  "unitNote": "1 单位 = 10 cm · 身高 170 cm · 示意性模型",
+  "disclaimer": "传统文献概念模型的可视化，非医疗诊断或修炼指导；不作功效宣称",
+  "stageLabel": "图解次第",
+  "views": {
+    "three": {
+      "pos": [
+        17,
+        12.6,
+        21
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "3/4 全景"
+    },
+    "front": {
+      "pos": [
+        0,
+        9.6,
+        27
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "正面 · 任脉"
+    },
+    "back": {
+      "pos": [
+        0,
+        9.6,
+        -27
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "背面 · 督脉"
+    },
+    "side": {
+      "pos": [
+        26,
+        10.2,
+        7
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "侧面 · 周天环"
+    },
+    "limbs": {
+      "pos": [
+        14,
+        10.5,
+        20
+      ],
+      "target": [
+        0.6,
+        9.5,
+        0
+      ],
+      "label": "局部 · 脏腑"
+    },
+    "dantian": {
+      "pos": [
+        9.5,
+        8.4,
+        11
+      ],
+      "target": [
+        0,
+        7.7,
+        0
+      ],
+      "label": "局部 · 下丹田"
+    }
+  },
+  "viewOrder": [
+    "three",
+    "side",
+    "front",
+    "back",
+    "limbs",
+    "dantian"
+  ],
+  "frontViews": [
+    "front",
+    "dantian"
+  ],
+  "backViews": [
+    "back"
+  ],
+  "camK": {
+    "three": 1.38,
+    "front": 1.38,
+    "back": 1.38,
+    "side": 1.38,
+    "limbs": 1.12,
+    "dantian": 1.12
+  },
+  "cuts": [
+    {
+      "id": "glass",
+      "label": "玻璃体"
+    },
+    {
+      "id": "section",
+      "label": "半剖"
+    },
+    {
+      "id": "xray",
+      "label": "线框"
+    },
+    {
+      "id": "solid",
+      "label": "实体"
+    }
+  ],
+  "extras": {
+    "spine": true,
+    "spineCurve": "du",
+    "belt": true,
+    "big": true
+  },
+  "gates": [],
+  "breath": 12,
+  "duration": 120,
+  "breathLabels": [
+    "前半 · 升",
+    "后半 · 降"
+  ],
+  "cover": "cover-fanzhao.png",
+  "dir": "e2-fanzhao",
+  "id": "fanzhao",
+  "slug": "fanzhao",
+  "title": "《性命圭旨》反照图",
+  "kicker": "THE TURNED-BACK LIGHT",
+  "subtitle": "古图专题 · 回光返照",
+  "curves": {
+    "du": [
+      [
+        0,
+        5.3,
+        0
+      ],
+      [
+        0,
+        5.52,
+        -0.4
+      ],
+      [
+        0,
+        5.8,
+        -0.7
+      ],
+      [
+        0,
+        7.2,
+        -0.78
+      ],
+      [
+        0,
+        8.9,
+        -0.8
+      ],
+      [
+        0,
+        10.35,
+        -0.82
+      ],
+      [
+        0,
+        11.85,
+        -0.8
+      ],
+      [
+        0,
+        13.3,
+        -0.74
+      ],
+      [
+        0,
+        14.45,
+        -0.64
+      ],
+      [
+        0,
+        15.05,
+        -0.55
+      ],
+      [
+        0,
+        15.9,
+        -0.3
+      ],
+      [
+        0,
+        16.62,
+        0
+      ]
+    ],
+    "ren": [
+      [
+        0,
+        16.62,
+        0
+      ],
+      [
+        0,
+        16.05,
+        0.5
+      ],
+      [
+        0,
+        15.55,
+        0.8
+      ],
+      [
+        0,
+        14.95,
+        0.76
+      ],
+      [
+        0,
+        14.55,
+        0.68
+      ],
+      [
+        0,
+        13.55,
+        0.6
+      ],
+      [
+        0,
+        12.1,
+        0.82
+      ],
+      [
+        0,
+        10.7,
+        0.85
+      ],
+      [
+        0,
+        9.65,
+        0.84
+      ],
+      [
+        0,
+        8.85,
+        0.8
+      ],
+      [
+        0,
+        7.85,
+        0.62
+      ],
+      [
+        0,
+        7.35,
+        0.34
+      ],
+      [
+        0,
+        6.3,
+        0.12
+      ],
+      [
+        0,
+        5.3,
+        0
+      ]
+    ],
+    "fanzhao": [
+      [
+        0,
+        15.55,
+        1.6
+      ],
+      [
+        0,
+        15,
+        1.1
+      ],
+      [
+        0,
+        13.9,
+        0.75
+      ],
+      [
+        0,
+        12.1,
+        0.7
+      ],
+      [
+        0,
+        10.7,
+        0.55
+      ],
+      [
+        0,
+        9,
+        0.4
+      ],
+      [
+        0,
+        7.35,
+        0.34
+      ]
+    ],
+    "fanzhaoback": [
+      [
+        0,
+        7.35,
+        0.34
+      ],
+      [
+        0,
+        9,
+        0.4
+      ],
+      [
+        0,
+        10.7,
+        0.55
+      ],
+      [
+        0,
+        12.1,
+        0.7
+      ],
+      [
+        0,
+        13.9,
+        0.75
+      ],
+      [
+        0,
+        15,
+        1.1
+      ],
+      [
+        0,
+        15.55,
+        1.6
+      ]
+    ]
+  },
+  "vessels": [
+    {
+      "id": "fanzhao",
+      "label": "回光 · 由外返内",
+      "color": "#c4442c",
+      "hot": "#e8734a",
+      "group": 0,
+      "baseOpacity": 0.6
+    },
+    {
+      "id": "fanzhaoback",
+      "label": "返照 · 由内达外",
+      "color": "#3f6f68",
+      "hot": "#6fc4b0",
+      "group": 1,
+      "baseOpacity": 0.6
+    }
+  ],
+  "nodes": [
+    {
+      "id": "mu",
+      "name": "回光",
+      "sub": "两目返照",
+      "p": [
+        0,
+        15.55,
+        1.6
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "xinwo",
+      "name": "心窝",
+      "sub": "中丹田",
+      "p": [
+        0,
+        10.7,
+        0.85
+      ],
+      "type": "tian",
+      "side": 1,
+      "steps": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "dantian",
+      "name": "下丹田",
+      "sub": "凝神入气穴",
+      "p": [
+        0,
+        7.35,
+        0.34
+      ],
+      "type": "tian",
+      "side": 1,
+      "steps": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "baihui",
+      "name": "百会",
+      "sub": "上丹田",
+      "p": [
+        0,
+        16.62,
+        0
+      ],
+      "type": "tian",
+      "side": 0,
+      "steps": [
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "n": 1,
+      "name": "回光",
+      "en": "TURN THE LIGHT",
+      "desc": "「回光」是把向外驰求的注意力收回：自两目之间沿中轴下行，经心窝而入下丹田。朱砂线即这条返内的路径。",
+      "hint": "反照图见于《性命圭旨》，与《内经图》的山水隐喻是两种画法。",
+      "path": {
+        "type": "curve",
+        "curve": "fanzhao",
+        "from": 0,
+        "to": 7,
+        "ease": "smooth"
+      },
+      "hot": {
+        "fanzhao": 1
+      },
+      "intensity": 0.56,
+      "store": 50,
+      "vesselFilter": [
+        0
+      ],
+      "chips": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "n": 2,
+      "name": "返照",
+      "en": "ILLUMINATE INWARD",
+      "desc": "光既收，则自内而外朗照：气团沿同一轴线反向缓行，青色线示「返照」不是原路退回，而是方向相反的另一层。",
+      "hint": "「回光返照」今多作俗语，此处取丹道原义。",
+      "path": {
+        "type": "curve",
+        "curve": "fanzhaoback",
+        "from": 0,
+        "to": 7,
+        "ease": "smooth"
+      },
+      "hot": {
+        "fanzhaoback": 1
+      },
+      "intensity": 0.66,
+      "store": 50,
+      "vesselFilter": [
+        1
+      ],
+      "chips": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "n": 3,
+      "name": "凝神入气穴",
+      "en": "SETTLE IN THE QI CAVITY",
+      "desc": "两线同显、收束于下丹田，是反照图的落点，也与 N0 筑基三调的「调心」相呼应。",
+      "hint": "可与 N0 并排看：一个讲操作，一个讲图式。",
+      "path": {
+        "type": "hold",
+        "node": "dantian",
+        "radius": 0.12,
+        "rhythm": "breath"
+      },
+      "hot": {
+        "fanzhao": 0.7,
+        "fanzhaoback": 0.7
+      },
+      "intensity": 0.72,
+      "store": 50,
+      "chips": [
+        true,
+        true,
+        true
+      ],
+      "belt": true,
+      "big": true
+    }
+  ],
+  "metrics": [
+    {
+      "id": "phase",
+      "label": "反照相位",
+      "unit": "%",
+      "source": "phase",
+      "max": 100
+    },
+    {
+      "id": "u",
+      "label": "回光位置",
+      "unit": "%",
+      "source": "u",
+      "max": 100
+    },
+    {
+      "id": "flow",
+      "label": "返照进度",
+      "unit": "%",
+      "source": "flow",
+      "max": 100
+    },
+    {
+      "id": "cycles",
+      "label": "往复次数",
+      "unit": "次",
+      "source": "cycles",
+      "max": 12,
+      "bar": "phase"
+    }
+  ],
+  "chips": {
+    "title": "反照三段",
+    "en": "THREE MOVES",
+    "items": [
+      "回光",
+      "返照",
+      "凝神"
+    ],
+    "on": " · 已行",
+    "off": " · 待"
+  },
+  "legend": [
+    {
+      "key": "fire",
+      "label": "回光 · 返内"
+    },
+    {
+      "key": "yin",
+      "label": "返照 · 达外"
+    },
+    {
+      "key": "tian",
+      "label": "三田"
+    },
+    {
+      "key": "qi",
+      "label": "当前所在"
+    }
+  ],
+  "tour": {
+    "step": [
+      [
+        0,
+        1
+      ],
+      [
+        32,
+        2
+      ],
+      [
+        64,
+        3
+      ],
+      [
+        116,
+        3
+      ]
+    ],
+    "view": [
+      [
+        0,
+        "three"
+      ],
+      [
+        16,
+        "side"
+      ],
+      [
+        32,
+        "front"
+      ],
+      [
+        48,
+        "back"
+      ],
+      [
+        64,
+        "limbs"
+      ],
+      [
+        80,
+        "three"
+      ]
+    ],
+    "explode": [
+      [
+        0,
+        0
+      ],
+      [
+        40,
+        0
+      ],
+      [
+        44,
+        0.85
+      ],
+      [
+        52,
+        0.85
+      ],
+      [
+        58,
+        0
+      ]
+    ],
+    "cut": [
+      [
+        0,
+        "glass"
+      ],
+      [
+        60,
+        "section"
+      ],
+      [
+        68,
+        "glass"
+      ],
+      [
+        82,
+        "solid"
+      ],
+      [
+        92,
+        "glass"
+      ]
+    ]
+  }
+}

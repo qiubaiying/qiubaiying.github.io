@@ -21,14 +21,15 @@ header-img: "img/og/xiuxing.png"
     <a href="#">回顶</a>
 </nav>
 
-<p>这个栏目放的不是心得，是结构。传统文本里的路线与次第常被写成一串名词，读完了仍不知道它们怎么连起来、谁先谁后。这里试着把它们做成能转、能拆、能看数的图，按专题分类，并另附源流层位，标明各层出自何时、所答何事。五卷二十一图问的是「象」；另有一页纯文字的<a href="{{ '/xiuxing/xing/' | relative_url }}">《第六问 · 行》</a>，问顺序、择法、辨师与校验，不含口诀，也不设图。</p>
+{% assign vol_total = 0 %}{% for vol in site.data.xiuxing.volumes %}{% assign vol_data = site.data.xiuxing[vol.key] %}{% assign vol_n = vol_data.items | size %}{% assign vol_total = vol_total | plus: vol_n %}{% endfor %}
+<p>这个栏目放的不是心得，是结构。传统文本里的路线与次第常被写成一串名词，读完了仍不知道它们怎么连起来、谁先谁后。这里试着把它们做成能转、能拆、能看数的图，按专题分类，并另附源流层位，标明各层出自何时、所答何事。各卷现有 {{ vol_total }} 图，问的是「象」；另有一页纯文字的<a href="{{ '/xiuxing/xing/' | relative_url }}">《第六问 · 行》</a>，问顺序、择法、辨师与校验，不含口诀，也不设图。</p>
 
 <aside class="x-legend" aria-labelledby="x-legend-t">
     <span class="sr-only" id="x-legend-t">凡例：卷次、图号、读序、参照系与单一输入的读法</span>
     <p>
-        <span>卷次 A–E 分专题，图号 N0–N5、B0–B3、C0–C3、D0–D3、E0–E2 各归其卷；五卷二十一图已全部刊行。</span>
-        <span>图号与 level 是文献整理顺序（读序），不是实修阶次；A 卷按文献次第成列，其中 N0、N1、N3 为参照系（近代三调、现代养生功法、医家经络），初关只取 N2、N4；中关过程不设图，以 D1 为骨架。B、E 两卷是并列维度、不分先后，C、D 两卷是拆解层次、不是修证阶次。</span>
-        <span>五卷问「象」，另有一页<a href="{{ '/xiuxing/xing/' | relative_url }}">《第六问 · 行》</a>问「行」：六环、择法、辨师、校验与读书次第，不含口诀，也不设图。</span>
+        <span>卷次 A–G 分专题，图号 N0–N5、B0–B3、C0–C3、D0–D3、E0–E2、F0–F3、G0–G1 各归其卷；现有 {{ vol_total }} 图，后续按准入规则持续增补。</span>
+        <span>图号与 level 是文献整理顺序（读序），不是实修阶次；A 卷按文献次第成列，其中 N0、N1、N3 为参照系（近代三调、现代养生功法、医家经络），初关只取 N2、N4；中关过程不设图，以 D1 为骨架。B、E、F、G 各卷是并列维度、不分先后，C、D 两卷是拆解层次、不是修证阶次。</span>
+        <span>各卷问「象」，另有一页<a href="{{ '/xiuxing/xing/' | relative_url }}">《第六问 · 行》</a>问「行」：六环、择法、辨师、校验与读书次第，不含口诀，也不设图。</span>
         <span>每张图只由一个输入变量驱动，气团位置、经络高亮与面板读数皆由它推导，画面与读数不会相左。</span>
         <span>本栏目是传统文献概念模型的可视化，不提供任何练法，图号不是功法课程序列；实修须师承，身体不适请就医。</span>
     </p>
@@ -36,57 +37,20 @@ header-img: "img/og/xiuxing.png"
 
 <h2 id="topics"><span class="x-h2-tick" aria-hidden="true"></span>专题</h2>
 
-{% assign nd_live = site.data.xiuxing.neidan.items | where: "status", "已上线" %}
-{% assign jl_live = site.data.xiuxing.jingluo.items | where: "status", "已上线" %}
-{% assign zf_live = site.data.xiuxing.zangfu.items | where: "status", "已上线" %}
-{% assign yx_live = site.data.xiuxing.yixiang.items | where: "status", "已上线" %}
-{% assign gt_live = site.data.xiuxing.gutu.items | where: "status", "已上线" %}
 <ol class="x-volume-axis" role="list">
+    {% for vol in site.data.xiuxing.volumes %}
+    {% assign vd = site.data.xiuxing[vol.key] %}
+    {% assign vlive = vd.items | where: "status", "已上线" %}
     <li class="x-vol">
-        <a class="x-vol-row" href="{{ '/xiuxing/neidan/' | relative_url }}"
-           aria-label="卷次 A，内丹次第，共 {{ site.data.xiuxing.neidan.items | size }} 图，已上线 {{ nd_live | size }} 张，六张图 · 入手三调 → 三花聚顶（含参照系），进入专题">
-            <span class="x-vol-id">A</span>
-            <span class="x-vol-name">内丹次第</span>
-            <span class="x-vol-count">{{ site.data.xiuxing.neidan.items | size }} 图 · 已上线 {{ nd_live | size }} 张</span>
+        <a class="x-vol-row" href="{{ vol.url | relative_url }}"
+           aria-label="卷次 {{ vol.id }}，{{ vol.name }}，共 {{ vd.items | size }} 图，已上线 {{ vlive | size }} 张，{{ vol.desc }}，进入专题">
+            <span class="x-vol-id">{{ vol.id }}</span>
+            <span class="x-vol-name">{{ vol.name }}</span>
+            <span class="x-vol-count">{{ vd.items | size }} 图 · 已上线 {{ vlive | size }} 张</span>
             <span class="x-vol-go">入口 →</span>
         </a>
     </li>
-    <li class="x-vol">
-        <a class="x-vol-row" href="{{ '/xiuxing/jingluo/' | relative_url }}"
-           aria-label="卷次 B，经络气血，共 {{ site.data.xiuxing.jingluo.items | size }} 图，已上线 {{ jl_live | size }} 张，十二正经、奇经八脉、子午流注、营卫与大周天，进入专题">
-            <span class="x-vol-id">B</span>
-            <span class="x-vol-name">经络气血</span>
-            <span class="x-vol-count">{{ site.data.xiuxing.jingluo.items | size }} 图 · 已上线 {{ jl_live | size }} 张</span>
-            <span class="x-vol-go">入口 →</span>
-        </a>
-    </li>
-    <li class="x-vol">
-        <a class="x-vol-row" href="{{ '/xiuxing/zangfu/' | relative_url }}"
-           aria-label="卷次 C，脏腑五行，共 {{ site.data.xiuxing.zangfu.items | size }} 图，已上线 {{ zf_live | size }} 张，五脏生克、气机升降、五气朝元，进入专题">
-            <span class="x-vol-id">C</span>
-            <span class="x-vol-name">脏腑五行</span>
-            <span class="x-vol-count">{{ site.data.xiuxing.zangfu.items | size }} 图 · 已上线 {{ zf_live | size }} 张</span>
-            <span class="x-vol-go">入口 →</span>
-        </a>
-    </li>
-    <li class="x-vol">
-        <a class="x-vol-row" href="{{ '/xiuxing/yixiang/' | relative_url }}"
-           aria-label="卷次 D，火候易象，共 {{ site.data.xiuxing.yixiang.items | size }} 图，已上线 {{ yx_live | size }} 张，十二消息卦、子午卯酉周天、三车与文武火候，进入专题">
-            <span class="x-vol-id">D</span>
-            <span class="x-vol-name">火候易象</span>
-            <span class="x-vol-count">{{ site.data.xiuxing.yixiang.items | size }} 图 · 已上线 {{ yx_live | size }} 张</span>
-            <span class="x-vol-go">入口 →</span>
-        </a>
-    </li>
-    <li class="x-vol">
-        <a class="x-vol-row" href="{{ '/xiuxing/gutu/' | relative_url }}"
-           aria-label="卷次 E，古图复原，共 {{ site.data.xiuxing.gutu.items | size }} 图，已上线 {{ gt_live | size }} 张，内经图、修真图、反照图的 3D 拆解，进入专题">
-            <span class="x-vol-id">E</span>
-            <span class="x-vol-name">古图复原</span>
-            <span class="x-vol-count">{{ site.data.xiuxing.gutu.items | size }} 图 · 已上线 {{ gt_live | size }} 张</span>
-            <span class="x-vol-go">入口 →</span>
-        </a>
-    </li>
+    {% endfor %}
 </ol>
 
 <h2 id="atlas"><span class="x-h2-tick" aria-hidden="true"></span>已上线图谱</h2>
@@ -101,7 +65,7 @@ header-img: "img/og/xiuxing.png"
 {% assign gt = site.data.xiuxing.gutu.items %}
 <div class="x-index-wrap x-index-wrap--idx">
     <table class="x-ruler x-ruler--idx">
-        <caption>修仙图谱索引尺 · A–E 五卷共 21 图</caption>
+        <caption>修仙图谱索引尺 · A–G 共 {{ vol_total }} 图</caption>
         <colgroup>
             <col class="c1"><col class="c2"><col class="c3"><col class="c4">
         </colgroup>
@@ -113,13 +77,15 @@ header-img: "img/og/xiuxing.png"
                 <th scope="col" class="x-col-dr">单一输入</th>
             </tr>
         </thead>
-        <tbody id="vol-a" aria-labelledby="vol-a-label">
-            {% for item in nd %}
+        {% for vol in site.data.xiuxing.volumes %}
+        {% assign vd = site.data.xiuxing[vol.key] %}
+        <tbody id="vol-{{ vol.id | downcase }}" aria-labelledby="vol-{{ vol.id | downcase }}-label">
+            {% for item in vd.items %}
             {% if item.url %}
             <tr>
                 <th scope="row">{{ item.n }}</th>
                 <td class="x-r-name-cell">
-                    {% if forloop.first %}<span class="sr-only" id="vol-a-label">A · 内丹次第（N0–N5）</span>{% endif %}
+                    {% if forloop.first %}<span class="sr-only" id="vol-{{ vol.id | downcase }}-label">{{ vol.id }} · {{ vol.name }}（{{ vol.range }}）</span>{% endif %}
                     <a class="x-r-name" href="{{ item.url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.title }} <span aria-hidden="true">↗</span><span class="sr-only">（在新页打开）</span></a>
                     <span class="x-meta"><span class="sr-only">读序：</span>{{ item.level }}<span class="x-meta-extra"> · <span class="sr-only">单一输入：</span>{{ item.driver }}</span></span>
                 </td>
@@ -129,86 +95,23 @@ header-img: "img/og/xiuxing.png"
             {% endif %}
             {% endfor %}
         </tbody>
-        <tbody id="vol-b" aria-labelledby="vol-b-label">
-            {% for item in jl %}
-            {% if item.url %}
-            <tr>
-                <th scope="row">{{ item.n }}</th>
-                <td class="x-r-name-cell">
-                    {% if forloop.first %}<span class="sr-only" id="vol-b-label">B · 经络气血（B0–B3）</span>{% endif %}
-                    <a class="x-r-name" href="{{ item.url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.title }} <span aria-hidden="true">↗</span><span class="sr-only">（在新页打开）</span></a>
-                    <span class="x-meta"><span class="sr-only">读序：</span>{{ item.level }}<span class="x-meta-extra"> · <span class="sr-only">单一输入：</span>{{ item.driver }}</span></span>
-                </td>
-                <td class="x-col-lv"><span class="x-r-level">{{ item.level }}</span></td>
-                <td class="x-col-dr"><span class="x-r-driver">{{ item.driver }}</span></td>
-            </tr>
-            {% endif %}
-            {% endfor %}
-        </tbody>
-        <tbody id="vol-c" aria-labelledby="vol-c-label">
-            {% for item in zf %}
-            {% if item.url %}
-            <tr>
-                <th scope="row">{{ item.n }}</th>
-                <td class="x-r-name-cell">
-                    {% if forloop.first %}<span class="sr-only" id="vol-c-label">C · 脏腑五行（C0–C3）</span>{% endif %}
-                    <a class="x-r-name" href="{{ item.url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.title }} <span aria-hidden="true">↗</span><span class="sr-only">（在新页打开）</span></a>
-                    <span class="x-meta"><span class="sr-only">读序：</span>{{ item.level }}<span class="x-meta-extra"> · <span class="sr-only">单一输入：</span>{{ item.driver }}</span></span>
-                </td>
-                <td class="x-col-lv"><span class="x-r-level">{{ item.level }}</span></td>
-                <td class="x-col-dr"><span class="x-r-driver">{{ item.driver }}</span></td>
-            </tr>
-            {% endif %}
-            {% endfor %}
-        </tbody>
-        <tbody id="vol-d" aria-labelledby="vol-d-label">
-            {% for item in yx %}
-            {% if item.url %}
-            <tr>
-                <th scope="row">{{ item.n }}</th>
-                <td class="x-r-name-cell">
-                    {% if forloop.first %}<span class="sr-only" id="vol-d-label">D · 火候易象（D0–D3）</span>{% endif %}
-                    <a class="x-r-name" href="{{ item.url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.title }} <span aria-hidden="true">↗</span><span class="sr-only">（在新页打开）</span></a>
-                    <span class="x-meta"><span class="sr-only">读序：</span>{{ item.level }}<span class="x-meta-extra"> · <span class="sr-only">单一输入：</span>{{ item.driver }}</span></span>
-                </td>
-                <td class="x-col-lv"><span class="x-r-level">{{ item.level }}</span></td>
-                <td class="x-col-dr"><span class="x-r-driver">{{ item.driver }}</span></td>
-            </tr>
-            {% endif %}
-            {% endfor %}
-        </tbody>
-        <tbody id="vol-e" aria-labelledby="vol-e-label">
-            {% for item in gt %}
-            {% if item.url %}
-            <tr>
-                <th scope="row">{{ item.n }}</th>
-                <td class="x-r-name-cell">
-                    {% if forloop.first %}<span class="sr-only" id="vol-e-label">E · 古图复原（E0–E2）</span>{% endif %}
-                    <a class="x-r-name" href="{{ item.url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.title }} <span aria-hidden="true">↗</span><span class="sr-only">（在新页打开）</span></a>
-                    <span class="x-meta"><span class="sr-only">读序：</span>{{ item.level }}<span class="x-meta-extra"> · <span class="sr-only">单一输入：</span>{{ item.driver }}</span></span>
-                </td>
-                <td class="x-col-lv"><span class="x-r-level">{{ item.level }}</span></td>
-                <td class="x-col-dr"><span class="x-r-driver">{{ item.driver }}</span></td>
-            </tr>
-            {% endif %}
-            {% endfor %}
-        </tbody>
+        {% endfor %}
     </table>
 </div>
 
-<p><a href="{{ '/xiuxing/neidan/' | relative_url }}">内丹次第 →</a> · <a href="{{ '/xiuxing/jingluo/' | relative_url }}">经络气血 →</a> · <a href="{{ '/xiuxing/zangfu/' | relative_url }}">脏腑五行 →</a> · <a href="{{ '/xiuxing/yixiang/' | relative_url }}">火候易象 →</a> · <a href="{{ '/xiuxing/gutu/' | relative_url }}">古图复原 →</a> · <a href="{{ '/xiuxing/xing/' | relative_url }}">第六问 · 行 →</a></p>
+<p><a href="{{ '/xiuxing/neidan/' | relative_url }}">内丹次第 →</a> · <a href="{{ '/xiuxing/jingluo/' | relative_url }}">经络气血 →</a> · <a href="{{ '/xiuxing/zangfu/' | relative_url }}">脏腑五行 →</a> · <a href="{{ '/xiuxing/yixiang/' | relative_url }}">火候易象 →</a> · <a href="{{ '/xiuxing/gutu/' | relative_url }}">古图复原 →</a> · <a href="{{ '/xiuxing/buxu/' | relative_url }}">经络补遗 →</a> · <a href="{{ '/xiuxing/tonglan/' | relative_url }}">通览与异说 →</a> · <a href="{{ '/xiuxing/xing/' | relative_url }}">第六问 · 行 →</a></p>
 
 <h2 id="planned"><span class="x-h2-tick" aria-hidden="true"></span>刊行说明</h2>
 
-<p class="x-lead">五卷二十一图已全部刊行</p>
-<p>此前列在这里的 N3–N5 与 C／D／E 三卷已补齐；各卷的范围、单一输入与前置关系写在专题页；后续只做校订与术语补正，不再增图，以免体系无限扩张。另补一页纯文字的<a href="{{ '/xiuxing/xing/' | relative_url }}">《第六问 · 行》</a>，不属图目，也不增图。</p>
+<p class="x-lead">A–G 七卷共 {{ vol_total }} 图，按准入规则持续增补</p>
+<p>原有 A–E 五卷之后，另补 F 卷经络补遗与 G 卷通览与异说。本栏目不再以图数封顶，改以准入规则约束：每张图只由一个输入变量驱动、落在同一具底模与同一套面板上、有明确典籍依据并在卷数据中标注 source、异说进术语表、既有页面只增不改。各卷的范围、单一输入与前置关系写在专题页。另有一页纯文字的<a href="{{ '/xiuxing/xing/' | relative_url }}">《第六问 · 行》</a>，不属图目。</p>
 
 <h3>体系边界</h3>
 <dl class="x-plan-vols">
     <dt>止于符号层</dt>
     <dd>内丹卷到 N5 三花聚顶为止；「出神」「阳神」「长生」一类说法只作符号呈现，不拟真演示，也不作功效宣称。</dd>
     <dt>底模与性别</dt>
-    <dd>二十一张图共用一具 170 cm 男性底模。女丹（斩赤龙、太阴炼形）是独立一系，不是「女性版内丹」；本栏目未及，也不以男性次第套女性。女性实修应寻女丹一系或有女性教学经验的老师。</dd>
+    <dd>本栏目各图共用一具 170 cm 男性底模。女丹（斩赤龙、太阴炼形）是独立一系，不是「女性版内丹」；本栏目未及，也不以男性次第套女性。女性实修应寻女丹一系或有女性教学经验的老师。</dd>
     <dt>图像传统不止丹道</dt>
     <dd>汉唐另有一支以姿态示功法的导引图谱（马王堆《导引图》、张家山汉简《引书》、陶弘景《导引养生图》等），E 卷只收《内经图》《修真图》《性命圭旨》反照图三张明清丹道隐喻图，不代表古代功法图谱全貌。</dd>
     <dt>古图只作对照</dt>
@@ -219,15 +122,15 @@ header-img: "img/og/xiuxing.png"
 
 <h2 id="about"><span class="x-h2-tick" aria-hidden="true"></span>关于这些图</h2>
 
-<p>人体底模按 1 单位 = 10 cm、身高 170 cm 建立。N1 的三田三关依兰州李少波真气运行研究所公开所述定位：上丹田在头顶百会，中丹田在心窝部，下丹田在小腹部；三关为尾闾、夹脊、玉枕。N2 则依丹道通行的泥丸、绛宫、气海与同一组三关；两套三田定位不同，见术语表，不互相套用。每张图只由<strong>一个输入变量</strong>驱动（呼吸相位、周天度数……），气团位置、经络高亮、面板读数与自动导览都从它推导，不会出现读数与画面不一致。二十一张图共用同一套人体底模、面板与装配器，差别只在曲线库、节点、次第和那一个输入变量：经络卷最多十三条脉络同屏，只有当令的一条高亮；脏腑卷把五脏做成可拆解部件；火候卷把卦气、宿度做成环；古图卷则把隐喻标签逐件标回人体。</p>
+<p>人体底模按 1 单位 = 10 cm、身高 170 cm 建立。N1 的三田三关依兰州李少波真气运行研究所公开所述定位：上丹田在头顶百会，中丹田在心窝部，下丹田在小腹部；三关为尾闾、夹脊、玉枕。N2 则依丹道通行的泥丸、绛宫、气海与同一组三关；两套三田定位不同，见术语表，不互相套用。每张图只由<strong>一个输入变量</strong>驱动（呼吸相位、周天度数……），气团位置、经络高亮、面板读数与自动导览都从它推导，不会出现读数与画面不一致。各图共用同一套人体底模、面板与装配器，差别只在曲线库、节点、次第和那一个输入变量：经络卷最多十三条脉络同屏，只有当令的一条高亮；脏腑卷把五脏做成可拆解部件；火候卷把卦气、宿度做成环；古图卷则把隐喻标签逐件标回人体。</p>
 
 <p>所据典籍的版本系统另记：识典古籍「道教部」公开文本统一以上海涵芬楼影印明《正统道藏》本（1923 年缩印本系统）为底本，可作查文之便；其白话译文属现代诠释，不作版本校勘结论，与 E 卷「不作版本校勘结论」同口径。本栏目只引书目与册次，不搬录外部全文。</p>
 
-<p>交互页是完全自包含的离线页面，三维库、字体与样式都打包在文件里，不请求任何外部资源；拖动旋转、滚轮缩放、按数字键切换次第、按 E 拆解、按 C 切换剖切模式、按 V 换机位、空格暂停。浏览器不支持 WebGL 时会退回静态总览图。</p>
+<p>A–E 五卷的交互页是完全自包含的离线页面，三维库、字体与样式都打包在文件里，不请求任何外部资源；F、G 两卷及此后新增的图谱改用共享运行时——三维库、字体与样式抽成站内共用的 js/css，页面只带一份图配置，单页体积由约 980 KB 降到十余 KB，所需资源仍全部来自本站并已加入离线预缓存。两代页面共用同一套装配器与面板：拖动旋转、滚轮缩放、按数字键切换次第、按 E 拆解、按 C 切换剖切模式、按 V 换机位、空格暂停。浏览器不支持 WebGL 时都会退回静态总览图。</p>
 
-<h3>读法：五卷五种问法</h3>
-<p>五卷不是五个阶段，而是同一批文献的五种问法：A 问路径，B 问网络，C 问关系，D 问刻度，E 问图式。可从任一卷进入，按问题回查其余各卷；只有 A 卷内部按 N0 → N5 的文献整理顺序成列，其中 N0、N1、N3 为参照系，初关只取 N2、N4；中关过程不设图，以 D1 为骨架。B、E 两卷是并列维度，无先后；C、D 两卷是拆解层次，不是修证阶次。图号不是功法课程序列，也不代表实修先后。</p>
-<p>二十一张图共用同一具底模、面板与机位，切换时不必重新认界面；但底模相同不等于体系相同：真气运行法、丹道、医家经络、象数易学与明清古图分属不同时代、不同问题意识，见下方「源流层位」。遇到术语分歧，先查专题页的术语与异说表，不要强行调和。</p>
+<h3>读法：五卷五种问法，两卷收束</h3>
+<p>A–E 五卷不是五个阶段，而是同一批文献的五种问法：A 问路径，B 问网络，C 问关系，D 问刻度，E 问图式；F 卷补经络的层次与点位，G 卷做叠合与异说对照，属收束而非第六、第七阶段。可从任一卷进入，按问题回查其余各卷；只有 A 卷内部按 N0 → N5 的文献整理顺序成列，其中 N0、N1、N3 为参照系，初关只取 N2、N4；中关过程不设图，以 D1 为骨架。B、E、F、G 各卷是并列维度，无先后；C、D 两卷是拆解层次，不是修证阶次。图号不是功法课程序列，也不代表实修先后。</p>
+<p>各图共用同一具底模、面板与机位，切换时不必重新认界面；但底模相同不等于体系相同：真气运行法、丹道、医家经络、象数易学与明清古图分属不同时代、不同问题意识，见下方「源流层位」。遇到术语分歧，先查专题页的术语与异说表，不要强行调和。</p>
 
 <h2 id="lineage"><span class="x-h2-tick" aria-hidden="true"></span>源流层位</h2>
 
@@ -251,11 +154,11 @@ header-img: "img/og/xiuxing.png"
     <dd>把丹道从宗教语境里拆出，改以养生、静坐、现代气功的语言重述，三田三关重新定位。所答是「今人怎么入门」。对应 N0、N1；真法三田与丹道三田不是同一套定义。</dd>
 </dl>
 
-<p>《中华道藏》2004 年由华夏出版社刊行，中国道教协会编、张继禹主编，49 册、1526 种，以明《正统道藏》《万历续道藏》为底本，补入敦煌写本与旧抄佚经；保留三洞四辅名目而按内容重分七部类。它是<strong>上游源流的坐标</strong>，不是本站 21 图的全集：与本站直接相关的只有 9–15 册道德真经与四子真经、16–17 册道教易学、20–23 册太清摄养、26–27 册全真与道学论著。</p>
+<p>《中华道藏》2004 年由华夏出版社刊行，中国道教协会编、张继禹主编，49 册、1526 种，以明《正统道藏》《万历续道藏》为底本，补入敦煌写本与旧抄佚经；保留三洞四辅名目而按内容重分七部类。它是<strong>上游源流的坐标</strong>，不是本站各图的全集：与本站直接相关的只有 9–15 册道德真经与四子真经、16–17 册道教易学、20–23 册太清摄养、26–27 册全真与道学论著。</p>
 
 <h2 id="canon"><span class="x-h2-tick" aria-hidden="true"></span>典籍索引</h2>
 
-<p class="x-lead">21 图 ↔ 依据典籍 ↔ 中华道藏册次 ↔ 识典可读全文</p>
+<p class="x-lead">各图 ↔ 依据典籍 ↔ 中华道藏册次 ↔ 识典可读全文</p>
 <p>下表逐图给出查文线索。「藏外」指不在《中华道藏》收录范围；册次只标可确指者，其余写「相关」以免硬配。识典古籍「道教部」所列书目以老庄与《道德经》注疏为主，与本站直接对得上的只有陈显微《周易参同契解》（16-008）、鲍云龙《天原发微》（16-021）等少数几种；两站全文均不搬入本站，只留链接。</p>
 
 <dl class="x-plan-vols">
@@ -285,13 +188,21 @@ header-img: "img/og/xiuxing.png"
     <dd>E0 内经图：清宫如意馆彩绘本／白云观木刻本，藏外，识典无<br>
     E1 修真图：明清传本，二十八宿与月相刻度义参藏内 16–17，识典无<br>
     E2 反照图：《性命圭旨》回光返照，藏外，识典无</dd>
+    <dt>F · 经络补遗（F0–F3）</dt>
+    <dd>F0 穴位全图：《灵枢·本输》《九针十二原》《难经·四十五难》《针灸甲乙经》，医家系统主要在藏外，识典无<br>
+    F1 十二经筋：《灵枢·经筋》，藏外医籍，识典无<br>
+    F2 十二皮部：《素问·皮部论》《阴阳离合论》、卫气说参《灵枢·营卫生会》，藏外医籍，识典无<br>
+    F3 十五络脉与十二经别：《灵枢·经脉》《灵枢·经别》，藏外医籍，识典无</dd>
+    <dt>G · 通览与异说（G0–G1）</dt>
+    <dd>G0 五卷合图：本站 A–E 各卷图目与总览「源流层位」的叠合对照，非独立典籍依据<br>
+    G1 三田三关异说对照：真气运行法公开所述、明清丹书通行说法，异说见本栏目术语表「三田」「三关」条</dd>
 </dl>
 
 <p>外部查文入口：<a href="https://www.shidianguji.com/library/10004?page_from=collection_list" target="_blank" rel="noopener noreferrer">识典古籍 · 道教部</a>（精校 + 白话译文，底本为涵芬楼影印明《正统道藏》本）· <a href="https://zh.daoinfo.org/index.php?title=%E4%B8%AD%E8%8F%AF%E9%81%93%E8%97%8F&amp;variant=zh-hans" target="_blank" rel="noopener noreferrer">中华道藏条目 · 道教文化中心资料库</a>（49 册目录与词条索引，非全文、部分红链）。两者只作线索，不作版本校勘依据。</p>
 
 <h3>图上没有的那一半</h3>
-<p>二十一张图全在<strong>命功之「象」</strong>：路径、网络、关系、刻度、图式。传统修行还有另一半——<strong>性功之「行」</strong>：炼己收心、明心见性、存心养性、日用伦常里的功行，以及师承、防危虑险与事后校验。宋元以后讲三教合一，这一半主要来自儒释；丹家自己说「未炼还丹先炼性，未修大药且修心」，上关（炼神还虚）在丹书里更被明言是「全在心性上做文章」，没有采药火候可画。功行一层并非无据：《中华道藏》第 4 册收《上清众真教戒德行经》《太极真人问功德行业经》，第 42 册为「科戒威仪」，26–27 册全真与道学论著多言炼己收心。它画不出来，也不算遗漏：本卷「不设上关图」的根本原因正在于此，而不只是内容边界。</p>
-<p>所以，若把这套图当成修行地图，看到的只会是可画的那部分。判据可以借六环来记：立基（心性、日用）→ 明理（源流、异说）→ 择法（选一门）→ 行持（命功，须师承）→ 校验（以生活为验，有偏即停）→ 功行（日用伦常）。二十一图只落在明理与行持的前半段。这一半现已另立一页：<a href="{{ '/xiuxing/xing/' | relative_url }}">《第六问 · 行》</a>，把六环、择法、辨师、校验与读书次第写成不含口诀的路线；图仍只服务「明理」，不代行持。</p>
+<p>各图全在<strong>命功之「象」</strong>：路径、网络、关系、刻度、图式。传统修行还有另一半——<strong>性功之「行」</strong>：炼己收心、明心见性、存心养性、日用伦常里的功行，以及师承、防危虑险与事后校验。宋元以后讲三教合一，这一半主要来自儒释；丹家自己说「未炼还丹先炼性，未修大药且修心」，上关（炼神还虚）在丹书里更被明言是「全在心性上做文章」，没有采药火候可画。功行一层并非无据：《中华道藏》第 4 册收《上清众真教戒德行经》《太极真人问功德行业经》，第 42 册为「科戒威仪」，26–27 册全真与道学论著多言炼己收心。它画不出来，也不算遗漏：本卷「不设上关图」的根本原因正在于此，而不只是内容边界。</p>
+<p>所以，若把这套图当成修行地图，看到的只会是可画的那部分。判据可以借六环来记：立基（心性、日用）→ 明理（源流、异说）→ 择法（选一门）→ 行持（命功，须师承）→ 校验（以生活为验，有偏即停）→ 功行（日用伦常）。各图只落在明理与行持的前半段。这一半现已另立一页：<a href="{{ '/xiuxing/xing/' | relative_url }}">《第六问 · 行》</a>，把六环、择法、辨师、校验与读书次第写成不含口诀的路线；图仍只服务「明理」，不代行持。</p>
 
 <h3>读图与实修之间</h3>
 <p>图能助明理，不能代实修。想继续读文献，可按<a href="{{ '/xiuxing/xing/' | relative_url }}">《第六问 · 行》</a>所列的读书次第：《坐忘论》→《常清静经》→《悟真篇》→《性命圭旨》→《伍柳仙宗》→ 近现代研究（陈撄宁、王沐、胡孚琛），再回头对照本栏目各卷；每读一层，先问它要解决什么问题。若从《中华道藏》入手，与本站相关的只有 9–15 册义理、16–17 册道教易学、20–23 册太清摄养、26–27 册全真论著；<strong>18–19 册「太清金丹经」是外丹服食（涉汞、铅、丹砂等有毒矿物），30–41 册道法、42–44 册科仪、45–48 册仙传山志均不在本栏目范围</strong>，不必通读 1526 种，更不可照方尝试。识典古籍「道教部」可作白话入门读本，但译文属现代诠释，读懂不等于原义，也不等于可以照着练。涉及呼吸导引、气脉运行与神志调控的实修，须在有资质的老师当面指导下进行；本栏目不提供任何练法、口诀或功效说明，也不主张按图自学。</p>

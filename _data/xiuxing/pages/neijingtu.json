@@ -1,0 +1,808 @@
+{
+  "backLabel": "返回修仙",
+  "backHref": "./",
+  "unitNote": "1 单位 = 10 cm · 身高 170 cm · 示意性模型",
+  "disclaimer": "传统文献概念模型的可视化，非医疗诊断或修炼指导；不作功效宣称",
+  "stageLabel": "图解次第",
+  "views": {
+    "three": {
+      "pos": [
+        17,
+        12.6,
+        21
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "3/4 全景"
+    },
+    "front": {
+      "pos": [
+        0,
+        9.6,
+        27
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "正面 · 任脉"
+    },
+    "back": {
+      "pos": [
+        0,
+        9.6,
+        -27
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "背面 · 督脉"
+    },
+    "side": {
+      "pos": [
+        26,
+        10.2,
+        7
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "侧面 · 周天环"
+    },
+    "limbs": {
+      "pos": [
+        14,
+        10.5,
+        20
+      ],
+      "target": [
+        0.6,
+        9.5,
+        0
+      ],
+      "label": "局部 · 脏腑"
+    },
+    "dantian": {
+      "pos": [
+        9.5,
+        8.4,
+        11
+      ],
+      "target": [
+        0,
+        7.7,
+        0
+      ],
+      "label": "局部 · 下丹田"
+    }
+  },
+  "viewOrder": [
+    "three",
+    "side",
+    "front",
+    "back",
+    "limbs",
+    "dantian"
+  ],
+  "frontViews": [
+    "front",
+    "dantian"
+  ],
+  "backViews": [
+    "back"
+  ],
+  "camK": {
+    "three": 1.38,
+    "front": 1.38,
+    "back": 1.38,
+    "side": 1.38,
+    "limbs": 1.12,
+    "dantian": 1.12
+  },
+  "cuts": [
+    {
+      "id": "glass",
+      "label": "玻璃体"
+    },
+    {
+      "id": "section",
+      "label": "半剖"
+    },
+    {
+      "id": "xray",
+      "label": "线框"
+    },
+    {
+      "id": "solid",
+      "label": "实体"
+    }
+  ],
+  "extras": {
+    "spine": true,
+    "spineCurve": "du",
+    "belt": true,
+    "big": true
+  },
+  "gates": [],
+  "breath": 12,
+  "duration": 120,
+  "breathLabels": [
+    "前半 · 升",
+    "后半 · 降"
+  ],
+  "cover": "cover-neijingtu.png",
+  "dir": "e0-neijingtu",
+  "id": "neijingtu",
+  "slug": "neijingtu",
+  "title": "《内经图》3D 拆解",
+  "kicker": "NEIJING CHART",
+  "subtitle": "古图专题 · 山水即人身",
+  "curves": {
+    "du": [
+      [
+        0,
+        5.3,
+        0
+      ],
+      [
+        0,
+        5.52,
+        -0.4
+      ],
+      [
+        0,
+        5.8,
+        -0.7
+      ],
+      [
+        0,
+        7.2,
+        -0.78
+      ],
+      [
+        0,
+        8.9,
+        -0.8
+      ],
+      [
+        0,
+        10.35,
+        -0.82
+      ],
+      [
+        0,
+        11.85,
+        -0.8
+      ],
+      [
+        0,
+        13.3,
+        -0.74
+      ],
+      [
+        0,
+        14.45,
+        -0.64
+      ],
+      [
+        0,
+        15.05,
+        -0.55
+      ],
+      [
+        0,
+        15.9,
+        -0.3
+      ],
+      [
+        0,
+        16.62,
+        0
+      ]
+    ],
+    "ren": [
+      [
+        0,
+        16.62,
+        0
+      ],
+      [
+        0,
+        16.05,
+        0.5
+      ],
+      [
+        0,
+        15.55,
+        0.8
+      ],
+      [
+        0,
+        14.95,
+        0.76
+      ],
+      [
+        0,
+        14.55,
+        0.68
+      ],
+      [
+        0,
+        13.55,
+        0.6
+      ],
+      [
+        0,
+        12.1,
+        0.82
+      ],
+      [
+        0,
+        10.7,
+        0.85
+      ],
+      [
+        0,
+        9.65,
+        0.84
+      ],
+      [
+        0,
+        8.85,
+        0.8
+      ],
+      [
+        0,
+        7.85,
+        0.62
+      ],
+      [
+        0,
+        7.35,
+        0.34
+      ],
+      [
+        0,
+        6.3,
+        0.12
+      ],
+      [
+        0,
+        5.3,
+        0
+      ]
+    ],
+    "metaphor": [
+      [
+        0,
+        17.6,
+        0
+      ],
+      [
+        3.6,
+        15.2,
+        0.3
+      ],
+      [
+        4.2,
+        10,
+        0.4
+      ],
+      [
+        3.6,
+        5,
+        0.3
+      ],
+      [
+        1.4,
+        0.5,
+        0.2
+      ],
+      [
+        0,
+        0.2,
+        0.25
+      ],
+      [
+        -1.4,
+        0.5,
+        0.2
+      ],
+      [
+        -3.6,
+        5,
+        0.3
+      ],
+      [
+        -4.2,
+        10,
+        0.4
+      ],
+      [
+        -3.6,
+        15.2,
+        0.3
+      ],
+      [
+        0,
+        17.6,
+        0
+      ]
+    ]
+  },
+  "vessels": [
+    {
+      "id": "du",
+      "label": "督脉 · 河车",
+      "color": "#9b3a26",
+      "hot": "#e8734a",
+      "group": 0,
+      "baseOpacity": 0.6
+    },
+    {
+      "id": "ren",
+      "label": "任脉 · 十二重楼",
+      "color": "#8a6a22",
+      "hot": "#dfa336",
+      "group": 1,
+      "baseOpacity": 0.6
+    },
+    {
+      "id": "metaphor",
+      "label": "山水隐喻外环",
+      "color": "#3f6f68",
+      "hot": "#6fc4b0",
+      "group": 2,
+      "baseOpacity": 0.4
+    }
+  ],
+  "nodes": [
+    {
+      "id": "baihui",
+      "name": "白头老子",
+      "sub": "气沿督脉上行至泥丸",
+      "p": [
+        0,
+        16.62,
+        0
+      ],
+      "type": "tian",
+      "side": 0,
+      "steps": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "yintang",
+      "name": "碧眼胡僧",
+      "sub": "手托天 · 搭上鹊桥",
+      "p": [
+        0,
+        15.55,
+        0.8
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "shierlou",
+      "name": "十二重楼",
+      "sub": "喉 · 气液相交处",
+      "p": [
+        0,
+        13.9,
+        0.55
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "danzhong",
+      "name": "牛郎 · 心",
+      "sub": "离火 · 真阳",
+      "p": [
+        0,
+        12.1,
+        0.82
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "xinwo",
+      "name": "中丹田",
+      "sub": "绛宫 · 藏气之所",
+      "p": [
+        0,
+        10.7,
+        0.85
+      ],
+      "type": "tian",
+      "side": 1,
+      "steps": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "dantian",
+      "name": "铁牛耕地",
+      "sub": "下丹田 · 精气神三合",
+      "p": [
+        0,
+        7.35,
+        0.34
+      ],
+      "type": "tian",
+      "side": 1,
+      "steps": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "mingmen",
+      "name": "织女 · 肾",
+      "sub": "坎水 · 真阴",
+      "p": [
+        0,
+        8.9,
+        -0.8
+      ],
+      "type": "node",
+      "side": -1,
+      "steps": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "huiyin",
+      "name": "阴阳玄牝车",
+      "sub": "下鹊桥 · 任督交接",
+      "p": [
+        0,
+        5.3,
+        0
+      ],
+      "type": "node",
+      "side": 0,
+      "steps": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "weilv",
+      "name": "尾闾关",
+      "sub": "下关 · 七个骨节",
+      "p": [
+        0,
+        5.8,
+        -0.7
+      ],
+      "type": "gate",
+      "side": -1,
+      "steps": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "jiaji",
+      "name": "夹脊关",
+      "sub": "中关 · 辘轳关",
+      "p": [
+        0,
+        11.85,
+        -0.8
+      ],
+      "type": "gate",
+      "side": -1,
+      "steps": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "yuzhen",
+      "name": "玉枕关",
+      "sub": "上关 · 玉京关",
+      "p": [
+        0,
+        15.05,
+        -0.55
+      ],
+      "type": "gate",
+      "side": -1,
+      "steps": [
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "n": 1,
+      "name": "山水即人身",
+      "en": "A LANDSCAPE IS A BODY",
+      "desc": "《内经图》把整个人体隐入一幅山水：脊梁是河车之路，头是昆仑，腹是田畴。外环是隐喻边界，体内是任督实径。",
+      "hint": "清宫如意馆绘本与白云观木刻本细节有出入，此处取通行解释。",
+      "path": {
+        "type": "orbit",
+        "inhale": {
+          "curve": "du",
+          "from": 0,
+          "to": 12
+        },
+        "exhale": {
+          "curve": "ren",
+          "from": 0,
+          "to": 14
+        }
+      },
+      "hot": {
+        "du": 1,
+        "ren": 1,
+        "metaphor": 0.35
+      },
+      "intensity": 0.6,
+      "store": 50,
+      "chips": [
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "n": 2,
+      "name": "隐语逐件对应",
+      "en": "DECODE THE METAPHORS",
+      "desc": "铁牛耕地=下丹田精气神三合，十二重楼=喉，阴阳玄牝车=会阴，白头老子=气沿督升，碧眼胡僧=搭上鹊桥。点开标签逐个对照。",
+      "hint": "按 H 隐藏面板，可看清全部标注。",
+      "path": {
+        "type": "curve",
+        "curve": "metaphor",
+        "from": 0,
+        "to": 11,
+        "ease": "linear"
+      },
+      "hot": {
+        "metaphor": 1,
+        "du": 0.4,
+        "ren": 0.4
+      },
+      "intensity": 0.68,
+      "store": 50,
+      "chips": [
+        true,
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "n": 3,
+      "name": "小周天运转",
+      "en": "THE ORBIT RUNS",
+      "desc": "隐喻还原为路径后，仍是任督一圈：吸气沿督升、呼气沿任降。古图的「谜面」与 N1 的「谜底」在此重合。",
+      "hint": "可与 N1 真气运行图并排对照。",
+      "path": {
+        "type": "orbit",
+        "inhale": {
+          "curve": "du",
+          "from": 0,
+          "to": 12
+        },
+        "exhale": {
+          "curve": "ren",
+          "from": 0,
+          "to": 14
+        }
+      },
+      "hot": {
+        "du": 1,
+        "ren": 1,
+        "metaphor": 0.6
+      },
+      "intensity": 0.8,
+      "store": 50,
+      "chips": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "belt": true,
+      "big": true
+    }
+  ],
+  "metrics": [
+    {
+      "id": "phase",
+      "label": "周天相位",
+      "unit": "%",
+      "source": "phase",
+      "max": 100
+    },
+    {
+      "id": "u",
+      "label": "气行位置",
+      "unit": "%",
+      "source": "u",
+      "max": 100
+    },
+    {
+      "id": "degree",
+      "label": "周天度数",
+      "unit": "°",
+      "source": "degree",
+      "max": 360
+    },
+    {
+      "id": "cycles",
+      "label": "周天周数",
+      "unit": "周",
+      "source": "cycles",
+      "max": 12,
+      "bar": "phase"
+    }
+  ],
+  "chips": {
+    "title": "隐喻四组",
+    "en": "FOUR GROUPS",
+    "items": [
+      "三关",
+      "三田",
+      "十二重楼",
+      "鹊桥"
+    ],
+    "on": " · 已解",
+    "off": " · 待"
+  },
+  "legend": [
+    {
+      "key": "symbol",
+      "label": "山水隐喻"
+    },
+    {
+      "key": "du",
+      "label": "督脉"
+    },
+    {
+      "key": "ren",
+      "label": "任脉"
+    },
+    {
+      "key": "tian",
+      "label": "三田"
+    },
+    {
+      "key": "gate",
+      "label": "三关"
+    }
+  ],
+  "tour": {
+    "step": [
+      [
+        0,
+        1
+      ],
+      [
+        32,
+        2
+      ],
+      [
+        64,
+        3
+      ],
+      [
+        116,
+        3
+      ]
+    ],
+    "view": [
+      [
+        0,
+        "three"
+      ],
+      [
+        16,
+        "side"
+      ],
+      [
+        32,
+        "front"
+      ],
+      [
+        48,
+        "back"
+      ],
+      [
+        64,
+        "limbs"
+      ],
+      [
+        80,
+        "three"
+      ]
+    ],
+    "explode": [
+      [
+        0,
+        0
+      ],
+      [
+        40,
+        0
+      ],
+      [
+        44,
+        0.85
+      ],
+      [
+        52,
+        0.85
+      ],
+      [
+        58,
+        0
+      ]
+    ],
+    "cut": [
+      [
+        0,
+        "glass"
+      ],
+      [
+        60,
+        "section"
+      ],
+      [
+        68,
+        "glass"
+      ],
+      [
+        82,
+        "solid"
+      ],
+      [
+        92,
+        "glass"
+      ]
+    ]
+  }
+}

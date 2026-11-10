@@ -1,0 +1,45 @@
+# 卷 F · 经络补遗。四张图补 B 卷未画的经络层次，共用同一具人体底模与同一份曲线库。
+# source 为典籍依据；曲线由十二正经示意派生者已在 desc 与 disclaimer 中注明。
+intro: "B 卷把经络拆成主干、调控、时间与内外四个并列维度，本卷补它没有画的另外几层：穴位是点，经筋与皮部是层次，络脉与经别是分支。四张图共用同一具底模与同一份曲线库，属并列维度、无先后；新增曲线均由十二正经示意派生，不作独立定位数据。"
+
+items:
+  - n: F0
+    title: "穴位全图 · 五输与原络郄募俞"
+    en: "ACUPOINTS ATLAS"
+    level: "点位 · 五类三十穴"
+    status: "已上线"
+    driver: "穴位相位"
+    url: "/xiuxing/xuewei.html"
+    cover: "/xiuxing/cover-xuewei.png"
+    source: "《灵枢·本输》《灵枢·九针十二原》《难经·四十五难》《针灸甲乙经》"
+    desc: "按五输、原络、郄募俞、八会交会、三田三关五类分层标出三十处点位，十二正经作低亮度背景。点右侧索引可看归属经、类别与出处，并联动 3D 次第。位置为教学示意，不承诺定位精度。"
+  - n: F1
+    title: "十二经筋 · 筋之维系"
+    en: "TWELVE SINEW CHANNELS"
+    level: "层次 · 十二经筋"
+    status: "已上线"
+    driver: "经筋相位"
+    url: "/xiuxing/jingjin.html"
+    cover: "/xiuxing/cover-jingjin.png"
+    source: "《灵枢·经筋》"
+    desc: "依《灵枢·经筋》按四类走向逐组显示经筋的结、聚、散、络。曲线由十二正经略向体表外扩派生，示意筋线与关节的相对位置，不是解剖学筋膜。"
+  - n: F2
+    title: "十二皮部 · 卫气之表"
+    en: "TWELVE SKIN REGIONS"
+    level: "层次 · 十二皮部"
+    status: "已上线"
+    driver: "皮部相位"
+    url: "/xiuxing/pibu.html"
+    cover: "/xiuxing/cover-pibu.png"
+    source: "《素问·皮部论》《素问·阴阳离合论》《灵枢·营卫生会》"
+    desc: "以三阴三阳的开、阖、枢分层显示体表皮部，卫气行于脉外的背景见 B3。分区由十二正经继续外扩示意，不表示实测体表范围。"
+  - n: F3
+    title: "十五络脉与十二经别"
+    en: "LUO & DIVERGENT CHANNELS"
+    level: "分支 · 离合出入"
+    status: "已上线"
+    driver: "络脉相位"
+    url: "/xiuxing/luomai.html"
+    cover: "/xiuxing/cover-luomai.png"
+    source: "《灵枢·经脉》《灵枢·经别》"
+    desc: "十二经络穴加任、督之络与脾之大络合为十五络；经别则离、入、出、合成六合。分支从各经中点斜出走向躯干，看表里两经如何被连成一张网。"

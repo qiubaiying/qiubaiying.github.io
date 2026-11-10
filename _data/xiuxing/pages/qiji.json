@@ -1,0 +1,764 @@
+{
+  "backLabel": "返回修仙",
+  "backHref": "./",
+  "unitNote": "1 单位 = 10 cm · 身高 170 cm · 示意性模型",
+  "disclaimer": "传统文献概念模型的可视化，非医疗诊断或修炼指导；不作功效宣称",
+  "stageLabel": "图解次第",
+  "views": {
+    "three": {
+      "pos": [
+        17,
+        12.6,
+        21
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "3/4 全景"
+    },
+    "front": {
+      "pos": [
+        0,
+        9.6,
+        27
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "正面 · 任脉"
+    },
+    "back": {
+      "pos": [
+        0,
+        9.6,
+        -27
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "背面 · 督脉"
+    },
+    "side": {
+      "pos": [
+        26,
+        10.2,
+        7
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "侧面 · 周天环"
+    },
+    "limbs": {
+      "pos": [
+        14,
+        10.5,
+        20
+      ],
+      "target": [
+        0.6,
+        9.5,
+        0
+      ],
+      "label": "局部 · 脏腑"
+    },
+    "dantian": {
+      "pos": [
+        9.5,
+        8.4,
+        11
+      ],
+      "target": [
+        0,
+        7.7,
+        0
+      ],
+      "label": "局部 · 下丹田"
+    }
+  },
+  "viewOrder": [
+    "three",
+    "side",
+    "front",
+    "back",
+    "limbs",
+    "dantian"
+  ],
+  "frontViews": [
+    "front",
+    "dantian"
+  ],
+  "backViews": [
+    "back"
+  ],
+  "camK": {
+    "three": 1.38,
+    "front": 1.38,
+    "back": 1.38,
+    "side": 1.38,
+    "limbs": 1.12,
+    "dantian": 1.12
+  },
+  "cuts": [
+    {
+      "id": "glass",
+      "label": "玻璃体"
+    },
+    {
+      "id": "section",
+      "label": "半剖"
+    },
+    {
+      "id": "xray",
+      "label": "线框"
+    },
+    {
+      "id": "solid",
+      "label": "实体"
+    }
+  ],
+  "extras": {
+    "spine": true,
+    "spineCurve": "du",
+    "belt": true,
+    "big": true
+  },
+  "gates": [],
+  "breath": 12,
+  "duration": 120,
+  "breathLabels": [
+    "前半 · 升",
+    "后半 · 降"
+  ],
+  "cover": "cover-qiji.png",
+  "dir": "c2-qiji",
+  "id": "qiji",
+  "slug": "qiji",
+  "title": "气机升降",
+  "kicker": "ASCENT & DESCENT",
+  "subtitle": "脏腑专题 · 动态",
+  "organs": [
+    {
+      "id": "liver",
+      "name": "肝 · 木",
+      "p": [
+        -0.78,
+        10.2,
+        0.2
+      ],
+      "scale": [
+        0.62,
+        0.46,
+        0.4
+      ],
+      "color": 4157288,
+      "group": 0,
+      "dir": [
+        -1.6,
+        0.4,
+        0.8
+      ]
+    },
+    {
+      "id": "heart",
+      "name": "心 · 火",
+      "p": [
+        0.1,
+        12,
+        0.16
+      ],
+      "scale": [
+        0.52,
+        0.5,
+        0.42
+      ],
+      "color": 12862508,
+      "group": 1,
+      "dir": [
+        0.4,
+        1.6,
+        0.8
+      ]
+    },
+    {
+      "id": "spleen",
+      "name": "脾 · 土",
+      "p": [
+        -0.48,
+        9,
+        0.32
+      ],
+      "scale": [
+        0.5,
+        0.4,
+        0.36
+      ],
+      "color": 11568172,
+      "group": 2,
+      "dir": [
+        -1.2,
+        -0.6,
+        1.2
+      ]
+    },
+    {
+      "id": "lung",
+      "name": "肺 · 金",
+      "p": [
+        0.72,
+        12.3,
+        0.1
+      ],
+      "scale": [
+        0.54,
+        0.58,
+        0.4
+      ],
+      "color": 10133670,
+      "group": 3,
+      "dir": [
+        1.6,
+        0.8,
+        0.6
+      ]
+    },
+    {
+      "id": "kidney",
+      "name": "肾 · 水",
+      "p": [
+        0,
+        8,
+        -0.32
+      ],
+      "scale": [
+        0.46,
+        0.5,
+        0.36
+      ],
+      "color": 3891102,
+      "group": 4,
+      "dir": [
+        0.2,
+        -1.4,
+        -1.2
+      ]
+    }
+  ],
+  "curves": {
+    "du": [
+      [
+        0,
+        5.3,
+        0
+      ],
+      [
+        0,
+        5.52,
+        -0.4
+      ],
+      [
+        0,
+        5.8,
+        -0.7
+      ],
+      [
+        0,
+        7.2,
+        -0.78
+      ],
+      [
+        0,
+        8.9,
+        -0.8
+      ],
+      [
+        0,
+        10.35,
+        -0.82
+      ],
+      [
+        0,
+        11.85,
+        -0.8
+      ],
+      [
+        0,
+        13.3,
+        -0.74
+      ],
+      [
+        0,
+        14.45,
+        -0.64
+      ],
+      [
+        0,
+        15.05,
+        -0.55
+      ],
+      [
+        0,
+        15.9,
+        -0.3
+      ],
+      [
+        0,
+        16.62,
+        0
+      ]
+    ],
+    "ren": [
+      [
+        0,
+        16.62,
+        0
+      ],
+      [
+        0,
+        16.05,
+        0.5
+      ],
+      [
+        0,
+        15.55,
+        0.8
+      ],
+      [
+        0,
+        14.95,
+        0.76
+      ],
+      [
+        0,
+        14.55,
+        0.68
+      ],
+      [
+        0,
+        13.55,
+        0.6
+      ],
+      [
+        0,
+        12.1,
+        0.82
+      ],
+      [
+        0,
+        10.7,
+        0.85
+      ],
+      [
+        0,
+        9.65,
+        0.84
+      ],
+      [
+        0,
+        8.85,
+        0.8
+      ],
+      [
+        0,
+        7.85,
+        0.62
+      ],
+      [
+        0,
+        7.35,
+        0.34
+      ],
+      [
+        0,
+        6.3,
+        0.12
+      ],
+      [
+        0,
+        5.3,
+        0
+      ]
+    ],
+    "ascend": [
+      [
+        -0.5,
+        8.6,
+        0.4
+      ],
+      [
+        -0.4,
+        9.6,
+        0.5
+      ],
+      [
+        -0.3,
+        10.8,
+        0.5
+      ],
+      [
+        -0.2,
+        12,
+        0.4
+      ]
+    ],
+    "descend": [
+      [
+        0.6,
+        12.4,
+        0.4
+      ],
+      [
+        0.5,
+        11.2,
+        0.5
+      ],
+      [
+        0.4,
+        9.8,
+        0.5
+      ],
+      [
+        0.3,
+        8.6,
+        0.4
+      ]
+    ]
+  },
+  "vessels": [
+    {
+      "id": "ascend",
+      "label": "脾升 · 肝升",
+      "color": "#3f6f68",
+      "hot": "#6fc4b0",
+      "group": 0,
+      "baseOpacity": 0.6
+    },
+    {
+      "id": "descend",
+      "label": "胃降 · 肺降",
+      "color": "#c4442c",
+      "hot": "#e8734a",
+      "group": 1,
+      "baseOpacity": 0.6
+    }
+  ],
+  "nodes": [
+    {
+      "id": "baihui",
+      "name": "百会",
+      "sub": "上丹田",
+      "p": [
+        0,
+        16.62,
+        0
+      ],
+      "type": "tian",
+      "side": 0,
+      "steps": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "dantian",
+      "name": "下丹田",
+      "sub": "气海",
+      "p": [
+        0,
+        7.35,
+        0.34
+      ],
+      "type": "tian",
+      "side": 1,
+      "steps": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "n": 1,
+      "name": "脾升胃降",
+      "en": "SPLEEN UP, STOMACH DOWN",
+      "desc": "中焦为升降之枢：脾气主升、胃气主降。气团沿两条中轴线往返，一升一降构成最基本的气机循环。",
+      "hint": "此处只取关系模型，不涉及消化生理。",
+      "path": {
+        "type": "orbit",
+        "inhale": {
+          "curve": "ascend",
+          "from": 0,
+          "to": 4
+        },
+        "exhale": {
+          "curve": "descend",
+          "from": 0,
+          "to": 4
+        }
+      },
+      "hot": {
+        "ascend": 0.9,
+        "descend": 0.9
+      },
+      "intensity": 0.55,
+      "store": 50,
+      "organFilter": [
+        "spleen"
+      ],
+      "organHot": {
+        "spleen": 1
+      },
+      "chips": [
+        true,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "n": 2,
+      "name": "肝升肺降",
+      "en": "LIVER UP, LUNG DOWN",
+      "desc": "肝气从左而升、肺气从右而降，一左一右调节全身气机。图中肝、肺二脏同时高亮。",
+      "hint": "「左升右降」是气机方位的说法，非解剖左右。",
+      "path": {
+        "type": "orbit",
+        "inhale": {
+          "curve": "ascend",
+          "from": 0,
+          "to": 4
+        },
+        "exhale": {
+          "curve": "descend",
+          "from": 0,
+          "to": 4
+        }
+      },
+      "hot": {
+        "ascend": 0.9,
+        "descend": 0.9
+      },
+      "intensity": 0.55,
+      "store": 50,
+      "organFilter": [
+        "liver",
+        "lung"
+      ],
+      "organHot": {
+        "liver": 1,
+        "lung": 1
+      },
+      "chips": [
+        true,
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "n": 3,
+      "name": "心肾相交",
+      "en": "HEART MEETS KIDNEY",
+      "desc": "心火下降、肾水上升，水火既济即升降之极致；与内丹 N4 坎离交媾是同一组关系的两种画法。",
+      "hint": "按 4 切回 N4 所在专题对照看。",
+      "path": {
+        "type": "orbit",
+        "inhale": {
+          "curve": "ascend",
+          "from": 0,
+          "to": 4
+        },
+        "exhale": {
+          "curve": "descend",
+          "from": 0,
+          "to": 4
+        }
+      },
+      "hot": {
+        "ascend": 1,
+        "descend": 1
+      },
+      "intensity": 0.8,
+      "store": 50,
+      "organFilter": [
+        "heart",
+        "kidney"
+      ],
+      "organHot": {
+        "heart": 1,
+        "kidney": 1
+      },
+      "chips": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "big": true
+    }
+  ],
+  "metrics": [
+    {
+      "id": "phase",
+      "label": "升降相位",
+      "unit": "%",
+      "source": "phase",
+      "max": 100
+    },
+    {
+      "id": "u",
+      "label": "升降位置",
+      "unit": "%",
+      "source": "u",
+      "max": 100
+    },
+    {
+      "id": "flow",
+      "label": "气机流注",
+      "unit": "%",
+      "source": "flow",
+      "max": 100
+    },
+    {
+      "id": "organs",
+      "label": "参与脏腑",
+      "unit": "脏",
+      "source": "organCount",
+      "max": 5,
+      "bar": "fixed",
+      "fixed": 100
+    }
+  ],
+  "chips": {
+    "title": "升降四枢",
+    "en": "FOUR PIVOTS",
+    "items": [
+      "脾升",
+      "胃降",
+      "肝升",
+      "肺降"
+    ],
+    "on": " · 行",
+    "off": " · —"
+  },
+  "legend": [
+    {
+      "key": "yin",
+      "label": "升"
+    },
+    {
+      "key": "fire",
+      "label": "降"
+    },
+    {
+      "key": "qi",
+      "label": "当前气机"
+    },
+    {
+      "key": "earth",
+      "label": "中焦"
+    }
+  ],
+  "tour": {
+    "step": [
+      [
+        0,
+        1
+      ],
+      [
+        32,
+        2
+      ],
+      [
+        64,
+        3
+      ],
+      [
+        116,
+        3
+      ]
+    ],
+    "view": [
+      [
+        0,
+        "three"
+      ],
+      [
+        16,
+        "side"
+      ],
+      [
+        32,
+        "front"
+      ],
+      [
+        48,
+        "back"
+      ],
+      [
+        64,
+        "limbs"
+      ],
+      [
+        80,
+        "three"
+      ]
+    ],
+    "explode": [
+      [
+        0,
+        0
+      ],
+      [
+        40,
+        0
+      ],
+      [
+        44,
+        0.85
+      ],
+      [
+        52,
+        0.85
+      ],
+      [
+        58,
+        0
+      ]
+    ],
+    "cut": [
+      [
+        0,
+        "glass"
+      ],
+      [
+        60,
+        "section"
+      ],
+      [
+        68,
+        "glass"
+      ],
+      [
+        82,
+        "solid"
+      ],
+      [
+        92,
+        "glass"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,1245 @@
+{
+  "backLabel": "返回修仙",
+  "backHref": "./",
+  "unitNote": "1 单位 = 10 cm · 身高 170 cm · 示意性模型",
+  "disclaimer": "传统文献概念模型的可视化，非医疗诊断或修炼指导；不作功效宣称",
+  "stageLabel": "图解次第",
+  "views": {
+    "three": {
+      "pos": [
+        17,
+        12.6,
+        21
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "3/4 全景"
+    },
+    "front": {
+      "pos": [
+        0,
+        9.6,
+        27
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "正面 · 任脉"
+    },
+    "back": {
+      "pos": [
+        0,
+        9.6,
+        -27
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "背面 · 督脉"
+    },
+    "side": {
+      "pos": [
+        26,
+        10.2,
+        7
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "侧面 · 周天环"
+    },
+    "limbs": {
+      "pos": [
+        14,
+        10.5,
+        20
+      ],
+      "target": [
+        0.6,
+        9.5,
+        0
+      ],
+      "label": "局部 · 脏腑"
+    },
+    "dantian": {
+      "pos": [
+        9.5,
+        8.4,
+        11
+      ],
+      "target": [
+        0,
+        7.7,
+        0
+      ],
+      "label": "局部 · 下丹田"
+    }
+  },
+  "viewOrder": [
+    "three",
+    "side",
+    "front",
+    "back",
+    "limbs",
+    "dantian"
+  ],
+  "frontViews": [
+    "front",
+    "dantian"
+  ],
+  "backViews": [
+    "back"
+  ],
+  "camK": {
+    "three": 1.38,
+    "front": 1.38,
+    "back": 1.38,
+    "side": 1.38,
+    "limbs": 1.12,
+    "dantian": 1.12
+  },
+  "cuts": [
+    {
+      "id": "glass",
+      "label": "玻璃体"
+    },
+    {
+      "id": "section",
+      "label": "半剖"
+    },
+    {
+      "id": "xray",
+      "label": "线框"
+    },
+    {
+      "id": "solid",
+      "label": "实体"
+    }
+  ],
+  "extras": {
+    "spine": true,
+    "spineCurve": "du",
+    "belt": true,
+    "big": true
+  },
+  "gates": [],
+  "breath": 24,
+  "duration": 120,
+  "breathLabels": [
+    "前半 · 升",
+    "后半 · 降"
+  ],
+  "cover": "cover-dazhoutian.png",
+  "dir": "n3-dazhoutian",
+  "id": "dazhoutian",
+  "slug": "dazhoutian",
+  "title": "大周天 · 十二正经流注",
+  "kicker": "MACROCOSMIC ORBIT",
+  "subtitle": "参照 · 经络周天（医家）",
+  "curves": {
+    "du": [
+      [
+        0,
+        5.3,
+        0
+      ],
+      [
+        0,
+        5.52,
+        -0.4
+      ],
+      [
+        0,
+        5.8,
+        -0.7
+      ],
+      [
+        0,
+        7.2,
+        -0.78
+      ],
+      [
+        0,
+        8.9,
+        -0.8
+      ],
+      [
+        0,
+        10.35,
+        -0.82
+      ],
+      [
+        0,
+        11.85,
+        -0.8
+      ],
+      [
+        0,
+        13.3,
+        -0.74
+      ],
+      [
+        0,
+        14.45,
+        -0.64
+      ],
+      [
+        0,
+        15.05,
+        -0.55
+      ],
+      [
+        0,
+        15.9,
+        -0.3
+      ],
+      [
+        0,
+        16.62,
+        0
+      ]
+    ],
+    "ren": [
+      [
+        0,
+        16.62,
+        0
+      ],
+      [
+        0,
+        16.05,
+        0.5
+      ],
+      [
+        0,
+        15.55,
+        0.8
+      ],
+      [
+        0,
+        14.95,
+        0.76
+      ],
+      [
+        0,
+        14.55,
+        0.68
+      ],
+      [
+        0,
+        13.55,
+        0.6
+      ],
+      [
+        0,
+        12.1,
+        0.82
+      ],
+      [
+        0,
+        10.7,
+        0.85
+      ],
+      [
+        0,
+        9.65,
+        0.84
+      ],
+      [
+        0,
+        8.85,
+        0.8
+      ],
+      [
+        0,
+        7.85,
+        0.62
+      ],
+      [
+        0,
+        7.35,
+        0.34
+      ],
+      [
+        0,
+        6.3,
+        0.12
+      ],
+      [
+        0,
+        5.3,
+        0
+      ]
+    ],
+    "lung": [
+      [
+        0.5,
+        12.9,
+        0.55
+      ],
+      [
+        1.2,
+        12.9,
+        0.4
+      ],
+      [
+        1.6,
+        11.5,
+        0.35
+      ],
+      [
+        1.9,
+        10.2,
+        0.3
+      ],
+      [
+        2.15,
+        8.9,
+        0.25
+      ],
+      [
+        2.2,
+        8.35,
+        0.2
+      ]
+    ],
+    "largeintestine": [
+      [
+        2.25,
+        8.4,
+        0.38
+      ],
+      [
+        2.1,
+        8.9,
+        0.42
+      ],
+      [
+        1.9,
+        10.3,
+        0.45
+      ],
+      [
+        1.7,
+        12.6,
+        0.35
+      ],
+      [
+        0.7,
+        14.1,
+        0.42
+      ],
+      [
+        0.35,
+        15,
+        0.65
+      ]
+    ],
+    "stomach": [
+      [
+        0.4,
+        15.2,
+        0.7
+      ],
+      [
+        0.6,
+        13.9,
+        0.62
+      ],
+      [
+        0.7,
+        12,
+        0.72
+      ],
+      [
+        0.6,
+        9,
+        0.72
+      ],
+      [
+        0.8,
+        6.2,
+        0.55
+      ],
+      [
+        0.9,
+        3.2,
+        0.45
+      ],
+      [
+        0.85,
+        0.7,
+        0.5
+      ]
+    ],
+    "spleen": [
+      [
+        0.75,
+        0.55,
+        0.5
+      ],
+      [
+        0.8,
+        1.2,
+        0.4
+      ],
+      [
+        0.85,
+        3.2,
+        0.35
+      ],
+      [
+        0.8,
+        6,
+        0.45
+      ],
+      [
+        0.6,
+        9,
+        0.6
+      ],
+      [
+        0.6,
+        12,
+        0.5
+      ]
+    ],
+    "heart": [
+      [
+        0.9,
+        12.9,
+        -0.25
+      ],
+      [
+        1.5,
+        11.4,
+        -0.28
+      ],
+      [
+        1.9,
+        10.1,
+        -0.3
+      ],
+      [
+        2.25,
+        8.4,
+        -0.2
+      ]
+    ],
+    "smallintestine": [
+      [
+        2.25,
+        8.4,
+        -0.38
+      ],
+      [
+        2.05,
+        9,
+        -0.42
+      ],
+      [
+        1.85,
+        10.5,
+        -0.45
+      ],
+      [
+        1.5,
+        12.6,
+        -0.6
+      ],
+      [
+        0.6,
+        14.2,
+        -0.2
+      ],
+      [
+        0.5,
+        15.3,
+        0.3
+      ]
+    ],
+    "bladder": [
+      [
+        0.25,
+        15.4,
+        0.6
+      ],
+      [
+        0.3,
+        16.4,
+        0
+      ],
+      [
+        0.35,
+        14.3,
+        -0.6
+      ],
+      [
+        0.5,
+        11.5,
+        -0.8
+      ],
+      [
+        0.6,
+        8.8,
+        -0.8
+      ],
+      [
+        0.7,
+        6,
+        -0.6
+      ],
+      [
+        0.85,
+        3.2,
+        -0.4
+      ],
+      [
+        0.85,
+        0.6,
+        -0.2
+      ]
+    ],
+    "kidney": [
+      [
+        0.8,
+        0.5,
+        0.05
+      ],
+      [
+        0.8,
+        1.3,
+        0.1
+      ],
+      [
+        0.8,
+        3.3,
+        0.15
+      ],
+      [
+        0.7,
+        6,
+        0.2
+      ],
+      [
+        0.5,
+        9,
+        0.3
+      ],
+      [
+        0.4,
+        12.2,
+        0.3
+      ]
+    ],
+    "pericardium": [
+      [
+        0.3,
+        12.2,
+        0.6
+      ],
+      [
+        1.1,
+        12.6,
+        0.15
+      ],
+      [
+        1.7,
+        11,
+        0.12
+      ],
+      [
+        1.95,
+        10,
+        0.1
+      ],
+      [
+        2.2,
+        8.5,
+        0.15
+      ]
+    ],
+    "sanjiao": [
+      [
+        2.25,
+        8.4,
+        -0.08
+      ],
+      [
+        2.1,
+        9,
+        0
+      ],
+      [
+        1.9,
+        10.5,
+        0
+      ],
+      [
+        1.7,
+        12.8,
+        -0.3
+      ],
+      [
+        0.8,
+        15,
+        -0.2
+      ],
+      [
+        0.5,
+        15.4,
+        0.45
+      ]
+    ],
+    "gallbladder": [
+      [
+        0.7,
+        15.3,
+        0.42
+      ],
+      [
+        0.8,
+        14.8,
+        -0.1
+      ],
+      [
+        1.4,
+        13,
+        -0.1
+      ],
+      [
+        1.2,
+        10,
+        0
+      ],
+      [
+        1.1,
+        6,
+        0
+      ],
+      [
+        1,
+        3.2,
+        0.05
+      ],
+      [
+        0.9,
+        0.6,
+        0.1
+      ]
+    ],
+    "liver": [
+      [
+        0.9,
+        0.55,
+        0.35
+      ],
+      [
+        0.9,
+        1.2,
+        0.3
+      ],
+      [
+        0.9,
+        3.2,
+        0.25
+      ],
+      [
+        0.85,
+        6,
+        0.3
+      ],
+      [
+        0.8,
+        10,
+        0.35
+      ],
+      [
+        0.5,
+        12,
+        0.3
+      ]
+    ]
+  },
+  "vessels": [
+    {
+      "id": "lung",
+      "label": "手太阴肺经",
+      "short": "肺经",
+      "group": 0,
+      "color": "#3f6f68",
+      "hot": "#6fc4b0",
+      "baseOpacity": 0.55
+    },
+    {
+      "id": "largeintestine",
+      "label": "手阳明大肠经",
+      "short": "大肠经",
+      "group": 1,
+      "color": "#9b3a26",
+      "hot": "#e8734a",
+      "baseOpacity": 0.55
+    },
+    {
+      "id": "stomach",
+      "label": "足阳明胃经",
+      "short": "胃经",
+      "group": 2,
+      "color": "#8a6a22",
+      "hot": "#dfa336",
+      "baseOpacity": 0.55
+    },
+    {
+      "id": "spleen",
+      "label": "足太阴脾经",
+      "short": "脾经",
+      "group": 3,
+      "color": "#3b5f9e",
+      "hot": "#7ba3e8",
+      "baseOpacity": 0.55
+    },
+    {
+      "id": "heart",
+      "label": "手少阴心经",
+      "short": "心经",
+      "group": 0,
+      "color": "#3f6f68",
+      "hot": "#6fc4b0",
+      "baseOpacity": 0.55
+    },
+    {
+      "id": "smallintestine",
+      "label": "手太阳小肠经",
+      "short": "小肠经",
+      "group": 1,
+      "color": "#9b3a26",
+      "hot": "#e8734a",
+      "baseOpacity": 0.55
+    },
+    {
+      "id": "bladder",
+      "label": "足太阳膀胱经",
+      "short": "膀胱经",
+      "group": 2,
+      "color": "#8a6a22",
+      "hot": "#dfa336",
+      "baseOpacity": 0.55
+    },
+    {
+      "id": "kidney",
+      "label": "足少阴肾经",
+      "short": "肾经",
+      "group": 3,
+      "color": "#3b5f9e",
+      "hot": "#7ba3e8",
+      "baseOpacity": 0.55
+    },
+    {
+      "id": "pericardium",
+      "label": "手厥阴心包经",
+      "short": "心包经",
+      "group": 0,
+      "color": "#3f6f68",
+      "hot": "#6fc4b0",
+      "baseOpacity": 0.55
+    },
+    {
+      "id": "sanjiao",
+      "label": "手少阳三焦经",
+      "short": "三焦经",
+      "group": 1,
+      "color": "#9b3a26",
+      "hot": "#e8734a",
+      "baseOpacity": 0.55
+    },
+    {
+      "id": "gallbladder",
+      "label": "足少阳胆经",
+      "short": "胆经",
+      "group": 2,
+      "color": "#8a6a22",
+      "hot": "#dfa336",
+      "baseOpacity": 0.55
+    },
+    {
+      "id": "liver",
+      "label": "足厥阴肝经",
+      "short": "肝经",
+      "group": 3,
+      "color": "#3b5f9e",
+      "hot": "#7ba3e8",
+      "baseOpacity": 0.55
+    }
+  ],
+  "nodes": [
+    {
+      "id": "lung",
+      "name": "肺经",
+      "sub": "手三阴 · 从胸走手",
+      "p": [
+        1.9,
+        10.2,
+        0.3
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": []
+    },
+    {
+      "id": "largeintestine",
+      "name": "大肠经",
+      "sub": "手三阳 · 从手走头",
+      "p": [
+        1.7,
+        12.6,
+        0.35
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": []
+    },
+    {
+      "id": "stomach",
+      "name": "胃经",
+      "sub": "足三阳 · 从头走足",
+      "p": [
+        0.6,
+        9,
+        0.72
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": []
+    },
+    {
+      "id": "spleen",
+      "name": "脾经",
+      "sub": "足三阴 · 从足走腹",
+      "p": [
+        0.8,
+        6,
+        0.45
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": []
+    },
+    {
+      "id": "heart",
+      "name": "心经",
+      "sub": "手三阴 · 从胸走手",
+      "p": [
+        1.9,
+        10.1,
+        -0.3
+      ],
+      "type": "node",
+      "side": -1,
+      "steps": []
+    },
+    {
+      "id": "smallintestine",
+      "name": "小肠经",
+      "sub": "手三阳 · 从手走头",
+      "p": [
+        1.5,
+        12.6,
+        -0.6
+      ],
+      "type": "node",
+      "side": -1,
+      "steps": []
+    },
+    {
+      "id": "bladder",
+      "name": "膀胱经",
+      "sub": "足三阳 · 从头走足",
+      "p": [
+        0.6,
+        8.8,
+        -0.8
+      ],
+      "type": "node",
+      "side": -1,
+      "steps": []
+    },
+    {
+      "id": "kidney",
+      "name": "肾经",
+      "sub": "足三阴 · 从足走腹",
+      "p": [
+        0.7,
+        6,
+        0.2
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": []
+    },
+    {
+      "id": "pericardium",
+      "name": "心包经",
+      "sub": "手三阴 · 从胸走手",
+      "p": [
+        1.7,
+        11,
+        0.12
+      ],
+      "type": "node",
+      "side": 0,
+      "steps": []
+    },
+    {
+      "id": "sanjiao",
+      "name": "三焦经",
+      "sub": "手三阳 · 从手走头",
+      "p": [
+        1.7,
+        12.8,
+        -0.3
+      ],
+      "type": "node",
+      "side": -1,
+      "steps": []
+    },
+    {
+      "id": "gallbladder",
+      "name": "胆经",
+      "sub": "足三阳 · 从头走足",
+      "p": [
+        1.2,
+        10,
+        0
+      ],
+      "type": "node",
+      "side": 0,
+      "steps": []
+    },
+    {
+      "id": "liver",
+      "name": "肝经",
+      "sub": "足三阴 · 从足走腹",
+      "p": [
+        0.85,
+        6,
+        0.3
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": []
+    },
+    {
+      "id": "baihui",
+      "name": "百会",
+      "sub": "上丹田",
+      "p": [
+        0,
+        16.62,
+        0
+      ],
+      "type": "tian",
+      "side": 0,
+      "steps": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "dantian",
+      "name": "下丹田",
+      "sub": "气海",
+      "p": [
+        0,
+        7.35,
+        0.34
+      ],
+      "type": "tian",
+      "side": 1,
+      "steps": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "n": 1,
+      "name": "由小周天而大周天",
+      "en": "BEYOND THE REN-DU LOOP",
+      "desc": "真法以任督一圈为小周天；丹道「大周天」另指中关卯酉周天，经络体系里又指十二正经流注。此图取经络义，把一圈扩到周身十二经。",
+      "hint": "同一个词在三个体系里不是一回事，见术语表。",
+      "path": {
+        "type": "activeVessel"
+      },
+      "hot": {},
+      "intensity": 0.55,
+      "store": 50,
+      "hotRule": {
+        "type": "sequential",
+        "poolIds": [
+          "lung",
+          "largeintestine",
+          "stomach",
+          "spleen",
+          "heart",
+          "smallintestine",
+          "bladder",
+          "kidney",
+          "pericardium",
+          "sanjiao",
+          "gallbladder",
+          "liver"
+        ]
+      },
+      "siteRule": "activeVessel",
+      "chipRule": "vesselGroup",
+      "vesselFilter": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "n": 2,
+      "name": "二田氤氲 · 温养圣胎",
+      "en": "WARM THE EMBRYO",
+      "desc": "丹经说大周天「一意规中」「氤氲于二田之间」，重在温养而非搬运。图中带脉环腰、十二经依次当令，示「不运而运」。",
+      "hint": "与 N2 河车搬运的「有为」相对，此处是「无为」。",
+      "path": {
+        "type": "activeVessel"
+      },
+      "hot": {},
+      "intensity": 0.7,
+      "store": 80,
+      "hotRule": {
+        "type": "sequential",
+        "poolIds": [
+          "lung",
+          "largeintestine",
+          "stomach",
+          "spleen",
+          "heart",
+          "smallintestine",
+          "bladder",
+          "kidney",
+          "pericardium",
+          "sanjiao",
+          "gallbladder",
+          "liver"
+        ]
+      },
+      "siteRule": "activeVessel",
+      "chipRule": "vesselGroup",
+      "belt": true
+    },
+    {
+      "n": 3,
+      "name": "周身关窍渐开",
+      "en": "ALL CHANNELS OPEN",
+      "desc": "十二经与奇经八脉俱通，周身气机如环无端。此处只作结构示意，不拟真演示任何境界。",
+      "hint": "按 E 拆解看脏腑，或按 C 换机位看左右。",
+      "path": {
+        "type": "activeVessel"
+      },
+      "hot": {},
+      "intensity": 0.8,
+      "store": 100,
+      "hotRule": {
+        "type": "sequential",
+        "poolIds": [
+          "lung",
+          "largeintestine",
+          "stomach",
+          "spleen",
+          "heart",
+          "smallintestine",
+          "bladder",
+          "kidney",
+          "pericardium",
+          "sanjiao",
+          "gallbladder",
+          "liver"
+        ]
+      },
+      "siteRule": "activeVessel",
+      "chipRule": "vesselGroup",
+      "belt": true,
+      "big": true
+    }
+  ],
+  "metrics": [
+    {
+      "id": "active",
+      "label": "当令经序",
+      "unit": "/12",
+      "source": "activeIndex",
+      "max": 12
+    },
+    {
+      "id": "flow",
+      "label": "经气流注",
+      "unit": "%",
+      "source": "flow",
+      "max": 100
+    },
+    {
+      "id": "degree",
+      "label": "周天度数",
+      "unit": "°",
+      "source": "degree",
+      "max": 360
+    },
+    {
+      "id": "cycles",
+      "label": "流注周数",
+      "unit": "周",
+      "source": "cycles",
+      "max": 12,
+      "bar": "phase"
+    }
+  ],
+  "chips": {
+    "title": "四类走向",
+    "en": "FOUR DIRECTIONS",
+    "items": [
+      "手三阴 · 从胸走手",
+      "手三阳 · 从手走头",
+      "足三阳 · 从头走足",
+      "足三阴 · 从足走腹"
+    ],
+    "on": " · 当令",
+    "off": " · —"
+  },
+  "legend": [
+    {
+      "key": "qi",
+      "label": "当令经"
+    },
+    {
+      "key": "yin",
+      "label": "手三阴"
+    },
+    {
+      "key": "yang",
+      "label": "手三阳"
+    },
+    {
+      "key": "zuyang",
+      "label": "足三阳"
+    },
+    {
+      "key": "zuyin",
+      "label": "足三阴"
+    },
+    {
+      "key": "clock",
+      "label": "周天环"
+    }
+  ],
+  "tour": {
+    "step": [
+      [
+        0,
+        1
+      ],
+      [
+        32,
+        2
+      ],
+      [
+        64,
+        3
+      ],
+      [
+        116,
+        3
+      ]
+    ],
+    "view": [
+      [
+        0,
+        "three"
+      ],
+      [
+        16,
+        "side"
+      ],
+      [
+        32,
+        "front"
+      ],
+      [
+        48,
+        "back"
+      ],
+      [
+        64,
+        "limbs"
+      ],
+      [
+        80,
+        "three"
+      ]
+    ],
+    "explode": [
+      [
+        0,
+        0
+      ],
+      [
+        40,
+        0
+      ],
+      [
+        44,
+        0.85
+      ],
+      [
+        52,
+        0.85
+      ],
+      [
+        58,
+        0
+      ]
+    ],
+    "cut": [
+      [
+        0,
+        "glass"
+      ],
+      [
+        60,
+        "section"
+      ],
+      [
+        68,
+        "glass"
+      ],
+      [
+        82,
+        "solid"
+      ],
+      [
+        92,
+        "glass"
+      ]
+    ]
+  }
+}

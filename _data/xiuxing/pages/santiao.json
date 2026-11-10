@@ -1,0 +1,689 @@
+{
+  "id": "santiao",
+  "slug": "santiao",
+  "title": "三调 · 调身调息调心",
+  "kicker": "THREE ADJUSTMENTS",
+  "subtitle": "内丹入手 · 三调",
+  "backLabel": "返回修仙",
+  "backHref": "./",
+  "cover": "cover-santiao.png",
+  "unitNote": "1 单位 = 10 cm · 身高 170 cm",
+  "disclaimer": "示意性可视化，非医疗或修炼指导；依传统「三调」概念建模，不作功效宣称",
+  "stageLabel": "三调次第",
+  "breath": 10,
+  "duration": 90,
+  "breathLabels": [
+    "吸气 · 气沿中轴升",
+    "呼气 · 气沿中轴降"
+  ],
+  "curves": {
+    "du": [
+      [
+        0,
+        5.3,
+        0
+      ],
+      [
+        0,
+        5.52,
+        -0.4
+      ],
+      [
+        0,
+        5.8,
+        -0.7
+      ],
+      [
+        0,
+        7.2,
+        -0.78
+      ],
+      [
+        0,
+        8.9,
+        -0.8
+      ],
+      [
+        0,
+        10.35,
+        -0.82
+      ],
+      [
+        0,
+        11.85,
+        -0.8
+      ],
+      [
+        0,
+        13.3,
+        -0.74
+      ],
+      [
+        0,
+        14.45,
+        -0.64
+      ],
+      [
+        0,
+        15.05,
+        -0.55
+      ],
+      [
+        0,
+        15.9,
+        -0.3
+      ],
+      [
+        0,
+        16.62,
+        0
+      ]
+    ],
+    "ren": [
+      [
+        0,
+        16.62,
+        0
+      ],
+      [
+        0,
+        16.05,
+        0.5
+      ],
+      [
+        0,
+        15.55,
+        0.8
+      ],
+      [
+        0,
+        14.95,
+        0.76
+      ],
+      [
+        0,
+        14.55,
+        0.68
+      ],
+      [
+        0,
+        13.55,
+        0.6
+      ],
+      [
+        0,
+        12.1,
+        0.82
+      ],
+      [
+        0,
+        10.7,
+        0.85
+      ],
+      [
+        0,
+        9.65,
+        0.84
+      ],
+      [
+        0,
+        8.85,
+        0.8
+      ],
+      [
+        0,
+        7.85,
+        0.62
+      ],
+      [
+        0,
+        7.35,
+        0.34
+      ],
+      [
+        0,
+        6.3,
+        0.12
+      ],
+      [
+        0,
+        5.3,
+        0
+      ]
+    ],
+    "axis": [
+      [
+        0,
+        15.05,
+        0.55
+      ],
+      [
+        0,
+        14.2,
+        0.45
+      ],
+      [
+        0,
+        13.55,
+        0.5
+      ],
+      [
+        0,
+        12.1,
+        0.6
+      ],
+      [
+        0,
+        10.7,
+        0.55
+      ],
+      [
+        0,
+        9.5,
+        0.45
+      ],
+      [
+        0,
+        8.3,
+        0.35
+      ],
+      [
+        0,
+        7.4,
+        0.2
+      ]
+    ]
+  },
+  "vessels": [
+    {
+      "id": "du",
+      "label": "督脉",
+      "color": "#9b3a26",
+      "hot": "#e85c34",
+      "baseOpacity": 0.34
+    },
+    {
+      "id": "ren",
+      "label": "任脉",
+      "color": "#8a6a22",
+      "hot": "#dfa336",
+      "baseOpacity": 0.34
+    }
+  ],
+  "gates": [],
+  "nodes": [
+    {
+      "id": "baihui",
+      "name": "百会",
+      "sub": "上丹田",
+      "p": [
+        0,
+        16.62,
+        0
+      ],
+      "type": "tian",
+      "side": 0,
+      "steps": [
+        1
+      ]
+    },
+    {
+      "id": "tiantu",
+      "name": "天突",
+      "sub": "十二重楼",
+      "p": [
+        0,
+        13.55,
+        0.6
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": [
+        2
+      ]
+    },
+    {
+      "id": "danzhong",
+      "name": "膻中",
+      "sub": "中焦",
+      "p": [
+        0,
+        12.1,
+        0.82
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": [
+        2
+      ]
+    },
+    {
+      "id": "xinwo",
+      "name": "心窝部",
+      "sub": "中丹田",
+      "p": [
+        0,
+        10.7,
+        0.85
+      ],
+      "type": "tian",
+      "side": 1,
+      "steps": [
+        2,
+        3
+      ],
+      "focus": [
+        2
+      ]
+    },
+    {
+      "id": "shenque",
+      "name": "神阙",
+      "sub": "脐",
+      "p": [
+        0,
+        8.85,
+        0.8
+      ],
+      "type": "node",
+      "side": 1,
+      "steps": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "dantian",
+      "name": "下丹田",
+      "sub": "气海·关元",
+      "p": [
+        0,
+        7.35,
+        0.34
+      ],
+      "type": "tian",
+      "side": 1,
+      "steps": [
+        1,
+        2,
+        3
+      ],
+      "focus": [
+        3
+      ]
+    },
+    {
+      "id": "huiyin",
+      "name": "会阴",
+      "sub": "下鹊桥",
+      "p": [
+        0,
+        5.3,
+        0
+      ],
+      "type": "node",
+      "side": 0,
+      "steps": [
+        1
+      ]
+    },
+    {
+      "id": "mingmen",
+      "name": "命门",
+      "sub": "腰后",
+      "p": [
+        0,
+        8.9,
+        -0.8
+      ],
+      "type": "node",
+      "side": -1,
+      "steps": [
+        1
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "n": 1,
+      "name": "调身 · 正体放松",
+      "en": "ALIGN THE BODY",
+      "desc": "从头顶到足底依次松开：正脊、松肩、含胸、塌腰。入手先调形，形正则气顺。图中真气沿中轴自上而下巡行一遍，指示放松的次序。",
+      "hint": "只做姿势与放松，不追求任何气感。",
+      "path": {
+        "type": "curve",
+        "curve": "axis",
+        "from": 0,
+        "to": 8,
+        "ease": "smooth",
+        "flowFrom": 10,
+        "flowTo": 60
+      },
+      "hot": {
+        "du": 0.05,
+        "ren": 0.1
+      },
+      "intensityFrom": 0.3,
+      "intensityTo": 0.48,
+      "chips": [
+        true,
+        false,
+        false
+      ],
+      "site": "中轴 · 自上而下巡身",
+      "siteId": "baihui"
+    },
+    {
+      "n": 2,
+      "name": "调息 · 由粗到细",
+      "en": "REFINE THE BREATH",
+      "desc": "呼吸由粗渐细、由短渐长，意随息动而不加干涉。气团在膻中、心窝、下丹田之间随呼吸往返，表示息之所至。",
+      "hint": "自然呼吸，注意呼气，不憋气、不刻意拉长。",
+      "path": {
+        "type": "nodes",
+        "nodes": [
+          "danzhong",
+          "xinwo",
+          "dantian"
+        ],
+        "ease": "smooth"
+      },
+      "hot": {
+        "ren": 0.3
+      },
+      "intensity": 0.52,
+      "chips": [
+        true,
+        true,
+        false
+      ],
+      "site": "膻中 → 心窝 → 下丹田",
+      "siteId": "xinwo"
+    },
+    {
+      "n": 3,
+      "name": "调心 · 凝神入静",
+      "en": "SETTLE THE MIND",
+      "desc": "止念回光，凝神于下丹田，呼吸渐微而神息相抱。三调俱足，只是入手有基；药物与火候须师承，不在本图。",
+      "hint": "「万念俱泯，一灵独存」，此处只作概念示意。",
+      "path": {
+        "type": "hold",
+        "node": "dantian",
+        "radius": 0.1,
+        "rhythm": "breath",
+        "flow": 24
+      },
+      "hot": {
+        "ren": 0.18
+      },
+      "intensity": 0.66,
+      "belt": true,
+      "chips": [
+        true,
+        true,
+        true
+      ],
+      "site": "下丹田 · 凝神",
+      "siteId": "dantian"
+    }
+  ],
+  "metrics": [
+    {
+      "id": "calm",
+      "label": "气感强度",
+      "unit": "%",
+      "source": "intensity",
+      "max": 100
+    },
+    {
+      "id": "done",
+      "label": "三调完成",
+      "unit": "/3",
+      "source": "chipCount",
+      "max": 3
+    },
+    {
+      "id": "rate",
+      "label": "呼吸频率",
+      "unit": "次/分",
+      "source": "breathRate",
+      "decimals": 1,
+      "bar": "fixed",
+      "fixed": 60
+    },
+    {
+      "id": "cycles",
+      "label": "累计息数",
+      "unit": "息",
+      "source": "cycles",
+      "bar": "phase"
+    }
+  ],
+  "chips": {
+    "title": "三调",
+    "en": "THREE ADJUSTMENTS",
+    "items": [
+      "调身",
+      "调息",
+      "调心"
+    ],
+    "on": " · 已调",
+    "off": " · 待调"
+  },
+  "legend": [
+    {
+      "key": "qi",
+      "label": "真气 · 当前所在"
+    },
+    {
+      "key": "du",
+      "label": "督脉（背景）"
+    },
+    {
+      "key": "ren",
+      "label": "任脉（背景）"
+    },
+    {
+      "key": "tian",
+      "label": "三田"
+    },
+    {
+      "key": "big",
+      "label": "带脉环"
+    }
+  ],
+  "views": {
+    "three": {
+      "pos": [
+        17,
+        12.6,
+        21
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "3/4 全景"
+    },
+    "front": {
+      "pos": [
+        0,
+        9.6,
+        27
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "正面 · 中轴"
+    },
+    "side": {
+      "pos": [
+        26,
+        10.2,
+        7
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "侧面 · 呼吸中轴"
+    },
+    "dantian": {
+      "pos": [
+        9.5,
+        8.4,
+        11
+      ],
+      "target": [
+        0,
+        7.7,
+        0
+      ],
+      "label": "局部 · 下丹田"
+    }
+  },
+  "viewOrder": [
+    "three",
+    "side",
+    "front",
+    "dantian"
+  ],
+  "frontViews": [
+    "front",
+    "dantian"
+  ],
+  "backViews": [],
+  "camK": {
+    "three": 1.38,
+    "front": 1.38,
+    "side": 1.38,
+    "dantian": 1.12
+  },
+  "cuts": [
+    {
+      "id": "glass",
+      "label": "玻璃体"
+    },
+    {
+      "id": "section",
+      "label": "半剖"
+    },
+    {
+      "id": "xray",
+      "label": "线框"
+    },
+    {
+      "id": "solid",
+      "label": "实体"
+    }
+  ],
+  "extras": {
+    "spine": true,
+    "spineCurve": "du",
+    "belt": true,
+    "big": false
+  },
+  "tour": {
+    "step": [
+      [
+        0,
+        1
+      ],
+      [
+        14,
+        2
+      ],
+      [
+        28,
+        3
+      ],
+      [
+        52,
+        3
+      ],
+      [
+        60,
+        1
+      ],
+      [
+        70,
+        2
+      ],
+      [
+        80,
+        3
+      ]
+    ],
+    "view": [
+      [
+        0,
+        "three"
+      ],
+      [
+        10,
+        "side"
+      ],
+      [
+        24,
+        "front"
+      ],
+      [
+        38,
+        "dantian"
+      ],
+      [
+        52,
+        "three"
+      ]
+    ],
+    "explode": [
+      [
+        0,
+        0
+      ],
+      [
+        34,
+        0
+      ],
+      [
+        38,
+        0.85
+      ],
+      [
+        46,
+        0.85
+      ],
+      [
+        52,
+        0
+      ]
+    ],
+    "cut": [
+      [
+        0,
+        "glass"
+      ],
+      [
+        44,
+        "section"
+      ],
+      [
+        52,
+        "glass"
+      ],
+      [
+        62,
+        "solid"
+      ],
+      [
+        72,
+        "glass"
+      ]
+    ]
+  }
+}

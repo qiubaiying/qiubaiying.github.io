@@ -1,0 +1,682 @@
+{
+  "backLabel": "返回修仙",
+  "backHref": "./",
+  "unitNote": "1 单位 = 10 cm · 身高 170 cm · 示右侧，左右对称",
+  "disclaimer": "对照次第",
+  "stageLabel": "示意性可视化，非医疗或修炼指导；两套三田定位各依其所述体系标注，不互相套用，三关位置历代有出入",
+  "views": {
+    "three": {
+      "pos": [
+        17,
+        12.6,
+        21
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "3/4 全景"
+    },
+    "front": {
+      "pos": [
+        0,
+        9.6,
+        27
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "正面 · 诸经"
+    },
+    "back": {
+      "pos": [
+        0,
+        9.6,
+        -27
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "背面 · 膀胱经"
+    },
+    "side": {
+      "pos": [
+        26,
+        10.2,
+        7
+      ],
+      "target": [
+        0,
+        9,
+        0
+      ],
+      "label": "侧面 · 走向"
+    },
+    "limbs": {
+      "pos": [
+        14,
+        10.5,
+        20
+      ],
+      "target": [
+        0.6,
+        9.5,
+        0
+      ],
+      "label": "局部 · 四肢"
+    },
+    "dantian": {
+      "pos": [
+        9.5,
+        8.4,
+        11
+      ],
+      "target": [
+        0,
+        7.7,
+        0
+      ],
+      "label": "局部 · 下丹田"
+    }
+  },
+  "viewOrder": [
+    "three",
+    "side",
+    "front",
+    "back",
+    "limbs",
+    "dantian"
+  ],
+  "frontViews": [
+    "front",
+    "dantian"
+  ],
+  "backViews": [
+    "back"
+  ],
+  "camK": {
+    "three": 1.38,
+    "front": 1.38,
+    "back": 1.38,
+    "side": 1.38,
+    "limbs": 1.12,
+    "dantian": 1.12
+  },
+  "cuts": [
+    {
+      "id": "glass",
+      "label": "玻璃体"
+    },
+    {
+      "id": "section",
+      "label": "半剖"
+    },
+    {
+      "id": "xray",
+      "label": "线框"
+    },
+    {
+      "id": "solid",
+      "label": "实体"
+    }
+  ],
+  "extras": {
+    "spine": true,
+    "spineCurve": "du",
+    "belt": true,
+    "big": true
+  },
+  "gates": [],
+  "id": "santian",
+  "slug": "santian",
+  "title": "三田三关 · 异说对照",
+  "kicker": "THREE FIELDS IN CONTRAST",
+  "subtitle": "同名异实 · 两套定位",
+  "cover": "cover-santian.png",
+  "breath": 24,
+  "duration": 120,
+  "breathLabels": [
+    "相位 · 前半",
+    "相位 · 后半"
+  ],
+  "curves": {
+    "du": [
+      [
+        0,
+        5.3,
+        0
+      ],
+      [
+        0,
+        5.52,
+        -0.4
+      ],
+      [
+        0,
+        5.8,
+        -0.7
+      ],
+      [
+        0,
+        7.2,
+        -0.78
+      ],
+      [
+        0,
+        8.9,
+        -0.8
+      ],
+      [
+        0,
+        10.35,
+        -0.82
+      ],
+      [
+        0,
+        11.85,
+        -0.8
+      ],
+      [
+        0,
+        13.3,
+        -0.74
+      ],
+      [
+        0,
+        14.45,
+        -0.64
+      ],
+      [
+        0,
+        15.05,
+        -0.55
+      ],
+      [
+        0,
+        15.9,
+        -0.3
+      ],
+      [
+        0,
+        16.62,
+        0
+      ]
+    ],
+    "ren": [
+      [
+        0,
+        16.62,
+        0
+      ],
+      [
+        0,
+        16.05,
+        0.5
+      ],
+      [
+        0,
+        15.55,
+        0.8
+      ],
+      [
+        0,
+        14.95,
+        0.76
+      ],
+      [
+        0,
+        14.55,
+        0.68
+      ],
+      [
+        0,
+        13.55,
+        0.6
+      ],
+      [
+        0,
+        12.1,
+        0.82
+      ],
+      [
+        0,
+        10.7,
+        0.85
+      ],
+      [
+        0,
+        9.65,
+        0.84
+      ],
+      [
+        0,
+        8.85,
+        0.8
+      ],
+      [
+        0,
+        7.85,
+        0.62
+      ],
+      [
+        0,
+        7.35,
+        0.34
+      ],
+      [
+        0,
+        6.3,
+        0.12
+      ],
+      [
+        0,
+        5.3,
+        0
+      ]
+    ]
+  },
+  "vessels": [
+    {
+      "id": "du",
+      "label": "督脉",
+      "short": "督脉",
+      "group": 0,
+      "color": "#9b3a26",
+      "hot": "#e85c34",
+      "baseOpacity": 0.5
+    },
+    {
+      "id": "ren",
+      "label": "任脉",
+      "short": "任脉",
+      "group": 0,
+      "color": "#8a6a22",
+      "hot": "#dfa336",
+      "baseOpacity": 0.5
+    }
+  ],
+  "nodes": [
+    {
+      "id": "zf_s",
+      "name": "上丹田 · 百会",
+      "sub": "真法：头顶百会",
+      "p": [
+        0,
+        16.62,
+        0
+      ],
+      "type": "tian",
+      "side": 0,
+      "steps": [
+        1
+      ]
+    },
+    {
+      "id": "zf_m",
+      "name": "中丹田 · 心窝",
+      "sub": "真法：心窝部",
+      "p": [
+        0,
+        12.1,
+        0.85
+      ],
+      "type": "tian",
+      "side": 0,
+      "steps": [
+        1
+      ]
+    },
+    {
+      "id": "zf_x",
+      "name": "下丹田 · 小腹",
+      "sub": "真法：小腹部",
+      "p": [
+        0,
+        7.85,
+        0.62
+      ],
+      "type": "tian",
+      "side": 0,
+      "steps": [
+        1
+      ]
+    },
+    {
+      "id": "dd_s",
+      "name": "上丹田 · 泥丸",
+      "sub": "丹道：泥丸（脑中）",
+      "p": [
+        0,
+        15.55,
+        0.8
+      ],
+      "type": "tian",
+      "side": 0,
+      "steps": [
+        2
+      ]
+    },
+    {
+      "id": "dd_m",
+      "name": "中丹田 · 绛宫",
+      "sub": "丹道：绛宫（心下）",
+      "p": [
+        0,
+        11.6,
+        0.84
+      ],
+      "type": "tian",
+      "side": 0,
+      "steps": [
+        2
+      ]
+    },
+    {
+      "id": "dd_x",
+      "name": "下丹田 · 气海",
+      "sub": "丹道：气海／关元一带",
+      "p": [
+        0,
+        7.35,
+        0.34
+      ],
+      "type": "tian",
+      "side": 0,
+      "steps": [
+        2
+      ]
+    },
+    {
+      "id": "g1",
+      "name": "尾闾",
+      "sub": "三关之一 · 位置有异说",
+      "p": [
+        0,
+        5.3,
+        0
+      ],
+      "type": "tian",
+      "side": 0,
+      "steps": [
+        3
+      ]
+    },
+    {
+      "id": "g2",
+      "name": "夹脊",
+      "sub": "三关之一 · 位置有异说",
+      "p": [
+        0,
+        10.35,
+        -0.82
+      ],
+      "type": "tian",
+      "side": 0,
+      "steps": [
+        3
+      ]
+    },
+    {
+      "id": "g3",
+      "name": "玉枕",
+      "sub": "三关之一 · 位置有异说",
+      "p": [
+        0,
+        15.05,
+        -0.55
+      ],
+      "type": "tian",
+      "side": 0,
+      "steps": [
+        3
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "n": 1,
+      "name": "真法三田",
+      "en": "ZHENQI FIELDS",
+      "desc": "真气运行法公开所述：上丹田在头顶百会，中丹田在心窝部，下丹田在小腹部。",
+      "hint": "此定位依李少波真气运行研究所公开所述，见 N1；不与丹道三田混用。",
+      "path": {
+        "type": "activeVessel"
+      },
+      "hotRule": {
+        "type": "sequential",
+        "poolIds": [
+          "du",
+          "ren"
+        ]
+      },
+      "vesselFilter": [
+        0
+      ],
+      "chipRule": "vesselGroup",
+      "siteRule": "activeVessel",
+      "hot": {},
+      "intensity": 0.55,
+      "store": 20
+    },
+    {
+      "n": 2,
+      "name": "丹道三田",
+      "en": "DANDAO FIELDS",
+      "desc": "丹道通行说法：上丹田泥丸、中丹田绛宫、下丹田气海，与真法三田定位不同。",
+      "hint": "历代丹书对三田位置另有异说，统一记在术语表，不强行调和。",
+      "path": {
+        "type": "activeVessel"
+      },
+      "hotRule": {
+        "type": "sequential",
+        "poolIds": [
+          "du",
+          "ren"
+        ]
+      },
+      "vesselFilter": [
+        0
+      ],
+      "chipRule": "vesselGroup",
+      "siteRule": "activeVessel",
+      "hot": {},
+      "intensity": 0.55,
+      "store": 32
+    },
+    {
+      "n": 3,
+      "name": "三关异说",
+      "en": "THREE PASSES",
+      "desc": "尾闾、夹脊、玉枕为通行三关；另有以天柱、神道、命门为三关等说法。",
+      "hint": "本栏目已删去未核原句，只保留「位置有异说」的口径，不作定点结论。",
+      "path": {
+        "type": "activeVessel"
+      },
+      "hotRule": {
+        "type": "sequential",
+        "poolIds": [
+          "du",
+          "ren"
+        ]
+      },
+      "vesselFilter": [
+        0
+      ],
+      "chipRule": "vesselGroup",
+      "siteRule": "activeVessel",
+      "hot": {},
+      "intensity": 0.55,
+      "store": 44
+    }
+  ],
+  "metrics": [
+    {
+      "id": "count",
+      "label": "背景经脉",
+      "unit": "条",
+      "source": "vesselCount",
+      "max": 2,
+      "bar": "fixed"
+    },
+    {
+      "id": "active",
+      "label": "当令体系",
+      "unit": "/3",
+      "source": "activeIndex",
+      "max": 3
+    },
+    {
+      "id": "flow",
+      "label": "相位推进",
+      "unit": "%",
+      "source": "flow",
+      "max": 100
+    },
+    {
+      "id": "cycles",
+      "label": "巡览周数",
+      "unit": "周",
+      "source": "cycles",
+      "max": 9,
+      "bar": "phase"
+    }
+  ],
+  "chips": {
+    "title": "三套对照",
+    "en": "THREE VIEWS",
+    "items": [
+      "真法三田",
+      "丹道三田",
+      "三关异说"
+    ],
+    "on": " · 当令",
+    "off": " · —"
+  },
+  "legend": [
+    {
+      "key": "zf",
+      "label": "真法三田"
+    },
+    {
+      "key": "dd",
+      "label": "丹道三田"
+    },
+    {
+      "key": "pass",
+      "label": "三关"
+    },
+    {
+      "key": "bg",
+      "label": "任督背景"
+    }
+  ],
+  "tour": {
+    "step": [
+      [
+        0,
+        1
+      ],
+      [
+        19,
+        2
+      ],
+      [
+        38,
+        3
+      ],
+      [
+        57,
+        4
+      ],
+      [
+        76,
+        5
+      ],
+      [
+        116,
+        5
+      ]
+    ],
+    "view": [
+      [
+        0,
+        "three"
+      ],
+      [
+        12,
+        "side"
+      ],
+      [
+        28,
+        "front"
+      ],
+      [
+        44,
+        "back"
+      ],
+      [
+        60,
+        "limbs"
+      ],
+      [
+        76,
+        "three"
+      ]
+    ],
+    "explode": [
+      [
+        0,
+        0
+      ],
+      [
+        40,
+        0
+      ],
+      [
+        44,
+        0.85
+      ],
+      [
+        52,
+        0.85
+      ],
+      [
+        58,
+        0
+      ]
+    ],
+    "cut": [
+      [
+        0,
+        "glass"
+      ],
+      [
+        62,
+        "section"
+      ],
+      [
+        70,
+        "glass"
+      ],
+      [
+        82,
+        "solid"
+      ],
+      [
+        92,
+        "glass"
+      ]
+    ]
+  },
+  "notes": [
+    "真气运行法三田：兰州李少波真气运行研究所公开所述",
+    "丹道三田：明清丹书通行说法",
+    "异说见 glossary.yml「三田」「三关」条",
+    "总览「异说保留在术语表」条"
+  ]
+}
