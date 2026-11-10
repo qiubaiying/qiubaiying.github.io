@@ -11,6 +11,7 @@
 {% if include.url %}{% assign planned = false %}{% endif %}
 {% assign xi = include.index | plus: 0 %}
 {% if include.mode == 'jingluo' %}{% assign xi = 0 %}{% endif %}
+{% if include.level contains '参照' %}{% assign xi = 0 %}{% endif %}
 {% assign step_no = include.index | plus: 1 %}
 <li class="x-step-item">
 {% if planned %}
