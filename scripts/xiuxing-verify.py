@@ -236,6 +236,9 @@ if isinstance(pr, dict):
              list((ROOT / "_includes").glob("*.html"))
              if "图页左下角" in p.read_text(encoding="utf-8")]
     ck(not stale, "文案与浮层位置不符（仍写「图页左下角」）：" + ", ".join(stale))
+    # 七日回顾：方案组件之一，别在后续改动里被顺手删掉
+    ck("function renderWeek" in pjs and "xp-week" in pjs and "七日回顾" in pjs,
+       "跟练浮层缺七日回顾（renderWeek / xp-week / 七日回顾）")
 
 # ---------------------------------------------------------------- 结果
 print("卷册 %d 卷 / 图目 %d 张 / 新图 %d 张 / 术语 %d 条" %

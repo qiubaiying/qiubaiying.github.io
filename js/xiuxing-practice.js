@@ -83,6 +83,16 @@
     '.xp-input option{color:#e8e6e0;background:#15181c}',
     '.xp-log{font-size:12px;color:#c9c6bf;margin:6px 0 0;padding:0;list-style:none;max-height:120px;overflow:auto}',
     '.xp-log li{padding:3px 0;border-bottom:1px dashed rgba(232,230,224,.1)}',
+    '.xp-week{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin:2px 0 8px}',
+    '.xp-week i{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;height:38px;border-radius:6px;border:1px solid rgba(232,230,224,.16);font:10px/1.2 var(--font-mono,ui-monospace,monospace);color:#9c9a94;font-style:normal}',
+    '.xp-week i b{font-weight:500;font-size:12px;color:#e8e6e0}',
+    '.xp-week i em{font-style:normal;font-size:10px}',
+    '.xp-week i.k4{background:rgba(200,151,90,.26);border-color:rgba(200,151,90,.6)}',
+    '.xp-week i.k4 b{color:#f2efe8}',
+    '.xp-week i.k3{background:rgba(200,151,90,.1)}',
+    '.xp-week i.k2{background:rgba(180,90,70,.26);border-color:rgba(196,116,88,.65)}',
+    '.xp-week i.k2 b{color:#f6e4dc}',
+    '.xp-week i.k0{opacity:.55;border-style:dashed}',
     '.xp-tip{font-size:11px;color:#8f8d87;margin:8px 0 0}',
     '.xp-root button:focus-visible,.xp-root input:focus-visible{outline:2px solid #c8975a;outline-offset:2px}'
   ].join('\n');
@@ -239,6 +249,15 @@
   sLog.appendChild(el('p', 'xp-tip', '两项以上持续变差就先减量；数据只写 localStorage，不上传。'));
   panel.appendChild(sLog);
 
+  var sWeek = el('section', 'xp-sec');
+  var weekHd = el('h4', '', '七日回顾 · 只读本机');
+  sWeek.appendChild(weekHd);
+  var weekGrid = el('div', 'xp-week');
+  sWeek.appendChild(weekGrid);
+  var weekSum = el('p', 'xp-tip');
+  sWeek.appendChild(weekSum);
+  panel.appendChild(sWeek);
+
   /* ---------------------------------------------------------- 展开/收起 */
   function setOpen(v) {
     root.classList.toggle('open', v);
@@ -316,6 +335,58 @@
       logList.appendChild(el('li', '', r.day + ' · ' + r.id + ' · ' + r.ok + '/4' + (r.note ? ' · ' + r.note : '')));
     });
   }
+  // 七日回顾：按自然日聚合最近 7 天，一格一天；ok 是「未变差」的项数，≤2 即亮警示色
+  function dayKey(d) {
+    return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' +
+      String(d.getDate()).padStart(2, '0');
+  }
+  function renderWeek() {
+    var byDay = {};
+    readLog().forEach(function (r) {
+      if (!r || !r.day) return;
+      (byDay[r.day] = byDay[r.day] || []).push(r);
+    });
+    weekGrid.textContent = '';
+    var today = new Date();
+    var days = [];
+    for (var i = 6; i >= 0; i--) {
+      days.push(new Date(today.getFullYear(), today.getMonth(), today.getDate() - i));
+    }
+    var sits = 0, warn = [];
+    days.forEach(function (d) {
+      var key = dayKey(d);
+      var rows = byDay[key] || [];
+      var cell = document.createElement('i');
+      cell.appendChild(el('b', '', String(d.getDate())));
+      if (!rows.length) {
+        cell.className = 'k0';
+        cell.appendChild(el('em', '', '—'));
+        cell.title = key + ' · 未记录';
+      } else {
+        sits += rows.length;
+        var oks = rows.map(function (r) { return Math.max(0, Math.min(4, Number(r.ok) || 0)); });
+        var worst = Math.min.apply(null, oks);
+        var best = Math.max.apply(null, oks);
+        cell.className = worst <= 2 ? 'k2' : (best >= 4 ? 'k4' : 'k3');
+        cell.appendChild(el('em', '', rows.length > 1 ? rows.length + ' 笔' : best + '/4'));
+        cell.title = key + ' · ' + rows.length + ' 笔 · 最好 ' + best + '/4';
+        if (worst <= 2) warn.push(key.slice(5));
+      }
+      weekGrid.appendChild(cell);
+    });
+    var streak = 0;
+    for (var j = days.length - 1; j >= 0; j--) {
+      if ((byDay[dayKey(days[j])] || []).length) streak++;
+      else break;
+    }
+    var parts = ['近 7 天 ' + sits + ' 笔'];
+    if (streak) parts.push('连续 ' + streak + ' 天');
+    if (warn.length) parts.push(warn.join('、') + ' 有两项以上变差，先减量');
+    else if (sits) parts.push('四项均未变差');
+    else parts.push('从今日一坐开始');
+    weekSum.textContent = parts.join(' · ') + '。只读本机，不上传。';
+    weekHd.textContent = '七日回顾 · ' + (sits ? '近 7 天 ' + sits + ' 笔' : '只读本机');
+  }
   bSave.addEventListener('click', function () {
     var now = new Date();
     var day = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
@@ -327,11 +398,16 @@
     bSave.textContent = '已记下 ✓';
     setTimeout(function () { bSave.textContent = '记一笔'; }, 1200);
     renderLog();
+    renderWeek();
+    // 刚记完就让人看到回顾：面板内容长，滚到该区块，不必自己找
+    try { sWeek.scrollIntoView({ block: 'nearest' }); } catch (e) { /* 旧浏览器 */ }
   });
   bClear.addEventListener('click', function () {
     if (!window.confirm('清空本机全部行持记录？此操作不可撤销。')) return;
     writeLog([]);
     renderLog();
+    renderWeek();
   });
   renderLog();
+  renderWeek();
 })();
