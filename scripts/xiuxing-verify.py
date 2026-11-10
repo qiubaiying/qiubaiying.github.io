@@ -19,6 +19,16 @@ ROOT = Path(__file__).resolve().parent.parent
 ERRORS = []
 WARNS = []
 
+# 改 _data/xiuxing/practice.yml 后，用 --sync 重新生成静态页的数据脚本
+if "--sync" in sys.argv:
+    pr = yaml.safe_load((ROOT / "_data/xiuxing/practice.yml").read_text(encoding="utf-8"))
+    out = dict(pr)
+    out["bySlug"] = {c["slug"]: c["id"] for c in pr["cards"]}
+    js = "window.__XIUXING_PRACTICE=" + json.dumps(out, ensure_ascii=False, separators=(",", ":")) + ";\n"
+    (ROOT / "js/xiuxing-practice-data.js").write_text(js, encoding="utf-8")
+    print("已同步 js/xiuxing-practice-data.js（%d 卡 / %d 日）" % (len(pr["cards"]), len(pr["days"])))
+    sys.exit(0)
+
 
 def ck(cond, msg):
     if not cond:
@@ -32,7 +42,7 @@ def rel(p):
 # ---------------------------------------------------------------- 卷册数据
 volfile = ROOT / "_data/xiuxing/volumes.yml"
 vols = yaml.safe_load(volfile.read_text(encoding="utf-8"))
-ck(isinstance(vols, list) and len(vols) == 7, "volumes.yml 应为 7 卷")
+ck(isinstance(vols, list) and len(vols) == 8, "volumes.yml 应为 8 卷")
 total = 0
 new_slugs = []
 for v in vols:
@@ -49,24 +59,31 @@ for v in vols:
         tag = "%s/%s" % (v["id"], it.get("n"))
         # 既有 A–E 各图的逐图依据写在总览「典籍索引」，按只增不改原则不回填；
         # 新增图按准入规则必须在卷数据里标 source。
-        if v["id"] in ("F", "G"):
-            ck(bool(it.get("source")), tag + " 缺 source（准入规则）")
+        ck(bool(it.get("source")), tag + " 缺 source（准入规则）")
         ck(bool(it.get("driver")), tag + " 缺 driver")
         ck(it.get("status") == "已上线", tag + " 状态非已上线")
         u, c = it.get("url"), it.get("cover")
         if u:
             ck((ROOT / u.lstrip("/")).exists(), tag + " 页面缺失 " + u)
             slug = Path(u).stem
-            if v["id"] in ("F", "G"):
+            og = ROOT / "img/og" / ("xiuxing-" + slug + ".png")
+            if og.exists():
+                ptxt = (ROOT / u.lstrip("/")).read_text(encoding="utf-8")
+                ck(("img/og/xiuxing-" + slug + ".png") in ptxt,
+                   tag + " 有专属 OG 卡但未引用")
+            if v["id"] in ("F", "G", "H"):
                 new_slugs.append(slug)
-                og = ROOT / "img/og" / ("xiuxing-" + slug + ".png")
                 ck(og.exists(), tag + " OG 卡缺失 " + rel(og))
         if c:
             ck((ROOT / c.lstrip("/")).exists(), tag + " 封面缺失 " + c)
     topic = ROOT / "xiuxing" / (key + ".html")
     ck(topic.exists(), "缺专题页 " + rel(topic))
-ck(total == 27, "图目总数应为 27，实际 %d" % total)
-ck(len(new_slugs) == 6, "新图应为 6 张，实际 %d" % len(new_slugs))
+    if topic.exists():
+        tt = topic.read_text(encoding="utf-8")
+        ck('id="boundary"' in tt or "boundary=" in tt,
+           "专题页缺内容边界 " + key)
+ck(total == 31, "图目总数应为 31，实际 %d" % total)
+ck(len(new_slugs) == 10, "新图应为 10 张，实际 %d" % len(new_slugs))
 
 # ---------------------------------------------------------------- 配置与页面
 for slug in new_slugs:
@@ -126,18 +143,18 @@ sim = re.sub(r"\{% comment %\}[\s\S]*?\{% endcomment %\}", "", sj)
 sim = re.sub(r"\{% for post in site\.posts %\}[\s\S]*?\{% endfor %\}", "", sim)
 sim = re.sub(r"\{% for item in live %\}[\s\S]*?\{% endfor %\}", "", sim)
 sim = re.sub(r"\{%[^%]*%\}", "", sim)
-sim = sim.replace("{{ atlas | size }}", "27")
+sim = sim.replace("{{ atlas | size }}", "31")
 sim = re.sub(r"\{\{[^}]*\}\}", '"/x"', sim)
 sim = re.sub(r"^---[\s\S]*?---", "", sim).strip()
 try:
     parsed = json.loads(sim)
-    ck(len(parsed) == 9, "search.json 固定条目应为 9 条，实际 %d" % len(parsed))
-    ck(any("27 张图谱" in x.get("c", "") for x in parsed),
+    ck(len(parsed) == 10, "search.json 固定条目应为 10 条，实际 %d" % len(parsed))
+    ck(any("31 张图谱" in x.get("c", "") for x in parsed),
        "search.json 总览文案未使用动态计数")
 except json.JSONDecodeError as e:
     ERRORS.append("search.json 模拟渲染后不是合法 JSON：" + str(e))
-ck("xiuxing.buxu.items" in sj and "xiuxing.tonglan.items" in sj,
-   "search.json 未接入 F/G 两卷数据源")
+ck("xiuxing.buxu.items" in sj and "xiuxing.tonglan.items" in sj
+   and "xiuxing.xingchi.items" in sj, "search.json 未接入 F/G/H 三卷数据源")
 
 # ---------------------------------------------------------------- 硬编码残留
 hard = re.compile(r"21\s*图|二十一图|五卷二十一|共 21 图|不再增图")
@@ -152,9 +169,9 @@ for f in scan:
 
 # ---------------------------------------------------------------- 术语与缓存
 gl = yaml.safe_load((ROOT / "_data/xiuxing/glossary.yml").read_text(encoding="utf-8"))
-ck(isinstance(gl, list) and len(gl) == 48, "术语表应为 48 条，实际 %d" % (len(gl) if isinstance(gl, list) else -1))
+ck(isinstance(gl, list) and len(gl) == 53, "术语表应为 53 条，实际 %d" % (len(gl) if isinstance(gl, list) else -1))
 sw = (ROOT / "sw.js").read_text(encoding="utf-8")
-ck("VERSION = 'v4'" in sw, "sw.js 未升到 v4")
+ck("VERSION = 'v5'" in sw, "sw.js 未升到 v5")
 ck("RUNTIME_MAX = 150" in sw, "sw.js 未调大 RUNTIME_MAX")
 for asset in ("css/xiuxing-3d.css", "js/xiuxing-runtime.js", "js/xiuxing-atlas.js"):
     ck("'" + asset + "'" in sw, "sw.js 预缓存缺 " + asset)
@@ -163,9 +180,53 @@ for p in ("offline.html", "css/paper.css", "css/syntax.css", "js/paper.js"):
     ck((ROOT / p).exists(), "原有预缓存文件缺失 " + p)
 
 # ---------------------------------------------------------------- JS 语法
-for js in ("js/xiuxing-runtime.js", "js/xiuxing-atlas.js", "sw.js"):
+for js in ("js/xiuxing-runtime.js", "js/xiuxing-atlas.js",
+           "js/xiuxing-practice-data.js", "js/xiuxing-practice.js", "sw.js"):
     r = subprocess.run(["node", "--check", str(ROOT / js)], capture_output=True, text=True)
     ck(r.returncode == 0, "JS 语法错误 %s：%s" % (js, r.stderr.strip()[:150]))
+
+
+# ---------------------------------------------------------------- 行序与跟练层
+pr = yaml.safe_load((ROOT / "_data/xiuxing/practice.yml").read_text(encoding="utf-8"))
+ck(isinstance(pr, dict), "practice.yml 应为字典")
+if isinstance(pr, dict):
+    ck(len(pr.get("days", [])) == 7, "七日入手应为 7 天")
+    ck(len(pr.get("cards", [])) == 31, "行持卡应为 31 张，实际 %d" % len(pr.get("cards", [])))
+    ck(bool(pr.get("defaults", {}).get("note")), "practice.yml 缺 defaults.note")
+    ck(len(pr.get("schools", [])) == 3, "「我的一门」坐标应为 3 套")
+    for sc in pr.get("schools", []):
+        for field in ("key", "name", "brief", "fields", "orbit", "passes", "source"):
+            ck(bool(sc.get(field)), "坐标 %s 缺 %s" % (sc.get("key"), field))
+    url2id = {}
+    for v in vols:
+        vd = yaml.safe_load((ROOT / "_data/xiuxing" / (v["key"] + ".yml")).read_text(encoding="utf-8"))
+        for it in vd["items"]:
+            url2id[Path(it["url"]).stem] = it["n"]
+    ck(set(url2id.values()) == {c["id"] for c in pr["cards"]}, "行持卡图号与卷 yml 不一致")
+    for c in pr["cards"]:
+        ck(url2id.get(c.get("slug")) == c.get("id"), "%s 的 slug 与卷 yml 不符" % c.get("id"))
+        ck(bool(c.get("note")), "%s 缺 note" % c.get("id"))
+        ck(len(c.get("note", "")) >= 12, "%s 的 note 过短" % c.get("id"))
+    djs = ROOT / "js/xiuxing-practice-data.js"
+    ck(djs.exists(), "缺 js/xiuxing-practice-data.js")
+    if djs.exists():
+        dm = re.search(r"window\.__XIUXING_PRACTICE=(\{.*\});", djs.read_text(encoding="utf-8"))
+        ck(bool(dm), "practice-data.js 不是预期的赋值格式")
+        if dm:
+            want = dict(pr)
+            want["bySlug"] = {c["slug"]: c["id"] for c in pr["cards"]}
+            try:
+                ck(json.loads(dm.group(1)) == want,
+                   "practice-data.js 与 practice.yml 不一致，跑 python scripts/xiuxing-verify.py --sync")
+            except json.JSONDecodeError as e:
+                ERRORS.append("practice-data.js 不是合法 JSON：" + str(e))
+    for slug in url2id:
+        page = (ROOT / "xiuxing" / (slug + ".html")).read_text(encoding="utf-8")
+        ck("xiuxing-practice-data.js" in page and "xiuxing-practice.js" in page,
+           slug + " 未接入跟练脚本")
+    for asset in ("js/xiuxing-practice-data.js", "js/xiuxing-practice.js"):
+        ck("'" + asset + "'" in sw, "sw.js 预缓存缺 " + asset)
+        ck((ROOT / asset).exists(), "跟练资源缺失 " + asset)
 
 # ---------------------------------------------------------------- 结果
 print("卷册 %d 卷 / 图目 %d 张 / 新图 %d 张 / 术语 %d 条" %

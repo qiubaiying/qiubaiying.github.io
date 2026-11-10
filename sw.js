@@ -5,13 +5,13 @@
  * 离线：退回缓存，再退回 offline.html
  * ========================================================== */
 
-const VERSION = 'v4';
+const VERSION = 'v5';
 const PRECACHE = 'precache-' + VERSION;
 const RUNTIME = 'runtime-' + VERSION;
 const RUNTIME_MAX = 150;
 const NETWORK_TIMEOUT = 4000;
 
-// F 卷起新增图谱改用站内共享运行时，预缓存这三份即可离线打开任意新图
+// F 卷起新增图谱改用站内共享运行时，预缓存下列资源即可离线打开任意新图与跟练层
 const PRECACHE_URLS = [
   'offline.html',
   'css/paper.css',
@@ -19,7 +19,9 @@ const PRECACHE_URLS = [
   'js/paper.js',
   'css/xiuxing-3d.css',
   'js/xiuxing-runtime.js',
-  'js/xiuxing-atlas.js'
+  'js/xiuxing-atlas.js',
+  'js/xiuxing-practice-data.js',
+  'js/xiuxing-practice.js'
 ];
 
 const isNavigation = (req) =>

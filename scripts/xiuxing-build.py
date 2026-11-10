@@ -181,7 +181,7 @@ def f0_acupoints():
     c = new_cfg(
         "xuewei", "穴位全图 · 五输与原络郄募俞", "ACUPOINTS ATLAS",
         "穴位分层 · 五类三十穴",
-        "示意性可视化，非医疗或修炼指导；穴位与循行线为教学示意，不承诺定位精度，不作取穴依据",
+        "示意性可视化；穴位与循行线为教学示意，不承诺定位精度，不作取穴依据",
         "穴位次第",
     )
     c["curves"] = copy.deepcopy(BASE["curves"])
@@ -287,7 +287,7 @@ def f1_jingjin():
         "经筋层次 · 结聚关节", "经筋次第", "j", 0.18, False,
         "#8a6a22", "#dfa336", 0.6, (gs[0], gs[1], gs[2], gs[3], groups, gs[5], gs[6]),
         ["SINEW YIN", "SINEW YANG", "LEG YANG", "LEG YIN", "ALL LAYERS", "FOUR GROUPS"],
-        "示意性可视化，非医疗或修炼指导；经筋依《灵枢·经筋》整理，曲线由十二正经示意派生，不承诺定位精度",
+        "示意性可视化；经筋依《灵枢·经筋》整理，曲线由十二正经示意派生，不承诺定位精度",
         ["《灵枢·经筋》十二经筋", "经筋「结、聚、散、络」为结构描述，非解剖学筋膜"],
     )
 
@@ -305,7 +305,7 @@ def f2_pibu():
         "皮部层次 · 开阖枢", "皮部次第", "p", 0.42, False,
         "#4c817a", "#7fbfae", 0.38, (gs[0], gs[1], gs[2], gs[3], groups, gs[5], gs[6]),
         ["TAIYANG", "YANGMING", "SHAOYANG", "THREE YIN", "ALL LAYERS", "FOUR REGIONS"],
-        "示意性可视化，非医疗或修炼指导；皮部依《素问·皮部论》整理，分区由十二正经示意外扩，不承诺定位精度",
+        "示意性可视化；皮部依《素问·皮部论》整理，分区由十二正经示意外扩，不承诺定位精度",
         ["《素问·皮部论》", "《灵枢·营卫生会》卫气在脉外", "开阖枢见《素问·阴阳离合论》"],
     )
 
@@ -323,7 +323,7 @@ def f3_luomai():
         "离合出入 · 表里相合", "络脉次第", "l", 0.0, True,
         "#9b3a26", "#e8734c", 0.62, (gs[0], gs[1], gs[2], gs[3], groups, gs[5], gs[6]),
         ["DIVERGENCE", "CONVERGENCE", "FIFTEEN LUO", "PAIRING", "ALL LAYERS", "FOUR PHASES"],
-        "示意性可视化，非医疗或修炼指导；络脉与经别依《灵枢·经脉》《灵枢·经别》整理，分支为示意派生，不承诺定位精度",
+        "示意性可视化；络脉与经别依《灵枢·经脉》《灵枢·经别》整理，分支为示意派生，不承诺定位精度",
         ["《灵枢·经脉》十五络脉", "《灵枢·经别》六合", "络穴名称见 B0 与 F0 穴位全图"],
     )
 
@@ -335,8 +335,9 @@ def f3_luomai():
 def g0_he():
     c = new_cfg(
         "hecan", "五卷合图 · 一具人体同屏", "ATLAS OVERLAY",
-        "图层叠合 · 五卷同参", "图层次第",
-        "示意性可视化，非医疗或修炼指导；不同时代的身体观叠于同一具底模只为对照结构，不主张其出自同一体系",
+        "图层叠合 · 五卷同参",
+        "示意性可视化；不同时代的身体观叠于同一具底模只为对照结构，不主张其出自同一体系",
+        "图层次第",
     )
     cs = {"du": DU, "ren": REN}
     for k, v in C12.items():
@@ -416,8 +417,9 @@ def g0_he():
 def g1_yishuo():
     c = new_cfg(
         "santian", "三田三关 · 异说对照", "THREE FIELDS IN CONTRAST",
-        "同名异实 · 两套定位", "对照次第",
-        "示意性可视化，非医疗或修炼指导；两套三田定位各依其所述体系标注，不互相套用，三关位置历代有出入",
+        "同名异实 · 两套定位",
+        "示意性可视化；两套三田定位各依其所述体系标注，不互相套用，三关位置历代有出入",
+        "对照次第",
     )
     c["curves"] = {"du": DU, "ren": REN}
     c["vessels"] = [
@@ -463,7 +465,82 @@ def g1_yishuo():
     return c
 
 
-SPECS = [f0_acupoints, f1_jingjin, f2_pibu, f3_luomai, g0_he, g1_yishuo]
+# --------------------------------------------------------------------------
+# H 卷 · 入手行持：复用 B0 的曲线库与底模，只换次第、节点与面板文字。
+# 曲线、vessels、tour 保持与 shierjing 同源，运行时无需任何改动。
+# --------------------------------------------------------------------------
+
+def h_from(slug, title, kicker, subtitle, stage_label, rows, breath, duration):
+    c = new_cfg(slug, title, kicker, subtitle,
+                "示意性可视化；姿态与节点为教学示意，不承诺定位精度", stage_label)
+    c["breath"] = breath
+    c["duration"] = duration
+    c["breathLabels"] = ["吸气 · 前半", "呼气 · 后半"]
+    c["stages"] = []
+    for i, (nm, en, desc, hint) in enumerate(rows):
+        g = i % 4
+        c["stages"].append(stage(i + 1, nm, en, desc, hint, [g], 18 + i * 5))
+    c["nodes"] = []
+    for i, (nm, en, desc, hint) in enumerate(rows):
+        src = BASE["nodes"][i % len(BASE["nodes"])]
+        c["nodes"].append(node("h%d" % (i + 1), nm, en, list(src["p"]), [i + 1], "node", 1))
+    c["chips"] = chips(title.split(" · ")[0], "PRACTICE STAGES", [r[0] for r in rows])
+    c["legend"] = legend([("s%d" % (i + 1), r[0]) for i, r in enumerate(rows)])
+    return c
+
+
+def h0_jingzuo():
+    return h_from("jingzuo", "静坐一课 · 一坐的时序", "ONE SITTING",
+                  "正体 → 调息 → 凝神 → 任运 → 收功", "一坐次第", [
+        ("正体放松", "ALIGN", "坐垫前半，膝低于胯，从头顶到足底依次松开。", "按 E 拆解看躯干"),
+        ("由粗入细", "REFINE", "呼吸由粗渐细，不数息、不憋气，只让息自己慢下来。", "按 C 切玻璃体看中轴"),
+        ("凝神入静", "SETTLE", "注意力收回；走神即带回，不追静境、不核对感受。", "按 V 换正面机位"),
+        ("任运自然", "LET BE", "不再调整姿势与呼吸，只是坐着；这一段最容易被跳过。", "按 1 回到首段"),
+        ("收功起身", "CLOSE", "两手叠于腹前静坐数息，睁眼、活动手足再起身。", "按 T 看自动导览"),
+    ], 10, 90)
+
+
+def h1_daoyin():
+    return h_from("daoyin", "导引八式 · 姿态次第", "EIGHT MOVEMENTS",
+                  "八段锦口诀的八段读序", "导引次第", [
+        ("两手托天", "LIFT", "两手托天理三焦；以手三阴、手三阳一组高亮示上肢牵动。", "按 V 换机位看左右"),
+        ("左右开弓", "DRAW", "左右开弓似射雕；左右交替时高亮组随之切换。", "按 2 切到本段"),
+        ("单举脾胃", "RAISE", "调理脾胃须单举；以中焦一组经脉作背景。", "按 C 切剖切"),
+        ("往后瞧", "LOOK", "五劳七伤往后瞧；颈项与肩的转向只作位置示意。", "按 E 拆解"),
+        ("摇头摆尾", "SWAY", "摇头摆尾去心火；躯干与下肢两组同时高亮。", "按 5 切到本段"),
+        ("两手攀足", "REACH", "两手攀足固肾腰；足三阴、足三阳一组高亮。", "按 V 换背面机位"),
+        ("攒拳怒目", "CLENCH", "攒拳怒目增气力；上肢与胸背两组同显。", "按 7 切到本段"),
+        ("背后七颠", "HEEL", "背后七颠百病消；八式合观，回到周身一张网。", "按 T 看自动导览"),
+    ], 12, 160)
+
+
+def h2_liuzijue():
+    return h_from("liuzijue", "六字诀 · 六字配脏腑", "SIX SOUNDS",
+                  "嘘呵呼呬吹嘻与肝心脾肺肾三焦", "六字次第", [
+        ("嘘 · 肝", "XU", "六字配属的传统分类，图中以相应一组经脉与脏位高亮。", "按 E 拆解看脏位"),
+        ("呵 · 心", "HE", "心与小肠一组同显；配属属传统分类体系。", "按 2 切到本段"),
+        ("呼 · 脾", "HU", "脾与胃居中焦，背景见 C2 气机升降。", "按 C 切剖切"),
+        ("呬 · 肺", "SI", "肺与大肠一组同显；音声方法不在图示范围。", "按 4 切到本段"),
+        ("吹 · 肾", "CHUI", "肾与膀胱一组同显；与 N4 坎离互为两种画法。", "按 V 换机位"),
+        ("嘻 · 三焦", "XI", "三焦统摄上中下；六字合观仍是同一张网。", "按 T 看自动导览"),
+    ], 8, 120)
+
+
+def h3_zuowang():
+    return h_from("zuowang", "坐忘七阶 · 收心次第", "SEVEN STEPS",
+                  "《坐忘论》敬信至得道的文献次第", "坐忘次第", [
+        ("敬信", "TRUST", "先立信与敬，不把它当作技巧来试。", "按 E 拆解看中轴"),
+        ("断缘", "WITHDRAW", "暂简外缘，减少牵扯，不是隔绝人事。", "按 2 切到本段"),
+        ("收心", "COLLECT", "收摄驰求之心，走神即带回。", "按 C 切玻璃体"),
+        ("简事", "SIMPLIFY", "日用之事各归其位，心不两头挂。", "按 4 切到本段"),
+        ("真观", "OBSERVE", "于念头起处看它起灭，不随不拒。", "按 V 换机位"),
+        ("泰定", "SETTLE", "久而成定；此处只作读序节点，不是可核对的进度。", "按 6 切到本段"),
+        ("得道", "ATTAIN", "七阶收束；文献次第的终点，不是体验清单。", "按 T 看自动导览"),
+    ], 16, 140)
+
+
+SPECS = [f0_acupoints, f1_jingjin, f2_pibu, f3_luomai, g0_he, g1_yishuo,
+         h0_jingzuo, h1_daoyin, h2_liuzijue, h3_zuowang]
 
 
 # --------------------------------------------------------------------------
@@ -496,6 +573,8 @@ HEAD = """<!doctype html>
 <script>window.__XIUXING_CONFIG={config};</script>
 <script type="module" src="/js/xiuxing-runtime.js"></script>
 <script src="/js/xiuxing-atlas.js" defer></script>
+<script src="/js/xiuxing-practice-data.js"></script>
+<script src="/js/xiuxing-practice.js" defer></script>
 </body>
 </html>
 """
@@ -616,7 +695,7 @@ def cover(c, out):
     d.line((70, H - 118, W - 70, H - 118), fill=RULE, width=2)
     d.text((78, H - 96), "E 拆解   C 玻璃体   V 换机位   S 速度   T 导览   R 复位   1-9 切次第",
            font=small, fill=DIM)
-    note = "示意性可视化 · 非医疗或修炼指导 · 位置不承诺精度"
+    note = "示意性可视化 · 位置不承诺精度"
     d.text((78, H - 52), note, font=small, fill=ACCENT)
     d.text((W - 330, H - 52), "无意 BLOG / XIUXING", font=small, fill=DIM)
     im.save(out, optimize=True)

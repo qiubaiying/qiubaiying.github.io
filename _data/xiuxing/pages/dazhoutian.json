@@ -2,7 +2,7 @@
   "backLabel": "返回修仙",
   "backHref": "./",
   "unitNote": "1 单位 = 10 cm · 身高 170 cm · 示意性模型",
-  "disclaimer": "传统文献概念模型的可视化，非医疗诊断或修炼指导；不作功效宣称",
+  "disclaimer": "传统文献概念模型的可视化",
   "stageLabel": "图解次第",
   "views": {
     "three": {
@@ -1052,7 +1052,7 @@
       "n": 3,
       "name": "周身关窍渐开",
       "en": "ALL CHANNELS OPEN",
-      "desc": "十二经与奇经八脉俱通，周身气机如环无端。此处只作结构示意，不拟真演示任何境界。",
+      "desc": "十二经与奇经八脉俱通，周身气机如环无端。此处只作结构示意。",
       "hint": "按 E 拆解看脏腑，或按 C 换机位看左右。",
       "path": {
         "type": "activeVessel"

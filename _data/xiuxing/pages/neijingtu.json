@@ -2,7 +2,7 @@
   "backLabel": "返回修仙",
   "backHref": "./",
   "unitNote": "1 单位 = 10 cm · 身高 170 cm · 示意性模型",
-  "disclaimer": "传统文献概念模型的可视化，非医疗诊断或修炼指导；不作功效宣称",
+  "disclaimer": "传统文献概念模型的可视化",
   "stageLabel": "图解次第",
   "views": {
     "three": {

@@ -2,8 +2,8 @@
   "backLabel": "返回修仙",
   "backHref": "./",
   "unitNote": "1 单位 = 10 cm · 身高 170 cm · 示右侧，左右对称",
-  "disclaimer": "对照次第",
-  "stageLabel": "示意性可视化，非医疗或修炼指导；两套三田定位各依其所述体系标注，不互相套用，三关位置历代有出入",
+  "disclaimer": "示意性可视化；两套三田定位各依其所述体系标注，不互相套用，三关位置历代有出入",
+  "stageLabel": "对照次第",
   "views": {
     "three": {
       "pos": [
