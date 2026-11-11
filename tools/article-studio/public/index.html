@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>文章排版工作台 · Scond</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">✦</span><strong>文章排版工作台</strong><span class="tagline">把写好的文字，变成好读的文章</span></div>
+    <div class="top-actions">
+      <button id="save" class="button">保存到博客仓库</button>
+      <button id="copy" class="button primary">复制到公众号</button>
+      <details id="more-actions" class="action-menu">
+        <summary class="button" aria-label="更多操作">更多操作 <span aria-hidden="true">⌄</span></summary>
+        <div class="action-menu-panel">
+          <button id="save-md" type="button">另存为 Obsidian MD</button>
+          <button id="publish" type="button" disabled title="先保存到博客仓库">发布到线上博客</button>
+        </div>
+      </details>
+    </div>
+  </header>
+  <main class="workspace">
+    <section class="editor-pane" aria-labelledby="source-title">
+      <div class="pane-head"><div><h2 id="source-title">原稿</h2><span>Markdown / Obsidian</span></div><button id="import-md" class="import-action" type="button">导入 .md</button><input id="md-file" type="file" accept=".md,.markdown,text/markdown" hidden></div>
+      <div id="editing-bar" class="editing-bar" hidden><span id="editing-label"></span><button id="cancel-edit" type="button">退出编辑</button></div>
+      <label class="field-label" for="title">文章标题</label>
+      <input id="title" class="title-input" placeholder="给文章起个标题" maxlength="150">
+      <div class="editor-toolbar"><span>正文</span><label class="text-action" for="assets">添加本地图片</label><input id="assets" type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple hidden></div>
+      <div class="format-toolbar" role="toolbar" aria-label="文字格式">
+        <button type="button" data-format="bold" title="选中文字后加粗（⌘B）"><b>加粗</b></button>
+        <button type="button" data-format="italic" title="选中文字后设为斜体（⌘I）"><i>斜体</i></button>
+        <button type="button" data-format="underline" title="选中文字后添加下划线（⌘U）"><u>下划线</u></button>
+        <button type="button" data-format="strike"><s>删除线</s></button>
+        <button type="button" data-format="heading">小标题</button>
+        <button type="button" data-format="quote">引用</button>
+        <button type="button" data-format="list">列表</button>
+      </div>
+      <p class="format-hint">选中文字，再点击上方按钮；效果显示在右侧预览中。</p>
+      <textarea aria-label="文章正文" id="markdown" spellcheck="false" placeholder="在这里粘贴文章，或导入 .md 文档。支持标题、引用、列表、链接、代码和图片。"></textarea>
+      <div class="editor-foot"><span id="word-count">0 字</span><span id="asset-count">未添加图片</span></div>
+    <details class="image-settings">
+        <summary>关联 Obsidian 图片 <span id="image-status" role="status">导入时自动查找</span></summary>
+        <label class="field-label" for="image-directory">图片文件夹地址</label>
+        <input id="image-directory" type="text" spellcheck="false" placeholder="例如：Obsidian Blog/Assets 的完整路径">
+        <div class="image-actions"><button type="button" id="resolve-images">重新关联图片</button><label class="text-action" for="image-folder">选择图片文件夹…</label><input id="image-folder" type="file" webkitdirectory multiple hidden></div>
+        <p id="image-details">自动读取文章引用的图片，也可以选择文件夹进行匹配。</p>
+      </details>
+      <section id="wechat-images" class="wechat-images" hidden aria-label="公众号配图">
+        <strong>公众号配图备用</strong>
+        <p>若公众号粘贴后缺图，按文章顺序复制图片，再到对应位置粘贴。</p>
+        <div id="wechat-image-list"></div>
+      </section>
+    </section>
+    <aside class="settings-pane" aria-labelledby="styles-title">
+      <div class="pane-head"><div><h2 id="styles-title">排版方案</h2><span>选择适合文章的样式</span></div></div>
+      <div id="themes" class="themes" role="radiogroup" aria-label="排版方案"></div>
+      <div class="size-setting"><label class="field-label" for="font-size">正文字号</label>
+      <select id="font-size"><option value="14">14 px · 小</option><option value="16" selected>16 px · 标准</option><option value="18">18 px · 舒适</option><option value="20">20 px · 大</option><option value="22">22 px · 特大</option></select></div>
+      <div class="settings-divider"></div>
+      <h3>文章末尾</h3>
+      <label class="toggle-row"><span><strong>添加「关于我」</strong><small>旅行、跑步、看书，也喜欢 AI 和数码</small></span><input id="footer" type="checkbox"><i></i></label>
+      <div id="footer-options" class="footer-options" hidden>
+        <label class="field-label" for="wechat-name">公众号名称</label>
+        <input id="wechat-name" placeholder="例如：Scond 的生活笔记">
+        <label class="field-label" for="qr">公众号二维码（可选）</label>
+        <input id="qr" type="file" accept="image/png,image/jpeg,image/webp">
+        <small>提供二维码后会放在末尾。公众号粘贴后请检查图片。</small>
+      </div>
+      <div class="settings-divider"></div>
+      <h3>博客信息</h3>
+      <label class="field-label" for="date">发布日期</label><input id="date" type="date">
+      <label class="field-label" for="tags">标签</label><input id="tags" placeholder="用逗号分隔，例如：跑步, 随笔">
+      <details id="blog-source" class="blog-source">
+        <summary>公众号原文信息 <span>仅博客显示</span></summary>
+        <p>先发布公众号，拿到原文链接后再填写。博客正文末尾、「关于我」分割线上方会显示小字“*原文链接：标题链接”；复制到公众号时不会带上这些信息。</p>
+        <label class="field-label" for="source-account">公众号名称</label><input id="source-account" value="Scond" maxlength="60">
+        <label class="field-label" for="source-published">公众号发布时间（可选）</label><input id="source-published" type="datetime-local">
+        <label class="field-label" for="source-url">公众号原文链接</label><input id="source-url" type="url" placeholder="https://mp.weixin.qq.com/s/…">
+      </details>
+      <details id="source-save" class="source-save">
+        <summary>Obsidian 另存位置</summary>
+        <p id="source-location-note">将创建新的 Markdown 文件，原稿不会被覆盖。</p>
+        <label class="field-label" for="source-folder">保存文件夹</label><select id="source-folder"><option value=".">Blog 根目录</option></select>
+        <label class="field-label" for="source-filename">新文件名</label><input id="source-filename" placeholder="文章标题-排版版.md">
+      </details>
+      <details id="saved-posts" class="saved-posts">
+        <summary>已保存到博客仓库 <span id="saved-count"></span></summary>
+        <p>本地文章保存在博客仓库的 _posts 文件夹。展开文章可查看完整路径。发布和更新会推送到 GitHub；“撤下线上”保留本地稿和图片。</p>
+        <button id="refresh-posts" type="button">检查线上状态</button>
+        <p id="saved-posts-note" role="status"></p>
+        <div id="saved-post-list" role="list"></div>
+      </details>
+      <p class="settings-note">保存会在本地博客仓库生成文章。点击顶部“更多操作”中的“发布到线上博客”，或清单中的“发布”，才会提交并推送到 GitHub。</p>
+    </aside>
+    <section class="preview-pane" aria-labelledby="preview-title">
+      <div class="pane-head preview-head"><h2 id="preview-title">公众号排版预览</h2><div class="view-switch" role="group" aria-label="预览宽度"><button id="desktop-view" class="active">桌面</button><button id="mobile-view">手机</button></div></div>
+      <div class="preview-scroll"><article id="paper" class="paper theme-sage"><h1 id="preview-heading"></h1><div id="preview-body" class="article-body"></div><section id="preview-footer" class="article-footer" hidden></section></article></div>
+      <div class="preview-foot"><span id="status">仅在本机编辑</span><span>公众号效果以粘贴后预览为准</span></div>
+    </section>
+  </main>
+  <dialog id="saved-preview" class="saved-preview" aria-labelledby="saved-preview-title">
+    <div class="saved-preview-head"><div><h2 id="saved-preview-title">博客页面预览</h2><small id="saved-preview-note">本地构建 · 不会执行发布</small></div><div class="saved-preview-actions"><a id="saved-preview-open" href="#" target="_blank" rel="noopener noreferrer" hidden>在新标签页打开</a><button id="close-saved-preview" type="button">关闭</button></div></div>
+    <div class="saved-preview-scroll"><p id="saved-preview-loading" class="saved-preview-loading" role="status">正在生成博客页面…</p><iframe id="saved-blog-frame" title="本地博客页面预览" hidden></iframe></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script type="module" src="/app.js?v=20260929-blog-preview"></script>
+</body>
+</html>

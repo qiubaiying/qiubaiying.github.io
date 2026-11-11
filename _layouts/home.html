@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<header class="masthead">
+    <div class="wrap">
+        <h1 class="sr-only">{{ site.title }}</h1>
+        <p class="tagline">{{ page.description | default: site.description }}</p>
+    </div>
+</header>
+
+<div class="wrap">
+    <div class="post-list" data-post-list>
+    {% for post in paginator.posts %}
+    <article class="post-item">
+        <div class="post-item-meta">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y 年 %-m 月 %-d 日" }}</time>
+        {% if post.tags.size > 0 %}
+        <div class="tags">
+            {% for tag in post.tags %}<span class="tag" data-tag="{{ tag }}">{{ tag }}</span>{% endfor %}
+        </div>
+        {% endif %}
+        </div>
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        {% if post.subtitle %}<p class="subtitle">{{ post.subtitle }}</p>{% endif %}
+        <p class="excerpt">{{ post.content | strip_html | truncate: 120 }}</p>
+
+    </article>
+    {% endfor %}
+    </div>
+
+    {% if paginator.total_pages > 1 %}
+    <nav class="pager" aria-label="分页" data-post-pagination>
+        {% if paginator.previous_page %}
+        <a rel="prev" href="{{ paginator.previous_page_path | relative_url }}">← 较新的文章</a>
+        {% endif %}
+        {% if paginator.next_page %}
+        <a data-next-page rel="next" href="{{ paginator.next_page_path | relative_url }}">更早的文章 →</a>
+        {% endif %}
+        <p class="pagination-status" role="status" data-pagination-status hidden></p>
+        <button class="pagination-retry" data-pagination-retry hidden>重试加载</button>
+    </nav>
+    {% endif %}
+</div>

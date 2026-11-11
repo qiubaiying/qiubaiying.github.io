@@ -1,70 +1,60 @@
 ---
-title: Tags
-layout: default
+layout: page
+title: 文章
 description: keep hungry keep foolish
-header-img: "img/tag-bg.jpg"
 ---
 
-<!-- Page Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading" id="tag-heading">
-                    <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
-                    <span class="subheading">{{ page.description }}</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- 标签云 -->
-			<div id='tag_cloud' class="tags">
-				{% for tag in site.tags %}
-				<a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
-				{% endfor %}
-			</div>
-
-            <!--<blockquote class="tag-comments">
-                标签命名规范：
-                    <li>行业观察、职位、公司优先使用中文</li>
-                    <li>外国产品、术语优先使用英文</li>
-            </blockquote>-->
-
-            <!-- 标签列表 -->
-			{% for tag in site.tags %}
-			<div class="one-tag-list">
-			  	<span class="fa fa-tag listing-seperator" id="{{ tag[0] }}">
-                    <span class="tag-text">{{ tag[0] }}</span>
-                </span>
-				{% for post in tag[1] %}
-				  <!-- <li class="listing-item">
-				  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-				  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-				  </li> -->
-				 <div class="post-preview">
-				    <a href="{{ post.url | prepend: site.baseurl }}">
-				        <h2 class="post-title">
-                            {{ post.title }}
-				        </h2>
-				        {% if post.subtitle %}
-				        <h3 class="post-subtitle">
-				            {{ post.subtitle }}
-				        </h3>
-				        {% endif %}
-				    </a>
-				    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-				</div>
-				<hr>
-				{% endfor %}
-			</div>
-			{% endfor %}
-
-		</div>
-	</div>
+{% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+<div class="archive-filter-modes" role="group" aria-label="筛选维度" hidden>
+    <button type="button" data-filter-mode="tag" aria-pressed="true">标签</button>
+    <button type="button" data-filter-mode="year" aria-pressed="false">年份</button>
 </div>
+<div id="tag-filters" class="filter-pills" role="group" aria-label="按标签筛选">
+    <button type="button" class="pill is-active" data-filter="全部">全部</button>
+    {% assign tags_sorted = "" | split: "" %}
+    {% for tag in site.tags %}
+    {% assign tag_count = tag[1].size %}
+    {% if tag_count < 10 %}{% assign tag_count = tag_count | prepend: "0" %}{% endif %}
+    {% assign tag_entry = tag_count | append: "|||" | append: tag[0] %}
+    {% assign tags_sorted = tags_sorted | push: tag_entry %}
+    {% endfor %}
+    {% assign tags_sorted = tags_sorted | sort_natural | reverse %}
+    {% for entry in tags_sorted %}
+    {% assign parts = entry | split: "|||" %}
+    {% assign tag_name = parts[1] %}
+    {% if tag_name == "随笔" %}
+    <button type="button" class="pill" data-filter="{{ tag_name }}">{{ tag_name }}<span class="pill-count">({{ parts[0] | plus: 0 }})</span></button>
+    {% endif %}
+    {% endfor %}
+    {% for entry in tags_sorted %}
+    {% assign parts = entry | split: "|||" %}
+    {% assign tag_name = parts[1] %}
+    {% if tag_name != "随笔" %}
+    <button type="button" class="pill" data-filter="{{ tag_name }}">{{ tag_name }}<span class="pill-count">({{ parts[0] | plus: 0 }})</span></button>
+    {% endif %}
+    {% endfor %}
+</div>
+
+<div id="year-filters" class="filter-pills" role="group" aria-label="按年份筛选" hidden>
+    <button type="button" class="pill is-active" data-year-filter="全部">全部</button>
+    {% for year_group in posts_by_year %}
+    <button type="button" class="pill" data-year-filter="{{ year_group.name }}">{{ year_group.name }}</button>
+    {% endfor %}
+</div>
+
+{% for year_group in posts_by_year %}
+<section class="archive-year" data-year="{{ year_group.name }}">
+    <h2>{{ year_group.name }} 年</h2>
+    {% for post in year_group.items %}
+    <article class="archive-item" data-tags="{{ post.tags | join: ' ' }}">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m月%d日" }}</time>
+        <div class="archive-entry">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <span class="archive-tags" aria-hidden="true">
+            {% for tag in post.tags %}<span class="tag" data-tag="{{ tag }}">{{ tag }}</span>{% endfor %}
+        </span>
+        </div>
+    </article>
+    {% endfor %}
+</section>
+{% endfor %}

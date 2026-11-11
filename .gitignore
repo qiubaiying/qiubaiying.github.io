@@ -33,3 +33,8 @@ Temporary Items
 
 # debug file
 _site
+.jekyll-vendor
+
+# Local article studio runtime
+/tools/article-studio/node_modules/
+/tools/article-studio/.article-studio-state/
